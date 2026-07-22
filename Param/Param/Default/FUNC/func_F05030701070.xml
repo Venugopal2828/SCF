@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701070</ID>
+        <NAME>Settlement Notification</NAME>
+        <DESC>Settlement Notification</DESC>
+        <FUNSHORTNAME>RecSettle</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">FAEF_RecSettle.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701063</ID>
+        <NAME>Settlement Notification_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701063</ID>
+        <NAME>Settlement Notification_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000347</ID>
+        <NAME>Settlement Notification_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

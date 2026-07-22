@@ -1,0 +1,58 @@
+<WORKFLOW>
+	<STEPS>
+		<STEP>
+			<LABEL>Document Received</LABEL>
+			<INITIALINFO>Document received</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700866" DESC="Received Document Presentation"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<!--LEDGER-->
+					<STATUS DESC="">M</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Document received</ENDSTATUS><!--currnt status-->
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<EVENTINFO><![CDATA[by bank on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Document Arrival</LABEL>
+			<INITIALINFO>Document Presentation</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700867" DESC="Document Presentation"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<!--LEDGER-->
+					<STATUS DESC="">M</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Document presentation</ENDSTATUS><!--currnt status-->
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<EVENTINFO><![CDATA[by ${user} on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Payment Preparation</LABEL>
+			<INITIALINFO>Payment Preparation</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700869" DESC="Received Payment Advice"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS/>
+			</STATUSLIST>
+			<ENDSTATUS>Payment Preparation</ENDSTATUS>
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<EVENTINFO><![CDATA[by bank on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+	</STEPS>
+</WORKFLOW>

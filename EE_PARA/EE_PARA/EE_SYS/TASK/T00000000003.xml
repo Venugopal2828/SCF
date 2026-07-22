@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <taskId>T00000000003</taskId>
+    <taskName>REIM_AutoProcess740</taskName>
+    <component>SQLExecuTaskMulti</component>
+    <desc>REIM_AutoProcess740</desc>
+    <cuttime_check>F</cuttime_check>
+    <single-thread>false</single-thread>
+    <function/>
+    <MULTI>YES</MULTI>
+	<sql-condition><![CDATA[C_FUNC_SHORT_NAME = 'ReceiveMT740' AND C_TRX_STATUS = 'M']]></sql-condition>
+	<TABLELIST>
+		<TABLENAME ALIAS="t1" MASTER="YES">%EXIMTRX%.REIM_MASTER</TABLENAME>
+	</TABLELIST>
+    <FIELDLIST>
+		<FIELD ALIAS="" COL="C_MAIN_REF" DATATYPE="12" DESC="MAIN REF. NO." EEType="SYS_VARCHAR_40">t1.C_MAIN_REF</FIELD>
+		<FIELD ALIAS="" COL="C_UNIT_CODE" DATATYPE="12" DESC="UNIT CODE" EEType="SYS_VARCHAR_12">t1.C_UNIT_CODE</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+    	<SQL TYPE="SQL"> SELECT </SQL>
+		<SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">t1.C_MAIN_REF</SQL>
+		<SQL TYPE="SQL">,</SQL>
+		<SQL DESC="UNIT CODE" DT="12" EEType="SYS_VARCHAR_12" POS="SELFLD" TYPE="FLD">t1.C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="OWN" TYPE="SQL">%EXIMTRX%.REIM_MASTER t1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="C_FUNC_SHORT_NAME" DT="12" EEType="SYS_VARCHAR_16"
+            POS="WHEFLD" TYPE="FLD">t1.C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL"> = 'ReceiveMT740' AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">t1.C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'M'</SQL>
+    </CLAUSE>
+	<CLAUSEFIELD/>
+	<before-days-fld/>
+	<view-table/>
+	<tables>    </tables>
+	<sql-task>
+		<condition/>
+	</sql-task>
+	<report-list/>
+</root>

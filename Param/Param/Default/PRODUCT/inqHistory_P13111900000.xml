@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <modules>
+        <main>INVC</main>
+        <other>MESG</other>
+    </modules>
+    <FIELDLIST from="ledger">
+        <FIELD DATATYPE="12" DESC="Related Reference" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Company Code" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD DATATYPE="91" DESC="Authorised Date" EEType="" HIDDEN="">D_RELE_DATE</FIELD>
+        <FIELD DATATYPE="92" DESC="Authorised Time" EEType="" HIDDEN="">T_RELE_TIME</FIELD>
+        <FIELD DATATYPE="12" DESC="Authorised By" EEType="" HIDDEN="">C_RELE_BY</FIELD>
+        <FIELD DATATYPE="91" DESC="Created Date" EEType="" HIDDEN="">D_CREA_DATE</FIELD>
+        <FIELD DATATYPE="92" DESC="Created Time" EEType="" HIDDEN="">T_CREA_TIME</FIELD>
+        <FIELD DATATYPE="12" DESC="Created By" EEType="" HIDDEN="">C_CREA_BY</FIELD>
+        <FIELD DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD DATATYPE="12" DESC="Status" EEType="NARR(1*35)" HIDDEN="">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Parent Main Reference" EEType="" HIDDEN="H">PARENT_MAIN_REF</FIELD>
+    </FIELDLIST>
+    <criteria>
+        <module name="INVC">
+            <CLAUSE>
+                <SQL DESC="Parent Main Reference" DT="0" EEType="" PID="P10000031" TYPE="FLD" WTYPE="CASE">PARENT_MAIN_REF</SQL>
+                <SQL EEType="" TYPE="SQL"> = &apos;</SQL>
+                <SQL DT="curdata" DV="PARENT_MAIN_REF" ISEnable="T" LENGTH="0" TYPE="OP">VALUE0</SQL>
+                <SQL EEType="" TYPE="SQL">&apos; AND </SQL>
+                <SQL DESC="Company Code" DT="0" EEType="" PID="P10000032" TYPE="FLD" WTYPE="CASE">C_UNIT_CODE</SQL>
+                <SQL EEType="" TYPE="SQL"> = &apos;</SQL>
+                <SQL DT="curdata" DV="C_UNIT_CODE" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL EEType="" TYPE="SQL">&apos;</SQL>
+            </CLAUSE>
+            <CLAUSEFIELD>
+                <FIELD DATATYPE="12" DESC="Parent Main Reference">PARENT_MAIN_REF</FIELD>
+                <FIELD DATATYPE="12" DESC="Company Code">C_UNIT_CODE</FIELD>
+            </CLAUSEFIELD>
+        </module>
+        <module name="MESG">
+            <CLAUSE>
+                <SQL DESC="Parent Main Reference" DT="0" EEType="" PID="P10000043" TYPE="FLD" WTYPE="CASE">PARENT_MAIN_REF</SQL>
+                <SQL EEType="" TYPE="SQL"> = &apos;</SQL>
+                <SQL DT="curdata" DV="PARENT_MAIN_REF" ISEnable="T" LENGTH="0" TYPE="OP">VALUE0</SQL>
+                <SQL EEType="" TYPE="SQL">&apos; AND </SQL>
+                <SQL DESC="Company Code" DT="0" EEType="" PID="P10000044" TYPE="FLD" WTYPE="CASE">C_UNIT_CODE</SQL>
+                <SQL EEType="" TYPE="SQL"> = &apos;</SQL>
+                <SQL DT="curdata" DV="C_UNIT_CODE" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL EEType="" TYPE="SQL">&apos;</SQL>
+            </CLAUSE>
+            <CLAUSEFIELD>
+                <FIELD DATATYPE="12" DESC="Parent Main Reference">PARENT_MAIN_REF</FIELD>
+                <FIELD DATATYPE="12" DESC="Company Code">C_UNIT_CODE</FIELD>
+            </CLAUSEFIELD>
+        </module>
+    </criteria>
+</root>

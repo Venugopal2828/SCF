@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR AutoGen-Parameter-Version="1.0">
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Master Edit Rec">TrxMasterEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE/>
+        <IS_ALLOWED_PRINT/>
+        <MODULE>GTEE</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.GTEE_MASTER</TABLE_NAME>
+        <TABLE_DESC>GTEE_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>NO</POST>
+        <BCTYPE>Edit Master</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Event Edit Rec">TrxEventEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE/>
+        <IS_ALLOWED_PRINT/>
+        <MODULE>GTEE</MODULE>
+        <EVENT>Tracer</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.GTEE_EM_ISS</TABLE_NAME>
+        <TABLE_DESC>GTEE_EM_ISS</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>NO</POST>
+        <BCTYPE>Edit Event</BCTYPE>
+    </COMPONENT>
+</FUNCATTR>

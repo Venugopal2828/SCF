@@ -1,0 +1,70 @@
+<WORKFLOW>
+	<STEPS>
+		<STEP>
+			<LABEL>Discrepancy Notification</LABEL>
+			<INITIALINFO>Discrepancy notification</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700868" DESC="Discrepancy Notification"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<!--LEDGER-->
+					<STATUS DESC="">M</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Discrepancy notification</ENDSTATUS><!--currnt status-->
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<EVENTINFO><![CDATA[by bank on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Decision on Discrepancies</LABEL>
+			<INITIALINFO>Decision on Discrepancies</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700874" DESC="Decision on Discrepancies"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS DESC="">Discrepancies accepted_pending</STATUS>
+					<STATUS DESC="">Discrepancies rejected_pending</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<!--LEDGER-->
+					<STATUS DESC="">Z</STATUS>
+					<STATUS DESC="">P</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Discrepancies rejected_pending</ENDSTATUS><!--currnt status-->
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<EVENTINFO><![CDATA[by ${user} on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Authorize</LABEL>
+			<INITIALINFO>Pending authorization</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700874" DESC="Decision on Discrepancies"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS DESC="">Discrepancies rejected_fully authorized</STATUS>
+					<STATUS DESC="">Decision rejected by authorizer</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<!--LEDGER-->
+					<STATUS DESC="">T</STATUS>
+					<STATUS DESC="">S</STATUS>
+					<STATUS DESC="">R</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Discrepancies rejected_fully authorized</ENDSTATUS><!--currnt status-->
+			<ABNORMALSTATUS>Decision rejected by authorizer</ABNORMALSTATUS>
+			<ABINFO><![CDATA[by ${user} on ${date} at ${time}]]></ABINFO>
+			<EVENTINFO><![CDATA[next authorizers]]></EVENTINFO>
+			<ENDINFO><![CDATA[authorized by ${count} users]]></ENDINFO>
+		</STEP>
+	</STEPS>
+</WORKFLOW>

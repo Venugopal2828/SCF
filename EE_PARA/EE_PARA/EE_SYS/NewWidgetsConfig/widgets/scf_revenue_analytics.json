@@ -1,0 +1,16 @@
+{
+	"id": "scf_revenue_analytics",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_revenue_analytics",
+			"display": "line",
+			"title": "SCF Revenue Currency Analytics Widget",
+			"desc": "Revenue and volume analytics for SCF transactions grouped by currency."
+		},
+		"data": {
+			"sql": "SELECT FA_LMT_CCY as \"Currency\", SUM(FA_LMT_AMT * 0.0015) as \"Revenue\", SUM(FA_LMT_AMT) as \"Volume\" FROM %EXIMTRX%.FAEF_MASTER WHERE FA_LMT_CCY IS NOT NULL GROUP BY FA_LMT_CCY"
+		}
+	}
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>REIM</module>
+    <name>REIM_RefuseClaim_Master</name>
+    <desc>REIM_RefuseClaim_Master</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.REIM_MASTER</table-name>
+        <table-desc>REIM_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <PEND_REIM_CONF_BAL fv_type="F" mf="F" oper="-=">CLM_TRX_CCY_AMT</PEND_REIM_CONF_BAL>
+        <PEND_REIM_INST_BAL fv_type="F" mf="F" oper="-=">CLM_TRX_CCY_AMT</PEND_REIM_INST_BAL>
+    </mapping>
+</root>

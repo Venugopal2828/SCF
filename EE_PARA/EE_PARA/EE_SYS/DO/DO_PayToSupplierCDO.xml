@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="PayToSupplierCDO" Max="n" Min="0"
+    Name="PayToSupplierCDO" PendingStore="N"
+    Screen="SCRN/o2m/PMAT_EnquireSupplierSettINV.jsp" StoreInto="C" StoreType="C">
+    <Component>PaymentTerms</Component>
+    <PK>
+        <PKNAME>PMT_REF</PKNAME>
+        <PKNAME>AI_ID</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="Payment Reference" DispInGrid="Y" EDIT="N"
+            EEType="CHAR_35" FldType="" Value="">PMT_REF</Element>
+        <Element DATATYPE="12" Desc="Approved invoice ID" DispInGrid="N"
+            EDIT="N" EEType="Varchar_18" FldType="" Value="">AI_ID</Element>
+        <Element DATATYPE="12"
+            Desc="Number that identifies the invoice created by the buyer"
+            DispInGrid="Y" EDIT="N" EEType="varchar_50_1" FldType="" Value="">AI_NUM</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="3" Desc="AI original amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">AI_ORG_AMT</Element>
+        <Element DATATYPE="3" Desc="AI approved amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">AI_ACT_AMT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Due Date" DispInGrid="Y"
+            EDIT="N" EEType="DATE" FldType="" Value="">AI_DUE_DT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Settlement Date"
+            DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">AI_SET_DT</Element>
+    </Elements>
+</DO>

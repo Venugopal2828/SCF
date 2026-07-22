@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>EPLC</module>
+    <name>UPDATE_LCBAL_toMaster_From_RefuseDoc</name>
+    <desc>UPDATE_LCBAL_toMaster_From_RefuseDoc</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.EPLC_MASTER</table-name>
+        <table-desc>EPLC_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <LC_BAL fv_type="F" mf="F" oper="+=">PRES_AMT</LC_BAL>
+    </mapping>
+</root>

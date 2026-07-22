@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<MT messageType="707">
+		<tag>34B</tag>
+	</MT>
+	<MT messageType="747">
+		<tag>34B</tag>
+	</MT>
+	<!--EE-9755 add bill huang 2020-03-11 - begin-->
+	<MT messageType="103">
+		<tag name='71F'><![CDATA[
+			function getTagValue(docSwift, tagCodeName){
+				var swiftContent = docSwift.documentElement;
+				var children = swiftContent.childNodes;
+				for (var i = 0; i < children.length; i++) {
+					var child = children.item(i);
+					if (child.nodeType == 1) {
+						if(child.nodeName == 'trx-data'){
+							var tags = child.childNodes;
+							for (var j = 0; j < tags.length; j++) {
+								var tag = tags.item(j);
+								if (tag.nodeType == 1) {
+									if(tag.nodeName == 'tag'){
+										var tagCode = tag.getAttribute('tagcode');
+										if(tagCode == tagCodeName){
+											var tagValueNode = tag.getElementsByTagName('tag-value').item(0);
+											var tagValue = tagValueNode.firstChild.textContent;
+											return tagValue;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			var tagValue = getTagValue(docSwift, '71A');
+			var isSkip = true;
+			if(tagValue == 'BEN'){
+				isSkip = false;
+			} else if(tagValue == 'SHA'){
+				isSkip = true;
+			} else if(tagValue == 'OUR'){
+				isSkip = true;
+			}
+			]]>
+			</tag>
+	</MT>
+	<!--EE-9755 add bill huang 2020-03-11 - end-->
+</root>

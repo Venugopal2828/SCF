@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<Configuration status="OFF">
+    <Properties>
+        <Property name="default_path" value="/tmp/EELog"/>
+        <Property name="user_level">user_level_log</Property>
+        <Property name="sys_level">sys_level_log</Property>
+        <Property name="SYSLOG_PATTERN" value="[%p] [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%X{reqid}] %msg%n"/>
+        <Property name="LOG_PATTERN"    value="[%p] [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%X{reqid}] %msg%n"/>
+        <Property name="LOG_PATTERN_OLD" value="[Start] %d{yyyy-MM-dd 'at' HH:mm:ss z}  %-5level %n%msg%rEx{full}[End]%n"/>
+        <Property name="LOG_MAX_SIZE" value="10 MB"/>
+        <Property name="TIME_BASED_INTERVAL" value="1"/>
+        <Property name="CHARSET" value="UTF-8"/>
+    </Properties>
+    <Appenders>  
+        <Console name="Console" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level (%F:%L) %M() - %msg%n"/>
+        </Console>
+        <Console name="SysConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="SYSLOG2"
+                     fileName="${default_path}/SysLog2.log"
+                     filePattern="${default_path}/$${date:yyyyMM}/%d{yyyyMMdd}_SysLog2_%i.log.gz"
+                     immediateFlush="true"
+                     append="true">
+
+            <PatternLayout charset="${CHARSET}" pattern="${SYSLOG_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+            </Policies>
+            <DirectWriteRolloverStrategy maxFiles="10"/>
+        </RollingFile>
+
+        <Routing name="SystemRoutingAppender">
+            <Routes pattern="$${ctx:LoggerName}">
+                <Route>
+                    <RollingFile name="SystemLogRolling"
+                                   filePattern="${default_path}/$${date:yyyyMM}/%d{yyyy-MM-dd}_${ctx:LoggerName}.log"
+                                   immediateFlush="true" 
+                                   append="true">
+                        <Filters>
+                        <ContextMapFilter onMatch="ACCEPT" onMismatch="DENY" operator="or">
+                            <KeyValuePair key="LoggerName" value="EELOG"/>
+                            <KeyValuePair key="LoggerName" value="ESPLOG"/>
+                            <KeyValuePair key="LoggerName" value="HEARTBEAT"/>
+                            <KeyValuePair key="LoggerName" value="com.cs.esp.db"/>
+                        </ContextMapFilter>
+                        </Filters>
+                        <!--
+                        -->
+                        <PatternLayout pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="SysLogAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="SYSLOG"
+                                 filePattern="${default_path}/$${date:yyyyMM}/%d{yyyyMMdd}_SysLog.log"
+                                 immediateFlush="true"
+                                 append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${SYSLOG_PATTERN}"/>
+                        <Policies>
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+    </Appenders>  
+    <Loggers>  
+        <Logger name="EELOG" level="ALL" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </Logger>
+
+        <Logger name="ESPLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SysLogAppender"/>
+            <AppenderRef ref="Console"/>
+            <!--
+
+             -->
+        </Logger>
+        <Logger name="HEARTBEAT" level="DEBUG" additivity="false">  
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="com.cs.esp.db" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="com.cs.esp.wsapi.LogFilter" level="DEBUG" additivity="false">
+            <AppenderRef ref="SysLogAppender"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="SysConsole"/>
+        </Root>
+    </Loggers>  
+</Configuration>

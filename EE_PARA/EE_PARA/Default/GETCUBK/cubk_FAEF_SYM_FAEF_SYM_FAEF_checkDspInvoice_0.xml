@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>SYM_FAEF_SYM_FAEF_checkDspInvoice_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_DOC_STATUS ALIAS="T0" DBFUNC="" DESC="Document Status" DT="12" HIDDEN="F" TYPE="F">FA_TEMP_DOC_STATUS</FA_DOC_STATUS>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FSBC_REF='</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' AND FA_DOC_STATUS = 'DSP'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

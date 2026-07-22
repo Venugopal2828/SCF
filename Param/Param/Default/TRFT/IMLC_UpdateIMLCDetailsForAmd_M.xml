@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <desc>Update Import LC details when amended</desc>
+    <module>IMLC</module>
+    <name>UpdateIMLCDetailsForAmd</name>
+    <head-info>
+        <table-name>CETRX.IMLC_EM_ISSUE</table-name>
+        <table-desc>IMLC_EM_ISSUE</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info>Update guarantee details failure when demerge BKTS.IMLC.004.Amd</err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition>
+            <sql type="SQL">(</sql>
+            <sql type="TBL_FLD">LC_NO</sql>
+            <sql type="SQL"> = &apos;</sql>
+            <field mf="F">LC_NO</field>
+            <sql type="SQL">&apos; AND  </sql>
+            <sql type="TBL_FLD">C_UNIT_CODE</sql>
+            <sql type="SQL"> = &apos;</sql>
+            <field mf="F">C_UNIT_CODE</field>
+            <sql type="SQL">&apos;)</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <EXPIRY_DT fv_type="F" mf="F" oper="=">NEW_EXPIRY_DT</EXPIRY_DT>
+        <LC_AMT fv_type="F" mf="F" oper="=">NEW_LC_AMT</LC_AMT>
+        <LC_BAL fv_type="F" mf="F" oper="=">NEW_LC_BAL</LC_BAL>
+		<EXPIRY_PLC fv_type="F" mf="F" oper="=">NEW_EXPIRY_PLC</EXPIRY_PLC>
+		<FORM_OF_LC fv_type="F" mf="F" oper="=">NEW_FORM_OF_LC</FORM_OF_LC>
+		<POS_TOL fv_type="F" mf="F" oper="=">NEW_POS_TOL</POS_TOL>
+		<NEG_TOL fv_type="F" mf="F" oper="=">NEW_NEG_TOL</NEG_TOL>
+		<BENE_NM fv_type="F" mf="F" oper="=">NEW_BENE_NM</BENE_NM>
+		<BENE_ADD1 fv_type="F" mf="F" oper="=">NEW_BENE_ADD1</BENE_ADD1>
+		<BENE_ADD2 fv_type="F" mf="F" oper="=">NEW_BENE_ADD2</BENE_ADD2>
+		<BENE_ADD3 fv_type="F" mf="F" oper="=">NEW_BENE_ADD3</BENE_ADD3>
+		<APPL_NM fv_type="F" mf="F" oper="=">NEW_APPL_NM</APPL_NM>
+		<APPL_ADD1 fv_type="F" mf="F" oper="=">NEW_APPL_ADD1</APPL_ADD1>
+		<APPL_ADD2 fv_type="F" mf="F" oper="=">NEW_APPL_ADD2</APPL_ADD2>
+		<APPL_ADD3 fv_type="F" mf="F" oper="=">NEW_APPL_ADD3</APPL_ADD3>
+		<AVAL_BY fv_type="F" mf="F" oper="=">NEW_AVAL_BY</AVAL_BY>
+		<TENOR_DAYS fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS</TENOR_DAYS>
+		<TENOR_DAYS1 fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS1</TENOR_DAYS1>
+		<TENOR_DAYS2 fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS2</TENOR_DAYS2>
+		<TENOR_DAYS3 fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS3</TENOR_DAYS3>
+		<TENOR_DAYS4 fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS4</TENOR_DAYS4>
+		<TENOR_DAYS5 fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS5</TENOR_DAYS5>
+		<TENOR_DAYS6 fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS6</TENOR_DAYS6>
+		<TENOR_TYPE fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE</TENOR_TYPE>
+		<TENOR_TYPE1 fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE1</TENOR_TYPE1>
+		<TENOR_TYPE2 fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE2</TENOR_TYPE2>
+		<TENOR_TYPE3 fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE3</TENOR_TYPE3>
+		<TENOR_TYPE4 fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE4</TENOR_TYPE4>
+		<TENOR_TYPE5 fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE5</TENOR_TYPE5>
+		<TENOR_TYPE6 fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE6</TENOR_TYPE6>
+		<PAY_AMT1 fv_type="F" mf="F" oper="=">NEW_PAY_AMT1</PAY_AMT1>
+		<PAY_AMT2 fv_type="F" mf="F" oper="=">NEW_PAY_AMT2</PAY_AMT2>
+		<PAY_AMT3 fv_type="F" mf="F" oper="=">NEW_PAY_AMT3</PAY_AMT3>
+		<PAY_AMT4 fv_type="F" mf="F" oper="=">NEW_PAY_AMT4</PAY_AMT4>
+		<PAY_AMT5 fv_type="F" mf="F" oper="=">NEW_PAY_AMT5</PAY_AMT5>
+		<PAY_AMT6 fv_type="F" mf="F" oper="=">NEW_PAY_AMT6</PAY_AMT6>
+		<PAY_PER1 fv_type="F" mf="F" oper="=">NEW_PAY_PER1</PAY_PER1>
+		<PAY_PER2 fv_type="F" mf="F" oper="=">NEW_PAY_PER2</PAY_PER2>
+		<PAY_PER3 fv_type="F" mf="F" oper="=">NEW_PAY_PER3</PAY_PER3>
+		<PAY_PER4 fv_type="F" mf="F" oper="=">NEW_PAY_PER4</PAY_PER4>
+		<PAY_PER5 fv_type="F" mf="F" oper="=">NEW_PAY_PER5</PAY_PER5>
+		<PAY_PER6 fv_type="F" mf="F" oper="=">NEW_PAY_PER6</PAY_PER6>
+		<SDA_FLAG1 fv_type="F" mf="F" oper="=">NEW_SDA_FLAG1</SDA_FLAG1>
+		<SDA_FLAG2 fv_type="F" mf="F" oper="=">NEW_SDA_FLAG2</SDA_FLAG2>
+		<SDA_FLAG3 fv_type="F" mf="F" oper="=">NEW_SDA_FLAG3</SDA_FLAG3>
+		<SDA_FLAG4 fv_type="F" mf="F" oper="=">NEW_SDA_FLAG4</SDA_FLAG4>
+		<SDA_FLAG5 fv_type="F" mf="F" oper="=">NEW_SDA_FLAG5</SDA_FLAG5>
+		<SDA_FLAG6 fv_type="F" mf="F" oper="=">NEW_SDA_FLAG6</SDA_FLAG6>
+		<DEF_PMT_DET fv_type="F" mf="F" oper="=">NEW_DEF_PMT_DET</DEF_PMT_DET>
+	    <DRAFTS_AT fv_type="F" mf="F" oper="=">NEW_DRAFTS_AT</DRAFTS_AT>
+		<MIX_PMT_DETL fv_type="F" mf="F" oper="=">NEW_MIX_PMT_DETL</MIX_PMT_DETL>
+		<LTST_SHIP_DT fv_type="F" mf="F" oper="=">NEW_LTST_SHIP_DT</LTST_SHIP_DT>
+		<SHIP_PRD fv_type="F" mf="F" oper="=">NEW_SHIP_PRD</SHIP_PRD>
+		<PARTIAL_SHIP fv_type="F" mf="F" oper="=">NEW_PARTIAL_SHIP</PARTIAL_SHIP>
+		<TNSHIP fv_type="F" mf="F" oper="=">NEW_TNSHIP</TNSHIP>
+		<LOAD_PLACE fv_type="F" mf="F" oper="=">NEW_LOAD_PLACE</LOAD_PLACE>
+		<LOAD_PORT fv_type="F" mf="F" oper="=">NEW_LOAD_PORT</LOAD_PORT>
+		<DEST_PLACE fv_type="F" mf="F" oper="=">NEW_DEST_PLACE</DEST_PLACE>
+		<DEST_PORT fv_type="F" mf="F" oper="=">NEW_DEST_PORT</DEST_PORT>
+		<GOODS_DESC fv_type="F" mf="F" oper="=">NEW_GOODS_DESC</GOODS_DESC>
+		<DOC_PRES fv_type="F" mf="F" oper="=">NEW_DOC_PRES</DOC_PRES>
+		<PRES_DAYS fv_type="F" mf="F" oper="=">NEW_PRES_DAYS</PRES_DAYS>
+		<PRES_PRD_EVENT fv_type="F" mf="F" oper="=">NEW_PRES_PRD_EVENT</PRES_PRD_EVENT>
+		<PRES_PRD_TXT fv_type="F" mf="F" oper="=">NEW_PRES_PRD_TXT</PRES_PRD_TXT>
+		<CONF_INSTR fv_type="F" mf="F" oper="=">NEW_CONF_INSTR</CONF_INSTR>
+		<CONF_BK_NM fv_type="F" mf="F" oper="=">NEW_CONF_BK_NM</CONF_BK_NM>
+		<CONF_BK_ADD1 fv_type="F" mf="F" oper="=">NEW_CONF_BK_ADD1</CONF_BK_ADD1>
+		<CONF_BK_ADD2 fv_type="F" mf="F" oper="=">NEW_CONF_BK_ADD2</CONF_BK_ADD2>
+		<CONF_BK_ADD3 fv_type="F" mf="F" oper="=">NEW_CONF_BK_ADD3</CONF_BK_ADD3>
+		<CONF_BK_SW_ADD fv_type="F" mf="F" oper="=">NEW_CONF_BK_SW_ADD</CONF_BK_SW_ADD>
+		<ADDIT_CONDITION fv_type="F" mf="F" oper="=">NEW_ADDIT_CONDITION</ADDIT_CONDITION>
+		<PAY_COND_TO_BENE fv_type="F" mf="F" oper="=">NEW_PAY_COND_TO_BENE</PAY_COND_TO_BENE>
+		<PAY_COND_TO_REV_BK fv_type="F" mf="F" oper="=">NEW_PAY_COND_TO_REV_BK</PAY_COND_TO_REV_BK>
+		<CHG_FLAG fv_type="F" mf="F" oper="=">NEW_CHG_FLAG</CHG_FLAG>
+		<ADD_AMT_COVR fv_type="F" mf="F" oper="=">ADD_AMT_COVR</ADD_AMT_COVR>
+    </mapping>
+</root>

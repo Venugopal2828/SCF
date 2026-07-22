@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EE-8378 add season 2016-06-17 -->
+<root>
+	<upload>
+		<cnty code="AE">pdf,doc,jpg,gif,xls,zip</cnty>
+		<cnty code="IN">pdf,doc,jpg,png,xls,zip</cnty><!-- EE-10786 -->
+		<cnty code="CN">pdf,doc,jpg,gif,xls,zip</cnty>
+		<cnty code="HK">pdf,doc,jpg,xls</cnty>
+		<cnty code="US">pdf,doc,jpg,gif,xls,zip,docx</cnty>
+	</upload>
+	<magic>
+		<number type="ZIP" offset="0" leng="4">50 4B 03 04</number>
+		<number type="JAR" offset="0" leng="4">50 4B 03 04</number>
+		<number type="GZ" offset="0" leng="2">1F 8B</number>
+		<number type="PDF" offset="0" leng="4">25 50 44 46</number>
+		<number type="DOC" offset="0" leng="8">D0 CF 11 E0 A1 B1 1A E1</number>
+		<number type="WIZ" offset="0" leng="8">D0 CF 11 E0 A1 B1 1A E1</number>
+		<number type="WPS" offset="0" leng="8">D0 CF 11 E0 A1 B1 1A E1</number>
+		<number type="DOT" offset="0" leng="8">D0 CF 11 E0 A1 B1 1A E1</number>
+		<number type="PPT" offset="0" leng="8">D0 CF 11 E0 A1 B1 1A E1</number>
+		<number type="PPS" offset="0" leng="8">D0 CF 11 E0 A1 B1 1A E1</number>
+		<number type="XLS" offset="0" leng="8">D0 CF 11 E0 A1 B1 1A E1</number>
+		<number type="JPG" offset="0" leng="3">FF D8 FF</number>
+		<number type="JPE" offset="0" leng="3">FF D8 FF</number>
+		<number type="JPEG" offset="0" leng="3">FF D8 FF</number>
+		<number type="BMP" offset="0" leng="2">42 4D</number>
+		<number type="DIB" offset="0" leng="2">42 4D</number>
+		<number type="GIF" offset="0" leng="4">47 49 46 38</number>
+		<number type="PNG" offset="0" leng="8">89 50 4E 47 0D 0A 1A 0A</number>
+		<number type="DOCX" offset="0" leng="8">50 4B 03 04 14 00 06 00</number>
+		<number type="PPTX" offset="0" leng="8">50 4B 03 04 14 00 06 00</number>
+		<number type="XLSX" offset="0" leng="8">50 4B 03 04 14 00 06 00</number>
+		<number type="RTF" offset="0" leng="6">7B 5C 72 74 66 31</number>
+	</magic>
+	<fieldlist>
+		<!-- EE-10786 add yaoyao 2023-12-19 System default field list to be displayed in Upload File Function -->
+		<!-- System default field list to be displayed in Upload File Function -->
+		<!-- Project Team could only update HIDDEN property for these setting -->
+		<C_IMG_FILE_PATH DESC="File Name" HIDDEN="">IMG_FILE_PATH</C_IMG_FILE_PATH>
+		<C_ORIG_FILE_PATH DESC="Original File Name" HIDDEN="H">IMG_ORIG_FILE_PATH</C_ORIG_FILE_PATH>
+		<C_IMG_DOC_DESC DESC="File Description" HIDDEN="">C_IMG_DOC_DESC</C_IMG_DOC_DESC>
+		<C_IMG_FILE_TYPE DESC="File Type" HIDDEN="">IMG_FILE_TYPE</C_IMG_FILE_TYPE>
+		<C_UPLOADED_STATE DESC="Upload State" HIDDEN="">IMG_UPLOAD_STATE</C_UPLOADED_STATE>
+		<I_IMG_FILE_SIZE DESC="File Size(KB)" HIDDEN="">IMG_FILE_SIZE</I_IMG_FILE_SIZE>
+		<C_IMG_INDX DESC="File Index" HIDDEN="H">IMG_INDEX</C_IMG_INDX>
+		<C_DOC_NAME DESC="Form Rule" HIDDEN="">C_DOC_NAME</C_DOC_NAME>
+	</fieldlist>
+</root>
+<!-- EE-8378 add season 2016-06-17 -->

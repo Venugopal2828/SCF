@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="PO Register" Max="n" Min="0" Name="PORegister" PendingStore="N" Screen="SCRN/o2m/FAEF_POReg.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>PORegister</Component>
+    <PK>
+        <PKNAME>PO_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="PO Ref" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">PO_REF</Element>
+        <Element DATATYPE="12" Desc="PO No." DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">PO_NO</Element>
+        <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">PO_DT</Element>
+        <Element DATATYPE="91" Desc="PO Value Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">PO_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="PO Due Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">PO_DUE_DT</Element>
+        <Element DATATYPE="1" Desc="PO Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">PO_CCY</Element>
+        <Element DATATYPE="3" Desc="PO Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">PO_AMT</Element>
+        <Element DATATYPE="91" Desc="Transaction Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">TRX_DT</Element>
+        <Element DATATYPE="91" Desc="Latest Shipment Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_LATEST_SHIP_DT</Element>
+        <Element DATATYPE="12" Desc="Payment Terms" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_PMT_TERMS</Element>
+        <Element DATATYPE="2" Desc="Payment Grace Day" DispInGrid="N" EDIT="N" EEType="Numeric_22" FldType="" Value="">FA_PMT_GRC_DAY</Element>
+        <Element DATATYPE="12" Desc="Goods Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_GOODS_NM</Element>
+        <Element DATATYPE="2005" Desc="Goods Description (Tag45A)" DispInGrid="N" EDIT="N" EEType="NARR(900_65)" FldType="" Value="">GOODS_DESC</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="SBR REF" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SBR_REF</Element>
+        <Element DATATYPE="12" Desc="Contract Reference No." DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">FA_CNTR_REF</Element>
+        <Element DATATYPE="1" Desc="Business Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_BUSI_TYPE</Element>
+        <Element DATATYPE="12" Desc="PO STATUS" DispInGrid="N" EDIT="N" EEType="VARCHAR32" FldType="" Value="">PO_STATUS</Element>
+        <Element DATATYPE="12" Desc="Buyer ID" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_NM</Element>
+        <Element DATATYPE="12" Desc="Seller ID" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_ID</Element>
+        <Element DATATYPE="12" Desc="Seller Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_NM</Element>
+        <Element DATATYPE="12" Desc="Anchor ID" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_ANCHOR_ID</Element>
+        <Element DATATYPE="8" Desc="EF Commission Rate" DispInGrid="N" EDIT="N" EEType="RATE" FldType="" Value="">FA_EF_COMM_RT</Element>
+        <Element DATATYPE="1" Desc="EF Handling Charge Currency" DispInGrid="N" EDIT="N" EEType="INPUTCCY" FldType="" Value="">FA_EF_HAN_CHG_CCY</Element>
+        <Element DATATYPE="3" Desc="EF Handling Charge" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_EF_HAN_CHG_AMT</Element>
+        <Element DATATYPE="3" Desc="Commisssion Amount" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_EF_COMM_AMT</Element>
+        <Element DATATYPE="3" Desc="EF Handling Charge Collected" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_EF_HAN_CHG_PAMT</Element>
+        <Element DATATYPE="8" Desc="Transfer Limit FX Rate" DispInGrid="N" EDIT="N" EEType="RATE" FldType="" Value="">FA_TRF_FX_RT</Element>
+        <Element DATATYPE="1" Desc="Document Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_DOC_TYPE</Element>
+        <Element DATATYPE="12" Desc="Counterparty Register No" DispInGrid="N" EDIT="N" EEType="CHAR_16" FldType="" Value="">FA_COUNTER_REG_NO</Element>
+        <Element DATATYPE="12" Desc="Counterparty ID" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_COUNTER_ID</Element>
+        <Element DATATYPE="12" Desc="Counterparty Name" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_COUNTER_NM</Element>
+        <Element DATATYPE="12" Desc="Anchor Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_ANCHOR_NM</Element>
+        <Element DATATYPE="1" Desc="Need Buyer Approve" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_REQ_BUYER_APR_FLG</Element>
+        <Element DATATYPE="4" Desc="PO Max. Loan Percentage" DispInGrid="N" EDIT="N" EEType="INTEGER" FldType="" Value="">PO_MAX_LOAN_PERC</Element>
+        <Element DATATYPE="3" Desc="PO Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">PO_BAL</Element>
+        <Element DATATYPE="3" Desc="PO Available Loan Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">PO_LOAN_AVL</Element>
+    </Elements>
+</DO>

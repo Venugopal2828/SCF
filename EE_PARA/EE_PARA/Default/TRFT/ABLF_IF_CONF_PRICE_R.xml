@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>ABLF</module>
+    <name>IF_CONF_PRICE</name>
+    <desc>IF_CONF_PRICE</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.ABLF_COLL</table-name>
+        <table-desc>Collateral</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql type="TBL_FLD">REG_NO</sql>
+            <sql type="SQL">='</sql>
+            <field mf="F">REG_NO</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">FA_CNTR_REF</sql>
+            <sql type="SQL">='</sql>
+            <field mf="F">FA_CNTR_REF</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <IF_CONF_PRICE fv_type="V" oper="=">2</IF_CONF_PRICE>
+    </mapping>
+</root>

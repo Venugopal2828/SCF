@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>OWGT.006.BkDesinOnAmd</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>OWGT</module>
+        <map-name>BankDecisionOnAmendmentApplication</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <ACPT_REJ descr="" fv-type="F" intfconv="N">AccptRjct</ACPT_REJ>
+        <BK_MAIN_REF descr="" fv-type="F" intfconv="N">BkMainRef</BK_MAIN_REF>
+        <CURRNT_STATUS descr="" fv-type="F" intfconv="N">CurSts</CURRNT_STATUS>
+        <C_MAIN_REF descr="" fv-type="F" intfconv="N">CEMainRef</C_MAIN_REF>
+        <C_UNIT_CODE descr="" fv-type="F" intfconv="N">CustId</C_UNIT_CODE>
+        <GTEE_NO descr="" fv-type="F" intfconv="N">GteeRef</GTEE_NO>
+        <NO_OF_AMD descr="No. of Amendments" fv-type="F" intfconv="N">NoOfAmdmnt</NO_OF_AMD>
+        <NXT_STATUS descr="" fv-type="F" intfconv="N">NxtSts</NXT_STATUS>
+        <REJ_REASON descr="" fv-type="F" intfconv="N">RsnForRjctn</REJ_REASON>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

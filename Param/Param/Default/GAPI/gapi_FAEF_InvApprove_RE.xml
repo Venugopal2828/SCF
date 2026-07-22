@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id>Q_BANK</recv-queue-id>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>FAEF.006.INVAPR</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FAEF</module>
+        <interface-mapping-name>InvApprove</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id comm="MQ" type="sync">Q_CE</atth-queue-id>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <FA_BUYER_ID descr="Buyer ID" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">FA_BUYER_ID</FA_BUYER_ID>
+        <FA_DOC_NO descr="Doc No." ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">FA_DOC_NO</FA_DOC_NO>
+        <FA_INV_BUYER_APR_FLG descr="Buyer Approve Invoice Flag" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">FA_INV_BUYER_APR_FLG</FA_INV_BUYER_APR_FLG>
+        <FA_CUST_INSTR descr="Customer Instructions from CE" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">FA_CUST_INSTR</FA_CUST_INSTR>
+        <MSG_TYPE descr="Message Type" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">MSG_TYPE</MSG_TYPE>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item>
+        <item name="form"/>
+        <item name="image"/>
+    </send-item>
+</gapi>

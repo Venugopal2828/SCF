@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>PYMT</MODULE>
+        <DESC>GenPurp_Acct</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>8</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>0</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>Y</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">X103_ORDCU_ID_50A</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="S">var cash=DV.getFieldValue("DB_CASH_IND");
+ if (cash ==  'Yes'){
+   var country = DV.getCountryCode();
+   var currency=DV.getFieldValue("DB_CCY");
+   var sql = "item_c='006' and cnty_code='" + country + "' and item_name='" + currency + "'" ;
+  DV.SYS_getTableData('FIELD_1_X','eximtrx.data_master',sql);
+ } else {
+   var acc;
+   acc = DV.getFieldValue("X103_ORDCUACNO_50A");
+   DV.appendField(acc);
+ }</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">DB_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">DB_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">CHG_VALUE_DATE</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">CPYT_DR_VAL_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N">X103_EXCH_RT_36</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="S" USED="N">var ccy1 = DV.getFieldValue("DB_CCY");
+var ccy2 = DV.getFieldValue("CR_CCY");
+var baseCCY = DV.SYS_LCY ;
+var rate = '123456789';
+var defaultRate = '1';
+var cnty = DV.getCountryCode(); 
+if (ccy1.equals(baseCCY) || ccy2.equals(baseCCY) ){
+  DV.appendField(rate);
+}else{
+	sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='Booking Rate' "; 
+  DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);	
+}</C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="S">var type;
+   var cash=DV.getFieldValue("DB_CASH_IND");
+   if (cash.equals('No')){
+     type =DV.getFieldValue("APP_TYPE");
+   }else{
+     type ='BANK';
+   }
+   DV.appendField(type);</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE=""/>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE="F">CUST_REF</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE="F">COV_NO</C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE="V">P</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE="S">var title;
+var cash=DV.getFieldValue("DB_CASH_IND");
+var type=DV.getFieldValue("APP_TYPE");
+var acc=DV.getFieldValue('X103_ORDCUACNO_50A');
+var ccy =DV.getFieldValue('DB_CCY');
+var sql1="C_AC_NUMBER='" + acc + "' AND C_CURRENCY='" +ccy+"'";
+ var sql="C_ACCT_WITH_ID = C_MAIN_REF AND C_ACCT_NR='" + acc + "'"; 
+   if (cash.equals('No') &amp;&amp; type!='CUSTOMER' ){
+ //DV.SYS_getTableData('C_AC_TITLE','EXIMSYS.STD_AC_NUMBER',sql);
+DV.SYS_getTableData('PARTY_NM','eximsys.std_clearing, eximtrx.bank_master',sql);
+   }else if (cash.equals('No')){
+     DV.SYS_getTableData('C_AC_TITLE','EXIMSYS.STD_AC_NUMBER',sql1);
+    } else{
+       title ='SETTLEMENT SUSPENSE';
+ 	DV.appendField(title);
+   }</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">X103_BENECU_ID_59A</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="S">var cash=DV.getFieldValue("CR_CASH_IND");
+  if (cash ==  'Yes'){
+    var country = DV.getCountryCode();
+    var currency=DV.getFieldValue("CR_CCY");
+    var sql = "item_c='006' and cnty_code='" + country + "' and item_name='" + currency + "'" ;
+   DV.SYS_getTableData('FIELD_1_X','eximtrx.data_master',sql);
+  } else {
+    var acc;
+    acc = DV.getFieldValue("X103_BENECUACNO59A");
+    DV.appendField(acc);
+  }</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">CR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">CR_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">CHG_VALUE_DATE</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">CPYT_DR_VAL_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N">X103_EXCH_RT_36</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="S" USED="N">var ccy1 = DV.getFieldValue("CR_CCY");
+var ccy2 = DV.getFieldValue("DB_CCY");
+var baseCCY = DV.SYS_LCY ;
+var rate = '123456789';
+var defaultRate = '1';
+var cnty = DV.getCountryCode(); 
+if (ccy1.equals(baseCCY) || ccy2.equals(baseCCY) ){
+  DV.appendField(rate);
+}else{
+  sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='Booking Rate' "; 	
+  DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);		
+}</C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="S">var type;
+    var cash=DV.getFieldValue("CR_CASH_IND");
+    if (cash.equals('No')){
+      type =DV.getFieldValue("BENE_AC_TYPE");
+    }else{
+      type ='BANK';
+    }
+    DV.appendField(type);</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE=""/>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE="F">CUST_REF</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE="F">COV_NO</C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE="V">P</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE="S">var title;
+ var cash=DV.getFieldValue("CR_CASH_IND");
+var type=DV.getFieldValue("BENE_AC_TYPE");
+ var acc=DV.getFieldValue('X103_BENECUACNO59A');
+ var ccy =DV.getFieldValue('CR_CCY');
+ var sql1="C_AC_NUMBER='" + acc + "' AND C_CURRENCY='" +ccy+"'";
+var sql="C_ACCT_WITH_ID = C_MAIN_REF AND C_ACCT_NR='" + acc + "'"; 
+    if (cash.equals('No') &amp;&amp; type!='CUSTOMER'){
+  //DV.SYS_getTableData('C_AC_TITLE','EXIMSYS.STD_AC_NUMBER',sql);
+DV.SYS_getTableData('PARTY_NM','eximsys.std_clearing, eximtrx.bank_master',sql);
+    }else if (cash.equals('No')){
+     DV.SYS_getTableData('C_AC_TITLE','EXIMSYS.STD_AC_NUMBER',sql1);
+    }else{
+         title ='SETTLEMENT SUSPENSE';
+ 	DV.appendField(title);
+    }</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

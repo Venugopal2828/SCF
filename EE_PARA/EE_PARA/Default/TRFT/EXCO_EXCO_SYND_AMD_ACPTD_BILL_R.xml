@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>EXCO</module>
+    <name>EXCO_SYND_AMD_ACPTD_BILL</name>
+    <desc>EXCO_SYND_AMD_ACPTD_BILL</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.SYND_MASTER</table-name>
+        <table-desc>SYND_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>SOURCE_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <LEAD_BK_ADD1 fv_type="F" mf="F" oper="=">COLL_BK_ADD1</LEAD_BK_ADD1>
+        <LEAD_BK_ADD2 fv_type="F" mf="F" oper="=">COLL_BK_ADD2</LEAD_BK_ADD2>
+        <LEAD_BK_ADD3 fv_type="F" mf="F" oper="=">COLL_BK_ADD3</LEAD_BK_ADD3>
+        <LEAD_BK_ID fv_type="F" mf="F" oper="=">COLL_BK_ID</LEAD_BK_ID>
+        <LEAD_BK_NM fv_type="F" mf="F" oper="=">COLL_BK_NM</LEAD_BK_NM>
+        <LEAD_BK_SW_ADD fv_type="F" mf="F" oper="=">COLL_BK_SW_ADD</LEAD_BK_SW_ADD>
+        <LEAD_BK_SW_TAG fv_type="F" mf="F" oper="=">COLL_BK_SW_TAG</LEAD_BK_SW_TAG>
+        <MAST_LC_AMT fv_type="F" mf="F" oper="=">COLL_TRX_CCY_AMT</MAST_LC_AMT>
+        <MAST_LC_CCY fv_type="F" mf="F" oper="=">COLL_CCY</MAST_LC_CCY>
+    </mapping>
+</root>

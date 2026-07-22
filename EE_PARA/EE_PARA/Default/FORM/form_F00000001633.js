@@ -1,0 +1,14 @@
+DV.appendField("SSSS_ALL_Blank_Advice_Bank_E", "AdviceForBankCust", "MESG_TYPE_BANK = 'Mail' && SEND_TO_BANK_LANG = 'English'");
+DV.appendField("SSSS_ALL_Blank_Advice_Bank_E", "AdviceForBankCust", "MESG_TYPE_BANK = 'Email' && SEND_TO_BANK_LANG = 'English'");
+DV.appendField("SSSS_ALL_Blank_Advice_Bank_E", "AdviceForBankCust", "MESG_TYPE_BANK = 'Fax' && SEND_TO_BANK_LANG = 'English'");
+DV.appendField("SSSS_ALL_Blank_Advice_Customer_E", "AdviceForBankCust", "MESG_TYPE_CUST = 'Mail' && SEND_TO_CUST_LANG = 'English'");
+DV.appendField("SSSS_ALL_Blank_Advice_Customer_E", "AdviceForBankCust", "MESG_TYPE_CUST = 'Email' && SEND_TO_CUST_LANG = 'English'");
+DV.appendField("SSSS_ALL_Blank_Advice_Customer_E", "AdviceForBankCust", "MESG_TYPE_CUST= 'Fax' && SEND_TO_CUST_LANG = 'English'");
+/*
+vAPPL_CORR_MED = DV.getFieldValue("APPL_CORR_MED");
+if(vAPPL_CORR_MED=='Mail')
+{
+DV.appendField("SHGT_SHGT_ISSUE");
+}
+*/
+DV.appendField("SHGT_SHGT_ISSUE");

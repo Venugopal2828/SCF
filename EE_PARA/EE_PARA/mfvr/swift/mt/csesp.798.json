@@ -1,0 +1,1097 @@
+{
+@def:{
+  corp_:{Account:"'/'34x'\r\n'{0,1}",NameAndAddress:"4*35x"},
+  corp_a:{Account:"'/'34x'\r\n'{0,1}",IdentifierCode:"BIC"},
+
+  bank_a:{PartyIdentifier:"'/'36x'\r\n'{0,1}",IdentifierCode:"BIC"},
+  bank_b:{PartyIdentifier:"'/'36x'\r\n'{0,1}",Location:"35x{0,1}"},
+  bank_c:{PartyIdentifier:"'/'36x"},
+  bank_d:{PartyIdentifier:"'/'36x'\r\n'{0,1}",NameAndAddress:"4*35x"}
+},
+
+Document:{
+   MT788_799:"Free Msg, Corporate to Bank"
+  ,MT789_799:"Free Msg, Bank to Corporate"
+  ,MT793_790:"Free Msg, Bank to Corporate"
+  ,MT794_791:"Free Msg, Bank to Corporate"
+
+  ,MT770_700_701:"LC Application Req"
+  ,MT771_700_701:"LC Issuance Noti"
+  ,MT772_707:"LC Amendment Req"
+  ,MT773_707:"LC Amendment Noti"
+  ,MT736:"Notification of Acpt/Ref of Amendment"
+  ,MT748_750:"Advice of Discrepancy"
+  ,MT749:"Resp to Advice of Discrepancy"
+  ,MT753_754:"Noti of Advice of Payment"
+  ,MT731_732:"Noti of Advice of Discharge"
+  ,MT733_734:"Noti of Advice of Refusal"
+  ,MT755_756:"Noti of Advice of Reimbur"
+  ,MT757:"Settlement"
+
+  ,MT774_700_701:"Advice of LC"
+  ,MT776_707:"Advice of LC Amendment Req"
+  ,MT735:"Advice of Acpt/Refusal of Amendment"
+  ,MT780_710_711:"Advice of Third Bank LC"
+  ,MT737:"Resp to LC Presentation"
+  ,MT751_752:"Noti of auth to pay"
+  ,MT722:"Noti of auth to pay"
+  ,MT782_720_721:"Advice of Transfer of LC"
+  ,MT758:"Settlement of Export DC"
+
+  ,MT761_760:"GT Application Req"
+  ,MT784_760:"Application for SBLC"
+  ,MT762_760:"GT Issuance Noti"
+  ,MT785_760:"GT Issuance Noti"
+  ,MT763_767:"GT Amendment Req"
+  ,MT786_767:"GT Amendment Req"
+  ,MT764_767:"GT Amendment Noti"
+  ,MT787_767:"GT Amendment Noti"
+  ,MT745_760:"Advice of issued Guarantee"
+  ,MT746_760:"Advice of issued Guarantee"
+  ,MT743_767:"Advice of issued Guarantee"
+  ,MT744_767:"Advice of issued Guarantee"
+  ,MT777:"Guarantee Applicant refusal"
+  ,MT778:"Guarantee Applicant refusal"
+  ,MT712:"Guarantee Applicant refusal"
+  ,MT714:"Guarantee Applicant refusal"
+  ,MT779:"Guarantee Applicant refusal"
+  ,MT781:"Guarantee Applicant refusal"
+  ,MT783:"Guarantee Applicant refusal"
+
+  ,MT420_760:"Guarantee Applicant refusal"
+  ,MT420_767:"Guarantee Amendment refusal"
+
+  ,MT766_769:"Guarantee Reduction/release Noti"
+},
+  note:{ fld_name:"Mnn - mandotory; Onn - optional; Cnn - choice; Lnn - loop mandatory; Pnn - loop optional ",
+    O20:"16x@'Transaction Reference Number'",
+    M27:{Number:"1!n{'/'}",Total:"1!n",@name:"Message Index/Total"},
+    C41:{@name:"",M41A:{IdentifierCode:"BIC{'\r\n'}",Code:"14x"},M41D:{NameAndAddress:"4*35x{'\r\n'}",Code:"14x"}}
+  },
+
+  MT700_770:{@name:"IMLC Application",@ext:"701"
+    ,F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F40A:"24x",F20:"16x",F23:"16x{0,1}",F31C:"YYMMDD{0,1}",
+    F40E:{ApplicableRules:"30x",Narrative:"'/'35x{0,1}"},F31D:{Date:"YYMMDD",Place:"29x"},
+    Choice_51AD:{F51A:{@type:"bank_a"},F51D:{@type:"bank_d"},@occur:"{0,1}"},F50:"4*35x",
+    F59:{@type:"corp_"},F32B:{Currency:"3!a",Amount:"15d"},
+    F39A:{Tolerance1:"2n'/'",Tolerance2:"2n",@occur:"{0,1}"},F39B:"13x{0,1}",F39C:"4*35x{0,1}",
+    Choice_41AD:{F41A:{IdentifierCode:"BIC'\r\n'",Code:"14x"},F41D:{NameAndAddress:"4*35x'\r\n'",Code:"14x"}},
+    F42C:"3*35x{0,1}",
+    Choice_42AD:{F42A:{@type:"bank_a"},F42D:{@type:"bank_d"},@occur:"{0,1}"},F42M:"4*35x{0,1}",F42P:"4*35x{0,1}",
+    F43P:"35x{0,1}",
+    F43T:"35x{0,1}",
+    F44A:"65x{0,1}",F44E:"65x{0,1}",F44F:"65x{0,1}",F44B:"65x{0,1}",F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}",
+    F45A:"100*65x{0,1}",F46A:"100*65x{0,1}",F47A:"100*65x{0,1}",F71B:"6*35x{0,1}",
+    F48:"4*35x{0,1}",
+    F49:"7!x",
+    Choice_53AD:{F53A:{@type:"bank_a"},F53D:{@type:"bank_d"},@occur:"{0,1}"},F78:"12*65x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},F72:"6*35x{0,1}",
+
+    F12:"3!n",
+    F20Z:"16x",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F24D:{Code:"4!c",AdditionalInformation:"35x{0,1}"},
+    F53C:"/34x{0,1}",F71A:"3!a",F73:"6*35x{0,1}",
+    F25A:"/34x{0,1}",F71N:"3!a{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29T:{Code:"4!c{0,1}",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F21E:"35x{0,1}",F45C:"100*65x{0,1}",F29A:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c{0,1}",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"4*35x{0,1}",
+    F29U:"4*35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT700_771:{@name:"Notification of Issuance of LC",
+    F27:{Number:"1!n'/'",Total:"1!n"},
+    F40A:"24x(IRREVOCABLE|REVOCABLE|IRREVOCABLE TRANSFERABLE|REVOCABLE TRANSFERABLE|IRREVOCABLE STANDBY|REVOCABLE STANDBY|IRREVOC TRANS STANDBY)",F20:"16x",F23:"16x{0,1}",F31C:"YYMMDD{0,1}",
+    F40E:{ApplicableRules:"30x",Narrative:"'/'35x{0,1}"},F31D:{Date:"YYMMDD",Place:"49x"},
+    Choice_51AD:{F51A:{@type:"bank_a"},F51D:{@type:"bank_d"},@occur:"{0,1}"},
+    F50:"4*35x",F59:{@type:"corp_"},
+    F32B:{Currency:"3!a",Amount:"15d"},
+    F39A:{Tolerance1:"2n'/'",Tolerance2:"2n",@occur:"{0,1}"},
+    F39B:"13x{0,1}",F39C:"4*35x{0,1}",
+    Choice_41AD:{F41A:{IdentifierCode:"BIC{'\r\n'}",Code:"14x"},F41D:{NameAndAddress:"4*35x{'\r\n'}",Code:"14x"}},
+    F42C:"3*35x{0,1}",
+    Choice_42AD:{F42A:{@type:"bank_a"},F42D:{@type:"bank_d"},@occur:"{0,1}"},F42M:"4*35x{0,1}",F42P:"4*35x{0,1}",
+    F43P:"35x{0,1}",
+    F43T:"35x{0,1}",
+    F44A:"65x{0,1}",F44E:"65x{0,1}",F44F:"65x{0,1}",F44B:"65x{0,1}",F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}",
+    F45A:"1000*65x{0,1}",F46A:"1000*650x{0,1}",F47A:"1000*65x{0,1}",F71B:"6*35x{0,1}",
+    F48:"4*35x{0,1}",
+    F49:"7!x",
+    Choice_53AD:{F53A:{@type:"bank_a"},F53D:{@type:"bank_d"},@occur:"{0,1}"},
+    F78:"12*65x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F72:"6*35x{0,1}",
+
+    F12:"3!n",
+    F20Z:"16x",
+    F27A:{Number:"1!n'/'",Total:"1!n"},
+    F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AC:{F52A:{@type:"bank_a"},F52C:"/34x{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}"
+    ,F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c{0,1}",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"4*35x{0,1}",
+    F29U:"4*35x{0,1}",
+    FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    ,F21E:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F21F:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F21R:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F41X:"64x{0,1}"
+  },
+  MT700_774:{@name:"Advice of LC",
+    F27:{Number:"1!n'/'",Total:"1!n"},F40A:"24x",F20:"16x",F23:"16x{0,1}"
+    ,F31C:"YYMMDD{0,1}",
+    F40E:{ApplicableRules:"30x",Narrative:"'/'35x{0,1}"},F31D:{Date:"YYMMDD",Place:"29x"},
+    Choice_51AD:{F51A:{@type:"bank_a"},F51D:{@type:"bank_d"},@occur:"{0,1}"}
+    ,F50:"4*35x",F59:{@type:"corp_"},F32B:{Currency:"3!a",Amount:"15d"},
+    F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"},F39B:"13x{0,1}",F39C:"4*35x{0,1}",
+    Choice_41AD:{F41A:{IdentifierCode:"BIC{'\r\n'}",Code:"14x"},F41D:{NameAndAddress:"4*35x{'\r\n'}",Code:"14x"}}
+    ,F42C:"3*35x{0,1}"
+    ,Choice_42AD:{F42A:{@type:"bank_a"},F42D:{@type:"bank_d"},@occur:"{0,1}"},F42M:"4*35x{0,1}",F42P:"4*35x{0,1}",
+    F43P:"35x{0,1}",
+    F43T:"35x{0,1}",
+    F44A:"65x{0,1}",F44E:"65x{0,1}",F44F:"65x{0,1}",F44B:"65x{0,1}",F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}"
+    ,F45A:"100*65x{0,1}",F46A:"100*65x{0,1}",F47A:"100*65x{0,1}",F71B:"6*35x{0,1}",
+    F48:"4*35x{0,1}",
+    F49:"7!x",
+    Choice_53AD:{F53A:{@type:"bank_a"},F53D:{@type:"bank_d"},@occur:"{0,1}"},F78:"12*65x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},F72:"6*35x{0,1}",
+
+    F12:"3!n",F20Z:"16x",F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21P:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29A:"4*35x{0,1}",F21A:"16x{0,1}",
+    F49D:"7x",F49F:"50*65x{0,1}",F49G:"50*65x{0,1}",
+    F47E:"100*35x{0,1}",
+    F23X:{Code:"4c{0,1}",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c{0,1}",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+
+  MT707_772:{@name:"Request for Amendment of LC",
+    F20:"16x",F21:"16x",
+    F23:"16x{0,1}",
+    Choice_52AD:{F52A:{@type:"bank_a"},F52C:{@type:"bank_c"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F31C:"YYMMDD{0,1}",F30:"YYMMDD{0,1}",F26E:"2n",
+    F59:{@type:"corp_"},F31E:"YYMMDD{0,1}",
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"},F39B:"13x{0,1}",F39C:"4*35x{0,1}",
+    F44A:"65x{0,1}",F44E:"65x{0,1}",F44F:"65x{0,1}",F44B:"65x{0,1}",F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}",
+    F79:"35*50x{0,1}",F79_0:"35*50x{0,1}",F72:"6*35x{0,1}",
+    F12:"3!n",
+    F20Z:"16x",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F24D:{Code:"4!c",AdditionalInformation:"35x{0,1}"},F71A:"3!a",F73:"6*35x{0,1}",
+    F29A:"4*35x{0,1}",F72C:"6*35x{0,1}",F23X:{Code:"4!c",Narrative:"65x{0,1}",@occur:"{0,1}"},
+    F26Z:"2n{0,1}",F29S:{Code:"4!c",Narrative:"35x",@occur:"{0,1}"},
+    F29P:"4*35x{0,1}",F29U:"4*35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT707_773:{@name:"Notification of Amendment of LC",
+    F20:"16x",F21:"16x",
+    F23:"16x{0,1}",
+    Choice_52AD:{F52A:{@type:"bank_a"},F52C:{@type:"bank_c"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F31C:"YYMMDD{0,1}",F30:"YYMMDD{0,1}",F26E:"2n",
+    F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x"},F31E:"YYMMDD{0,1}",
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"},F39B:"13x{0,1}",F39C:"4*35x{0,1}",
+    F44A:"65x{0,1}",F44E:"65x{0,1}",F44F:"65x{0,1}",F44B:"65x{0,1}",F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}",
+    F79:"35*50x{0,1}",F79_0:"35*50x{0,1}",F72:"6*35x{0,1}",
+    F12:"3!n",
+    F20Z:"16x",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F26Z:"2n{0,1}",F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT707_776:{F20:"16x",F21:"16x",
+    F23:"16x{0,1}",
+	Choice_52AD:{F52A:{@type:"bank_a"},F52C:{@type:"bank_c"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F31C:"YYMMDD",
+    F30:"YYMMDD{0,1}",F26E:"2n",
+    F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x"},F31E:"YYMMDD{0,1}",
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"},F39B:"13x{0,1}",F39C:"4*35x{0,1}",
+    F44A:"65x{0,1}",F44E:"65x{0,1}",F44F:"65x{0,1}",F44B:"65x{0,1}",F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}",
+    F79:"35*50x{0,1}",F79_0:"35*50x{0,1}",F72:"6*35x{0,1}",
+    F12:"3!n",
+    F20Z:"16x",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21P:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31Z:"YYMMDD{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29A:"4*35x{0,1}",
+    F21A:"16x{0,1}",
+    F49D:"7x{0,1}",
+    F49F:"50*65x{0,1}",F49G:"50*65x{0,1}",
+    F47E:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F26Z:"2n{0,1}",F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT710_780:{F27:{Number:"1!n{'/'}",Total:"1!n"},F40B:{Type:"24x{'\r\n'}",Code:"24x"},F20:"16x",F21:"16x",F23:"16x{0,1}",F31C:"YYMMDD{0,1}",
+    F40E:{ApplicableRules:"30x",Narrative:"'/'35x{0,1}"},F31D:{Date:"YYMMDD",Place:"29x"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F50B:"4*35x{0,1}",
+    Choice_51AD:{F51A:{@type:"bank_a"},F51D:{@type:"bank_d"},@occur:"{0,1}"},
+    F50:"4*35x",F59:{@type:"corp_"},
+    F32B:{Currency:"3!a",Amount:"15d"},
+    F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"},F39B:"13x{0,1}",F39C:"4*35x{0,1}",
+    Choice_41AD:{F41A:{IdentifierCode:"BIC{'\r\n'}",Code:"14x"},F41D:{NameAndAddress:"4*35x{'\r\n'}",Code:"14x"}},
+    F42C:"3*35x{0,1}",
+    Choice_42AD:{F42A:{@type:"bank_a"},F42D:{@type:"bank_d"},@occur:"{0,1}"},F42M:"4*35x{0,1}",F42P:"4*35x{0,1}",
+    F43P:"35x{0,1}",F43T:"35x{0,1}",
+    F44A:"65x{0,1}",F44E:"65x{0,1}",F44F:"65x{0,1}",F44B:"65x{0,1}",F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}",
+    F45A:"100*65x{0,1}",F46A:"100*65x{0,1}",F47A:"100*65x{0,1}",F71B:"6*35x{0,1}",
+    F48:"4*35x{0,1}",
+    F49:"7!x",
+    Choice_53AD:{F53A:{@type:"bank_a"},F53D:{@type:"bank_d"},@occur:"{0,1}"},F78:"12*65x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F72:"6*35x{0,1}",
+
+    F12:"3!n",
+    F20Z:"16x",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21P:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"}},
+    F29A:"4*35x{0,1}",
+    Choice_56ACD:{F56A:{@type:"bank_a"},F56C:{@type:"bank_c"},F56D:{@type:"bank_d"}},
+    F21B:"16x{0,1}",F21A:"16x{0,1}",
+    F49D:"7x",F49F:"50*65x{0,1}",F49G:"50*65x{0,1}",
+    F47E:"6*35x{0,1}"
+    ,F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT722_722:{@name:"Request for Transfer of LC index"
+    ,F12:"3!n",F20Z:"16x",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x",
+    F20:"16x",F31C:"YYMMDD{0,1}",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F59K:{@type:"corp_"},
+    F21F:"16x{0,1}",
+    F29F:"4*35x{0,1}",
+    F59:{@type:"corp_"},
+    F29A:"4*35x{0,1}",
+    F31E:"YYMMDD{0,1}",
+    F48:"4*35x{0,1}",
+    F39A:{Tolerance1:"2n'/'",Tolerance2:"2n",@occur:"{0,1}"},
+    F39B:"13x{0,1}",
+    F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}",
+    F37J:"12d{0,1}",
+    F45C:"100*65x{0,1}",
+    F72C:"6*35x{0,1}",F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT712_712:{@name:"Claim for payment under Guarantee"
+    ,F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x{0,1}",F20:"16x",
+    F20Z:"16x",
+    F31C:"YYMMDD",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F49J:"50*65x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F53C:"/34x{0,1}",F25A:"/34x{0,1}",F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT714_714:{@name:"Ack of Claim for payment under Guarantee",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x{0,1}",F20:"16x",F21A:"16x",
+    F20Z:"16x",F31C:"YYMMDD",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F31S:"YYMMDD",
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F78B:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+
+  MT720_782:{@name:"LC Transfer Advice Detail",
+    F27:{Number:"1!n'/'",Total:"1!n"},F40B:{Type:"24x{'\r\n'}",Code:"24x"},
+    F20:"16x",F21:"16x",F31C:"YYMMDD",
+    F40E:{ApplicableRules:"30x",Narrative:"35x{0,1}"},
+    F31D:{Date:"YYMMDD",Place:"29x"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F50B:"4*35x{0,1}",F50:"4*35x",
+    F59:{Account:"/34x{0,1'\r\n'}",NameAndAddress:"4*35x"},
+    F32B:{Currency:"3!a",Amount:"15d"},
+    F39A:{Tolerance1:"2n'/'",Tolerance2:"2n",@occur:"{0,1}"},
+    F39B:"13x{0,1}",
+    F39C:"4*35x{0,1}",
+    Choice_41AD:{F41A:{IdentifierCode:"BIC'\r\n'",Code:"14x"},F41D:{NameAndAddress:"4*35x'\r\n'",Code:"14x"}},
+    F42C:"3*35x{0,1}",
+    Choice_42AD:{F42A:{@type:"bank_a"},F42D:{@type:"bank_d"},@occur:"{0,1}"},
+    F42M:"4*35x{0,1}",F42P:"4*35x{0,1}",F43P:"35x{0,1}",F43T:"35x{0,1}",
+    F44A:"65x{0,1}",F44E:"65x{0,1}",F44F:"65x{0,1}",F44B:"65x{0,1}",
+    F44C:"YYMMDD{0,1}",F44D:"6*65x{0,1}",
+    F45A:"100*65x{0,1}",F46A:"100*65x{0,1}",F47A:"100*65x{0,1}",
+    F71B:"6*35x{0,1}",F48:"4*35x{0,1}",F49:"7!x{CONFIRM|MAY ADD|WITHOUT}",
+    F78:"12*65x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F72:"6*35x{0,1}"
+    ,F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"}},
+    F29A:"4*35x{0,1}",
+    Choice_55ABD:{F55A:{@type:"bank_a"},F55B:{@type:"bank_b"},F55D:{@type:"bank_d"}},
+    F21N:"16x",F21A:"16x{0,1}",
+    F49D:"7x",F49F:"50*65x{0,1}",F49G:"50*65x{0,1}",
+    F47E:"6*35x{0,1}",
+    F23X:{Code:"4c{0,1}",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c{0,1}",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT732_731:{@name:"Notification of Advice of Discharge index",
+    F20:"16x",F21:"16x",F30:"YYMMDD",
+    F32B:{Currency:"3!a",Amount:"15d"},F72:"6*35x{0,1}"
+    ,F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",
+    F20Z:"16x",F21A:"16x{0,1}",F31C:"YYMMDD{0,1}",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F32O:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F39D:{Currency:"3!a",Amount:"15d"},
+    F32G:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    Choice_33AB:{F33A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},F33B:{Currency:"3!a",Amount:"15d"},@occur:"{0,1}"},
+    F22R:"4!c{0,1}",F22S:"4!c{0,1}",
+    F72C:"6*35x{0,1}",F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT734_733:{@name:"Notification of Advice of Refusal index",
+    F20:"16x",F21:"16x",
+    F32A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},
+    F73:"6*35x{0,1}",
+    Choice_33AB:{F33A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},F33B:{Currency:"3!a",Amount:"15d"},@occur:"{0,1}"},
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F72:"6*35x{0,1}",F77J:"70*50x",F77B:"3*35x"
+    ,F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",F20Z:"16x",
+    F21A:"16x{0,1}",F31C:"YYMMDD{0,1}",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT735_735:{@name:"Advice of Acceptance/Refusal of Amendment index"
+    ,F12:"3!n",F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x",
+    F20Z:"16x",
+    F20:"16x",F21P:"16x{0,1}",F30:"YYMMDD{0,1}",F26E:"2n{0,1}",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD{0,1}",
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F22M:"4!c",
+    F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+
+  MT736_736:{@name:"Notification of Acceptance/Refusal of Amendment index",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",
+    F20:"16x",F20Z:"16x",F21A:"16x{0,1}"
+    ,F31C:"YYMMDD{0,1}",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",F30:"YYMMDD{0,1}",F26E:"2n{0,1}",
+    F59:{@type:"corp_"},
+    F22M:"4!c",
+    F72C:"6*35x{0,1}",F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT737_737:{@name:"Response of LC Presentation index",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",
+    F20Z:"16x",F20:"16x",F21A:"16x{0,1}",F31C:"YYMMDD{0,1}",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"}},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"}},
+    F29B:"4*35x{0,1}",F31S:"YYMMDD",
+    F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"},
+
+    F77J:"70*50x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F34O:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F21R:"16x{0,1}",F31N:"YYMMDD{0,1}",
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+
+  MT749_749:{@name:"Resp to Advice of Discrepancy index",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x",
+    F20:"16x",F20Z:"16x",F21P:"16x{0,1}",F31C:"YYMMDD",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31S:"YYMMDD{0,1}",F22M:"4!c",
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F32G:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F30:"YYMMDD{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F53C:"/34x{0,1}",F25A:"/34x{0,1}",F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT750_748:{@name:"Advice of Discrepancy detail",
+    F20:"16x",F21:"16x",
+    F32B:{Currency:"3!a",Amount:"15d"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F71B:"6*35x{0,1}",F73:"6*35x{0,1}",
+    F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F72:"6*35x{0,1}",F77J:"70*50x"
+    ,F12:"3!n",F20Z:"16x",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",
+    F21A:"16x{0,1}",F31C:"YYMMDD",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F59:{@type:"corp_",@occur:"{0,1}"},
+    F31S:"YYMMDD{0,1}",F31T:"YYMMDD{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT752_751:{@name:"Notification of authorisation to Pay/Acpt/Nego index",
+    F20:"16x",F21:"16x",F23:"16x",F30:"YYMMDD",
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F71B:"6*35x{0,1}",
+    Choice_33AB:{F33A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},F33B:{Currency:"3!a",Amount:"15d"},@occur:"{0,1}"},
+    Choice_53ABD:{F53A:{@type:"bank_a"},F53B:{@type:"bank_b"},F53D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_54ABD:{F54A:{@type:"bank_a"},F54B:{@type:"bank_b"},F54D:{@type:"bank_d"},@occur:"{0,1}"},
+    F72:"6*35x{0,1}"
+    ,F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",
+    F20Z:"16x",F31C:"YYMMDD",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",
+    F32O:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F22R:"4!c",F22S:"4!c",F31M:"YYMMDD{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT754_753:{@name:"Notification of Advice of Payment/Acceptance/Negotiation",
+    F20:"16x",F21:"16x",
+    Choice_32AB:{F32A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"} ,F32B:{Currency:"3!a",Amount:"15d"}},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F71B:"6*35x{0,1}",F73:"6*35x{0,1}",
+    Choice_34AB:{F34A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},F34B:{Currency:"3!a",Amount:"15d"},@occur:"{0,1}"},
+    Choice_53ABD:{F53A:{@type:"bank_a"},F53B:{@type:"bank_b"},F53D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F72:"6*35x{0,1}",F77A:"20*35x{0,1}"
+    ,F20Z:"16x",F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",
+    F21A:"16x{0,1}",
+    F31C:"YYMMDD",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    F29D:"4*35x{0,1}",
+    F32O:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F31M:"YYMMDD{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT756_755:{@name:"Notification of Advice of Reimbursement or Payment Index",
+    F20:"16x",F21:"16x",
+    F32B:{Currency:"3!a",Amount:"15d"},
+    F33A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},
+    Choice_53ABD:{F53A:{@type:"bank_a"},F53B:{@type:"bank_b"},F53D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_54ABD:{F54A:{@type:"bank_a"},F54B:{@type:"bank_b"},F54D:{@type:"bank_d"},@occur:"{0,1}"},
+    F72:"6*35x{0,1}"
+    ,F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",F20Z:"16x",
+    F21A:"16x{0,1}",
+    F31C:"YYMMDD",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F32O:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT757_757:{@name:"Settlement of LC Index",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",
+    F20Z:"16x",F20:"16x",F21A:"16x{0,1}",
+    F31C:"YYMMDD",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F22R:"4!c",F31S:"YYMMDD{0,1}",
+    F32B:{Currency:"3!a",Amount:"15d"},
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F32G:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    Choice_33AB:{F33A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},F33B:{Currency:"3!a",Amount:"15d"},@occur:"{0,1}"},
+    F71M:"15*35x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F53C:"/34x{0,1}", F34V:{Currency:"3!a",Amount:"15d"},
+    F25A:"/34x{0,1}", F34W:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F36:"12d{0,1}",F34X:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT758_758:{@name:"Settlement of Export LC Index",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",
+    F20Z:"16x",F20:"16x",
+    F31C:"YYMMDD",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    F22R:"4!c",F31S:"YYMMDD{0,1}",
+    F32B:{Currency:"3!a",Amount:"15d"},
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F32G:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    Choice_33AB:{F33A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},F33B:{Currency:"3!a",Amount:"15d"},@occur:"{0,1}"},
+    F71M:"15*35x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F53C:"/34x{0,1}", F34Y:{Currency:"3!a",Amount:"15d"},
+    F25A:"/34x{0,1}", F34W:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F22N:"4!c{0,1}",
+    F36:"12d{0,1}",F34X:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+
+
+
+  MT760_420:{@name:"GT 420",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20:"16x",F12:"3!n",F20Z:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F79:"150*65x{0,1}",F72:"150*65x{0,1}",F72C:"6*35x{0,1}",
+    F50:"4*35x",F50M:"4*35x{0,1}",F12E:"4!c{0,1}",
+    F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x{0,1}",@occur:"{0,1}"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"}
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_761:{@name:"GT 761",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F23:"16x",F30:"YYMMDD{0,1}",
+    F40C:{Type:"4!a",Narrative:"35x{0,1}"},F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",
+    F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},F22D:"4!c",F22K:{TypeOfEvent:"4!c",Narrative:"35x{0,1}"},
+    F22E:"4!c",F22J:"4!c",F22B:"4!c{0,1}",F22L:"2!c{0,1}",F50:"4*35x",F50M:"4*35x{0,1}",F12E:"4!c{0,1}",
+    F39P:{Type:"4!c{'/'}",Currency:"3!a",Amount:"15d"},
+    F39C:"4*35x{0,1}",F23B:"4!c",F31L:"YYMMDD{0,1}",
+    F31S:"YYMMDD{0,1}",F35L:"4*35x{0,1}",
+    F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"},F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"},
+    F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F53C:"/34x{0,1}",F25A:"/34x{0,1}",
+    F59:{@type: "corp_"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F49:"7!x{0,1}",F26D:"30*65x",
+    F20E:{Code:"4!c",Reference:"/35x{0,1}",@occur:"{0,1}"},F31R:{Date1:"YYMMDD",Date2:"YYMMDD{0,1}",@occur:"{0,1}"},
+    F71F:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F37J:"12d{0,1}",F29A:"4*35x{0,1}",F29D:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_762:{@name:"GT 762",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F23:"16x",F30:"YYMMDD{0,1}",
+    F40C:{Type:"4!a",Narrative:"/35x{0,1}"},F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20Z:"16x",
+
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},F39P:{Type:"4!c{'/'}",Currency:"3!a",Amount:"15d"},
+    F23B:"4!c",F31L:"YYMMDD{0,1}",F31S:"YYMMDD{0,1}",
+    F50:"4*35x",F50M:"4*35x{0,1}",F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F49H:"50*65x{0,1}",F72C:"6*35x{0,1}",F29B:"4*35x{0,1}",F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"35x",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",
+    F22L:"2!c{0,1}",F22D:"4!c{0,1}",F22K:{TypeOfEvent:"4!c",Narrative:"35x{0,1}",@occur:"{0,1}"},F35L:"4*35x{0,1}"
+
+    ,F21E:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F21F:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F21R:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F36E:"YYMMDD{0,1}",F36L:"YYMMDD{0,1}",F36S:"YYMMDD{0,1}",F39C:"4*35x{0,1}",F22J:"35x{0,1}"
+    ,F49D:"35x{0,1}",F49M:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_784:{@name:"GT 784",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F23:"16x",F30:"YYMMDD{0,1}",
+    F40C:{Type:"4!a{'/'}",Narrative:"35x{0,1}"},F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+   ,F40A:"24x",F50:"4*35x",F50M:"4*35x{0,1}"
+   ,F33E:{Currency:"3!a",Amount:"15d"}
+   ,F39A:{Tolerance1:"2n'/'",Tolerance2:"2n",@occur:"{0,1}"}
+   ,F39B:"13x{0,1}",F31L:"YYMMDD",F35L:"4*35x{0,1}"
+   ,F23F:{Code:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+   ,F38A:"3n{0,1}",F31S:"YYMMDD{0,1}"
+   ,F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+   ,F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+   ,F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F25A:"/34x{0,1}"
+   ,F22P:{Code1:"4!c{0,1}",Code2:"4!c{0,1}",@occur:"{0,1}"}
+   ,F45C:"100*65x",F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x"}
+   ,F29D:"4*35x{0,1}",F50N:"4*35x{0,1}"
+   ,F29C:"35x{0,1}",F22K:{TypeOfGuarantee:"4!c",Narrative:"35x{0,1}",@occur:"{0,1}"}
+   ,F33F:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+   ,F31V:"YYMMDD{0,1}"
+   ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"}
+   ,Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"}
+   ,F49:"7!x{0,1}",F26D:"30*65x",F29A:"4*35x{0,1}",F72C:"6*35x{0,1}"
+    ,F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"}
+    ,F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"}
+    ,F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_785:{@name:"GT 785",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F23:"16x",F30:"YYMMDD{0,1}",
+    F40C:{Type:"4!a",Narrative:"/35x{0,1}"},F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,F40A:"24x",F50:"4*35x",F50M:"4*35x{0,1}"
+    ,F33E:{Currency:"3!a",Amount:"15d"}
+    ,F39A:{Tolerance1:"2n'/'",Tolerance2:"2n",@occur:"{0,1}"}
+    ,F39B:"13x{0,1}"
+    ,F31L:"YYMMDD",F35L:"4*35x{0,1}"
+    ,F23F:{Code:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F38A:"3n{0,1}",F31S:"YYMMDD{0,1}"
+    ,F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F25A:"/34x{0,1}"
+    ,F22P:{Code1:"4!c{0,1}",Code2:"4!c{0,1}",@occur:"{0,1}"}
+    ,F45C:"100*65x"
+    ,F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x"}
+    ,F29D:"4*35x{0,1}",F50N:"4*35x{0,1}",F29C:"35x{0,1}"
+    ,F22K:{TypeOfGuarantee:"4!c",Narrative:"35x{0,1}",@occur:"{0,1}"}
+    ,F33F:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F31V:"YYMMDD{0,1}"
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"}
+    ,Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"}
+    ,F49:"7!x{0,1}"
+    ,F26D:"30*65x",F29B:"4*35x{0,1}",F72C:"6*35x{0,1}"
+    ,F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"}
+    ,F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_745:{@name:"GT 745",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F23:"16x",F30:"YYMMDD{0,1}",
+    F40C:{Type:"4!a",Narrative:"/35x{0,1}"},F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21P:"16x{0,1}",F21A:"16x{0,1}",
+    F20Z:"16x",
+    F31C:"YYMMDD{0,1}",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_746:{@name:"GT 746",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F23:"16x",F30:"YYMMDD{0,1}",
+    F40C:{Type:"4!a",Narrative:"/35x{0,1}"},F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+
+  MT769_766:{@name:"GT 766",F20:"16x",F21:"16x",
+    F25:"35x{0,1}",F30:"YYMMDD{0,1}",
+    Choice_32BD:{F32B:{Currency:"3!a",Amount:"15d"},F32D:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},@occur:"{0,1}"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F39C:"4*35x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F71B:"6*35x{0,1}",
+    F72:"6*35x{0,1}",
+
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20Z:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_763:{@name:"GT 763",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F21:"16x",F23:"16x",
+    F30:"YYMMDD{0,1}",F26E:"2n{0,1}",
+    F31C:"YYMMDD{0,1}",
+    F77C:"150*65x",F72:"6*35x{0,1}",
+
+    F20Z:"16x",F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F23B:"4!c{0,1}",F31L:"YYMMDD{0,1}",F31S:"YYMMDD{0,1}",
+    F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"},
+    F24E:{Type:"4!c",AdditionalInformation:"35x{0,1}",@occur:"{0,1}"},
+    F22G:"4!c{0,1}",
+    F50B:"4*35x{0,1}",
+    F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_764:{@name:"GT 764",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F21:"16x",F23:"16x",
+    F30:"YYMMDD{0,1}",F26E:"2n{0,1}",
+    F31C:"YYMMDD{0,1}",
+    F77C:"150*65x",F72:"6*35x{0,1}",
+
+    F20Z:"16x",F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F23B:"4!c{0,1}",F31L:"YYMMDD{0,1}",F31S:"YYMMDD{0,1}",
+    F49H:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_421:{@name:"GT 421",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F21:"16x{0,1}",F26E:"2n{0,1}",
+    F30:"YYMMDD{0,1}",F31C:"YYMMDD{0,1}",
+    F77C:"150*65x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_786:{@name:"GT 786",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F21:"16x",F23:"16x",
+    F30:"YYMMDD{0,1}",F26E:"2n{0,1}",
+    F31C:"YYMMDD{0,1}",
+    F77C:"150*65x",F72:"6*35x{0,1}",
+
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"}
+    ,F31L:"YYMMDD{0,1}",F35L:"4*35x{0,1}"
+    ,F23F:{Code:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F38A:"3n{0,1}",F31S:"YYMMDD{0,1}"
+    ,F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F29A:"4*35x{0,1}",F72C:"6*35x{0,1}"
+    ,F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"}
+    ,F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_787:{@name:"GT 787",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F21:"16x",F23:"16x",
+    F30:"YYMMDD{0,1}",F26E:"2n{0,1}",
+    F31C:"YYMMDD{0,1}",
+    F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"}
+    ,F31L:"YYMMDD{0,1}",F35L:"4*35x{0,1}"
+    ,F23F:{Code:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F38A:"3n{0,1}",F31S:"YYMMDD{0,1}"
+    ,F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F29B:"4*35x{0,1}",F72C:"6*35x{0,1}"
+    ,F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"}
+    ,F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_743:{@name:"GT 743",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F21:"16x",F23:"16x",
+    F30:"YYMMDD{0,1}",F26E:"2n{0,1}",
+    F31C:"YYMMDD{0,1}",
+    F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"}
+    ,F21P:"16x{0,1}",F20Z:"16x",F21A:"16x{0,1}",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_744:{@name:"GT 744",
+    F27:{Number:"1!n{'/'}",Total:"1!n"},
+    F20:"16x",F21:"16x",F23:"16x",
+    F30:"YYMMDD{0,1}",F26E:"2n{0,1}",
+    F31C:"YYMMDD{0,1}",
+    F77C:"150*65x",F72:"6*35x{0,1}",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT777_777:{@name:"Query to extend or pay of Guarantee",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x{0,1}",F20:"16x",
+    F20Z:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD",
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F31L:"YYMMDD{0,1}",
+    F49J:"50*65x{0,1}",F78B:"50*65x{0,1}",
+    F31T:"YYMMDD",
+    F29B:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+
+  MT778_778:{@name:"Response to extend or pay of Guarantee",
+    F12:"3!n"
+    ,F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x{0,1}",F20:"16x",F20Z:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD",
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F31L:"YYMMDD{0,1}",F22M:"4!c",
+    F53C:"/34x{0,1}",F25A:"/34x{0,1}",F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+
+  MT779_779:{F20:"16x",F12:"3!n",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20Z:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD",F39D:{Currency:"3!a",Amount:"15d"},
+    F49J:"50*65x{0,1}",F78B:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT779_497:{F20:"16x",F12:"3!n",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20Z:"16x{0,1}",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD{0,1}",F25:{Type:"4a{'/'}",Account:"16x"},
+    F32A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F35B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F49J:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT781_781:{@name:"Settlement of Claim for payment under Guarantee",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x{0,1}",
+    F20Z:"16x",F20:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F22R:"4!c",
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34K:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34L:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34M:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F71B:"6*35x{0,1}",
+    F34S:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34T:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F22S:"4!c{0,1}",F31J:"YYMMDD{0,1}",F31K:"YYMMDD{0,1}",
+    F37J:"12d{0,1}",
+    F34U:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F53C:"/34x{0,1}",F34V:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F25A:"/34x{0,1}",F34W:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F30:"YYMMDD{0,1}",
+    F36:"12d{0,1}",F34X:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F78B:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT783_783:{@name:"Request for Guarantee release",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x",F20:"16x",
+    F20Z:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F22N:"4!c",F49K:"6*35x{0,1}",F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+
+  MT790_793:{@name:"Notification of Settlement or charges detail",
+    F20:"16x",F21:"16x",F25:"35x",
+    Choice_32CD:{F32C:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},F32D:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"}},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F71B:"6*35x",F72:"6*35x{0,1}"
+    ,F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",F21A:"16x",
+    F20Z:"16x",F31C:"YYMMDD{0,1}",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT791_794:{@name:"Request for Settlement of charges index",
+    F20:"16x",F21:"16x",
+    F32B:{Currency:"3!a",Amount:"15d"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F71B:"6*35x",F72:"6*35x{0,1}",
+    F20Z:"16x",F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x",F21A:"16x",
+    F31C:"YYMMDD{0,1}",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F32B_2:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F72C:"6*35x{0,1}",
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+
+  MT799_788:{F20:"16x",F21:"16x{0,1}",F79:"35*50x",
+    F20Z:"16x",F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21A:"16x",F21R:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F29A:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT799_789:{F20:"16x",F21:"16x{0,1}",F79:"35*50x",
+    F20Z:"16x",F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21A:"16x",F21R:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    F23X:{Code:"4!c",Narrative:"/65x{0,1}",@occur:"{0,1}"},
+    F29S:{Code:"4!c",Narrative:"/35x{0,1}",@occur:"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MTDOC_DOC:{
+    F20Z:"35x",F12:"3!c"
+    ,FATT:"'FATT/'64x{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  }
+}

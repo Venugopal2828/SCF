@@ -1,0 +1,41 @@
+{"root":"SYSM_GAPI_PTCL","_type_":9732,"SYSM_GAPI_PTCL":{
+  "C_ID":"PTMP.MTAA","C_NAME":"PTMP.MTAA",
+  "C_DESC":"SWIFT MT between MP and ESP, send out Ixxx, receive Oxxx",
+  "C_TYPE_F":"9733",
+  "T_CTX_F":{
+    "send_fd":"/tmp/gapi/mpout", "send_name":"*.txt",
+    "recv_fd":"/tmp/gapi/mpin", "recv_name":"*.txt",
+    "fatt":"PTMP.FMAA",
+    "_sys_converter_ctx_empty":{
+      "laukey.send":"11111111111111111111111111111111",
+      "laukey.recv":"00000000000000000000000000000000"
+    }
+  },
+  "C_TYPE_Q":"com.cs.esp.gapi.csmq.MqPooledProtocol",
+  "T_CTX_Q":{"HOST":"10.39.104.40","maxActive":"5","idlePeriod":"500000",
+    "QueueManagerName":"QMEE","SvrConnection-Channel":"DEV.APP.SVRCONN",
+    "Receive.QueueName":"DEV.QUEUE.1",
+    "Send.QueueName":"DEV.QUEUE.2",
+    "Error.Queue":"Q.ERROR",
+    "Listener.TCP.Port":"10104","Coded.Character.Set.ID":"1208"
+  },
+  "C_TYPE_MQ":"9737",
+  "T_CTX_MQ":{"HOST":"10.39.107.157","Listener.TCP.Port":"1414","userID":"administrator","password":"Swift2018",
+  "QueueManagerName":"MQHA","SvrConnection-Channel":"CUSTOM.CLNTCONN","Coded.Character.Set.ID":"1381"
+  ,"Receive.QueueName":"MQSAFROMSAA"
+  ,"Send.QueueName":"TOSAA", "applicationIdData": "TESTBEN"
+  ,
+    "Error.Queue":"Q.ERROR"
+  },
+  "C_TYPE":"9737","T_CTX":{"HOST":"10.39.103.164"
+  ,"QueueManagerName":"QM_RAK","SvrConnection-Channel":"SYSTEM.DEF.SVRCONN"
+  ,"Receive.QueueName":"QO.MT.QMTS_BBVA4151"
+  ,"Send.QueueName":"QI.MT.QMTS_BBVA4151"
+  ,"applicationIdData":"REDEXT65CSWIFT"
+  ,"password":"QWEasd123","userID":"administrator","Error.Queue":"SWIFT_ERR"
+  ,"Listener.TCP.Port":"1414","Coded.Character.Set.ID":"1381"
+  },
+  "IS_SYNC":"1","C_GROUP":"BZND13020400033",
+  "C_CONVERTER":"com.cs.esp.swift.convert.PseudoMtConvert",
+  "C_EXT_NAME":"SAA"}
+}

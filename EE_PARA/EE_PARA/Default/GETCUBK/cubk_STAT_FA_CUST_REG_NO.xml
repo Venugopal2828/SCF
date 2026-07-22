@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>STAT</module-name>
+        <cubk-mapping-name>FA_CUST_REG_NO</cubk-mapping-name>
+        <select-type>U</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="COUNT" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">TEMP_CHAR1</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_15" TYPE="TBL_FLD">T0.FA_CUST_REG_NO</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_CUST_REG_NO</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> &lt;&gt; '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

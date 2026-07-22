@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions expressionLanguage="http://www.w3.org/1999/XPath"
+    targetNamespace="http://localhost/test"
+    typeLanguage="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+    xmlns:funcflow="http://localhost/bpmn"
+    xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+    xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <process id="BG00003276_1_CSBANK" isExecutable="true" name="IPLC_ISSUE_LC">
+        <startEvent id="id2be38804363b457e8c4f3dd2518eb139" name="startEvent IPLC_ISSUE_LC"/>
+        <userTask funcflow:candidateGroups="1000000001"
+            funcflow:candidateUsers="CSDOCOP" id="id6b53d6b7aab64aa78ee8567aea15b4d8">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300272</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030702010</C_FUNC_ID>
+                    <C_BG_ID>BG00003276</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_FUNC_DESC>Register Letter of Credit</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="idc4ab677c50d8463fb846c1b30fcc475c"
+            sourceRef="id2be38804363b457e8c4f3dd2518eb139" targetRef="id6b53d6b7aab64aa78ee8567aea15b4d8"/>
+        <userTask funcflow:candidateGroups="1000000001"
+            funcflow:candidateUsers="CSDOCOP" id="idc854771d866549c589cd782285030fe4">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030702040</C_FUNC_ID>
+                    <C_BG_ID>BG00003276</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_FUNC_DESC>Fix Pending</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id8b412f3f8c354407838cceca26e6ab20"
+            sourceRef="id6b53d6b7aab64aa78ee8567aea15b4d8" targetRef="idc854771d866549c589cd782285030fe4">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000001"
+            funcflow:candidateUsers="CSDOCOP" id="idcf4b5b62881b4d89808749fa1ba49afd">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030702041</C_FUNC_ID>
+                    <C_BG_ID>BG00003276</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>Release Trx</C_STEP_NAME>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id6460c5a117a147e0b9e724e9b201d6e4"
+            sourceRef="id6b53d6b7aab64aa78ee8567aea15b4d8" targetRef="idcf4b5b62881b4d89808749fa1ba49afd">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P' && APPL_ID == 'SELLER'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id51e9d3a87c4a4776bc6fd35812f68b4b"
+            sourceRef="idc854771d866549c589cd782285030fe4" targetRef="idcf4b5b62881b4d89808749fa1ba49afd">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <endEvent id="ida2db23635c5e45608acabf2bd1eed234"/>
+        <sequenceFlow id="id43994280d406445a9b53276c09bf07e5"
+            sourceRef="idcf4b5b62881b4d89808749fa1ba49afd" targetRef="ida2db23635c5e45608acabf2bd1eed234">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M'}]]></conditionExpression>
+        </sequenceFlow>
+    </process>
+</definitions>

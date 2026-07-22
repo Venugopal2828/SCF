@@ -1,0 +1,31 @@
+{
+  "id": "WF0000023",
+  "type": "sql",
+  "pub": "true",
+  "configuration": {
+    "ui": {
+      "id": "WF0000023",
+      "display": "chart.bar",
+      "title": "EE Revenue Analytics Widget",
+      "desc": "Show all EE Revenue Analytics Widget here.",
+      "tooltip": "{\"text\":\"{b}<br/>Value : {c}\",\"confine\":true,\"trigger\":\"item\"}",
+	  
+	  "renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"EE Revenue Analytics Widget\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+					"line": "{\"xAxis\":{\"name\":\"EE Revenue Analytics Widget\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"EE Revenue Analytics Widget\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"EE Revenue Analytics Widget\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+     
+
+    },
+    	"data": {
+      "sql": "SELECT C_UNIT_CODE,METRIC_LABEL,VL FROM (SELECT C_UNIT_CODE,'Daily' AS METRIC_LABEL,ROUND(SUM(FA_PAID_INT_SUM)) AS VL FROM EXIMTRX.FAEF_MASTER WHERE C_TRX_STATUS='M' AND FA_PAID_INT_SUM IS NOT NULL AND FA_PMT_DT>=TRUNC(SYSDATE)-1 AND FA_PMT_DT<TRUNC(SYSDATE) GROUP BY C_UNIT_CODE UNION ALL SELECT C_UNIT_CODE,'Weekly' AS METRIC_LABEL,ROUND(SUM(FA_PAID_INT_SUM)) AS VL FROM EXIMTRX.FAEF_MASTER WHERE C_TRX_STATUS='M' AND FA_PAID_INT_SUM IS NOT NULL AND FA_PMT_DT>=TRUNC(SYSDATE,'IW')-7 AND FA_PMT_DT<TRUNC(SYSDATE,'IW') GROUP BY C_UNIT_CODE UNION ALL SELECT C_UNIT_CODE,'Monthly' AS METRIC_LABEL,ROUND(SUM(FA_PAID_INT_SUM)) AS VL FROM EXIMTRX.FAEF_MASTER WHERE C_TRX_STATUS='M' AND FA_PAID_INT_SUM IS NOT NULL AND FA_PMT_DT>=ADD_MONTHS(TRUNC(SYSDATE,'MM'),-1) AND FA_PMT_DT<TRUNC(SYSDATE,'MM') GROUP BY C_UNIT_CODE UNION ALL SELECT C_UNIT_CODE,'Quarterly' AS METRIC_LABEL,ROUND(SUM(FA_PAID_INT_SUM)) AS VL FROM EXIMTRX.FAEF_MASTER WHERE C_TRX_STATUS='M' AND FA_PAID_INT_SUM IS NOT NULL AND FA_PMT_DT>=ADD_MONTHS(TRUNC(SYSDATE,'Q'),-3) AND FA_PMT_DT<TRUNC(SYSDATE,'Q') GROUP BY C_UNIT_CODE UNION ALL SELECT C_UNIT_CODE,'Yearly' AS METRIC_LABEL,ROUND(SUM(FA_PAID_INT_SUM)) AS VL FROM EXIMTRX.FAEF_MASTER WHERE C_TRX_STATUS='M' AND FA_PAID_INT_SUM IS NOT NULL AND FA_PMT_DT>=ADD_MONTHS(TRUNC(SYSDATE,'YYYY'),-12) AND FA_PMT_DT<TRUNC(SYSDATE,'YYYY') GROUP BY C_UNIT_CODE) ORDER BY CASE METRIC_LABEL WHEN 'Daily' THEN 1 WHEN 'Weekly' THEN 2 WHEN 'Monthly' THEN 3 WHEN 'Quarterly' THEN 4 WHEN 'Yearly' THEN 5 END",
+      "dataSetField": "C_UNIT_CODE",
+      "nameField": "METRIC_LABEL",
+      "valueField": "VL" 
+    }
+  }
+}

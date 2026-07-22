@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FAEF_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>FA_OTHER_FACTOR</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <FA_IF_ID ALIAS="T0" DESC="FA_IF_ID" DT="12" TYPE="F">FA_OTHER_IF</FA_IF_ID>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_IF_NM ALIAS="T0" DBFUNC="" DESC="FA_IF_NM" DT="12" HIDDEN="F" TYPE="F">FA_IF_NM</FA_IF_NM>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">C_MAIN_REF</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.FA_SEL_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.FA_BUSI_TYPE</SQL>
+            <SQL TYPE="SQL"> = 'EF'</SQL>
+        </condition>
+        <condition seq="2">
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.FA_SEL_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_7" TYPE="TBL_FLD">T0.FA_IF_ID</SQL>
+            <SQL TYPE="SQL"> &lt;&gt; '</SQL>
+            <SQL TYPE="FLD">FA_EF_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.FA_BUSI_TYPE</SQL>
+            <SQL TYPE="SQL"> = 'EF'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

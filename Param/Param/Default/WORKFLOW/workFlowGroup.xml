@@ -1,0 +1,87 @@
+<WORKFLOWGROUPS STATUSFLD="C2A_STATUS">
+	<PRODUCT ID="P08071500000" DESC="Letters of Credit">
+		<GROUP DESC="Issue LC Flows" FLDCRULE="">
+			<WORKFLOW NAME="IMLC_ApplyLC" DESC="" DEFAULT="T"/>
+		</GROUP>
+		<GROUP DESC="Amendment LC Flows" FLDCRULE="">
+			<WORKFLOW NAME="IMLC_ApplyLCAmd_BankDec" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="IMLC_ApplyLCAmd_BeneDec" DESC="" DEFAULT=""/>
+		</GROUP>
+		<GROUP DESC="Document Flows" FLDCRULE="">
+			<WORKFLOW NAME="IMLC_DocCompliant" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="IMLC_DocDiscr" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="IMLC_DocDiscrRej" DESC="" DEFAULT=""/>
+		</GROUP>
+		<GROUP DESC="Payment Flows" FLDCRULE="">
+			<WORKFLOW NAME="IMLC_PayInstr" DESC="" DEFAULT="T"/>
+		</GROUP>
+	</PRODUCT>
+	<PRODUCT ID="P08071500001" DESC="Import Collections">
+		<GROUP DESC="Collection Flows" FLDCRULE="SSSS:CURRNT_STATUS">
+			<WORKFLOW NAME="IMCO_ApplyForm4" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="IMCO_ApplyForm4_CEReject" DESC="" DEFAULT=""/>
+			<WORKFLOW NAME="IMCO_ApplyForm4_BankReject" DESC="" DEFAULT=""/>
+			<WORKFLOW NAME="IMCO_ReqForAcceptance" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="IMCO_ReqForAcceptance_CEReject" DESC="" DEFAULT=""/>
+			<WORKFLOW NAME="IMCO_PayInstr" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="IMCO_PayInstr_CEReject" DESC="" DEFAULT=""/>
+		</GROUP>
+	</PRODUCT>
+	<PRODUCT ID="P08071500003" DESC="Export Letters of Credit">
+		<GROUP DESC="Issue LC Flows" FLDCRULE="">
+			<WORKFLOW NAME="EXLC_AdviseLC" DESC="" DEFAULT=""/>
+		</GROUP>
+		<GROUP DESC="Amendment LC Flows" FLDCRULE="">
+			<WORKFLOW NAME="EXLC_Amendment" DESC="" DEFAULT=""/>
+			<WORKFLOW NAME="EXLC_AmdDetrimentalAccepted" DESC="" DEFAULT=""/>
+			<WORKFLOW NAME="EXLC_AmdDetrimentalRejected" DESC="" DEFAULT=""/>
+		</GROUP>
+		<GROUP DESC="Document Flows" FLDCRULE="">
+			<WORKFLOW NAME="EXLC_DocCompliant" DESC="" DEFAULT=""/>
+			<WORKFLOW NAME="EXLC_DOCDisc" DESC="" DEFAULT=""/>
+		</GROUP>
+		<GROUP DESC="Payment Flows" FLDCRULE="">
+			<WORKFLOW NAME="EXLC_Payment" DESC="" DEFAULT="T"/>
+		</GROUP>
+	</PRODUCT>
+	<PRODUCT ID="P08071500004" DESC="Export Collections">
+		<GROUP DESC="Issue Collection Flows" FLDCRULE="SSSS:CURRNT_STATUS">
+			<WORKFLOW NAME="EXCO_ApplyExportColl" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="EXCO_ApplyColl_CEReject" DESC="" DEFAULT=""/>
+			<!--WORKFLOW NAME="EXCO_EEInitiatedColl" DESC="" DEFAULT=""/-->
+		</GROUP>
+		<GROUP DESC="Amendment Collection Flows" FLDCRULE="SSSS:CURRNT_STATUS">
+			<WORKFLOW NAME="EXCO_ApplyExportCollAmd" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="EXCO_ApplyExportCollAmd_CEReject" DESC="" DEFAULT=""/>
+			<!--WORKFLOW NAME="EXCO_EEInitiatedAmd" DESC="" DEFAULT=""/-->
+		</GROUP>
+		<GROUP DESC="Document Payment Flows" FLDCRULE="SSSS:CURRNT_STATUS">
+			<WORKFLOW NAME="EXCO_DiscountRequest" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="EXCO_DiscountRequest_CEReject" DESC="" DEFAULT=""/>
+		</GROUP>
+	</PRODUCT>
+	<PRODUCT ID="P08071500005" DESC="Inward Guarantees">
+		<GROUP DESC="Payment Flows" FLDCRULE="SSSS:CURRNT_STATUS">
+			<WORKFLOW NAME="IWGT_ClmOthInstr" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="IWGT_ClmOthInstr_CEReject" DESC="" DEFAULT=""/>
+		</GROUP>
+	</PRODUCT>
+	<PRODUCT ID="P08071500002" DESC="Outward Guarantees">
+		<GROUP DESC="Issue Guarantee Flows" FLDCRULE="SSSS:CURRNT_STATUS">
+			<WORKFLOW NAME="OWGT_ApplyGuarantee" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="OWGT_ApplyGuarantee_CEReject" DESC="" DEFAULT=""/>
+			<WORKFLOW NAME="OWGT_ApplyGuarantee_BankReject" DESC="" DEFAULT=""/>
+			<!--WORKFLOW NAME="OWGT_EEInitiatedGuarantee" DESC="" DEFAULT=""/-->
+		</GROUP>
+		<GROUP DESC="Amendment Guarantee Flows" FLDCRULE="SSSS:CURRNT_STATUS">
+			<WORKFLOW NAME="OWGT_ApplyAmdGtee" DESC="" DEFAULT="T"/>
+			<WORKFLOW NAME="OWGT_ApplyAmdGtee_CEReject" DESC="" DEFAULT=""/>
+			<WORKFLOW NAME="OWGT_ApplyAmdGtee_BankReject" DESC="" DEFAULT=""/>
+		</GROUP>
+	</PRODUCT>
+	<PRODUCT ID="P19080800001" DESC="Invoices Maintenance">
+		<GROUP DESC="Invoice Capture Flows" FLDCRULE="">
+			<WORKFLOW NAME="FAEF_InvCapture" DESC="" DEFAULT="T"/>
+		</GROUP>
+	</PRODUCT>
+</WORKFLOWGROUPS>

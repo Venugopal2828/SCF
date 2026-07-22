@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>IPLC</module>
+    <name>IssueLCAmdFrCE_toMaster</name>
+    <desc>IssueLCAmdFrCE_toMaster</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.IPLC_MASTER</table-name>
+        <table-desc>IPLC_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <ADDIT_CONDITION fv_type="F" mf="F" oper="=">TEMP_ADDIT_CONDITION</ADDIT_CONDITION>
+        <ADD_AMT_COVRD fv_type="F" mf="F" oper="=">TEMP_ADDIT_COV_AMT</ADD_AMT_COVRD>
+        <AMT_SPEC fv_type="F" mf="F" oper="=">TEMP_AMT_SPEC</AMT_SPEC>
+        <BENE_AC_NO fv_type="F" mf="F" oper="=">TEMP_BENE_ACNO</BENE_AC_NO>
+        <BENE_AC_OFF_CODE fv_type="F" mf="F" oper="=">TEMP_BENE_AC_OFCD</BENE_AC_OFF_CODE>
+        <BENE_ADD1 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD1</BENE_ADD1>
+        <BENE_ADD2 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD2</BENE_ADD2>
+        <BENE_ADD3 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD3</BENE_ADD3>
+        <BENE_CORR_MED fv_type="F" mf="F" oper="=">TEMP_BENE_CORR_MED</BENE_CORR_MED>
+        <BENE_EMAIL fv_type="F" mf="F" oper="=">TEMP_BENE_EMAIL</BENE_EMAIL>
+        <BENE_FAX fv_type="F" mf="F" oper="=">TEMP_BENE_FAX</BENE_FAX>
+        <BENE_ID fv_type="F" mf="F" oper="=">TEMP_BENE_ID</BENE_ID>
+        <BENE_LANG fv_type="F" mf="F" oper="=">TEMP_BENE_LANG</BENE_LANG>
+        <BENE_MAIL_ADD fv_type="F" mf="F" oper="=">TEMP_BENE_MAIL_ADD</BENE_MAIL_ADD>
+        <BENE_NM fv_type="F" mf="F" oper="=">TEMP_BENE_NM</BENE_NM>
+        <BENE_NOTES fv_type="F" mf="F" oper="=">TEMP_BENE_NOTES</BENE_NOTES>
+        <BENE_REF fv_type="F" mf="F" oper="=">TEMP_BENE_REF</BENE_REF>
+        <BENE_TLX fv_type="F" mf="F" oper="=">TEMP_BENE_TLX</BENE_TLX>
+        <DEST_PLACE fv_type="F" mf="F" oper="=">TEMP_DEST_PLACE</DEST_PLACE>
+        <DEST_PORT fv_type="F" mf="F" oper="=">TEMP_DEST_PORT</DEST_PORT>
+        <DOC_REQ fv_type="F" mf="F" oper="=">TEMP_DOC_REQ</DOC_REQ>
+        <EXPIRY_DT fv_type="F" mf="F" oper="=">TEMP_EXPIRY_DT</EXPIRY_DT>
+        <EXPIRY_PLC fv_type="F" mf="F" oper="=">TEMP_EXPIRY_PLC_NEW</EXPIRY_PLC>
+        <EXPIRY_PLC_NARR fv_type="F" mf="F" oper="=">TEMP_EXPIRY_PLC_NARR</EXPIRY_PLC_NARR>
+        <GOODS_DESC fv_type="F" mf="F" oper="=">TEMP_GOODS_DESC</GOODS_DESC>
+        <LC_AMT fv_type="F" mf="F" oper="=">TEMP_LC_AMT</LC_AMT>
+        <LC_BAL fv_type="F" mf="F" oper="=">TEMP_LC_BAL</LC_BAL>
+        <LOAD_PLACE fv_type="F" mf="F" oper="=">TEMP_LOAD_PLACE</LOAD_PLACE>
+        <LOAD_PORT fv_type="F" mf="F" oper="=">TEMP_LOAD_PORT</LOAD_PORT>
+        <LTST_SHIP_DT fv_type="F" mf="F" oper="=">TEMP_LTST_SHIP_DT</LTST_SHIP_DT>
+        <NEG_TOL fv_type="F" mf="F" oper="=">TEMP_NEG_TOL</NEG_TOL>
+        <PARTIAL_SHIP fv_type="F" mf="F" oper="=">TEMP_PARTIAL_SHIP</PARTIAL_SHIP>
+        <PARTIAL_SHIP_NARR fv_type="F" mf="F" oper="=">TEMP_PART_SHIP_NA</PARTIAL_SHIP_NARR>
+        <POS_TOL fv_type="F" mf="F" oper="=">TEMP_POS_TOL</POS_TOL>
+        <SHIP_PRD fv_type="F" mf="F" oper="=">TEMP_SHIP_PRD</SHIP_PRD>
+        <TNSHIP fv_type="F" mf="F" oper="=">TEMP_TNSHIP</TNSHIP>
+        <TNSHIP_NARR fv_type="F" mf="F" oper="=">TEMP_TNSHIP_NARR</TNSHIP_NARR>
+    </mapping>
+</root>

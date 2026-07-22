@@ -1,0 +1,16 @@
+{
+	"id": "customer_insights",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "customer_insights",
+			"display": "chart.bar",
+			"title": "Customer Insights Widget",
+			"desc": "Highlight top-performing anchor customers and suppliers by invoice submission volume and financed values."
+		},
+		"data": {
+			"sql": "SELECT C_CUST_ID as \"Customer_ID\", COUNT(*) as \"Total_Count\", SUM(Y_AMT) as \"Financed_Value\" FROM %EXIMTRX%.IPLC_MASTER GROUP BY C_CUST_ID ORDER BY \"Financed_Value\" DESC"
+		}
+	}
+}

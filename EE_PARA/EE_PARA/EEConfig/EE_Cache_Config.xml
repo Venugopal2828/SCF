@@ -1,0 +1,892 @@
+<ehcache name="ee_cachemngr" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EE_Cache_Config.xsd">
+   <diskStore path="java.io.tmpdir/ee_cachemngr"/>
+    <cacheManagerEventListenerFactory class="" properties=""/>
+    <defaultCache
+            maxElementsInMemory="100"
+            eternal="false"
+            timeToIdleSeconds="600"
+            timeToLiveSeconds="600"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            />
+    <!--
+    web and ap cache here
+    -->
+    <cache name="CACHE_WEB_AP_FUNC"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Function Information
+    </cache>
+    <cache name="CACHE_WEB_AP_AMTFMT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Amount Format
+    </cache>
+    <cache name="CACHE_WEB_AP_LOCKINF"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Lock Function Information
+    </cache>
+    <cache name="CACHE_WEB_AP_GETCUBK"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Get CUBK
+    </cache>
+    <cache name="CACHE_WEB_AP_HOLIDAY"
+           maxElementsInMemory="10"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Holiday
+    </cache>
+    <cache name="CACHE_WEB_AP_SCRN"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Screens
+    </cache>
+    <!--@ref EE-7699 @author Amelia @date 2014-11-06 add_s  -->
+    <cache name="CACHE_INTF_FILE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Interface Config File
+    </cache>
+    <!--@ref EE-7699 @author Amelia @date 2014-11-06 add_e  -->
+    <!--
+    web cache here
+    -->
+	 <cache name="CACHE_SYST_CHECKFLDLEN"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Check Field's Length
+    </cache>
+	<cache name="CACHE_SYST_SYSPARAM"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">System Variables
+    </cache>
+    <cache name="CACHE_WEB_CATALOG"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Catalog
+    </cache>
+     <cache name="CACHE_WEB_CONSTANT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Unit Constant
+    </cache>
+    <cache name="CACHE_WEB_FLDC"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Field Conversion
+    </cache>
+    <cache name="CACHE_WEB_FUNCGRP"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Function Group Information
+    </cache>
+    <cache name="CACHE_WEB_FUNCGRP_ROOT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Function Group Root
+    </cache>
+    <cache name="CACHE_WEB_FUNC_ROOT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Function Root
+    </cache>
+    <cache name="CACHE_WEB_INVC"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Invoice
+    </cache>
+    <cache name="CACHE_WEB_EXCHANGERATE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600" 
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Exchange Rate
+    </cache>
+<cache name="CACHE_WEB_BUSIUNITINFO"
+          maxElementsInMemory="100"
+          eternal="false"
+          timeToIdleSeconds="600"
+          timeToLiveSeconds="600"
+          overflowToDisk="false">Business Unit Information
+   </cache>
+   <cache name="CACHE_WEB_ORGBUSIUNITINFO"
+          maxElementsInMemory="100"
+          eternal="false"
+          timeToIdleSeconds="600"
+          timeToLiveSeconds="600"
+          overflowToDisk="false">Original Business Unit Information
+   </cache>
+   <cache name="CACHE_WEB_AP_CCY"
+          maxElementsInMemory="100"
+          eternal="false"
+          timeToIdleSeconds="600"
+          timeToLiveSeconds="600"
+          overflowToDisk="false">System Currency
+   </cache>
+   <cache name="CACHE_WEB_FUNCLIST"
+          maxElementsInMemory="100"
+          eternal="false"
+          timeToIdleSeconds="600"
+          timeToLiveSeconds="600"
+          overflowToDisk="false">Function List
+   </cache>
+    <cache name="CACHE_WEB_MODULE_ROOT"
+          maxElementsInMemory="100"
+          eternal="false"
+          timeToIdleSeconds="600"
+          timeToLiveSeconds="600"
+          overflowToDisk="false">Module
+   </cache>
+   <cache name="CACHE_WEB_USER_GROUPIDS"
+          maxElementsInMemory="100"
+          eternal="false"
+          timeToIdleSeconds="600"
+          timeToLiveSeconds="600"
+          overflowToDisk="false">User Group Id
+   </cache>
+    <!--
+    AP cache here
+    -->
+     <cache name="CACHE_AP_AUTH"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Authorization
+    </cache>
+    <cache name="CACHE_AP_JS"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP Server Script
+    </cache>
+     <cache name="CACHE_AP_FORM"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Form
+    </cache>
+    <!-- /*@ref EE-6013 @date 2013-11-18 @author yaoyao _S*/ -->
+   <cache name="CACHE_WEB_FORM_RULE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Form rule web
+    </cache>
+    <!-- /*@ref EE-6013 @date 2013-11-18 @author yaoyao _S*/ -->
+    <cache name="CACHE_AP_FORM_JSP"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Form JSP
+    </cache>
+    <cache name="CACHE_AP_FUNCATTR"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Function Attributes
+    </cache>
+     <cache name="CACHE_AP_SVRSIDE_JS"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Server Side Script
+    </cache>
+    <cache name="CACHE_AP_SWIFT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Swift
+    </cache>
+    <cache name="CACHE_AP_TRFT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Transfer to
+    </cache>
+    <cache name="CACHE_AP_VCH"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Voucher
+    </cache>
+    <cache name="CACHE_WEB_AP_LAYOUT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Table Structures
+    </cache>
+    <cache name="CACHE_AP_GAPI"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Gapi
+    </cache>
+     <cache name="CACHE_AP_GAPI_JS"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Gapi Script
+    </cache>
+    <cache name="CACHE_AP_AUTH_ROOT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Authorization Root
+    </cache>
+    <cache name="CACHE_AP_AUTH_RULE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Authorization Rule
+    </cache>
+    <cache name="CACHE_AP_AUTH_FUNC"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Authorization Functions
+    </cache>
+    <cache name="CACHE_AP_UNIT_AUTH"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Authorization by Unit
+    </cache>
+    <!-- EE-6667 churchill 20121114 update begin -->
+    <!--
+    <cache name="CACHE_SYST_EESYS"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">EE System Parameters
+    </cache>
+    -->
+    <cache name="CACHE_EESYS"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">EE System Parameters
+    </cache>
+    <!-- EE-6667 churchill 20121114 update end -->
+    <cache name="CACHE_AP_MSG_BROKER"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">EE STP Parameters
+    </cache>
+    <cache name="CACHE_EE_CONFIG"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">EE Config Cache
+    </cache>
+    	<cache name="CACHE_DO_RULE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">O2M_RULE_DEF
+    </cache>
+    <cache name="CACHE_DO_CONFIG"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">CACHE_DO_CONFIG
+    </cache>
+	<cache name="CACHE_DO_ID"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">CACHE_DO_ID
+    </cache>
+     <cache name="CACHE_UPLOAD_CONFIGURE"
+           maxElementsInMemory="200"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">import Data from Upload File
+     </cache>
+     <cache name="CACHE_WEB_AP_GETDATA"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">CACHE_WEB_AP_GETDATA
+    </cache>
+    <cache name="CACHE_BUSINESSUNIT_TIMEZONE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Timezone setting of business units
+    </cache>
+     <cache name="CACHE_EDI_JS"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">EDI Server Side JS
+    </cache>
+     <cache name="CACHE_EDI_FORM"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">EDI Form
+    </cache>
+    <cache name="CACHE_EDI_XSL"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">EDI Translater Rule
+    </cache>
+    <cache name="CACHE_TRANSFER_TO"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Transfer To Rule
+    </cache>
+    <!--
+    Charge cache here
+    -->
+    <cache name="CACHE_CHARGE_PRODUCT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">charge Product
+    </cache>
+    <cache name="CACHE_CHARGE_COMMISSION"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">charge Commission
+    </cache>
+    <cache name="CACHE_CHARGE_GLAC"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">charge GL account
+    </cache>
+    <cache name="CACHE_CHARGE_VAT_GLAC"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Charge VAT GL account
+    </cache>
+    <cache name="CACHE_CHARGE_VAT_RATE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Charge VAT rate
+    </cache>
+    <cache name="CACHE_CHARGE_AGREEMENT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Charge agreement
+    </cache>
+    <cache name="CACHE_CHARGE_AGREEMENT_ASSIGN"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+           overflowToDisk="false">Charge agreement assign found
+    </cache>
+    <cache name="CACHE_CHARGE_AGREEMENT_ASSIGN_NONE"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+           overflowToDisk="false">Charge agreement assign not found
+    </cache>
+    <cache name="CACHE_CHARGE_RANGE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Charge range
+    </cache>
+    <cache name="CACHE_CHARGE_RANGE_NONE"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Charge range not found
+    </cache>
+ 	<cache name="CACHE_PAYMENT_WEB"
+           maxElementsInMemory="20"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Web Payment config
+    </cache>
+    <cache name="CACHE_PAYMENT_AP"
+           maxElementsInMemory="20"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP Payment config
+    </cache>
+    <cache name="CACHE_DO_XSL"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">
+    </cache>
+    <cache name="CACHE_WEB_FUNCS_HAS_INSWIFT"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Functions has inswift
+    </cache>
+    <!--@author inman.ying @date 2012-07-04 @ref:EE-6256_S-->
+    <cache name="CACHE_ERROR_HAND"
+            maxElementsInMemory="256"
+            eternal="true"
+            overflowToDisk="false"
+    >
+    </cache>
+    <!--@author inman.ying @date 2012-07-04 @ref:EE-6256_E-->
+    <!--@ref:EE-6338 @author yaoyao.yao Bundle by Karl @date2012-10-18_S-->
+    <cache name="CACHE_USER_ID_DESC"
+           maxElementsInMemory="1"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">
+	</cache>
+	<!--@ref:EE-6338 @author yaoyao.yao Bundle by Karl @date2012-10-18_E-->
+	<!--@Ref:EE-6484 @Author Prince @Date 2012-11-20 _S-->
+   <!--@Ref:EE-7914 @Author yangchao @Date 2015-04-17 _S-->
+    <cache name="CACHE_COMMON_PUBLIC_DATA"
+           maxElementsInMemory="10"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">
+	</cache>
+	<!--@Ref:EE-7914 @Author yangchao @Date 2015-04-17 _E-->
+	<!--@Ref:EE-6484 @Author Prince @Date 2012-11-20 _E-->
+	<!--@Ref:EE-6485 @Author Dennis.Peng @Date 2012-09-28 _S-->
+	<cache name="CACHE_ARCHIVING_LOG"
+           maxElementsInMemory="600"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Archiving log
+    </cache>
+    <!--@Ref:EE-6485 @Author Dennis.Peng @Date 2012-09-28 _E-->
+    <!--@ref EE-7109  @author Dennis.Peng @date 2013-08-07 _S-->
+    <cache name="CACHE_ENC_WAY"
+            maxElementsInMemory="256"
+            eternal="true"
+            overflowToDisk="false">
+    </cache>
+    <!--@ref EE-7109  @author Dennis.Peng @date 2013-08-07 _E-->
+    <!--@ref EE-8084  @author rankin.nan @date 2015-09-23 add_S-->
+    <cache name="CACHE_SYST_EECONFIG"
+		maxElementsInMemory="1000"
+		eternal="false"
+		timeToIdleSeconds="600"
+		timeToLiveSeconds="600"
+		overflowToDisk="false">EE System Config
+	</cache>
+	<!--@ref EE-8084  @author rankin.nan @date 2015-09-23 add_E-->
+	<!--@ref EE-8378  @author season @date 2016-06-20 _S-->
+    <cache name="CACHE_UPLOAD_IMAGE"
+           maxElementsInMemory="500"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">
+	</cache> 
+	<!--@ref EE-8378  @author season @date 2016-06-20 _E-->
+		 <!-- @ref:EE-8581 @author sily.li @date 2018-08-01 _S -->
+	<cache name="CACHE_INDEX"
+           maxElementsInMemory="500"
+           eternal="true"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">INDEX Information
+    </cache>
+	
+	<cache name="CACHE_REPORT_TEMPLATE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">INDEX Information
+    </cache>
+	
+	<cache name="CACHE_FLDC"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">FLDC Information
+    </cache>
+	
+	<cache name="CACHE_AP_EVENTTYPE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_EVENTTYPE Information
+    </cache>
+	
+	<cache name="CACHE_AP_MAIL"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_MAIL Information
+    </cache>
+	<cache name="CACHE_AP_ARCHIVE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_ARCHIVE Information
+    </cache>
+	<cache name="CACHE_AP_ARCHIVING"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_ARCHIVING Information
+    </cache>
+	<cache name="CACHE_AP_AUTOPRO"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_AUTOPRO Information
+    </cache>
+	<cache name="CACHE_AP_DELM"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_DELM Information
+    </cache>
+	<cache name="CACHE_AP_BATCHTASK"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_BATCHTASK Information
+    </cache>
+	<cache name="CACHE_AP_FORMSPE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_FORMSPE Information
+    </cache>
+	
+	<cache name="CACHE_AP_MSGBKR"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_MSGBKR Information
+    </cache>
+	<cache name="CACHE_AP_INSWT"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_INSWT Information
+    </cache>
+	<cache name="CACHE_AP_QMGR"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_QMGR Information
+    </cache>
+	<cache name="CACHE_AP_CITICCORE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_CITICCORE Information
+    </cache>
+	<cache name="CACHE_AP_TYPE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_TYPE Information
+    </cache>
+	
+	<cache name="CACHE_REPORT_TEATMPLE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">REPORT_TEATMPLE Information
+    </cache>
+	
+	<cache name="CACHE_WEB_STD_SCRN"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_STD_SCRN Information
+    </cache>
+	
+	<cache name="CACHE_WEB_BIRTDSN"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_BIRTDSN Information
+    </cache>
+	
+	<cache name="CACHE_WEB_GAPI"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_GAPI Information
+    </cache>
+	
+	<cache name="CACHE_WEB_MPTAG"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_MPTAG Information
+    </cache>
+	
+	<cache name="CACHE_WEB_TEMPRULE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_TEMPRULE Information
+    </cache>
+	
+	<cache name="CACHE_WEB_XSD"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_XSD Information
+    </cache>
+	
+	<cache name="CACHE_WEB_FUNC"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_FUNC Information
+    </cache>
+	
+	<cache name="CACHE_WEB_STDD"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_STDD Information
+    </cache>
+	
+	<cache name="CACHE_WEB_SAYTOTAL"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_SAYTOTAL Information
+    </cache>
+	
+	<cache name="CACHE_WEB_SYSTPARA"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_SYSTPARA Information
+    </cache>
+	
+	<cache name="CACHE_WEB_RMPRINT"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_RMPRINT Information
+    </cache>
+	
+	<cache name="CACHE_WEB_AP_FILETF"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">WEB_AP_FILETF Information
+    </cache>
+	
+	<cache name="CACHE_AP_MULTLOOPRULE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_MULTLOOPRULE Information
+    </cache>
+	
+	<cache name="CACHE_AP_TCPIP"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_TCPIP Information
+    </cache>
+	
+	<cache name="CACHE_AP_FTPMGR"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_FTPMGR Information
+    </cache>
+	<cache name="CACHE_AP_SODEOD"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_SODEOD Information
+    </cache>
+	
+	<cache name="CACHE_AP_PRTMGR"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_PRTMGR Information
+    </cache>
+	
+	<cache name="CACHE_AP_TSU"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_TSU Information
+    </cache>
+	
+	<cache name="CACHE_AP_FAX"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_FAX Information
+    </cache>
+	
+	<cache name="CACHE_AP_CLAUSE"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">AP_CLAUSE Information
+    </cache>
+	
+	<cache name="CACHE_AP_STP"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">STP Information
+    </cache>
+	
+	<cache name="CACHE_AP_BIICore"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">BIICore Information
+    </cache>
+	
+	<cache name="CACHE_AP_PARADSYNCHRO"
+           maxElementsInMemory="0"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">PARADSYNCHRO Information
+    </cache>
+	
+	<!-- @ref:EE-8581 @author sily.li @date 2018-08-01 _E  -->
+	<!-- @ref:EE-10000  -->
+		<cache name="CACHE_WIDGET_DATA"
+           maxElementsInMemory="100"
+           eternal="false"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">Widget data Information
+    </cache>
+    <!-- @ref:EE-10000   -->
+ </ehcache>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>F</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value>InqPackageTracking</gapi-type-value>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>InterfaceDemo</other-system-id>
+        <other-system-interface>PackageTracking</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module/>
+        <interface-mapping-name/>
+        <other-system-desc>Demo Interfaces</other-system-desc>
+        <trx-type>I</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-tag>
+        <TRACKING_NUMBER ec-tag="N" fv-type="" multi="N" op-tag="N" order="1"/>
+        <TRACKING_PROVIDER ec-tag="N" fv-type="" multi="N" op-tag="N" order="2"/>
+    </send-msg-tag>
+    <recv-msg-tag>
+        <INTF_STATUSDESC fv-type="" op-tag="N" order="1"/>
+        <TRACKING_INFO fv-type="" op-tag="N" order="2"/>
+        <TRACKING_LATEST_STATUS fv-type="" op-tag="N" order="3"/>
+        <ACTIVITIES_XML_B64 fv-type="" op-tag="N" order="4"/>
+        <INTF_HASERRORS fv-type="" op-tag="N" order="5"/>
+    </recv-msg-tag>
+    <send-item/>
+</gapi>

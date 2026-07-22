@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="SLABGStepDo" Max="n" Min="0"
+    Name="SLABGStepDo" PendingStore="N"
+    Screen="screen/STD/Std_SLABusinessGroup_Step.jsp" StoreInto="C" StoreType="C">
+    <Component>SLABGStep</Component>
+    <PK>
+        <PKNAME>I_STEP_SEQ_NO</PKNAME>
+        <PKNAME>C_BG_VERSION</PKNAME>
+        <PKNAME>C_BG_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="STT_SLABG_HEADER"/>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="BANK GROUP ID" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_BK_GROUP_ID</Element>
+        <Element DATATYPE="1" Desc="Country Code" DispInGrid="N" EDIT="N"
+            EEType="CNTY" FldType="" Value="">C_CNTY_CODE</Element>
+        <Element DATATYPE="12" Desc="Process Center Unit Code" DispInGrid="N"
+            EDIT="N" EEType="" FldType="" Value="">C_CP_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Business Group ID" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR10" FldType="" Value="">C_BG_ID</Element>
+        <Element DATATYPE="12" Desc="Business Group Version" DispInGrid="N"
+            EDIT="N" EEType="VARCHAR3" FldType="" Value="">C_BG_VERSION</Element>
+        <Element DATATYPE="12" Desc="Business Group Description" DispInGrid="N"
+            EDIT="N" EEType="Varchar_35" FldType="" Value="">C_BG_DESC</Element>
+        <Element DATATYPE="12" Desc="C_DO_NAME_DESC" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_DO_NAME</Element>
+        <Element DATATYPE="2" Desc="I_STEP_SEQ_NO" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="NO.">I_STEP_SEQ_NO</Element>
+        <Element DATATYPE="12" Desc="Step Name" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="Step Name">C_STEP_NAME</Element>
+        <Element DATATYPE="12" Desc="C_STEP_MIN_TIME" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="Time(Day:Hour:Min)">C_STEP_MIN_TIME</Element>
+        <Element DATATYPE="12" Desc="C_STEP_MAIL_ADDR" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_STEP_MAIL_ADDR</Element>
+        <Element DATATYPE="12" Desc="C_IS_MANDATORY" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="Mandatory">C_IS_MANDATORY</Element>
+        <Element DATATYPE="12" Desc="C_FIRST_FUNC_ID" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_FIRST_FUNC_ID</Element>
+        <Element DATATYPE="12" Desc="C_PROCESS_BY" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="Process By">C_PROCESS_BY</Element>
+        <Element DATATYPE="2" Desc="NO." DispInGrid="N" EDIT="N"
+            EEType="Numeric_2" FldType="" Value="">I_OSTEP_SEQ_NO</Element>
+    </Elements>
+    <DO Desc="SLABGFuncDo" Max="n" Min="0" Name="SLABGFuncDo" PendingStore="N"
+        Screen="screen/STD/Std_SLABusinessGroup_Func.jsp" StoreInto="C" StoreType="C">
+        <Component>SLABGStep</Component>
+        <PK>
+            <PKNAME>I_STEP_SEQ_NO</PKNAME>
+            <PKNAME>I_FUNC_SEQ_NO</PKNAME>
+            <PKNAME>C_BG_VERSION</PKNAME>
+            <PKNAME>C_BG_ID</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="SLABGStep">
+                <FKNAME PARENT_COL="I_STEP_SEQ_NO">I_STEP_SEQ_NO</FKNAME>
+                <FKNAME PARENT_COL="C_BG_VERSION">C_BG_ID</FKNAME>
+                <FKNAME PARENT_COL="C_BG_ID">C_BG_VERSION</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="BANK GROUP ID" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_BK_GROUP_ID</Element>
+            <Element DATATYPE="1" Desc="Country Code" DispInGrid="N" EDIT="N"
+                EEType="CNTY" FldType="" Value="">C_CNTY_CODE</Element>
+            <Element DATATYPE="12" Desc="Process Center Unit Code"
+                DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_CP_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Business Group ID" DispInGrid="N"
+                EDIT="N" EEType="VARCHAR10" FldType="" Value="">C_BG_ID</Element>
+            <Element DATATYPE="12" Desc="Business Group Version" DispInGrid="N"
+                EDIT="N" EEType="VARCHAR3" FldType="" Value="">C_BG_VERSION</Element>
+            <Element DATATYPE="12" Desc="Business Group Description"
+                DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">C_BG_DESC</Element>
+            <Element DATATYPE="12" Desc="C_DO_NAME_DESC" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_DO_NAME</Element>
+            <Element DATATYPE="2" Desc="I_STEP_SEQ_NO" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_STEP_SEQ_NO</Element>
+            <Element DATATYPE="12" Desc="C_STEP_NAME" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_STEP_NAME</Element>
+            <Element DATATYPE="2" Desc="I_FUNC_SEQ_NO" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">I_FUNC_SEQ_NO</Element>
+            <Element DATATYPE="12" Desc="function description" DispInGrid="Y"
+                EDIT="N" EEType="Varchar_40" FldType="" Value="">C_FUNC_DESC</Element>
+            <Element DATATYPE="1" Desc="C_FUNC_ID" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">C_FUNC_ID</Element>
+            <Element DATATYPE="12" Desc="C_FUNCGRP_ID" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_FUNCGRP_ID</Element>
+            <Element DATATYPE="12" Desc="C_FUNCGRP_DESC" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">C_FUNCGRP_DESC</Element>
+            <Element DATATYPE="12" Desc="C_MODU_NAME" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">C_MODU_NAME</Element>
+            <Element DATATYPE="2" Desc="Function No." DispInGrid="N" EDIT="N"
+                EEType="Numeric_2" FldType="" Value="">I_OFUNC_SEQ_NO</Element>
+            <Element DATATYPE="12" Desc="C_CUST_FIELD" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_CUST_FIELD</Element>
+        </Elements>
+    </DO>
+</DO>

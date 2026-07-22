@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+remoteServers : 
+if some of the clustered servers in a same machine, the rmiport numbers must be different
+
+JVMRemoteServersPropertyName: 
+this attribute is to inidicate that the remote servers will be specified in 
+application by setting the system property and the property name is same as the value of this attribute, default 
+name is EE_CLUSTER_REMOTE_SERVERS
+Basically, we should set up a JVM property named EE_CLUSTER_REMOTE_SERVERS and its value is a list of ip and port pair,such as
+ip1:rmiport1:dataport1,ip2:rmiport1:dataport1, if some of the cluster servers are in the same machine, since the ip is same, 
+so the rmiport must be different, like ip1:port1:dataport1,ip1:port2:dataport2
+furthermore, we also should specify the each application server's local address 
+in the JVM property named EE_LOCAL_REMOTE_SERVER 
+and its value is the local ip and rmi port, like ip:rmiport 
+-->
+<remote-service RemoteServers="ip1:rmiport1:dataport1,ip2:rmiport1:dataport1,..." JVMRemoteServersPropertyName="EE_CLUSTER_REMOTE_SERVERS">
+	<!-- the listener of remote server used to retrieve the performance of each remote server 
+the alternate class is com.cs.core.remoting.server.RMIRemoteServerListener
+	<RMIRemoteServerListener class="com.cs.core.remoting.server.MulticastRemoteServerListener" properties="multicastGroupPort=4597,multicastGroupAddress=228.19.18.17"/>-->
+	
+	<!--
+serviceName:
+the name that will be used to register the corresponding java object and it must be unique
+
+class:
+the full name of a class which will be instantiated and registered in a rmi registry server
+
+isClustered:
+to indicate whether this registered service will be considered as a cluster service and load balance
+if true, one of the remote server failed to process the service, then system will be going to check the other servers
+and continue the process if possible.
+following is a smple of how to configure a remote service and specify if it should be clustered or not
+<service serviceName="serviceName" class="com.cs.core.remoting.service.serviceImpl" isClustered="false|true"/>
+-->
+
+	<!-- following items are the system internal service configuration
+-->
+	<service serviceName="EE/EELogService" class="com.cs.core.remoting.service.internal.EELogServiceImpl" isClustered="false"/>
+	<service serviceName="EE/RemoteServerPerformanceService" class="com.cs.core.remoting.service.internal.ServerPerformanceImpl" isClustered="false"/>
+	<!--@ref EE-6187 @date 2012-08-16 @author salk add_s-->
+	<service serviceName="EE/RemoteBatchTaskExecutorService" class="com.cs.batchcluster.remoteservices.BatchTaskExecutor" isClustered="true"/>
+	<!--@ref EE-6187 @date 2012-08-16 @author salk add_e-->
+</remote-service>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_EM_RATE</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>Get_DDR_Default</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">FA_TEMP1</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_40" TYPE="TBL_FLD">T0.FA_CNTR_REF</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_CNTR_REF</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.FA_DD_RT_TP</SQL>
+            <SQL TYPE="SQL"> ='D'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

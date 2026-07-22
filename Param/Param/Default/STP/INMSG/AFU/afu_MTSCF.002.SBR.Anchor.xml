@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<js-content><![CDATA[stp.writeLog("Start: assing msg to Receive SBR for Anchor Customer");
+var busiType = stp.getMsgTagVal("FA_BUSI_TYPE");
+stp.writeLog("busiType============" + busiType);
+if(busiType == 'DF' || busiType == 'EF'){
+  stp.setFunc("ReceiveSBRforSeller", "Factoring Program Maintenance");
+}else{
+  stp.setFunc("ReceiveSBRforAnchorCustomer", "Scf Programer Maintenance");
+}
+stp.writeLog("End: assing msg to Receive SBR for Anchor Customer");]]></js-content>
+</root>

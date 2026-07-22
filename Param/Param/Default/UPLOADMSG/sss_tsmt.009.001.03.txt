@@ -1,0 +1,14 @@
+stp.writeLog("Start assing upload msg to function");
+var sVal = stp.getFieldValue("subMsgType");
+stp.writeLog("sVal======"+sVal);
+if (sVal == "tsmt.009.001.03"){
+	stp.writeLog("Start to Add Amd PO");
+	stp.setFunc("Add Amend PO");
+	stp.setCustomXSLName("tsmt.009");
+	stp.setIsUseXSLMapping(true);
+	stp.showFuncScreen(true);
+	stp.updateFieldValue("CLOB_FIELD","C_XML_DATA_009");
+} else {
+	stp.writeLog("Invalid Upload Type!");	
+}
+stp.writeLog("End assing upload msg to function");

@@ -1,0 +1,15 @@
+stp.writeLog("===================START===============");
+stp.setEventTimes("0");
+stp.setAutoProcess(true);
+var C_MAIN_REF = stp.SYS_getRefNo("IPLC");
+var APPL_ID = stp.getXMLNodeValue("unti-code");
+stp.writeLog("APPL_ID=" + APPL_ID);
+stp.updateFieldValue("APPL_ID", APPL_ID);
+stp.SYS_getCUBK("APPL_ID", "APPL_ID");
+stp.updateFieldValue("CLS_FLG", "No");
+stp.setGapiRule("IMLC_EEIN");
+stp.setMainRef(C_MAIN_REF);
+stp.updateFieldValue("APPL_ID", APPL_ID);
+stp.updateFieldValue("CURRNT_STATUS", "RegisterLCFromCE");
+stp.updateFieldValue("NXT_STATUS", "ReviewLCFromCE");
+stp.writeLog("===================END===============");

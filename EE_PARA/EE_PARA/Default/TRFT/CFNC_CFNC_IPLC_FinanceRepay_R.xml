@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>CFNC</module>
+    <name>CFNC_IPLC_FinanceRepay</name>
+    <desc>CFNC_IPLC_FinanceRepay</desc>
+    <head-info>
+        <DO name="FincSinglePayment" path="FincSinglePayment"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.IPLC_MASTER</table-name>
+        <table-desc>IPLC_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">CFNC_RELA_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <CFNC_N_AMT_LCCCY fv_type="F" mf="F" oper="=">CFNC_N_AMT_LCCCY</CFNC_N_AMT_LCCCY>
+        <CFNC_N_BAL fv_type="F" mf="F" oper="-=">CFNC_PAID_PRIN_SUM</CFNC_N_BAL>
+        <C_FUNC_SHORT_NAME fv_type="F" mf="F" oper="=">C_FUNC_SHORT_NAME</C_FUNC_SHORT_NAME>
+    </mapping>
+</root>

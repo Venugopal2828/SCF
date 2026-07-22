@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Tracing" Max="100" Min="1"
+    Name="Tracing" PendingStore="N" Screen="SCRN/o2m/FAEF_invDunning.jsp"
+    StoreInto="C" StoreType="C">
+    <Component>FactExportPaymentTracing</Component>
+    <PK>
+        <PKNAME>FA_DOC_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Doc Ref" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_DOC_REF</Element>
+        <Element DATATYPE="12" Desc="Doc No." DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_DOC_NO</Element>
+        <Element DATATYPE="91" Desc="Doc Date" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">FA_DOC_DT</Element>
+        <Element DATATYPE="1" Desc="Doc CCY" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">FA_DOC_CCY</Element>
+        <Element DATATYPE="3" Desc="Doc Amt" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">FA_DOC_AMT</Element>
+        <Element DATATYPE="3" Desc="Doc Balance" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">FA_DOC_BAL</Element>
+        <Element DATATYPE="91" Desc="Doc Value Date" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">FA_DOC_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="Doc Due Date" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">FA_DOC_DUE_DT</Element>
+        <Element DATATYPE="91" Desc="Transfer Date" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">FA_TRF_DT</Element>
+        <Element DATATYPE="12" Desc="DUNNING FLG" DispInGrid="N" EDIT="N"
+            EEType="FLAG_3" FldType="" Value="">FA_DUNNING_FLG</Element>
+        <Element DATATYPE="12" Desc="Temporary field 2" DispInGrid="N" EDIT="N"
+            EEType="Varchar_65" FldType="" Value="">FA_TEMP2</Element>
+    </Elements>
+</DO>

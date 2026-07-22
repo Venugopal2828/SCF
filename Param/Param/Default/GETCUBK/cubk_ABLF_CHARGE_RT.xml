@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="CHARGE_RT" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>ABLF</module-name>
+        <cubk-mapping-name>CHARGE_RT</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.ABLF_EM_LOAN</table-name>
+        <table-desc>ABLF_EM_LOAN</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <FA_LOAN_ID DESC="FA_LOAN_ID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">CHARGE_RT</FA_LOAN_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <CHARGE DESC="CHARGE" DT="3" HIDDEN="" TYPE="F" WTYPE="CASE">CHARGE</CHARGE>
+    </field-mapping>
+    <CLAUSE>
+        <SQL DESC="C_EVENT_NAME" DT="12" TYPE="FLD" WTYPE="NOCASE">C_EVENT_NAME</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+    </CLAUSE>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

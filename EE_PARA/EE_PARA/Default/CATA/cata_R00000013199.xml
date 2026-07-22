@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302551</ID>
+    <MODULE>FAEF</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.FADA_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Relationship Reference" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Import Factor Name"
+            EEType="Varchar_35" HIDDEN="H">FA_IF_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="EF Name" EEType="Varchar_35" HIDDEN="H">FA_EF_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller Name" EEType="Varchar_35" HIDDEN="">FA_SEL_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller ID" EEType="Varchar_35" HIDDEN="">FA_SEL_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35" HIDDEN="">FA_BUYER_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer ID" EEType="Varchar_35" HIDDEN="">FA_BUYER_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_LOCKED_FLAG" EEType="" HIDDEN="H">C_LOCKED_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Transaction Date" EEType="DATE" HIDDEN="">TRX_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Business Type" EEType="INTERPRETER"
+            HIDDEN="" ISFC="Y">FA_BUSI_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="Total Invoice No." EEType="INTEGER" HIDDEN="H">FA_TTL_INV_NO</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Status"
+            EEType="Varchar_35" HIDDEN="H">FA_BUSI_STATUS</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Relationship Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Seller Name" DT="12" EEType="Varchar_35" TYPE="FLD">FA_SEL_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" TYPE="FLD">FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Transaction Date" DT="91" EEType="DATE" TYPE="FLD">TRX_DT</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' AND
+</SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'M'
+AND </SQL>
+        <SQL DESC="C_LOCKED_FLAG" DT="1" EEType="" TYPE="FLD">C_LOCKED_FLAG</SQL>
+        <SQL TYPE="SQL"> = 'F'
+AND (</SQL>
+        <SQL DESC="Business Type" DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="FLD">FA_BUSI_TYPE</SQL>
+        <SQL TYPE="SQL"> ='SF' OR </SQL>
+        <SQL DESC="Business Type" DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="FLD">FA_BUSI_TYPE</SQL>
+        <SQL TYPE="SQL"> ='RD'
+OR </SQL>
+        <SQL DESC="Business Type" DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="FLD">FA_BUSI_TYPE</SQL>
+        <SQL TYPE="SQL"> ='DD') AND </SQL>
+        <SQL DESC="Total Invoice No." DT="4" EEType="INTEGER" TYPE="FLD">FA_TTL_INV_NO</SQL>
+        <SQL TYPE="SQL"> &gt; 0
+ORDER BY </SQL>
+        <SQL DESC="EVENT TIMES" DT="4" EEType="" TYPE="FLD">I_EVENT_TIMES</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Relationship Reference" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller Name" EEType="Varchar_35">FA_SEL_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35">FA_BUYER_NM</FIELD>
+        <FIELD DATATYPE="91" DESC="Transaction Date" EEType="DATE">TRX_DT</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="1" DESC="C_LOCKED_FLAG" EEType="">C_LOCKED_FLAG</FIELD>
+        <FIELD DATATYPE="1" DESC="Business Type" EEType="INTERPRETER">FA_BUSI_TYPE</FIELD>
+        <FIELD DATATYPE="1" DESC="Business Type" EEType="INTERPRETER">FA_BUSI_TYPE</FIELD>
+        <FIELD DATATYPE="1" DESC="Business Type" EEType="INTERPRETER">FA_BUSI_TYPE</FIELD>
+        <FIELD DATATYPE="4" DESC="Total Invoice No." EEType="INTEGER">FA_TTL_INV_NO</FIELD>
+        <FIELD DATATYPE="4" DESC="EVENT TIMES" EEType="">I_EVENT_TIMES</FIELD>
+    </CLAUSEFIELD>
+</CATA>

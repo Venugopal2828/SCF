@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMUSER%" TYPE="U">SEC_BUSINESS_UNIT</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>TRCO</module-name>
+        <cubk-mapping-name>GetUnitDataFromSecByAll</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_UNIT_CODE ALIAS="T0" DBFUNC="" DESC="UNIT CODE" DT="12" HIDDEN="F" TYPE="F">BR_TP</C_UNIT_CODE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="SYS_VARCHAR_12" TYPE="TBL_FLD">T0.C_BK_GROUP_ID</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL DT="var" DV="SYS_BANK_GROUP" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.C_CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

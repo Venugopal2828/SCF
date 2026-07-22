@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">IBAN_PLUS</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_BICPlusIBAN_SYF_PYMT_X103_59A_1_IBAN_40</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_IBAN_BIC ALIAS="T0" DBFUNC="" DESC="Iban BIC" DT="12" HIDDEN="F" TYPE="F">X103_56A_BENE_BKBIC</C_IBAN_BIC>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_ISO_CNTY_CODE  like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">X103_BENE_IBAN</SQL>
+            <SQL TYPE="SQL">',0,2),'%')) AND C_IBAN_NAT_ID like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">X103_BENE_IBAN</SQL>
+            <SQL TYPE="SQL">',</SQL>
+            <SQL TYPE="FLD">X103_59A_BANK_IDENPOSI</SQL>
+            <SQL TYPE="SQL"> - 1,</SQL>
+            <SQL TYPE="FLD">X103_59A_IBAN_NATLEN</SQL>
+            <SQL TYPE="SQL">),'%'))</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

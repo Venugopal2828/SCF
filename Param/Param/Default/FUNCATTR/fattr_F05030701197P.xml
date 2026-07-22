@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR DATABASE="BLDB" SCHEMA="CEMETA" TABLENAME="ECD_SYSFUNC_ATTR">
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Event Edit Rec">TrxEventEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>FADA</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>CETRX.FADA_EM_BSR</TABLE_NAME>
+        <TABLE_DESC>FADA_EM_BSR</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Edit Event</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Master Edit Rec">TrxMasterEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>FADA</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.FADA_MASTER</TABLE_NAME>
+        <TABLE_DESC>FADA_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Edit Master</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Generate GAPI">TrxGenerateGAPI</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>FADA</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.FADA_MASTER</TABLE_NAME>
+        <TABLE_DESC>FADA_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>GAPIs</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+</FUNCATTR>

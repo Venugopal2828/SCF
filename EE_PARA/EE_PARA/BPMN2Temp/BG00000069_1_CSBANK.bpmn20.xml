@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EE-7692 add bill huang 2014-11-12 -->
+<definitions expressionLanguage="http://www.w3.org/1999/XPath"
+    targetNamespace="http://localhost/flow"
+    typeLanguage="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:funcflow="http://localhost/bpmn"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <process id="BG00000069_1_CSBANK" isExecutable="true" name="GTEE_ISSUE">
+        <sequenceFlow id="ida49be4c80ec844aa9122a0a5a6dd55f7"
+            sourceRef="id4e7ebd48e4a447be95fe0215e166c4a7" targetRef="id6a54af6f14e548bcb976726a035642e6">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000001" funcflow:priority="1"
+            id="id818195b3cf39455e894a413351c962c5" name="Register_Guarantee">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Register Guarantee</C_FUNC_DESC>
+                    <C_STEP_NAME>GTEE_REIGISTER</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300263</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000069</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030703161</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="idcb96e3cccbdd4623a75706a77d24ed6a"
+            sourceRef="id818195b3cf39455e894a413351c962c5" targetRef="id4e7ebd48e4a447be95fe0215e166c4a7">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="idc38a9a9f255d41e0aaeb1584ac260d53"
+            sourceRef="ide3ecf84efef84d0a887ed5ddc6165a85" targetRef="id818195b3cf39455e894a413351c962c5"/>
+        <userTask funcflow:candidateGroups="1000000001" funcflow:priority="1"
+            id="id6a54af6f14e548bcb976726a035642e6" name="Issue_Guarantee">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Issue Guarantee</C_FUNC_DESC>
+                    <C_STEP_NAME>GTEE_ISSUE</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300263</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000069</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030701610</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>3</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <userTask funcflow:candidateGroups="1000000001" funcflow:priority="1"
+            id="id4e7ebd48e4a447be95fe0215e166c4a7" name="Supervisor_Release">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                    <C_STEP_NAME>GTEE_RELEASE</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300200</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000069</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030701613</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <endEvent id="id6b00521cee2b44bd8d564b635878316c" name="endEvent_GTEE_ISSUE"/>
+        <sequenceFlow id="id676baf5ced1c41c98331049897a202cb"
+            sourceRef="id3a24aef3a6db49bf969190988067054b" targetRef="id6b00521cee2b44bd8d564b635878316c"/>
+        <userTask funcflow:candidateGroups="1000000001" funcflow:priority="1"
+            id="id3a24aef3a6db49bf969190988067054b" name="Supervisor_Release">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                    <C_STEP_NAME>GTEE_RELEASE</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300200</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000069</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030701613</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>4</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id5e1b6182aa6b4eecb7e978671ef363dd"
+            sourceRef="id6a54af6f14e548bcb976726a035642e6" targetRef="id3a24aef3a6db49bf969190988067054b">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <startEvent id="ide3ecf84efef84d0a887ed5ddc6165a85" name="startEvent_GTEE_ISSUE"/>
+    </process>
+</definitions>

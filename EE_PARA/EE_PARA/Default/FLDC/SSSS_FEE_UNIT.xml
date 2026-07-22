@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>SSSS</module>
+    <separater>[Fee Type Unit]</separater>
+    <full_display>false</full_display>
+    <blank_value/>
+    <multilang>N</multilang>
+    <fld_name>FEE_UNIT</fld_name>
+    <type>T</type>
+    <settings>
+        <value_field>C_TAB_REF_CODE</value_field>
+        <table_name schema="%EXIMSYS%">%EXIMSYS%.COM_REFERENCE_DATA</table_name>
+        <display_field>C_TAB_REF_DESC</display_field>
+        <condition>
+            <sql type="COL">C_TABLE_ID</sql>
+            <sql> = 'FTU' AND </sql>
+            <sql type="COL">C_INSTITUTION_CODE</sql>
+            <sql> = '</sql>
+            <sql type="SV">SYS_PC_UNIT</sql>
+            <sql>' AND </sql>
+            <sql type="COL">C_CNTY_CODE</sql>
+            <sql> ='</sql>
+            <sql type="SV">SYS_BANK_COUNTRY</sql>
+            <sql>'</sql>
+        </condition>
+    </settings>
+</root>

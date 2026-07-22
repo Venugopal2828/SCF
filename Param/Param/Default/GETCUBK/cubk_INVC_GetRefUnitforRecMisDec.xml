@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Get MainRef&amp;UnitCode By" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>INVC</module-name>
+        <cubk-mapping-name>GetRefUnitforRecMisDec</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.INVC_EM_MATCH</table-name>
+        <table-desc>INVC_EM_MATCH</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <TSU_MESSAGE_ID DESC="Message ID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_RL_MSG_ID</TSU_MESSAGE_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_UNIT_CODE DESC="Company Code" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_UNIT_CODE</C_UNIT_CODE>
+        <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_MAIN_REF</C_MAIN_REF>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

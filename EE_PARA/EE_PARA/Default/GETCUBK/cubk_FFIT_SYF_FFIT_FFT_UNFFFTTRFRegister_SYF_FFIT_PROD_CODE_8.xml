@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">DATA_PRODUCT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_UNFFFTTRFRegister_SYF_FFIT_PROD_CODE_8</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <PRDT_CODE ALIAS="T0" DBFUNC="" DESC="Product Code" DT="12" HIDDEN="F" TYPE="F">PRODUCT_CODE</PRDT_CODE>
+        <GL_PRDT_CODE ALIAS="T0" DBFUNC="" DESC="GL_PRDT_CODE" DT="12" HIDDEN="F" TYPE="F">GL_PROD_CODE</GL_PRDT_CODE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='FINCFFITCLTRF'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

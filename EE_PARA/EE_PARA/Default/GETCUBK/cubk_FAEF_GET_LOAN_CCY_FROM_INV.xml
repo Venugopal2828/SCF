@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>GET_LOAN_CCY_FROM_INV</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_DOC_CCY ALIAS="T0" DBFUNC="" DESC="Doc CCY" DT="1" HIDDEN="F" TYPE="F">FA_DOC_CCY</FA_DOC_CCY>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="CHAR_40" TYPE="TBL_FLD">T0.FSBC_REF</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_SBR_REF</SQL>
+            <SQL TYPE="SQL">' AND
+            </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.FA_DOC_TYPE</SQL>
+            <SQL TYPE="SQL"> ='1'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

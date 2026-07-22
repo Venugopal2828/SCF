@@ -1,0 +1,11 @@
+stp.writeLog("===================START===============");
+stp.setAutoProcess(true);
+var C_MAIN_REF = stp.getXMLNodeValue("BkMainRef");
+stp.updateFieldValue("C_MAIN_REF", C_MAIN_REF);
+stp.setGapiRule("IMLC_EEIN");
+stp.SYS_getCUBK("AMD_REF", "WEB_REF");
+var amdref = stp.getFieldValue("AMD_REF");
+stp.writeLog("AMDREF=" + amdref);
+stp.updateFieldValue("CURRNT_STATUS", "IPLC_ReceiveAmtFPFromCE_STP");
+stp.updateFieldValue("NXT_STATUS", "RecvAmtFPFromCE");
+stp.writeLog("===================END===============");

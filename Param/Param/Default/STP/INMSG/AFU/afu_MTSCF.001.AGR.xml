@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<js-content><![CDATA[stp.writeLog("Start: assing msg to Receive Agreement");
+var busiType = stp.getMsgTagVal("FA_BUSI_TYPE");
+stp.writeLog("busiType============" + busiType);
+if(busiType == 'DF' || busiType == 'EF'){
+  stp.setFunc("Factoring Receive Agreement", "Factoring Program Maintenance");
+}else if(busiType == 'ABLF'){
+  stp.setFunc("ABL Receive Agreement", "ABL Financing");
+}else{
+  stp.setFunc("Receive Agreement", "Scf Programer Maintenance");
+}
+stp.writeLog("End: assing msg to Receive Agreement");]]></js-content>
+</root>

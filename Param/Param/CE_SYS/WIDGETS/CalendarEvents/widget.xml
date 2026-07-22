@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="CalendarEvents"
+			allowInstanceContent="false"
+			supportedModes="view edit config help"
+			supportedWindowStates="maximize minimize"
+			iScope="com.cs.widgets.CalendarEvents" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.CalEventsJs" src="CalendarEvents/calevents.js"/>
+	<iw:resource globalid="com.cs.resources.CalEventsCss" src="CalendarEvents/calevents.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="eventTasks" alias="eventTasks" lang="" readOnly="false" value="ALL"/>
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Calendar Events">
+				<iw:alt lang="CNS" value="日历事件"/> 
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="labels">
+		<iw:item id="task.title.fmt" alias="fmt" lang=""
+				 readOnly="true" value="eeee, mmmm dd yyyy">
+		</iw:item>
+		<iw:item id="tip.title.fmt" alias="fmt" lang=""
+				 readOnly="true" value="mmmm d yyyy">
+		</iw:item>
+		<iw:item id="btnlabel.save" alias="save" lang=""
+				 readOnly="true" value="Save">
+				<iw:alt lang="CNS" value="保存"/> 
+		</iw:item>
+		<iw:item id="btnlabel.cancel" alias="cancel" lang=""
+				 readOnly="true" value="Cancel">
+				 <iw:alt lang="CNS" value="取消"/>
+		</iw:item>
+		<iw:item id="btnlabel.remove" alias="remove" lang=""
+				 readOnly="true" value="Remove">
+				 <iw:alt lang="CNS" value="移除"/>
+		</iw:item>
+		<iw:item id="tip.content.label" alias="title" lang=""
+				 readOnly="true" value="Event Content">	
+				 <iw:alt lang="CNS" value="事件内容"/>			 
+		</iw:item>
+			<iw:item id="btnlabel.all" alias="title" lang=""
+				 readOnly="true" value="All Events">
+				 <iw:alt lang="CNS" value="所有事件"/>	
+		</iw:item>
+
+	</iw:itemSet>
+	<iw:itemSet id="groups">
+		<iw:item id="note" alias="note" lang=""
+				 readOnly="true" value="My Note">
+		</iw:item>
+		<iw:item id="empty" alias="empty" lang=""
+				 readOnly="true" value="No Events.">
+		</iw:item>
+		<iw:item id="IMLCExpiringLCs" alias="elc" lang=""
+				 readOnly="true" value="Expiring Import LCs">
+		</iw:item>
+		<iw:item id="IMLCMaturingLCs" alias="mlc" lang=""
+				 readOnly="true" value="Acceptances Due under Import LCs">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-CalEvents">
+			<div class="calmain">
+				<div class="CSCalendar"></div>
+				<div class="TaskLabel"></div>
+				<div class="Events"></div>
+				<div class="ButtonPanel"></div>
+			</div>
+			<div class="addTipPanel" style="display:none">
+				<div class="tipbtns"></div>
+				<div class="tipcontent"></div>
+			</div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="edit"><![CDATA[
+		<div class="com-cs-widget-CalEventsEdit">
+			<div class="buttonPanlEditActions"></div>
+			<div class="listEvents"></div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-CalendarEvents">
+			CalendarEvents
+		</div>
+	]]></iw:content>
+</iw:iwidget>

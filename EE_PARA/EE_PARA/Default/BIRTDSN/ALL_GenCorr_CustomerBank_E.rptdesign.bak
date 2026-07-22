@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.20" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.5.1.v20090903 Build &lt;2.5.1.v20090917-1447></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <html-property name="description">Creates a blank report with no predefined content.</html-property>
+    <text-property name="displayName">Blank Report</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">Common_library.rptlibrary</property>
+            <property name="namespace">Common_library</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="Data Source" id="6">
+            <property name="FILELIST">X:\CSBANK\US\AP\FORM\form_schema_EXCO_GeneralCorrespondence.xml</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="BirtHeader" id="78"
+ extends="Common_library.BirtHeader">
+            <property name="FILELIST">X:\CSBANK\US\AP\FORM\form_schema_Birt_Header.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set" id="9">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TEMP_CUST_INSTR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TEMP_CUST_CRSPD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TEMP_CORR_ATTCH</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">TEMP_CORR_CRSPD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">TEMP_CORR_INSTR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">TEMP_MAIL_TXT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">TEMP_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">CORR_CUST_BANK</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">CORR_FAX_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">CORR_MAIL_ADD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">MESG_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TEMP_CUST_INSTR</property>
+                    <property name="nativeName">TEMP_CUST_INSTR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TEMP_CUST_CRSPD</property>
+                    <property name="nativeName">TEMP_CUST_CRSPD</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TEMP_CORR_ATTCH</property>
+                    <property name="nativeName">TEMP_CORR_ATTCH</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">TEMP_CORR_CRSPD</property>
+                    <property name="nativeName">TEMP_CORR_CRSPD</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">TEMP_CORR_INSTR</property>
+                    <property name="nativeName">TEMP_CORR_INSTR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">TEMP_MAIL_TXT</property>
+                    <property name="nativeName">TEMP_MAIL_TXT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">TEMP_REF</property>
+                    <property name="nativeName">TEMP_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">CORR_CUST_BANK</property>
+                    <property name="nativeName">CORR_CUST_BANK</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">CORR_FAX_NO</property>
+                    <property name="nativeName">CORR_FAX_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">CORR_MAIL_ADD</property>
+                    <property name="nativeName">CORR_MAIL_ADD</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">MESG_TYPE</property>
+                    <property name="nativeName">MESG_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData]#:#{TEMP_CUST_INSTR;STRING;/TEMP_CUST_INSTR},{TEMP_CUST_CRSPD;STRING;/TEMP_CUST_CRSPD},{TEMP_CORR_ATTCH;STRING;/TEMP_CORR_ATTCH},{TEMP_CORR_CRSPD;STRING;/TEMP_CORR_CRSPD},{TEMP_CORR_INSTR;STRING;/TEMP_CORR_INSTR},{TEMP_MAIL_TXT;STRING;/TEMP_MAIL_TXT},{TEMP_REF;STRING;/TEMP_REF},{CORR_CUST_BANK;STRING;/CORR_CUST_BANK},{CORR_FAX_NO;STRING;/CORR_FAX_NO},{CORR_MAIL_ADD;STRING;/CORR_MAIL_ADD},{C_MAIN_REF;STRING;/C_MAIN_REF},{MESG_TYPE;STRING;/MESG_TYPE}]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="BirtHeader" id="79"
+ extends="Common_library.BirtHeader"/>
+    </data-sets>
+    <styles>
+        <style name="fb09" id="2603">
+            <property name="fontFamily">"Futura Bk BT"</property>
+            <property name="fontSize">9pt</property>
+        </style>
+        <style name="fb11" id="2604">
+            <property name="fontFamily">"Futura Bk BT"</property>
+            <property name="fontSize">11pt</property>
+        </style>
+        <style name="fbd12" id="2605">
+            <property name="fontFamily">"Futura BdCn BT"</property>
+            <property name="fontSize">12pt</property>
+        </style>
+        <style name="fh11" id="2606">
+            <property name="fontFamily">"Futura Hv BT"</property>
+            <property name="fontSize">11pt</property>
+        </style>
+        <style name="td" id="2607">
+            <property name="lineHeight">10mm</property>
+            <property name="verticalAlign">bottom</property>
+        </style>
+        <style name="title" id="2608">
+            <property name="lineHeight">15mm</property>
+            <property name="verticalAlign">bottom</property>
+        </style>
+        <style name="fmb8" id="2817">
+            <property name="fontFamily">"Futura Md BT"</property>
+            <property name="fontSize">8pt</property>
+        </style>
+        <style name="fl08" id="2818">
+            <property name="fontFamily">"Futura Light"</property>
+            <property name="fontSize">8pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="2558" extends="Common_library.NewSimpleMasterPage">
+            <overridden-values>
+                <ref-entry baseId="1288" name="NewGrid1" id="1288"/>
+                <ref-entry baseId="1289" id="1289"/>
+                <ref-entry baseId="1291" id="1291"/>
+                <ref-entry baseId="1292" id="1292"/>
+                <ref-entry baseId="1293" id="1293"/>
+                <ref-entry baseId="1294" id="1294"/>
+                <ref-entry baseId="1296" id="1296"/>
+                <ref-entry baseId="1298" id="1298"/>
+                <ref-entry baseId="1299" id="1299"/>
+                <ref-entry baseId="1301" id="1301"/>
+                <ref-entry baseId="1302" id="1302"/>
+                <ref-entry baseId="1303" id="1303"/>
+                <ref-entry baseId="1304" id="1304"/>
+                <ref-entry baseId="2802" name="NewData30" id="2802"/>
+                <ref-entry baseId="1306" id="1306"/>
+                <ref-entry baseId="2837" name="NewData6" id="2837"/>
+                <ref-entry baseId="1307" id="1307"/>
+                <ref-entry baseId="1324" name="NewGrid2" id="1324"/>
+                <ref-entry baseId="1325" id="1325"/>
+                <ref-entry baseId="1326" id="1326"/>
+                <ref-entry baseId="1327" id="1327"/>
+                <ref-entry baseId="1328" id="1328"/>
+                <ref-entry baseId="1329" id="1329"/>
+                <ref-entry baseId="1334" name="NewAutoText1" id="1334"/>
+                <ref-entry baseId="1330" id="1330"/>
+                <ref-entry baseId="1332" name="NewLabel2" id="1332"/>
+                <ref-entry baseId="1331" id="1331"/>
+                <ref-entry baseId="1333" name="NewAutoText" id="1333"/>
+                <ref-entry baseId="1308" id="1308"/>
+                <ref-entry baseId="1309" id="1309"/>
+                <ref-entry baseId="1311" id="1311"/>
+                <ref-entry baseId="1312" id="1312"/>
+                <ref-entry baseId="1279" name="NewGrid" id="1279"/>
+                <ref-entry baseId="1280" id="1280"/>
+                <ref-entry baseId="1281" id="1281"/>
+                <ref-entry baseId="1282" id="1282"/>
+                <ref-entry baseId="1287" name="NewLabel1" id="1287"/>
+                <ref-entry baseId="1283" id="1283"/>
+                <ref-entry baseId="1284" id="1284"/>
+                <ref-entry baseId="1286" name="NewLabel" id="1286"/>
+            </overridden-values>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="63">
+            <property name="width">100%</property>
+            <column id="64"/>
+            <column id="65"/>
+            <row id="66">
+                <cell id="67">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <grid name="birt_header1" id="80" extends="Common_library.birt_header1">
+                        <overridden-values>
+                            <ref-entry baseId="2530" id="2530"/>
+                            <ref-entry baseId="2531" id="2531"/>
+                            <ref-entry baseId="2532" id="2532"/>
+                            <ref-entry baseId="2533" id="2533"/>
+                            <ref-entry baseId="2423" name="NewLabel131" id="2423"/>
+                            <ref-entry baseId="2534" id="2534"/>
+                            <ref-entry baseId="2510" name="NewImage" id="2510"/>
+                        </overridden-values>
+                    </grid>
+                </cell>
+            </row>
+            <row id="69">
+                <cell id="70">
+                    <table id="2800">
+                        <property name="height">3.5833333333in</property>
+                        <property name="width">3.1041666667in</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TEMP_CUST_INSTR</property>
+                                <expression name="expression">dataSetRow["TEMP_CUST_INSTR"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_CUST_CRSPD</property>
+                                <expression name="expression">dataSetRow["TEMP_CUST_CRSPD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_CORR_ATTCH</property>
+                                <expression name="expression">dataSetRow["TEMP_CORR_ATTCH"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_CORR_CRSPD</property>
+                                <expression name="expression">dataSetRow["TEMP_CORR_CRSPD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_CORR_INSTR</property>
+                                <expression name="expression">dataSetRow["TEMP_CORR_INSTR"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_MAIL_TXT</property>
+                                <expression name="expression">dataSetRow["TEMP_MAIL_TXT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_REF</property>
+                                <expression name="expression">dataSetRow["TEMP_REF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CORR_CUST_BANK</property>
+                                <expression name="expression">dataSetRow["CORR_CUST_BANK"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CORR_FAX_NO</property>
+                                <expression name="expression">dataSetRow["CORR_FAX_NO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">C_MAIN_REF</property>
+                                <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">MESG_TYPE</property>
+                                <expression name="expression">dataSetRow["MESG_TYPE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CORR_MAIL_ADD</property>
+                                <expression name="expression">dataSetRow["CORR_MAIL_ADD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">50</property>
+                        <column id="2809"/>
+                        <header>
+                            <row id="2810">
+                                <property name="height">0.552in</property>
+                                <property name="verticalAlign">bottom</property>
+                                <cell id="2811">
+                                    <label id="2812">
+                                        <property name="style">fbd12</property>
+                                        <property name="fontFamily">"Futura Bold"</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">row["CORR_FAX_NO"] == null</expression>
+                                            </structure>
+                                        </list-property>
+                                        <text-property name="text">Fax message</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="2803">
+                                <property name="height">0.7291666667in</property>
+                                <cell id="2804">
+                                    <data id="2813">
+                                        <property name="style">fb11</property>
+                                        <property name="fontFamily">"Futura Book"</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">row["CORR_FAX_NO"] == null</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">CORR_FAX_NO</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="2805">
+                                <property name="height">2.875in</property>
+                                <cell id="2806">
+                                    <data id="2814">
+                                        <property name="style">fb11</property>
+                                        <property name="fontFamily">"Futura Book"</property>
+                                        <property name="resultSetColumn">CORR_MAIL_ADD</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+                <cell id="71">
+                    <grid name="birt_header2" id="2535" extends="Common_library.birt_header2">
+                        <overridden-values>
+                            <ref-entry baseId="2783" id="2783"/>
+                            <ref-entry baseId="2784" id="2784"/>
+                            <ref-entry baseId="2785" id="2785"/>
+                            <ref-entry baseId="2786" id="2786"/>
+                            <ref-entry baseId="2787" id="2787"/>
+                            <ref-entry baseId="2440" name="NewGrid71" id="2440"/>
+                            <ref-entry baseId="2441" id="2441"/>
+                            <ref-entry baseId="2442" id="2442"/>
+                            <ref-entry baseId="2443" id="2443"/>
+                            <ref-entry baseId="2444" name="NewLabel31" id="2444"/>
+                            <ref-entry baseId="2445" id="2445"/>
+                            <ref-entry baseId="2446" id="2446"/>
+                            <ref-entry baseId="2447" name="NewLabel41" id="2447"/>
+                            <ref-entry baseId="2788" id="2788"/>
+                            <ref-entry baseId="2789" id="2789"/>
+                            <ref-entry baseId="2790" id="2790"/>
+                            <ref-entry baseId="2791" id="2791"/>
+                            <ref-entry baseId="2792" id="2792"/>
+                            <ref-entry baseId="2793" id="2793"/>
+                            <ref-entry baseId="2454" name="NewList1" id="2454"/>
+                            <ref-entry baseId="2455" name="NewGrid81" id="2455"/>
+                            <ref-entry baseId="2456" id="2456"/>
+                            <ref-entry baseId="2457" id="2457"/>
+                            <ref-entry baseId="2458" id="2458"/>
+                            <ref-entry baseId="2459" id="2459"/>
+                            <ref-entry baseId="2460" name="NewLabel51" id="2460"/>
+                            <ref-entry baseId="2461" id="2461"/>
+                            <ref-entry baseId="2462" name="NewData61" id="2462"/>
+                            <ref-entry baseId="2463" id="2463"/>
+                            <ref-entry baseId="2464" id="2464"/>
+                            <ref-entry baseId="2465" name="NewLabel61" id="2465"/>
+                            <ref-entry baseId="2466" id="2466"/>
+                            <ref-entry baseId="2467" name="NewData71" id="2467"/>
+                            <ref-entry baseId="2468" id="2468"/>
+                            <ref-entry baseId="2469" id="2469"/>
+                            <ref-entry baseId="2470" name="NewLabel71" id="2470"/>
+                            <ref-entry baseId="2471" id="2471"/>
+                            <ref-entry baseId="2472" name="NewData81" id="2472"/>
+                            <ref-entry baseId="2473" id="2473"/>
+                            <ref-entry baseId="2474" id="2474"/>
+                            <ref-entry baseId="2475" name="NewLabel81" id="2475"/>
+                            <ref-entry baseId="2476" id="2476"/>
+                            <ref-entry baseId="2477" name="NewData91" id="2477"/>
+                            <ref-entry baseId="2478" id="2478"/>
+                            <ref-entry baseId="2479" id="2479"/>
+                            <ref-entry baseId="2480" name="NewLabel91" id="2480"/>
+                            <ref-entry baseId="2481" id="2481"/>
+                            <ref-entry baseId="2482" name="NewLabel121" id="2482"/>
+                            <ref-entry baseId="2794" id="2794"/>
+                            <ref-entry baseId="2795" id="2795"/>
+                            <ref-entry baseId="2796" id="2796"/>
+                            <ref-entry baseId="2797" id="2797"/>
+                            <ref-entry baseId="2798" id="2798"/>
+                            <ref-entry baseId="2799" id="2799"/>
+                            <ref-entry baseId="2489" name="NewTable21" id="2489"/>
+                            <ref-entry baseId="2490" id="2490"/>
+                            <ref-entry baseId="2491" id="2491"/>
+                            <ref-entry baseId="2492" name="NewLabel101" id="2492"/>
+                            <ref-entry baseId="2493" id="2493"/>
+                            <ref-entry baseId="2494" name="NewData101" id="2494"/>
+                            <ref-entry baseId="2495" id="2495"/>
+                            <ref-entry baseId="2496" id="2496"/>
+                        </overridden-values>
+                    </grid>
+                </cell>
+            </row>
+            <row id="72">
+                <property name="pageBreakInside">auto</property>
+                <cell id="73">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <table id="10">
+                        <property name="fontFamily">"Futura Book"</property>
+                        <property name="fontSize">11pt</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TEMP_CUST_INSTR</property>
+                                <expression name="expression">dataSetRow["TEMP_CUST_INSTR"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_CORR_CRSPD</property>
+                                <expression name="expression">dataSetRow["TEMP_CORR_CRSPD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">C_MAIN_REF</property>
+                                <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_REF</property>
+                                <expression name="expression">dataSetRow["TEMP_REF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_CORR_INSTR</property>
+                                <expression name="expression">var temp="";
+if(dataSetRow["CORR_CUST_BANK"]=="Customer" ){
+temp = dataSetRow["TEMP_CUST_CRSPD"];
+}
+else if(dataSetRow["CORR_CUST_BANK"]=="Bank"){
+temp = dataSetRow["TEMP_CORR_CRSPD"];
+}
+this.text=temp;</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_CUST_CRSPD</property>
+                                <expression name="expression">temp="";
+if(dataSetRow["CORR_CUST_BANK"]=="Customer" ){
+temp = dataSetRow["TEMP_CUST_CRSPD"];
+}
+else if(dataSetRow["CORR_CUST_BANK"]=="Bank"){
+temp = dataSetRow["TEMP_CORR_CRSPD"];
+}
+this.text=temp;</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CORR_CUST_BANK</property>
+                                <expression name="expression">dataSetRow["CORR_CUST_BANK"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_MAIL_TXT</property>
+                                <expression name="expression">dataSetRow["TEMP_MAIL_TXT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TEMP_CORR_ATTCH</property>
+                                <expression name="expression">dataSetRow["TEMP_CORR_ATTCH"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">50</property>
+                        <column id="35">
+                            <property name="width">2.25in</property>
+                        </column>
+                        <column id="36"/>
+                        <detail>
+                            <row id="17">
+                                <property name="style">title</property>
+                                <cell id="18">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="37">
+                                        <property name="style">fbd12</property>
+                                        <property name="fontFamily">"Futura Bold"</property>
+                                        <text-property name="text">Documentary Department</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="2844">
+                                <property name="style">title</property>
+                                <cell id="2845">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="2862">
+                                        <property name="fontSize">0.45cm</property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="20">
+                                <property name="style">td</property>
+                                <cell id="21">
+                                    <label id="38">
+                                        <property name="style">fh11</property>
+                                        <property name="fontFamily">"Futura Heavy"</property>
+                                        <text-property name="text">Your reference</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="22">
+                                    <data id="39">
+                                        <property name="style">fb11</property>
+                                        <property name="resultSetColumn">TEMP_REF</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="2847">
+                                <property name="height">0.05cm</property>
+                                <property name="style">td</property>
+                                <cell id="2848">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="2863">
+                                        <property name="fontSize">0.05cm</property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="23">
+                                <property name="style">td</property>
+                                <cell id="24">
+                                    <label id="40">
+                                        <property name="style">fh11</property>
+                                        <property name="fontFamily">"Futura Heavy"</property>
+                                        <text-property name="text">Our reference</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="25">
+                                    <data id="41">
+                                        <property name="style">fb11</property>
+                                        <property name="resultSetColumn">C_MAIN_REF</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="2850">
+                                <property name="style">td</property>
+                                <cell id="2851">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="2864">
+                                        <property name="fontSize">0.25cm</property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="2823">
+                                <property name="style">td</property>
+                                <cell id="2824">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="49">
+                                        <property name="style">fb11</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">row["CORR_CUST_BANK"]==null || row["TEMP_CORR_INSTR"] == ""</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">TEMP_CORR_INSTR</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="2853">
+                                <property name="style">td</property>
+                                <cell id="2854">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="2865">
+                                        <property name="fontSize">0.25cm</property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="29">
+                                <cell id="30">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="51">
+                                        <property name="style">fb11</property>
+                                        <property name="resultSetColumn">TEMP_MAIL_TXT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="2856">
+                                <cell id="2857">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="2866">
+                                        <property name="fontSize">0.25cm</property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="52">
+                                <property name="style">td</property>
+                                <cell id="53">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="55">
+                                        <property name="style">fb11</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">row["CORR_CUST_BANK"]==null || row["TEMP_CUST_CRSPD"] == ""</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">TEMP_CUST_CRSPD</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="2859">
+                                <property name="style">td</property>
+                                <cell id="2860">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <label id="2867">
+                                        <property name="fontSize">0.25cm</property>
+                                    </label>
+                                </cell>
+                            </row>
+                            <row id="2826">
+                                <property name="style">td</property>
+                                <cell id="2827">
+                                    <property name="colSpan">2</property>
+                                    <property name="rowSpan">1</property>
+                                    <data id="2829">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">true</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">CORR_CUST_BANK</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="75">
+                <cell id="76">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <grid name="Footer" id="2557" extends="Common_library.Footer">
+                        <overridden-values>
+                            <ref-entry baseId="2379" id="2379"/>
+                            <ref-entry baseId="2382" id="2382"/>
+                            <ref-entry baseId="2383" id="2383"/>
+                            <ref-entry baseId="2804" name="Body Footer" id="2831"/>
+                            <ref-entry baseId="2807" id="2807"/>
+                            <ref-entry baseId="2808" id="2808"/>
+                            <ref-entry baseId="2816" name="NewLabel13" id="2816"/>
+                            <ref-entry baseId="2809" id="2832"/>
+                            <ref-entry baseId="2810" id="2833"/>
+                            <ref-entry baseId="2817" name="NewText2" id="2834"/>
+                            <ref-entry baseId="2811" id="2835"/>
+                            <ref-entry baseId="2812" id="2836"/>
+                            <ref-entry baseId="2818" name="NewText3" id="2868"/>
+                            <ref-entry baseId="2813" id="2838"/>
+                            <ref-entry baseId="2814" id="2839"/>
+                            <ref-entry baseId="2819" name="NewLabel132" id="2819"/>
+                            <ref-entry baseId="2820" id="2820"/>
+                            <ref-entry baseId="2821" id="2821"/>
+                            <ref-entry baseId="2824" name="NewText4" id="2840"/>
+                            <ref-entry baseId="2822" id="2822"/>
+                            <ref-entry baseId="2823" id="2841"/>
+                            <ref-entry baseId="2825" name="NewLabel1321" id="2825"/>
+                            <ref-entry baseId="2815" id="2815"/>
+                        </overridden-values>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

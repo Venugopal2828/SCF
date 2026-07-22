@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Indirect Payment Notification");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMainRef = stp.getSimpleRef("17");
+stp.writeLog("sMainRef======================"+sMainRef);
+stp.setMainRef(sMainRef);
+var sUnitCode = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_SEL_ID");
+stp.setCmpId(sUnitCode);
+stp.writeLog("sUnitCode======================"+sUnitCode);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Received Indirect Payment");
+stp.writeLog("End: Indirect Payment Notification");]]></js-content>
+</root>

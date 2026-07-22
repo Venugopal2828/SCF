@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EPLC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>EPLC</module-name>
+        <cubk-mapping-name>SYF_EPLC_EPLC_RegisterDocsnotAdvisedbyus_SYF_EPLC_GET_ADV_REF_FROM_DB_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <DRAWING_REF ALIAS="T0" DBFUNC="" DESC="Drawing Reference" DT="12" HIDDEN="F" TYPE="F">TEMP_DRWE_REF</DRAWING_REF>
+        <NO_OF_DRAW ALIAS="T0" DBFUNC="" DESC="No of Drawings" DT="4" HIDDEN="F" TYPE="F">NO_OF_DRAW</NO_OF_DRAW>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

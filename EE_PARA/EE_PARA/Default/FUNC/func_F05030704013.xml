@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/R2TSUM_ProcessBaselineMatchReport_EE.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="F">
+        <SCREEN DO="BuyerBank">TSUM_BuyerBanksInfomation</SCREEN>
+        <SCREEN DO="SellerBank">TSUM_SellerBankInformation</SCREEN>
+    </DOSCREEN>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>Open Account Module</MODULE_DESC>
+        <EVENT>R2SIBOSMaintenance</EVENT>
+        <ID>F05030704013</ID>
+        <NAME>R2ProcessBaselineMatchReport</NAME>
+        <DESC>Process Baseline Match Report</DESC>
+        <FUNSHORTNAME>Send010toCE</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>S</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="ProcessBaselineMatchReport">R00000012629</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000006819</CATALOGID>
+        <GAPI>F00000008743</GAPI>
+    </FUNCTION>
+</FUNC>

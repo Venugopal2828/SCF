@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>贷记通知</title>
+<style type="text/css">
+<!--
+.AmountENR
+{	font-size:11pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	background-color: transparent;
+	text-align: right;
+	border: 0;
+	overflow-x: visible;
+}
+.sinput_noborder{
+	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow-x: visible;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+.style1 {
+	font-size: 10pt;
+	font-family: "Times New Roman", Times, serif;
+}
+.style2 {
+	font-size: 11pt;
+	font-family: "Times New Roman", Times, serif;
+}
+.style3 {
+    font-family: "Times New Roman", Times, serif;
+	font-size: 13pt;
+	}
+.style4 {font-family: "Times New Roman", Times, serif; font-size: 13pt; font-weight: bold; }
+.sinput_noborder6 {	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+.sinput_noborder1 {	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow-x: visible;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+.textarea_noborder{
+	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: visible;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+.textarea_noborder1 {font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+-->
+</style>
+<script>
+function init(){
+	var oArr=document.getElementsByTagName('textarea');	
+	for(var j=0;j<oArr.length;++j)
+	{
+		var obj=oArr[j];
+		obj.onpropertychange=setHeight;
+	}
+}
+function setHeight(oEvent)
+{
+	if(window.event)
+		oEvent=window.event;
+	var obj=oEvent.srcElement;
+	var h2=obj.scrollHeight;
+	obj.style.height=h2;
+}
+</script>
+</head>
+
+<body>
+<form name="form1" method="post" action="">
+  <table width="630" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="30" valign="bottom" class="style4"><div align="center" class="style4">CREDITADVICE </div></td>
+        </tr>
+        <tr>
+          <td height="30"><div align="center" class="style3">贷记通知</div></td>
+        </tr>
+      </table>
+        <table width="630" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="20">&nbsp;</td>
+          </tr>
+        </table><table width="630" border="0" bordercolor="#000000" style="border-collapse:collapse " cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="30" class="form_gray"><span class="style2">致</span>：</td>
+            <td width="480"><textarea name="EXPT_NM_C" cols="60" rows="2" class="textarea_noborder" id="EXPT_NM_C" title="EXPT_NM_C" style="border:0mm none; overflow:hidden;" length="120" wrap="virtual"></textarea></td>
+            <td width="39" align="left" nowrap class="style2">日&nbsp; 期</td>
+            <td width="81">
+              <input type="text" name="TRX_DT" id="TRX_DT" title="Trans Date" class="sinput_noborder" length="10"   size="10" maxlength="10">
+           </td>
+          </tr>
+        </table>
+        <table width="630" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="20">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="20" class="style2">迳 启 者:</td>
+          </tr>
+        </table><table width="560" border="1" bordercolor="#000000" style="border-collapse:collapse " align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="301" height="20"><span class="style2">发票号</span> :
+              <span class="td_gray">
+              <textarea name="INV_NO" cols="25" rows="4" class="textarea_noborder1" id="INV_NO" title="INV_NO" length="100"></textarea>
+            </span></td>
+            <td width="253"><span class="style2">发票金额:<input type="text" name="TEMP_CHAR6" id="TEMP_CHAR6" title="TEMP_CHAR6" class="AmountENR" length="1"    size="1" maxlength="1"><input type="text" name="DRAFT_AMT" id="DRAFT_AMT" title="DRAFT_AMT" class="sinput_noborder" length="18"    size="18" maxlength="18" value="0">               
+            </span></td>
+          </tr>
+          <tr>
+            <td height="20"><span class="style2">我行编号</span>:
+            <input type="text" name="C_MAIN_REF" id="C_MAIN_REF" title="MAIN REF. NO." class="sinput_noborder" length="30"    size="20" maxlength="40"></td>
+            <td class="style2">信用证号: 
+            <input type="text" name="LC_NO" id="LC_NO" title="LC_NO" class="sinput_noborder" length="17"   size="17" maxlength="17"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2"><span class="style2">基础业务编号</span>:
+            <input type="text" name="TRX_NO" id="TRX_NO" title="Trans NO" class="sinput_noborder" length="40"    size="40" maxlength="40"></td>
+          </tr>
+		  <tr>
+            <td height="20" colspan="2"><span class="style2">债权工具编号</span>:
+              <input type="text" name="DEBT_INSMT_NO" id="DEBT_INSMT_NO" title="DEBT_INSMT_NO" class="sinput_noborder" length="40"    size="40" maxlength="40"></td>
+          </tr>
+        </table>
+        <table width="630" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="20">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="25" class="style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 上述业务项下之福费廷融资款扣除下列款项后，我行已于即日将余额              
+              <input type="text" name="SETT_AC_CCY2" id="SETT_AC_CCY2" title="SETT_AC_CCY2" class="sinput_noborder" length="3"    size="1" maxlength="3"><input type="text" name="SETT_AC_AMT2" id="SETT_AC_AMT2" title="SETT_AC_AMT2" class="sinput_noborder" length="18"    size="10" maxlength="18" value="0">
+贷记贵公司
+<input type="text" name="SETT_CUST_AC_NO2" id="SETT_CUST_AC_NO2" title="SETT_CUST_AC_NO2" class="sinput_noborder" length="20"    size="20" maxlength="20">
+帐户，特此通知。            </td>
+          </tr>
+          <tr>
+            <td height="25"><span class="style2">
+            </span></td>
+          </tr>
+          <tr>
+            <td height="20">&nbsp;</td>
+          </tr>
+        </table>
+                <table width="630" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="15" height="25">&nbsp;</td>
+            <td colspan="2" class="style2">押汇/贴现金额：
+              <input type="text" name="TEMP_CHAR7" id="TEMP_CHAR7" title="TEMP_CHAR7" class="AmountENR" length="3"    size="1" maxlength="3"><input type="text" name="PURCH_BAL" id="PURCH_BAL" title="PURCH_BAL" class="sinput_noborder" length="18"    size="10" maxlength="18" value="0"></td>
+            </tr>
+          <tr>
+            <td height="25">&nbsp;</td>
+            <td width="300" class="style2">福费廷利率：
+              <input type="text" name="FINC_RT" id="FINC_RT" title="FINC_RT" class="sinput_noborder" length="8"    size="8" maxlength="8">
+            %</td>
+            <td width="315" class="style2">天数:
+            <input type="text" name="FINC_DAYS" id="FINC_DAYS" title="FINC_DAYS" class="sinput_noborder1" length="10"    size="10" maxlength="10"></td>
+          </tr>
+           <tr><td height="25">&nbsp;</td>
+            <td colspan="2"  class="style2">无兑换手续费:
+              <input type="text" name="SETT_NET_EXCH_CCY" id="SETT_NET_EXCH_CCY" title="SETT_NET_EXCH_CCY" class="AmountENR" length="3" size="3" maxlength="3">
+            <input type="text" name="SETT_EXCH_COMM2" id="SETT_EXCH_COMM2" title="SETT_EXCH_COMM2" class="sinput_noborder" length="18" size="18" maxlength="18" value="0"></td>
+            
+			</tr>
+          <tr>
+            <td colspan="3">             
+            <span class="style2">            </span></td>
+            </tr>
+        </table>
+                <table width="630" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="14" height="25">&nbsp;</td>
+                    <td width="265"><span class="style2">汇率1</span>( <span class="style2"><span class="td_gray">
+                    <input type="text" name="FINC_CCY" id="FINC_CCY" title="FINC_CCY" class="AmountENR" length="1"    size="1" maxlength="1">
+                    </span></span><span class="style2">/RMB</span>): <span class="style2">
+                    <input  type="text" name="BUYING_CUST_RT" id="BUYING_CUST_RT" title="BUYING_CUST_RT"  class="sinput_noborder"length="10"   size="10" maxlength="10">
+                    </span></td>
+                    <td colspan="2"><span class="style2">汇率2</span>(
+                      <input type="text" name="SETT_AC_CCY2" id="SETT_AC_CCY2" title="SETT_AC_CCY2" class="AmountENR" length="3"    size="1" maxlength="3">
+                      <span class="style2">/RMB</span>): <span class="style2">
+                      <input  type="text" name="SETT_CUST_RT2" id="SETT_CUST_RT2" title="SETT_CUST_RT2"  class="sinput_noborder"length="10"   size="10" maxlength="10">
+                      </span></td>
+                  </tr>
+                  <tr>
+                    <td height="25">&nbsp;</td>
+                    <td height="20" align="left" valign="top"><p><span class="style2">申报号</span>：
+                            <input type="text" name="RPT_DCLR_NO" id="RPT_DCLR_NO" title="RPT_DCLR_NO" class="sinput_noborder" length="22"   size="22" maxlength="22">
+                      </p>
+                        <p>&nbsp;</p></td>
+                    <td width="101" height="20" align="left" valign="top" nowrap><span class="style2">核销单编号</span>：<span class="td_gray"> </span></td>
+                    <td width="250" align="left" valign="top"><span class="td_gray">
+                      <textarea name="RPT_VERF_NO" cols="30" rows="4" class="sinput_noborder6" id="RPT_VERF_NO" title="RPT_VERF_NO" length="100"></textarea>
+                    </span></td>
+                  </tr>
+                  <tr>
+                    <td height="25">&nbsp;</td>
+                    <td height="20"><span class="style2">柜员号</span>：
+                    <input type="text" name="CLERK_ID" id="CLERK_ID" title="Clerk ID" class="sinput_noborder" length="10"   size="10" maxlength="10"></td>
+                    <td height="20" colspan="2">&nbsp;</td>
+                  </tr>
+                </table>
+                <table width="630" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="20">&nbsp;</td>
+                  </tr>
+				 <tr>
+            <td height="30" valign="middle" align="right">________________________________</td>
+          </tr>
+          <tr>
+            <td height="30" align="right"><span class="style2">FOR BANK OF CHINA LTD&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp; </td>
+          </tr>
+          <tr>
+            <td height="20" align="right" class="style2">中国银行股份有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+          </tr>
+                </table></td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript">
+init();
+</script>
+</body>
+</html>
+<iframe  width="0" height="0" frameborder="0"> </iframe>
+<iframe  width="0" height="0" frameborder="0"> </iframe>

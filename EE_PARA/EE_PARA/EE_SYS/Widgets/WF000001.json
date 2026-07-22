@@ -1,0 +1,37 @@
+{
+	"id": "WF000001",
+	"type": "function",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF000001",
+			"display": "chart.bar",
+			"title": "IPLC Document Checks",
+			"desc": "Show Import Letters of Credit transactions for which documents have been received but for which no decision has been registered yet.",
+			"tooltip": "{\"text\":\"{a}<br/>{b} day ago: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"pie": "{\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "F05030701982",
+				"extraSelect": "T2.PRES_DT,T2.C_UNIT_CODE, (TO_DATE(sysdate ) - TO_DATE(T2.PRES_DT)) NM, COUNT ( CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(T2.PRES_DT)),'d')) as VL",
+				"extraWhere": "",
+				"extraGroupBy": "T2.PRES_DT,T2.C_UNIT_CODE,(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(T2.PRES_DT)),'d' ))",
+				"extraOrderBy": "T2.C_UNIT_CODE, NM asc",
+				"overwrite": ["extraSelect", "extraOrderBy"],
+				"catalog": ["PRES_DT"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "NM",
+			"valueField": "VL"
+		}
+	}
+}

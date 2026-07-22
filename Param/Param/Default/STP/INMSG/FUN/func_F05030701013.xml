@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Processed Invoice");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMainRef = stp.getSimpleRef(17);
+stp.writeLog("sMainRef****"+sMainRef);
+stp.setMainRef(sMainRef);
+var sRptId = stp.getXslMsgTagVal("message/Document/DataSetMtchRpt/RptId","Id");
+stp.writeLog("sRptId========="+sRptId);
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC========="+sBIC);
+var sBuyrBkBIC = stp.getXslMsgTagVal("message/Document/DataSetMtchRpt/BuyrBk","BIC");
+var sSellrBkBIC = stp.getXslMsgTagVal("message/Document/DataSetMtchRpt/SellrBk","BIC");
+var sBuyrNm = stp.getXslMsgTagVal("message/Document/DataSetMtchRpt/Buyr","Nm");
+var sSellrNm = stp.getXslMsgTagVal("message/Document/DataSetMtchRpt/Sellr","Nm");
+var sUnitNm = "";
+if(sBIC == sBuyrBkBIC){
+  sUnitNm = sBuyrNm;
+  stp.updateFieldValue("TSU_TRX_ROLE","BUYER");
+}else{
+  sUnitNm = sSellrNm;
+  stp.updateFieldValue("TSU_TRX_ROLE","SELLER");
+}
+stp.updateFieldValue("TSU_PCBK_BIC",sBIC);
+var arrKeys = [["C_UNIT_NAME",sUnitNm]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetUnitCodeByNm",arrKeys);
+var sUnitCode = arrGetDataResult[0];
+stp.setCmpId(sUnitCode);
+
+var sTxId = stp.getXslMsgTagVal("message/Document/DataSetMtchRpt/TxId","Id");
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+var NoOfMismatch = stp.getXslMsgTagVal("message/Document/DataSetMtchRpt/Rpt","NbOfMisMtchs");
+stp.updateFieldValue("CURRNT_STATUS","Received DataSet Match Report");
+if(parseInt(NoOfMismatch) > 0){
+stp.updateFieldValue("CURRNT_STATUS","Received DataSet Mismatch Report");
+stp.updateFieldValue("TSUR2_REQ_ACT_TP","ARDM");
+}
+
+stp.writeLog("End: Received Processed Invoice");]]></js-content>
+</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRNB_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>TRNB</module-name>
+        <cubk-mapping-name>Chk_DuplicateRecordByNsBkID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <NS_BK_ID ALIAS="T0" DBFUNC="" DESC="Nostro Bank Code" DT="12" HIDDEN="F" TYPE="F">NS_BK_ID</NS_BK_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="CHAR_11" TYPE="TBL_FLD">T0.NS_BK_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">NS_BK_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

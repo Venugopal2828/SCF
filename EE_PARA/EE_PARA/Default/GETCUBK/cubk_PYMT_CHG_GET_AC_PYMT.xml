@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>CHG_GET_AC_PYMT</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_AC_NUMBER ALIAS="T0" DESC="Account Number" DT="12" TYPE="F">CHG_FLD_LOCAL_CUST_AC_NO</C_AC_NUMBER>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_AC_NUMBER ALIAS="T0" DBFUNC="" DESC="Account Number" DT="12" HIDDEN="F" TYPE="F">CHG_FLD_LOCAL_CUST_AC_NO</C_AC_NUMBER>
+        <C_CURRENCY ALIAS="T0" DBFUNC="" DESC="Currency Code" DT="12" HIDDEN="F" TYPE="F">CHG_FLD_LOCAL_CUST_CCY</C_CURRENCY>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">TEMP_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T0.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">CHG_FLD_LOCAL_CUST_CCY</SQL>
+            <SQL TYPE="SQL">' AND  (</SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.C_DBT_CRDT</SQL>
+            <SQL TYPE="SQL"> = 'C' OR </SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.C_DBT_CRDT</SQL>
+            <SQL TYPE="SQL"> = 'B')</SQL>
+        </condition>
+        <condition seq="2">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">TEMP_ID</SQL>
+            <SQL TYPE="SQL">' AND (</SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.C_DBT_CRDT</SQL>
+            <SQL TYPE="SQL"> = 'C' OR </SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.C_DBT_CRDT</SQL>
+            <SQL TYPE="SQL"> = 'B')</SQL>
+        </condition>
+        <condition seq="3">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">TEMP_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T0.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">CHG_FLD_LOCAL_CUST_CCY</SQL>
+            <SQL TYPE="SQL">' AND  (</SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.C_DBT_CRDT</SQL>
+            <SQL TYPE="SQL"> = 'D' OR </SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.C_DBT_CRDT</SQL>
+            <SQL TYPE="SQL"> = 'B')</SQL>
+        </condition>
+        <condition seq="4">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">TEMP_ID</SQL>
+            <SQL TYPE="SQL">' AND (</SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.C_DBT_CRDT</SQL>
+            <SQL TYPE="SQL"> = 'D' OR </SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.C_DBT_CRDT</SQL>
+            <SQL TYPE="SQL"> = 'B')</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

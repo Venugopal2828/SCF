@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FAEF</module>
+    <name>FA_IF_LMT</name>
+    <desc>FA_IF_LMT</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FADA_FACTOR</table-name>
+        <table-desc>FADA_FACTOR</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>FA_FCI_NO</sql>
+            <sql>='</sql>
+            <field mf="F">FA_IF_ID</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <D_RELE_DATE fv_type="F" mf="F" oper="=">TRX_DT</D_RELE_DATE>
+        <FA_LMT_BAL fv_type="F" mf="F" oper="-=">FA_TEMP2</FA_LMT_BAL>
+    </mapping>
+</root>

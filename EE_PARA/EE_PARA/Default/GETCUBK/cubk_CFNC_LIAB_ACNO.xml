@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>CFNC</module-name>
+        <cubk-mapping-name>LIAB_ACNO</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <C_AC_NUMBER ALIAS="T0" DESC="Account Number" DT="12" TYPE="F">LIAB_ACNO</C_AC_NUMBER>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_AC_NUMBER ALIAS="T0" DBFUNC="" DESC="Account Number" DT="12" HIDDEN="F" TYPE="F">LIAB_ACNO</C_AC_NUMBER>
+        <C_AC_DESC ALIAS="T0" DBFUNC="" DESC="Account Description" DT="12" HIDDEN="F" TYPE="F">TEMP_ASSET_ACNO_DESC</C_AC_DESC>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL">= '</SQL>
+            <SQL TYPE="FLD">LIAB_ACNO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

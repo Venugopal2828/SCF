@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>F</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value>CounterpartyInquiry</gapi-type-value>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>EE_FINACLE</other-system-id>
+        <other-system-interface>Counterparty</other-system-interface>
+        <recv-time-out>60</recv-time-out>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>SSSS</module>
+        <interface-mapping-name>EE_Counterparty</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>I</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <CounterpartyCompanyRegNr descr="" ec-tag="N" fv-type="F" op-tag="N" order="1">FA_CUST_REG_NO</CounterpartyCompanyRegNr>
+        <CounterpartyName descr="" ec-tag="N" fv-type="F" op-tag="N" order="2">PARTY_NM</CounterpartyName>
+        <CounterpartyAcct descr="" ec-tag="N" fv-type="F" op-tag="N" order="3">FA_CUST_ACC_NO</CounterpartyAcct>
+        <Street descr="" ec-tag="N" fv-type="F" op-tag="N" order="4">CUST_STREET_NM</Street>
+        <City descr="" ec-tag="N" fv-type="F" op-tag="N" order="5">CUST_CITY</City>
+        <State descr="" ec-tag="N" fv-type="F" op-tag="N" order="6">FA_CUST_PROV</State>
+        <Postcode descr="" ec-tag="N" fv-type="F" op-tag="N" order="7">POST_CODE</Postcode>
+        <Country descr="" ec-tag="N" fv-type="F" op-tag="N" order="8">CNTY_CODE</Country>
+        <ContactName descr="" ec-tag="N" fv-type="F" op-tag="N" order="9">FST_CNTC_NM</ContactName>
+        <Telephone descr="" ec-tag="N" fv-type="F" op-tag="N" order="10">TEL_NO</Telephone>
+        <MailAddr descr="" ec-tag="N" fv-type="F" op-tag="N" order="11">FA_CUST_NM_ADD_ML</MailAddr>
+        <ApplLimit descr="" ec-tag="N" fv-type="F" op-tag="N" order="12">FA_LMT_AMT</ApplLimit>
+        <DueDate descr="" ec-tag="N" fv-type="F" op-tag="N" order="13">FA_LMT_DUE_DT</DueDate>
+        <OurCustInd descr="" ec-tag="N" fv-type="F" op-tag="N" order="14">FA_CUST_FLAG</OurCustInd>
+        <FrontEndUser descr="" ec-tag="N" fv-type="F" op-tag="N" order="15">CE_CUSTOMER</FrontEndUser>
+        <Fax descr="" ec-tag="N" fv-type="F" op-tag="N" order="16">FAX_NO</Fax>
+        <Email descr="" ec-tag="N" fv-type="F" op-tag="N" order="17">EMAIL_ADD</Email>
+        <Currency descr="" ec-tag="N" fv-type="F" op-tag="N" order="18">FA_LMT_CCY</Currency>
+    </send-msg-map>
+    <recv-msg-map>
+        <TEMP_RESULT5 descr="" fv-type="F" order="1" sheet="" sheet-separator="">TEMP_RESULT5</TEMP_RESULT5>
+    </recv-msg-map>
+    <send-item/>
+</gapi>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_SRC_GTS_CentralCommissionmodule_GetCablePostFee_4</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <CNTY_NM ALIAS="T0" DBFUNC="" DESC="Country Name" DT="12" HIDDEN="F" TYPE="V">sCntyCode</CNTY_NM>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">BK_ID='</SQL>
+            <SQL TYPE="FLD">sBankIdCUBK</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

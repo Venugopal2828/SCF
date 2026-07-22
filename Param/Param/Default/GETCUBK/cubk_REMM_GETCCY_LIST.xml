@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="GETCCY_LIST" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>REMM</module-name>
+        <cubk-mapping-name>GETCCY_LIST</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_EXCHAN_RATE</table-name>
+        <table-desc>STD_EXCHAN_RATE</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <C_FROM_CCY DESC="C_FROM_CCY" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">USD</C_FROM_CCY>
+            <C_TO_CCY DESC="C_TO_CCY" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">PAY_CCY</C_TO_CCY>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_DESC_ID DESC="C_DESC_ID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">CCY_DESC</C_DESC_ID>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

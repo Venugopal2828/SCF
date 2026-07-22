@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EE-10929 2024/03/26 sana.li -->
+<root>
+	<CATALOG>
+		<MainInfo>
+			<C_UNIT_CODE id="C_UNIT_CODE" width="80" display="Y" type="string">Business Unit</C_UNIT_CODE>
+			<C_BG_DESC id="C_BG_DESC" width="150" display="N" type="string">Business Group Description</C_BG_DESC>
+		</MainInfo>
+		<PRIORITY>
+			<DELAY id="DELAY" width="100" display="Y" type="string">Missed TAT</DELAY>
+			<Critical id="Critical" width="100" display="Y" type="string">Critical</Critical>
+			<Very_High id="Very_High" width="100" display="Y" type="string">Very High</Very_High>
+			<High id="High" width="100" display="Y" type="string">High</High>
+			<Normal id="Normal" width="100" display="Y" type="string">Normal</Normal>
+			<Low id="Low" width="100" display="Y" type="string">Low</Low>
+			<COMPLETE id="COMPLETE" width="100" display="Y" type="string">Complete</COMPLETE>
+		</PRIORITY>
+	</CATALOG>
+	<Filter>
+		<C_UNIT_CODE name="buFilter" id="C_UNIT_CODE" type="FLD" filter="N"/>
+		<C_BG_DESC name="bgFilter" id="C_BG_DESC" type="FLD" filter="Y"/>
+		<C_MODULE name="moduFilter" id="C_MODULE" type="FLD" filter="Y"/>
+		<DatePeriod name="dateFilter" id="DatePeriod" type="VALUE" filter="Y"/>
+	</Filter>
+</root>

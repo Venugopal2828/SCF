@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("Begin: Assign function R2Acknowledgement");
+var TxId = stp.getValue("/Document/Ack/TxId","Id");
+var bu=stp.getTSUUnitCode();
+var AckdMsgRef = stp.getValue("Document/Ack/AckdMsgRef","Id");
+stp.writeLog("AckdMsgRef11111:========"+AckdMsgRef[0]);
+
+var Type = stp.getPartValue(AckdMsgRef[0],1,3);
+stp.writeLog("Type:========"+Type);
+
+ 
+        var OurBIC=stp.getTSUBIC();
+        var REF= stp.getValue("/Document/Ack/UsrTxRef","Id");
+        var FirstREF = REF[0];
+        var SecondREF = REF[1];
+
+        var BICCode = stp.getValue("/Document/Ack/UsrTxRef/IdIssr","BIC");
+        var FirstBIC = BICCode[0];
+        var SecondBIC = BICCode[1];
+if (FirstBIC != undefined )
+   {
+	if (SecondBIC == undefined || SecondBIC == "null" || SecondBIC==null)
+	   {   
+			SecondBIC = '';
+			SecondREF = '';
+		}
+			var BIC1 = stp.compareString(FirstBIC,OurBIC);
+			var BIC2= stp.compareString(SecondBIC,OurBIC);
+			stp.writeLog("BIC1--------------------" +BIC1);
+			stp.writeLog("BIC2--------------------" +BIC2);
+	
+		if(BIC1 == "true")
+		{   
+			stp.writeLog("333333333333          -----------------------------------------------------$$$$$$$$$$$$$$$$$$$$$$%%%%%%%%%%%");
+			stp.updateFieldValue("/root/domData","TSU_OUR_REF",FirstREF);
+			stp.updateFieldValue("/root/domData","C_MAIN_REF",FirstREF);
+			stp.updateFieldValue("/root/domData","C_TRX_REF",FirstREF);
+			stp.updateFieldValue("/root/domData","TSU_OUR_BIC",FirstBIC);
+			stp.updateFieldValue("/root/domData","TSU_THEIR_BIC",SecondBIC);
+		}
+		
+		if(BIC2 == "true")
+		{   
+			stp.writeLog("111111111111         -----------------------------------------------------$$$$$$$$$$$$$$$$$$$$$$%%%%%%%%%%%");
+			stp.updateFieldValue("/root/domData","TSU_OUR_REF",SecondREF);
+			stp.updateFieldValue("/root/domData","C_MAIN_REF",SecondREF);
+			stp.updateFieldValue("/root/domData","C_TRX_REF",SecondREF);
+			stp.updateFieldValue("/root/domData","TSU_OUR_BIC",SecondBIC);
+			stp.updateFieldValue("/root/domData","TSU_THEIR_BIC",FirstBIC);
+		}
+    }
+    
+    /*if (FirstREF == undefined)
+    {
+        if (TxId[0] !=undefined )
+        {
+	var fld_list = stp.addFieldList(null,"C_MAIN_REF");    
+	var sql_condition = stp.addSQLCondition(null,"TSU_TID",TxId[0]);
+	sql_condition     = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu); 
+	var result = stp.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef = stp.getDBFieldValue(result,"C_MAIN_REF");
+	stp.writeLog("mainRef="+mainRef);
+	stp.updateFieldValue("/root/domData","C_MAIN_REF",mainRef);
+	stp.updateFieldValue("/root/domData","C_TRX_REF",mainRef);
+        }
+    }*/
+
+      stp.writeLog("AckdMsgRef2222:"+AckdMsgRef[0]);
+      var fld_list2 = stp.addFieldList(null,"C_TRX_REF"); 
+      var sql_condition2 = stp.addSQLCondition(null,"C_MSG_ID",AckdMsgRef[0]); 
+      sql_condition2 = stp.addSQLCondition(sql_condition2,"C_UNIT_CODE",bu); 
+      stp.writeLog("sql_condition2:"+sql_condition2);  
+      var result2	= stp.executeQuery("EXIMSYS.TSU_MSGS",fld_list2,sql_condition2); 
+      var C_TRX_REF = stp.getDBFieldValue(result2,"C_TRX_REF");
+      stp.writeLog("C_TRX_REF:"+C_TRX_REF);
+      stp.updateFieldValue("/root/domData","C_MAIN_REF",C_TRX_REF);
+      stp.updateFieldValue("/root/domData","C_TRX_REF",C_TRX_REF);
+      stp.updateFieldValue("/root/domData","SHORT_NAME","001");
+
+
+// for reqforactn begin
+//setNodeAttribute(String xPath)
+
+var TSU_REQ_ACT_TP = stp.getValue("/Document/Ack/ReqForActn","Tp");
+stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+if ( TSU_REQ_ACT_TP[0]== undefined)
+{
+	stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");	
+	stp.updateFieldValue("/root/domData","TSU_REQ_ACT_DESC","");
+	stp.setNodeAttribute("/root/domData/TSU_REQ_ACT_DESC");
+}
+//for reqforactn end
+
+stp.setAutoProcess(true); 
+
+var Type = stp.getPartValue(REF[0],1,4);
+stp.writeLog("Type:========"+Type);
+if (Type=="OCBC")
+{  
+    var Trx_Status = stp.getValue("/Document/Ack/TxSts","Sts");
+    if (Trx_Status[0] == "ESTD")
+    {
+        stp.writeLog("Begin ESTD");
+        
+	var fld_list3  = stp.addFieldList(null,"TSU_PO_ID"); 
+	var sql_condition3 = stp.addSQLCondition(null,"C_MAIN_REF",REF[0]); 
+	sql_condition3 = stp.addSQLCondition(sql_condition3,"C_UNIT_CODE",bu);   
+	var result3= stp.executeQuery("TSUM_MASTER",fld_list3,sql_condition3); 
+	var TSU_PO_ID= stp.getDBFieldValue(result3,"TSU_PO_ID");
+	var fld_list1 = stp.addFieldList(null,"C_MAIN_REF"); 
+	var sql_condition1 = stp.addSQLCondition(null,"TSU_PO_ID",TSU_PO_ID); 
+	sql_condition1 = stp.addSQLCondition(sql_condition1,"C_UNIT_CODE",bu);   
+	var result1 = stp.executeQuery("TSUM_DT_LINEITEM_R2",fld_list1,sql_condition1); 
+	var C_MAIN_REF = stp.getDBFieldValue(result1,"C_MAIN_REF");
+	stp.updateFieldValue("/root/domData","C_MSG_TYPE","tsmt.014.001.03");
+	stp.updateFieldValue("/root/domData","TSU_TID",TxId[0]);
+	stp.updateFieldValue("/root/domData","TSU_PO_ID",TSU_PO_ID);
+	stp.updateFieldValue("/root/domData","TSU_MAIN_REF",C_MAIN_REF);
+	stp.writeLog("End ESTD");
+	stp.setFunc("AcknowledgementOCBC");
+	}
+	else
+	{	
+		//get TSUR2_TRX_STATUS for OCBC--SIBOS2009(manage the 001 message received after 011 and 013) Start
+		var fld_list1 = stp.addFieldList(null,"TSUR2_TRX_STATUS"); 
+		var sql_condition1 = stp.addSQLCondition(null,"TSU_TID",TxId[0]); 
+		sql_condition1   = stp.addSQLCondition(sql_condition1,"C_UNIT_CODE",bu);   
+		var result1 = stp.executeQuery("TSUM_MASTER",fld_list1,sql_condition1); 
+		var TSUR2_TRX_STATUS = stp.getDBFieldValue(result1,"TSUR2_TRX_STATUS");
+		stp.writeLog("Trx_Status[0]"+Trx_Status[0]);
+		stp.writeLog("TSUR2_TRX_STATUS"+TSUR2_TRX_STATUS);
+		if(Trx_Status[0]=="ACTV" && TSUR2_TRX_STATUS=="COMP")
+		{
+		stp.updateFieldValue("/root/domData","TSUR2_TRX_STATUS",TSUR2_TRX_STATUS);
+		}
+		//get TSUR2_TRX_STATUS for OCBC--SIBOS2009(manage the 001 message received after 011 and 013) End
+		
+	    stp.setFunc("R2ReceiveAcknowledgement");
+	}
+}
+else
+{
+	//get TSUR2_TRX_STATUS for OCBC--SIBOS2009(manage the 001 message received after 011 and 013) Start
+	var AckdMsg=stp.getPartValue(AckdMsgRef[0],1,4);
+	if(AckdMsg=="OCBC")
+	{
+		var fld_list1 = stp.addFieldList(null,"TSUR2_TRX_STATUS"); 
+		var sql_condition1 = stp.addSQLCondition(null,"TSU_TID",TxId[0]); 
+		sql_condition1 = stp.addSQLCondition(sql_condition1,"C_UNIT_CODE",bu);   
+		var result1= stp.executeQuery("TSUM_MASTER",fld_list1,sql_condition1); 
+		var TSUR2_TRX_STATUS= stp.getDBFieldValue(result1,"TSUR2_TRX_STATUS");
+		if(Trx_Status[0]=="ACTV" && TSUR2_TRX_STATUS=="COMP")
+		{
+		stp.updateFieldValue("/root/domData","TSUR2_TRX_STATUS",TSUR2_TRX_STATUS);
+		}
+	}
+	//get TSUR2_TRX_STATUS for OCBC--SIBOS2009(manage the 001 message received after 011 and 013) End
+	stp.setFunc("R2ReceiveAcknowledgement");
+}
+
+stp.writeLog("End: Assign function R2Acknowledgement");]]></js-content>
+</root>

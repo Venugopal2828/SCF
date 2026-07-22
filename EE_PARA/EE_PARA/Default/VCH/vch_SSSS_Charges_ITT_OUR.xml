@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>SSSS</MODULE>
+        <DESC>Charges ITT OUR</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>1</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>R</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">.CHG_CUSTOMER_ID</C_CUST_ID>
+            <DO name="ChargeForm" path="ChargeForm.TrxCharge"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">ChargeForm.TrxCharge.CHG_GL_AC_NUMBER</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">ChargeForm.TrxCharge.CHG_COLLECT_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="S">var ex=DV.getCurrentDoData('CHG_TEMP1');
+DV.writeLog("**Calculate Charge Amount**");
+ var amt=DV.getCurrentDoData('CHG_COLLECT_AMT');
+ 
+ if(ex != null){
+  if (ex.equals('exclude')){
+    DV.writeLog("**Exclude Charge**");
+    amt='0';
+  }
+  }
+DV.writeLog("**Amount**" + amt);
+  DV.appendField(amt);</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">CHG_VALUE_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">N</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="S" USED="N">var dest=DV.getFieldValue('CHG_FLD_ALL_CHARGE_FOR');
+  var rate=DV.getFieldValue('CHG_LOCAL_CUST_PAY_RATE');
+   
+  if(dest != null &amp;&amp; dest.equals('F')){
+      rate=DV.getFieldValue('CHG_FOREIGN_CUST_PAY_RATE');;
+  }
+  DV.appendField(rate);</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="V">COMMISSION</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="">do_10042245</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="V">No</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="V">C</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE="F">ChargeForm.TrxCharge.CPYT_RET_SWT_FLAG</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

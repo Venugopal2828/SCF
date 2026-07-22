@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FADA</module>
+    <name>COUNTER_TP_UPDATE</name>
+    <desc>Update counterparty type</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FADA_COUNTER</table-name>
+        <table-desc>FADA_COUNTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql type="TBL_FLD">FA_COUNTER_REG_NO</sql>
+            <sql type="SQL"> = '</sql>
+            <field mf="F">FA_COUNTER_REG_NO</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">C_MAIN_REF</sql>
+            <sql type="SQL"> = '</sql>
+            <field mf="F">FA_CNTR_REF</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_COUNTER_CE_FLG fv_type="F" mf="F" oper="=">FA_COUNTER_CE_FLG</FA_COUNTER_CE_FLG>
+        <FA_CUST_FLAG fv_type="F" mf="F" oper="=">FA_CUST_FLAG</FA_CUST_FLAG>
+        <FA_COUNTER_TYPE fv_type="F" mf="F" oper="=">FA_COUNTER_TYPE</FA_COUNTER_TYPE>
+        <ORIG_FA_COUNTER_TYPE fv_type="F" mf="F" oper="=">ORIG_FA_COUNTER_TYPE</ORIG_FA_COUNTER_TYPE>
+    </mapping>
+</root>

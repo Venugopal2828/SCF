@@ -1,0 +1,29 @@
+{
+	"id": "WF0000016",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF0000016",
+			"display": "chart.bar",
+			"title": "SCF Financed In Total",
+			"desc": "Show total financed amount of different business type by today.",
+			"tooltip": "{\"text\":\"{a}<br/>{b}:{c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Financed In Total\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+                    "pie": "{\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+					"line": "{\"xAxis\":{\"name\":\"Financed In Total\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Financed In Total\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Financed In Total\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"sql": "select FA_BUSI_TYPE,SUM (FA_TTL_LOAN_BAL) AS VL,C_UNIT_CODE from EXIMTRX.FADA_MASTER WHERE (FA_BUSI_TYPE = 'PF' OR FA_BUSI_TYPE = 'POF' OR FA_BUSI_TYPE = 'DD') AND C_TRX_STATUS = 'M' AND C_LOCKED_FLAG = 'F' AND FA_BUSI_STATUS = 'SBR' AND (C_CP_UNIT_CODE = '{{SYS_BUSI_UNIT}}' OR C_UNIT_CODE  = '{{SYS_BUSI_UNIT}}' OR C_UNIT_CODE IS NULL OR C_CP_UNIT_CODE  IS NULL) GROUP BY FA_BUSI_TYPE,C_UNIT_CODE ORDER BY VL",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "FA_BUSI_TYPE",
+			"valueField": "VL"
+		}
+	}
+}

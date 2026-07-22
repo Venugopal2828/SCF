@@ -1,0 +1,62 @@
+<WORKFLOW>
+	<STEPS>
+		<STEP>
+			<LABEL>Receive Advise</LABEL>
+			<INITIALINFO>In Process</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700931" DESC="Received Export LC Advise"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<STATUS DESC="">M</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Advise received</ENDSTATUS>
+			<EVENTINFO><![CDATA[on ${date} at ${time}]]></EVENTINFO>
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Export LC Advise</LABEL>
+			<INITIALINFO>Export LC Advise</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700899" DESC="Export LC Advise"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<STATUS DESC="">Z</STATUS>
+					<STATUS DESC="">P</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Pending approval</ENDSTATUS>			
+			<EVENTINFO><![CDATA[by ${user} on ${date} at ${time}]]></EVENTINFO>
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Authorize</LABEL>
+			<INITIALINFO>Pending authorization</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700899" DESC="Export LC"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<STATUS DESC="">T</STATUS>
+					<STATUS DESC="">S</STATUS>
+					<STATUS DESC="">R</STATUS>
+					<STATUS DESC="">A</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Fully authorized</ENDSTATUS>
+			<EVENTINFO><![CDATA[next authorizers]]></EVENTINFO>
+			<ABNORMALSTATUS>Rejected by authorizer</ABNORMALSTATUS>	
+			<ABINFO><![CDATA[by ${user} on ${date} at ${time}]]></ABINFO>
+			<ENDINFO><![CDATA[authorized by ${count} users]]></ENDINFO>
+		</STEP>
+	</STEPS>
+</WORKFLOW>

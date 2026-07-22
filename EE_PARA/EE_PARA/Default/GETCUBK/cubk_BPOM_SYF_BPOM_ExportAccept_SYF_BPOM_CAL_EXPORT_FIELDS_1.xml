@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">BPOM_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>BPOM</module-name>
+        <cubk-mapping-name>SYF_BPOM_ExportAccept_SYF_BPOM_CAL_EXPORT_FIELDS_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <TSU_TID ALIAS="T0" DBFUNC="" DESC="Transaction TID" DT="12" HIDDEN="F" TYPE="F">TSU_TID</TSU_TID>
+        <TSU_GOODS_DESC ALIAS="T0" DBFUNC="" DESC="Goods Description" DT="12" HIDDEN="F" TYPE="F">TSU_GOODS_DESC</TSU_GOODS_DESC>
+        <CONF_ADDED ALIAS="T0" DBFUNC="" DESC="Confirmation Added?" DT="12" HIDDEN="F" TYPE="F">CONF_ADDED</CONF_ADDED>
+        <CONF_PCT ALIAS="T0" DBFUNC="" DESC="Confirmation Percentage" DT="12" HIDDEN="F" TYPE="F">CONF_PCT</CONF_PCT>
+        <CONF_BAL ALIAS="T0" DBFUNC="" DESC="Confirmed Balance" DT="3" HIDDEN="F" TYPE="F">CONF_BAL</CONF_BAL>
+        <CONF_BK_ID ALIAS="T0" DBFUNC="" DESC="Confirming Bank ID" DT="12" HIDDEN="F" TYPE="F">CONF_BK_ID</CONF_BK_ID>
+        <CONF_BK_NM ALIAS="T0" DBFUNC="" DESC="Confirming Bank Name" DT="12" HIDDEN="F" TYPE="F">CONF_BK_NM</CONF_BK_NM>
+        <CONF_BK_ADD1 ALIAS="T0" DBFUNC="" DESC="Confirming Bank Address 1" DT="12" HIDDEN="F" TYPE="F">CONF_BK_ADD1</CONF_BK_ADD1>
+        <CONF_BK_ADD2 ALIAS="T0" DBFUNC="" DESC="Confirming Bank Address 2" DT="12" HIDDEN="F" TYPE="F">CONF_BK_ADD2</CONF_BK_ADD2>
+        <CONF_BK_ADD3 ALIAS="T0" DBFUNC="" DESC="Confirming Bank Address 3" DT="12" HIDDEN="F" TYPE="F">CONF_BK_ADD3</CONF_BK_ADD3>
+        <CONF_BK_MAIL_ADD ALIAS="T0" DBFUNC="" DESC="CONF BK_MAIL_ADD" DT="12" HIDDEN="F" TYPE="F">CONF_BK_MAIL_ADD</CONF_BK_MAIL_ADD>
+        <CONF_BK_SW_TAG ALIAS="T0" DBFUNC="" DESC="Confirming Bank SWIFT Tag" DT="12" HIDDEN="F" TYPE="F">CONF_BK_SW_TAG</CONF_BK_SW_TAG>
+        <CONF_BK_SW_ADD ALIAS="T0" DBFUNC="" DESC="Confirming Bank SWIFT Address" DT="12" HIDDEN="F" TYPE="F">CONF_BK_SW_ADD</CONF_BK_SW_ADD>
+        <TSU_COMM_REQ ALIAS="T0" DBFUNC="" DESC="TSU COMM REQ" DT="12" HIDDEN="F" TYPE="F">TSU_COMM_REQ</TSU_COMM_REQ>
+        <TSU_TRAN_REQ ALIAS="T0" DBFUNC="" DESC="TSU TRAN_REQ" DT="12" HIDDEN="F" TYPE="F">TSU_TRAN_REQ</TSU_TRAN_REQ>
+        <TSU_INSU_REQ ALIAS="T0" DBFUNC="" DESC="TSU INSU_REQ" DT="12" HIDDEN="F" TYPE="F">TSU_INSU_REQ</TSU_INSU_REQ>
+        <TSU_ANAY_REQ ALIAS="T0" DBFUNC="" DESC="TSU ANAY REQ" DT="12" HIDDEN="F" TYPE="F">TSU_ANAY_REQ</TSU_ANAY_REQ>
+        <TSU_HEAL_REQ ALIAS="T0" DBFUNC="" DESC="TSU HEAL_REQ" DT="12" HIDDEN="F" TYPE="F">TSU_HEAL_REQ</TSU_HEAL_REQ>
+        <TSU_ORIG_REQ ALIAS="T0" DBFUNC="" DESC="TSU ORIG_REQ" DT="12" HIDDEN="F" TYPE="F">TSU_ORIG_REQ</TSU_ORIG_REQ>
+        <TSU_PHYT_REQ ALIAS="T0" DBFUNC="" DESC="TSU PHYT_REQ" DT="12" HIDDEN="F" TYPE="F">TSU_PHYT_REQ</TSU_PHYT_REQ>
+        <TSU_QUAT_REQ ALIAS="T0" DBFUNC="" DESC="TSU QUAT_REQ" DT="12" HIDDEN="F" TYPE="F">TSU_QUAT_REQ</TSU_QUAT_REQ>
+        <TSU_WEIG_REQ ALIAS="T0" DBFUNC="" DESC="TSU WEIG_REQ" DT="12" HIDDEN="F" TYPE="F">TSU_WEIG_REQ</TSU_WEIG_REQ>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">TSU_PO_ID = '</SQL>
+            <SQL TYPE="FLD">TSU_PO_ID</SQL>
+            <SQL TYPE="SQL">' AND BUSI_TP='PO' AND  BUSI_ROLE='EXPORT'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

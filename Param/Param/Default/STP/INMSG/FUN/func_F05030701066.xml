@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Issue CN Transfer");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMainRef = stp.getMsgTagVal("CE_MAIN_REF");
+stp.writeLog("sMainRef======================"+sMainRef);
+stp.setMainRef(sMainRef);
+var sParentRef = stp.getMsgTagVal("FA_TRX_REF");
+stp.updateFieldValue("PARENT_MAIN_REF",sParentRef);
+var sUnitCode = stp.getMsgTagVal("FA_SEL_ID");
+stp.setCmpId(sUnitCode);
+stp.updateFieldValue("CURRNT_STATUS","Issued CN Transfer");
+stp.writeLog("End: Issue CN Transfer");]]></js-content>
+</root>

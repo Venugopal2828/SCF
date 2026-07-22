@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">BANK_ROUTCODES</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYM_PYMT_SYM_PYMT_Chk_AC_WT_INST_More_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X103_ACC_BKID_57A</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">CNTY_CODE='</SQL>
+            <SQL TYPE="FLD">AC_WT_INST_CNTY_CODE</SQL>
+            <SQL TYPE="SQL">' AND (ROUT_TYPE='CHIPS' OR ROUT_TYPE='NAT_ID')AND ROUT_CODE='</SQL>
+            <SQL TYPE="FLD">X103_ACC_BKACNO57A</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

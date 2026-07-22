@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">IWGT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SYND</module-name>
+        <cubk-mapping-name>IWGT_MASTER</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        <EXPIRY_DT ALIAS="T0" DBFUNC="" DESC="Expiry Date" DT="91" HIDDEN="F" TYPE="F">MAST_END_DT</EXPIRY_DT>
+        <GTEE_CCY ALIAS="T0" DBFUNC="" DESC="Guarantee Currency" DT="1" HIDDEN="F" TYPE="F">MAST_LC_CCY</GTEE_CCY>
+        <GTEE_AMT ALIAS="T0" DBFUNC="" DESC="Guarantee Amount" DT="3" HIDDEN="F" TYPE="F">MAST_LC_AMT</GTEE_AMT>
+        <GTEE_AMT ALIAS="T0" DBFUNC="" DESC="Guarantee Amount" DT="3" HIDDEN="F" TYPE="F">MAST_RISK_AMT</GTEE_AMT>
+        <APLB_RULE ALIAS="T0" DBFUNC="" DESC="Applicable Rules" DT="1" HIDDEN="T" TYPE="F">APLB_RULE</APLB_RULE>
+        <ISSUE_DT ALIAS="T0" DBFUNC="" DESC="Issuing Date" DT="91" HIDDEN="T" TYPE="F">ISSUE_DT</ISSUE_DT>
+        <APPL_NM ALIAS="T0" DBFUNC="" DESC="Applicant Name" DT="12" HIDDEN="T" TYPE="F">APPL_NM</APPL_NM>
+        <APPL_ADD1 ALIAS="T0" DBFUNC="" DESC="Applicant Address1" DT="12" HIDDEN="T" TYPE="F">APPL_ADD1</APPL_ADD1>
+        <APPL_ADD2 ALIAS="T0" DBFUNC="" DESC="Applicant Address2" DT="12" HIDDEN="T" TYPE="F">APPL_ADD2</APPL_ADD2>
+        <APPL_ADD3 ALIAS="T0" DBFUNC="" DESC="Applicant Address3" DT="12" HIDDEN="T" TYPE="F">APPL_ADD3</APPL_ADD3>
+        <BENE_NM ALIAS="T0" DBFUNC="" DESC="Beneficiary Name" DT="12" HIDDEN="T" TYPE="F">BENE_NM</BENE_NM>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country Code" DT="1" HIDDEN="T" TYPE="F">APPL_CNTY</CNTY_CODE>
+        <COUNTR_GTEE ALIAS="T0" DBFUNC="" DESC="Counter Guarantee" DT="1" HIDDEN="T" TYPE="F">COUNTR_GTEE</COUNTR_GTEE>
+        <FXD_EXPIRY ALIAS="T0" DBFUNC="" DESC="Fixed Expiry" DT="1" HIDDEN="T" TYPE="F">FXD_EXPIRY</FXD_EXPIRY>
+        <AUTO_RENEW ALIAS="T0" DBFUNC="" DESC="Automatic Renewal?" DT="1" HIDDEN="T" TYPE="F">AUTO_RENEW</AUTO_RENEW>
+        <GTEE_DETAILS_79 ALIAS="T0" DBFUNC="" DESC="Guarantee Details (MTn99, Telex,Mail)" DT="2005" HIDDEN="T" TYPE="F">GTEE_DETAILS_79</GTEE_DETAILS_79>
+        <GTEE_TYPE ALIAS="T0" DBFUNC="" DESC="Guarantee Type" DT="1" HIDDEN="T" TYPE="F">TRX_TYPE</GTEE_TYPE>
+        <RCV_FM_BK_NM ALIAS="T0" DBFUNC="" DESC="Receiver's Bank Name" DT="12" HIDDEN="F" TYPE="F">R_PARTY_NM</RCV_FM_BK_NM>
+        <RCV_FM_BK_REF ALIAS="T0" DBFUNC="" DESC="Receiver's Bank Reference" DT="12" HIDDEN="F" TYPE="F">LC_NO</RCV_FM_BK_REF>
+        <RCV_FM_BK_SW_ADD ALIAS="T0" DBFUNC="" DESC="Receiver's Bank SWIFT Address" DT="1" HIDDEN="F" TYPE="F">ISSUE_BK_SW_ADD</RCV_FM_BK_SW_ADD>
+        <RCV_FM_BK_SW_TAG ALIAS="T0" DBFUNC="" DESC="Receiver's Bank SWIFT Tag" DT="12" HIDDEN="F" TYPE="F">ISSUE_BK_SW_TAG</RCV_FM_BK_SW_TAG>
+        <RCV_FM_BK_NM ALIAS="T0" DBFUNC="" DESC="Receiver's Bank Name" DT="12" HIDDEN="F" TYPE="F">ISSUE_BK_NM</RCV_FM_BK_NM>
+        <ASSET_ACNO ALIAS="T0" DBFUNC="" DESC="Asset Account No" DT="1" HIDDEN="F" TYPE="F">R_ASSET_ACNO</ASSET_ACNO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">(</SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.SYND_FLG</SQL>
+            <SQL TYPE="SQL"> &lt;&gt; 'YES' OR </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.SYND_FLG</SQL>
+            <SQL TYPE="SQL"> IS NULL) AND </SQL>
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T0.APPL_NM</SQL>
+            <SQL TYPE="SQL"> IS NOT NULL AND </SQL>
+            <SQL DT="91" EEType="DATE" TYPE="TBL_FLD">T0.ISSUE_DT</SQL>
+            <SQL TYPE="SQL"> IS NOT NULL AND </SQL>
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'M' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SOURCE_REF</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

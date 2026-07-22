@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>PYMT</MODULE>
+        <DESC>Forward Funds</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>8</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>R</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">X103_BENECU_ID_59A</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">CPYT_DR_AC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">CR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">CR_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">X103_VALUE_DT_32A</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">N</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="Y">X103_EXCH_RT_36</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="S" USED="N">var ccy1 = DV.getFieldValue("CR_CCY");
+ var ccy2 = DV.SYS_LCY ;
+ var baseCCY =DV.SYS_LCY ;
+ var rate = '123456789';
+ var defaultRate = '1';
+ var cnty = DV.getCountryCode();
+ if(ccy1 != baseCCY){
+     	sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='Booking Rate' "; 	DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);
+ }else{
+     	DV.appendField(defaultRate);
+ }</C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="S">var acc=DV.getFieldValue('CPYT_DR_AC');
+   var sql="C_ACCT_NR='" + acc + "'"; DV.SYS_getTableData('C_CLEAR_TYPE','eximsys.std_clearing',sql);</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="">10042604</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="V">No</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE="F">INW_CUST_REF</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="V">P</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE="S">var acc=DV.getFieldValue('CPYT_DR_AC');
+   var sql="C_ACCT_WITH_ID = C_MAIN_REF AND C_ACCT_NR='" + acc + "'"; DV.SYS_getTableData('PARTY_NM','eximsys.std_clearing, eximtrx.bank_master',sql);</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE="F">TTL_DR_AMT</C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">X103_BENECU_ID_59A</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">CPYT_CR_BK_AC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">CR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">CR_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">X103_VALUE_DT_32A</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">N</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N">X103_EXCH_RT_36</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="S" USED="N">var ccy1 = DV.getFieldValue("CR_CCY");
+ var ccy2 = DV.SYS_LCY ;
+ var baseCCY =DV.SYS_LCY ;
+ var rate = '123456789';
+ var defaultRate = '1';
+ var cnty = DV.getCountryCode();
+ if(ccy1 != baseCCY){
+     	sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='Booking Rate' "; 	DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);
+ }else{
+     	DV.appendField(defaultRate);
+ }</C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="S">var acc=DV.getFieldValue('CPYT_CR_BK_AC');
+    var sql="C_ACCT_NR='" + acc + "'"; DV.SYS_getTableData('C_CLEAR_TYPE','eximsys.std_clearing',sql);</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="">10042604</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="V">No</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE="F">INW_CUST_REF</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="V">P</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE="S">var acc=DV.getFieldValue('CPYT_CR_BK_AC');
+    var sql="C_ACCT_WITH_ID = C_MAIN_REF AND C_ACCT_NR='" + acc + "'"; DV.SYS_getTableData('PARTY_NM','eximsys.std_clearing, eximtrx.bank_master',sql);</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE="F">TTL_DR_AMT</C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

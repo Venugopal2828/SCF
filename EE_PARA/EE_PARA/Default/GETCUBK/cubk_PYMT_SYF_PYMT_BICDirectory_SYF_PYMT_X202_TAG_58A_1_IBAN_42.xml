@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">BICIBAN</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_BICDirectory_SYF_PYMT_X202_TAG_58A_1_IBAN_42</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <BIC ALIAS="T0" DBFUNC="" DESC="BIC" DT="1" HIDDEN="F" TYPE="F">X202_BENE_BKSW_58A</BIC>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">INSTITUTION = '</SQL>
+            <SQL TYPE="FLD">X202_BENE_BKNM_58A</SQL>
+            <SQL TYPE="SQL">' AND CITY = '</SQL>
+            <SQL TYPE="FLD">X202BENEBKADD1_58A</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

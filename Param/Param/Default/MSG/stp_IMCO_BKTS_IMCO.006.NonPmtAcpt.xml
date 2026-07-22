@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>IMCO.006.NonPmtAcpt</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>IMCO</module>
+        <map-name>ReceivedNonPaymentAcceptance</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <COLL_AMT descr="" fv-type="F" intfconv="N">CollAmt</COLL_AMT>
+        <COLL_CCY descr="" fv-type="F" intfconv="N">COLL_CCY</COLL_CCY>
+        <COLL_NO descr="" fv-type="F" intfconv="N">COLL_NO</COLL_NO>
+        <C_MAIN_REF descr="" fv-type="F" intfconv="N">CEMainRef</C_MAIN_REF>
+        <C_UNIT_CODE descr="" fv-type="F" intfconv="N">C_UNIT_CODE</C_UNIT_CODE>
+        <DUE_DT descr="" fv-type="F" intfconv="N">DUE_DT</DUE_DT>
+        <NXT_STATUS descr="" fv-type="F" intfconv="N">NXT_STATUS</NXT_STATUS>
+        <RESN_NON_PMTACPT descr="" fv-type="F" intfconv="N">RESN_NON_PMTACPT</RESN_NON_PMTACPT>
+        <SEND_CHG descr="" fv-type="F" intfconv="N">SEND_CHG</SEND_CHG>
+        <SEND_INSTR descr="" fv-type="F" intfconv="N">SEND_INSTR</SEND_INSTR>
+        <TRX_DT descr="" fv-type="F" intfconv="N">TRX_DT</TRX_DT>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

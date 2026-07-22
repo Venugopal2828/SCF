@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<names>
+	<type longName="CountryCodeAndName1" shortName="CountryCodeAndName1">
+		<element longName="Code" shortName="Cd"/>
+		<element longName="Name" shortName="Nm"/>
+	</type>
+	<type longName="ChargeTypeFormat3Choice" shortName="ChargeTypeFormat3Choice">
+		<element longName="" shortName="ChrgTp_0"/>
+		<element longName="Code" shortName="Cd">
+			<enumeratedItem longName="POST" shortName="POST"/>
+			<enumeratedItem longName="REGF" shortName="REGF"/>
+			<enumeratedItem longName="SHIP" shortName="SHIP"/>
+			<enumeratedItem longName="CHAR" shortName="CHAR"/>
+			<enumeratedItem longName="OTHR" shortName="OTHR"/>
+			<enumeratedItem longName="PREM" shortName="PREM"/>
+			<enumeratedItem longName="PACK" shortName="PACK"/>
+			<enumeratedItem longName="PICK" shortName="PICK"/>
+			<enumeratedItem longName="SECU" shortName="SECU"/>
+			<enumeratedItem longName="INSU" shortName="INSU"/>
+			<enumeratedItem longName="MISC" shortName="MISC"/>
+		</element>
+		<element longName="Proprietary" shortName="Prtry"/>
+	</type>
+	<type longName="PersonIdentification5" shortName="PersonIdentification5">
+		<element longName="" shortName="DtAndPlcOfBirth"/>
+		<element longName="" shortName="Othr"/>
+	</type>
+	<type longName="ClearingSystemMemberIdentification2" shortName="ClearingSystemMemberIdentification2">
+		<element longName="" shortName="ClrSysId"/>
+		<element longName="MmbId" shortName="MmbId"/>
+	</type>
+	<type longName="DocumentAdjustment2" shortName="DocumentAdjustment2">
+		<element longName="" shortName="Amt"/>
+		<element longName="CdtDbtInd" shortName="CdtDbtInd">
+			<enumeratedItem longName="CRDT" shortName="CRDT"/>
+			<enumeratedItem longName="DBIT" shortName="DBIT"/>
+		</element>
+		<element longName="Rsn" shortName="Rsn"/>
+		<element longName="AddtlInf" shortName="AddtlInf"/>
+	</type>
+	<type longName="DiscountOrChargeType1Choice" shortName="DiscountOrChargeType1Choice">
+		<element longName="" shortName="Rsn_0"/>
+		<element longName="" shortName="ChrgTp"/>
+		<element longName="" shortName="DscntTp"/>
+	</type>
+	<type longName="CreditorReferenceType1Choice" shortName="CreditorReferenceType1Choice">
+		<element longName="" shortName="CdOrPrtry_0"/>
+		<element longName="Cd" shortName="Cd">
+			<enumeratedItem longName="RADM" shortName="RADM"/>
+			<enumeratedItem longName="RPIN" shortName="RPIN"/>
+			<enumeratedItem longName="FXDR" shortName="FXDR"/>
+			<enumeratedItem longName="DISP" shortName="DISP"/>
+			<enumeratedItem longName="PUOR" shortName="PUOR"/>
+			<enumeratedItem longName="SCOR" shortName="SCOR"/>
+		</element>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="GenericOrganisationIdentification1" shortName="GenericOrganisationIdentification1">
+		<element longName="Id" shortName="Id"/>
+		<element longName="" shortName="SchmeNm"/>
+		<element longName="Issr" shortName="Issr"/>
+	</type>
+	<type longName="LegalOrganisation1" shortName="LegalOrganisation1">
+		<element longName="Id" shortName="Id"/>
+		<element longName="Nm" shortName="Nm"/>
+	</type>
+	<type longName="DateAndDateTimeChoice" shortName="DateAndDateTimeChoice">
+		<element longName="" shortName="Dt_0"/>
+		<element longName="Dt" shortName="Dt"/>
+		<element longName="DtTm" shortName="DtTm"/>
+	</type>
+	<type longName="Contacts3" shortName="Contacts3">
+		<element longName="NmPrfx" shortName="NmPrfx">
+			<enumeratedItem longName="DOCT" shortName="DOCT"/>
+			<enumeratedItem longName="MIST" shortName="MIST"/>
+			<enumeratedItem longName="MISS" shortName="MISS"/>
+			<enumeratedItem longName="MADM" shortName="MADM"/>
+		</element>
+		<element longName="Nm" shortName="Nm"/>
+		<element longName="PhneNb" shortName="PhneNb"/>
+		<element longName="MobNb" shortName="MobNb"/>
+		<element longName="FaxNb" shortName="FaxNb"/>
+		<element longName="EmailAdr" shortName="EmailAdr"/>
+		<element longName="Othr" shortName="Othr"/>
+		<element longName="JobTitl" shortName="JobTitl"/>
+		<element longName="Rspnsblty" shortName="Rspnsblty"/>
+		<element longName="Dept" shortName="Dept"/>
+	</type>
+	<type longName="DateFormat4Choice" shortName="DateFormat4Choice">
+		<element longName="" shortName="StartDt_0"/>
+		<element longName="" shortName="Dt"/>
+		<element longName="NotSpcfdDt" shortName="NotSpcfdDt">
+			<enumeratedItem longName="OPEN" shortName="OPEN"/>
+			<enumeratedItem longName="UKWN" shortName="UKWN"/>
+			<enumeratedItem longName="ONGO" shortName="ONGO"/>
+		</element>
+		<element longName="" shortName="Prtry"/>
+	</type>
+	<type longName="CategoryPurpose1Choice" shortName="CategoryPurpose1Choice">
+		<element longName="" shortName="CtgyPurp_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="FinancialCard1" shortName="FinancialCard1">
+		<element longName="" shortName="CdtLmtAmt"/>
+		<element longName="" shortName="CdtAvlblAmt"/>
+		<element longName="IntrstRatePct" shortName="IntrstRatePct"/>
+	</type>
+	<type longName="CashAccountType2" shortName="CashAccountType2">
+		<element longName="" shortName="Tp_0"/>
+		<element longName="Cd" shortName="Cd">
+			<enumeratedItem longName="CASH" shortName="CASH"/>
+			<enumeratedItem longName="CHAR" shortName="CHAR"/>
+			<enumeratedItem longName="COMM" shortName="COMM"/>
+			<enumeratedItem longName="TAXE" shortName="TAXE"/>
+			<enumeratedItem longName="CISH" shortName="CISH"/>
+			<enumeratedItem longName="TRAS" shortName="TRAS"/>
+			<enumeratedItem longName="SACC" shortName="SACC"/>
+			<enumeratedItem longName="CACC" shortName="CACC"/>
+			<enumeratedItem longName="SVGS" shortName="SVGS"/>
+			<enumeratedItem longName="ONDP" shortName="ONDP"/>
+			<enumeratedItem longName="MGLD" shortName="MGLD"/>
+			<enumeratedItem longName="NREX" shortName="NREX"/>
+			<enumeratedItem longName="MOMA" shortName="MOMA"/>
+			<enumeratedItem longName="LOAN" shortName="LOAN"/>
+			<enumeratedItem longName="SLRY" shortName="SLRY"/>
+			<enumeratedItem longName="ODFT" shortName="ODFT"/>
+		</element>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="DocumentGeneralInformation2" shortName="DocumentGeneralInformation2">
+		<element longName="DocTp" shortName="DocTp"/>
+		<element longName="DocNb" shortName="DocNb"/>
+		<element longName="SndrRcvrSeqId" shortName="SndrRcvrSeqId"/>
+		<element longName="IsseDt" shortName="IsseDt"/>
+		<element longName="URL" shortName="URL"/>
+		<element longName="" shortName="AttchdBinryFile"/>
+	</type>
+	<type longName="ProductCategory1" shortName="ProductCategory1">
+		<element longName="Tp" shortName="Tp">
+			<enumeratedItem longName="HRTR" shortName="HRTR"/>
+			<enumeratedItem longName="QOTA" shortName="QOTA"/>
+			<enumeratedItem longName="PRGP" shortName="PRGP"/>
+			<enumeratedItem longName="LOBU" shortName="LOBU"/>
+			<enumeratedItem longName="GNDR" shortName="GNDR"/>
+		</element>
+		<element longName="Ctgy" shortName="Ctgy"/>
+	</type>
+	<type longName="OrganisationIdentification6" shortName="OrganisationIdentification6">
+		<element longName="BIC" shortName="BIC"/>
+		<element longName="" shortName="Othr"/>
+	</type>
+	<type longName="TradeDelivery1" shortName="TradeDelivery1">
+		<element longName="" shortName="DlvryPrd"/>
+		<element longName="DlvryDtTm" shortName="DlvryDtTm"/>
+		<element longName="" shortName="ShipFr"/>
+		<element longName="" shortName="ShipTo"/>
+		<element longName="" shortName="UltmtShipTo"/>
+		<element longName="" shortName="DlvryNote"/>
+		<element longName="" shortName="Consgnmt"/>
+	</type>
+	<type longName="AccountIdentification4Choice" shortName="AccountIdentification4Choice">
+		<element longName="" shortName="Id_0"/>
+		<element longName="IBAN" shortName="IBAN"/>
+		<element longName="" shortName="Othr"/>
+	</type>
+	<type longName="SettlementAllowanceCharge1" shortName="SettlementAllowanceCharge1">
+		<element longName="AllwncChrgInd" shortName="AllwncChrgInd"/>
+		<element longName="" shortName="ActlAmt"/>
+		<element longName="" shortName="Rsn"/>
+	</type>
+	<type longName="Incoterms3" shortName="Incoterms3">
+		<element longName="" shortName="IncotrmsCd"/>
+		<element longName="Lctn" shortName="Lctn"/>
+	</type>
+	<type longName="CreditorReferenceType2" shortName="CreditorReferenceType2">
+		<element longName="" shortName="CdOrPrtry"/>
+		<element longName="Issr" shortName="Issr"/>
+	</type>
+	<type longName="InvoiceHeader1" shortName="InvoiceHeader1">
+		<element longName="Identification" shortName="Id"/>
+		<element longName="TypeCode" shortName="TpCd"/>
+		<element longName="Name" shortName="Nm"/>
+		<element longName="IssueDateTime" shortName="IsseDtTm"/>
+		<element longName="Issuer" shortName="Issr"/>
+		<element longName="LanguageCode" shortName="LangCd"/>
+		<element longName="CopyIndicator" shortName="CpyInd"/>
+		<element longName="DocumentPurpose" shortName="DocPurp"/>
+		<element longName="IncludedNote" shortName="InclNote"/>
+	</type>
+	<type longName="PostalAddress6" shortName="PostalAddress6">
+		<element longName="AdrTp" shortName="AdrTp">
+			<enumeratedItem longName="ADDR" shortName="ADDR"/>
+			<enumeratedItem longName="PBOX" shortName="PBOX"/>
+			<enumeratedItem longName="HOME" shortName="HOME"/>
+			<enumeratedItem longName="BIZZ" shortName="BIZZ"/>
+			<enumeratedItem longName="MLTO" shortName="MLTO"/>
+			<enumeratedItem longName="DLVY" shortName="DLVY"/>
+		</element>
+		<element longName="Dept" shortName="Dept"/>
+		<element longName="SubDept" shortName="SubDept"/>
+		<element longName="StrtNm" shortName="StrtNm"/>
+		<element longName="BldgNb" shortName="BldgNb"/>
+		<element longName="PstCd" shortName="PstCd"/>
+		<element longName="TwnNm" shortName="TwnNm"/>
+		<element longName="CtrySubDvsn" shortName="CtrySubDvsn"/>
+		<element longName="Ctry" shortName="Ctry"/>
+		<element longName="" shortName="AdrLine"/>
+	</type>
+	<type longName="CurrencyAndAmount" shortName="CurrencyAndAmount"/>
+	<type longName="GenericAccountIdentification1" shortName="GenericAccountIdentification1">
+		<element longName="Id" shortName="Id"/>
+		<element longName="" shortName="SchmeNm"/>
+		<element longName="Issr" shortName="Issr"/>
+	</type>
+	<type longName="ProductCategory1Choice" shortName="ProductCategory1Choice">
+		<element longName="" shortName="PdctCtgy_0"/>
+		<element longName="" shortName="StrdPdctCtgy"/>
+		<element longName="" shortName="OthrPdctCtgy"/>
+	</type>
+	<type longName="Consignment2" shortName="Consignment2">
+		<element longName="" shortName="Consgnr"/>
+		<element longName="" shortName="Consgn"/>
+		<element longName="" shortName="TrnsprtMeans"/>
+	</type>
+	<type longName="ExchangeRateInformation1" shortName="ExchangeRateInformation1">
+		<element longName="XchgRate" shortName="XchgRate"/>
+		<element longName="RateTp" shortName="RateTp">
+			<enumeratedItem longName="SPOT" shortName="SPOT"/>
+			<enumeratedItem longName="SALE" shortName="SALE"/>
+			<enumeratedItem longName="AGRD" shortName="AGRD"/>
+		</element>
+		<element longName="CtrctId" shortName="CtrctId"/>
+	</type>
+	<type longName="ProductCharacteristics1Choice" shortName="ProductCharacteristics1Choice">
+		<element longName="" shortName="Chrtc_0"/>
+		<element longName="" shortName="StrdPdctChrtcs"/>
+		<element longName="" shortName="OthrPdctChrtcs"/>
+	</type>
+	<type longName="ProductIdentifier2Choice" shortName="ProductIdentifier2Choice">
+		<element longName="" shortName="Id_0"/>
+		<element longName="" shortName="StrdPdctIdr"/>
+		<element longName="" shortName="OthrPdctIdr"/>
+	</type>
+	<type longName="TaxExemptionReason1" shortName="TaxExemptionReason1">
+		<element longName="Strd" shortName="Strd">
+			<enumeratedItem longName="NONE" shortName="NONE"/>
+			<enumeratedItem longName="MASA" shortName="MASA"/>
+			<enumeratedItem longName="MISA" shortName="MISA"/>
+			<enumeratedItem longName="SISA" shortName="SISA"/>
+			<enumeratedItem longName="IISA" shortName="IISA"/>
+			<enumeratedItem longName="CUYP" shortName="CUYP"/>
+			<enumeratedItem longName="PRYP" shortName="PRYP"/>
+			<enumeratedItem longName="ASTR" shortName="ASTR"/>
+			<enumeratedItem longName="EMPY" shortName="EMPY"/>
+			<enumeratedItem longName="EMCY" shortName="EMCY"/>
+			<enumeratedItem longName="EPRY" shortName="EPRY"/>
+			<enumeratedItem longName="ECYE" shortName="ECYE"/>
+			<enumeratedItem longName="NFPI" shortName="NFPI"/>
+			<enumeratedItem longName="NFQP" shortName="NFQP"/>
+			<enumeratedItem longName="DECP" shortName="DECP"/>
+			<enumeratedItem longName="IRAC" shortName="IRAC"/>
+			<enumeratedItem longName="IRAR" shortName="IRAR"/>
+			<enumeratedItem longName="KEOG" shortName="KEOG"/>
+			<enumeratedItem longName="PFSP" shortName="PFSP"/>
+			<enumeratedItem longName="401K" shortName="401K"/>
+			<enumeratedItem longName="SIRA" shortName="SIRA"/>
+			<enumeratedItem longName="403B" shortName="403B"/>
+			<enumeratedItem longName="457X" shortName="457X"/>
+			<enumeratedItem longName="RIRA" shortName="RIRA"/>
+			<enumeratedItem longName="RIAN" shortName="RIAN"/>
+			<enumeratedItem longName="RCRF" shortName="RCRF"/>
+			<enumeratedItem longName="RCIP" shortName="RCIP"/>
+			<enumeratedItem longName="EIFP" shortName="EIFP"/>
+			<enumeratedItem longName="EIOP" shortName="EIOP"/>
+			<enumeratedItem longName="OTHR" shortName="OTHR"/>
+		</element>
+		<element longName="AddtlInf" shortName="AddtlInf"/>
+	</type>
+	<type longName="SettlementTax1" shortName="SettlementTax1">
+		<element longName="" shortName="TpCd"/>
+		<element longName="" shortName="ClctdAmt"/>
+		<element longName="" shortName="BsisAmt"/>
+		<element longName="TaxPtDt" shortName="TaxPtDt"/>
+	</type>
+	<type longName="PersonIdentificationSchemeName1Choice" shortName="PersonIdentificationSchemeName1Choice">
+		<element longName="" shortName="SchmeNm_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="GenericFinancialIdentification1" shortName="GenericFinancialIdentification1">
+		<element longName="Id" shortName="Id"/>
+		<element longName="" shortName="SchmeNm"/>
+		<element longName="Issr" shortName="Issr"/>
+	</type>
+	<type longName="TradeProduct1" shortName="TradeProduct1">
+		<element longName="" shortName="Id"/>
+		<element longName="Nm" shortName="Nm"/>
+		<element longName="Desc" shortName="Desc"/>
+		<element longName="" shortName="CtryOfOrgn"/>
+		<element longName="" shortName="PdctChrtcs"/>
+		<element longName="" shortName="PdctCtgy"/>
+		<element longName="" shortName="GblSrlIdr"/>
+	</type>
+	<type longName="FinancialInstitutionIdentification7" shortName="FinancialInstitutionIdentification7">
+		<element longName="BIC" shortName="BIC"/>
+		<element longName="" shortName="ClrSysMmbId"/>
+		<element longName="Nm" shortName="Nm"/>
+		<element longName="" shortName="PstlAdr"/>
+		<element longName="" shortName="Othr"/>
+	</type>
+	<type longName="SettlementSubTotalCalculatedTax1" shortName="SettlementSubTotalCalculatedTax1">
+		<element longName="TpCd" shortName="TpCd"/>
+		<element longName="CtgyCd" shortName="CtgyCd"/>
+		<element longName="" shortName="ClctdAmt"/>
+		<element longName="" shortName="BsisAmt"/>
+		<element longName="ClctdRate" shortName="ClctdRate"/>
+		<element longName="" shortName="XmptnRsn"/>
+	</type>
+	<type longName="LocalInstrument2Choice" shortName="LocalInstrument2Choice">
+		<element longName="" shortName="LclInstrm_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="LineItemAllowanceCharge1" shortName="LineItemAllowanceCharge1">
+		<element longName="ChrgInd" shortName="ChrgInd"/>
+		<element longName="" shortName="ActlAmt"/>
+		<element longName="" shortName="BsisQty"/>
+		<element longName="ClctnPct" shortName="ClctnPct"/>
+		<element longName="SeqNb" shortName="SeqNb"/>
+		<element longName="" shortName="Rsn"/>
+	</type>
+	<type longName="ProductIdentifier2" shortName="ProductIdentifier2">
+		<element longName="Tp" shortName="Tp">
+			<enumeratedItem longName="BINR" shortName="BINR"/>
+			<enumeratedItem longName="COMD" shortName="COMD"/>
+			<enumeratedItem longName="EANC" shortName="EANC"/>
+			<enumeratedItem longName="HRTR" shortName="HRTR"/>
+			<enumeratedItem longName="MANI" shortName="MANI"/>
+			<enumeratedItem longName="MODL" shortName="MODL"/>
+			<enumeratedItem longName="PART" shortName="PART"/>
+			<enumeratedItem longName="QOTA" shortName="QOTA"/>
+			<enumeratedItem longName="STYL" shortName="STYL"/>
+			<enumeratedItem longName="SUPI" shortName="SUPI"/>
+			<enumeratedItem longName="UPCC" shortName="UPCC"/>
+		</element>
+		<element longName="Idr" shortName="Idr"/>
+	</type>
+	<type longName="SettlementMonetarySummation1" shortName="SettlementMonetarySummation1">
+		<element longName="" shortName="LineTtlAmt"/>
+		<element longName="" shortName="AllwncTtlAmt"/>
+		<element longName="" shortName="TtlDscntAmt"/>
+		<element longName="" shortName="ChrgTtlAmt"/>
+		<element longName="" shortName="TtlPrepdAmt"/>
+		<element longName="" shortName="TaxTtlAmt"/>
+		<element longName="" shortName="TaxBsisAmt"/>
+		<element longName="" shortName="RndgAmt"/>
+		<element longName="" shortName="GrdTtlAmt"/>
+		<element longName="" shortName="InfAmt"/>
+	</type>
+	<type longName="Party8Choice" shortName="Party8Choice">
+		<element longName="" shortName="Id_0"/>
+		<element longName="" shortName="OrgId"/>
+		<element longName="" shortName="PrvtId"/>
+	</type>
+	<type longName="CurrencyReference2" shortName="CurrencyReference2">
+		<element longName="TrgtCcy" shortName="TrgtCcy"/>
+		<element longName="SrcCcy" shortName="SrcCcy"/>
+		<element longName="" shortName="XchgRateInf"/>
+	</type>
+	<type longName="Quantity4" shortName="Quantity4">
+		<element longName="" shortName="NetPricQty_0"/>
+		<element longName="UnitOfMeasrCd" shortName="UnitOfMeasrCd">
+			<enumeratedItem longName="KGM" shortName="KGM"/>
+			<enumeratedItem longName="EA" shortName="EA"/>
+			<enumeratedItem longName="LTN" shortName="LTN"/>
+			<enumeratedItem longName="MTR" shortName="MTR"/>
+			<enumeratedItem longName="INH" shortName="INH"/>
+			<enumeratedItem longName="LY" shortName="LY"/>
+			<enumeratedItem longName="GLI" shortName="GLI"/>
+			<enumeratedItem longName="GRM" shortName="GRM"/>
+			<enumeratedItem longName="CMT" shortName="CMT"/>
+			<enumeratedItem longName="MTK" shortName="MTK"/>
+			<enumeratedItem longName="FOT" shortName="FOT"/>
+			<enumeratedItem longName="1A" shortName="1A"/>
+			<enumeratedItem longName="INK" shortName="INK"/>
+			<enumeratedItem longName="FTK" shortName="FTK"/>
+			<enumeratedItem longName="MIK" shortName="MIK"/>
+			<enumeratedItem longName="ONZ" shortName="ONZ"/>
+			<enumeratedItem longName="PTI" shortName="PTI"/>
+			<enumeratedItem longName="PT" shortName="PT"/>
+			<enumeratedItem longName="QTI" shortName="QTI"/>
+			<enumeratedItem longName="QT" shortName="QT"/>
+			<enumeratedItem longName="GLL" shortName="GLL"/>
+			<enumeratedItem longName="MMT" shortName="MMT"/>
+			<enumeratedItem longName="KTM" shortName="KTM"/>
+			<enumeratedItem longName="YDK" shortName="YDK"/>
+			<enumeratedItem longName="MMK" shortName="MMK"/>
+			<enumeratedItem longName="CMK" shortName="CMK"/>
+			<enumeratedItem longName="KMK" shortName="KMK"/>
+			<enumeratedItem longName="MMQ" shortName="MMQ"/>
+			<enumeratedItem longName="CLT" shortName="CLT"/>
+			<enumeratedItem longName="LTR" shortName="LTR"/>
+			<enumeratedItem longName="LBR" shortName="LBR"/>
+			<enumeratedItem longName="STN" shortName="STN"/>
+			<enumeratedItem longName="BLL" shortName="BLL"/>
+			<enumeratedItem longName="BX" shortName="BX"/>
+			<enumeratedItem longName="BO" shortName="BO"/>
+			<enumeratedItem longName="CT" shortName="CT"/>
+			<enumeratedItem longName="CH" shortName="CH"/>
+			<enumeratedItem longName="CR" shortName="CR"/>
+			<enumeratedItem longName="INQ" shortName="INQ"/>
+			<enumeratedItem longName="MTQ" shortName="MTQ"/>
+			<enumeratedItem longName="OZI" shortName="OZI"/>
+			<enumeratedItem longName="OZA" shortName="OZA"/>
+			<enumeratedItem longName="BG" shortName="BG"/>
+			<enumeratedItem longName="BL" shortName="BL"/>
+			<enumeratedItem longName="TNE" shortName="TNE"/>
+		</element>
+		<element longName="OthrUnitOfMeasr" shortName="OthrUnitOfMeasr"/>
+		<element longName="Val" shortName="Val"/>
+		<element longName="Fctr" shortName="Fctr"/>
+	</type>
+	<type longName="DocumentIdentification22" shortName="DocumentIdentification22">
+		<element longName="Id" shortName="Id"/>
+		<element longName="DtOfIsse" shortName="DtOfIsse"/>
+	</type>
+	<type longName="Quantity3" shortName="Quantity3">
+		<element longName="" shortName="ValMeasr_0"/>
+		<element longName="UnitOfMeasrCd" shortName="UnitOfMeasrCd">
+			<enumeratedItem longName="KGM" shortName="KGM"/>
+			<enumeratedItem longName="EA" shortName="EA"/>
+			<enumeratedItem longName="LTN" shortName="LTN"/>
+			<enumeratedItem longName="MTR" shortName="MTR"/>
+			<enumeratedItem longName="INH" shortName="INH"/>
+			<enumeratedItem longName="LY" shortName="LY"/>
+			<enumeratedItem longName="GLI" shortName="GLI"/>
+			<enumeratedItem longName="GRM" shortName="GRM"/>
+			<enumeratedItem longName="CMT" shortName="CMT"/>
+			<enumeratedItem longName="MTK" shortName="MTK"/>
+			<enumeratedItem longName="FOT" shortName="FOT"/>
+			<enumeratedItem longName="1A" shortName="1A"/>
+			<enumeratedItem longName="INK" shortName="INK"/>
+			<enumeratedItem longName="FTK" shortName="FTK"/>
+			<enumeratedItem longName="MIK" shortName="MIK"/>
+			<enumeratedItem longName="ONZ" shortName="ONZ"/>
+			<enumeratedItem longName="PTI" shortName="PTI"/>
+			<enumeratedItem longName="PT" shortName="PT"/>
+			<enumeratedItem longName="QTI" shortName="QTI"/>
+			<enumeratedItem longName="QT" shortName="QT"/>
+			<enumeratedItem longName="GLL" shortName="GLL"/>
+			<enumeratedItem longName="MMT" shortName="MMT"/>
+			<enumeratedItem longName="KTM" shortName="KTM"/>
+			<enumeratedItem longName="YDK" shortName="YDK"/>
+			<enumeratedItem longName="MMK" shortName="MMK"/>
+			<enumeratedItem longName="CMK" shortName="CMK"/>
+			<enumeratedItem longName="KMK" shortName="KMK"/>
+			<enumeratedItem longName="MMQ" shortName="MMQ"/>
+			<enumeratedItem longName="CLT" shortName="CLT"/>
+			<enumeratedItem longName="LTR" shortName="LTR"/>
+			<enumeratedItem longName="LBR" shortName="LBR"/>
+			<enumeratedItem longName="STN" shortName="STN"/>
+			<enumeratedItem longName="BLL" shortName="BLL"/>
+			<enumeratedItem longName="BX" shortName="BX"/>
+			<enumeratedItem longName="BO" shortName="BO"/>
+			<enumeratedItem longName="CT" shortName="CT"/>
+			<enumeratedItem longName="CH" shortName="CH"/>
+			<enumeratedItem longName="CR" shortName="CR"/>
+			<enumeratedItem longName="INQ" shortName="INQ"/>
+			<enumeratedItem longName="MTQ" shortName="MTQ"/>
+			<enumeratedItem longName="OZI" shortName="OZI"/>
+			<enumeratedItem longName="OZA" shortName="OZA"/>
+			<enumeratedItem longName="BG" shortName="BG"/>
+			<enumeratedItem longName="BL" shortName="BL"/>
+			<enumeratedItem longName="TNE" shortName="TNE"/>
+		</element>
+		<element longName="OthrUnitOfMeasr" shortName="OthrUnitOfMeasr"/>
+		<element longName="Val" shortName="Val"/>
+	</type>
+	<type longName="TransportMeans3" shortName="TransportMeans3">
+		<element longName="MdCd" shortName="MdCd"/>
+		<element longName="Id" shortName="Id"/>
+		<element longName="Nm" shortName="Nm"/>
+	</type>
+	<type longName="TaxParty3" shortName="TaxParty3">
+		<element longName="TaxId" shortName="TaxId"/>
+		<element longName="TaxTp" shortName="TaxTp"/>
+		<element longName="RegnId" shortName="RegnId"/>
+		<element longName="" shortName="TaxXmptnRsn"/>
+	</type>
+	<type longName="TradeParty1" shortName="TradeParty1">
+		<element longName="" shortName="PtyId"/>
+		<element longName="" shortName="LglOrg"/>
+		<element longName="" shortName="TaxPty"/>
+	</type>
+	<type longName="DocumentIdentification23" shortName="DocumentIdentification23">
+		<element longName="Id" shortName="Id"/>
+		<element longName="DtOfIsse" shortName="DtOfIsse"/>
+		<element longName="OrdrLineId" shortName="OrdrLineId"/>
+	</type>
+	<type longName="AccountSchemeName1Choice" shortName="AccountSchemeName1Choice">
+		<element longName="" shortName="SchmeNm_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="FinancialIdentificationSchemeName1Choice" shortName="FinancialIdentificationSchemeName1Choice">
+		<element longName="" shortName="SchmeNm_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="LineItemMonetarySummation1" shortName="LineItemMonetarySummation1">
+		<element longName="" shortName="LineTtlAmt"/>
+		<element longName="" shortName="AllwncTtlAmt"/>
+		<element longName="" shortName="ChrgTtlAmt"/>
+		<element longName="" shortName="TaxTtlAmt"/>
+		<element longName="" shortName="TaxBsisTtlAmt"/>
+		<element longName="" shortName="InfAmt"/>
+	</type>
+	<type longName="Adjustment4" shortName="Adjustment4">
+		<element longName="" shortName="FinAdjstmnt_0"/>
+		<element longName="Tp" shortName="Tp">
+			<enumeratedItem longName="REBA" shortName="REBA"/>
+			<enumeratedItem longName="DISC" shortName="DISC"/>
+			<enumeratedItem longName="CREN" shortName="CREN"/>
+			<enumeratedItem longName="SURC" shortName="SURC"/>
+		</element>
+		<element longName="OthrAdjstmntTp" shortName="OthrAdjstmntTp"/>
+		<element longName="Drctn" shortName="Drctn">
+			<enumeratedItem longName="ADDD" shortName="ADDD"/>
+			<enumeratedItem longName="SUBS" shortName="SUBS"/>
+		</element>
+		<element longName="" shortName="Amt"/>
+	</type>
+	<type longName="OrganisationIdentificationSchemeName1Choice" shortName="OrganisationIdentificationSchemeName1Choice">
+		<element longName="" shortName="SchmeNm_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="BranchData2" shortName="BranchData2">
+		<element longName="Id" shortName="Id"/>
+		<element longName="Nm" shortName="Nm"/>
+		<element longName="" shortName="PstlAdr"/>
+	</type>
+	<type longName="Period1" shortName="Period1">
+		<element longName="" shortName="StartDt"/>
+		<element longName="" shortName="EndDt"/>
+	</type>
+	<type longName="TradeAgreement6" shortName="TradeAgreement6">
+		<element longName="" shortName="Buyr"/>
+		<element longName="" shortName="Sellr"/>
+		<element longName="" shortName="QtnDocId"/>
+		<element longName="" shortName="CtrctDocId"/>
+		<element longName="" shortName="BuyrOrdrIdDoc"/>
+		<element longName="" shortName="AddtlRefDoc"/>
+		<element longName="" shortName="Incotrms"/>
+	</type>
+	<type longName="TaxExemptionReasonFormatChoice" shortName="TaxExemptionReasonFormatChoice">
+		<element longName="" shortName="TaxXmptnRsn_0"/>
+		<element longName="Ustrd" shortName="Ustrd"/>
+		<element longName="Strd" shortName="Strd">
+			<enumeratedItem longName="NONE" shortName="NONE"/>
+			<enumeratedItem longName="MASA" shortName="MASA"/>
+			<enumeratedItem longName="MISA" shortName="MISA"/>
+			<enumeratedItem longName="SISA" shortName="SISA"/>
+			<enumeratedItem longName="IISA" shortName="IISA"/>
+			<enumeratedItem longName="CUYP" shortName="CUYP"/>
+			<enumeratedItem longName="PRYP" shortName="PRYP"/>
+			<enumeratedItem longName="ASTR" shortName="ASTR"/>
+			<enumeratedItem longName="EMPY" shortName="EMPY"/>
+			<enumeratedItem longName="EMCY" shortName="EMCY"/>
+			<enumeratedItem longName="EPRY" shortName="EPRY"/>
+			<enumeratedItem longName="ECYE" shortName="ECYE"/>
+			<enumeratedItem longName="NFPI" shortName="NFPI"/>
+			<enumeratedItem longName="NFQP" shortName="NFQP"/>
+			<enumeratedItem longName="DECP" shortName="DECP"/>
+			<enumeratedItem longName="IRAC" shortName="IRAC"/>
+			<enumeratedItem longName="IRAR" shortName="IRAR"/>
+			<enumeratedItem longName="KEOG" shortName="KEOG"/>
+			<enumeratedItem longName="PFSP" shortName="PFSP"/>
+			<enumeratedItem longName="401K" shortName="401K"/>
+			<enumeratedItem longName="SIRA" shortName="SIRA"/>
+			<enumeratedItem longName="403B" shortName="403B"/>
+			<enumeratedItem longName="457X" shortName="457X"/>
+			<enumeratedItem longName="RIRA" shortName="RIRA"/>
+			<enumeratedItem longName="RIAN" shortName="RIAN"/>
+			<enumeratedItem longName="RCRF" shortName="RCRF"/>
+			<enumeratedItem longName="RCIP" shortName="RCIP"/>
+			<enumeratedItem longName="EIFP" shortName="EIFP"/>
+			<enumeratedItem longName="EIOP" shortName="EIOP"/>
+		</element>
+	</type>
+	<type longName="LineItemTax1" shortName="LineItemTax1">
+		<element longName="" shortName="ClctdAmt"/>
+		<element longName="" shortName="TpCd"/>
+		<element longName="TaxPtDt" shortName="TaxPtDt"/>
+		<element longName="ClctdRate" shortName="ClctdRate"/>
+		<element longName="CtgyCd" shortName="CtgyCd"/>
+		<element longName="" shortName="CtgyNm"/>
+	</type>
+	<type longName="PaymentPeriod1" shortName="PaymentPeriod1">
+		<element longName="Cd" shortName="Cd">
+			<enumeratedItem longName="CASH" shortName="CASH"/>
+			<enumeratedItem longName="EMTD" shortName="EMTD"/>
+			<enumeratedItem longName="EPRD" shortName="EPRD"/>
+			<enumeratedItem longName="PRMD" shortName="PRMD"/>
+			<enumeratedItem longName="IREC" shortName="IREC"/>
+			<enumeratedItem longName="PRMR" shortName="PRMR"/>
+			<enumeratedItem longName="EPRR" shortName="EPRR"/>
+			<enumeratedItem longName="EMTR" shortName="EMTR"/>
+		</element>
+		<element longName="NbOfDays" shortName="NbOfDays"/>
+	</type>
+	<type longName="Packaging1" shortName="Packaging1">
+		<element longName="Tp" shortName="Tp"/>
+		<element longName="Nm" shortName="Nm"/>
+	</type>
+	<type longName="ProductCharacteristics1" shortName="ProductCharacteristics1">
+		<element longName="Tp" shortName="Tp">
+			<enumeratedItem longName="BISP" shortName="BISP"/>
+			<enumeratedItem longName="CHNR" shortName="CHNR"/>
+			<enumeratedItem longName="CLOR" shortName="CLOR"/>
+			<enumeratedItem longName="EDSP" shortName="EDSP"/>
+			<enumeratedItem longName="ENNR" shortName="ENNR"/>
+			<enumeratedItem longName="OPTN" shortName="OPTN"/>
+			<enumeratedItem longName="ORCR" shortName="ORCR"/>
+			<enumeratedItem longName="PCTV" shortName="PCTV"/>
+			<enumeratedItem longName="SISP" shortName="SISP"/>
+			<enumeratedItem longName="SIZE" shortName="SIZE"/>
+			<enumeratedItem longName="SZRG" shortName="SZRG"/>
+			<enumeratedItem longName="SPRM" shortName="SPRM"/>
+			<enumeratedItem longName="STOR" shortName="STOR"/>
+			<enumeratedItem longName="VINR" shortName="VINR"/>
+		</element>
+		<element longName="Chrtcs" shortName="Chrtcs"/>
+	</type>
+	<type longName="ProductCharacteristics2" shortName="ProductCharacteristics2">
+		<element longName="" shortName="Chrtc"/>
+		<element longName="" shortName="ValMeasr"/>
+	</type>
+	<type longName="TaxTypeFormat1Choice" shortName="TaxTypeFormat1Choice">
+		<element longName="" shortName="TpCd_0"/>
+		<element longName="Cd" shortName="Cd">
+			<enumeratedItem longName="PROV" shortName="PROV"/>
+			<enumeratedItem longName="NATI" shortName="NATI"/>
+			<enumeratedItem longName="STAT" shortName="STAT"/>
+			<enumeratedItem longName="WITH" shortName="WITH"/>
+			<enumeratedItem longName="STAM" shortName="STAM"/>
+			<enumeratedItem longName="COAX" shortName="COAX"/>
+			<enumeratedItem longName="VATA" shortName="VATA"/>
+			<enumeratedItem longName="CUST" shortName="CUST"/>
+			<enumeratedItem longName="VATB" shortName="VATB"/>
+		</element>
+		<element longName="" shortName="Prtry"/>
+	</type>
+	<type longName="BinaryFile1" shortName="BinaryFile1">
+		<element longName="MIMETp" shortName="MIMETp"/>
+		<element longName="NcodgTp" shortName="NcodgTp"/>
+		<element longName="CharSet" shortName="CharSet"/>
+		<element longName="InclBinryObjct" shortName="InclBinryObjct"/>
+	</type>
+	<type longName="Incoterms4Choice" shortName="Incoterms4Choice">
+		<element longName="" shortName="IncotrmsCd_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="" shortName="Prtry"/>
+	</type>
+	<type longName="LineItem10" shortName="LineItem10">
+		<element longName="Id" shortName="Id"/>
+		<element longName="" shortName="TradPdct"/>
+		<element longName="" shortName="BuyrOrdrId"/>
+		<element longName="" shortName="CtrctId"/>
+		<element longName="" shortName="PurchsAcctgAcct"/>
+		<element longName="" shortName="NetPric"/>
+		<element longName="" shortName="NetPricQty"/>
+		<element longName="" shortName="NetPricAllwncChrg"/>
+		<element longName="" shortName="NetWght"/>
+		<element longName="" shortName="GrssPric"/>
+		<element longName="" shortName="GrssPricQty"/>
+		<element longName="" shortName="GrssWght"/>
+		<element longName="" shortName="LogstcsChrg"/>
+		<element longName="" shortName="Tax"/>
+		<element longName="" shortName="AllwncChrg"/>
+		<element longName="" shortName="FinAdjstmnt"/>
+		<element longName="" shortName="BlldQty"/>
+		<element longName="PackgQty" shortName="PackgQty"/>
+		<element longName="" shortName="PerPackgUnitQty"/>
+		<element longName="" shortName="Packgng"/>
+		<element longName="" shortName="ChrgFreeQty"/>
+		<element longName="" shortName="MeasrQtyStart"/>
+		<element longName="" shortName="MeasrQtyEnd"/>
+		<element longName="MeasrDtTmStart" shortName="MeasrDtTmStart"/>
+		<element longName="MeasrDtTmEnd" shortName="MeasrDtTmEnd"/>
+		<element longName="" shortName="ShipTo"/>
+		<element longName="" shortName="Incotrms"/>
+		<element longName="DlvryDtTm" shortName="DlvryDtTm"/>
+		<element longName="" shortName="DlvryNoteId"/>
+		<element longName="" shortName="MntrySummtn"/>
+		<element longName="" shortName="InclNote"/>
+	</type>
+	<type longName="AdditionalInformation1" shortName="AdditionalInformation1">
+		<element longName="" shortName="InfTp"/>
+		<element longName="InfVal" shortName="InfVal"/>
+	</type>
+	<type longName="TradeSettlement1" shortName="TradeSettlement1">
+		<element longName="" shortName="DuePyblAmt"/>
+		<element longName="" shortName="CdtrRef"/>
+		<element longName="" shortName="PmtRef"/>
+		<element longName="InvcCcyCd" shortName="InvcCcyCd"/>
+		<element longName="" shortName="Invcr"/>
+		<element longName="" shortName="Invcee"/>
+		<element longName="" shortName="Pyee"/>
+		<element longName="" shortName="Pyer"/>
+		<element longName="" shortName="TaxCcyXchg"/>
+		<element longName="" shortName="InvcCcyXchg"/>
+		<element longName="" shortName="PmtCcyXchg"/>
+		<element longName="" shortName="PmtMeans"/>
+		<element longName="" shortName="Tax"/>
+		<element longName="" shortName="BllgPrd"/>
+		<element longName="" shortName="AllwncChrg"/>
+		<element longName="" shortName="SubTtlClctdTax"/>
+		<element longName="" shortName="LogstcsChrg"/>
+		<element longName="" shortName="PmtTerms"/>
+		<element longName="" shortName="MntrySummtn"/>
+		<element longName="" shortName="AdjstmntAmtAndRsn"/>
+		<element longName="" shortName="InvcRefdDoc"/>
+		<element longName="" shortName="ProfrmInvcRefdDoc"/>
+		<element longName="" shortName="LttrOfCdtRefdDoc"/>
+		<element longName="" shortName="FinCard"/>
+		<element longName="" shortName="PurchsAcctgAcct"/>
+		<element longName="" shortName="IssrFactrgListId"/>
+		<element longName="" shortName="IssrFactrgAgrmtId"/>
+	</type>
+	<type longName="BranchAndFinancialInstitutionIdentification4" shortName="BranchAndFinancialInstitutionIdentification4">
+		<element longName="" shortName="FinInstnId"/>
+		<element longName="" shortName="BrnchId"/>
+	</type>
+	<type longName="AccountingAccount1" shortName="AccountingAccount1">
+		<element longName="Id" shortName="Id"/>
+		<element longName="CostRefPttrn" shortName="CostRefPttrn"/>
+	</type>
+	<type longName="DiscountTypeFormat1Choice" shortName="DiscountTypeFormat1Choice">
+		<element longName="" shortName="DscntTp_0"/>
+		<element longName="Cd" shortName="Cd">
+			<enumeratedItem longName="QUAN" shortName="QUAN"/>
+			<enumeratedItem longName="PROM" shortName="PROM"/>
+			<enumeratedItem longName="PRIC" shortName="PRIC"/>
+			<enumeratedItem longName="SPAG" shortName="SPAG"/>
+			<enumeratedItem longName="ENOR" shortName="ENOR"/>
+		</element>
+		<element longName="" shortName="Prtry"/>
+	</type>
+	<type longName="ClearingSystemIdentification2Choice" shortName="ClearingSystemIdentification2Choice">
+		<element longName="" shortName="ClrSysId_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="CreditorReferenceInformation2" shortName="CreditorReferenceInformation2">
+		<element longName="" shortName="Tp"/>
+		<element longName="Ref" shortName="Ref"/>
+	</type>
+	<type longName="GenericIdentification4" shortName="GenericIdentification4">
+		<element longName="Id" shortName="Id"/>
+		<element longName="IdTp" shortName="IdTp"/>
+	</type>
+	<type longName="ChargesDetails2" shortName="ChargesDetails2">
+		<element longName="" shortName="LogstcsChrg_0"/>
+		<element longName="Tp" shortName="Tp">
+			<enumeratedItem longName="SIGN" shortName="SIGN"/>
+			<enumeratedItem longName="STDE" shortName="STDE"/>
+			<enumeratedItem longName="STOR" shortName="STOR"/>
+			<enumeratedItem longName="PACK" shortName="PACK"/>
+			<enumeratedItem longName="PICK" shortName="PICK"/>
+			<enumeratedItem longName="DNGR" shortName="DNGR"/>
+			<enumeratedItem longName="SECU" shortName="SECU"/>
+			<enumeratedItem longName="INSU" shortName="INSU"/>
+			<enumeratedItem longName="COLF" shortName="COLF"/>
+			<enumeratedItem longName="CHOR" shortName="CHOR"/>
+			<enumeratedItem longName="CHDE" shortName="CHDE"/>
+			<enumeratedItem longName="AIRF" shortName="AIRF"/>
+			<enumeratedItem longName="TRPT" shortName="TRPT"/>
+		</element>
+		<element longName="OthrChrgsTp" shortName="OthrChrgsTp"/>
+		<element longName="" shortName="Amt"/>
+	</type>
+	<type longName="DocumentIdentification7" shortName="DocumentIdentification7">
+		<element longName="Id" shortName="Id"/>
+		<element longName="DtOfIsse" shortName="DtOfIsse"/>
+	</type>
+	<type longName="PaymentMeans1" shortName="PaymentMeans1">
+		<element longName="" shortName="PmtTp"/>
+		<element longName="PmtMtdCd" shortName="PmtMtdCd">
+			<enumeratedItem longName="CHK" shortName="CHK"/>
+			<enumeratedItem longName="TRF" shortName="TRF"/>
+			<enumeratedItem longName="DD" shortName="DD"/>
+			<enumeratedItem longName="TRA" shortName="TRA"/>
+		</element>
+		<element longName="" shortName="PyeeCdtrAcct"/>
+		<element longName="" shortName="PyeeFI"/>
+		<element longName="" shortName="PyerDbtrAcct"/>
+		<element longName="" shortName="PyerFI"/>
+	</type>
+	<type longName="PartyIdentification45" shortName="PartyIdentification45">
+		<element longName="" shortName="Id"/>
+		<element longName="Nm" shortName="Nm"/>
+		<element longName="" shortName="PstlAdr"/>
+		<element longName="CtryOfRes" shortName="CtryOfRes"/>
+		<element longName="" shortName="CtctDtls"/>
+	</type>
+	<type longName="GenericIdentification13" shortName="GenericIdentification13">
+		<element longName="Id" shortName="Id"/>
+		<element longName="SchmeNm" shortName="SchmeNm"/>
+		<element longName="Issr" shortName="Issr"/>
+	</type>
+	<type longName="GenericPersonIdentification1" shortName="GenericPersonIdentification1">
+		<element longName="Id" shortName="Id"/>
+		<element longName="" shortName="SchmeNm"/>
+		<element longName="Issr" shortName="Issr"/>
+	</type>
+	<type longName="PaymentTypeInformation19" shortName="PaymentTypeInformation19">
+		<element longName="InstrPrty" shortName="InstrPrty">
+			<enumeratedItem longName="HIGH" shortName="HIGH"/>
+			<enumeratedItem longName="NORM" shortName="NORM"/>
+		</element>
+		<element longName="" shortName="SvcLvl"/>
+		<element longName="" shortName="LclInstrm"/>
+		<element longName="" shortName="CtgyPurp"/>
+	</type>
+	<type longName="DateAndPlaceOfBirth" shortName="DateAndPlaceOfBirth">
+		<element longName="BirthDt" shortName="BirthDt"/>
+		<element longName="PrvcOfBirth" shortName="PrvcOfBirth"/>
+		<element longName="CityOfBirth" shortName="CityOfBirth"/>
+		<element longName="CtryOfBirth" shortName="CtryOfBirth"/>
+	</type>
+	<type longName="InformationType1Choice" shortName="InformationType1Choice">
+		<element longName="" shortName="InfTp_0"/>
+		<element longName="Cd" shortName="Cd">
+			<enumeratedItem longName="INST" shortName="INST"/>
+			<enumeratedItem longName="RELY" shortName="RELY"/>
+		</element>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="ActiveOrHistoricCurrencyAndAmount" shortName="ActiveOrHistoricCurrencyAndAmount">
+		<element longName="Amt" shortName="Amt"/>
+		<element longName="Ccy" shortName="Ccy"/>
+	</type>
+	<type longName="AdditionalInformation6" shortName="AdditionalInformation6">
+		<element longName="InfTp" shortName="InfTp"/>
+		<element longName="InfVal" shortName="InfVal"/>
+	</type>
+	<type longName="ServiceLevel8Choice" shortName="ServiceLevel8Choice">
+		<element longName="" shortName="SvcLvl_0"/>
+		<element longName="Cd" shortName="Cd"/>
+		<element longName="Prtry" shortName="Prtry"/>
+	</type>
+	<type longName="PaymentTerms3" shortName="PaymentTerms3">
+		<element longName="DueDt" shortName="DueDt"/>
+		<element longName="" shortName="PmtPrd"/>
+		<element longName="" shortName="Desc"/>
+		<element longName="PrtlPmtPct" shortName="PrtlPmtPct"/>
+		<element longName="" shortName="DrctDbtMndtId"/>
+		<element longName="" shortName="DscntAmt"/>
+		<element longName="DscntPctRate" shortName="DscntPctRate"/>
+		<element longName="" shortName="DscntBsisAmt"/>
+		<element longName="" shortName="PnltyAmt"/>
+		<element longName="PnltyPctRate" shortName="PnltyPctRate"/>
+		<element longName="" shortName="PnltyBsisAmt"/>
+	</type>
+	<type longName="CashAccount16" shortName="CashAccount16">
+		<element longName="" shortName="Id"/>
+		<element longName="" shortName="Tp"/>
+		<element longName="Ccy" shortName="Ccy"/>
+		<element longName="Nm" shortName="Nm"/>
+	</type>
+	<type longName="Financial Invoice" shortName="FinInvc">
+		<element longName="InvoiceHeader" shortName="InvcHdr"/>
+		<element longName="TradeAgreement" shortName="TradAgrmt"/>
+		<element longName="TradeDelivery" shortName="TradDlvry"/>
+		<element longName="TradeSettlement" shortName="TradSttlm"/>
+		<element longName="LineItem" shortName="LineItm"/>
+	</type>
+</names>

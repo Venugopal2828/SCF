@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" DATATYPE="2005" Desc="MisMatch Report"
+    Field="TSU_MISMATCH" Max="1" Min="1" Name="MisMatchReport2" PendingStore="Y"
+    Screen="SCRN/DO/TSU_010_MisMatchReport2.jsp" StoreInto="D" StoreType="X">
+    <Elements>
+        <Element DATATYPE="2" Desc="Number Of Miss Matches" DispInGrid="N"
+            EDIT="N" EEType="Number" FldType="" Value="">TSU_MSMTCH_NO</Element>
+    </Elements>
+    <DO DATATYPE="2005" Desc="MisMatch Information" Field="TSU_VART" Max="n"
+        Min="0" Name="ValidationResult4" PendingStore="N"
+        Screen="SCRN/DO/TSU_010_ValidationResult3.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="4" Desc="Error Sequence No." DispInGrid="Y"
+                EDIT="N" EEType="INTEGER" FldType="" Value="">TSU_ERR_SEQNO</Element>
+            <Element DATATYPE="12" Desc="Error Rule" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_ERR_RULE</Element>
+            <Element DATATYPE="12" Desc="Error Rule Description" DispInGrid="N"
+                EDIT="N" EEType="Max350Text" FldType="" Value="">TSU_ERR_RULE_DESC</Element>
+        </Elements>
+        <DO DATATYPE="2005" Desc="MisMatched Element" Field="TSU_ELEDNT" Max="n"
+            Min="0" Name="ElementIdentification1" PendingStore="N"
+            Screen="SCRN/DO/TSU_010_Element.jsp" StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="4" Desc="Error Sequence No." DispInGrid="Y"
+                    EDIT="N" EEType="INTEGER" FldType="" Value="">TSU_ERR_SEQNO</Element>
+                <Element DATATYPE="12" Desc="Error Element Path" DispInGrid="Y"
+                    EDIT="N" EEType="Max350Text" FldType="" Value="">TSU_ERR_ELMTPTH</Element>
+                <Element DATATYPE="12" Desc="Name of the Error Element"
+                    DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ERR_ELMTNM</Element>
+                <Element DATATYPE="12" Desc="Content of the Element"
+                    DispInGrid="Y" EDIT="N" EEType="Max140Text" FldType="" Value="">TSU_ERR_ELMTVAL</Element>
+            </Elements>
+        </DO>
+    </DO>
+</DO>

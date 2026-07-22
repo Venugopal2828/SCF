@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey" AutoGen-Parameter-Version="1.0">
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>Get_PO_FIN</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POMM_MASTER</table-name>
+        </tables>
+        <key-fields>
+            <PO_NO ALIAS="T0" DESC="PO No." DT="12" TYPE="F">PO_NO</PO_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PO_NO ALIAS="T0" DBFUNC="" DESC="PO No." DT="12" HIDDEN="F" TYPE="F">PO_NO</PO_NO>
+        <PO_LOAN_BAL ALIAS="T0" DBFUNC="" DESC="PO Loan Balance" DT="3" HIDDEN="F" TYPE="F">PO_LOAN_BAL</PO_LOAN_BAL>
+        <FA_LOAN_ID ALIAS="T0" DBFUNC="" DESC="Loan Reference No." DT="12" HIDDEN="F" TYPE="F">TSU_TEMP</FA_LOAN_ID>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

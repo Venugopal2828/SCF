@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <entitlement/>
+  <outMerger/>
+  <inMerger/>
+  <convertors>
+     <out>
+       <convertor/>   
+     </out>
+     <in>
+       <convertor/> 
+     </in>
+  </convertors>
+  <connect_config>
+     <connectBy>MQ</connectBy>
+     <senderId>CE_2_EE_REQ</senderId>
+     <receiverId>EE_2_CE_RESP</receiverId>
+     <timeout>60</timeout> 
+     <recvStrategy>
+		   <props>
+			   <prop name="bean" value="MQrecvMultiMsgStrategy"/>
+			   <prop name="timeout" value=""/>
+		   </props>
+     </recvStrategy>
+  </connect_config>
+</root>

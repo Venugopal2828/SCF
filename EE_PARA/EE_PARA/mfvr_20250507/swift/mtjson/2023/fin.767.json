@@ -1,0 +1,102 @@
+{
+  "MT767": {
+      "F15A": "NULL_Type",
+      "F27": {
+        "Number": "1!n'/'",
+        "Total": "1!n"
+      },
+    "F21": "16x",
+      "F22A": "4!c(ACNA|ADVA|ICCA|ISCA|ISUA)",
+      "F23S": "6!a(CANCEL){0,1}",
+      "F72Z": "6*35z{0,1}",
+    "F23X": {
+      "Code": "4!c(COUR|EMAL|FACT|FAXT|HOST|MAIL|OTHR)'/'",
+      "Narrative": "65x",
+      "@occur": "{0,1}"
+    },
+      "F15B": "NULL_Type",
+      "F20": "16x",
+      "F26E": "3n",
+      "F30": "YYMMDD",
+      "Choice_52AD": {
+        "F52A": {
+          "PartyIdentifier": "PTYID'\r\n'{0,1}",
+          "IdentifierCode": "BIC"
+        },
+        "F52D": {
+          "PartyIdentifier": "PTYID'\r\n'{0,1}",
+          "NameAndAddress": "4*35x"
+        }
+      },
+    "F23": "16x{0,1}",
+      "F32B": {
+        "Currency": "3!a",
+        "Amount": "15d",
+        "@occur": "{0,1}"
+      },
+      "F33B": {
+        "Currency": "3!a",
+        "Amount": "15d",
+        "@occur": "{0,1}"
+      },
+      "F23B": "4!c(COND|FIXD|OPEN){0,1}",
+      "F31E": "YYMMDD{0,1}",
+      "F35G": "12*65x{0,1}",
+    "Choice_59a": {
+      "F59": {
+        "Account": "/34x'\r\n'{0,1}",
+        "NameAndAddress": "4*35x"
+      },
+      "F59A": {
+        "Account": "/34x'\r\n'{0,1}",
+        "IdentifierCode": "BIC"
+      },
+      "@occur": "{0,1}"
+    },
+      "F77U": "150*65z{0,1}",
+    "F24E": {
+      "Code": "4!c(COLL|COUR|MAIL|MESS|OTHR|REGM)",
+      "AdditionalInformation": "'/'35x{0,1}",
+      "@occur": "{0,1}"
+    },
+    "F24G": {
+      "Code": "4!c(BENE|OTHR)",
+      "NameAndAddress": "'\r\n'12*65z{0,1}",
+      "@occur": "{0,1}"
+    },
+    "SeqC":{
+      "F15C": "NULL_Type",
+      "F32B": {
+        "Currency": "3!a",
+        "Amount": "15d",
+        "@occur": "{0,1}"
+      },
+      "F33B": {
+        "Currency": "3!a",
+        "Amount": "15d",
+        "@occur": "{0,1}"
+      },
+      "F23B": "4!c(COND|FIXD|OPEN){0,1}",
+      "F31E": "YYMMDD{0,1}",
+      "F35G": "12*65x{0,1}",
+      "F59": {
+        "Account": "/34x'\r\n'{0,1}",
+        "NameAndAddress": "4*35x",
+        "@occur": "{0,1}"
+      },
+      "F77L": "150*65z{0,1}",
+      "F24E": {
+        "Code": "4!c(COLL|COUR|MAIL|MESS|OTHR|REGM)",
+        "AdditionalInformation": "'/'35x{0,1}",
+        "@occur": "{0,1}"
+      },
+      "F24G": {
+        "Code": "4!c(BENE|OTHR)",
+        "NameAndAddress": "'\r\n'12*65z{0,1}",
+        "@occur": "{0,1}"
+      },
+      "@occur": "{0,1}"
+    },
+    "@len":10000
+  }
+}

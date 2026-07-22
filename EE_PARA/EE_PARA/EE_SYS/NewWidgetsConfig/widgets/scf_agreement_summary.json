@@ -1,0 +1,16 @@
+{
+	"id": "scf_agreement_summary",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_agreement_summary",
+			"display": "custom_sql_table",
+			"title": "SCF Agreement Summary",
+			"desc": "Active SCF agreement references, client IDs, and limits."
+		},
+		"data": {
+			"sql": "SELECT C_MAIN_REF as \"Agreement_Ref\", FA_ANCHOR_ID as \"Customer_ID\", FA_LMT_CCY as \"Currency\", FA_LMT_AMT as \"Limit_Amount\", TO_CHAR(D_CREA_DATE, 'YYYY-MM-DD') as \"Start_Date\" FROM %EXIMTRX%.FAEF_MASTER WHERE C_TRX_STATUS = 'M' AND ROWNUM <= 5"
+		}
+	}
+}

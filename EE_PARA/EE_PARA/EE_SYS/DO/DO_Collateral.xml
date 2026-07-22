@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Collateral" Max="n" Min="0" Name="Collateral" PendingStore="N" Screen="SCRN/DO/Collateral.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="ABLF_COLL_LOAN"></TABLE_NAME>
+    <PK>
+        <PKNAME>COLLAT_ID</PKNAME>
+        <PKNAME>REG_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="ABLF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Collateral ID" DispInGrid="Y" EDIT="N" EEType="CHAR_30" FldType="" Value="">COLLAT_ID</Element>
+        <Element DATATYPE="12" Desc="Collateral Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">COLLAT_NM</Element>
+        <Element DATATYPE="1" Desc="Collateral Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">COLLAT_CCY</Element>
+        <Element DATATYPE="3" Desc="Collateral Market Price" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">COLLAT_PRICE</Element>
+        <Element DATATYPE="3" Desc="Collateral Firm Price" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">COLLAT_RD_PRICE</Element>
+        <Element DATATYPE="3" Desc="Collateral Quantity" DispInGrid="Y" EDIT="N" EEType="Decimal_18_4" FldType="" Value="">COLLAT_QTY</Element>
+        <Element DATATYPE="12" Desc="Charge unit" DispInGrid="Y" EDIT="N" EEType="CHAR_35" FldType="" Value="">COLLAT_UNIT</Element>
+        <Element DATATYPE="3" Desc="Collateral Value" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">COLLAT_VAL</Element>
+        <Element DATATYPE="12" Desc="Collateral specification" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">COLLAT_SPEC</Element>
+        <Element DATATYPE="12" Desc="Manufacturer" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">COLLAT_FACT</Element>
+        <Element DATATYPE="1" Desc="Registration Number" DispInGrid="N" EDIT="N" EEType="AutoGen_Trx_CHAR_20" FldType="" Value="">REG_NO</Element>
+        <Element DATATYPE="12" Desc="Contract Reference No." DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">FA_CNTR_REF</Element>
+        <Element DATATYPE="12" Desc="Collateral Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER35" FldType="" Value="">COLLAT_TP</Element>
+        <Element DATATYPE="91" Desc="Arrival Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">ARRIVAL_DATE</Element>
+        <Element DATATYPE="3" Desc="Quantity" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">QTY</Element>
+        <Element DATATYPE="12" Desc="Quantity Unit" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">QTY_UNIT</Element>
+        <Element DATATYPE="3" Desc="Weigh" DispInGrid="N" EDIT="N" EEType="Decimal_18_4" FldType="" Value="">WEIGHT</Element>
+        <Element DATATYPE="12" Desc="Weight Unit" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">WEIGHT_UNIT</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

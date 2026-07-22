@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" MULTI="YES" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>dqSgoSldbwNQ</ID>
+    <MODULE>SSSS</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>View Dispute Details</DESC>
+    <TABLELIST>
+        <TABLENAME ALIAS="t1" MASTER="YES">%EXIMTRX%.INVC_DSP</TABLENAME>
+        <TABLENAME ALIAS="t2">%EXIMTRX%.FAEF_DSP</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="FA_DOC_NO" DATATYPE="12" DESC="Doc No." EEType="Varchar_35" HIDDEN="">t1.FA_DOC_NO</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_REF" DATATYPE="12" DESC="Doc Ref" EEType="Varchar_35" HIDDEN="">t1.FA_DOC_REF</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_CCY" DATATYPE="1" DESC="Doc CCY" EEType="CCY" HIDDEN="">t1.FA_DOC_CCY</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_AMT" DATATYPE="3" DESC="Doc Amt" EEType="AMT" HIDDEN="">t1.FA_DOC_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_DT" DATATYPE="91" DESC="Doc Date" EEType="DATE" HIDDEN="">t1.FA_DOC_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_TYPE" DATATYPE="1" DESC="Document Type" EEType="INTERPRETER" HIDDEN="">t1.FA_DOC_TYPE</FIELD>
+        <FIELD ALIAS="" COL="FA_BUYER_ID" DATATYPE="12" DESC="Buyer ID" EEType="Varchar_35" HIDDEN="">t1.FA_BUYER_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_BUYER_NM" DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35" HIDDEN="">t1.FA_BUYER_NM</FIELD>
+        <FIELD ALIAS="" COL="FA_SEL_ID" DATATYPE="12" DESC="Seller ID" EEType="Varchar_35" HIDDEN="">t1.FA_SEL_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_SEL_NM" DATATYPE="12" DESC="Seller Name" EEType="Varchar_35" HIDDEN="">t1.FA_SEL_NM</FIELD>
+        <FIELD ALIAS="" COL="FA_DSP_AMT" DATATYPE="3" DESC="Dispute Amount" EEType="AMT" HIDDEN="">t1.FA_DSP_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_DSP_DT" DATATYPE="91" DESC="Dispute Date" EEType="DATE" HIDDEN="">t1.FA_DSP_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_DSP_INSTR" DATATYPE="1" DESC="Dispute Instruction" EEType="INTERPRETER" HIDDEN="">t1.FA_DSP_INSTR</FIELD>
+        <FIELD ALIAS="" COL="FA_DSP_RSN_CODE" DATATYPE="1" DESC="Dispute Reason Code" EEType="INTERPRETER" HIDDEN="">t1.FA_DSP_RSN_CODE</FIELD>
+        <FIELD ALIAS="" COL="FA_DSP_REF" DATATYPE="12" DESC="Dispute Reference No." EEType="Varchar_24" HIDDEN="">t1.FA_DSP_REF</FIELD>
+        <FIELD ALIAS="" COL="FA_DSP_SETTLE_DT" DATATYPE="91" DESC="Dispute Settle Date" EEType="DATE" HIDDEN="">t2.FA_DSP_SETTLE_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_DSP_STATUS" DATATYPE="1" DESC="Dispute Status" EEType="INTERPRETER" HIDDEN="">t2.FA_DSP_STATUS</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="Doc No." DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_DOC_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Ref" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_DOC_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc CCY" DT="1" EEType="CCY" POS="SELFLD" TYPE="FLD">t1.FA_DOC_CCY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Amt" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">t1.FA_DOC_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t1.FA_DOC_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Document Type" DT="1" EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">t1.FA_DOC_TYPE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Buyer ID" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_BUYER_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Seller ID" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_SEL_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Seller Name" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_SEL_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Dispute Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">t1.FA_DSP_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Dispute Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t1.FA_DSP_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Dispute Instruction" DT="1" EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">t1.FA_DSP_INSTR</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Dispute Reason Code" DT="1" EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">t1.FA_DSP_RSN_CODE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Dispute Reference No." DT="12" EEType="Varchar_24" POS="SELFLD" TYPE="FLD">t1.FA_DSP_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Dispute Settle Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t2.FA_DSP_SETTLE_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Dispute Status" DT="1" EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">t2.FA_DSP_STATUS</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.INVC_DSP t1</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.FAEF_DSP t2</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="Doc Ref" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">t1.FA_DOC_REF</SQL>
+        <SQL TYPE="SQL"> = '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE0</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Dispute Reference No." DT="12" EEType="Varchar_24" POS="WHEFLD" TYPE="FLD">t1.FA_DSP_REF</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="Dispute Reference No." DT="12" EEType="Varchar_24" POS="WHEFLD" TYPE="FLD">t2.FA_DSP_REF</SQL>
+        <SQL TYPE="SQL"> AND </SQL>
+        <SQL DESC="Dispute Reason Code" DT="1" EEType="INTERPRETER" POS="WHEFLD" TYPE="FLD">t1.FA_DSP_RSN_CODE</SQL>
+        <SQL TYPE="SQL"> IS NOT NULL</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Doc Ref" EETYPE="Varchar_35">t1.FA_DOC_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Dispute Reference No." EETYPE="Varchar_24">t1.FA_DSP_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Dispute Reference No." EETYPE="Varchar_24">t2.FA_DSP_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="Dispute Reason Code" EETYPE="INTERPRETER">t1.FA_DSP_RSN_CODE</FIELD>
+    </CLAUSEFIELD>
+</CATA>

@@ -1,0 +1,91 @@
+<WORKFLOW>
+	<STEPS>
+		<STEP>
+			<LABEL>Receive Amendment</LABEL>
+			<INITIALINFO>In process</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700903" DESC="Received Amendment"/>
+				<FUNC ID="F05030700900" DESC="Amendment Advise"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS>Amendment(Detrimental)_pending</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">M</STATUS>
+					<STATUS DESC="">Z</STATUS>
+					<STATUS DESC="">P</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Amendment(Detrimental)_pending</ENDSTATUS>
+			<ABNORMALSTATUS/>
+			<EVENTINFO><![CDATA[on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Authorize</LABEL>
+			<INITIALINFO>Pending authorization</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700900" DESC="Amendment Advise"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS>Amendment(Detrimental) partially authorized</STATUS>
+					<STATUS>Amendment(Detrimental)_fully authorized</STATUS>
+					<STATUS>Amendment(Detrimental) rejected by authorizer</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">T</STATUS>
+					<STATUS DESC="">R</STATUS>
+					<STATUS DESC="">A</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Amendment(Detrimental)_fully authorized</ENDSTATUS>
+			<ABNORMALSTATUS>Amendment(Detrimental) rejected by authorizer</ABNORMALSTATUS>
+			<ABINFO><![CDATA[by ${user} on ${date} at ${time}]]></ABINFO>
+			<EVENTINFO><![CDATA[next authorizers]]></EVENTINFO>
+			<ENDINFO><![CDATA[authorized by ${count} users]]></ENDINFO>
+		</STEP>
+		<STEP>
+			<LABEL>Response For Amendment Decision</LABEL>
+			<INITIALINFO>Response For Amendment Decision</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700901" DESC="Response For Amendment Decision"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS>Detrimental rejected_pending</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">Z</STATUS>
+					<STATUS DESC="">P</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Detrimental rejected_pending</ENDSTATUS>
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<EVENTINFO><![CDATA[by bank on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Authorize</LABEL>
+			<INITIALINFO>Pending authorization</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700901" DESC="Response For Amendment Decision"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<STATUS DESC="">T</STATUS>
+					<STATUS DESC="">S</STATUS>
+					<STATUS DESC="">R</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Fully authorized</ENDSTATUS>
+			<ABNORMALSTATUS>Rejected by authorizer</ABNORMALSTATUS>
+			<ABINFO><![CDATA[by ${user} on ${date} at ${time}]]></ABINFO>
+			<EVENTINFO><![CDATA[next authorizers]]></EVENTINFO>
+			<ENDINFO><![CDATA[authorized by ${count} users]]></ENDINFO>
+		</STEP>
+	</STEPS>
+</WORKFLOW>

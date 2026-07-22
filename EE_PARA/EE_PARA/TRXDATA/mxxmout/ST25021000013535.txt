@@ -1,0 +1,153 @@
+005209BTqz4Ghoh872JWTCAJkIUQ==<?xml version="1.0" encoding="utf-8"?>
+<Saa:DataPDU xmlns:Saa="urn:swift:saa:xsd:saa.2.0" xmlns:Sw="urn:swift:snl:ns.Sw"
+  xmlns:SwGbl="urn:swift:snl:ns.SwGbl" xmlns:SwInt="urn:swift:snl:ns.SwInt" xmlns:SwSec="urn:swift:snl:ns.SwSec">
+  <Saa:Revision>2.0.10</Saa:Revision>
+  <Saa:Header>
+  <Saa:Message>
+    <Saa:SenderReference>IP004996BEDV</Saa:SenderReference>
+    <Saa:MessageIdentifier>pacs.009.001.08</Saa:MessageIdentifier>
+    <Saa:Format>MX</Saa:Format>
+    <Saa:Sender><Saa:DN>ou=xxx,o=ptsabmaa,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMAAXXX</Saa:X1></Saa:FullName></Saa:Sender>
+    <Saa:Receiver><Saa:DN>ou=xxx,o=ptsabmab,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMABXXX</Saa:X1></Saa:FullName></Saa:Receiver>
+    <Saa:InterfaceInfo><Saa:UserReference>IP004996BEDV</Saa:UserReference></Saa:InterfaceInfo>
+    <Saa:NetworkInfo>
+      <Saa:Service>swift.finplus!xpf</Saa:Service>
+      <Saa:SWIFTNetNetworkInfo>
+        <Saa:RequestType>pacs.009.001.08</Saa:RequestType>
+        <Saa:RequestSubtype>swift.cbprplus.cov.02</Saa:RequestSubtype>
+      </Saa:SWIFTNetNetworkInfo>
+    </Saa:NetworkInfo>
+  </Saa:Message></Saa:Header>
+  <Saa:Body>
+  
+  <AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">
+    <Fr>
+      <FIId>
+        <FinInstnId>
+          <BICFI>PTSABMAAXXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </Fr>
+    <To>
+      <FIId>
+        <FinInstnId>
+          <BICFI>CITIUS33XXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </To>
+    <BizMsgIdr>IP004996BEDV</BizMsgIdr>
+    <MsgDefIdr>pacs.009.001.08</MsgDefIdr>
+    <BizSvc>swift.cbprplus.cov.02</BizSvc>
+    <CreDt>2025-02-10T07:15:47+00:00</CreDt>
+  </AppHdr>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.009.001.08">
+    <FICdtTrf>
+      <GrpHdr>
+        <MsgId>IP004996BEDV</MsgId>
+        <CreDtTm>2025-02-10T07:15:47+00:00</CreDtTm>
+        <NbOfTxs>1</NbOfTxs>
+        <SttlmInf>
+          <SttlmMtd>INDA</SttlmMtd>
+        </SttlmInf>
+      </GrpHdr>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>IP004996BEDV</InstrId>
+          <EndToEndId>IP004996BEDV</EndToEndId>
+          <UETR>7bb65e74-2a6a-4ac4-b6fe-c4fece12e0b7</UETR>
+        </PmtId>
+        <IntrBkSttlmAmt Ccy="USD">1100.00</IntrBkSttlmAmt>
+        <IntrBkSttlmDt>2025-02-10</IntrBkSttlmDt>
+        <InstgAgt>
+          <FinInstnId>
+            <BICFI>PTSABMAAXXX</BICFI>
+          </FinInstnId>
+        </InstgAgt>
+        <InstdAgt>
+          <FinInstnId>
+            <BICFI>CITIUS33XXX</BICFI>
+          </FinInstnId>
+        </InstdAgt>
+        <Dbtr>
+          <FinInstnId>
+            <BICFI>BKKBTHBKXXX</BICFI>
+            <Nm>BANGKOK BANK PUBLIC COMPANY LIMITED</Nm>
+            <PstlAdr>
+              <AdrLine>333 SILOM ROAD</AdrLine>
+              <AdrLine>BANGRAK</AdrLine>
+              <AdrLine>BANGKOK, THAILAND</AdrLine>
+            </PstlAdr>
+          </FinInstnId>
+        </Dbtr>
+        <Cdtr>
+          <FinInstnId>
+            <BICFI>ICBVVNVXXXX</BICFI>
+            <Nm>VIETNAM JOINT STOCK COMMERCIAL BANK</Nm>
+            <PstlAdr>
+              <AdrLine>VIETIN BANK TOWER</AdrLine>
+              <AdrLine>108 Tran Hung Dao Street</AdrLine>
+              <AdrLine>HON KIEM DISTRICT, HANOI, VIETNAM</AdrLine>
+            </PstlAdr>
+          </FinInstnId>
+        </Cdtr>
+        <UndrlygCstmrCdtTrf>
+          <Dbtr>
+            <Nm>PIRIYAPUL INTERNATIONAL CO., LTD.</Nm>
+            <PstlAdr>
+              <AdrLine>539/4 THANON SI AYUTTHAYA</AdrLine>
+              <AdrLine>PHAYA THAI, RATCHATHEWI</AdrLine>
+              <AdrLine>BANGKOK 10400</AdrLine>
+            </PstlAdr>
+          </Dbtr>
+          <DbtrAgt>
+            <FinInstnId>
+              <BICFI>BKKBTHBKXXX</BICFI>
+              <Nm>BANGKOK BANK PUBLIC COMPANY LIMITED</Nm>
+              <PstlAdr>
+                <AdrLine>333 SILOM ROAD</AdrLine>
+                <AdrLine>BANGRAK</AdrLine>
+                <AdrLine>BANGKOK, THAILAND</AdrLine>
+              </PstlAdr>
+            </FinInstnId>
+          </DbtrAgt>
+          <DbtrAgtAcct>
+            <Id>
+              <Othr>
+                <Id>67845562222</Id>
+              </Othr>
+            </Id>
+            <Ccy>USD</Ccy>
+          </DbtrAgtAcct>
+          <CdtrAgt>
+            <FinInstnId>
+              <BICFI>ICBVVNVXXXX</BICFI>
+              <Nm>VIETNAM JOINT STOCK COMMERCIAL BANK</Nm>
+              <PstlAdr>
+                <AdrLine>VIETIN BANK TOWER</AdrLine>
+                <AdrLine>108 Tran Hung Dao Street</AdrLine>
+                <AdrLine>HON KIEM DISTRICT, HANOI, VIETNAM</AdrLine>
+              </PstlAdr>
+            </FinInstnId>
+          </CdtrAgt>
+          <CdtrAgtAcct>
+            <Id>
+              <Othr>
+                <Id>378682400</Id>
+              </Othr>
+            </Id>
+            <Ccy>USD</Ccy>
+          </CdtrAgtAcct>
+          <Cdtr>
+            <Nm>TRUNG NGUYEN LEGEND CORPORATION</Nm>
+            <PstlAdr>
+              <AdrLine>82-84 Bui Thi Xuan</AdrLine>
+              <AdrLine>p Ben Thanh,Q.1</AdrLine>
+              <AdrLine>TP Ho Chi Minh</AdrLine>
+            </PstlAdr>
+          </Cdtr>
+        </UndrlygCstmrCdtTrf>
+      </CdtTrfTxInf>
+    </FICdtTrf>
+  </Document>
+
+</Saa:Body></Saa:DataPDU>

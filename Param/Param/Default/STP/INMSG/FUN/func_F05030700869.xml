@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Payment Advice");
+stp.setAutoProcess(true);
+
+stp.setCmpId(stp.getMsgTagVal("ApplId"));
+stp.setUserId("CSBANK");
+var docStatus = stp.getMsgTagVal("DocDecsin");
+if(docStatus == "Compliant"){
+  stp.updateFieldValue("CURRNT_STATUS","Document Checked");
+}else{
+stp.updateFieldValue("CURRNT_STATUS","Payment Advice");
+}
+stp.updateFieldValue("NXT_STATUS","Payment Instructions");
+
+var sLcRef = stp.getMsgTagVal("LcNb");
+var arrKeys = [["LC_NO",sLcRef]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetParentRef",arrKeys);
+var sParentRef = arrGetDataResult[0];
+stp.updateFieldValue("PARENT_MAIN_REF",sParentRef);
+
+
+var sDrawgRefNb = stp.getMsgTagVal("DrawgRefNb");
+var sDrawgNo = sDrawgRefNb.substr(13,2);
+stp.writeLog("sDrawgNo"+sDrawgNo);
+if(sDrawgNo >=10){
+	var sCEMainRef = sDrawgRefNb + "-" + sDrawgNo;
+	stp.writeLog("sCEMainRef"+sCEMainRef);
+}else{
+	sDrawgNo = sDrawgNo.substr(1);
+	var sCEMainRef = sDrawgRefNb + "-" + sDrawgNo;
+	stp.writeLog("sCEMainRef"+sCEMainRef);
+}
+stp.setMainRef(sCEMainRef);
+var discrStatus = stp.getMsgTagVal("DiscrpcsDecsin");
+if(docStatus == "Compliant" || docStatus == "Goods Released Already" || docStatus =="Accepted by Applicant as Presented" || (docStatus == "Discrepancy Found" && discrStatus == "Discrepancies Accepted")){
+  stp.updateFieldValue("C2A_STATUS","Payment Preparation");
+}else{
+stp.updateFieldValue("C2A_STATUS","Settled");
+}
+stp.writeLog("End: Payment Advice");
+
+stp.writeLog("Start: Get Email Senders List");
+var sEmailTrxType = "N";
+var sFuncId = "F05030700869";
+var arrKeys = [["EMAILTRX_TYPE",sEmailTrxType]];
+var arrGetDataResult = stp.SYS_getCUBKVal("InqEmailGrpArray",arrKeys);
+if (arrGetDataResult){
+    var sEmailArray = arrGetDataResult[0];
+    var sEmailGrpNm = "";
+    var eList = sEmailArray.split("/");
+    for (k=0;k<eList.length;k++) {
+	var fList = eList[k].split("-");
+         if (fList[0]==sFuncId) {
+	    sEmailGrpNm = fList[1];
+         }
+    }  	      
+    if (sEmailGrpNm.length() > 0){
+        var arrKeysforEmailList = [["EMAILGRP_NM",sEmailGrpNm]];
+        var arrGetDataResultforEmailList = stp.SYS_getCUBKVal("InqEmailList",arrKeysforEmailList);
+        var sEmailListArray = arrGetDataResultforEmailList[0]; 	    
+        stp.updateFieldValue("EMAIL_TO",sEmailListArray);
+        stp.updateFieldValue("EMAIL_SUBJECT","CSBank Email Notification"); 
+    }
+}
+stp.writeLog("End: Get Email Senders List");]]></js-content>
+</root>

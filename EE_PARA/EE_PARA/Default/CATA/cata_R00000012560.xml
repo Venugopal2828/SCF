@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False" MULTI="YES">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302461</ID>
+    <MODULE>SSSS</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLELIST>
+        <TABLENAME ALIAS="T1" MASTER="YES">%EXIMTRX%.ABLF_EM_REG</TABLENAME>
+        <TABLENAME ALIAS="T2">%EXIMTRX%.ABLF_MASTER</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="CNTR_STATUS" DATATYPE="12" DESC="Contract Status"
+            EEType="Interpreter" HIDDEN="">T2.CNTR_STATUS</FIELD>
+        <FIELD ALIAS="C_FUNC_SHORT_NAME_T2" COL="C_FUNC_SHORT_NAME"
+            DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="SYS_VARCHAR_16" HIDDEN="">T2.C_FUNC_SHORT_NAME</FIELD>
+        <FIELD ALIAS="C_LOCKED_FLAG_T2" COL="C_LOCKED_FLAG" DATATYPE="1"
+            DESC="C_LOCKED_FLAG" EEType="SYS_CHAR_1" HIDDEN="">T2.C_LOCKED_FLAG</FIELD>
+        <FIELD ALIAS="C_MAIN_REF_T2" COL="C_MAIN_REF" DATATYPE="12"
+            DESC="MAIN REF. NO." EEType="SYS_VARCHAR_40" HIDDEN="">T2.C_MAIN_REF</FIELD>
+        <FIELD ALIAS="C_TRX_REF_T2" COL="C_TRX_REF" DATATYPE="1"
+            DESC="C_TRX_REF" EEType="SYS_CHAR_40" HIDDEN="">T2.C_TRX_REF</FIELD>
+        <FIELD ALIAS="C_TRX_STATUS_T2" COL="C_TRX_STATUS" DATATYPE="1"
+            DESC="C_TRX_STATUS" EEType="SYS_CHAR_1" HIDDEN="">T2.C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" COL="FA_BUSI_TYPE" DATATYPE="1" DESC="Business Type"
+            EEType="INTERPRETER" HIDDEN="">T2.FA_BUSI_TYPE</FIELD>
+        <FIELD ALIAS="" COL="FA_CNTR_DOC_NO" DATATYPE="12"
+            DESC="Contract Document No." EEType="Varchar_105" HIDDEN="">T2.FA_CNTR_DOC_NO</FIELD>
+        <FIELD ALIAS="FA_CNTR_REF_T2" COL="FA_CNTR_REF" DATATYPE="12"
+            DESC="Contract Reference No." EEType="Varchar_24" HIDDEN="">T2.FA_CNTR_REF</FIELD>
+        <FIELD ALIAS="" COL="FA_CUST_ID" DATATYPE="12" DESC="Customer ID"
+            EEType="Varchar_10" HIDDEN="">T2.FA_CUST_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_CUST_NM" DATATYPE="12" DESC="Customer Name"
+            EEType="Varchar_35" HIDDEN="">T2.FA_CUST_NM</FIELD>
+        <FIELD ALIAS="" COL="FA_LMT_AMT" DATATYPE="3" DESC="Limit Amount"
+            EEType="AMT" HIDDEN="">T2.FA_LMT_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_LMT_BAL" DATATYPE="3" DESC="Limit Balance"
+            EEType="AMT" HIDDEN="">T2.FA_LMT_BAL</FIELD>
+        <FIELD ALIAS="" COL="FA_LMT_CCY" DATATYPE="1" DESC="Limit Currency"
+            EEType="CCY" HIDDEN="">T2.FA_LMT_CCY</FIELD>
+        <FIELD ALIAS="" COL="FA_LMT_DUE_DT" DATATYPE="91" DESC="Limit Due Date"
+            EEType="DATE" HIDDEN="">T2.FA_LMT_DUE_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_LMT_TYPE" DATATYPE="1" DESC="Limit Type"
+            EEType="INTERPRETER" HIDDEN="">T2.FA_LMT_TYPE</FIELD>
+        <FIELD ALIAS="" COL="FA_LMT_VAL_DT" DATATYPE="91"
+            DESC="Limit Start Date" EEType="DATE" HIDDEN="">T2.FA_LMT_VAL_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_MAX_LOAN_PERC" DATATYPE="4"
+            DESC="Maximal Loan Percentage" EEType="INTEGER" HIDDEN="">T2.FA_MAX_LOAN_PERC</FIELD>
+        <FIELD ALIAS="" COL="FA_TTL_LOAN_BAL" DATATYPE="3"
+            DESC="Total Loan Balance" EEType="AMT" HIDDEN="">T2.FA_TTL_LOAN_BAL</FIELD>
+        <FIELD ALIAS="" COL="I_EVENT_TIMES" DATATYPE="4" DESC="EVENT TIMES"
+            EEType="SYS_INTEGER_0" HIDDEN="">T2.I_EVENT_TIMES</FIELD>
+        <FIELD ALIAS="" COL="LOAN_TIMES" DATATYPE="4" DESC="Loan times"
+            EEType="INTEGER" HIDDEN="">T2.LOAN_TIMES</FIELD>
+        <FIELD ALIAS="" COL="MAX_DEC_PERC" DATATYPE="2"
+            DESC="Max. % of Value Decline" EEType="Numeric_9_5" HIDDEN="">T2.MAX_DEC_PERC</FIELD>
+        <FIELD ALIAS="" COL="MAX_INC_PERC" DATATYPE="2"
+            DESC="Max. % of Price Raise" EEType="Numeric_9_5" HIDDEN="">T2.MAX_INC_PERC</FIELD>
+        <FIELD ALIAS="" COL="TRX_DT" DATATYPE="91" DESC="Transaction Date"
+            EEType="DATE" HIDDEN="">T2.TRX_DT</FIELD>
+        <FIELD ALIAS="" COL="VAL_REL_FLG" DATATYPE="12"
+            DESC="Value Release Flag" EEType="Interpreter" HIDDEN="">T2.VAL_REL_FLG</FIELD>
+        <FIELD ALIAS="" COL="CCY" DATATYPE="1" DESC="Currency" EEType="CCY" HIDDEN="">T1.CCY</FIELD>
+        <FIELD ALIAS="" COL="C_FUNC_SHORT_NAME" DATATYPE="12"
+            DESC="C_FUNC_SHORT_NAME" EEType="SYS_VARCHAR_16" HIDDEN="">T1.C_FUNC_SHORT_NAME</FIELD>
+        <FIELD ALIAS="" COL="C_LOCKED_FLAG" DATATYPE="1" DESC="C_LOCKED_FLAG"
+            EEType="SYS_CHAR_1" HIDDEN="">T1.C_LOCKED_FLAG</FIELD>
+        <FIELD ALIAS="" COL="C_MAIN_REF" DATATYPE="12" DESC="MAIN REF. NO."
+            EEType="SYS_VARCHAR_40" HIDDEN="">T1.C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" COL="C_TRX_REF" DATATYPE="1" DESC="C_TRX_REF"
+            EEType="SYS_CHAR_40" HIDDEN="">T1.C_TRX_REF</FIELD>
+        <FIELD ALIAS="" COL="C_TRX_STATUS" DATATYPE="1" DESC="C_TRX_STATUS"
+            EEType="SYS_CHAR_1" HIDDEN="">T1.C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" COL="EXCH_RATE" DATATYPE="2" DESC="Exchange Rate"
+            EEType="Numeric_18_6" HIDDEN="">T1.EXCH_RATE</FIELD>
+        <FIELD ALIAS="" COL="FA_CNTR_REF" DATATYPE="12"
+            DESC="Contract Reference No." EEType="Varchar_24" HIDDEN="">T1.FA_CNTR_REF</FIELD>
+        <FIELD ALIAS="" COL="REG_AMT" DATATYPE="3" DESC="Stock Value"
+            EEType="AMT" HIDDEN="">T1.REG_AMT</FIELD>
+        <FIELD ALIAS="" COL="REG_DEDUCT_LMT" DATATYPE="1"
+            DESC="Deduct Inspect Institution Limits?" EEType="INTERPRETER" HIDDEN="">T1.REG_DEDUCT_LMT</FIELD>
+        <FIELD ALIAS="" COL="REG_INSPEC_NM" DATATYPE="12"
+            DESC="Inspect Institution Name" EEType="Varchar_70" HIDDEN="">T1.REG_INSPEC_NM</FIELD>
+        <FIELD ALIAS="" COL="REG_INSPEC_NO" DATATYPE="12"
+            DESC="Inspect Agreement No." EEType="CHAR_35" HIDDEN="">T1.REG_INSPEC_NO</FIELD>
+        <FIELD ALIAS="" COL="REG_INSPEC_ID" DATATYPE="12"
+            DESC="Inspect Institution ID" EEType="CHAR_10" HIDDEN="">T1.REG_INSPEC_ID</FIELD>
+        <FIELD ALIAS="" COL="REG_INSPEC_ARG_NO" DATATYPE="12"
+            DESC="Inspect Agreement No." EEType="Varchar_35" HIDDEN="">T1.REG_INSPEC_ARG_NO</FIELD>
+        <FIELD ALIAS="" COL="WAREHOUSE" DATATYPE="12" DESC="Warehouse ID"
+            EEType="CHAR_10" HIDDEN="">T1.WAREHOUSE</FIELD>
+        <FIELD ALIAS="" COL="WAREHOUSE_ADDRESS" DATATYPE="12"
+            DESC="Warehouse Address" EEType="Varchar_105" HIDDEN="">T1.WAREHOUSE_ADDRESS</FIELD>
+        <FIELD ALIAS="" COL="WAREHOUSE_MAN" DATATYPE="12"
+            DESC="Warehouse Contactor" EEType="CHAR_35" HIDDEN="">T1.WAREHOUSE_MAN</FIELD>
+        <FIELD ALIAS="" COL="WAREHOUSE_NM" DATATYPE="12" DESC="Warehouse Name"
+            EEType="Varchar_70" HIDDEN="">T1.WAREHOUSE_NM</FIELD>
+        <FIELD ALIAS="" COL="REG_INSPEC_TP" DATATYPE="1"
+            DESC="Inspect Agreement Type" EEType="INTERPRETER" HIDDEN="">T1.REG_INSPEC_TP</FIELD>
+        <FIELD ALIAS="" COL="REG_LOWEST_VAL" DATATYPE="3" DESC="Lowest Value"
+            EEType="AMT" HIDDEN="">T1.REG_LOWEST_VAL</FIELD>
+        <FIELD ALIAS="" COL="REG_LOAN_BAL" DATATYPE="3" DESC="Loan Balance"
+            EEType="AMT" HIDDEN="">T1.REG_LOAN_BAL</FIELD>
+        <FIELD ALIAS="" COL="REG_NO" DATATYPE="1" DESC="Registration Number"
+            EEType="SYS_CHAR_20" HIDDEN="">T1.REG_NO</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="Contract Status" DT="12" EEType="INTERPRETER" ISFC="Y"
+            POS="SELFLD" TYPE="FLD">T2.CNTR_STATUS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_FUNC_SHORT_NAME" DT="12" EEType="SYS_VARCHAR_16"
+            POS="SELFLD" TYPE="FLD">T2.C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_LOCKED_FLAG" DT="1" EEType="SYS_CHAR_1" POS="SELFLD" TYPE="FLD">T2.C_LOCKED_FLAG</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">T2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_TRX_REF" DT="1" EEType="SYS_CHAR_40" POS="SELFLD" TYPE="FLD">T2.C_TRX_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="SYS_CHAR_1" POS="SELFLD" TYPE="FLD">T2.C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Business Type" DT="1" EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">T2.FA_BUSI_TYPE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Contract Document No." DT="12" EEType="Varchar_105"
+            POS="SELFLD" TYPE="FLD">T2.FA_CNTR_DOC_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Contract Reference No." DT="12" EEType="Varchar_24"
+            POS="SELFLD" TYPE="FLD">T2.FA_CNTR_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Customer ID" DT="12" EEType="Varchar_10" POS="SELFLD" TYPE="FLD">T2.FA_CUST_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Customer Name" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T2.FA_CUST_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Limit Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_LMT_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Limit Balance" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_LMT_BAL</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Limit Currency" DT="1" EEType="CCY" POS="SELFLD" TYPE="FLD">T2.FA_LMT_CCY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Limit Due Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T2.FA_LMT_DUE_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Limit Type" DT="1" EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">T2.FA_LMT_TYPE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Limit Start Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T2.FA_LMT_VAL_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Maximal Loan Percentage" DT="4" EEType="INTEGER" POS="SELFLD" TYPE="FLD">T2.FA_MAX_LOAN_PERC</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Total Loan Balance" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_TTL_LOAN_BAL</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="EVENT TIMES" DT="4" EEType="SYS_INTEGER_0" POS="SELFLD" TYPE="FLD">T2.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan times" DT="4" EEType="INTEGER" POS="SELFLD" TYPE="FLD">T2.LOAN_TIMES</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Max. % of Value Decline" DT="2" EEType="Numeric_9_5"
+            POS="SELFLD" TYPE="FLD">T2.MAX_DEC_PERC</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Max. % of Price Raise" DT="2" EEType="Numeric_9_5"
+            POS="SELFLD" TYPE="FLD">T2.MAX_INC_PERC</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Transaction Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T2.TRX_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Value Release Flag" DT="12" EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">T2.VAL_REL_FLG</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Currency" DT="1" EEType="CCY" POS="SELFLD" TYPE="FLD">T1.CCY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_FUNC_SHORT_NAME" DT="12" EEType="SYS_VARCHAR_16"
+            POS="SELFLD" TYPE="FLD">T1.C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_LOCKED_FLAG" DT="1" EEType="SYS_CHAR_1" POS="SELFLD" TYPE="FLD">T1.C_LOCKED_FLAG</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_TRX_REF" DT="1" EEType="SYS_CHAR_40" POS="SELFLD" TYPE="FLD">T1.C_TRX_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="SYS_CHAR_1" POS="SELFLD" TYPE="FLD">T1.C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Exchange Rate" DT="2" EEType="Numeric_18_6" POS="SELFLD" TYPE="FLD">T1.EXCH_RATE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Contract Reference No." DT="12" EEType="Varchar_24"
+            POS="SELFLD" TYPE="FLD">T1.FA_CNTR_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Stock Value" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.REG_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Deduct Inspect Institution Limits?" DT="1"
+            EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">T1.REG_DEDUCT_LMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Inspect Institution Name" DT="12" EEType="Varchar_70"
+            POS="SELFLD" TYPE="FLD">T1.REG_INSPEC_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Inspect Agreement No." DT="12" EEType="CHAR_35" POS="SELFLD" TYPE="FLD">T1.REG_INSPEC_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Inspect Institution ID" DT="12" EEType="CHAR_10" POS="SELFLD" TYPE="FLD">T1.REG_INSPEC_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Inspect Agreement No." DT="12" EEType="Varchar_35"
+            POS="SELFLD" TYPE="FLD">T1.REG_INSPEC_ARG_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Warehouse ID" DT="12" EEType="CHAR_10" POS="SELFLD" TYPE="FLD">T1.WAREHOUSE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Warehouse Address" DT="12" EEType="Varchar_105" POS="SELFLD" TYPE="FLD">T1.WAREHOUSE_ADDRESS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Warehouse Contactor" DT="12" EEType="CHAR_35" POS="SELFLD" TYPE="FLD">T1.WAREHOUSE_MAN</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Warehouse Name" DT="12" EEType="Varchar_70" POS="SELFLD" TYPE="FLD">T1.WAREHOUSE_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Inspect Agreement Type" DT="1" EEType="INTERPRETER"
+            POS="SELFLD" TYPE="FLD">T1.REG_INSPEC_TP</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Lowest Value" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.REG_LOWEST_VAL</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan Balance" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.REG_LOAN_BAL</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Registration Number" DT="1" EEType="SYS_CHAR_20" POS="SELFLD" TYPE="FLD">T1.REG_NO</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.ABLF_MASTER T2</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.ABLF_EM_REG T1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">='</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE0</SQL>
+        <SQL TYPE="SQL">' AND
+</SQL>
+        <SQL DESC="Registration Number" DT="1" EEType="SYS_CHAR_20" POS="WHEFLD" TYPE="FLD">T1.REG_NO</SQL>
+        <SQL TYPE="SQL">='</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' 
+</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T2.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="Registration Number" EETYPE="SYS_CHAR_20">T1.REG_NO</FIELD>
+    </CLAUSEFIELD>
+</CATA>

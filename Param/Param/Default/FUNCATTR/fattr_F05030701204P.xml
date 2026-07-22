@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR DATABASE="BLDB" SCHEMA="CEMETA" TABLENAME="ECD_SYSFUNC_ATTR">
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Master Add Rec">TrxMasterAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>FAEF</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.FAEF_MASTER</TABLE_NAME>
+        <TABLE_DESC>FAEF_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Add Master</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Event Add Rec">TrxEventAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>FAEF</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>CETRX.FAEF_EM_INV</TABLE_NAME>
+        <TABLE_DESC>FAEF_EM_INV</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE/>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Generate GAPI">TrxGenerateGAPI</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>FAEF</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.FAEF_MASTER</TABLE_NAME>
+        <TABLE_DESC>FAEF_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>GAPIs</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+</FUNCATTR>

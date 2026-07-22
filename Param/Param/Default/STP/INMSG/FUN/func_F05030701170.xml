@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive Outward TT Issued function");
+stp.setAutoProcess(true);
+
+stp.setCmpId(stp.getMsgTagVal("REMM000003"));
+stp.setUserId("BANKWEST");
+stp.updateFieldValue("C_MAIN_REF",stp.getMsgTagVal("REMM000001"));
+
+//Status control
+var status = String(stp.getMsgTagVal("REMM000179"));
+if (status == "1") {
+    stp.updateFieldValue("CURRENT_STATUS","IMT Accepted");
+} else {
+    stp.updateFieldValue("CURRENT_STATUS","IMT Cancelled");
+}
+stp.updateFieldValue("NEXT_STATUS","Decision");
+
+stp.setEventTimesFromTable("REMM_MASTER");
+stp.writeLog("End: Receive Outward TT Issued function");]]></js-content>
+</root>

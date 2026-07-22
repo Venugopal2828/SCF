@@ -1,0 +1,1 @@
+DV.appendField("SSSS_MT_412T","PaymentScheduleHeader.PaymentSchedule","CPYT_C_SDA_FLAG == 'Acceptance'");

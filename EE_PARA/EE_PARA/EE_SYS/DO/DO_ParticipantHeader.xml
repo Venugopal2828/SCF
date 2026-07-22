@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="ParticipantHeader" Max="1" Min="0"
+    Name="ParticipantHeader" PendingStore="N"
+    Screen="SCRN/DO/Participant Header.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="SYND_PART_HEADER"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="EPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="EXCO_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="SYND_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="3" Desc="Syndication Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">SYND_AMT</Element>
+        <Element DATATYPE="3" Desc="Syndication Balance" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">SYND_BAL</Element>
+        <Element DATATYPE="1" Desc="Risk Type" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">SYND_RISK_TYPE</Element>
+        <Element DATATYPE="4" Desc="Number of Participants" DispInGrid="N"
+            EDIT="N" EEType="INTEGER" FldType="" Value="">SYND_PART_NO</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="3" Desc="SYSFLD:TTL_PART_AMT" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">TTL_PART_AMT</Element>
+        <Element DATATYPE="3" Desc="SYSFLD:TTL_PART_BAL" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">TTL_PART_BAL</Element>
+        <Element DATATYPE="1" Desc="Syndication CCY" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">SYND_CCY</Element>
+        <Element DATATYPE="91" Desc="Expiry Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">SYND_EXPIRY_DT</Element>
+        <Element DATATYPE="1" Desc="Funding Flag" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">FUND_FLAG</Element>
+        <Element DATATYPE="2" Desc="Grace Days" DispInGrid="N" EDIT="N"
+            EEType="NUMBER_38" FldType="" Value="">GRACE_DAYS</Element>
+        <Element DATATYPE="1" Desc="Recourse Party Country Code" DispInGrid="N"
+            EDIT="N" EEType="CNTY" FldType="" Value="">RECRS_PRTY_CNTY_CD</Element>
+        <Element DATATYPE="12" Desc="Recourse Party Name" DispInGrid="N"
+            EDIT="N" EEType="NM_CHAR35" FldType="" Value="">RECRS_PRTY_NM</Element>
+        <Element DATATYPE="12" Desc="Recourse Party Reference" DispInGrid="N"
+            EDIT="N" EEType="CHAR_16" FldType="" Value="">RECRS_PRTY_REF</Element>
+        <Element DATATYPE="1" Desc="Recourse Party SWIFT Address" DispInGrid="N"
+            EDIT="N" EEType="BIC" FldType="" Value="">RECRS_PRTY_SW_ADD</Element>
+        <Element DATATYPE="12" Desc="Recourse Party SWIFT Tag" DispInGrid="N"
+            EDIT="N" EEType="SW_TAG" FldType="" Value="">RECRS_PRTY_SW_TAG</Element>
+        <Element DATATYPE="1" Desc="C_TRX_STATUS" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_TRX_STATUS</Element>
+        <Element DATATYPE="3" Desc="Total Funded Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">TTL_FUNDED_AMT</Element>
+    </Elements>
+    <DO Desc="ParticipantDetail" Max="n" Min="0" Name="ParticipantDetail"
+        PendingStore="N" Screen="SCRN/DO/Participant Details.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="SYND_PART_DETAIL"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>SYND_PART_ID</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="SYND_PART_HEADER">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="1" Desc="Syndication Participant ID"
+                DispInGrid="Y" EDIT="N" EEType="CID" FldType="" Value="">SYND_PART_ID</Element>
+            <Element DATATYPE="12" Desc="Syndication Participant Name"
+                DispInGrid="Y" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">SYND_PART_NM</Element>
+            <Element DATATYPE="12" Desc="Participant Reference" DispInGrid="Y"
+                EDIT="N" EEType="CHAR_16" FldType="" Value="">SYND_PART_REF</Element>
+            <Element DATATYPE="12" Desc="Participation %" DispInGrid="Y"
+                EDIT="N" EEType="VARCHAR10" FldType="" Value="">PART_PER</Element>
+            <Element DATATYPE="3" Desc="Participant Amount" DispInGrid="Y"
+                EDIT="N" EEType="AMT" FldType="" Value="">SYND_PART_AMT</Element>
+            <Element DATATYPE="3" Desc="Fund Amount" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">FUND_AMT</Element>
+            <Element DATATYPE="1" Desc="Participant Currency" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">SYND_PART_CCY</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="Participant Address1" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SYND_PART_ADD1</Element>
+            <Element DATATYPE="12" Desc="Participant Address2" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SYND_PART_ADD2</Element>
+            <Element DATATYPE="12" Desc="Participant Address3" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SYND_PART_ADD3</Element>
+            <Element DATATYPE="12" Desc="Participant SWIFT Tag" DispInGrid="N"
+                EDIT="N" EEType="SW_TAG" FldType="" Value="">SYND_PART_SW_TAG</Element>
+            <Element DATATYPE="1" Desc="Participant SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">SYND_PART_SW_ADD</Element>
+            <Element DATATYPE="1" Desc="Participant Country Code" DispInGrid="N"
+                EDIT="N" EEType="CNTY" FldType="" Value="">SYND_PART_CNTY_CD</Element>
+            <Element DATATYPE="1" Desc="Disclosure Flag" DispInGrid="N" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">SYND_PART_DISCLS</Element>
+            <Element DATATYPE="91" Desc="Participation Start Date"
+                DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">SYND_PART_START_DT</Element>
+            <Element DATATYPE="1" Desc="Syndication Account No" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">SYND_AC_NO</Element>
+            <Element DATATYPE="12" Desc="Account With Bank Address1"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SYND_AC_WT_BK_ADD1</Element>
+            <Element DATATYPE="12" Desc="Account With Bank Address2"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SYND_AC_WT_BK_ADD2</Element>
+            <Element DATATYPE="12" Desc="Account With Bank Address3"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SYND_AC_WT_BK_ADD3</Element>
+            <Element DATATYPE="12" Desc="Account With Bank ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">SYND_AC_WT_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Account With Bank Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">SYND_AC_WT_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Account With Bank SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">SYND_AC_WT_BK_SWAD</Element>
+            <Element DATATYPE="12" Desc="Account With Bank SWIFT Tag"
+                DispInGrid="N" EDIT="N" EEType="SW_TAG" FldType="" Value="">SYND_ACWT_BK_SWTAG</Element>
+            <Element DATATYPE="1" Desc="Liability Account No" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">SYND_PART_LIABACNO</Element>
+            <Element DATATYPE="1" Desc="Participant Type" DispInGrid="N"
+                EDIT="N" EEType="INTERPRETER" FldType="" Value="">SYND_PART_TYPE</Element>
+            <Element DATATYPE="3" Desc="Participant Balance" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">SYND_PART_BAL</Element>
+            <Element DATATYPE="3" Desc="Increase Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">INC_AMT</Element>
+            <Element DATATYPE="3" Desc="Decrease Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">DEC_AMT</Element>
+            <Element DATATYPE="3" Desc="Total Unpaid Charge Amount"
+                DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">SYND_TLUNPDCHG_AMT</Element>
+            <Element DATATYPE="3" Desc="Total Unpaid Charge Balance"
+                DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">SYND_TLUNPDCHG_BAL</Element>
+            <Element DATATYPE="1" Desc="Total Unpaid Charge CCY" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">SYND_TLUNPDCHG_CCY</Element>
+            <Element DATATYPE="12" Desc="Charge Narrative" DispInGrid="N"
+                EDIT="N" EEType="Varchar_390" FldType="" Value="">SYND_CHG_NARR</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="3" Desc="New Participant Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">SYND_PART_NAMT</Element>
+            <Element DATATYPE="12" Desc="Participant Email Code" DispInGrid="N"
+                EDIT="N" EEType="EMAIL_VARCHAR50" FldType="" Value="">PART_EMAIL_ADD</Element>
+            <Element DATATYPE="12" Desc="Participant Fax No" DispInGrid="N"
+                EDIT="N" EEType="PhoneNumber" FldType="" Value="">PART_FAX_NO</Element>
+            <Element DATATYPE="12" Desc="Participant Mail Address"
+                DispInGrid="N" EDIT="N" EEType="NARR(6*35)" FldType="" Value="">PART_MAIL_ADD</Element>
+            <Element DATATYPE="12" Desc="Participant Telex No" DispInGrid="N"
+                EDIT="N" EEType="TELEX" FldType="" Value="">PART_TLX_NO</Element>
+            <Element DATATYPE="3" Desc="Participant Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">SYND_PART_FAMT</Element>
+            <Element DATATYPE="8" Desc="Charge Rate" DispInGrid="N" EDIT="N"
+                EEType="RATE" FldType="" Value="">PART_CHG_RATE</Element>
+            <Element DATATYPE="1" Desc="Credit Account" DispInGrid="N" EDIT="N"
+                EEType="ACNO" FldType="" Value="">PART_CR_ACNO</Element>
+            <Element DATATYPE="1" Desc="Credit CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">PART_CR_CCY</Element>
+            <Element DATATYPE="91" Desc="Credit Value Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">PART_CR_VLDT</Element>
+            <Element DATATYPE="1" Desc="Debit Account No" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">PART_DR_ACNO</Element>
+            <Element DATATYPE="1" Desc="Debit CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">PART_DR_CCY</Element>
+            <Element DATATYPE="91" Desc="Debit Value Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">PART_DR_VLDT</Element>
+            <Element DATATYPE="1" Desc="C_TRX_STATUS" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_STATUS</Element>
+            <Element DATATYPE="3" Desc="PD Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">SYND_CHG_PD_AMT</Element>
+            <Element DATATYPE="3" Desc="Pay DR Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">PART_DR_AMT</Element>
+            <Element DATATYPE="3" Desc="Pay CR Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">PART_CR_AMT</Element>
+            <Element DATATYPE="3" Desc="Unpaid Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">SYND_CHG_BAL_AMT</Element>
+            <Element DATATYPE="12" Desc="Paid At" DispInGrid="N" EDIT="N"
+                EEType="Varchar_12" FldType="" Value="">SYND_CHG_PAID_AT</Element>
+            <Element DATATYPE="3" Desc="Pay Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">SYND_CHG_PAY_AMT</Element>
+            <Element DATATYPE="12" Desc="ParticipantDetail" DispInGrid="N"
+                EDIT="N" EEType="CHAR_210" FldType="" Value="">LEAD_NOTES</Element>
+            <Element DATATYPE="12" Desc="ParticipantDetail" DispInGrid="N"
+                EDIT="N" EEType="NARR(6*35)" FldType="" Value="">SYND_PART_NOTES</Element>
+            <Element DATATYPE="12" Desc="ParticipantDetail" DispInGrid="N"
+                EDIT="N" EEType="CHAR_210" FldType="" Value="">SYND_AC_WT_NOTES</Element>
+            <Element DATATYPE="3" Desc="SYND_PART_PAY_AMT" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">SYND_PART_PAY_AMT</Element>
+            <Element DATATYPE="1" Desc="Commission Schedule" DispInGrid="N"
+                EDIT="N" EEType="INTERPRETER" FldType="" Value="">COMM_SCHE</Element>
+            <Element DATATYPE="1" Desc="Charging Policy" DispInGrid="N" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">CHG_POLICY</Element>
+            <Element DATATYPE="91" Desc="Commission Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">COMM_DT</Element>
+            <Element DATATYPE="91" Desc="Commission Start Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">COMM_START_DT</Element>
+            <Element DATATYPE="91" Desc="Commission End Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">COMM_END_DT</Element>
+            <Element DATATYPE="91" Desc="Next Commission Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">NXT_COMM_DT</Element>
+            <Element DATATYPE="12" Desc="Commission %" DispInGrid="N" EDIT="N"
+                EEType="VARCHAR10" FldType="" Value="">COMM_PRE</Element>
+            <Element DATATYPE="1" Desc="Comm Type" DispInGrid="N" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">COMM_TYPE</Element>
+            <Element DATATYPE="1" Desc="Funding Flag" DispInGrid="N" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">FUND_FLAG</Element>
+            <Element DATATYPE="91" Desc="Registration Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">AMD_REG_DT</Element>
+            <Element DATATYPE="4" Desc="SYND NO_OF_PERIODS" DispInGrid="N"
+                EDIT="N" EEType="INTEGER" FldType="" Value="">SYND_NO_OF_PERIODS</Element>
+        </Elements>
+    </DO>
+</DO>

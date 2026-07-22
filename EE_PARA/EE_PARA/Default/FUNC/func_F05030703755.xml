@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/R2TSUM_Submit BaseLine_EE.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="F">
+        <SCREEN DO="BuyerBank">TSUM_BuyerBanksInfomation</SCREEN>
+        <SCREEN DO="BuyrSdSubmitgBk">R2TSU_BuyersideSubmtBank</SCREEN>
+        <SCREEN DO="SellerBank">TSUM_SellerBankInformation</SCREEN>
+        <SCREEN DO="SellrSdSubmitgBk">R2TSU_SellerSideSubmitBank</SCREEN>
+    </DOSCREEN>
+    <OUTTSU>
+        <ID>F00000007945</ID>
+    </OUTTSU>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>Open Account Module</MODULE_DESC>
+        <EVENT>B2CMaintenance</EVENT>
+        <ID>F05030703755</ID>
+        <NAME>ProcessInitialBLSubmission</NAME>
+        <DESC>Process Initial Baseline Submission</DESC>
+        <FUNSHORTNAME>Send019ToCoE&amp;TSU</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>S</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="ProcessInitialBLSubmission">R00000010449</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000010450</CATALOGID>
+    </FUNCTION>
+</FUNC>

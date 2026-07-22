@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Get Ref and UnitCode By TxId And NXT And BIC" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>GetRefUnitByTxIdAndNXTAndBIC</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.MESG_MASTER</table-name>
+        <table-desc>General Correspondence Master</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <NXT_STATUS DESC="Next Status" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">NXT_STATUS</NXT_STATUS>
+            <TSU_TID DESC="Transaction TID" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sTxId</TSU_TID>
+            <TSU_PCBK_BIC DESC="Process Bank BIC" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_PCBK_BIC</TSU_PCBK_BIC>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_UNIT_CODE DESC="Company Code" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_UNIT_CODE</C_UNIT_CODE>
+        <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_MAIN_REF</C_MAIN_REF>
+        <PARENT_MAIN_REF DESC="Parent Main Reference" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">PARENT_MAIN_REF</PARENT_MAIN_REF>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

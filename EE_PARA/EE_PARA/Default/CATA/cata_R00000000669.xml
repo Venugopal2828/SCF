@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="IS_AUTH" VALUE="Y"/>
+        <FIELD NAME="IS_DISTINCT" VALUE="Y"/>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>C49082300359</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/StdAuthLevelCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_AUTH_RULE_BU</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Add Flag" EEType="Varchar_1" HIDDEN="H">C_ADD_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Authorize Rule Name"
+            EEType="Varchar_64" HIDDEN="">C_AUTH_RULE_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Bank Group Id" EEType="" HIDDEN="">C_BK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Create By" EEType="" HIDDEN="">C_CREA_BY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Transaction Status" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Unit" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Create Date" EEType="" HIDDEN="">D_CREA_DATE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Authorize Rule Name" DT="12" EEType="Varchar_64" TYPE="FLD">C_AUTH_RULE_NAME</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Authorize Rule Name" EEType="Varchar_64">C_AUTH_RULE_NAME</FIELD>
+    </CLAUSEFIELD>
+</CATA>

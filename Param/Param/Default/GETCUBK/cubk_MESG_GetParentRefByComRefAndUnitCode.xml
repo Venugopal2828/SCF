@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Get Parent Main Ref By ComRef And UnitCode" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>GetParentRefByComRefAndUnitCode</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.INVC_EM_DETAIL</table-name>
+        <table-desc>Dataset Details</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <TSU_COMM_REF DESC="Invoice Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_COMM_REF</TSU_COMM_REF>
+            <C_UNIT_CODE DESC="Company Code" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_UNIT_CODE</C_UNIT_CODE>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PARENT_MAIN_REF DESC="Parent Main Reference" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">PARENT_MAIN_REF</PARENT_MAIN_REF>
+        <TSU_COMM_AMT DESC="Invoice Amount" DT="3" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_COMM_AMT</TSU_COMM_AMT>
+        <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_MAIN_REF</C_MAIN_REF>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

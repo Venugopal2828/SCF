@@ -1,0 +1,16 @@
+{
+	"id": "swift_queue_status",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "swift_queue_status",
+			"display": "chart.pie",
+			"title": "SWIFT Queue Status",
+			"desc": "Displays incoming and outgoing SWIFT messages grouped by status."
+		},
+		"data": {
+			"sql": "SELECT CASE C_PROC_STATUS WHEN 'R' THEN 'Inbound Received' WHEN 'P' THEN 'Inbound Pending' WHEN 'F' THEN 'Outbound Failed' WHEN 'S' THEN 'Outbound Dispatched' ELSE C_PROC_STATUS END as \"Status\", COUNT(*) as \"Total\" FROM %EXIMSYS%.STP_IN_MSG_STO WHERE C_MSG_TYPE = 'InSwiftForm' AND C_UNIT_CODE = '%USER_BU%' GROUP BY C_PROC_STATUS"
+		}
+	}
+}

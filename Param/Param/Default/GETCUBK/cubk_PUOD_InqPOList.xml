@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire PO for Resubmit" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>PUOD</module-name>
+        <cubk-mapping-name>InqPOList</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.PUOD_EM_BASELINE</table-name>
+        <table-desc>Baseline Data</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <TSU_PO_ID DESC="PO Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_PO_ID</TSU_PO_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <TSU_PO_ID DESC="PO Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_PO_ID</TSU_PO_ID>
+        <TSU_PO_DT DESC="PO Date" DT="91" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_PO_DT</TSU_PO_DT>
+        <TSU_BUYER_NM DESC="Buyer Name" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_BUYER_NM</TSU_BUYER_NM>
+        <TSU_SEL_NM DESC="Seller Name" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_SEL_NM</TSU_SEL_NM>
+        <TSU_CCY DESC="CCY" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_CCY</TSU_CCY>
+        <TSU_LINE_TTL_AMT DESC="Lineitem Total Amount" DT="3" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_LINE_TTL_AMT</TSU_LINE_TTL_AMT>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

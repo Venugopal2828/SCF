@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Invoice Adjust" Name="InvoiceAdjust" PendingStore="N" Screen="SCRN/o2m/FAEF_InvAdjust.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>FactExportPaymentTracing</Component>
+    <PK>
+        <PKNAME>FA_DOC_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Doc Ref" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_REF</Element>
+        <Element DATATYPE="3" Desc="Doc Balance" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_DOC_BAL</Element>
+        <Element DATATYPE="12" Desc="Doc No." DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_NO</Element>
+        <Element DATATYPE="12" Desc="Document Status" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_STATUS</Element>
+        <Element DATATYPE="1" Desc="Doc CCY" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">FA_DOC_CCY</Element>
+        <Element DATATYPE="3" Desc="Doc Amt" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_DOC_AMT</Element>
+        <Element DATATYPE="91" Desc="Doc Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_DT</Element>
+        <Element DATATYPE="91" Desc="Doc Value Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="Doc Due Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_DUE_DT</Element>
+        <Element DATATYPE="12" Desc="Order No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_ORDER_NO</Element>
+        <Element DATATYPE="12" Desc="FSBC Referrence" DispInGrid="N" EDIT="N" EEType="CHAR_40" FldType="" Value="">FSBC_REF</Element>
+        <Element DATATYPE="1" Desc="Invoice Verify Staus" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_DOC_VERIFIED</Element>
+        <Element DATATYPE="1" Desc="Business Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_BUSI_TYPE</Element>
+        <Element DATATYPE="12" Desc="Buyer ID" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_NM</Element>
+        <Element DATATYPE="12" Desc="Seller ID" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_ID</Element>
+        <Element DATATYPE="12" Desc="Seller Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_NM</Element>
+        <Element DATATYPE="1" Desc="Payment Condition" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_PMT_COND</Element>
+        <Element DATATYPE="12" Desc="Payment Terms" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_PMT_TERMS</Element>
+        <Element DATATYPE="91" Desc="Transfer Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_TRF_DT</Element>
+        <Element DATATYPE="12" Desc="Goods Description" DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">FA_GOODS_DES</Element>
+        <Element DATATYPE="-1" Desc="Notes" DispInGrid="N" EDIT="N" EEType="TEXTAREA_6500" FldType="" Value="">NOTES</Element>
+        <Element DATATYPE="1" Desc="Document Type" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_DOC_TYPE</Element>
+        <Element DATATYPE="1" Desc="Finance Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_FIN_FLG</Element>
+        <Element DATATYPE="12" Desc="FA CE MAIN REF" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_CE_MAIN_REF</Element>
+        <Element DATATYPE="3" Desc="FAEF  ACCEPT  INV" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TEMP_ACCEPT_INV</Element>
+        <Element DATATYPE="3" Desc="Invoice Available Amount for Finance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">INV_LOAN_AVL</Element>
+        <Element DATATYPE="3" Desc="Invoice Loan Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_LOAN_AMT</Element>
+        <Element DATATYPE="91" Desc="Loan Value Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_LOAN_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="Financing Due Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_LOAN_DUE_DT</Element>
+        <Element DATATYPE="3" Desc="Invoice Loan Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_LOAN_BAL</Element>
+        <Element DATATYPE="3" Desc="Invoice Loan Balance Per Trx." DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_LOAN_EBAL</Element>
+        <Element DATATYPE="3" Desc="Limit Approved For Invoice" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_INV_LMT_APPRV</Element>
+        <Element DATATYPE="3" Desc="Loan Interest Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_LOAN_INT_AMT</Element>
+        <Element DATATYPE="8" Desc="Loan Interest Rate" DispInGrid="N" EDIT="N" EEType="RATE" FldType="" Value="">FA_LOAN_INT_RT</Element>
+        <Element DATATYPE="12" Desc="Anchor ID" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_ANCHOR_ID</Element>
+        <Element DATATYPE="12" Desc="Anchor Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_ANCHOR_NM</Element>
+        <Element DATATYPE="12" Desc="Counterparty ID" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_COUNTER_ID</Element>
+        <Element DATATYPE="12" Desc="Counterparty Name" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_COUNTER_NM</Element>
+        <Element DATATYPE="12" Desc="Exception Reason" DispInGrid="N" EDIT="N" EEType="TEXTAREA_300" FldType="" Value="">EXCP_REASON</Element>
+        <Element DATATYPE="3" Desc="Adjust Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_ADJ_AMT</Element>
+        <Element DATATYPE="3" Desc="Adjust Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_ADJ_BAL</Element>
+        <Element DATATYPE="1" Desc="Need Buyer Approve" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_REQ_BUYER_APR_FLG</Element>
+        <Element DATATYPE="12" Desc="Invoice Pass the pool validation flag" DispInGrid="N" EDIT="N" EEType="FLAG_10" FldType="" Value="">INV_PASS_POOL_VAL</Element>
+        <Element DATATYPE="12" Desc="Invoice IN/OUT Pool" DispInGrid="Y" EDIT="N" EEType="FLAG_10" FldType="" Value="">INV_POOL_STATUS</Element>
+        <Element DATATYPE="12" Desc="Credit Notes Invoice Link No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_CRN_INV_LINK_NO</Element>
+        <Element DATATYPE="92" Desc="D_SYS_OP_TIME" DispInGrid="N" EDIT="N" EEType="SYS_TIME_0" FldType="" Value="">T_SYS_OP_TIME</Element>
+    </Elements>
+</DO>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[var OurBIC=stp.getTSUBIC();
+var bu=stp.getTSUUnitCode();
+stp.writeLog("begin: R2ForwardIntentToPayNotification"); 
+//generate TSU_SEQ_NUM for DO
+stp.genDOTsuSeqNum(); 
+//generate TSU_SEQ_NUM for DO  
+var PayByPo = stp.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByPurchsOrdr/PurchsOrdrRef","Id");
+
+    if (PayByPo[0] == undefined)
+    {
+        stp.writeLog("PayByPo[0]="+PayByPo[0]); 
+        stp.deleNode("/root/domData","ByPurchaseOrder");
+    } 
+    else
+    {
+       var fld_list= stp.addFieldList(null,"C_MAIN_REF"); 
+       var sql_condition = stp.addSQLCondition(null,"TSU_PO_ID",PayByPo[0]); 
+       sql_condition   = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);   
+       var result = stp.executeQuery("TSUM_MASTER",fld_list,sql_condition); 
+       var C_MAIN_REF = stp.getDBFieldValue(result,"C_MAIN_REF");
+       stp.writeLog("C_MAIN_REF:"+C_MAIN_REF);
+      
+       stp.updateFieldValue("/root/domData","C_MAIN_REF",C_MAIN_REF);
+       stp.updateFieldValue("/root/domData","C_TRX_REF",C_MAIN_REF);
+ 
+    }  
+var PayByInvoice = stp.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc","ComrclDocRef/InvcNb");
+     
+    if (PayByInvoice[0] == undefined)
+    {
+     stp.writeLog("PayByInvoice[0]="+PayByInvoice[0]); 
+        stp.deleNode("/root/domData","ByCommercialInvoice");
+    }   
+    else
+    {
+       var fld_list= stp.addFieldList(null,"C_MAIN_REF"); 
+       var sql_condition = stp.addSQLCondition(null,"TSU_COMM_REF",PayByInvoice[0]); 
+       sql_condition   = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);   
+       var result = stp.executeQuery("TSUM_MASTER",fld_list,sql_condition); 
+       var C_MAIN_REF = stp.getDBFieldValue(result,"C_MAIN_REF");
+       stp.writeLog("C_MAIN_REF:"+C_MAIN_REF);
+       
+       stp.updateFieldValue("/root/domData","C_MAIN_REF",C_MAIN_REF);
+       stp.updateFieldValue("/root/domData","C_TRX_REF",C_MAIN_REF); 
+    }
+   
+var AdjstmntTp1 = stp.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc/Adjstmnt","Tp");
+var AdjstmntOthr1 = stp.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc/Adjstmnt","OthrAdjstmntTp");
+    if (AdjstmntTp1[0] != undefined || AdjstmntOthr1[0] != undefined)
+    {
+	stp.updateFieldValue("/root/domData/ByCommercialInvoice/DT_Adjstmnt","TSU_LNITMNB",0);
+	stp.updateFieldValue("/root/domData/ByCommercialInvoice/DT_Adjstmnt","TSU_PO_ID",0);
+
+    }
+var AdjstmntTp2 = stp.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc/BrkdwnByPurchsOrdr/Adjstmnt","Tp");
+    var AdjstmntOthr2 = stp.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc/BrkdwnByPurchsOrdr/Adjstmnt","OthrAdjstmntTp");
+    if (AdjstmntTp2[0] != undefined || AdjstmntOthr2[0] != undefined)
+    {
+	stp.updateFieldValue("/root/domData/ByCommercialInvoice/BreakdownByPurchaseOrder/DT_Adjstmnt","TSU_LNITMNB",0);
+	stp.updateFieldValue("/root/domData/ByCommercialInvoice/BreakdownByPurchaseOrder/DT_Adjstmnt","TSU_COMM_REF",0);
+    }
+    var AdjstmntTp3 = stp.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByPurchsOrdr/Adjstmnt","Tp");
+    var AdjstmntOthr3 = stp.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByPurchsOrdr/Adjstmnt","OthrAdjstmntTp");
+    if (AdjstmntTp3[0] != undefined || AdjstmntOthr3[0] != undefined)
+    {
+        stp.updateFieldValue("/root/domData/ByPurchaseOrder/DT_Adjstmnt","TSU_LNITMNB",0);
+        stp.updateFieldValue("/root/domData/ByPurchaseOrder/DT_Adjstmnt","TSU_COMM_REF",0);
+    }
+
+    var TSU_REQ_ACT_TP = stp.getValue("/Document/FwdInttToPayNtfctn/ReqForActn","Tp");
+    stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+    if ( TSU_REQ_ACT_TP[0]== undefined)
+    {
+	stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");	
+	stp.updateFieldValue("/root/domData","TSU_REQ_ACT_DESC","");
+	stp.setNodeAttribute("/root/domData/TSU_REQ_ACT_DESC");
+    }
+
+
+    var BIC = stp.getValue("/Document/FwdInttToPayNtfctn/UsrTxRef/IdIssr","BIC");
+    var RefId = stp.getValue("/Document/FwdInttToPayNtfctn/UsrTxRef","Id");
+    if (BIC.length == 1)
+    {
+        var Bool = stp.compareString(BIC[0],OurBIC);
+        if (Bool == "false")
+        {   stp.writeLog("ReSubmit 1 false");
+            stp.updateFieldValue("","TSU_THEIR_BIC",BIC[0]);
+            stp.updateFieldValue("","TSU_THEIR_REF",RefId[0]);
+            stp.updateFieldValue("","TSU_OUR_BIC",OurBIC);
+            stp.updateFieldValue("","TSU_OUR_REF",mainRef);
+        }
+        if (Bool == "true")
+        {   stp.writeLog("ReSubmit 2 true");
+            stp.updateFieldValue("","TSU_OUR_BIC",OurBIC);
+            stp.updateFieldValue("","TSU_OUR_REF",RefId[0]);
+        }
+    }
+    
+    if (BIC.length == 2)
+    {  
+        var Bool2 = stp.compareString(BIC[0],OurBIC);
+        var Bool3 = stp.compareString(BIC[1],OurBIC);
+        if (Bool2 == "true")
+        {
+            stp.updateFieldValue("","TSU_OUR_BIC",BIC[0]);
+            stp.updateFieldValue("","TSU_OUR_REF",RefId[0]);
+            stp.updateFieldValue("","TSU_THEIR_BIC",BIC[1]);
+            stp.updateFieldValue("","TSU_THEIR_Ref",RefId[1]);
+        }
+        if (Bool3 == "true")
+        {
+            stp.updateFieldValue("","TSU_OUR_BIC",BIC[1]);
+            stp.updateFieldValue("","TSU_OUR_REF",RefId[1]);
+            stp.updateFieldValue("","TSU_THEIR_BIC",BIC[0]);
+            stp.updateFieldValue("","TSU_THEIR_Ref",RefId[0]);
+        }
+    }
+  
+    stp.setAutoProcess(true);
+    stp.setFunc("R2ForwardIntentToPayNotification");
+    stp.writeLog("End: RR2ForwardIntentToPayNotification");]]></js-content>
+</root>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Charge Tracer List" Max="n" Min="0"
+    Name="ChargeTracer" PendingStore="N"
+    Screen="SCRN/o2m/PMAT_ChargeTracerList.jsp" StoreInto="C" StoreType="C">
+    <Component>ChargeDetails</Component>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="Related EPP ID" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_40" FldType="" Value="">EPP_ID</Element>
+        <Element DATATYPE="1" Desc="Fee Type" DispInGrid="Y" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">FEE_TP</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="3" Desc="Fees for this invoice" DispInGrid="Y"
+            EDIT="N" EEType="AMT" FldType="" Value="">FEE_AMT</Element>
+        <Element DATATYPE="12" Desc="Charge status" DispInGrid="Y" EDIT="N"
+            EEType="FLAG_1" FldType="" Value="">CHG_STAT</Element>
+        <Element DATATYPE="91" Desc="Due on date" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">DUE_ON</Element>
+        <Element DATATYPE="12" Desc="Charge Frequency" DispInGrid="Y" EDIT="N"
+            EEType="FLAG_1" FldType="" Value="">CHG_FREQ_CD</Element>
+        <Element DATATYPE="91" Desc="The date of the Tracer" DispInGrid="N"
+            EDIT="N" EEType="DATE" FldType="" Value="">LAST_TRACE_DT</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="91" Desc="Temporary Date1" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">FA_TEMP_DT1</Element>
+    </Elements>
+</DO>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701124</ID>
+        <NAME>Dispute Register</NAME>
+        <DESC>Dispute Register</DESC>
+        <FUNSHORTNAME>DisReg</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">FAEF_ReqDispute.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701117</ID>
+        <NAME>Dispute Register_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701117</ID>
+        <NAME>Dispute Register_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000402</ID>
+        <NAME>Dispute Register_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

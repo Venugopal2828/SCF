@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FADA</module>
+    <name>FADA_THEIRREFNO_ME</name>
+    <desc>FADA_THEIRREFNO_ME</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FADA_PRE_CREDIT</table-name>
+        <table-desc>FADA_PRE_CREDIT</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> ='</sql>
+            <field mf="F">FA_CNTR_REF</field>
+            <sql>' AND </sql>
+            <sql>FA_PCA_REF</sql>
+            <sql>='</sql>
+            <field mf="F">FA_PCA_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <THEIR_REF_NO fv_type="F" mf="F" oper="=">C_MAIN_REF</THEIR_REF_NO>
+    </mapping>
+</root>

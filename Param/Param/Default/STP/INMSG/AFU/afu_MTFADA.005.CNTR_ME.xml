@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: assing msg to Issue Agreement ME");
+stp.setFunc("Issue Agreement ME", "Scf Programer Maintenance");
+var sType = stp.getMsgTagVal("FA_BUSI_TYPE");
+var iLen= sType.toString().length();
+if(iLen == 0){
+    sType = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUSI_TYPE");
+}
+if(sType == "SF" || sType == "DD" ){
+  stp.setCustomXSLName("stp.fada.005.sf");
+  stp.setIsUseXSLMapping(true);
+} else if(sType == "RD"){
+  stp.setCustomXSLName("stp.fada.005.rd");
+  stp.setIsUseXSLMapping(true);
+}
+stp.writeLog("sType****************"+sType);
+stp.writeLog("End: assing msg to Issue Agreement ME");]]></js-content>
+</root>

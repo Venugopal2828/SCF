@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>BPOM</module>
+    <name>NEW_CONF_BAL_ToDO</name>
+    <desc>NEW_CONF_BAL_ToDO</desc>
+    <head-info>
+        <DO name="TBPO_PAY_OBLIG" path="TBPO_PAY_OBLIG"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.TBPO_PAY_OBLIG</table-name>
+        <table-desc>TBPO_PAY_OBLIG</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>DO_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">DO_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <TSU_OBLGR_CONF_BAL fv_type="F" mf="F" oper="=">TSU_NEW_OBLGR_CONF_BAL</TSU_OBLGR_CONF_BAL>
+    </mapping>
+</root>

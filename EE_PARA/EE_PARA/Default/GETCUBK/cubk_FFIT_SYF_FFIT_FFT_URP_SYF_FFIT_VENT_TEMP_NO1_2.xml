@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">DATA_PRODUCT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_URP_SYF_FFIT_VENT_TEMP_NO1_2</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <OS_SBJT_A ALIAS="T0" DBFUNC="" DESC="OS_SBJT_A" DT="12" HIDDEN="F" TYPE="F">VENT_TEMP_NO2</OS_SBJT_A>
+        <OS_SBJT_B ALIAS="T0" DBFUNC="" DESC="OS_SBJT_B" DT="12" HIDDEN="F" TYPE="F">VENT_TEMP_NO2_S</OS_SBJT_B>
+        <PRDT_CODE ALIAS="T0" DBFUNC="" DESC="Product Code" DT="12" HIDDEN="F" TYPE="F">PRODUCT_CODE</PRDT_CODE>
+        <COMM_SBJT ALIAS="T0" DBFUNC="" DESC="Commission SBJT" DT="12" HIDDEN="F" TYPE="F">VENT_TEMP_NO1_S</COMM_SBJT>
+        <GL_PRDT_CODE ALIAS="T0" DBFUNC="" DESC="GL_PRDT_CODE" DT="12" HIDDEN="F" TYPE="F">GL_PROD_CODE</GL_PRDT_CODE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='OSLOFGNONPART'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

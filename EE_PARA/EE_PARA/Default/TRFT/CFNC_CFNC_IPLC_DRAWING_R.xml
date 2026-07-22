@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>CFNC</module>
+    <name>CFNC_IPLC_DRAWING</name>
+    <desc>CFNC_IPLC_DRAWING</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.IPLC_EM_NEGO</table-name>
+        <table-desc>IPLC_EM_NEGO</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">RELA_MAIN_REF</field>
+            <sql>' AND
+ </sql>
+            <sql>DRAWING_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">RELA_DRAW_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <C_FUNC_SHORT_NAME fv_type="V" oper="=">Establishment</C_FUNC_SHORT_NAME>
+        <DISCNT_FLG fv_type="V" oper="=">YES</DISCNT_FLG>
+        <REPAY_FLG fv_type="V" oper="=">YES</REPAY_FLG>
+    </mapping>
+</root>

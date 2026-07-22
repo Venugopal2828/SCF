@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> turn overdue record sheets </title>
+<style type="text/css">
+<!--
+.AmountENR
+{	font-size:11pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	background-color: transparent;
+	text-align: right;
+	border: 0;
+	overflow-x: visible;
+}
+.sinput_noborder{
+	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+
+.style2 {
+	font-size: 11pt;
+	font-family: "Times New Roman", Times, serif;
+}
+.style4 {font-family: "Times New Roman", Times, serif; font-size: 15pt; font-weight: bold; }
+.textarea_noborder{
+	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+.textarea_noborder{
+	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: visible;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+.textarea_noborder1 {	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+-->
+</style>
+
+<script>
+function init(){
+	var oArr=document.getElementsByTagName('textarea');	
+	for(var j=0;j<oArr.length;++j)
+	{
+		var obj=oArr[j];
+		obj.onpropertychange=setHeight;
+	}
+}
+function setHeight(oEvent)
+{
+	if(window.event)
+		oEvent=window.event;
+	var obj=oEvent.srcElement;
+	var h2=obj.scrollHeight;
+	obj.style.height=h2;
+}
+</script>
+
+</Head>
+
+<body>
+<form name="form1" method="post" action="">
+  <table width="640" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td> <p> </p>
+      <p> </p>
+      <table width="400" border="0" align="center" cellpadding="0" The cellspacing="0">
+        <tr>
+          <td align="center" class="style4"> Turn overdue record sheets </td>
+        </Tr>
+        <tr>
+          <td height="20"> </td>
+        </Tr>
+      </Table>
+      <table width="640" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="50" colspan="5" class="style2"> Hereby in
+            <input type="text" name="TRX_DT" id="TRX_DT" title="Trans Date" class="sinput_noborder" length="10" size="10" maxlength="10">
+            The following business transferred overdue settlement of the GTS, and the appropriate loan products on the CBS, the business-related information is as follows: </td>
+          </Tr>
+        <tr>
+          <td width="30" height="20"> </td>
+          <td width="75" nowrap class="style2"> Business number: </td>
+          <td width="270"> <input type = "text" name = "C_MAIN_REF" id = "C_MAIN_REF" title = "MAIN REF. NO." class = "sinput_noborder" length = "22" size = "22" maxlength = "22"> </td>
+          <td width="148" class="style2"> Principal: </td>
+          <td width="117"> <input type = "text" name = "TEMP_AMT" id = "TEMP_AMT" title = "TEMP_AMT" class = "sinput_noborder" length = "18" size = "18" maxlength = "18" value = "0"> </td>
+        </Tr>
+        <tr>
+          <td height="20"> </td>
+          <td class="style2"> Institution Number: </td>
+          <td> <input type="text" name="GTS_BR_ID" id="GTS_BR_ID" title="GTS_BR_ID" class="sinput_noborder" length="5" size="5" maxlength="5"> </td>
+          <td class="style2"> Due and uncollected interest: </td>
+          <td class="style2">None</td>
+        </Tr>
+        <tr>
+          <td height="20"> </td>
+          <td class="style2"> Customer number: </td>
+          <td> <input type="text" name="EXPT_ID" id="EXPT_ID" title="Exporter ID" class="sinput_noborder" length="12" size="12" maxlength="12"> </td >
+          <td class="style2"> Principal amount of the original interest: </td>
+          <td> <span class="style2">
+            <input type="text" name="FINC_RT" id="FINC_RT" title="FINC_RT" class="sinput_noborder" length="8" size="4" maxlength="8">
+</Span> </td>
+        </Tr>
+        <tr>
+          <td height="20"> </td>
+          <td class="style2"> Customer Name: </td>
+          <td> <textarea name = "EXPT_NM_C" cols = "30" rows = "4" class = "textarea_noborder" id = "EXPT_NM_C" title = "EXPT_NM_C" style = "border: 0mm none; overflow: hidden;" length = "120" wrap = "virtual"> </textarea> </td>
+          <td class="style2"> Original maturity of: </td>
+          <td> <input type="text" name="FINC_DUE_DT" id="FINC_DUE_DT" title="FINC_DUE_DT" class="sinput_noborder" length="10" size="10" maxlength="10"> </td>
+        </Tr>
+        <tr>
+          <td height="20"> </td>
+          <td class="style2"> Invoice Number: </td>
+          <td> <span class="td_gray">
+            <textarea name="INV_NO" cols="25" rows="4" class="textarea_noborder1" id="INV_NO" title="INV_NO" length="100"> </textarea>
+          </Span> </td>
+          <td class="style2"> Currency: </td>
+          <td> <input type="text" name="FINC_CCY" id="FINC_CCY" title="FINC_CCY" class="sinput_noborder" length="3" size="3" maxlength="3"> </td>
+        </Tr>
+        <tr>
+          <td height="20"> </td>
+          <td class="style2"> Financing balance: </td>
+          <td>
+            <input type="text" name="TEMP_AMT" id="TEMP_AMT" title="TEMP_AMT" class="sinput_noborder" length="18" size="18" maxlength="18" value="0"> </td>
+          the <td class="style2"> </td>
+          <td> </td>
+        </Tr>
+        <tr>
+          <td height="20"> </td>
+          <td class="style2"> Other: </td>
+          <td colspan="3"> <span class="td_gray">
+            <textarea name="TEMP_CHAR10" cols="60" rows="5" class="sinput_noborder" id="TEMP_CHAR10" title="TEMP_CHAR10" length="500"> </textarea>
+          </Span> </td>
+          </Tr>
+      </Table> </td>
+    </Tr>
+  </Table>
+</Form>
+<script type="text/javascript">
+init();
+</Script>
+</Body>
+</Html>

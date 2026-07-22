@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">IPLC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SYND</module-name>
+        <cubk-mapping-name>IPLC_MASTER</cubk-mapping-name>
+        <select-type>U</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        <APPL_NM ALIAS="T0" DBFUNC="" DESC="Applicant Name" DT="12" HIDDEN="F" TYPE="F">APPL_NM</APPL_NM>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country" DT="1" HIDDEN="F" TYPE="F">APPL_CNTY</CNTY_CODE>
+        <ISSUE_DT ALIAS="T0" DBFUNC="" DESC="Issuing Date" DT="91" HIDDEN="F" TYPE="F">MAST_START_DT</ISSUE_DT>
+        <EXPIRY_DT ALIAS="T0" DBFUNC="" DESC="Expiry Date" DT="91" HIDDEN="F" TYPE="F">MAST_END_DT</EXPIRY_DT>
+        <LC_CCY ALIAS="T0" DBFUNC="" DESC="LC Currency" DT="1" HIDDEN="F" TYPE="F">MAST_LC_CCY</LC_CCY>
+        <LC_AMT ALIAS="T0" DBFUNC="" DESC="LC Amount" DT="3" HIDDEN="F" TYPE="F">MAST_LC_AMT</LC_AMT>
+        <LC_BAL ALIAS="T0" DBFUNC="" DESC="LC Balance" DT="3" HIDDEN="F" TYPE="F">MAST_RISK_AMT</LC_BAL>
+        <APLB_RULE ALIAS="T0" DBFUNC="" DESC="Applicable Rules" DT="1" HIDDEN="T" TYPE="F">APLB_RULE</APLB_RULE>
+        <AVAL_BY ALIAS="T0" DBFUNC="" DESC="Available By" DT="1" HIDDEN="T" TYPE="F">AVAL_BY</AVAL_BY>
+        <APPL_ADD1 ALIAS="T0" DBFUNC="" DESC="Applicant Address1" DT="12" HIDDEN="T" TYPE="F">APPL_ADD1</APPL_ADD1>
+        <APPL_ADD2 ALIAS="T0" DBFUNC="" DESC="Applicant Address2" DT="12" HIDDEN="T" TYPE="F">APPL_ADD2</APPL_ADD2>
+        <APPL_ADD3 ALIAS="T0" DBFUNC="" DESC="Applicant Address3" DT="12" HIDDEN="T" TYPE="F">APPL_ADD3</APPL_ADD3>
+        <FORACOF_NM ALIAS="T0" DBFUNC="" DESC="For the Account of Name" DT="12" HIDDEN="T" TYPE="F">FORACOF_NM</FORACOF_NM>
+        <BENE_NM ALIAS="T0" DBFUNC="" DESC="Beneficiary Name" DT="12" HIDDEN="T" TYPE="F">BENE_NM</BENE_NM>
+        <ADV_BK_SW_ADD ALIAS="T0" DBFUNC="" DESC="Advising Bank SWIFT Address" DT="1" HIDDEN="T" TYPE="F">ADV_BK_SW_ADD</ADV_BK_SW_ADD>
+        <ADV_BK_SW_TAG ALIAS="T0" DBFUNC="" DESC="Advising Bank SWIFT Tag" DT="12" HIDDEN="T" TYPE="F">ADV_BK_SW_TAG</ADV_BK_SW_TAG>
+        <ADV_BK_NM ALIAS="T0" DBFUNC="" DESC="Advising Bank Name" DT="12" HIDDEN="T" TYPE="F">ADV_BK_NM</ADV_BK_NM>
+        <SYND_FLG ALIAS="T0" DBFUNC="" DESC="Syndication Flag" DT="1" HIDDEN="T" TYPE="F">SYND_FLG</SYND_FLG>
+        <FORM_OF_LC ALIAS="T0" DBFUNC="" DESC="Form of LC" DT="1" HIDDEN="T" TYPE="F">TRX_TYPE</FORM_OF_LC>
+        <AMT_SPEC ALIAS="T0" DBFUNC="" DESC="Amount Specification" DT="1" HIDDEN="F" TYPE="F">AMT_SPEC</AMT_SPEC>
+        <POS_TOL ALIAS="T0" DBFUNC="" DESC="Positive Tolerance (Tag39 P1)" DT="12" HIDDEN="F" TYPE="F">POS_TOL</POS_TOL>
+        <NEG_TOL ALIAS="T0" DBFUNC="" DESC="Negative Tolerance (Tag39 P2)" DT="12" HIDDEN="F" TYPE="F">NEG_TOL</NEG_TOL>
+        <GOODS_DESC ALIAS="T0" DBFUNC="" DESC="Goods Description (Tag45A)" DT="2005" HIDDEN="F" TYPE="F">DESC_OF_GOODS</GOODS_DESC>
+        <LTST_SHIP_DT ALIAS="T0" DBFUNC="" DESC="Latest Shipment Date" DT="91" HIDDEN="F" TYPE="F">LTST_SHIP_DT</LTST_SHIP_DT>
+        <ASSET_ACNO ALIAS="T0" DBFUNC="" DESC="Asset Account No" DT="1" HIDDEN="F" TYPE="F">R_ASSET_ACNO</ASSET_ACNO>
+        <DEST_PLACE ALIAS="T0" DBFUNC="" DESC="Place of Final Destination" DT="12" HIDDEN="F" TYPE="F">DEST_PLACE</DEST_PLACE>
+        <LOAD_PLACE ALIAS="T0" DBFUNC="" DESC="Place of Taking in Charge" DT="12" HIDDEN="F" TYPE="F">LOAD_PLACE</LOAD_PLACE>
+        <ADDIT_CONDITION ALIAS="T0" DBFUNC="" DESC="Additional Condition" DT="2005" HIDDEN="F" TYPE="F">ADDIT_CONDITION</ADDIT_CONDITION>
+        <APPL_NM ALIAS="T0" DBFUNC="" DESC="Applicant Name" DT="12" HIDDEN="F" TYPE="F">R_PARTY_NM</APPL_NM>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country Code" DT="1" HIDDEN="F" TYPE="F">R_PARTY_CNTY</CNTY_CODE>
+        <APPL_REF ALIAS="T0" DBFUNC="" DESC="Applicant Reference" DT="12" HIDDEN="F" TYPE="F">LC_NO</APPL_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="3" EEType="AMT" TYPE="TBL_FLD">T0.LC_BAL</SQL>
+            <SQL TYPE="SQL"> &gt; 0 AND (</SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.SYND_FLG</SQL>
+            <SQL TYPE="SQL"> &lt;&gt; 'YES' OR </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.SYND_FLG</SQL>
+            <SQL TYPE="SQL"> IS NULL) AND  </SQL>
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T0.APPL_NM</SQL>
+            <SQL TYPE="SQL"> IS NOT NULL AND </SQL>
+            <SQL DT="91" EEType="DATE" TYPE="TBL_FLD">T0.ISSUE_DT</SQL>
+            <SQL TYPE="SQL"> IS NOT NULL AND </SQL>
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'M' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SOURCE_REF</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

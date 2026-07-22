@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Financing Information And Status"
+    Max="1" Min="0" Name="FinancingInformationAndStatus" PendingStore="Y">
+    <Elements/>
+    <DO Desc="Financing Allowed Summary" Max="1" Min="0"
+        Name="FinancingAllowedSummary" PendingStore="N"
+        Screen="SCRN/DO/FIN_FinancingAllowedSummary.jsp" StoreInto="D" StoreType="F">
+        <Elements>
+            <Element DATATYPE="2" Desc="Financed Item Number" DispInGrid="Y"
+                EDIT="N" EEType="Numeric_18" FldType="" Value="">FIN_ITEM_NB</Element>
+            <Element DATATYPE="3" Desc="Total Accepted Items Amount"
+                DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FIN_TTL_ACPT_AMT</Element>
+            <Element DATATYPE="1" Desc="Total Accepted Items Amount CCY"
+                DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">FIN_TTL_ACPT_CCY</Element>
+            <Element DATATYPE="2" Desc="Applied Percentage" DispInGrid="N"
+                EDIT="N" EEType="Numeric_12" FldType="" Value="">FIN_APLD_PCTG</Element>
+            <Element DATATYPE="3" Desc="Total Financed Amount" DispInGrid="Y"
+                EDIT="N" EEType="AMT" FldType="" Value="">FIN_TTL_FINCD_AMT</Element>
+            <Element DATATYPE="1" Desc="Total Financed Amount" DispInGrid="Y"
+                EDIT="N" EEType="CCY" FldType="" Value="">FIN_TTL_FINCD_CCY</Element>
+            <Element DATATYPE="12" Desc="IBAN" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_CDT_IBAN</Element>
+            <Element DATATYPE="12" Desc="BBAN" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_CDT_BBAN</Element>
+            <Element DATATYPE="12" Desc="UPIC" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_CDT_UPIC</Element>
+            <Element DATATYPE="1" Desc="Proprietary Account" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">FINA_CDT_ACCOUNT</Element>
+            <Element DATATYPE="12" Desc="TP Code" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_CDT_TPCD</Element>
+            <Element DATATYPE="12" Desc="TP ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_CDT_TPID</Element>
+            <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">FINA_CDT_CCY</Element>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="N" EDIT="N"
+                EEType="Varchar_70" FldType="" Value="">FINA_CDT_NM</Element>
+            <Element DATATYPE="12" Desc="IBAN" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_FINCG_IBAN</Element>
+            <Element DATATYPE="12" Desc="BBAN" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_FINCG_BBAN</Element>
+            <Element DATATYPE="12" Desc="UPIC" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_FINCG_UPIC</Element>
+            <Element DATATYPE="1" Desc="Proprietary Account" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">FINA_FINCG_ACCOUNT</Element>
+            <Element DATATYPE="12" Desc="TP Code" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_FINCG_TPCD</Element>
+            <Element DATATYPE="12" Desc="TP ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FINA_FINCG_TPID</Element>
+            <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">FINA_FINCG_CCY</Element>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="N" EDIT="N"
+                EEType="Varchar_70" FldType="" Value="">FINA_FINCG_NM</Element>
+        </Elements>
+        <DO Desc="Financing Date Details" Max="1" Min="0"
+            Name="FinancingDateDetails" PendingStore="N"
+            Screen="SCRN/DO/FIN_FinancingDateDetails.jsp" StoreInto="D" StoreType="F">
+            <Elements>
+                <Element DATATYPE="91" Desc="Credit Date" DispInGrid="Y"
+                    EDIT="N" EEType="DATE" FldType="" Value="">FIN_CDT_DT</Element>
+                <Element DATATYPE="91" Desc="DebitDate" DispInGrid="Y" EDIT="N"
+                    EEType="DATE" FldType="" Value="">FIN_DBT_DT</Element>
+            </Elements>
+            <DO DATATYPE="2005" Desc="Book Date" Field="FIN_BOOK_DATE" Max="n"
+                Min="0" Name="BookDate" PendingStore="N"
+                Screen="SCRN/DO/FIN_BookDate.jsp" StoreInto="D" StoreType="X">
+                <Elements>
+                    <Element DATATYPE="91" Desc="Book Date" DispInGrid="N"
+                        EDIT="N" EEType="DATE" FldType="" Value="">FIN_BOOK_DT</Element>
+                </Elements>
+            </DO>
+        </DO>
+    </DO>
+    <DO Desc="Invoice Financing Details" Max="n" Min="1"
+        Name="InvoiceFinancingDetails" PendingStore="N"
+        Screen="SCRN/DO/FIN_InvoiceFinancingDetails.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="FINC_INVC_FINA"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>FIN_DOC_REF</PKNAME>
+        </PK>
+        <FKS/>
+        <Elements>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="12"
+                Desc="Invoice General Information Document Number"
+                DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_DOC_REF</Element>
+            <Element DATATYPE="3" Desc="Total Invoice Amount" DispInGrid="Y"
+                EDIT="N" EEType="AMT" FldType="" Value="">FIN_TTL_INV_AMT</Element>
+            <Element DATATYPE="1" Desc="Total Invoice Currency" DispInGrid="Y"
+                EDIT="N" EEType="CCY" FldType="" Value="">FIN_TTL_INV_CCY</Element>
+            <Element DATATYPE="91" Desc="Invoice General Information Issue Date"
+                DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FIN_DOC_ISS_DT</Element>
+            <Element DATATYPE="91" Desc="Payment Due Date" DispInGrid="Y"
+                EDIT="N" EEType="DATE" FldType="" Value="">FIN_PMT_DUE_DT</Element>
+        </Elements>
+        <DO Desc="Supplier" Max="1" Min="0" Name="Supplier" PendingStore="N"
+            Screen="" StoreInto="D" StoreType="T">
+            <TABLE_NAME Name="FINC_PARTY"/>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_DO_NAME</PKNAME>
+                <PKNAME>FIN_IDX</PKNAME>
+                <PKNAME>FIN_PARTY_IDX</PKNAME>
+            </PK>
+            <FKS>
+                <FK PARENT_TABLE="FINC_INVC_FINA">
+                    <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                    <FKNAME PARENT_COL="C_DO_NAME">FIN_PARTY_IDX</FKNAME>
+                    <FKNAME PARENT_COL="FIN_DOC_REF">FIN_IDX</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="12" Desc="Index" DispInGrid="N" EDIT="N"
+                    EEType="Varchar_35" FldType="" Value="">FIN_IDX</Element>
+                <Element DATATYPE="12" Desc="Party Index" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_PARTY_IDX</Element>
+            </Elements>
+            <DO Desc="Party Identification" Max="1" Min="1"
+                Name="PartyIdentification8" PendingStore="N"
+                Screen="SCRN/DO/FIN_Party_PrivateId.jsp" StoreInto="D" StoreType="T">
+                <TABLE_NAME Name="FINC_PARTY_ID"/>
+                <PK>
+                    <PKNAME>C_MAIN_REF</PKNAME>
+                    <PKNAME>C_UNIT_CODE</PKNAME>
+                    <PKNAME>FIN_DO_FLAG</PKNAME>
+                    <PKNAME>FIN_IDX</PKNAME>
+                    <PKNAME>FIN_PARTY_IDX</PKNAME>
+                </PK>
+                <FKS>
+                    <FK PARENT_TABLE="FINC_PARTY">
+                        <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                        <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                        <FKNAME PARENT_COL="C_DO_NAME">FIN_DO_FLAG</FKNAME>
+                        <FKNAME PARENT_COL="FIN_IDX">FIN_IDX</FKNAME>
+                        <FKNAME PARENT_COL="FIN_PARTY_IDX">FIN_PARTY_IDX</FKNAME>
+                    </FK>
+                </FKS>
+                <Elements>
+                    <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                    <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                    <Element DATATYPE="12" Desc="Index" DispInGrid="N" EDIT="N"
+                        EEType="Varchar_35" FldType="" Value="">FIN_IDX</Element>
+                    <Element DATATYPE="12" Desc="Party Index" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_PARTY_IDX</Element>
+                    <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y"
+                        EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_PARTY_NAME</Element>
+                    <Element DATATYPE="12" Desc="Address Type" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_ADR_TP</Element>
+                    <Element DATATYPE="12" Desc="Street Name" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_STREET_NAME</Element>
+                    <Element DATATYPE="12" Desc="Building Number" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_16" FldType="" Value="">FIN_BLDG_NB</Element>
+                    <Element DATATYPE="12" Desc="Post Code Identification"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_16" FldType="" Value="">FIN_POST_CODE_ID</Element>
+                    <Element DATATYPE="12" Desc="Town Name" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_TOWN_NAME</Element>
+                    <Element DATATYPE="12" Desc="Country Sub Division"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_CNTY_SUB_DIVI</Element>
+                    <Element DATATYPE="12" Desc="Country" DispInGrid="Y"
+                        EDIT="N" EEType="Varchar_2" FldType="" Value="">FIN_CNTY</Element>
+                    <Element DATATYPE="12" Desc="Address Line1" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_ADR_LINE1</Element>
+                    <Element DATATYPE="12" Desc="Address Line2" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_ADR_LINE2</Element>
+                    <Element DATATYPE="12" Desc="Address Line3" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_ADR_LINE3</Element>
+                    <Element DATATYPE="12" Desc="Address Line4" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_ADR_LINE4</Element>
+                    <Element DATATYPE="12" Desc="Address Line5" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_ADR_LINE5</Element>
+                    <Element DATATYPE="12" Desc="Country of Residence"
+                        DispInGrid="Y" EDIT="N" EEType="Varchar_2" FldType="" Value="">FIN_RES_CNTY</Element>
+                    <Element DATATYPE="12" Desc="DO Flag" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_DO_FLAG</Element>
+                </Elements>
+                <DO Desc="Organisation Identification" Max="1" Min="0"
+                    Name="OrganisationIdentification" PendingStore="N"
+                    Screen="SCRN/DO/FIN_Party_OrganisationId.jsp" StoreInto="D" StoreType="F">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Organisation BIC"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_11"
+                            FldType="" Value="">FIN_ORG_BIC</Element>
+                        <Element DATATYPE="12" Desc="Organisation IBEI"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_11"
+                            FldType="" Value="">FIN_IBEI</Element>
+                        <Element DATATYPE="12" Desc="Organisation BEI"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_BEI</Element>
+                        <Element DATATYPE="12" Desc="Organisation EANGLN"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_13"
+                            FldType="" Value="">FIN_EANGLN</Element>
+                        <Element DATATYPE="12"
+                            Desc="CHIPS Universal Identification" DispInGrid="N"
+                            EDIT="N" EEType="Varchar_8" FldType="" Value="">FIN_USCHU</Element>
+                        <Element DATATYPE="12" Desc="Organisation DUNS"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_9"
+                            FldType="" Value="">FIN_DUNS</Element>
+                        <Element DATATYPE="12" Desc="Bank Party Identification"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_BK_PTY_ID</Element>
+                        <Element DATATYPE="12" Desc="Tax Identification Number"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_TAX_ID_NB</Element>
+                        <Element DATATYPE="12" Desc="Proprietary Identification"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_PRTRY_ID</Element>
+                        <Element DATATYPE="12" Desc="Organisation Issuer"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_ORG_ISSR</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Private Identification" Max="4" Min="1"
+                    Name="PrivateIdentification" PendingStore="N"
+                    Screen="SCRN/DO/FIN_Party_PrivateId.jsp" StoreInto="D" StoreType="T">
+                    <TABLE_NAME Name="FINC_PARTY_PRVT"/>
+                    <PK>
+                        <PKNAME>C_MAIN_REF</PKNAME>
+                        <PKNAME>C_UNIT_CODE</PKNAME>
+                        <PKNAME>I_SEQ_NUM</PKNAME>
+                        <PKNAME>FIN_DO_FLAG</PKNAME>
+                        <PKNAME>FIN_IDX</PKNAME>
+                        <PKNAME>FIN_PARTY_IDX</PKNAME>
+                    </PK>
+                    <FKS>
+                        <FK PARENT_TABLE="FINC_PARTY_ID">
+                            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                            <FKNAME PARENT_COL="FIN_DO_FLAG">FIN_DO_FLAG</FKNAME>
+                            <FKNAME PARENT_COL="FIN_IDX">FIN_IDX</FKNAME>
+                            <FKNAME PARENT_COL="FIN_PARTY_IDX">FIN_PARTY_IDX</FKNAME>
+                        </FK>
+                    </FKS>
+                    <Elements>
+                        <Element DATATYPE="12" Desc="MAIN REF. NO."
+                            DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                        <Element DATATYPE="12" Desc="Index" DispInGrid="N"
+                            EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_IDX</Element>
+                        <Element DATATYPE="12" Desc="DO Flag" DispInGrid="N"
+                            EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_DO_FLAG</Element>
+                        <Element DATATYPE="12" Desc="Party Index" DispInGrid="N"
+                            EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_PARTY_IDX</Element>
+                        <Element DATATYPE="12" Desc="Drivers License Number"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_DRVRS_LIC_NB</Element>
+                        <Element DATATYPE="12" Desc="Customer Number"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_CSTMR_NB</Element>
+                        <Element DATATYPE="12" Desc="Social Security Number"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_SCLSCTY_NB</Element>
+                        <Element DATATYPE="12" Desc="Alien Registration No"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_ALNREGN_NB</Element>
+                        <Element DATATYPE="12" Desc="Passport Number"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_PSPT_NB</Element>
+                        <Element DATATYPE="12" Desc="Tax Identification Number"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_PRV_TAX_ID</Element>
+                        <Element DATATYPE="12" Desc="Identity Card Number"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_ID_CARD_NB</Element>
+                        <Element DATATYPE="12"
+                            Desc="Employer Identification Number" DispInGrid="N"
+                            EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_MPLYRID_NB</Element>
+                        <Element DATATYPE="91" Desc="Birth Date" DispInGrid="N"
+                            EDIT="N" EEType="DATE" FldType="" Value="">FIN_BIRTH_DT</Element>
+                        <Element DATATYPE="12" Desc="Province Of Birth"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_BIRTH_PRVC</Element>
+                        <Element DATATYPE="12" Desc="City Of Birth"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_BIRTH_CITY</Element>
+                        <Element DATATYPE="12" Desc="Country of Birth"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_2"
+                            FldType="" Value="">FIN_BIRTH_CNTY</Element>
+                        <Element DATATYPE="12" Desc="Other Identification"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_OTHR_ID</Element>
+                        <Element DATATYPE="12" Desc="Other Identification Type"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_OTHR_ID_TP</Element>
+                        <Element DATATYPE="12" Desc="Private Issuer"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_35"
+                            FldType="" Value="">FIN_PRVT_ISSR</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Account Identification" Max="1" Min="0"
+                Name="AccountIdentification" PendingStore="N"
+                Screen="SCRN/DO/FIN_AccountIdentification.jsp" StoreInto="D" StoreType="F">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Account Identification IBAN"
+                        DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_IBAN</Element>
+                    <Element DATATYPE="12" Desc="Account Identification BBAN"
+                        DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_BBAN</Element>
+                    <Element DATATYPE="12" Desc="Account Identification UPIC"
+                        DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_UPIC</Element>
+                    <Element DATATYPE="12" Desc="Account Identification"
+                        DispInGrid="Y" EDIT="N" EEType="Varchar_34_1" FldType="" Value="">FIN_ACCOUNT</Element>
+                    <Element DATATYPE="12" Desc="Account Identification TpId"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_AC_TPID</Element>
+                    <Element DATATYPE="12" Desc="Account Identification TpCode"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_AC_TPCD</Element>
+                    <Element DATATYPE="1" Desc="Account Identification Currency"
+                        DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">FIN_AC_CCY</Element>
+                    <Element DATATYPE="12" Desc="Account Identification Name"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_AC_NM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Contact Information" Max="1" Min="0"
+                Name="ContactInformation" PendingStore="N"
+                Screen="SCRN/DO/FIN_ContactInformation.jsp" StoreInto="D" StoreType="F">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Contact Information Name"
+                        DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_CONT_NAME</Element>
+                    <Element DATATYPE="12" Desc="Contact Name Prefix"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_6" FldType="" Value="">FIN_CONT_NMPRFX</Element>
+                    <Element DATATYPE="12" Desc="Contact Email Address"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_256" FldType="" Value="">FIN_CONT_EMAILADR</Element>
+                    <Element DATATYPE="12" Desc="Contact Fax No" DispInGrid="N"
+                        EDIT="N" EEType="PhoneNumber" FldType="" Value="">FIN_CONT_FAXNB</Element>
+                    <Element DATATYPE="12" Desc="Contact Given Name"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_CONT_GVNNM</Element>
+                    <Element DATATYPE="12" Desc="Contact Phone No"
+                        DispInGrid="N" EDIT="N" EEType="PhoneNumber" FldType="" Value="">FIN_CONT_PHNENB</Element>
+                    <Element DATATYPE="12" Desc="Contact Role" DispInGrid="N"
+                        EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_CONT_ROLE</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Invoice Financing Result" Max="1" Min="0"
+            Name="InvoiceFinancingResult" PendingStore="N" Screen=""
+            StoreInto="D" StoreType="F">
+            <Elements>
+                <Element DATATYPE="12" Desc="Financing Request Status"
+                    DispInGrid="Y" EDIT="N" EEType="Varchar_15" FldType="" Value="">FIN_REQ_STS</Element>
+                <Element DATATYPE="12" Desc="Status Reason Code" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_40" FldType="" Value="">FIN_STS_RSN_CD</Element>
+                <Element DATATYPE="12" Desc="Status Reason Proprietary"
+                    DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_STS_RSN_PRTRY</Element>
+                <Element DATATYPE="3" Desc="Financed Amount" DispInGrid="N"
+                    EDIT="N" EEType="DecimalNumber" FldType="" Value="">FIN_FINCD_AMT</Element>
+                <Element DATATYPE="1" Desc="Financed Currency" DispInGrid="N"
+                    EDIT="N" EEType="CCY" FldType="" Value="">FIN_FINCD_CCY</Element>
+                <Element DATATYPE="2" Desc="Rate" DispInGrid="N" EDIT="N"
+                    EEType="PercentageRate" FldType="" Value="">FIN_FINCD_RT</Element>
+            </Elements>
+            <DO DATATYPE="2005" Desc="Additional Status Reason Information"
+                Field="FIN_VLD_ADD_RSN" Max="n" Min="0"
+                Name="AdditionalStatusReasonInformation" PendingStore="N"
+                Screen="SCRN/DO/FIN_AddtlStsRsnInf.jsp" StoreInto="D" StoreType="X">
+                <Elements>
+                    <Element DATATYPE="12"
+                        Desc="Additional Status Reason Information"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_105" FldType="" Value="">FIN_VLD_ADDT_RSN</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Instalment Financing Information" Max="n" Min="0"
+            Name="InstalmentFinancingInformation" PendingStore="N"
+            Screen="SCRN/DO/FIN_InstalmentFinancingInfo.jsp" StoreInto="D" StoreType="T">
+            <TABLE_NAME Name="FINC_INSTLMT_FINA_INF"/>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>I_SEQ_NUM</PKNAME>
+                <PKNAME>FIN_IDX</PKNAME>
+            </PK>
+            <FKS>
+                <FK PARENT_TABLE="FINC_INVC_FINA">
+                    <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                    <FKNAME PARENT_COL="C_DO_NAME">FIN_DO_FLAG</FKNAME>
+                    <FKNAME PARENT_COL="FIN_DOC_REF">FIN_IDX</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="12" Desc="Instalment Sequence" DispInGrid="Y"
+                    EDIT="N" EEType="Varchar_70" FldType="" Value="">FIN_INSTLMT_SEQ</Element>
+                <Element DATATYPE="3" Desc="Instalment Amount" DispInGrid="Y"
+                    EDIT="N" EEType="DecimalNumber" FldType="" Value="">FIN_INSTLMT_AMT</Element>
+                <Element DATATYPE="1" Desc="Instalment Currency" DispInGrid="Y"
+                    EDIT="N" EEType="CCY" FldType="" Value="">FIN_INSTLMT_CCY</Element>
+                <Element DATATYPE="12" Desc="Index" DispInGrid="N" EDIT="N"
+                    EEType="Varchar_35" FldType="" Value="">FIN_IDX</Element>
+                <Element DATATYPE="12" Desc="DO Flag" DispInGrid="N" EDIT="N"
+                    EEType="Varchar_35" FldType="" Value="">FIN_DO_FLAG</Element>
+            </Elements>
+            <DO Desc="Instalment Financing Result" Max="1" Min="0"
+                Name="InstalmentFinancingResult" PendingStore="N" Screen=""
+                StoreInto="D" StoreType="F">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Financing Request Status"
+                        DispInGrid="Y" EDIT="N" EEType="Varchar_15" FldType="" Value="">FIN_REQ_STS</Element>
+                    <Element DATATYPE="12" Desc="Status Reason Code"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">FIN_STS_RSN_CD</Element>
+                    <Element DATATYPE="12" Desc="Status Reason Proprietary"
+                        DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FIN_STS_RSN_PRTRY</Element>
+                    <Element DATATYPE="3" Desc="Financed Amount" DispInGrid="N"
+                        EDIT="N" EEType="DecimalNumber" FldType="" Value="">FIN_FINCD_AMT</Element>
+                    <Element DATATYPE="1" Desc="Financed Currency"
+                        DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">FIN_FINCD_CCY</Element>
+                    <Element DATATYPE="2" Desc="Rate" DispInGrid="N" EDIT="N"
+                        EEType="PercentageRate" FldType="" Value="">FIN_FINCD_RT</Element>
+                </Elements>
+                <DO DATATYPE="2005" Desc="Additional Status Reason Information"
+                    Field="FIN_VLD_ADD_RSN" Max="n" Min="0"
+                    Name="AdditionalStatusReasonInformation" PendingStore="N"
+                    Screen="SCRN/DO/FIN_AddtlStsRsnInf.jsp" StoreInto="D" StoreType="X">
+                    <Elements>
+                        <Element DATATYPE="12"
+                            Desc="Additional Status Reason Information"
+                            DispInGrid="N" EDIT="N" EEType="Varchar_105"
+                            FldType="" Value="">FIN_VLD_ADDT_RSN</Element>
+                    </Elements>
+                </DO>
+            </DO>
+        </DO>
+    </DO>
+</DO>

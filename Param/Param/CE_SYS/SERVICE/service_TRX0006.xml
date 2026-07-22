@@ -1,0 +1,20 @@
+<service>
+	<id>TRX0006</id>
+	<name>TransactionCatalogDataList</name>
+	<desc>Transaction Catalog Data List</desc>
+	<type>SYS</type>
+	<component>SOATrxCataDataListPro</component>
+	<properties/>
+	<data_parser_rule>
+		<parser_name>TrxCataDataListParser</parser_name>
+		<parser_desc>Transaction catalog data parser</parser_desc>
+		<parser_class>SOATrxCataDataListParser</parser_class>
+		<properties/>
+	</data_parser_rule>
+	<msg_conv_rule>
+		<conv_name>TrxCataDataListConvert</conv_name>
+		<conv_desc>ransaction catalog data converter</conv_desc>
+		<conv_class>SOATrxSavedDraftCataDataListConvert</conv_class>
+		<properties/>
+	</msg_conv_rule>
+</service>

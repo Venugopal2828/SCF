@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">DATA_GOODS</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>DATA</module-name>
+        <cubk-mapping-name>SYF_DATA_GoodsAdd_SYF_DATA_CHECK_GOODS_ID_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_GOODS_CODE ALIAS="T0" DBFUNC="" DESC="Goods Code" DT="12" HIDDEN="F" TYPE="F">FA_TEMP3</FA_GOODS_CODE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_GOODS_CODE='</SQL>
+            <SQL TYPE="FLD">FA_GOODS_CODE</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

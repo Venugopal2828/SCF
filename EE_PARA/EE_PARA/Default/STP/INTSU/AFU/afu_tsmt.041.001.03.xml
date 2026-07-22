@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("Begin: Assign function R2TransactionReport");
+var MainRef = stp.getValue("/Document/TxRpt/RltdMsgRef","Id");
+var bu=stp.getTSUUnitCode();
+stp.writeLog("MainRef="+MainRef[0]);
+
+
+var fld_list       = stp.addFieldList(null,"C_MAIN_REF"); 
+ var sql_condition = stp.addSQLCondition(null,"TSU_MESSAGE_ID",MainRef[0]); 
+ sql_condition   = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);   
+ var result = stp.executeQuery("TSUM_EM_TRXRTPREQ",fld_list,sql_condition); 
+ var C_MAIN_REF = stp.getDBFieldValue(result,"C_MAIN_REF");
+ stp.writeLog("C_MAIN_REF:"+C_MAIN_REF);
+      
+ stp.updateFieldValue("/root/domData","C_MAIN_REF",C_MAIN_REF);
+ stp.updateFieldValue("/root/domData","C_TRX_REF",C_MAIN_REF);
+      
+//stp.updateFieldValue("","C_MAIN_REF",MainRef[0]);
+//stp.updateFieldValue("","C_TRX_REF",MainRef[0]);
+
+
+// for reqforactn begin
+//setNodeAttribute(String xPath)
+
+var TSU_REQ_ACT_TP = stp.getValue("/Document/TxRpt/RptdItms/PdgReqForActn","Tp");
+stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+if ( TSU_REQ_ACT_TP[0]== undefined)
+{
+	stp.updateFieldValue("/root/domData","TSUR2_PDG_REQ_ACT","EMPT");	
+	stp.updateFieldValue("/root/domData","TSU_PDG_REQ_ACTDES","");
+	stp.setNodeAttribute("/root/domData/TSU_PDG_REQ_ACTDES");
+}
+//for reqforactn end
+
+stp.setAutoProcess(true);
+stp.setFunc("R2TransactionReport");
+stp.writeLog("End: R2TransactionReport");]]></js-content>
+</root>

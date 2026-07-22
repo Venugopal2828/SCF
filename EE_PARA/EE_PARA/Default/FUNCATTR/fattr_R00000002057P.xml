@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR AutoGen-Parameter-Version="1.0">
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx SOD">TrxGenerateSOD</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE/>
+        <IS_ALLOWED_PRINT/>
+        <MODULE>SYST</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.TRX_SOD_EOD</TABLE_NAME>
+        <TABLE_DESC>TRX_SOD_EOD</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF/>
+        <POST>YES</POST>
+        <BCTYPE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Reset Ref No">TrxResetRefNo</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>SYST</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.</TABLE_NAME>
+        <TABLE_DESC/>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF/>
+        <POST>YES</POST>
+        <BCTYPE/>
+    </COMPONENT>
+</FUNCATTR>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" DATABASE="EEPDB" MULTI="YES" SCHEMA="EXIMMETA">
+    <ID>R90000000040</ID>
+    <MODULE>SSSS</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>ViewFinancing</DESC>
+    <TABLELIST>
+        <TABLENAME ALIAS="T1" MASTER="YES">%EXIMTRX%.FAEF_LOAN</TABLENAME>
+        <TABLENAME ALIAS="T2">%EXIMTRX%.INVC_LOAN</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="FA_LOAN_VAL_DT" CONFIG="Y" DATATYPE="91"
+            DESC="Loan Value Date" EEType="DATE" HIDDEN="">T1.FA_LOAN_VAL_DT</FIELD>
+        <FIELD ALIAS="" COL="C_MAIN_REF" CONFIG="Y" DATATYPE="12"
+            DESC="MAIN REF. NO." EEType="SYS_VARCHAR_40" HIDDEN="">T1.C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" COL="C_UNIT_CODE" CONFIG="Y" DATATYPE="12"
+            DESC="UNIT CODE" EEType="SYS_VARCHAR_12" HIDDEN="">T1.C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" COL="FA_TTL_LOAN_AMT" CONFIG="Y" DATATYPE="3"
+            DESC="Currency Total Loan Amt" EEType="AMT" HIDDEN="">T1.FA_TTL_LOAN_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_CCY" CONFIG="Y" DATATYPE="1"
+            DESC="Financing Currency" EEType="INPUTCCY" HIDDEN="">T1.FA_LOAN_CCY</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_PERC" CONFIG="Y" DATATYPE="2"
+            DESC="Loan Percent" EEType="Numeric_7_4" HIDDEN="">T1.FA_LOAN_PERC</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_INT_RT" CONFIG="Y" DATATYPE="8"
+            DESC="Loan Interest Rate" EEType="RATE" HIDDEN="">T1.FA_LOAN_INT_RT</FIELD>
+        <FIELD ALIAS="" COL="FA_PAID_INT_SUM" CONFIG="Y" DATATYPE="3"
+            DESC="Paid Interest Summary" EEType="AMT" HIDDEN="">T1.FA_PAID_INT_SUM</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_IRATE_TYPE" CONFIG="Y" DATATYPE="1"
+            DESC="Loan Interest Rate Type" EEType="INTERPRETER" HIDDEN="">T1.FA_LOAN_IRATE_TYPE</FIELD>
+        <FIELD ALIAS="" COL="FA_SEL_AC_AMT" CONFIG="Y" DATATYPE="3"
+            DESC="Amount to Seller" EEType="AMT" HIDDEN="">T1.FA_SEL_AC_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_NO" CONFIG="Y" DATATYPE="12" DESC="Doc No."
+            EEType="Varchar_35" HIDDEN="">T2.FA_DOC_NO</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_REF" CONFIG="Y" DATATYPE="12" DESC="Doc Ref"
+            EEType="Varchar_35" HIDDEN="">T2.FA_DOC_REF</FIELD>
+        <FIELD ALIAS="" COL="FA_INV_LOAN_ID" CONFIG="Y" DATATYPE="12"
+            DESC="Invoice Loan ID" EEType="Varchar_50" HIDDEN="">T2.FA_INV_LOAN_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_INT_AMT" CONFIG="Y" DATATYPE="3"
+            DESC="Loan Interest Amount" EEType="AMT" HIDDEN="">T2.FA_LOAN_INT_AMT</FIELD>
+        <FIELD ALIAS="FA_LOAN_VAL_DT_T2" COL="FA_LOAN_VAL_DT" CONFIG="Y"
+            DATATYPE="91" DESC="Loan Value Date" EEType="DATE" HIDDEN="">T2.FA_LOAN_VAL_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_DUE_DT" CONFIG="Y" DATATYPE="91"
+            DESC="Financing Due Date" EEType="DATE" HIDDEN="">T2.FA_LOAN_DUE_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_INV_LOAN_AMT" CONFIG="Y" DATATYPE="3"
+            DESC="Invoice Loan Amount" EEType="AMT" HIDDEN="">T2.FA_INV_LOAN_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_INV_LOAN_EBAL" CONFIG="Y" DATATYPE="3"
+            DESC="Invoice Loan Balance Per Trx." EEType="AMT" HIDDEN="">T2.FA_INV_LOAN_EBAL</FIELD>
+        <FIELD ALIAS="" COL="FA_REBATE_AMT" CONFIG="Y" DATATYPE="3"
+            DESC="Rebate Amount" EEType="AMT" HIDDEN="">T1.FA_REBATE_AMT</FIELD>
+		<FIELD ALIAS="" COL="FA_REBATE_RATE" CONFIG="Y" DATATYPE="8"
+            DESC="Rebate Rate" EEType="RATE" HIDDEN="">T1.FA_REBATE_RATE</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_INT_SM_AMT" CONFIG="Y" DATATYPE="3"
+            DESC="Net Interest Amount" EEType="AMT" HIDDEN="">T1.FA_LOAN_INT_SM_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_INV_LOAN_TIMES" CONFIG="Y" DATATYPE="4"
+            DESC="Finance Times" EEType="INTEGER" HIDDEN="">T1.FA_INV_LOAN_TIMES</FIELD>            
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="Loan Value Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T1.FA_LOAN_VAL_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="UNIT CODE" DT="12" EEType="SYS_VARCHAR_12" POS="SELFLD" TYPE="FLD">T1.C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Currency Total Loan Amt" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.FA_TTL_LOAN_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Financing Currency" DT="1" EEType="INPUTCCY" POS="SELFLD" TYPE="FLD">T1.FA_LOAN_CCY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan Percent" DT="2" EEType="Numeric_7_4" POS="SELFLD" TYPE="FLD">T1.FA_LOAN_PERC</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan Interest Rate" DT="8" EEType="RATE" POS="SELFLD" TYPE="FLD">T1.FA_LOAN_INT_RT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Paid Interest Summary" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.FA_PAID_INT_SUM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan Interest Rate Type" DT="1" EEType="INTERPRETER"
+            POS="SELFLD" TYPE="FLD">T1.FA_LOAN_IRATE_TYPE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Amount to Seller" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.FA_SEL_AC_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc No." DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T2.FA_DOC_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Ref" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T2.FA_DOC_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Invoice Loan ID" DT="12" EEType="Varchar_50" POS="SELFLD" TYPE="FLD">T2.FA_INV_LOAN_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan Interest Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_LOAN_INT_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan Value Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T2.FA_LOAN_VAL_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Financing Due Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T2.FA_LOAN_DUE_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Invoice Loan Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_INV_LOAN_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Invoice Loan Balance Per Trx." DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_INV_LOAN_EBAL</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Rebate Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_REBATE_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+		<SQL DESC="Rebate Rate" DT="8" EEType="RATE" POS="SELFLD" TYPE="FLD">T2.FA_REBATE_RATE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Net Interest Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_LOAN_INT_SM_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Finance Times" DT="4" EEType="INTEGER" POS="SELFLD" TYPE="FLD">T2.FA_INV_LOAN_TIMES</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.INVC_LOAN T2</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.FAEF_LOAN T1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="Doc Ref" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">T2.FA_DOC_REF</SQL>
+        <SQL TYPE="SQL"> = '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE0</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Loan Reference No." DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">T2.FA_LOAN_ID</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Doc Ref" EETYPE="Varchar_35">T2.FA_DOC_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Loan Reference No." EETYPE="Varchar_35">T2.FA_LOAN_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T1.C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

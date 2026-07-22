@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">ABLF</MODULE>
+        <MODULE_DESC>ABL Financing</MODULE_DESC>
+        <EVENT>Financing</EVENT>
+        <CATALOGID>C16032900000</CATALOGID>
+        <ID>F05030701145</ID>
+        <NAME>Request Financing</NAME>
+        <DESC>Request Financing</DESC>
+        <FUNSHORTNAME>ReqFinancing</FUNSHORTNAME>
+        <LOCKCHECK>N</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+    	<COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+        <CONFIRMID/>
+        <RIGHTID/>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">ABLF_ReqFin.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID></ID>
+        <NAME>Request Financing_FORM</NAME>
+    </FORM>
+    <NOTIFY>
+        <ID></ID>
+        <NAME>Request Financing_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>CalculatorIntfFuncJS</JS_CLASS>
+    </CAL>
+</FUNC>

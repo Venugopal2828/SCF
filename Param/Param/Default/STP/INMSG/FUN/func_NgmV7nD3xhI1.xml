@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive SBR for Counterparty");
+stp.autoCreateCustomerUser();
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+//var sMainRef = stp.getMsgTagVal("FSBC_REF");
+var sMainRef = stp.getSimpleRef(17);
+stp.writeLog("sMainRef======================"+sMainRef);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+var custreno = stp.getMsgTagVal("FA_CUST_REG_NO");
+var CounterRegNo = stp.getMsgTagVal("FA_COUNTER_REG_NO");
+stp.writeLog("custreno======================"+custreno);
+stp.writeLog("CounterRegNo======================"+CounterRegNo);
+var sUnitCode = stp.getMsgTagVal("FA_COUNTER_ID");
+stp.setCmpId(sUnitCode);
+stp.updateFieldValue("FA_COUNTER_REG_NO",CounterRegNo);
+stp.updateFieldValue("FA_CUST_REG_NO",custreno);
+stp.updateFieldValue("CURRNT_STATUS","Received SBR");
+var anchorRole = stp.getMsgTagVal("FA_ANCHOR_ROLE");
+if(anchorRole == "BUYER"){
+stp.updateFieldValue("FA_BUYER_ID", stp.getMsgTagVal("FA_ANCHOR_ID"));
+stp.updateFieldValue("FA_BUYER_NM", stp.getMsgTagVal("FA_ANCHOR_NM"));
+stp.updateFieldValue("FA_SEL_ID", stp.getMsgTagVal("FA_COUNTER_ID"));
+stp.updateFieldValue("FA_SEL_NM", stp.getMsgTagVal("FA_COUNTER_NM"));
+}else{
+stp.updateFieldValue("FA_BUYER_ID", stp.getMsgTagVal("FA_COUNTER_ID"));
+stp.updateFieldValue("FA_BUYER_NM", stp.getMsgTagVal("FA_COUNTER_NM"));
+stp.updateFieldValue("FA_SEL_ID", stp.getMsgTagVal("FA_ANCHOR_ID"));
+stp.updateFieldValue("FA_SEL_NM", stp.getMsgTagVal("FA_ANCHOR_NM"));
+}
+
+var sSBRref = stp.getMsgTagVal("FSBC_REF");
+stp.writeLog("sSBRref================"+sSBRref);
+stp.writeLog("sUnitCode================"+sUnitCode);
+var arrKeys = [["C_UNIT_CODE",sUnitCode],["FA_SBR_REF",sSBRref]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetSBRRefByUnitCode",arrKeys);
+if(arrGetDataResult!=null && arrGetDataResult!="")
+{
+  stp.updateFieldValue("CURRNT_STATUS","Amended SBR");
+}
+stp.writeLog("End: Receive SBR for Counterparty");]]></js-content>
+</root>

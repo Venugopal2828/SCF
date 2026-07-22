@@ -1,0 +1,30 @@
+{root:"SYSM_MATCH_TMPL",_type_:9612,
+ SYSM_MATCH_TMPL:{C_ID:"M11112100002",C_NAME:"FXMM_320",
+   C_DESC:"FX 320 Matching Template",
+   BK_TYPE:"320",
+   LEDG_CODE_0:"Common Ref",
+   LEDG_CODE_1:"Party A",
+   LEDG_CODE_2:"Party B",
+   LEDG_CODE_3:"Value Date",
+   LEDG_CODE_4:"Bought CCY/Amount",
+   LEDG_CODE_5:"Sold CCY/Amount",
+   LEDG_CODE_6:"Exchange Rate",
+   STATUS_RULE:"Tmpl",
+   PARSER:"Tmpl",
+   COMPARATOR:"com.cs.esp.fxmm.MtFxComparator",
+   DT_MODI:"2011-11-21 10:52:18.0",
+   C_GROUP:"BZND09101200020",
+   script:"var result = true;\
+   // var left_json = eval('('+left_msg+')');\
+   Ex.log('json f20: ' + book[0]);\
+   Ex.log(left.TRX_REF); // bad \
+   Ex.log(left.get('FLD_01'));\
+   Ex.log(right); // json.to \
+   Ex.log(left); \
+   Ex.log(book);\
+   // Result.addMisMatch(leftPath, leftVal, rightPath, rightVal); \
+   //return pass;"
+   
+   
+   }
+}

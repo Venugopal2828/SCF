@@ -1,0 +1,20 @@
+<root>
+	<FORMATTER NAME="RateOfCCY" CLASS="com.cs.core.calc.catalog.ExchangeRateFormatter" DESC="Exchange Rate Formatter">
+		<PROPERTY NAME="CCY" VALUE="Currency"/><!--value: alias of associated currency-->
+		<PROPERTY NAME="RATECCY" VALUE="USD"/>
+	</FORMATTER>
+	<FORMATTER NAME="amtFmt_Currency" CLASS="com.cs.core.calc.catalog.AmountFormatter" DESC="amount formatter">
+		<PROPERTY NAME="CCY" VALUE="Currency"/><!--value: alias of associated currency-->
+	</FORMATTER>
+	<FORMATTER NAME="statusFormatter" CLASS="com.cs.core.calc.catalog.SystemFormatter" DESC="StatusFormatter">
+		<PROPERTY NAME="FIELDNAME" VALUE="C_TRX_STATUS"/>
+		<PROPERTY NAME="MODULETYPE" VALUE="TRANS"/>
+	</FORMATTER>
+	<FORMATTER NAME="sysFldc" CLASS="com.cs.core.calc.catalog.GlobalInterpreterFormatter" DESC="global level interpreter"/>
+	<FORMATTER NAME="sysFldc_CURRNT_STATUS" CLASS="com.cs.core.calc.catalog.GlobalInterpreterFormatter" DESC="global level interpreter">
+		<PROPERTY NAME="RULENAME" VALUE="CURRNT_STATUS"/><!--value: global field conversion rule name-->
+	</FORMATTER>
+	<FORMATTER NAME="sysFldc_CURRNT_STATUS_TRXTYPE" CLASS="com.cs.core.calc.catalog.GlobalInterpreterFormatter" DESC="global level interpreter">
+		<PROPERTY NAME="RULENAME" VALUE="CURRNT_STATUS_TRXTYPE"/><!--value: global field conversion rule name-->
+	</FORMATTER>
+</root>

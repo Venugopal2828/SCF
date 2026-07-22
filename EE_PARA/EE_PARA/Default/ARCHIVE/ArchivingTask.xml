@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root day="3" del="F" hour="20" minute="1" month="1" schedule-type="Y" start-server="F" week="" AutoGen-Parameter-Version="1.0">
+    <module>
+        <name>EPLC</name>
+        <condition><![CDATA[(C_TRX_STATUS ='M' OR C_TRX_STATUS ='B') AND C_LOCKED_FLAG ='F']]></condition>
+        <CLAUSE>
+            <SQL TYPE="SQL">(</SQL>
+            <SQL TYPE="FLD">C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> ='M' OR </SQL>
+            <SQL TYPE="FLD">C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> ='B') AND </SQL>
+            <SQL TYPE="FLD">C_LOCKED_FLAG</SQL>
+            <SQL TYPE="SQL"> ='F'</SQL>
+        </CLAUSE>
+    </module>
+</root>

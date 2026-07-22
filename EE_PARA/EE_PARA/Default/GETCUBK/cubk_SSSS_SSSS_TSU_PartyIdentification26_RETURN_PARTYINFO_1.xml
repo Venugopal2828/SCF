@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_TSU_PartyIdentification26_RETURN_PARTYINFO_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country Code" DT="1" HIDDEN="F" TYPE="F">TSU_PARTY_CNTY</CNTY_CODE>
+        <POST_CODE ALIAS="T0" DBFUNC="" DESC="Post Code" DT="12" HIDDEN="F" TYPE="F">TSU_POST_CD</POST_CODE>
+        <CUST_CITY ALIAS="T0" DBFUNC="" DESC="Customer City" DT="12" HIDDEN="F" TYPE="F">TSU_TOWN_NM</CUST_CITY>
+        <CUST_STREET_NM ALIAS="T0" DBFUNC="" DESC="Customer Street Name" DT="12" HIDDEN="F" TYPE="F">TSU_STREET_NM</CUST_STREET_NM>
+        <CUST_CNTY_SUB_DIVI ALIAS="T0" DBFUNC="" DESC="Customer Country Sub Divi" DT="12" HIDDEN="F" TYPE="F">TSU_CNTY_SUB_DIVI</CUST_CNTY_SUB_DIVI>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">TEMP_CHAR1</SQL>
+            <SQL TYPE="SQL">' </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

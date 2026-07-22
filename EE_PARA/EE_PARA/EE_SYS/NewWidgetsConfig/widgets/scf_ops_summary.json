@@ -1,0 +1,16 @@
+{
+	"id": "scf_ops_summary",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_ops_summary",
+			"display": "custom_sql_table",
+			"title": "SCF Operational Summary",
+			"desc": "High-level operational stats for the SCF platform."
+		},
+		"data": {
+			"sql": "SELECT 'Active Agreements' as \"Metric\", COUNT(*) as \"Value\" FROM %EXIMTRX%.FAEF_MASTER WHERE C_TRX_STATUS = 'M' UNION ALL SELECT 'Pending Financing Requests', COUNT(*) FROM %EXIMTRX%.FAEF_MASTER WHERE C_TRX_STATUS = 'P' UNION ALL SELECT 'Total Invoices Processed', COUNT(*) FROM %EXIMTRX%.FAEF_MASTER"
+		}
+	}
+}

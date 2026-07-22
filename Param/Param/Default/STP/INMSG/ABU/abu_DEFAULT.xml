@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<js-content><![CDATA[stp.writeLog("Start: set system name to BKTS");
+var usermsg=stp.getMsgTagVal("MSG_TYPE");
+if(usermsg=="TSU_RecIncomingPO" || usermsg=="TSU_RecMatchReport"){ 
+stp.setSysName("EE");
+stp.writeLog("should set system name to EE");
+}else if(usermsg=="SCF.001.AGR" || usermsg=="SCF.002.SBR" || usermsg.startsWith("SCF.002.SBR") || usermsg.startsWith("SCF.003.AMDSBR")){
+stp.setSysName("SCF");
+stp.writeLog("should set system name to SCF");  
+}else{
+stp.setSysName("BKTS");
+stp.writeLog("should set system name to BKTS");
+}
+var userId=stp.getMsgTagVal("CE_USER_ID");
+var grpCode = stp.getMsgTagVal("CE_GROUP_CODE");
+stp.writeLog("userId="+userId); 
+if(userId==null||userId==""){
+    stp.setSTPUserInfo("CSBANK","STPUser");   
+}else{
+    stp.setSTPUserInfo(grpCode,userId);   
+}
+var sysDt = new Date();
+var dt = sysDt.getDate();
+dt = dt<10 ? ("0"+dt):dt;
+var month = sysDt.getMonth()+1;
+month = month < 10 ? ("0"+month):month;
+var year = sysDt.getFullYear();
+var recDate = year+"-"+month+"-"+dt; 
+stp.writeLog("recDate:"+recDate); 
+stp.updateFieldValue("FA_TRX_DT",recDate);
+stp.writeLog("End: set system name to BKTS");]]></js-content>
+</root>

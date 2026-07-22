@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/SWIFT/101_IN.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PYMT</MODULE>
+        <MODULE_DESC>Clean Payment</MODULE_DESC>
+        <EVENT>SWIFTMessage</EVENT>
+        <ID>F05030703814</ID>
+        <NAME>ProcessMT101_Incoming</NAME>
+        <DESC>Process MT101 Incoming</DESC>
+        <FUNSHORTNAME>ProcessMT101_Inc</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="ProcessMT101_Incoming">R00000011950</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000011952</CATALOGID>
+    </FUNCTION>
+</FUNC>

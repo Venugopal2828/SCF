@@ -1,0 +1,2200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[function FormatNumber(num,ccy)
+{
+   decpoint = ".";
+   sep = ",";
+  // need a string for operations
+  if(num == null || num == '' || num == 0.00 || num == '0.00' || num == 0 || num == '0' ){
+ 	return 0.00;  
+   }
+   num = num.toString();
+  // separate the whole number and the fraction if possible
+  a = num.split(decpoint);
+  x = a[0]; // decimal
+  y = a[1]; // fraction
+  z = "";
+  if (typeof(x) != "undefined") {
+    // reverse the digits. regexp works from left to right.
+    for (i=x.length-1;i>=0;i--)
+      z += x.charAt(i);
+    // add seperators. but undo the trailing one, if there
+    z = z.replace(/(\d{3})/g, "$1" + sep);
+    if (z.slice(-sep.length) == sep)
+      z = z.slice(0, -sep.length);
+    x = "";
+    // reverse again to get back the number
+    for (i=z.length-1;i>=0;i--)
+      x += z.charAt(i);
+    // add the fraction back in, if it was there
+    if (typeof(y) != "undefined" &amp;&amp; y.length > 0)
+     {
+      if (y.length>0 &amp;&amp; y.length<2) y = y + "0";
+      y = y.substr(0,2);
+      x += "." + y;
+      }
+    else {
+       if(ccy != "VND" &amp;&amp; ccy !='JPY')
+    	x += ".00";
+    	}
+   }
+  return x;
+}
+
+function FormatExchRate(num){
+	return num.toFixed(7).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+}]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="Data Source" id="44">
+            <property name="FILELIST">C:\Users\Administrator\Desktop\新建文件夹 (5)\US\AP\FORM\form_schema_FADA_AmendAgreement.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set 1" id="455">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FA_SEL_NM</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_SEL_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_SEL_NM2</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_SEL_NM2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_CNTR_DOC_NO</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_CNTR_DOC_NO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TRX_DT</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">TRX_DT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_BUSI_TYPE</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_BUSI_TYPE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">C_MAIN_REF</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">C_MAIN_REF</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FA_SEL_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FA_SEL_NM2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FA_CNTR_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">TRX_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_BUSI_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FA_SEL_NM</property>
+                    <property name="nativeName">FA_SEL_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FA_SEL_NM2</property>
+                    <property name="nativeName">FA_SEL_NM2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <property name="nativeName">FA_CNTR_DOC_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">TRX_DT</property>
+                    <property name="nativeName">TRX_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_BUSI_TYPE</property>
+                    <property name="nativeName">FA_BUSI_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData]#:#{FA_SEL_NM;STRING;/FA_SEL_NM},{FA_SEL_NM2;STRING;/FA_SEL_NM2},{FA_CNTR_DOC_NO;STRING;/FA_CNTR_DOC_NO},{TRX_DT;STRING;/TRX_DT},{FA_BUSI_TYPE;STRING;/FA_BUSI_TYPE},{C_MAIN_REF;STRING;/C_MAIN_REF}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_NM</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_NM2</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_NM2</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_CNTR_DOC_NO</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_CNTR_DOC_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TRX_DT</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TRX_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set 2" id="456">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FA_BUYER_NM</property>
+                    <text-property name="heading">FA_BUYER_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_BUYER_NM2</property>
+                    <text-property name="heading">FA_BUYER_NM2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TRX_DT</property>
+                    <text-property name="heading">TRX_DT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_CNTR_DOC_NO</property>
+                    <text-property name="heading">FA_CNTR_DOC_NO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">C_MAIN_REF</property>
+                    <text-property name="heading">C_MAIN_REF</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_BUSI_TYPE</property>
+                    <text-property name="heading">FA_BUSI_TYPE</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FA_BUYER_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FA_BUYER_NM2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TRX_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_CNTR_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">FA_BUSI_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FA_BUYER_NM</property>
+                    <property name="nativeName">FA_BUYER_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FA_BUYER_NM2</property>
+                    <property name="nativeName">FA_BUYER_NM2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TRX_DT</property>
+                    <property name="nativeName">TRX_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <property name="nativeName">FA_CNTR_DOC_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">FA_BUSI_TYPE</property>
+                    <property name="nativeName">FA_BUSI_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData]#:#{FA_BUYER_NM;STRING;/FA_BUYER_NM},{FA_BUYER_NM2;STRING;/FA_BUYER_NM2},{TRX_DT;STRING;/TRX_DT},{FA_CNTR_DOC_NO;STRING;/FA_CNTR_DOC_NO},{C_MAIN_REF;STRING;/C_MAIN_REF},{FA_BUSI_TYPE;STRING;/FA_BUSI_TYPE}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_NM</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_NM2</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_NM2</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TRX_DT</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TRX_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_CNTR_DOC_NO</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_CNTR_DOC_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>C_MAIN_REF</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>C_MAIN_REF</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUSI_TYPE</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUSI_TYPE</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set 3" id="1015">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FA_SEL_NM</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_SEL_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_SEL_ID</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_SEL_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_APPL_LMT_CCY</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_APPL_LMT_CCY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_APPL_LMT_AMT</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_APPL_LMT_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_SEL_CONT_NM</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_SEL_CONT_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_SEL_CONT_MAIL</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">FA_SEL_CONT_MAIL</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FA_SEL_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FA_SEL_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FA_APPL_LMT_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_APPL_LMT_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_SEL_CONT_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">FA_SEL_CONT_MAIL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FA_SEL_NM</property>
+                    <property name="nativeName">FA_SEL_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FA_SEL_ID</property>
+                    <property name="nativeName">FA_SEL_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FA_APPL_LMT_CCY</property>
+                    <property name="nativeName">FA_APPL_LMT_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_APPL_LMT_AMT</property>
+                    <property name="nativeName">FA_APPL_LMT_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_SEL_CONT_NM</property>
+                    <property name="nativeName">FA_SEL_CONT_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">FA_SEL_CONT_MAIL</property>
+                    <property name="nativeName">FA_SEL_CONT_MAIL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData/DFAgreement]#:#{FA_SEL_NM;STRING;/FA_SEL_NM},{FA_SEL_ID;STRING;/FA_SEL_ID},{FA_APPL_LMT_CCY;STRING;/FA_APPL_LMT_CCY},{FA_APPL_LMT_AMT;STRING;/FA_APPL_LMT_AMT},{FA_SEL_CONT_NM;STRING;/FA_SEL_CONT_NM},{FA_SEL_CONT_MAIL;STRING;/FA_SEL_CONT_MAIL}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_NM</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_NM2</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_NM2</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_ADDR</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_ADDR</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_POST_CODE</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_POST_CODE</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_CITY</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_CITY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_PROV</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_PROV</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_SEL_CONT_ADDR</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_CONT_ADDR</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set 4" id="1016">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FA_BUYER_NM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">FA_BUYER_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_BUYER_ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">FA_BUYER_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_APPL_LMT_CCY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">FA_APPL_LMT_CCY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_APPL_LMT_AMT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">FA_APPL_LMT_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_BUYER_CONT_MAIL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">FA_BUYER_CONT_MAIL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_BUYER_CONT_NM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">FA_BUYER_CONT_NM</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FA_BUYER_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FA_BUYER_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FA_APPL_LMT_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_APPL_LMT_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_BUYER_CONT_MAIL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">FA_BUYER_CONT_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FA_BUYER_NM</property>
+                    <property name="nativeName">FA_BUYER_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FA_BUYER_ID</property>
+                    <property name="nativeName">FA_BUYER_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FA_APPL_LMT_CCY</property>
+                    <property name="nativeName">FA_APPL_LMT_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_APPL_LMT_AMT</property>
+                    <property name="nativeName">FA_APPL_LMT_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_BUYER_CONT_MAIL</property>
+                    <property name="nativeName">FA_BUYER_CONT_MAIL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">FA_BUYER_CONT_NM</property>
+                    <property name="nativeName">FA_BUYER_CONT_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData/DFAgreement]#:#{FA_BUYER_NM;STRING;/FA_BUYER_NM},{FA_BUYER_ID;STRING;/FA_BUYER_ID},{FA_APPL_LMT_CCY;STRING;/FA_APPL_LMT_CCY},{FA_APPL_LMT_AMT;STRING;/FA_APPL_LMT_AMT},{FA_BUYER_CONT_MAIL;STRING;/FA_BUYER_CONT_MAIL},{FA_BUYER_CONT_NM;STRING;/FA_BUYER_CONT_NM}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_NM</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_NM2</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_NM2</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_POSTBOX</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_POSTBOX</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_POSTCODE</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_POSTCODE</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_PROV</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_PROV</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_CITY</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_CITY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_BUYER_CONT_ADDR</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_CONT_ADDR</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="showHeaderOnFirst">true</property>
+            <property name="showFooterOnLast">false</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="7">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="width">7.96875in</property>
+            <property name="dataSet">Data Set 1</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">row["FA_BUSI_TYPE"] !='Receivable Discounting'</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FA_SEL_NM</property>
+                    <text-property name="displayName">FA_SEL_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_SEL_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_SEL_NM2</property>
+                    <text-property name="displayName">FA_SEL_NM2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_SEL_NM2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <text-property name="displayName">FA_CNTR_DOC_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CNTR_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TRX_DT</property>
+                    <text-property name="displayName">TRX_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TRX_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_BUSI_TYPE</property>
+                    <text-property name="displayName">FA_BUSI_TYPE</text-property>
+                    <expression name="expression" type="javascript">if(dataSetRow["FA_BUSI_TYPE"] =='SF'){&#13;
+this.value = 'Supplier Finance';&#13;
+}else if(dataSetRow["FA_BUSI_TYPE"] =='RD'){&#13;
+this.value = 'Receivable Discounting';&#13;
+}else if(dataSetRow["FA_BUSI_TYPE"] =='DD'){&#13;
+this.value = 'Dynamic Discounting';&#13;
+}</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="40">
+                <property name="width">1.90625in</property>
+            </column>
+            <column id="62">
+                <property name="width">0.2604166666666667in</property>
+            </column>
+            <column id="41">
+                <property name="width">5.802083333333333in</property>
+            </column>
+            <header>
+                <row id="8">
+                    <cell id="9">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <label id="43">
+                            <property name="fontSize">24pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Advice</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="484">
+                    <cell id="485">
+                        <label id="493"/>
+                    </cell>
+                    <cell id="486"/>
+                    <cell id="487"/>
+                </row>
+                <row id="12">
+                    <cell id="13"/>
+                    <cell id="55"/>
+                    <cell id="14">
+                        <text id="113">
+                            <property name="textAlign">right</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[Transaction Date : <VALUE-OF>row["TRX_DT"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+                <row id="114">
+                    <cell id="115">
+                        <label id="118"/>
+                    </cell>
+                    <cell id="116"/>
+                    <cell id="117"/>
+                </row>
+                <row id="457">
+                    <cell id="458">
+                        <label id="465">
+                            <text-property name="text">Contract Reference No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="459">
+                        <label id="466">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="460">
+                        <data id="471">
+                            <property name="resultSetColumn">C_MAIN_REF</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="16">
+                    <cell id="17">
+                        <label id="47">
+                            <text-property name="text">Business Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="56">
+                        <label id="77">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <data id="53">
+                            <property name="resultSetColumn">FA_BUSI_TYPE</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="20">
+                    <cell id="21">
+                        <label id="48">
+                            <text-property name="text">Seller Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="57">
+                        <label id="78">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <data id="83">
+                            <property name="resultSetColumn">FA_SEL_NM</property>
+                        </data>
+                        <data id="84">
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr" type="javascript">row["FA_SEL_NM2"]==''</expression>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">FA_SEL_NM2</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="24">
+                    <cell id="25">
+                        <label id="49">
+                            <text-property name="text">Contract Document No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="58">
+                        <label id="79">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="26">
+                        <data id="85">
+                            <property name="resultSetColumn">FA_CNTR_DOC_NO</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="28">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <cell id="29">
+                        <label id="50"/>
+                    </cell>
+                    <cell id="59"/>
+                    <cell id="30"/>
+                </row>
+            </detail>
+            <footer>
+                <row id="36">
+                    <cell id="37"/>
+                    <cell id="61"/>
+                    <cell id="38"/>
+                </row>
+            </footer>
+        </table>
+        <table id="119">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="width">7.96875in</property>
+            <property name="dataSet">Data Set 2</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">row["FA_BUSI_TYPE"] =='Receivable Discounting'</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FA_BUYER_NM</property>
+                    <text-property name="displayName">FA_BUYER_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_BUYER_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_BUYER_NM2</property>
+                    <text-property name="displayName">FA_BUYER_NM2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_BUYER_NM2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TRX_DT</property>
+                    <text-property name="displayName">TRX_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TRX_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <text-property name="displayName">FA_CNTR_DOC_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CNTR_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_BUSI_TYPE</property>
+                    <text-property name="displayName">FA_BUSI_TYPE</text-property>
+                    <expression name="expression" type="javascript">if(dataSetRow["FA_BUSI_TYPE"] =='SF'){&#13;
+this.value = 'Supplier Finance';&#13;
+}else if(dataSetRow["FA_BUSI_TYPE"] =='RD'){&#13;
+this.value = 'Receivable Discounting';&#13;
+}else if(dataSetRow["FA_BUSI_TYPE"] =='DD'){&#13;
+this.value = 'Dynamic Discounting';&#13;
+}</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="212">
+                <property name="width">1.90625in</property>
+            </column>
+            <column id="213">
+                <property name="width">0.2604166666666667in</property>
+            </column>
+            <column id="214">
+                <property name="width">5.802083333333333in</property>
+            </column>
+            <header>
+                <row id="120">
+                    <cell id="121">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <label id="122">
+                            <property name="fontSize">24pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Advice</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="488">
+                    <cell id="489">
+                        <label id="492"/>
+                    </cell>
+                    <cell id="490"/>
+                    <cell id="491"/>
+                </row>
+                <row id="123">
+                    <cell id="124"/>
+                    <cell id="125"/>
+                    <cell id="126">
+                        <text id="127">
+                            <property name="textAlign">right</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[Transaction Date : <VALUE-OF>row["TRX_DT"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+                <row id="128">
+                    <cell id="129">
+                        <label id="130"/>
+                    </cell>
+                    <cell id="131"/>
+                    <cell id="132"/>
+                </row>
+                <row id="461">
+                    <cell id="462">
+                        <label id="467">
+                            <text-property name="text">Contract Reference No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="463">
+                        <label id="468">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="464">
+                        <data id="472">
+                            <property name="resultSetColumn">C_MAIN_REF</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="133">
+                    <cell id="134">
+                        <label id="135">
+                            <text-property name="text">Business Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="136">
+                        <label id="137">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="138">
+                        <data id="476">
+                            <property name="resultSetColumn">FA_BUSI_TYPE</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="140">
+                    <cell id="141">
+                        <label id="142">
+                            <text-property name="text">Buyer Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="143">
+                        <label id="144">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="145">
+                        <data id="473">
+                            <property name="resultSetColumn">FA_BUYER_NM</property>
+                        </data>
+                        <data id="474">
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr" type="javascript">row["FA_BUYER_NM2"]==''</expression>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">FA_BUYER_NM2</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="148">
+                    <cell id="149">
+                        <label id="150">
+                            <text-property name="text">Contract Document No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="151">
+                        <label id="152">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">：</text-property>
+                        </label>
+                    </cell>
+                    <cell id="153">
+                        <data id="475">
+                            <property name="resultSetColumn">FA_CNTR_DOC_NO</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="155">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <cell id="156">
+                        <label id="157"/>
+                    </cell>
+                    <cell id="158"/>
+                    <cell id="159"/>
+                </row>
+            </detail>
+            <footer>
+                <row id="208">
+                    <cell id="209"/>
+                    <cell id="210"/>
+                    <cell id="211"/>
+                </row>
+            </footer>
+        </table>
+        <grid id="868">
+            <property name="dataSet">Data Set 2</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">row["FA_BUSI_TYPE"] =='RD'</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FA_BUYER_NM</property>
+                    <text-property name="displayName">FA_BUYER_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_BUYER_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_BUYER_NM2</property>
+                    <text-property name="displayName">FA_BUYER_NM2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_BUYER_NM2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TRX_DT</property>
+                    <text-property name="displayName">TRX_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TRX_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <text-property name="displayName">FA_CNTR_DOC_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CNTR_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_BUSI_TYPE</property>
+                    <text-property name="displayName">FA_BUSI_TYPE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_BUSI_TYPE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="869"/>
+            <column id="999"/>
+            <column id="901"/>
+            <column id="897"/>
+            <column id="870"/>
+            <column id="871"/>
+            <row id="872">
+                <property name="fontFamily">"Times New Roman"</property>
+                <property name="fontWeight">bold</property>
+                <property name="fontStyle">italic</property>
+                <property name="textAlign">center</property>
+                <cell id="873">
+                    <label id="814"/>
+                </cell>
+                <cell id="996"/>
+                <cell id="898"/>
+                <cell id="894"/>
+                <cell id="874"/>
+                <cell id="875"/>
+            </row>
+            <row id="876">
+                <cell id="877">
+                    <property name="colSpan">6</property>
+                    <property name="rowSpan">1</property>
+                    <table id="311">
+                        <property name="fontFamily">"Times New Roman"</property>
+                        <property name="width">7.96875in</property>
+                        <property name="dataSet">Data Set 3</property>
+                        <list-property name="visibility"/>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FA_SEL_NM</property>
+                                <text-property name="displayName">FA_SEL_NM</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_SEL_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_SEL_ID</property>
+                                <text-property name="displayName">FA_SEL_ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_SEL_ID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_APPL_LMT_CCY</property>
+                                <text-property name="displayName">FA_APPL_LMT_CCY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_APPL_LMT_CCY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_APPL_LMT_AMT</property>
+                                <text-property name="displayName">FA_APPL_LMT_AMT</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_APPL_LMT_AMT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_SEL_CONT_NM</property>
+                                <text-property name="displayName">FA_SEL_CONT_NM</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_SEL_CONT_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_SEL_CONT_MAIL</property>
+                                <text-property name="displayName">FA_SEL_CONT_MAIL</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_SEL_CONT_MAIL"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="404">
+                            <property name="width">1.5104166666666667in</property>
+                        </column>
+                        <column id="931">
+                            <property name="width">1.5104166666666667in</property>
+                        </column>
+                        <column id="921">
+                            <property name="width">1.5104166666666667in</property>
+                        </column>
+                        <column id="911">
+                            <property name="width">1.5104166666666667in</property>
+                        </column>
+                        <column id="405">
+                            <property name="width">1.9270833333333333in</property>
+                        </column>
+                        <header>
+                            <row id="1000">
+                                <property name="fontWeight">bold</property>
+                                <property name="fontStyle">italic</property>
+                                <cell id="1001">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="359">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Seller ID</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1002">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="367">
+                                        <text-property name="text">Seller Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1003">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="374">
+                                        <text-property name="text">Contact Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1004">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="381">
+                                        <text-property name="text">Contact Address</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1005">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="388">
+                                        <text-property name="text">Applied Limit (CCY+AMT)</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="365">
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="textAlign">center</property>
+                                <cell id="366">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1017">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">FA_SEL_ID</property>
+                                    </data>
+                                </cell>
+                                <cell id="924">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="477">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">FA_SEL_NM</property>
+                                    </data>
+                                </cell>
+                                <cell id="914">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1018">
+                                        <property name="resultSetColumn">FA_SEL_CONT_NM</property>
+                                    </data>
+                                </cell>
+                                <cell id="904">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1019">
+                                        <property name="resultSetColumn">FA_SEL_CONT_MAIL</property>
+                                    </data>
+                                </cell>
+                                <cell id="368">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <grid id="1023">
+                                        <property name="dataSet">Data Set 3</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">FA_SEL_NM</property>
+                                                <text-property name="displayName">FA_SEL_NM</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_SEL_NM"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_SEL_ID</property>
+                                                <text-property name="displayName">FA_SEL_ID</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_SEL_ID"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_APPL_LMT_CCY</property>
+                                                <text-property name="displayName">FA_APPL_LMT_CCY</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_APPL_LMT_CCY"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_APPL_LMT_AMT</property>
+                                                <text-property name="displayName">FA_APPL_LMT_AMT</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_APPL_LMT_AMT"]</expression>
+                                                <property name="dataType">string</property>
+                                                <property name="allowExport">true</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_SEL_CONT_NM</property>
+                                                <text-property name="displayName">FA_SEL_CONT_NM</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_SEL_CONT_NM"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_SEL_CONT_MAIL</property>
+                                                <text-property name="displayName">FA_SEL_CONT_MAIL</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_SEL_CONT_MAIL"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <column id="1024"/>
+                                        <column id="1025"/>
+                                        <row id="1026">
+                                            <cell id="1027">
+                                                <data id="1029">
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">FA_APPL_LMT_CCY</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1028">
+                                                <data id="1030">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">FA_APPL_LMT_AMT</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="880">
+                <cell id="881"/>
+                <cell id="998"/>
+                <cell id="900"/>
+                <cell id="896"/>
+                <cell id="882"/>
+                <cell id="883"/>
+            </row>
+        </grid>
+        <grid id="777">
+            <property name="dataSet">Data Set 1</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">row["FA_BUSI_TYPE"] !='RD'</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FA_SEL_NM</property>
+                    <text-property name="displayName">FA_SEL_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_SEL_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_SEL_NM2</property>
+                    <text-property name="displayName">FA_SEL_NM2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_SEL_NM2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <text-property name="displayName">FA_CNTR_DOC_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CNTR_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TRX_DT</property>
+                    <text-property name="displayName">TRX_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TRX_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_BUSI_TYPE</property>
+                    <text-property name="displayName">FA_BUSI_TYPE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_BUSI_TYPE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="778"/>
+            <column id="779"/>
+            <column id="780"/>
+            <row id="781">
+                <cell id="782">
+                    <label id="1014"/>
+                </cell>
+                <cell id="783"/>
+                <cell id="784"/>
+            </row>
+            <row id="785">
+                <cell id="786">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <table id="811">
+                        <property name="fontFamily">"Times New Roman"</property>
+                        <property name="width">7.96875in</property>
+                        <property name="dataSet">Data Set 4</property>
+                        <list-property name="visibility"/>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FA_BUYER_NM</property>
+                                <text-property name="displayName">FA_BUYER_NM</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_BUYER_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_BUYER_ID</property>
+                                <text-property name="displayName">FA_BUYER_ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_BUYER_ID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_APPL_LMT_CCY</property>
+                                <text-property name="displayName">FA_APPL_LMT_CCY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_APPL_LMT_CCY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_APPL_LMT_AMT</property>
+                                <text-property name="displayName">FA_APPL_LMT_AMT</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_APPL_LMT_AMT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_BUYER_CONT_MAIL</property>
+                                <text-property name="displayName">FA_BUYER_CONT_MAIL</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_BUYER_CONT_MAIL"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FA_BUYER_CONT_NM</property>
+                                <text-property name="displayName">FA_BUYER_CONT_NM</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["FA_BUYER_CONT_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="865">
+                            <property name="width">1.5104166666666667in</property>
+                        </column>
+                        <column id="995">
+                            <property name="width">1.5104166666666667in</property>
+                        </column>
+                        <column id="986">
+                            <property name="width">1.5104166666666667in</property>
+                        </column>
+                        <column id="977">
+                            <property name="width">1.5104166666666667in</property>
+                        </column>
+                        <column id="866">
+                            <property name="width">1.9270833333333333in</property>
+                        </column>
+                        <header>
+                            <row id="1007">
+                                <cell id="1008">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">italic</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="819">
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Buyer ID</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1009">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">italic</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="827">
+                                        <text-property name="text">Buyer Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1010">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">italic</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="834">
+                                        <text-property name="text">Contact Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1011">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">italic</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="841">
+                                        <text-property name="text">Contact Address</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1012">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">italic</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="848">
+                                        <text-property name="text">Applied Limit (CCY+AMT)</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="825">
+                                <property name="textAlign">center</property>
+                                <cell id="826">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1020">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">FA_BUYER_ID</property>
+                                    </data>
+                                </cell>
+                                <cell id="989">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="823">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">FA_BUYER_NM</property>
+                                    </data>
+                                </cell>
+                                <cell id="980">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1022">
+                                        <property name="resultSetColumn">FA_BUYER_CONT_NM</property>
+                                    </data>
+                                </cell>
+                                <cell id="971">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="1021">
+                                        <property name="resultSetColumn">FA_BUYER_CONT_MAIL</property>
+                                    </data>
+                                </cell>
+                                <cell id="828">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <grid id="1031">
+                                        <property name="dataSet">Data Set 4</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">FA_BUYER_NM</property>
+                                                <text-property name="displayName">FA_BUYER_NM</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_BUYER_NM"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_BUYER_ID</property>
+                                                <text-property name="displayName">FA_BUYER_ID</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_BUYER_ID"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_APPL_LMT_CCY</property>
+                                                <text-property name="displayName">FA_APPL_LMT_CCY</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_APPL_LMT_CCY"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_APPL_LMT_AMT</property>
+                                                <text-property name="displayName">FA_APPL_LMT_AMT</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_APPL_LMT_AMT"]</expression>
+                                                <property name="dataType">string</property>
+                                                <property name="allowExport">true</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_BUYER_CONT_MAIL</property>
+                                                <text-property name="displayName">FA_BUYER_CONT_MAIL</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_BUYER_CONT_MAIL"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">FA_BUYER_CONT_NM</property>
+                                                <text-property name="displayName">FA_BUYER_CONT_NM</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["FA_BUYER_CONT_NM"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <column id="1032"/>
+                                        <column id="1033"/>
+                                        <row id="1034">
+                                            <cell id="1035">
+                                                <data id="1037">
+                                                    <property name="textAlign">right</property>
+                                                    <property name="resultSetColumn">FA_APPL_LMT_CCY</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="1036">
+                                                <data id="1038">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">FA_APPL_LMT_AMT</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="789">
+                <cell id="790"/>
+                <cell id="791"/>
+                <cell id="792"/>
+            </row>
+        </grid>
+    </body>
+</report>

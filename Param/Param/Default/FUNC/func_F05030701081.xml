@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C14043000002</CATALOGID>
+        <ID>F05030701081</ID>
+        <NAME>Request for Invoice Transfer</NAME>
+        <DESC>Request for Invoice Transfer</DESC>
+        <FUNSHORTNAME>ReqTransInv</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_ReqTransInv.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701074</ID>
+        <NAME>Request for Invoice Transfer_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701074</ID>
+        <NAME>Request for Invoice Transfer_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000358</ID>
+        <NAME>Request for Invoice Transfer_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

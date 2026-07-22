@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>EPLC</MODULE>
+        <DESC>Close Drawing Liability</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>2</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>1</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>A</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="N" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">ISSUE_BK_PARTY_NO</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">TEMP_AC_NO2</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">PRES_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">PRES_BAL</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N">LIA_BUY_RATE</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="F" USED="N">LIA_BOOK_RATE</C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F">C_MAIN_REF</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE=""/>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE="V">V</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE=""/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE="F">OUR_ENG</C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="N" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">ISSUE_BK_PARTY_NO</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">TEMP_AC_NO1</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">PRES_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">PRES_BAL</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N">LIA_BUY_RATE</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="F" USED="N">LIA_BOOK_RATE</C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F">C_MAIN_REF</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE=""/>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE="V">V</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE=""/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE="F">OUR_ENG</C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="N" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">ISSUE_BK_PARTY_NO</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="V">EXLC_CASH_COLL</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">PRES_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="S">var Cash_Cover = DV.getFieldValue("R_CASH_COVER");
+var Pres_Bal = DV.getFieldValue("PRES_BAL");
+  
+ if(Cash_Cover=='Yes'){
+    DV.appendField(Pres_Bal);
+ }else{
+    DV.appendField("0");
+ }</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N">LIA_BUY_RATE</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="F" USED="N">LIA_BOOK_RATE</C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F">C_MAIN_REF</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE=""/>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE="V">V</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE=""/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE="F">OUR_ENG</C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="N" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">ISSUE_BK_PARTY_NO</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="V">DUMMY</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">PRES_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="S">var Cash_Cover = DV.getFieldValue("R_CASH_COVER");
+var Pres_Bal = DV.getFieldValue("PRES_BAL");
+   
+if(Cash_Cover=='Yes'){
+   DV.appendField(Pres_Bal);
+}else{
+   DV.appendField("0");
+}</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N">LIA_BUY_RATE</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="F" USED="N">LIA_BOOK_RATE</C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F">C_MAIN_REF</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE=""/>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE="V">V</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE=""/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE="F">OUR_ENG</C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

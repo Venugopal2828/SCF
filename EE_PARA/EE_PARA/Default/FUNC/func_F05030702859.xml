@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/FAEF_CreditNotesTransfer_main.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FORM>
+        <ID>F00000001050</ID>
+        <NAME/>
+    </FORM>
+    <VOUCHER>
+        <ID>F00000001048</ID>
+        <NAME/>
+    </VOUCHER>
+    <EDI>
+        <ID>F00000001049</ID>
+        <NAME/>
+    </EDI>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>SCF Transaction</MODULE_DESC>
+        <EVENT>EFTransaction</EVENT>
+        <ID>F05030702859</ID>
+        <NAME>CreditNotesTransfer</NAME>
+        <DESC>Credit Notes Transfer</DESC>
+        <FUNSHORTNAME>CNTransfer</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>Y</ADDMASTER>
+        <ATTR_ID name="CreditNotesTransfer_ATTRIBUTE">R00000006001</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000006079</CATALOGID>
+        <GAPI>F00000001052</GAPI>
+        <TransferTo>F00000001051</TransferTo>
+    </FUNCTION>
+</FUNC>

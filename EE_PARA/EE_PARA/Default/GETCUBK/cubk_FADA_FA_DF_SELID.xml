@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>FA_DF_SELID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="Customer ID" DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <C_UNIT_CODE ALIAS="T0" DESC="UNIT CODE" DT="12" TYPE="S">SYS_BUSI_UNIT</C_UNIT_CODE>
+            <C_MAIN_REF ALIAS="T0" DESC="Customer ID" DT="12" TYPE="F">FA_SEL_ID</C_MAIN_REF>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="Customer ID" DT="12" HIDDEN="F" TYPE="F">FA_SEL_ID</C_MAIN_REF>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="SWF_FMT_NM" DT="12" HIDDEN="F" TYPE="F">FA_SEL_NM</SWF_FMT_NM>
+        <OWNER_BR_NM ALIAS="T0" DBFUNC="" DESC="Owner Branch Name" DT="12" HIDDEN="F" TYPE="F">OWNER_BR_NM</OWNER_BR_NM>
+        <FA_CUST_NM2 ALIAS="T0" DBFUNC="" DESC="FA_CUST_NM2" DT="12" HIDDEN="F" TYPE="F">FA_SEL_NM2</FA_CUST_NM2>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

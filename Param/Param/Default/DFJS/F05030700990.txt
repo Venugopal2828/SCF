@@ -1,0 +1,5 @@
+var sStatus = DF.getFieldValue("CURRNT_STATUS");
+DF.writeLog("sStatus==============="+sStatus);
+if(sStatus == "Request Purchase Order Amendment"){
+DF.changeFunction("Process Amd PO");
+}

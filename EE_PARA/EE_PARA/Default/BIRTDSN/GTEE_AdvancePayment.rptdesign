@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.com.cs.birt.report.rhinoJS);
+var jsObj = new BirtJSForXML();]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="Data Source" id="7">
+            <property name="FILELIST">O:\CSBANK\US\AP\FORM\form_schema_GTEE_IssueGuarantee_RegisterOutward.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set" id="8">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">APPL_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">BENE_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">BENE_ADD1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">BENE_ADD2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">BENE_ADD3</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">GTEE_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">GTEE_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">EXPIRY_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">X798_31S_DOC_DATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">ISSUE_BK_52_SW_ADD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">ISSUE_BK_52_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">ISSUE_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">X798_20E_REL_CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">X798_20E_REL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">X798_31R_REF_DT1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">X798_31R_REF_DT2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">X798_72C_C2B_INFO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">X798_37J_GURE_VALUE_PERCENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">X798_71F_TOTAL_CONTR_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">X798_71F_TOTAL_CONTR_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">APPL_NM</property>
+                    <property name="nativeName">APPL_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">BENE_NM</property>
+                    <property name="nativeName">BENE_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">BENE_ADD1</property>
+                    <property name="nativeName">BENE_ADD1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">BENE_ADD2</property>
+                    <property name="nativeName">BENE_ADD2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">BENE_ADD3</property>
+                    <property name="nativeName">BENE_ADD3</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">GTEE_CCY</property>
+                    <property name="nativeName">GTEE_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">GTEE_AMT</property>
+                    <property name="nativeName">GTEE_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">EXPIRY_DT</property>
+                    <property name="nativeName">EXPIRY_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">X798_31S_DOC_DATE</property>
+                    <property name="nativeName">X798_31S_DOC_DATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">ISSUE_BK_52_SW_ADD</property>
+                    <property name="nativeName">ISSUE_BK_52_SW_ADD</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">ISSUE_BK_52_NM</property>
+                    <property name="nativeName">ISSUE_BK_52_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">ISSUE_DT</property>
+                    <property name="nativeName">ISSUE_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">X798_20E_REL_CODE</property>
+                    <property name="nativeName">X798_20E_REL_CODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">X798_20E_REL</property>
+                    <property name="nativeName">X798_20E_REL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">X798_31R_REF_DT1</property>
+                    <property name="nativeName">X798_31R_REF_DT1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">X798_31R_REF_DT2</property>
+                    <property name="nativeName">X798_31R_REF_DT2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">X798_72C_C2B_INFO</property>
+                    <property name="nativeName">X798_72C_C2B_INFO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">X798_37J_GURE_VALUE_PERCENT</property>
+                    <property name="nativeName">X798_37J_GURE_VALUE_PERCENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">X798_71F_TOTAL_CONTR_AMT</property>
+                    <property name="nativeName">X798_71F_TOTAL_CONTR_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">X798_71F_TOTAL_CONTR_CCY</property>
+                    <property name="nativeName">X798_71F_TOTAL_CONTR_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[//domData]#:#{C_MAIN_REF;STRING;/C_MAIN_REF},{APPL_NM;STRING;/APPL_NM},{BENE_NM;STRING;/BENE_NM},{BENE_ADD1;STRING;/BENE_ADD1},{BENE_ADD2;STRING;/BENE_ADD2},{BENE_ADD3;STRING;/BENE_ADD3},{GTEE_CCY;STRING;/GTEE_CCY},{GTEE_AMT;STRING;/GTEE_AMT},{EXPIRY_DT;STRING;/EXPIRY_DT},{X798_31S_DOC_DATE;STRING;/X798_31S_DOC_DATE},{ISSUE_BK_52_SW_ADD;STRING;/ISSUE_BK_52_SW_ADD},{ISSUE_BK_52_NM;STRING;/ISSUE_BK_52_NM},{ISSUE_DT;STRING;/ISSUE_DT},{X798_20E_REL_CODE;STRING;X798_20E_REL_CODE},{X798_20E_REL;STRING;X798_20E_REL},{X798_31R_REF_DT1;STRING;X798_31R_REF_DT1},{X798_31R_REF_DT2;STRING;X798_31R_REF_DT2},{X798_72C_C2B_INFO;STRING;X798_72C_C2B_INFO},{X798_37J_GURE_VALUE_PERCENT;STRING;X798_37J_GURE_VALUE_PERCENT},{X798_71F_TOTAL_CONTR_AMT;STRING;X798_71F_TOTAL_CONTR_AMT},{X798_71F_TOTAL_CONTR_CCY;STRING;X798_71F_TOTAL_CONTR_CCY}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>C_MAIN_REF</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>C_MAIN_REF</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>APPL_NM</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>APPL_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>BENE_NM</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BENE_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>BENE_ADD1</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BENE_ADD1</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>BENE_ADD2</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BENE_ADD2</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>BENE_ADD3</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BENE_ADD3</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>GTEE_CCY</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>GTEE_CCY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>GTEE_AMT</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>GTEE_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X798_31S_DOC_DATE</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X798_31S_DOC_DATE</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ISSUE_BK_52_SW_ADD</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ISSUE_BK_52_SW_ADD</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ISSUE_BK_52_NM</design:name>
+            <design:position>11</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ISSUE_BK_52_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ISSUE_DT</design:name>
+            <design:position>12</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ISSUE_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <grid id="126">
+            <property name="width">7.916666666666667in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">APPL_NM</property>
+                    <expression name="expression">dataSetRow["APPL_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BENE_NM</property>
+                    <expression name="expression">dataSetRow["BENE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BENE_ADD1</property>
+                    <expression name="expression">dataSetRow["BENE_ADD1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BENE_ADD2</property>
+                    <expression name="expression">dataSetRow["BENE_ADD2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BENE_ADD3</property>
+                    <expression name="expression">dataSetRow["BENE_ADD3"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">GTEE_CCY</property>
+                    <expression name="expression">dataSetRow["GTEE_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">GTEE_AMT</property>
+                    <expression name="expression">dataSetRow["GTEE_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">EXPIRY_DT</property>
+                    <expression name="expression">dataSetRow["EXPIRY_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_31S_DOC_DATE</property>
+                    <expression name="expression">dataSetRow["X798_31S_DOC_DATE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_BK_52_SW_ADD</property>
+                    <expression name="expression">dataSetRow["ISSUE_BK_52_SW_ADD"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_BK_52_NM</property>
+                    <expression name="expression">dataSetRow["ISSUE_BK_52_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_DT</property>
+                    <expression name="expression">dataSetRow["ISSUE_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_20E_REL_CODE</property>
+                    <expression name="expression">dataSetRow["X798_20E_REL_CODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_20E_REL</property>
+                    <expression name="expression">dataSetRow["X798_20E_REL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_31R_REF_DT1</property>
+                    <expression name="expression">dataSetRow["X798_31R_REF_DT1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_31R_REF_DT2</property>
+                    <expression name="expression">dataSetRow["X798_31R_REF_DT2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_72C_C2B_INFO</property>
+                    <expression name="expression">dataSetRow["X798_72C_C2B_INFO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_37J_GURE_VALUE_PERCENT</property>
+                    <expression name="expression">dataSetRow["X798_37J_GURE_VALUE_PERCENT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_71F_TOTAL_CONTR_AMT</property>
+                    <expression name="expression">dataSetRow["X798_71F_TOTAL_CONTR_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X798_71F_TOTAL_CONTR_CCY</property>
+                    <expression name="expression">dataSetRow["X798_71F_TOTAL_CONTR_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="127">
+                <property name="width">1.3958333333333333in</property>
+            </column>
+            <column id="128">
+                <property name="width">6.520833333333333in</property>
+            </column>
+            <row id="129">
+                <cell id="130">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="34">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">ADVANCE PAYMENT GUARANTEE</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="132">
+                <cell id="133">
+                    <label id="35">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="fontSize">10pt</property>
+                        <text-property name="text">Guarantee No:</text-property>
+                    </label>
+                </cell>
+                <cell id="134">
+                    <data id="198">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">C_MAIN_REF</property>
+                                <text-property name="displayName">C_MAIN_REF</text-property>
+                                <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">C_MAIN_REF</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="135">
+                <cell id="136">
+                    <label id="40">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">Applicant:</text-property>
+                    </label>
+                </cell>
+                <cell id="137">
+                    <data id="199">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">APPL_NM</property>
+                                <text-property name="displayName">APPL_NM</text-property>
+                                <expression name="expression">dataSetRow["APPL_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">APPL_NM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="138">
+                <cell id="139">
+                    <label id="41">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">Beneficiary:</text-property>
+                    </label>
+                </cell>
+                <cell id="140">
+                    <data id="200">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_NM</property>
+                                <text-property name="displayName">BENE_NM</text-property>
+                                <expression name="expression">dataSetRow["BENE_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_NM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="141">
+                <cell id="142"/>
+                <cell id="143">
+                    <data id="201">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_ADD1</property>
+                                <text-property name="displayName">BENE_ADD1</text-property>
+                                <expression name="expression">dataSetRow["BENE_ADD1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_ADD1</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="144">
+                <cell id="145"/>
+                <cell id="146">
+                    <data id="202">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_ADD2</property>
+                                <text-property name="displayName">BENE_ADD2</text-property>
+                                <expression name="expression">dataSetRow["BENE_ADD2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_ADD2</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="147">
+                <cell id="148"/>
+                <cell id="149">
+                    <data id="203">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_ADD3</property>
+                                <text-property name="displayName">BENE_ADD3</text-property>
+                                <expression name="expression">dataSetRow["BENE_ADD3"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_ADD3</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="150">
+                <cell id="151">
+                    <label id="43">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">Contract:</text-property>
+                    </label>
+                </cell>
+                <cell id="152">
+                    <text id="205">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="textAlign">left</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[No <VALUE-OF>row["X798_20E_REL"]</VALUE-OF> dated <VALUE-OF>if(row["X798_31R_REF_DT1"]!=""&amp;&amp;row["X798_31R_REF_DT1"]!=null){
+this.value = row["X798_31R_REF_DT1"];
+}else if(row["X798_31R_REF_DT2"]!=""&amp;&amp;row["X798_31R_REF_DT2"]!=null){
+this.value = row["X798_31R_REF_DT2"];
+}</VALUE-OF>, for the supply of <VALUE-OF>row["X798_72C_C2B_INFO"]</VALUE-OF>.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="153">
+                <cell id="154">
+                    <label id="45">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">Guarantee amount:</text-property>
+                    </label>
+                </cell>
+                <cell id="155">
+                    <text id="290">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<VALUE-OF>row["GTEE_CCY"]</VALUE-OF><VALUE-OF>row["GTEE_AMT"]</VALUE-OF>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="156">
+                <cell id="157">
+                    <label id="48">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">Expiry Date:</text-property>
+                    </label>
+                </cell>
+                <cell id="158">
+                    <data id="207">
+                        <property name="fontFamily">"Calibri"</property>
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy</property>
+                        </structure>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EXPIRY_DT</property>
+                                <text-property name="displayName">EXPIRY_DT</text-property>
+                                <expression name="expression" type="javascript">if(dataSetRow["EXPIRY_DT"]!=""&amp;&amp;dataSetRow["EXPIRY_DT"]!=null){&#13;
+this.value = dataSetRow["EXPIRY_DT"];&#13;
+}else if(dataSetRow["X798_31S_DOC_DATE"]!=""&amp;&amp;dataSetRow["X798_31S_DOC_DATE"]!=null){&#13;
+this.value = dataSetRow["X798_31S_DOC_DATE"];&#13;
+}</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">EXPIRY_DT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="159">
+                <cell id="160">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="208">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[We have been informed that the Applicant has entered into the Contract with you.  ]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="162">
+                <cell id="163">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="259">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[Furthermore, we understand that, according to the conditions of the Contract, an advance payment in the amount of <VALUE-OF>row["GTEE_CCY"]</VALUE-OF><VALUE-OF>row["GTEE_AMT"]</VALUE-OF>. representing <VALUE-OF>row["X798_37J_GURE_VALUE_PERCENT"]</VALUE-OF>% of the amount of the Contract,<VALUE-OF>row["X798_71F_TOTAL_CONTR_CCY"]</VALUE-OF><VALUE-OF>row["X798_71F_TOTAL_CONTR_AMT"]</VALUE-OF> is to be made against an advance payment guarantee.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="165">
+                <cell id="166">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="210">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[As guarantor we, BANK A, hereby irrevocably undertake to pay you any amount not exceeding in total the Guarantee Amount upon receipt by us of your demand in writing including your statement in what respect the Applicant is in breach of its obliga-tion(s) under the Contract.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="168">
+                <cell id="169">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="211">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[It is a condition for any claim and payment under this guarantee to be made that the ad-vance payment referred to above must have been received by the Applicant. A demand under this guarantee must include a statement by your bank, stating that the said bank has paid the advance payment referred to above to the Applicant’s account number (ac-count number in IBAN-format) maintained with (name of account-holding bank), referring to this guarantee.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="171">
+                <cell id="172">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="212">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[This guarantee is not assignable or transferable without our and Applicant’s prior written consent.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="174">
+                <cell id="175">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="213">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Any demand for payment under this guarantee must be received by us in writing by reg-istered mail at this office on or before the Expiry Date. The original of this guarantee shall be returned to us upon expiry. However, after our payment of the whole of the Guarantee Amount or the Expiry Date, whichever comes first, this guarantee will become null and void, whether returned to us or not.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="177">
+                <cell id="178">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="214">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[For the purpose of identification, your request for payment in writing must be presented to us through the intermediary of a first rate bank confirming that the signatures thereon are legally binding upon you.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="180">
+                <cell id="181">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="215">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Your claim is also acceptable if transmitted to us in full by duly encoded SWIFT through a first rate bank confirming that your original claim has been sent to us by registered airmail and that the signatures thereon are legally binding upon you.  ]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="183">
+                <cell id="184">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="216">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Your claim will be considered as having been made once we are in possession of the written request for payment or SWIFT to this effect at our address. If claimed by SWIFT, the original written claim must be submitted to us.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="186">
+                <cell id="187">
+                    <label id="53">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">SWIFT address:</text-property>
+                    </label>
+                </cell>
+                <cell id="188">
+                    <label id="262">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">PTSABMABXXX</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="189">
+                <cell id="190">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <text id="218">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[This guarantee shall be governed by and construed in accordance with Swedish law and shall be subject to the jurisdiction of Swedish courts with Stockholm City Court as the court of first instance.
+
+This guarantee is subject to the Uniform Rules for Demand Guarantees (URDG), 2010 revision, ICC Publication No. 758. 
+]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="192">
+                <cell id="193">
+                    <label id="263">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">NEW YORK</text-property>
+                    </label>
+                </cell>
+                <cell id="194">
+                    <data id="219">
+                        <property name="fontFamily">"Calibri"</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ISSUE_DT</property>
+                                <text-property name="displayName">ISSUE_DT</text-property>
+                                <expression name="expression">dataSetRow["ISSUE_DT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ISSUE_DT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="195">
+                <cell id="196">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="264">
+                        <property name="fontFamily">"Calibri"</property>
+                        <text-property name="text">BANK A</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="291">
+                <cell id="292"/>
+                <cell id="293">
+                    <property name="textAlign">right</property>
+                    <image id="1168">
+                        <property name="height">40mm</property>
+                        <property name="width">40mm</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">RELE_IMAGE</property>
+                                <expression name="expression" type="javascript">var releDate = dataSetRow["C_MAIN_REF"];&#13;
+ jsObj.genQRCode(releDate);</expression>
+                                <property name="dataType">blob</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="source">expr</property>
+                        <expression name="valueExpr">row["RELE_IMAGE"]</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

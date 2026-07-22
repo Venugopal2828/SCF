@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>C02052700001</ID>
+    <MODULE>STAN</MODULE>
+    <EVENT>Currency</EVENT>
+    <CRTJSP POS=""/>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_SecuCatalog.jsp</JSPFILE>
+    <ADAPT/>
+    <TABLENAME>CETRX.STT_CURRENCY</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Currency" EEType="" HIDDEN="" NOEVENT="Y">C_CURRENCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="2" DESC="Base Day" EEType="" HIDDEN="" NOEVENT="Y">I_BASE_DAY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Country" EEType="" HIDDEN="" NOEVENT="Y">C_COUNTRY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="2" DESC="ISO Code" EEType="" HIDDEN="" NOEVENT="Y">I_ISO_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="SWIFT Code" EEType="" HIDDEN="" NOEVENT="Y">C_SWIFT_CODE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP1</VAR>
+        <VAR>OP2</VAR>
+        <VAR>LOG1</VAR>
+        <VAR>OP3</VAR>
+        <VAR>OP4</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC/>
+    <CLAUSE>
+        <SQL DESC="Currency" DT="12" TYPE="FLD" WTYPE="CASE">C_CURRENCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP10</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP21</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG12</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Country" DT="12" TYPE="FLD" WTYPE="CASE">C_COUNTRY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP33</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP44</SQL>
+        <SQL TYPE="SQL">&apos;</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="" DESC="Currency" EEType="">C_CURRENCY</FIELD>
+        <FIELD DATATYPE="" DESC="Country" EEType="">C_COUNTRY</FIELD>
+    </CLAUSEFIELD>
+    <CLAUSEVAR/>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

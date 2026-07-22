@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>CPYT_ASSGN_AC</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">CPYT_ASSGN_ID</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_CUST_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_ID</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_NM</PARTY_NM>
+        <C_AC_NUMBER ALIAS="T1" DBFUNC="" DESC="Account Number" DT="12" HIDDEN="F" TYPE="F">CPYT_CR_AC</C_AC_NUMBER>
+        <C_CURRENCY ALIAS="T1" DBFUNC="" DESC="C_CURRENCY" DT="12" HIDDEN="F" TYPE="F">C_CURRENCY</C_CURRENCY>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">CPYT_ASSGN_ID</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T1.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">CPYT_CR_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T1.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"/>
+        </condition>
+    </multi-condition>
+</cubk>

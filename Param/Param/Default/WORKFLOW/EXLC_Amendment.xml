@@ -1,0 +1,67 @@
+<WORKFLOW>
+	<STEPS>
+		<STEP>
+			<LABEL>Receive Amendment</LABEL>
+			<INITIALINFO>In process</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700903" DESC="Received Amendment"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS DESC="">Amendment received</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">M</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Amendment received</ENDSTATUS>
+			<ABNORMALSTATUS/>
+			<EVENTINFO><![CDATA[on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Amendment Advise</LABEL>
+			<INITIALINFO>Amendment Advise</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700900" DESC="Amendment Advise"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS DESC="Amendment_pending">Amendment_pending</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">Z</STATUS>
+					<STATUS DESC="">P</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Amendment_pending</ENDSTATUS>
+			<ABNORMALSTATUS/>
+			<EVENTINFO><![CDATA[on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Authorize</LABEL>
+			<INITIALINFO>Pending authorization</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700900" DESC="Amendment Advise"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS>Partially authorized</STATUS>
+					<STATUS>Fully authorized</STATUS>
+					<STATUS>Rejected by authorizer</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">T</STATUS>
+					<STATUS DESC="">R</STATUS>
+					<STATUS DESC="">A</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Fully authorized</ENDSTATUS>
+			<EVENTINFO><![CDATA[next authorizers]]></EVENTINFO>
+			<ABNORMALSTATUS>Rejected by authorizer</ABNORMALSTATUS>
+			<ABINFO><![CDATA[by ${user} on ${date} at ${time}]]></ABINFO>
+			<ENDINFO><![CDATA[authorized by ${count} users]]></ENDINFO>
+		</STEP>
+	</STEPS>
+</WORKFLOW>

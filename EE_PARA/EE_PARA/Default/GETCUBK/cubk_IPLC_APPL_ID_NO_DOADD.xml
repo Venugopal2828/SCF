@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>IPLC</module-name>
+        <cubk-mapping-name>APPL_ID_NO_DOADD</cubk-mapping-name>
+        <select-type>U</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">APPL_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <NOTES ALIAS="T0" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="T" TYPE="F">APPL_NOTES</NOTES>
+        <MAIL_ADD ALIAS="T0" DBFUNC="" DESC="Mail Address" DT="12" HIDDEN="F" TYPE="F">APPL_MAIL_ADD</MAIL_ADD>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="ADDRESS2" DT="12" HIDDEN="F" TYPE="F">APPL_ADD2</ADD2>
+        <BK_BR_CODE ALIAS="T0" DBFUNC="" DESC="Belong to bank branch code" DT="12" HIDDEN="T" TYPE="F">AC_OFFICER_CODE</BK_BR_CODE>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">APPL_NM</PARTY_NM>
+        <TEL_NO ALIAS="T0" DBFUNC="" DESC="Telephone No" DT="12" HIDDEN="F" TYPE="F">APPL_TLX</TEL_NO>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="ADDRESS1" DT="12" HIDDEN="F" TYPE="F">APPL_ADD1</ADD1>
+        <CUST_CORR_MED ALIAS="T0" DBFUNC="" DESC="Customer Correspondent Medium" DT="1" HIDDEN="T" TYPE="F">APPL_CORR_MED</CUST_CORR_MED>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="ADDRESS3" DT="12" HIDDEN="F" TYPE="F">APPL_ADD3</ADD3>
+        <EMAIL_ADD ALIAS="T0" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="T" TYPE="F">APPL_EMAIL</EMAIL_ADD>
+        <FAX_NO ALIAS="T0" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="T" TYPE="F">APPL_FAX</FAX_NO>
+        <LANG_CD ALIAS="T0" DBFUNC="" DESC="Language Code" DT="1" HIDDEN="T" TYPE="F">APPL_LANG</LANG_CD>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

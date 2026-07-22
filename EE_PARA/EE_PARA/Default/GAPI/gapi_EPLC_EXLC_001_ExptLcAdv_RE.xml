@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>F</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>Message Queue</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>1</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>EPLC_EE_CE</other-system-id>
+        <other-system-interface>EXLC.001.ExptLcAdv</other-system-interface>
+        <recv-time-out>1</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_BANK</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>EPLC</module>
+        <interface-mapping-name>EXLC_001_ExptLcAdv</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>R</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id comm="ejb" type="sync">queue</atth-queue-id>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <CEMainRef descr="" ec-tag="N" fv-type="F" op-tag="N" order="1">C_MAIN_REF</CEMainRef>
+        <BkMainRef descr="" ec-tag="N" fv-type="F" op-tag="N" order="2">C_MAIN_REF</BkMainRef>
+        <CustId descr="" ec-tag="N" fv-type="F" op-tag="N" order="3">BENE_ID</CustId>
+        <AdvNb descr="" ec-tag="N" fv-type="F" op-tag="N" order="4">C_MAIN_REF</AdvNb>
+        <LcNb descr="" ec-tag="N" fv-type="F" op-tag="N" order="5">LC_NO</LcNb>
+        <EstablishBy descr="" ec-tag="N" fv-type="" op-tag="N" order="7"/>
+        <DtOfIsse descr="" ec-tag="N" fv-type="F" op-tag="N" order="8">ISSUE_DT</DtOfIsse>
+        <TpOfLc descr="" ec-tag="N" fv-type="F" op-tag="N" order="9">FORM_OF_LC</TpOfLc>
+        <BkConf descr="" ec-tag="N" fv-type="F" op-tag="N" order="10">CONF_INSTR</BkConf>
+        <LcCcy descr="" ec-tag="N" fv-type="F" op-tag="N" order="11">LC_CCY</LcCcy>
+        <LcAmt descr="" ec-tag="N" fv-type="F" op-tag="N" order="12">LC_AMT</LcAmt>
+        <LcBala descr="" ec-tag="N" fv-type="F" op-tag="N" order="13">LC_BAL</LcBala>
+        <PostveTlrnce descr="" ec-tag="N" fv-type="F" op-tag="N" order="15">POS_TOL</PostveTlrnce>
+        <NegtveTlrnce descr="" ec-tag="N" fv-type="F" op-tag="N" order="16">NEG_TOL</NegtveTlrnce>
+        <BnfcryNm descr="" ec-tag="N" fv-type="F" op-tag="N" order="17">BENE_NM</BnfcryNm>
+        <PlcOfExp descr="" ec-tag="N" fv-type="F" op-tag="N" order="18">EXPIRY_PLC_NARR</PlcOfExp>
+        <DtOfExp descr="" ec-tag="N" fv-type="F" op-tag="N" order="19">EXPIRY_DT</DtOfExp>
+        <NoOfAmdmnt descr="" ec-tag="N" fv-type="" op-tag="N" order="20"/>
+        <ApplNm descr="" ec-tag="N" fv-type="F" op-tag="N" order="21">APPL_NM</ApplNm>
+        <ApplAdr1 descr="" ec-tag="N" fv-type="F" op-tag="N" order="22">APPL_ADD1</ApplAdr1>
+        <ApplAdr2 descr="" ec-tag="N" fv-type="F" op-tag="N" order="23">APPL_ADD2</ApplAdr2>
+        <ApplAdr3 descr="" ec-tag="N" fv-type="F" op-tag="N" order="24">APPL_ADD3</ApplAdr3>
+        <ForAcctOfAdr1 descr="" ec-tag="N" fv-type="" op-tag="N" order="25"/>
+        <ForAcctOfAdr2 descr="" ec-tag="N" fv-type="" op-tag="N" order="26"/>
+        <ForAcctOfAdr3 descr="" ec-tag="N" fv-type="" op-tag="N" order="27"/>
+        <ForAcctOfNm descr="" ec-tag="N" fv-type="" op-tag="N" order="28"/>
+        <IsseBkAdr1 descr="" ec-tag="N" fv-type="F" op-tag="N" order="29">ISSUE_BK_ADD1</IsseBkAdr1>
+        <IsseBkAdr2 descr="" ec-tag="N" fv-type="F" op-tag="N" order="30">ISSUE_BK_ADD2</IsseBkAdr2>
+        <IsseBkAdr3 descr="" ec-tag="N" fv-type="F" op-tag="N" order="31">ISSUE_BK_ADD3</IsseBkAdr3>
+        <IsseBkNm descr="" ec-tag="N" fv-type="F" op-tag="N" order="32">ISSUE_BK_NM</IsseBkNm>
+        <IssueBkSwAdr descr="" ec-tag="N" fv-type="F" op-tag="N" order="33">ISSUE_BK_SW_ADD</IssueBkSwAdr>
+        <AvalWtBkAdr1 descr="" ec-tag="N" fv-type="F" op-tag="N" order="34">AVAL_WT_BK_ADD1</AvalWtBkAdr1>
+        <AvalWtBkAdr2 descr="" ec-tag="N" fv-type="F" op-tag="N" order="35">AVAL_WT_BK_ADD2</AvalWtBkAdr2>
+        <AvalWtBkAdr3 descr="" ec-tag="N" fv-type="F" op-tag="N" order="36">AVAL_WT_BK_ADD3</AvalWtBkAdr3>
+        <AvalWtBkNm descr="" ec-tag="N" fv-type="F" op-tag="N" order="37">AVAL_WT_BK_NM</AvalWtBkNm>
+        <AvalWtBkSwAdr descr="" ec-tag="N" fv-type="F" op-tag="N" order="38">AVAL_WT_BK_SW_ADD</AvalWtBkSwAdr>
+        <ConfgBkAdr1 descr="" ec-tag="N" fv-type="F" op-tag="N" order="39">CONF_BK_ADD1</ConfgBkAdr1>
+        <ConfgBkAdr2 descr="" ec-tag="N" fv-type="F" op-tag="N" order="40">CONF_BK_ADD2</ConfgBkAdr2>
+        <ConfgBkAdr3 descr="" ec-tag="N" fv-type="F" op-tag="N" order="41">CONF_BK_ADD3</ConfgBkAdr3>
+        <ConfgBkNm descr="" ec-tag="N" fv-type="F" op-tag="N" order="42">CONF_BK_NM</ConfgBkNm>
+        <ConfgBkSwAdr descr="" ec-tag="N" fv-type="F" op-tag="N" order="43">CONF_BK_SW_ADD</ConfgBkSwAdr>
+        <ReimbgBkAdr1 descr="" ec-tag="N" fv-type="F" op-tag="N" order="44">REIM_BK_ADD1</ReimbgBkAdr1>
+        <ReimbgBkAdr2 descr="" ec-tag="N" fv-type="F" op-tag="N" order="45">REIM_BK_ADD2</ReimbgBkAdr2>
+        <ReimbgBkAdr3 descr="" ec-tag="N" fv-type="F" op-tag="N" order="46">REIM_BK_ADD3</ReimbgBkAdr3>
+        <ReimbgBkNm descr="" ec-tag="N" fv-type="F" op-tag="N" order="47">REIM_BK_NM</ReimbgBkNm>
+        <ReimbgBkSwAdr descr="" ec-tag="N" fv-type="F" op-tag="N" order="48">REIM_BK_SW_ADD</ReimbgBkSwAdr>
+        <Chrgs descr="" ec-tag="N" fv-type="F" op-tag="N" order="49">CHG_FLD_LOCAL_CUST_AC_NO</Chrgs>
+        <AvalBy descr="" ec-tag="N" fv-type="F" op-tag="N" order="50">AVAL_BY</AvalBy>
+        <TenorDays descr="" ec-tag="N" fv-type="F" op-tag="N" order="51">TENOR_DAYS</TenorDays>
+        <DrweAdr1 descr="" ec-tag="N" fv-type="F" op-tag="N" order="52">DRWE_ADD1</DrweAdr1>
+        <DrweAdr2 descr="" ec-tag="N" fv-type="F" op-tag="N" order="53">DRWE_ADD2</DrweAdr2>
+        <DrweAdr3 descr="" ec-tag="N" fv-type="F" op-tag="N" order="54">DRWE_ADD3</DrweAdr3>
+        <DrweNm descr="" ec-tag="N" fv-type="F" op-tag="N" order="55">DRWE_NM</DrweNm>
+        <DraftAt descr="" ec-tag="N" fv-type="F" op-tag="N" order="56">DRAFTS_AT</DraftAt>
+        <DeferdPmtDtls descr="" ec-tag="N" fv-type="F" op-tag="N" order="57">DEF_PMT_DET</DeferdPmtDtls>
+        <MixdPmtDtls descr="" ec-tag="N" fv-type="F" op-tag="N" order="58">MIX_PMT_DETL</MixdPmtDtls>
+        <LatstShipmntDt descr="" ec-tag="N" fv-type="F" op-tag="N" order="59">LTST_SHIP_DT</LatstShipmntDt>
+        <PrtlShipmnt descr="" ec-tag="N" fv-type="F" op-tag="N" order="60">PARTIAL_SHIP</PrtlShipmnt>
+        <Transhipment descr="" ec-tag="N" fv-type="F" op-tag="N" order="61">TNSHIP</Transhipment>
+        <ShipFr descr="" ec-tag="N" fv-type="F" op-tag="N" order="62">LOAD_PLACE</ShipFr>
+        <PortOfLoadng descr="" ec-tag="N" fv-type="F" op-tag="N" order="63">LOAD_PORT</PortOfLoadng>
+        <PortOfDschrge descr="" ec-tag="N" fv-type="F" op-tag="N" order="64">DEST_PORT</PortOfDschrge>
+        <ShipTo descr="" ec-tag="N" fv-type="F" op-tag="N" order="65">DEST_PLACE</ShipTo>
+        <ShipmntPrd descr="" ec-tag="N" fv-type="F" op-tag="N" order="66">SHIP_PRD</ShipmntPrd>
+        <Incotrms descr="" ec-tag="N" fv-type="" op-tag="N" order="67"/>
+        <DescOfGoods descr="" ec-tag="N" fv-type="F" op-tag="N" order="68">GOODS_DESC</DescOfGoods>
+        <DocToBePres descr="" ec-tag="N" fv-type="F" op-tag="N" order="69">DOC_REQ</DocToBePres>
+        <PrestinPrd descr="" ec-tag="N" fv-type="F" op-tag="N" order="70">PRES_PRD_TXT</PrestinPrd>
+        <AdditnlCondtin descr="" ec-tag="N" fv-type="F" op-tag="N" order="71">ADDIT_CONDITION</AdditnlCondtin>
+        <CurSts descr="" ec-tag="N" fv-type="F" op-tag="N" order="72">CURRNT_STATUS</CurSts>
+        <NxtSts descr="" ec-tag="N" fv-type="" op-tag="N" order="73"/>
+        <ExlcSts descr="" ec-tag="N" fv-type="" op-tag="N" order="74"/>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" op-tag="N" order="75">EXLC.001.ExptLcAdv</MSG_TYPE>
+        <PAY_COND_TO_BENE descr="" ec-tag="N" fv-type="F" op-tag="N" order="76">PAY_COND_TO_BENE</PAY_COND_TO_BENE>
+        <PAY_COND_TO_REV_BK descr="" ec-tag="N" fv-type="F" op-tag="N" order="77">PAY_COND_TO_REV_BK</PAY_COND_TO_REV_BK>
+    </send-msg-map>
+    <recv-msg-map/>
+    <send-item>
+        <item name="form"/>
+        <item name="image"/>
+    </send-item>
+</gapi>

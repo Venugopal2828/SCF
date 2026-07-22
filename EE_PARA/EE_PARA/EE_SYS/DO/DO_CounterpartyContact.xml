@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="CounterpartyContact" Max="n" Min="0" Name="CounterpartyContact" PendingStore="N" Screen="SCRN/DO/CounterpartyContact.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="CNPT_CONT_DO"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>DO_INDEX_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TRCP_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="Data Object Index No." DispInGrid="N" EDIT="N" EEType="ABKID" FldType="" Value="">DO_INDEX_NO</Element>
+        <Element DATATYPE="1" Desc="Counterparty Account Code" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_10" FldType="" Value="">CNPT_AC_CD</Element>
+        <Element DATATYPE="12" Desc="Serial Number" DispInGrid="Y" EDIT="N" EEType="Varchar_20" FldType="" Value="">SERIAL_NO</Element>
+        <Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CNPT_SHORT_NM</Element>
+        <Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_14" FldType="" Value="">CNPT_ID</Element>
+        <Element DATATYPE="1" Desc="Counterparty SWIFT" DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">CNPT_SWADD</Element>
+        <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        <Element DATATYPE="12" Desc="Transaction Type" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">TRX_TP</Element>
+        <Element DATATYPE="1" Desc="Contact Type" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">CONT_TYPE</Element>
+        <Element DATATYPE="12" Desc="Contact ID" DispInGrid="N" EDIT="N" EEType="Varchar_30" FldType="" Value="">CONT_ID</Element>
+        <Element DATATYPE="12" Desc="Contact Name" DispInGrid="Y" EDIT="N" EEType="AutoGen_Trx_VARCHAR_35" FldType="" Value="">CONT_NM</Element>
+        <Element DATATYPE="12" Desc="Contact Title" DispInGrid="Y" EDIT="N" EEType="Varchar_45" FldType="" Value="">CONT_TITLE</Element>
+        <Element DATATYPE="12" Desc="Contact Tel No" DispInGrid="Y" EDIT="N" EEType="Varcha_50" FldType="" Value="">CONT_TEL_NO</Element>
+        <Element DATATYPE="12" Desc="Contact Tel. No. 2" DispInGrid="N" EDIT="N" EEType="Varchar_50" FldType="" Value="">CONT_TEL_NO2</Element>
+        <Element DATATYPE="12" Desc="Contact Tel. No. 3" DispInGrid="N" EDIT="N" EEType="Varchar_50" FldType="" Value="">CONT_TEL_NO3</Element>
+        <Element DATATYPE="12" Desc="Contact Fax No" DispInGrid="Y" EDIT="N" EEType="Varchar_50" FldType="" Value="">CONT_FAX_NO</Element>
+        <Element DATATYPE="12" Desc="Contact E-Mail Address" DispInGrid="Y" EDIT="N" EEType="Varchar_400" FldType="" Value="">CONT_EMAIL_ADD</Element>
+        <Element DATATYPE="12" Desc="Contact E-Mail Address 2" DispInGrid="N" EDIT="N" EEType="EMAIL_VARCHAR50" FldType="" Value="">CONT_EMAIL_ADD2</Element>
+        <Element DATATYPE="12" Desc="Contact E-Mail Address 2" DispInGrid="N" EDIT="N" EEType="EMAIL_VARCHAR50" FldType="" Value="">CONT_EMAIL_ADD3</Element>
+        <Element DATATYPE="12" Desc="Contact ZIP" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CONT_ZIP</Element>
+        <Element DATATYPE="12" Desc="Contact Address" DispInGrid="N" EDIT="N" EEType="TEXTAREA_600" FldType="" Value="">CONT_ADD</Element>
+        <Element DATATYPE="-1" Desc="Notes" DispInGrid="N" EDIT="N" EEType="TEXTAREA_6500" FldType="" Value="">NOTES</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>C14050800000</ID>
+    <MODULE>FAEF</MODULE>
+    <EVENT>Transaction</EVENT>
+    <CRTJSP POS="C">FAEF_ViewSBR.jsp</CRTJSP>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_MultiCatalog.jsp</JSPFILE>
+    <ADAPT>
+        <CLASS>com.cs.ceweb.utility.catalog.CECatalogFromEE</CLASS>
+        <PROPERTY>
+            <prop descr="INTF_GETDATAID" name="INTF_GETDATAID">R00000011868</prop>
+            <prop descr="MAX_TREC_SIZE" name="MAX_TREC_SIZE">500</prop>
+            <prop descr="MAX_PREC_SIZE" name="MAX_PREC_SIZE">500</prop>
+        </PROPERTY>
+    </ADAPT>
+    <TABLENAME>CETRX.FAEF_CREDIT_EVENT</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Main Ref." EEType="" HIDDEN="H" NOEVENT="N">C_MAIN_REF</FIELD>
+        <FIELD ALIAS="C_MAIN_REF" CONFIG="Y" DATATYPE="12" DESC="SBR Reference" EEType="" HIDDEN="" NOEVENT="N">FA_SBR_REF</FIELD>
+        <FIELD ALIAS="FA_SEL_ID" CONFIG="Y" DATATYPE="12" DESC="Company Code" EEType="" HIDDEN="H" NOEVENT="N">C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Trx Status" EEType="" HIDDEN="H" NOEVENT="N">C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Buyer Name" EEType="" HIDDEN="" NOEVENT="N">FA_BUYER_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Seller Name" EEType="" HIDDEN="" NOEVENT="N">FA_SEL_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="91" DESC="Limit Start Date" EEType="DATE" HIDDEN="" NOEVENT="N">FA_LMT_VAL_DT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="91" DESC="Limit Due Date" EEType="DATE" HIDDEN="" NOEVENT="N">FA_LMT_DUE_DT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="1" DESC="Limit Currency" EEType="CCY" HIDDEN="" NOEVENT="N">FA_LMT_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="3" DESC="Limit Amount" EEType="AMT" HIDDEN="" NOEVENT="N">FA_LMT_AMT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H" NOEVENT="N">I_EVENT_TIMES</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="4" DESC="Max. Loan Percentage" EEType="INTEGER" HIDDEN="" NOEVENT="N">FA_MAX_LOAN_PERC</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="8" DESC="Commission Rate" EEType="RATE" HIDDEN="H" NOEVENT="N">FA_EF_COMM_RT</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC>Request for Financing Catalog</DESC>
+    <CLAUSE>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="SBR reference in EE" DT="12" TYPE="FLD" WTYPE="NOCASE">FA_SBR_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Buyer Name" DT="12" TYPE="FLD" WTYPE="NOCASE">FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Limit Currency" DT="1" TYPE="FLD" WTYPE="NOCASE">FA_LMT_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">&apos; AND </SQL>
+        <SQL DESC="Company Code" DT="12" TYPE="FLD" WTYPE="NOCASE">C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL"> = &apos;</SQL>
+        <SQL DT="sys" DV="SYS_BUINFO_UNIT_CODE" TYPE="OP">VALUE</SQL>
+        <SQL TYPE="SQL">&apos;) ORDER BY </SQL>
+        <SQL DESC="SBR reference in EE" DT="12" TYPE="FLD" WTYPE="NOCASE">FA_SBR_REF</SQL>
+        <SQL TYPE="SQL"> DESC</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="SBR reference in EE" EEType="">FA_SBR_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Name" EEType="">FA_BUYER_NM</FIELD>
+        <FIELD DATATYPE="1" DESC="Limit Currency" EEType="CCY">FA_LMT_CCY</FIELD>
+        <FIELD DATATYPE="12" DESC="Company Code" EEType="">C_UNIT_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="SBR reference in EE" EEType="">FA_SBR_REF</FIELD>
+    </CLAUSEFIELD>
+    <CLAUSEVAR/>
+    <HYPERLINK/>
+    <ACTION>
+        <COLUMN NAME="Action" TYPE="L">
+            <FIELD ACTION="Available Invoice for Financing" FUNC="F05030701097" NAME="View Invoice" TARGET="C" TYPE="S">
+                <KEYS/>
+                <CRIT_MAPPS>
+                    <FIELD SUB_ALIAS="OP6">FA_BUYER_NM</FIELD>
+                    <FIELD SUB_ALIAS="OP8">FA_SBR_REF</FIELD>
+                    <FIELD SUB_ALIAS="OP4">FA_LMT_CCY</FIELD>
+                </CRIT_MAPPS>
+            </FIELD>
+        </COLUMN>
+    </ACTION>
+</CATA>

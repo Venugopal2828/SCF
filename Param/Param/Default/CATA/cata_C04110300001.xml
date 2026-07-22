@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>C04110300001</ID>
+    <MODULE>STAN</MODULE>
+    <EVENT>Exchange Rate</EVENT>
+    <CRTJSP POS=""/>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_SecuCatalog.jsp</JSPFILE>
+    <ADAPT/>
+    <TABLENAME>CETRX.STT_EXCHAN_RATE</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_BK_GROUP_ID" EEType="" HIDDEN="" NOEVENT="Y">C_BK_GROUP_ID</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_FROM_CCY" EEType="" HIDDEN="" NOEVENT="Y">C_FROM_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_TO_CCY" EEType="" HIDDEN="" NOEVENT="Y">C_TO_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_CNTY_CODE" EEType="" HIDDEN="" NOEVENT="Y">C_CNTY_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_DESC_ID" EEType="" HIDDEN="" NOEVENT="Y">C_DESC_ID</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_LOCKED_FLAG" EEType="" HIDDEN="" NOEVENT="Y">C_LOCKED_FLAG</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>op1</VAR>
+        <VAR>op2</VAR>
+        <VAR>op3</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC/>
+    <CLAUSE>
+        <SQL DESC="C_FROM_CCY" DT="12" TYPE="FLD" WTYPE="CASE">C_FROM_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">op10</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">op21</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">op32</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="C_TO_CCY" DT="12" TYPE="FLD" WTYPE="CASE">C_TO_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">op13</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">op24</SQL>
+        <SQL TYPE="SQL">&apos; and </SQL>
+        <SQL DESC="Locked Flag" DT="12" TYPE="FLD" WTYPE="CASE">C_LOCKED_FLAG</SQL>
+        <SQL TYPE="SQL">=&apos;T&apos;</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="0" DESC="C_FROM_CCY" EEType="">C_FROM_CCY</FIELD>
+        <FIELD DATATYPE="0" DESC="C_TO_CCY" EEType="">C_TO_CCY</FIELD>
+        <FIELD DATATYPE="0" DESC="Locked Flag" EEType="">C_LOCKED_FLAG</FIELD>
+    </CLAUSEFIELD>
+    <CLAUSEVAR/>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

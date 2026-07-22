@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EPLC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_Financing_SYF_FFIT_LC_NO_2</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <COMMODITY ALIAS="T0" DBFUNC="" DESC="COMMODITY" DT="12" HIDDEN="F" TYPE="F">COMMODITY</COMMODITY>
+        <LC_NO ALIAS="T0" DBFUNC="" DESC="LC Number" DT="12" HIDDEN="F" TYPE="F">LC_NO</LC_NO>
+        <AVAL_BY ALIAS="T0" DBFUNC="" DESC="Available By" DT="1" HIDDEN="F" TYPE="F">LC_TYPE</AVAL_BY>
+        <CONF_BAL ALIAS="T0" DBFUNC="" DESC="Confirmed Balance" DT="3" HIDDEN="F" TYPE="F">BAL_CONF</CONF_BAL>
+        <PARTIAL_SHIP ALIAS="T0" DBFUNC="" DESC="Partial Shipment (Tag43P)" DT="1" HIDDEN="F" TYPE="F">PARTIAL_SHIP</PARTIAL_SHIP>
+        <LC_CCY ALIAS="T0" DBFUNC="" DESC="LC Currency" DT="1" HIDDEN="F" TYPE="F">TEMP_CHAR3</LC_CCY>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">TRX_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

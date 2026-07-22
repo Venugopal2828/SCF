@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701068</ID>
+        <NAME>Receive Invoice A or C</NAME>
+        <DESC>Invoice Adjustment or Cancellation</DESC>
+        <FUNSHORTNAME>RecInvAdjust</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_RecInvAdjust.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701061</ID>
+        <NAME>Receive Invoice A or C_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701061</ID>
+        <NAME>Receive Invoice A or C_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000345</ID>
+        <NAME>Receive Invoice A or C_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

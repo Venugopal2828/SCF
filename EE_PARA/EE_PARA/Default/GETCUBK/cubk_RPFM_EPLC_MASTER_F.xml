@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">CFNC_MAIN</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>RPFM</module-name>
+        <cubk-mapping-name>EPLC_MASTER_F</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        <CFNC_C_CCY ALIAS="T0" DBFUNC="" DESC="Finance CCY" DT="1" HIDDEN="F" TYPE="F">MAST_LC_CCY</CFNC_C_CCY>
+        <CFNC_N_AMT_LCCCY ALIAS="T0" DBFUNC="" DESC="Finance Amount" DT="3" HIDDEN="F" TYPE="F">MAST_LC_AMT</CFNC_N_AMT_LCCCY>
+        <CFNC_N_BAL ALIAS="T0" DBFUNC="" DESC="Finance Balance" DT="3" HIDDEN="F" TYPE="F">MAST_LC_BAL</CFNC_N_BAL>
+        <CFNC_D_DT ALIAS="T0" DBFUNC="" DESC="Start Date" DT="91" HIDDEN="F" TYPE="F">MAST_START_DT</CFNC_D_DT>
+        <CFNC_D_DUE_DT ALIAS="T0" DBFUNC="" DESC="End Date" DT="91" HIDDEN="F" TYPE="F">MAST_END_DT</CFNC_D_DUE_DT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="3" EEType="AMT" TYPE="TBL_FLD">T0.CFNC_N_BAL</SQL>
+            <SQL TYPE="SQL"> &gt;0 AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.CFNC_C_TYPE</SQL>
+            <SQL TYPE="SQL"> = 'Forfaiting' AND </SQL>
+            <SQL DT="12" EEType="AutoGen_Ext_VARCHAR_10" TYPE="TBL_FLD">T0.CFNC_C_ORIGIN_MODULE</SQL>
+            <SQL TYPE="SQL"> = 'EPLC'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR DATABASE="EXIMMD" SCHEMA="EXIMMETA" TABLENAME="ECD_SYSFUNC_ATTR">
+    <COMPONENT TRANSACTION="NO">
+        <NAME>TrxMasterEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>DISC_MASTER</TABLE_NAME>
+        <TABLE_DESC>Discount Master</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Edit Master</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME>TrxEventAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>DISC_INV_REG</TABLE_NAME>
+        <TABLE_DESC>Batch Register Info</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>FA_INV_REG_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Add Event</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME>ASOTMBDBusinessAdd</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>DISC_INV</TABLE_NAME>
+        <TABLE_DESC>Invoice Info</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>FA_INV_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>O2M Add Business</BCTYPE>
+        <O2MRULE>Export_Register_P</O2MRULE>
+    </COMPONENT>
+</FUNCATTR>

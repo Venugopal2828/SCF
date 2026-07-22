@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>PO Maintenance</MODULE_DESC>
+        <EVENT>IncomingDemergeFunc</EVENT>
+        <CATALOGID/>
+        <ID>F05030701161</ID>
+        <NAME>Add Purchase Order</NAME>
+        <DESC>Add Purchase Order</DESC>
+        <FUNSHORTNAME>AddPO</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">TSUM_AddPurchaseOrder.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701154</ID>
+        <NAME>Add Purchase Order_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701154</ID>
+        <NAME>Add Purchase Order_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000457</ID>
+        <NAME>Add Purchase Order_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

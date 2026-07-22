@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+	<ID>P08071500001</ID>
+	<CRTJSP POS="C">IMCO_AuthTrx.jsp</CRTJSP>
+	<JSPFILE TMPLFILE="SYS_Template.jsp">SYS_MultiCatalog.jsp</JSPFILE>
+	<ADAPT/>
+	<TABLENAME>CETRX.TRX_INBOX</TABLENAME>
+	<FIELDLIST>
+		<FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Collection Ref Number" EEType="RELATED_REF" HIDDEN="" NOEVENT="Y">COLL_NO</FIELD>
+		<FIELD ALIAS="" CONFIG="Y" DATATYPE="1" DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" NOEVENT="Y">DRWE_NM</FIELD>
+		<FIELD ALIAS="" CONFIG="Y" DATATYPE="1" DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" NOEVENT="Y">DRWR_NM</FIELD>
+		<FIELD ALIAS="" CONFIG="Y" DATATYPE="1" DESC="Collection Currency" EEType="CCY" HIDDEN="" NOEVENT="Y">COLL_CCY</FIELD>
+		<FIELD ALIAS="" CONFIG="Y" DATATYPE="91" DESC="Due Date" EEType="DATE" HIDDEN="" NOEVENT="Y">DUE_DT</FIELD>
+		<FIELD ALIAS="" CONFIG="N" DATATYPE="12" DESC="Trx Status" EEType="SYS_VARCHAR_4" HIDDEN="H" NOEVENT="Y">C_TRX_STATUS</FIELD>
+	</FIELDLIST>
+	<VARLIST>
+		<VAR>OP</VAR>
+		<VAR>VALUE</VAR>
+		<VAR>LOG</VAR>
+	</VARLIST>
+	<TYPE>1</TYPE>
+	<DESC>Authorise Transaction</DESC>
+	<CLAUSE>
+		<SQL EEType="" TYPE="SQL">(</SQL>
+		<SQL DESC="Collection Ref Number" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+		<SQL EEType="" TYPE="SQL"> '</SQL>
+		<SQL ALIAS="" DT="val" ISEnable="T" TYPE="OP">VALUE1</SQL>
+		<SQL EEType="" TYPE="SQL">' </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">LOG2</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL DESC="Drawee Name" DT="1" EEType="NM_CHAR35" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">OP3</SQL>
+		<SQL EEType="" TYPE="SQL"> '</SQL>
+		<SQL ALIAS="" DT="val" ISEnable="T" TYPE="OP">VALUE4</SQL>
+		<SQL EEType="" TYPE="SQL">' </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">LOG5</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL DESC="Drawer Name" DT="1" EEType="NM_CHAR35" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">OP6</SQL>
+		<SQL EEType="" TYPE="SQL"> '</SQL>
+		<SQL ALIAS="" DT="val" ISEnable="T" TYPE="OP">VALUE7</SQL>
+		<SQL EEType="" TYPE="SQL">' </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">LOG8</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL DESC="Collection Currency" DT="1" EEType="CCY" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">OP9</SQL>
+		<SQL EEType="" TYPE="SQL"> '</SQL>
+		<SQL ALIAS="" DT="val" ISEnable="T" TYPE="OP">VALUE10</SQL>
+		<SQL EEType="" TYPE="SQL">' </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">LOG11</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL DESC="Due Date" DT="91" EEType="DATE" TYPE="FLD" WTYPE="CASE">DUE_DT</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL ALIAS="" DT="val" TYPE="OP">OP12</SQL>
+		<SQL EEType="" TYPE="SQL"> </SQL>
+		<SQL ALIAS="" DT="val" ISEnable="T" TYPE="OP">VALUE13</SQL>
+		<SQL EEType="" TYPE="SQL">) AND (</SQL>
+		<SQL DESC="" DT="12" EEType="SYS_VARCHAR_4" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+		<SQL EEType="" TYPE="SQL"> IN ('P','T')) ORDER BY </SQL>
+		<SQL DESC="Collection Ref Number" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+	</CLAUSE>
+	<CLAUSEFIELD>
+		<FIELD DATATYPE="12" DESC="Collection Ref Number">COLL_NO</FIELD>
+		<FIELD DATATYPE="1" DESC="Drawee Name">DRWE_NM</FIELD>
+		<FIELD DATATYPE="1" DESC="Drawer Name">DRWR_NM</FIELD>
+		<FIELD DATATYPE="1" DESC="Collection Currency">COLL_CCY</FIELD>
+		<FIELD DATATYPE="91" DESC="Due Date">DUE_DT</FIELD>
+		<FIELD DATATYPE="12" DESC="">C_TRX_STATUS</FIELD>
+		<FIELD DATATYPE="12" DESC="Collection Ref Number">COLL_NO</FIELD>
+	</CLAUSEFIELD>
+	<CLAUSEVAR/>
+	<HYPERLINK/>
+	<ACTION/>
+</CATA>

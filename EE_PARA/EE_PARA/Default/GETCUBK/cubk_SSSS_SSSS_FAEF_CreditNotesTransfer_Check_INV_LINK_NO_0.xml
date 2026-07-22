@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_FAEF_CreditNotesTransfer_Check_INV_LINK_NO_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_DOC_REF ALIAS="T0" DBFUNC="" DESC="Doc Ref" DT="12" HIDDEN="F" TYPE="F">FA_TEMP4</FA_DOC_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_UNIT_CODE='</SQL>
+            <SQL DT="var" DV="SYS_BUSI_UNIT" TYPE="FldValue">FldValue0</SQL>
+            <SQL TYPE="SQL">' and FA_DOC_NO='</SQL>
+            <SQL TYPE="FLD">FA_CRN_INV_LINK_NO</SQL>
+            <SQL TYPE="SQL">' AND FSBC_REF='</SQL>
+            <SQL TYPE="FLD">FSBC_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

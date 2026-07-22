@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("Begin: R2 013 InTSU JS");
+var  GetTxId1 = stp.getValue("/Document/DataSetMtchRpt/TxId","Id");
+var GetTxId=GetTxId1[0];
+var bu=stp.getTSUUnitCode();
+stp.writeLog("GetTxId="+GetTxId);
+var fld_list = stp.addFieldList(null,"C_MAIN_REF");    
+var sql_condition = stp.addSQLCondition(null,"TSU_TID",GetTxId);
+sql_condition     = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+sql_condition     = stp.addSQLCondition(sql_condition,"C_TRX_STATUS","M");
+var result = stp.executeQuery("TSUM_EM_BASELINE",fld_list,sql_condition);
+var mainRef       = stp.getDBFieldValue(result,"C_MAIN_REF");
+stp.writeLog("mainRef="+mainRef);
+stp.updateFieldValue("","C_MAIN_REF",mainRef);
+stp.updateFieldValue("","C_TRX_REF",mainRef);
+stp.updateFieldValue("","TSU_IDX",mainRef);
+stp.updateFieldValue("","C_UNIT_CODE",bu);
+//begin reqforactn
+var TSU_REQ_ACT_TP = stp.getValue("/Document/DataSetMtchRpt/ReqForActn","Tp");
+stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+if ( TSU_REQ_ACT_TP[0] ==undefined)
+	{
+	stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");
+	stp.updateFieldValue("/root/domData","TSU_REQ_ACT_DESC","");
+	stp.setNodeAttribute("/root/domData/TSU_REQ_ACT_DESC");
+	}
+//end reqforactn  
+
+//Get Buyer Bank/Seller Bank -S
+var BYRBK_BIC =stp.getValue("/Document/DataSetMtchRpt/BuyrBk","BIC");
+var TSU_BYRBK_BIC =BYRBK_BIC[0];
+var SELLRBK_BIC = stp.getValue("/Document/DataSetMtchRpt/SellrBk","BIC");
+var TSU_SELLRBK_BIC =SELLRBK_BIC[0];
+stp.updateFieldValue("/root/domData/R2PartyInfo/BuyerBank","TSU_BUYER_BK_BIC",TSU_BYRBK_BIC);
+stp.updateFieldValue("/root/domData/R2PartyInfo/SellerBank","TSU_SEL_BK_BIC",TSU_SELLRBK_BIC);
+//Get Buyer Bank/Seller Bank -E
+
+var BuyerName = stp.getValue("/Document/DataSetMtchRpt/Buyr","Nm");
+stp.updateFieldValue("/root/domData","TSU_BUYER_NM",BuyerName[0]);
+stp.writeLog("BuyerName="+BuyerName[0]);
+
+var BuyerStreetName = stp.getValue("/Document/DataSetMtchRpt/Buyr/PstlAdr","StrtNm");
+var BuyerPostCode =  stp.getValue("/Document/DataSetMtchRpt/Buyr/PstlAdr","PstCdId");
+var BuyerTownName = stp.getValue("/Document/DataSetMtchRpt/Buyr/PstlAdr","TwnNm");
+var BuyerCtry=stp.getValue("/Document/DataSetMtchRpt/Buyr/PstlAdr","Ctry");
+var BuyerAddress = BuyerStreetName[0]+","+BuyerPostCode[0]+","+BuyerTownName[0]+","+BuyerCtry[0];
+stp.updateFieldValue("/root/domData","TSU_BUYER_ADD",BuyerAddress);
+stp.writeLog("BuyerAddress="+BuyerAddress);
+
+var SellerName = stp.getValue("/Document/DataSetMtchRpt/Sellr","Nm");
+stp.updateFieldValue("/root/domData","TSU_SEL_NM",SellerName[0]);
+stp.writeLog("SellerName="+SellerName[0]);
+
+var SellerStreetName = stp.getValue("/Document/DataSetMtchRpt/Sellr/PstlAdr","StrtNm");
+var SellerPostCode =  stp.getValue("/Document/DataSetMtchRpt/Sellr/PstlAdr","PstCdId");
+var SellerTownName = stp.getValue("/Document/DataSetMtchRpt/Sellr/PstlAdr","TwnNm");
+var SellerCtry=stp.getValue("/Document/DataSetMtchRpt/Sellr/PstlAdr","Ctry");
+var SellerAddress = SellerStreetName[0]+","+SellerPostCode[0]+","+SellerTownName[0]+","+SellerCtry[0];
+stp.updateFieldValue("/root/domData","TSU_SEL_ADD",SellerAddress);
+stp.writeLog("SellerAddress="+SellerAddress);
+
+var OurBIC =stp.getTSUBIC();
+
+stp.writeLog("ourBIC="+OurBIC);
+var REF = stp.getValue("/Document/DataSetMtchRpt/UsrTxRef","Id");
+var FirstREF = REF[0];
+stp.writeLog("FirstREF="+FirstREF);
+var SecondREF = REF[1];
+stp.writeLog("SecondREF="+SecondREF);
+if (FirstREF== undefined)
+{ FirstREF ="null";
+}
+if (SecondREF == undefined)
+{ SecondREF ="null";
+}
+
+stp.writeLog("FirstREF2="+FirstREF);
+stp.writeLog("SecondREF2="+SecondREF);
+var BIC = stp.getValue("/Document/DataSetMtchRpt/UsrTxRef/IdIssr","BIC");
+
+var FirstBIC = BIC[0];
+var SecondBIC = BIC[1];
+stp.writeLog("FirstBIC="+FirstBIC);
+stp.writeLog("SecondBIC="+SecondBIC);
+if(FirstBIC == undefined)
+{FirstBIC ="null";
+}
+if(SecondBIC == undefined )
+{SecondBIC="null";
+}
+stp.writeLog("FirstBIC2="+FirstBIC);
+stp.writeLog("SecondBIC2="+SecondBIC);
+
+var BIC1 = stp.compareString(FirstBIC,OurBIC);
+var BIC2 = stp.compareString(SecondBIC,OurBIC);
+stp.writeLog("BIC1--------------------" +BIC1);
+stp.writeLog("BIC2--------------------" +BIC2);
+
+if(BIC1 == "true")
+{
+	stp.updateFieldValue("","TSU_OUR_BIC",FirstBIC);
+	stp.updateFieldValue("","TSU_OUR_REF",FirstREF);
+	stp.updateFieldValue("","TSU_THEIR_REF",SecondREF);
+	stp.updateFieldValue("","TSU_THEIR_BIC",SecondBIC);	
+
+}
+if(BIC2 == "true")
+{
+	stp.updateFieldValue("","TSU_OUR_BIC",SecondBIC);
+	stp.updateFieldValue("","TSU_OUR_REF",SecondREF);
+	stp.updateFieldValue("","TSU_THEIR_REF",FirstREF);
+	stp.updateFieldValue("","TSU_THEIR_BIC",FirstBIC);	
+
+} 
+  
+	stp.writeLog("Begin assign R2DataSetMatchReport");
+	stp.setAutoProcess(true);  
+	stp.updateFieldValue("/root/domData/R2PartyInfo/BuyerBank","TSU_IDX",0);
+	stp.updateFieldValue("/root/domData/R2PartyInfo/SellerBank","TSU_IDX",0);
+	stp.updateFieldValue("/root/domData/R2PartyInfo/Buyer","TSU_IDX",0);
+	stp.updateFieldValue("/root/domData/R2PartyInfo/Seller","TSU_IDX",0);
+	stp.deleNode("/root/domData/R2PartyInfo","BillTo");
+	stp.deleNode("/root/domData/R2PartyInfo","ShipTo");
+	stp.deleNode("/root/domData/R2PartyInfo","Consignee");
+	stp.deleNode("/root/domData/R2PartyInfo","Consignor");
+  
+	stp.updateFieldValue("/root/domData","DELETE_ALL_DATA","Y");
+	stp.setFunc("R2DataSetMatchReport");
+	stp.writeLog("TSU_BYRBK_BIC="+ TSU_BYRBK_BIC);
+stp.updateFieldValue("/root/domData","TSU_BUYER_BK_BIC",TSU_BYRBK_BIC);
+stp.SYS_getCUBK("TSU_BYRBK_BIC","TSU_BUYER_BK_BIC","/root/domData/R2PartyInfo/BuyerBank"); // Get Buyerbk Name and ID from the Buyer BIC
+
+stp.writeLog("TSU_SELLRBK_BIC:"+ TSU_SELLRBK_BIC);
+stp.updateFieldValue("/root/domData","TSU_SEL_BK_BIC",TSU_SELLRBK_BIC);
+stp.SYS_getCUBK("TSU_SELLRBK_BIC","TSU_SEL_BK_BIC","/root/domData/R2PartyInfo/SellerBank"); // Get Sellerbk Name and ID from the Seller BIC
+stp.writeLog("End assign R2DataSetMatchReport");]]></js-content>
+</root>

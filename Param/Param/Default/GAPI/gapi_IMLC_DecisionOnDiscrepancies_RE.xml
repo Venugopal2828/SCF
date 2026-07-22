@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>IMLC.013.DiscrpcsDesin</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>IMLC</module>
+        <interface-mapping-name>DecisionOnDiscrepancies</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <ApplId descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">APPL_ID</ApplId>
+        <BkMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">BK_MAIN_REF</BkMainRef>
+        <CEMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">C_MAIN_REF</CEMainRef>
+        <CurSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">CURRNT_STATUS</CurSts>
+        <DiscrpcsDecsin descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">DISC_DECISION</DiscrpcsDecsin>
+        <DrawgRefNb descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">DRAW_NO</DrawgRefNb>
+        <LcNb descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">LC_NO</LcNb>
+        <NxtSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">NXT_STATUS</NxtSts>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="9">IMLC.013.DiscrpcsDesin</MSG_TYPE>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item/>
+</gapi>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EXCO_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>CFNC</module-name>
+        <cubk-mapping-name>GET_REF_NO_EXCO</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">RELA_MAIN_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">RELA_MAIN_REF</C_MAIN_REF>
+        <COLL_CCY ALIAS="T0" DBFUNC="" DESC="Collection Currency" DT="1" HIDDEN="F" TYPE="F">TRX_CCY</COLL_CCY>
+        <COLL_TRX_CCY_AMT ALIAS="T0" DBFUNC="" DESC="Collection Amount (COLL CCY)" DT="3" HIDDEN="F" TYPE="F">TRX_AMT</COLL_TRX_CCY_AMT>
+        <DELVR_DOC_AGST ALIAS="T0" DBFUNC="" DESC="Deliver Documents Against" DT="1" HIDDEN="F" TYPE="F">DELVR_DOC_AGST</DELVR_DOC_AGST>
+        <TENOR_DAYS ALIAS="T0" DBFUNC="" DESC="Tenor Days" DT="4" HIDDEN="F" TYPE="F">TENOR_DAYS</TENOR_DAYS>
+        <DAY_MON_FLG ALIAS="T0" DBFUNC="" DESC="Days / Months Flag" DT="1" HIDDEN="T" TYPE="F">DAY_MON_FLG</DAY_MON_FLG>
+        <TENOR_TYPE ALIAS="T0" DBFUNC="" DESC="Tenor Type" DT="1" HIDDEN="T" TYPE="F">TENOR_TYPE</TENOR_TYPE>
+        <DRWE_ID ALIAS="T0" DBFUNC="" DESC="Drawee ID (Tag42a)" DT="1" HIDDEN="T" TYPE="F">DRWE_ID</DRWE_ID>
+        <DRWE_NM ALIAS="T0" DBFUNC="" DESC="Drawee Name" DT="12" HIDDEN="T" TYPE="F">DRWE_NM</DRWE_NM>
+        <DRWE_ADD1 ALIAS="T0" DBFUNC="" DESC="Drawee Address1" DT="12" HIDDEN="T" TYPE="F">DRWE_ADD1</DRWE_ADD1>
+        <DRWE_ADD2 ALIAS="T0" DBFUNC="" DESC="Drawee Address2" DT="12" HIDDEN="T" TYPE="F">DRWE_ADD2</DRWE_ADD2>
+        <DRWE_ADD3 ALIAS="T0" DBFUNC="" DESC="Drawee Address3" DT="12" HIDDEN="T" TYPE="F">DRWE_ADD3</DRWE_ADD3>
+        <DRWR_ID ALIAS="T0" DBFUNC="" DESC="Drawer ID" DT="12" HIDDEN="T" TYPE="F">DRWR_ID</DRWR_ID>
+        <DRWR_NM ALIAS="T0" DBFUNC="" DESC="Drawer Name" DT="12" HIDDEN="T" TYPE="F">DRWR_NM</DRWR_NM>
+        <DRWR_ADD1 ALIAS="T0" DBFUNC="" DESC="Drawer Address1" DT="12" HIDDEN="T" TYPE="F">DRWR_ADD1</DRWR_ADD1>
+        <DRWR_ADD2 ALIAS="T0" DBFUNC="" DESC="Drawer Address2" DT="12" HIDDEN="T" TYPE="F">DRWR_ADD2</DRWR_ADD2>
+        <DRWR_ADD3 ALIAS="T0" DBFUNC="" DESC="Drawer Address3" DT="12" HIDDEN="T" TYPE="F">DRWR_ADD3</DRWR_ADD3>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">(</SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.DISCHG_FLG</SQL>
+            <SQL TYPE="SQL"> is null) AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> is not null</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

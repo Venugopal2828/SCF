@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/ABLF_Collateral Discharge.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">ABLF</MODULE>
+        <MODULE_DESC>ABL Financing</MODULE_DESC>
+        <EVENT>CollateralManagement</EVENT>
+        <ID>F05030704002</ID>
+        <NAME>ReceiveCollDisReqFromCE</NAME>
+        <DESC>Receive Collateral Dischage Request</DESC>
+        <FUNSHORTNAME>RecvCollDiFromCE</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="ABLF_RecCollDischgReqFrCE">R00000012583</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID/>
+        <TransferTo>F00000008730</TransferTo>
+        <InXML>F00000008727</InXML>
+    </FUNCTION>
+</FUNC>

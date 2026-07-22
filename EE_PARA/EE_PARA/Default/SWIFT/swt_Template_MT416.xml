@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root descr="Advice of Non-Payment/Non-Acceptance" length="10000" non-regular="FALSE" AutoGen-Parameter-Version="1.0">
+    <tags>
+        <tag>
+            <tag-code>B3</tag-code>
+            <tag-desc>Incoming SWIFT Header 3</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="25" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>B4</tag-code>
+            <tag-desc>Incoming SWIFT Header 4</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="37" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>B5</tag-code>
+            <tag-desc>Incoming SWIFT Header 5</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="25" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>B6</tag-code>
+            <tag-desc>Incoming SWIFT Header 6</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="51" illegal-char="" rows="1">
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>14</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+                <fb>
+                    <srow>1</srow>
+                    <scol>15</scol>
+                    <len>12</len>
+                    <vtype>B</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1>
+        </tag>
+        <tag>
+            <tag-code>20</tag-code>
+            <tag-desc>Sender's Reference</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="16" illegal-char="" rows="1">
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>16</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1>
+        </tag>
+        <tag>
+            <tag-code>21</tag-code>
+            <tag-desc>Related Reference</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="16" illegal-char="" rows="1">
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>16</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1>
+        </tag>
+        <tag>
+            <tag-code>23E</tag-code>
+            <tag-desc>Advice Type</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1">
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>4</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1>
+        </tag>
+        <tag>
+            <tag-code>51A</tag-code>
+            <tag-desc>Sending Institution</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"></segment-1>
+            <segment-2 cols="11" illegal-char="" rows="1"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>53A</tag-code>
+            <tag-desc>Sender's Correspondent</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group>53</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1">
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>35</len>
+                    <vtype>C</vtype>
+                    <prefix>/</prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1>
+            <segment-2 cols="11" illegal-char="" rows="1"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>53B</tag-code>
+            <tag-desc>Sender's Correspondent</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group>53</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1">
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>35</len>
+                    <vtype>C</vtype>
+                    <prefix>/</prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1>
+            <segment-2 cols="35" illegal-char="" rows="1"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>71F</tag-code>
+            <tag-desc>Sender's Charges</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="18" illegal-char="" rows="1">
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>3</len>
+                    <vtype>U</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+                <fb>
+                    <srow>1</srow>
+                    <scol>4</scol>
+                    <len>15</len>
+                    <vtype>A</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1>
+        </tag>
+        <tag>
+            <tag-code>77A</tag-code>
+            <tag-desc>Reason for Non-Payment/Non-Acceptance</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="35" illegal-char="" rows="20">
+                <fb>
+                    <srow>20</srow>
+                    <scol>1</scol>
+                    <len>35</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1>
+        </tag>
+        <tag>
+            <tag-code>21A</tag-code>
+            <tag-desc>Related Sequence Reference</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="16" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>23E[01]</tag-code>
+            <tag-desc>Advice Type</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>21C</tag-code>
+            <tag-desc>Principal's Reference</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>32A</tag-code>
+            <tag-desc>Face Amount of Document(s)</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group>32</tag-group>
+            <segment-1 cols="24" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>32K</tag-code>
+            <tag-desc>Face Amount of Document(s)</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group>32</tag-group>
+            <segment-1 cols="24" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>32B</tag-code>
+            <tag-desc>Face Amount of Document(s)</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group>32</tag-group>
+            <segment-1 cols="18" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>50D</tag-code>
+            <tag-desc>Principal</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"></segment-1>
+            <segment-2 cols="35" illegal-char="" rows="4"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>59</tag-code>
+            <tag-desc>Drawee</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"></segment-1>
+            <segment-2 cols="35" illegal-char="" rows="4"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>71F[01]</tag-code>
+            <tag-desc>Sender's Charges</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="18" illegal-char="" rows="1"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>77A[01]</tag-code>
+            <tag-desc>Reason for Non-Payment/Non-Acceptance</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence></sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="35" illegal-char="" rows="20"></segment-1>
+        </tag>
+    </tags>
+</root>

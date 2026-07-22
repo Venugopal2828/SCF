@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_PMT</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>INVC</module-name>
+        <cubk-mapping-name>GET_INVC_PMT</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_OVD_INT_AMT ALIAS="T0" DBFUNC="" DESC="Overdue Interest Amount" DT="3" HIDDEN="F" TYPE="F">FA_OVD_INT_AMT</FA_OVD_INT_AMT>
+        <FA_PMT_TYPE ALIAS="T0" DBFUNC="" DESC="Payment Type" DT="1" HIDDEN="F" TYPE="F">FA_PMT_TYPE</FA_PMT_TYPE>
+        <FA_PMT_DT ALIAS="T0" DBFUNC="" DESC="Payment Date" DT="91" HIDDEN="F" TYPE="F">FA_PMT_DT</FA_PMT_DT>
+        <FA_PMT_AMT ALIAS="T0" DBFUNC="" DESC="Payment Amount" DT="3" HIDDEN="F" TYPE="F">FA_PMT_AMT</FA_PMT_AMT>
+        <FA_PAID_INT_AMT ALIAS="T0" DBFUNC="" DESC="Paid Interest Amount" DT="3" HIDDEN="F" TYPE="F">FA_PAID_INT_AMT</FA_PAID_INT_AMT>
+        <FA_BK_CHG_AMT ALIAS="T0" DBFUNC="" DESC="Bank Charge Amount" DT="3" HIDDEN="F" TYPE="F">FA_BK_CHG_AMT</FA_BK_CHG_AMT>
+        <FA_PAID_PRIN_AMT ALIAS="T0" DBFUNC="" DESC="Paid Principal Amount" DT="3" HIDDEN="F" TYPE="F">FA_PAID_PRIN_AMT</FA_PAID_PRIN_AMT>
+        <FA_DEDUCT_AMT ALIAS="T0" DBFUNC="" DESC="Deduct Amt" DT="3" HIDDEN="F" TYPE="F">FA_DEDUCT_AMT</FA_DEDUCT_AMT>
+        <FA_INV_REFUND_INT ALIAS="T0" DBFUNC="" DESC="SYSFLD:FA_INV_REFUND_INT" DT="3" HIDDEN="F" TYPE="F">FA_INV_REFUND_INT</FA_INV_REFUND_INT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_DOC_REF = '</SQL>
+            <SQL TYPE="FLD">FA_DOC_REF</SQL>
+            <SQL TYPE="SQL">' AND FA_DOC_NO='</SQL>
+            <SQL TYPE="FLD">FA_DOC_NO</SQL>
+            <SQL TYPE="SQL">' AND C_FUNC_SHORT_NAME&lt;&gt;'InEDI11or13'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

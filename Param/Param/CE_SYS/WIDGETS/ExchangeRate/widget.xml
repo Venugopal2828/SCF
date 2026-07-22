@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="ExchangeRate"
+			allowInstanceContent="true"
+			supportedModes="view edit config help"
+			supportedWindowStates="minimize"
+			iScope="com.cs.widgets.ExchangeRate" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.ExcRateJs" src="ExchangeRate/excrate.js"/>
+	<iw:resource globalid="com.cs.resources.ExcRateTabsCss" src="ExchangeRate/excratetabs.css"/>
+	<iw:resource globalid="com.cs.resources.ExcRateCss" src="ExchangeRate/excrate.css"/>
+	<iw:resource globalid="com.cs.resources.ExcRateIconCss" src="ExchangeRate/ccyicons.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="baseccy" alias="baseccy" lang=""
+				 readOnly="false" value="USD">
+		</iw:item>
+		<iw:item id="rembaseccy" alias="rembaseccy" lang=""
+				 readOnly="false" value="false">
+		</iw:item>
+		<iw:item id="ccylist" alias="ccylist" lang=""
+				 readOnly="false" value="USD,AED,EUR,CNY,HKD">
+		</iw:item>
+		<iw:item id="maxcount" alias="maxcount" lang=""
+				 readOnly="true" value="10">
+		</iw:item>
+		<iw:item id="fmtdecimal" alias="fmtdecimal" lang=""
+				 readOnly="true" value="4">
+		</iw:item>
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Exchange Rate">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="view.labels">
+		<iw:item id="norec" alias="" lang=""
+				readOnly="true" value="No records">
+		</iw:item>
+		<iw:item id="description" alias="" lang=""
+				readOnly="true" value="The rates are indicative according to the Base currency">
+		</iw:item>
+		<iw:item id="ccyfrom" alias="" lang=""
+				readOnly="true" value="Currency From:">
+		</iw:item>
+		<iw:item id="ccyto" alias="" lang=""
+				readOnly="true" value="Currency To:">
+		</iw:item>
+		<iw:item id="convertfrom" alias="" lang=""
+				readOnly="true" value="Currency I Have">
+		</iw:item>
+		<iw:item id="convertto" alias="" lang=""
+				readOnly="true" value="Currency I Want">
+		</iw:item>
+		<iw:item id="defamount" alias="" lang=""
+				readOnly="true" value="100">
+		</iw:item>
+		<iw:item id="btn.clear" alias="" lang=""
+				readOnly="true" value="Clear">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="edit.labels">
+		<iw:item id="norec" alias="" lang=""
+				readOnly="true" value="No records">
+		</iw:item>
+		<iw:item id="baseccy" alias="" lang=""
+				readOnly="true" value="Set base currency:">
+		</iw:item>
+		<iw:item id="rem.baseccy" alias="" lang=""
+				readOnly="true" value="Remember last base currency">
+		</iw:item>
+		<iw:item id="addccy" alias="" lang=""
+				readOnly="true" value="Add currency:">
+		</iw:item>
+		<iw:item id="dispccylist" alias="" lang=""
+				readOnly="true" value="Currency list:">
+		</iw:item>
+		<iw:item id="btn.save" alias="" lang=""
+				readOnly="true" value="Save">
+		</iw:item>
+		<iw:item id="btn.cancel" alias="" lang=""
+				readOnly="true" value="Cancel">
+		</iw:item>
+	</iw:itemSet>	
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-exchangerate">
+			<div class="view-tabs">
+				<ul>
+					<li>
+						<a href="#tab-ccy-list" class="ul-li-a-tab-ccy-list" >Exchange Rate</a>
+					</li>
+					<li>
+						<a href="#tab-ccy-convert" class="ul-li-a-tab-ccy-convert" >Currency Calculator</a>
+					</li>
+				</ul>
+				<div id="tab-ccy-list" class="tab-ccy-list">
+					<div class="title-bar">
+						<div class="baseccy-icon"></div>
+						<div class="baseccy-title"></div>
+					</div>
+					<div class="baseccy-desc"></div>
+					<div class="ccy-list" >
+					</div>
+				</div>
+				<div id="tab-ccy-convert" class="tab-ccy-convert">
+					<div class="content-table">
+						<div class="table-row"><div class="convert-label label-from"></div></div>
+						<div class="table-row exchange-rate-convert-from">
+							<div class="table-cell">
+								<div class="ccy-from"></div>
+							</div>
+							<div class="table-cell">
+								<input type="text" class="input-amount input-from"/>
+							</div>
+						</div>
+						<div class="table-row"><div class="convert-label label-to"></div></div>
+						<div class="table-row exchange-rate-convert-to">
+							<div class="table-cell">
+								<div class="ccy-to"></div>
+							</div>
+							<div class="table-cell">
+								<input type="text" class="input-amount input-to"/>
+							</div>
+						</div>
+					</div>
+					<div class="convert-button-bar">
+						<a href="javascript:;" class="clear-button">Clear</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="edit"><![CDATA[
+		<div class="com-cs-widget-exchangerate">
+			<div class="edit-tabs">
+				<div class="content-table">
+					<div class="table-row">
+						<div class="table-cell eidt-label label-baseccy"></div>
+						<div class="table-cell ccylist-baseccy"></div>
+					</div>
+					<div class="table-row">
+						<div class="table-cell">
+							<div class="checkbox-save-baseccy"></div>
+						</div>
+						<div class="table-cell eidt-label label-save-baseccy"></div>
+					</div>
+					<div class="table-row">
+						<div class="table-cell eidt-label label-addccy"></div>
+						<div class="table-cell ccylist-addccy"></div>
+					</div>
+				</div>
+				<div>
+					<div class="edit-label-block">
+						<div class="eidt-label label-ccy-list"></div>
+					</div>
+					<div class="ccy-list"></div>
+				</div>
+			</div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-RecentFunc">
+			Exchange Rate Widget of CE.
+		</div>
+	]]></iw:content>
+</iw:iwidget>

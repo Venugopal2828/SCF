@@ -1,0 +1,362 @@
+{
+  "Document": {
+    "NtfctnToRcvStsRpt": {
+      "GrpHdr": {
+        "MsgId": "35x",
+        "CreDtTm": "ISODateTime",
+        "MsgRcpt": {
+          "Pty": "PartyIdentification43",
+          "Agt": "BranchAndFinancialInstitutionIdentification5",
+          "@occur": "{0,1}"
+        }
+      },
+      "OrgnlNtfctnAndSts": {
+        "OrgnlMsgId": "35x",
+        "OrgnlCreDtTm": "ISODateTime{0,1}",
+        "OrgnlNtfctnId": "35x",
+        "NtfctnSts": "75x(RCBD|RCVD|NRCD){0,1}",
+        "AddtlStsInf": "140x{0,1}",
+        "OrgnlNtfctnRef": {
+          "Acct": "CashAccount24{0,1}",
+          "AcctOwnr": {
+            "Pty": "PartyIdentification43",
+            "Agt": "BranchAndFinancialInstitutionIdentification5",
+            "@occur": "{0,1}"
+          },
+          "AcctSvcr": "BranchAndFinancialInstitutionIdentification5{0,1}",
+          "RltdAcct": "CashAccount24{0,1}",
+          "TtlAmt": {
+            "Ccy": "_val_Ccy",
+            "@occur": "{0,1}"
+          },
+          "XpctdValDt": "ISODate{0,1}",
+          "Dbtr": {
+            "Pty": "PartyIdentification43",
+            "Agt": "BranchAndFinancialInstitutionIdentification5",
+            "@occur": "{0,1}"
+          },
+          "DbtrAgt": "BranchAndFinancialInstitutionIdentification5{0,1}",
+          "IntrmyAgt": "BranchAndFinancialInstitutionIdentification5{0,1}",
+          "OrgnlItmAndSts": {
+            "OrgnlItmId": "35x",
+            "OrgnlEndToEndId": "35x{0,1}",
+            "Amt": {
+              "Ccy": "_val_Ccy",
+              "@occur": "{0,1}"
+            },
+            "XpctdValDt": "ISODate{0,1}",
+            "ItmSts": "75x(RCBD|RCVD|NRCD)",
+            "AddtlStsInf": "105x{0,1}",
+            "OrgnlItmRef": {
+              "Acct": "CashAccount24{0,1}",
+              "AcctOwnr": {
+                "Pty": "PartyIdentification43",
+                "Agt": "BranchAndFinancialInstitutionIdentification5",
+                "@occur": "{0,1}"
+              },
+              "AcctSvcr": "BranchAndFinancialInstitutionIdentification5{0,1}",
+              "RltdAcct": "CashAccount24{0,1}",
+              "Dbtr": {
+                "Pty": "PartyIdentification43",
+                "Agt": "BranchAndFinancialInstitutionIdentification5",
+                "@occur": "{0,1}"
+              },
+              "DbtrAgt": "BranchAndFinancialInstitutionIdentification5{0,1}",
+              "IntrmyAgt": "BranchAndFinancialInstitutionIdentification5{0,1}",
+              "Purp": {
+                "Cd": "4x",
+                "Prtry": "35x",
+                "@occur": "{0,1}"
+              },
+              "RltdRmtInf": {
+                "RmtId": "35x{0,1}",
+                "RmtLctnDtls": {
+                  "Mtd": "75x(FAXI|EDIC|URID|EMAL|POST|SMSM)",
+                  "ElctrncAdr": "2048x{0,1}",
+                  "PstlAdr": {
+                    "Nm": "140x",
+                    "Adr": "PostalAddress6",
+                    "@occur": "{0,1}"
+                  },
+                  "@occur": "{0,999}"
+                },
+                "@occur": "{0,1}"
+              },
+              "RmtInf": {
+                "Ustrd": "140x{0,999}",
+                "Strd": {
+                  "RfrdDocInf": {
+                    "Tp": {
+                      "CdOrPrtry": {
+                        "Cd": "75x(MSIN|CNFA|DNFA|CINV|CREN|DEBN|HIRI|SBIN|CMCN|SOAC|DISP|BOLD|VCHR|AROI|TSUT|PUOR)",
+                        "Prtry": "35x"
+                      },
+                      "Issr": "35x{0,1}",
+                      "@occur": "{0,1}"
+                    },
+                    "Nb": "35x{0,1}",
+                    "RltdDt": "ISODate{0,1}",
+                    "LineDtls": {
+                      "Id": {
+                        "Tp": {
+                          "CdOrPrtry": {
+                            "Cd": "4x",
+                            "Prtry": "35x"
+                          },
+                          "Issr": "35x{0,1}",
+                          "@occur": "{0,1}"
+                        },
+                        "Nb": "35x{0,1}",
+                        "RltdDt": "ISODate{0,1}",
+                        "@occur": "{1,999}"
+                      },
+                      "Desc": "2048x{0,1}",
+                      "Amt": {
+                        "DuePyblAmt": {
+                          "Ccy": "_val_Ccy",
+                          "@occur": "{0,1}"
+                        },
+                        "DscntApldAmt": {
+                          "Tp": {
+                            "Cd": "4x",
+                            "Prtry": "35x",
+                            "@occur": "{0,1}"
+                          },
+                          "Amt": {
+                            "Ccy": "_val_Ccy",
+                            "@occur": "{0,1}"
+                          },
+                          "@occur": "{0,999}"
+                        },
+                        "CdtNoteAmt": {
+                          "Ccy": "_val_Ccy",
+                          "@occur": "{0,1}"
+                        },
+                        "TaxAmt": {
+                          "Tp": {
+                            "Cd": "4x",
+                            "Prtry": "35x",
+                            "@occur": "{0,1}"
+                          },
+                          "Amt": {
+                            "Ccy": "_val_Ccy",
+                            "@occur": "{0,1}"
+                          },
+                          "@occur": "{0,999}"
+                        },
+                        "AdjstmntAmtAndRsn": {
+                          "Amt": {
+                            "Ccy": "_val_Ccy",
+                            "@occur": "{0,1}"
+                          },
+                          "CdtDbtInd": "75x(CRDT|DBIT){0,1}",
+                          "Rsn": "4x{0,1}",
+                          "AddtlInf": "140x{0,1}",
+                          "@occur": "{0,999}"
+                        },
+                        "RmtdAmt": {
+                          "Ccy": "_val_Ccy",
+                          "@occur": "{0,1}"
+                        },
+                        "@occur": "{0,1}"
+                      },
+                      "@occur": "{0,999}"
+                    },
+                    "@occur": "{0,999}"
+                  },
+                  "RfrdDocAmt": {
+                    "DuePyblAmt": {
+                      "Ccy": "_val_Ccy",
+                      "@occur": "{0,1}"
+                    },
+                    "DscntApldAmt": {
+                      "Tp": {
+                        "Cd": "4x",
+                        "Prtry": "35x",
+                        "@occur": "{0,1}"
+                      },
+                      "Amt": {
+                        "Ccy": "_val_Ccy",
+                        "@occur": "{0,1}"
+                      },
+                      "@occur": "{0,999}"
+                    },
+                    "CdtNoteAmt": {
+                      "Ccy": "_val_Ccy",
+                      "@occur": "{0,1}"
+                    },
+                    "TaxAmt": {
+                      "Tp": {
+                        "Cd": "4x",
+                        "Prtry": "35x",
+                        "@occur": "{0,1}"
+                      },
+                      "Amt": {
+                        "Ccy": "_val_Ccy",
+                        "@occur": "{0,1}"
+                      },
+                      "@occur": "{0,999}"
+                    },
+                    "AdjstmntAmtAndRsn": {
+                      "Amt": {
+                        "Ccy": "_val_Ccy",
+                        "@occur": "{0,1}"
+                      },
+                      "CdtDbtInd": "75x(CRDT|DBIT){0,1}",
+                      "Rsn": "4x{0,1}",
+                      "AddtlInf": "140x{0,1}",
+                      "@occur": "{0,999}"
+                    },
+                    "RmtdAmt": {
+                      "Ccy": "_val_Ccy",
+                      "@occur": "{0,1}"
+                    },
+                    "@occur": "{0,1}"
+                  },
+                  "CdtrRefInf": {
+                    "Tp": {
+                      "CdOrPrtry": {
+                        "Cd": "75x(RADM|RPIN|FXDR|DISP|PUOR|SCOR)",
+                        "Prtry": "35x"
+                      },
+                      "Issr": "35x{0,1}",
+                      "@occur": "{0,1}"
+                    },
+                    "Ref": "35x{0,1}",
+                    "@occur": "{0,1}"
+                  },
+                  "Invcr": "PartyIdentification43{0,1}",
+                  "Invcee": "PartyIdentification43{0,1}",
+                  "TaxRmt": {
+                    "Cdtr": {
+                      "TaxId": "35x{0,1}",
+                      "RegnId": "35x{0,1}",
+                      "TaxTp": "35x{0,1}",
+                      "@occur": "{0,1}"
+                    },
+                    "Dbtr": {
+                      "TaxId": "35x{0,1}",
+                      "RegnId": "35x{0,1}",
+                      "TaxTp": "35x{0,1}",
+                      "Authstn": {
+                        "Titl": "35x{0,1}",
+                        "Nm": "140x{0,1}",
+                        "@occur": "{0,1}"
+                      },
+                      "@occur": "{0,1}"
+                    },
+                    "UltmtDbtr": {
+                      "TaxId": "35x{0,1}",
+                      "RegnId": "35x{0,1}",
+                      "TaxTp": "35x{0,1}",
+                      "Authstn": {
+                        "Titl": "35x{0,1}",
+                        "Nm": "140x{0,1}",
+                        "@occur": "{0,1}"
+                      },
+                      "@occur": "{0,1}"
+                    },
+                    "AdmstnZone": "35x{0,1}",
+                    "RefNb": "140x{0,1}",
+                    "Mtd": "35x{0,1}",
+                    "TtlTaxblBaseAmt": {
+                      "Ccy": "_val_Ccy",
+                      "@occur": "{0,1}"
+                    },
+                    "TtlTaxAmt": {
+                      "Ccy": "_val_Ccy",
+                      "@occur": "{0,1}"
+                    },
+                    "Dt": "ISODate{0,1}",
+                    "SeqNb": "18d{0,1}",
+                    "Rcrd": {
+                      "Tp": "35x{0,1}",
+                      "Ctgy": "35x{0,1}",
+                      "CtgyDtls": "35x{0,1}",
+                      "DbtrSts": "35x{0,1}",
+                      "CertId": "35x{0,1}",
+                      "FrmsCd": "35x{0,1}",
+                      "Prd": {
+                        "Yr": "ISODate{0,1}",
+                        "Tp": "75x(MM01|MM02|MM03|MM04|MM05|MM06|MM07|MM08|MM09|MM10|MM11|MM12|QTR1|QTR2|QTR3|QTR4|HLF1|HLF2){0,1}",
+                        "FrToDt": {
+                          "FrDt": "ISODate",
+                          "ToDt": "ISODate",
+                          "@occur": "{0,1}"
+                        },
+                        "@occur": "{0,1}"
+                      },
+                      "TaxAmt": {
+                        "Rate": "11d{0,1}",
+                        "TaxblBaseAmt": {
+                          "Ccy": "_val_Ccy",
+                          "@occur": "{0,1}"
+                        },
+                        "TtlAmt": {
+                          "Ccy": "_val_Ccy",
+                          "@occur": "{0,1}"
+                        },
+                        "Dtls": {
+                          "Prd": {
+                            "Yr": "ISODate{0,1}",
+                            "Tp": "75x(MM01|MM02|MM03|MM04|MM05|MM06|MM07|MM08|MM09|MM10|MM11|MM12|QTR1|QTR2|QTR3|QTR4|HLF1|HLF2){0,1}",
+                            "FrToDt": {
+                              "FrDt": "ISODate",
+                              "ToDt": "ISODate",
+                              "@occur": "{0,1}"
+                            },
+                            "@occur": "{0,1}"
+                          },
+                          "Amt": {
+                            "Ccy": "_val_Ccy",
+                            "@occur": "{0,1}"
+                          },
+                          "@occur": "{0,999}"
+                        },
+                        "@occur": "{0,1}"
+                      },
+                      "AddtlInf": "140x{0,1}",
+                      "@occur": "{0,999}"
+                    },
+                    "@occur": "{0,1}"
+                  },
+                  "GrnshmtRmt": {
+                    "Tp": {
+                      "CdOrPrtry": {
+                        "Cd": "4x",
+                        "Prtry": "35x"
+                      },
+                      "Issr": "35x{0,1}"
+                    },
+                    "Grnshee": "PartyIdentification43{0,1}",
+                    "GrnshmtAdmstr": "PartyIdentification43{0,1}",
+                    "RefNb": "140x{0,1}",
+                    "Dt": "ISODate{0,1}",
+                    "RmtdAmt": {
+                      "Ccy": "_val_Ccy",
+                      "@occur": "{0,1}"
+                    },
+                    "FmlyMdclInsrncInd": "x{0,1}",
+                    "MplyeeTermntnInd": "x{0,1}",
+                    "@occur": "{0,1}"
+                  },
+                  "AddtlRmtInf": "140x{0,3}",
+                  "@occur": "{0,999}"
+                },
+                "@occur": "{0,1}"
+              },
+              "@occur": "{0,1}"
+            },
+            "@occur": "{1,999}"
+          },
+          "@occur": "{0,999}"
+        }
+      },
+      "SplmtryData": {
+        "PlcAndNm": "350x{0,1}",
+        "Envlp": {},
+        "@occur": "{0,999}"
+      }
+    }
+  }
+}

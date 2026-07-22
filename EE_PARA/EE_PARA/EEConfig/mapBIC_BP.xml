@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root fileType="BP" UNIT_CODE="019901">
+	<BANK_MASTER>
+		<field fv-type="F" Column="BIC8+BRANCH BIC">SWIFT_ADD_HO</field>
+		<field fv-type="F" method ="SUBSTR" db-column-name="BKCNTY">
+			<mapping-column fv-type="F" start="4" end="6">BIC8</mapping-column>
+		</field>  
+		<field fv-type="F" Column="BRANCH BIC">BRANCH_CODE</field>
+		<field fv-type="F" Column="BIC">BKID</field>
+		<field fv-type="F" Column="RECORD STATUS">REC_STAT</field>
+		<field fv-type="F" Column="OPERATIONALLY ACTIVE RECORD">OPER_ACT_REC</field>
+		<field fv-type="F" Column="SUBTYPE INDICATOR">SUB_IND</field>
+		<field fv-type="F" Column="SWIFT FIN">SWIFT_FIN</field>
+		<field fv-type="F" Column="SWIFT FA">SWIFT_FA</field>
+		<field fv-type="F" Column="SWIFT IA">SWIFT_IA</field>
+		<field fv-type="F" Column="LEGAL NAME">LEGAL_NAME</field>
+		<field fv-type="F" method ="SUBSTR" db-column-name="BK_NAME">
+			<mapping-column fv-type="F" start="0" end="35">INSTITUTION NAME</mapping-column>
+		</field>  
+		<field fv-type="F" Column="INSTITUTION NAME">MAIL_BK_NAME</field>
+		<field fv-type="F" Column="INSTITUTION TYPE">INST_TYPE</field>
+		<field fv-type="F" Column="ENTITY TYPE">ENTITY_TYPE</field>
+		<field fv-type="F" Column="RE STREET ADDRESS 1">BK_ADD_1</field>
+		<field fv-type="F" Column="RE STREET ADDRESS 2">BK_ADD_2</field>
+		<field fv-type="F" Column="RE STREET ADDRESS 3">BK_ADD_3</field>
+		<field fv-type="F" Column="RE STREET ADDRESS 4">BK_ADD_4</field>
+		<field fv-type="F" Column="RE CITY">RE_CITY</field>
+		<field fv-type="F" Column="RE CPS">RE_CPS_CODE</field>
+		<field fv-type="F" Column="RE ZIP CODE">RE_ZIP_CODE</field>
+		<field fv-type="F" Column="RE POB NUMBER">RE_POB_NUMB</field>
+		<field fv-type="F" Column="OP STREET ADDRESS 1">OP_ADD_1</field>
+		<field fv-type="F" Column="OP STREET ADDRESS 2">OP_ADD_2</field>
+		<field fv-type="F" Column="OP STREET ADDRESS 3">OP_ADD_3</field>
+		<field fv-type="F" Column="OP STREET ADDRESS 4">OP_ADD_4</field>
+		<field fv-type="F" Column="OP CITY">OP_CITY</field>
+		<field fv-type="F" Column="OP CPS">OP_CPS_CODE</field>
+		<field fv-type="F" Column="OP ZIP CODE">OP_ZIP_CODE</field>
+		<field fv-type="F" Column="OP POB NUMBER">OP_POB_NUMB</field>
+		<field fv-type="F" Column="BR STREET ADDRESS 1+CRLF+BR STREET ADDRESS 2+CRLF+BR STREET ADDRESS 3">BK_ADD</field> 
+		<field fv-type="F" Column="BRANCH BIC"  method ="CONDITION" db-column-name="MAIL_BK_ADD">
+			<mapping-column fv-type="F" equal="XXX">OP STREET ADDRESS 1+CRLF+OP STREET ADDRESS 2+CRLF+OP STREET ADDRESS 3+CRLF+OP STREET ADDRESS 4</mapping-column>
+			<mapping-column fv-type="F" equal="OTHERS">BR STREET ADDRESS 1+CRLF+BR STREET ADDRESS 2+CRLF+BR STREET ADDRESS 3+CRLF+BR STREET ADDRESS 4</mapping-column>
+		</field> 
+		<field fv-type="F" Column="BR CITY">CITY</field>
+		<field fv-type="F" Column="BR CPS">BR_CPS_CODE</field>
+		<field fv-type="F" Column="BR ZIP CODE">BR_ZIP_CODE</field>
+		<field fv-type="F" Column="BR POB NUMBER">BR_POB_NUMB</field>
+		<field fv-type="F" Column="BRANCH INFORMATION">EMAIL_ADD</field>
+		<field fv-type="F" Column="COUNTRY NAME">CNTY_NAME</field>
+		<field fv-type="F" Column="ISO COUNTRY CODE">CNTY_CODE</field>
+		<field fv-type="F" Column="LOCATION CODE">LOCATION_CODE</field>
+		<field fv-type="F" Column="FIN SERVICE CODES">FIN_SVR_CODES</field>
+		<field fv-type="F" Column="RECORD KEY BDP">REC_KEY_BDP</field>
+		<field fv-type="F" Column="FIELD A">BIC_FLD_A</field>
+		<field fv-type="F" Column="FIELD B">BIC_FLD_B</field>
+		<field fv-type="F" Column="FIELD C">BIC_FLD_C</field>
+		<field fv-type="F" Column="FIELD D">BIC_FLD_D</field>
+		<field fv-type="F" Column="FIELD E">BIC_FLD_E</field>
+		<field fv-type="F" Column="FIELD F">BIC_FLD_F</field>
+		<field fv-type="V" Column="019901">C_CP_UNIT_CODE</field> 
+		<field fv-type="V" Column="VTB">C_BK_GROUP_ID</field> 
+	</BANK_MASTER>
+	<BANK_LEDGER>
+		<eventType eventType="BIC ISSUED">
+			<field fv-type="V" Column="F05030700431">C_FUNC_ID</field>
+			<field fv-type="V" Column="AddBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="BIC CONNECTIVITY CHANGED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="BIC EXPIRED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="BIC SUSPENDED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="BIC LEGAL NAME CHANGED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="BIC INSTITUTION NAME CHANGED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="BIC ADDRESS CHANGED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="FIN SERVICE CODE CHANGED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="BIC MERGED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+		<eventType eventType="BIC DEACTIVATED">
+			<field fv-type="V" Column="F05030700434">C_FUNC_ID</field>
+			<field fv-type="V" Column="EditBank">C_FUNC_SHORT_NAME</field>
+		</eventType>
+	</BANK_LEDGER>
+</root>

@@ -1,0 +1,137 @@
+<SCF76>
+	<MsgInfo>
+		<SenderCode />
+		<ReceiverCode />
+		<CreatedBy />
+		<SequenceNr />
+		<MsgType></MsgType> <!--default value -->
+		<!--Here using for Message Type exchanging between CE and EE // -->
+		<FileIndex />
+		<SubFileIndex />
+		<DateTime />
+		<Status />
+		<Error />
+	</MsgInfo>
+	<EF>
+		<FactorCode />
+		<FactorName />
+	</EF>
+	<IF>
+		<FactorCode />
+		<FactorName />
+	</IF>
+	<FromTurnaround />
+	<OriginalRequestNr />
+	<ReplyNr />
+	<ReplyDate />
+	<Customer>
+		<!--> Additional Fields Begin -->
+		<CustomerType></CustomerType>   
+		<CustomeRole /> <!-- <FA_ANCHOR_ROLE> -->
+		<BusiType>FA_BUSI_TYPE</BusiType> <!-- <FA_BUSI_TYPE> -->
+		<!--> Additional Fields End -->
+		<CustomerCompanyRegNr />
+		<CustomerNr>FA_BUYER_ID</CustomerNr>  <!-- <FA_ANCHOR_ID> -->
+		<CustomerName>FA_BUYER_NM</CustomerName> <!-- <FA_ANCHOR_NM> -->
+		<CustomerEmail></CustomerEmail>
+		<ExportFactorOwnCustomerNumber />
+	</Customer>
+	<Counterparty>
+		<!--> Additional Fields Begin -->
+		<SBRMain>
+			<SBRStatus></SBRStatus>
+			<!-- 1, Success 2, Fail / -->
+			<FailReason></FailReason>
+			<!-- Reason / -->
+			<SBRRef>C_MAIN_REF</SBRRef><!-- <C_MAIN_REF></C_MAIN_REF> -->
+			<AgmNr />
+			<OurCustInd></OurCustInd>  <!--FA_CUST_FLAG -->
+			<CounterpartyRole /> <!--<FA_COUNTER_ROLE></FA_COUNTER_ROLE> -->
+			<CounterpartyType /> <!--FA_COUNTER_TYPE -->
+			<!--> Additional Fields end -->
+			<CounterpartyCompanyRegNr /> <!--<FA_COUNTER_REG_NO> -->
+			<CounterpartyNr>FA_SEL_ID</CounterpartyNr><!-- <FA_COUNTER_ID></FA_COUNTER_ID> -->
+			<CounterpartyName>FA_SEL_NM</CounterpartyName> <!-- <FA_COUNTER_NM></FA_COUNTER_NM> -->
+			<ResponseAgency />
+			<ExportFactorOwnCounterpartyNr />
+			<NameCont />
+			<Street />
+			<City />
+			<State />
+			<Postcode />
+			<Country />
+			<ContactName />
+			<Telephone />
+			<Fax />
+			<Email />
+			<CounterpartyNatureOfBusiness />
+			<Currency>FA_LMT_CCY</Currency> <!--<FA_LMT_CCY></FA_LMT_CCY> -->
+			<SBRLimitAmt>FA_LMT_AMT</SBRLimitAmt>  <!--<FA_LMT_AMT> -->
+			<MsgFunction />
+			<ServiceOffered />
+			<EFServiceCharge />
+			<EFServiceChargeCurrency />
+			<EFDiscountingChargeToTheSupplierPerc />
+			<EFCommissionToTheSupplierPerc />
+			<FlatRate />
+			<BaseRate />
+			<InvAvalFunding />
+			<TtlInvLoanAmt />
+			<TtlInvBal />
+			<POAvalFunding />
+			<TtlPOLoanAmt />
+			<TtlPOBal />
+		</SBRMain>
+		<!-- Here To Add SBR Limit and Price and AutoProcess Information Begin 
+			with SBR Detail// -->
+		<SBRDetail>
+			<SBRControl>
+				<AckFlg /> <!--FA_ACK_FLG -->
+				<AutoFin /> <!--FA_AUTO_FIN -->
+				<AutoDebit /> <!--FA_AUTO_DEBIT -->
+				<AnchorAcct /> <!--FA_SEL_AC_NO -->
+				<CounterPartyAcct /> <!--FA_BUYER_AC_NO -->
+				<NeedbuyerAprv /> <!--FA_REQ_BUYER_APR_FLG -->
+				<FinCutoffDays /> <!--FA_CUT_OFF_DAYS -->
+				<MinFinAmt /> <!--FA_MIN_FIN_AMT -->
+				<MaxFinAmt /> <!--FA_MAX_FIN_AMT -->
+				<GraceDays />
+				<InvFinMode />
+				<PoolMaxAmt />
+				<PoolMinAmt />
+				<PoolMaxPeriod />
+				<PoolMinPeriod />
+			</SBRControl>
+			<SBRPrice>
+				<CommRate /> <!--FA_EF_COMM_RT -->
+				<HandlChg /> <!--FA_EF_HAN_CHG_AMT -->
+				<IntRate /> <!--XBOR_RT -->
+				<IntRateSpread /> <!--FA_IRT_SPREAD -->
+				<PenalRateSpread /> <!--FA_OVD_IRT_SPREAD -->
+				<MaxLoanPerc /> <!--FA_MAX_LOAN_PERC -->
+				<POMaxLoanPerc /> <!--PO_MAX_LOAN_PERC -->
+				<RebateRate /> <!--FA_REBATE_RATE -->
+				<RebateAcct /> <!--FA_REBATE_ACCOUNT -->
+				<IntRateType />
+				<ChgPaidBy /> <!--CHG_PAID_BY -->
+				<ChgFreqCD />
+				<FinInfo />
+			</SBRPrice>
+		</SBRDetail>
+		<!-- Here To Add SBR Limit and Price and AutoProcess Information End// -->
+	</Counterparty>
+	<DocumentsObtained>
+		<RegistrationForm />
+		<ListOfUltimateBeneficiaryOwners />
+		<ListOfKeyManagers />
+		<ListOfBoardMembers />
+		<ListOfSignatories />
+		<KYCQuestionnaire />
+		<AMLQuestionnaire />
+		<AnyRelevantAdverseInformation />
+		<ControlForPossibleActivities />
+		<SeeSeparateMail />
+		<Others />
+	</DocumentsObtained>
+	<MsgText></MsgText>
+</SCF76>

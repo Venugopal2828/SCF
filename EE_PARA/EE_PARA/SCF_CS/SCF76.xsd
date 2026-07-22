@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="SCF76" type="SCF76Type"/>
+	<xs:complexType name="SCF76Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="EF" type="FType"/>
+			<xs:element name="IF" type="FType"/>
+			<xs:element name="FromTurnaround" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="OriginalRequestNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ReplyNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ReplyDate" type="xs:date"/>
+			<xs:element name="Customer" type="CustType"/>
+			<xs:element name="Counterparty" type="CounterpartyType" maxOccurs="999"/>
+			<xs:element name="DocumentsObtained" type="DocumentsObtainedType" minOccurs="0"/>
+			<xs:element name="MsgText" type="AMax1400TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="ReceiverCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10TypeC" minOccurs="0"/>
+			<xs:element name="MsgType" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="FileIndex" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SubFileIndex" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="DateTime" type="xs:dateTime"/>
+			<xs:element name="Status" type="NMax2TypeC" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FType">
+		<xs:sequence>
+			<xs:element name="FactorCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="FactorName" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustType">
+		<xs:sequence>
+			<xs:element name="CustomerType" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="CustomeRole" type="ROLEType"/>
+			<xs:element name="BusiType" type="BIType"/>
+			<xs:element name="CustomerCompanyRegNr" type="AMax35Type"/>
+			<xs:element name="CustomerNr" type="AMax35Type"/>
+			<xs:element name="CustomerName" type="AMax35Type"/>
+			<xs:element name="CustomerEmail" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="CustomerCcy" type="A3TypeC"/>
+			<xs:element name="ExportFactorOwnCustomerNumber" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CounterpartyType">
+		<xs:sequence>
+			<xs:element name="SBRMain" type="SBRMainType"/>
+			<xs:element name="SBRDetail" type="SBRDetailType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SBRMainType">
+		<xs:sequence>
+			<xs:element name="SBRStatus" type="AMax35TypeC"/>
+			<xs:element name="FailReason" type="AMax1400TypeC"/>
+			<xs:element name="SBRRef" type="AMax35TypeC"/>
+			<xs:element name="AgmNr" type="AMax35TypeC"/>
+			<xs:element name="ContractDocNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="AgmValDate" type="DateC" minOccurs="0"/>
+			<xs:element name="AgmDueDate" type="DateC" minOccurs="0"/>
+			<xs:element name="OurCustInd" type="AMax35TypeC"/>
+			<xs:element name="CounterpartyRole" type="AMax35TypeC"/>
+			<xs:element name="CounterpartyType" type="AMax35TypeC"/>
+			<xs:element name="CounterpartyCompanyRegNr" type="AMax35TypeC"/>
+			<xs:element name="CounterpartyNr" type="AMax35TypeC"/>
+			<xs:element name="CounterpartyName" type="AMax35TypeC"/>
+			<xs:element name="ResponseAgency" type="AMax35TypeC"/>
+			<xs:element name="ExportFactorOwnCounterpartyNr" type="AMax35TypeC"/>
+			<xs:element name="NameCont" type="AMax35TypeC"/>
+			<xs:element name="Street" type="AMax35TypeC"/>
+			<xs:element name="City" type="AMax35TypeC"/>
+			<xs:element name="State" type="AMax35TypeC"/>
+			<xs:element name="Postcode" type="AMax35TypeC"/>
+			<xs:element name="Country" type="A2TypeC"/>
+			<xs:element name="ContactName" type="AMax35TypeC"/>
+			<xs:element name="Telephone" type="AMax35TypeC"/>
+			<xs:element name="Fax" type="AMax35Type"/>
+			<xs:element name="Email" type="EmailType"/>
+			<xs:element name="CounterpartyNatureOfBusiness" type="AMax35Type"/>
+			<xs:element name="Currency" type="A3TypeC"/>
+			<xs:element name="SBRLimitAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="MsgFunction" type="AMax35Type"/>
+			<xs:element name="ServiceOffered" type="AMax35Type"/>
+			<xs:element name="EFServiceCharge" type="AMax35Type"/>
+			<xs:element name="EFServiceChargeCurrency" type="A3TypeC"/>
+			<xs:element name="EFDiscountingChargeToTheSupplierPerc" type="AMax35Type"/>
+			<xs:element name="EFCommissionToTheSupplierPerc" type="AMax35Type"/>
+			<xs:element name="FlatRate" type="AMax35Type"/>
+			<xs:element name="BaseRate" type="AMax35Type"/>
+			<xs:element name="InvAvalFunding" type="NMax14.2TypeC"/>
+			<xs:element name="TtlInvLoanAmt" type="NMax14.2TypeC"/>
+			<xs:element name="TtlInvBal" type="NMax14.2TypeC"/>
+			<xs:element name="POAvalFunding" type="NMax14.2TypeC"/>
+			<xs:element name="TtlPOLoanAmt" type="NMax14.2TypeC"/>
+			<xs:element name="TtlPOBal" type="NMax14.2TypeC"/>
+			<xs:element name="ValueReleaseFlg" type="N12TypeC" minOccurs="0"/>
+			<xs:element name="MaxDecPerc" type="NMax3TypeC" minOccurs="0"/>
+			<xs:element name="MaxIncPerc" type="NMax3TypeC" minOccurs="0"/>
+			<xs:element name="PmtTerms" type="NMax3TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SBRDetailType">
+		<xs:sequence>
+			<xs:element name="SBRControl" type="SBRControlType"/>
+			<xs:element name="SBRPrice" type="SBRPriceType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SBRControlType">
+		<xs:sequence>
+			<xs:element name="AckFlg" type="YNTypeC"/>
+			<xs:element name="AutoFin" type="YNTypeC"/>
+			<xs:element name="AutoDebit" type="YNTypeC"/>
+			<xs:element name="AnchorAcct" type="AMax35TypeC"/>
+			<xs:element name="CounterPartyAcct" type="AMax35TypeC"/>
+			<xs:element name="NeedbuyerAprv" type="N12TypeC"/>
+			<xs:element name="FinCutoffDays" type="NDef3TypeC"/>
+			<xs:element name="MinFinAmt" type="NMax10TypeC"/>
+			<xs:element name="MaxFinAmt" type="NMax10TypeC"/>
+			<xs:element name="GraceDays" type="NDef3TypeC"/>
+			<xs:element name="InvFinMode" type="AMax35TypeC"/>
+			<xs:element name="PoolMaxAmt" type="NMax10TypeC"/>
+			<xs:element name="PoolMinAmt" type="NMax10TypeC"/>
+			<xs:element name="PoolMaxPeriod" type="NDef3TypeC"/>
+			<xs:element name="PoolMinPeriod" type="NDef3TypeC"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SBRPriceType">
+		<xs:sequence>
+			<xs:element name="CommRate" type="NDef3.4TypeC"/>
+			<xs:element name="HandlChg" type="NMax10TypeC"/>
+			<xs:element name="IntRate" type="NDef3.4TypeC"/>
+			<xs:element name="IntRateSpread" type="NDef3.4TypeC"/>
+			<xs:element name="PenalRateSpread" type="NDef3.4TypeC"/>
+			<xs:element name="MaxLoanPerc" type="NDef3.4TypeC"/>
+			<xs:element name="POMaxLoanPerc" type="NDef3.4TypeC" minOccurs="0"/>
+			<xs:element name="RebateRate" type="NDef3.4TypeC"/>
+			<xs:element name="RebateAcct" type="AMax35TypeC"/>
+			<xs:element name="IntRateType" type="N12TypeC"/>
+			<xs:element name="ChgPaidBy" type="AMax35TypeC"/>
+			<xs:element name="ChgFreqCD" type="CFREQType"/>
+			<xs:element name="FinInfo" type="AMax1400TypeC"/>
+			<xs:element name="DDChgTp" type="AMax7TypeC" minOccurs="0"/>
+			<xs:element name="DDChgSha" type="NDef3TypeC" minOccurs="0"/>
+			<xs:element name="DDChgFix" type="NMax14.2TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DocumentsObtainedType">
+		<xs:sequence>
+			<xs:element name="RegistrationForm" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ListOfUltimateBeneficiaryOwners" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ListOfKeyManagers" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ListOfBoardMembers" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ListOfSignatories" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="KYCQuestionnaire" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="AMLQuestionnaire" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="AnyRelevantAdverseInformation" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ControlForPossibleActivities" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SeeSeparateMail" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="Others" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

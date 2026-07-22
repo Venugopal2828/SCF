@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">EXLC</MODULE>
+        <MODULE_DESC>Export Letters of Credit</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030700907</ID>
+        <NAME>EXLC Disposal Instructions</NAME>
+        <DESC>Disposal Instructions</DESC>
+        <FUNSHORTNAME>DispolInstr</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">EXLC_DispolInstr.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700906</ID>
+        <NAME>EXLC Disposal Instructions_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700906</ID>
+        <NAME>EXLC Disposal Instructions_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000118</ID>
+        <NAME>EXLC Disposal Instructions_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

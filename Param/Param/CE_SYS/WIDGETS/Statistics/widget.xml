@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="Statistics"
+			allowInstanceContent="true"
+			supportedModes="view config help"
+			supportedWindowStates="maximize minimize"
+			iScope="com.cs.widgets.Statistics" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.StatisticsJs" src="Statistics/statistics.js"/>
+	<iw:resource globalid="com.cs.resources.StatisticsCss" src="Statistics/statistics.css"/>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang="" readOnly="true" value="Transaction Statistics">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="attributes">
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="Layers">
+		<iw:item id="Layers" alias="Layers" lang="" readOnly="false" value="1">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="level1">
+		<iw:item id="graphType" alias="graphType" lang="" readOnly="false" value="bar">
+		</iw:item>
+		<iw:item id="isLie" alias="isLie" lang="" readOnly="false" value="F">
+		</iw:item>
+		<iw:item id="showTable" alias="showTable" lang="" readOnly="false" value="F">
+		</iw:item>
+		<iw:item id="graphName" alias="graphName" lang="" readOnly="true" value="Total">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="widgetType">
+		<iw:item id="type" alias="type" lang="" readOnly="false" value="viewData">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="adaptClass">
+		<iw:item id="adaptClass" alias="adaptClass" lang="" readOnly="false" value="">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-Statistics">
+				<div class="menu">
+					<div class="select"></div>
+					<div class="back-action button" title="Return to the upper level" style="display:none"><div class="cs-icon cs-icon-back">Return to the upper level</div></div>
+					<div class="home-action button" title="Return to the first level" style="display:none"><div class="cs-icon cs-icon-home">Return to the first level</div></div>
+				</div>
+				<div id="level1">
+					<div class="error" style="background-color:#FFFEE4;"></div>
+					<table class="search" style="display:none;"></table>
+					<div id="level1Graph" style="height:400px;"></div>
+					<div class="table">
+						<table class="headTable table1" style="display:none"></table>
+						<table class="headTable table2" style="display:none"></table>
+					</div>
+				</div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-Statistics">description for Statistics widget.</div>
+	]]></iw:content>
+</iw:iwidget>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>OilzQaLGDf1e</CATALOGID>
+        <ID>OilzQaLGDf1e</ID>
+        <NAME>Approve Finance for Invoice</NAME>
+        <DESC>Approve Finance for Invoice</DESC>
+        <FUNSHORTNAME>InvFinAcpt</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+    	<COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+        <CONFIRMID>COilzQaLGDf1e</CONFIRMID>
+        <RIGHTID/>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_InvAcptME.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID></ID>
+        <NAME>Approve Finance for Invoice_FORM</NAME>
+    </FORM>
+    <NOTIFY>
+        <ID></ID>
+        <NAME>Approve Finance for Invoice_NOTIFY</NAME>
+    </NOTIFY>
+	 <CAL>
+        <JS_CLASS>CalculatorIntfFuncJS</JS_CLASS>
+    </CAL>
+</FUNC>

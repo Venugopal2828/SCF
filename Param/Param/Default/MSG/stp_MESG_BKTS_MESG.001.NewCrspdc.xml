@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>MESG.001.NewCrspdc</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>MESG</module>
+        <map-name>NewCorrespondenceFromBank</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <BK_MAIN_REF descr="" fv-type="F" intfconv="N">BkMainRef</BK_MAIN_REF>
+        <CRTE_DT descr="" fv-type="F" intfconv="N">DtCrte</CRTE_DT>
+        <CURRNT_STATUS descr="" fv-type="F" intfconv="N">CurSts</CURRNT_STATUS>
+        <C_UNIT_CODE descr="" fv-type="F" intfconv="N">CustId</C_UNIT_CODE>
+        <MSG_DESC descr="" fv-type="F" intfconv="N">MsgDesc</MSG_DESC>
+        <MSG_SUBJECT descr="" fv-type="F" intfconv="N">MsgSubject</MSG_SUBJECT>
+        <PDCT_NM descr="" fv-type="F" intfconv="N">PdctNm</PDCT_NM>
+        <RLTD_NO descr="" fv-type="F" intfconv="N">RltdNb</RLTD_NO>
+        <TPC descr="" fv-type="F" intfconv="N">Tpc</TPC>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

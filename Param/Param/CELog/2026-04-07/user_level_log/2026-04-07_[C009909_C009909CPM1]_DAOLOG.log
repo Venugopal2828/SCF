@@ -1,0 +1,1398 @@
+
+[start] [INFO] [2026-04-07 19:04:51.684] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:51 680    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  DELETE FROM CEUSER.SEC_LOGIN_SESSION WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' AND C_BK_GROUP_ID = 'CSBANK' AND C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+[02]  UPDATE CEUSER.SEC_LOGIN_SESSION SET C_IS_INFORM = 'T' WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' AND C_BK_GROUP_ID = 'CSBANK' 
+[03]  INSERT INTO CEUSER.SEC_LOGIN_SESSION (C_BK_GROUP_ID,C_UNIT_CODE,C_USER_ID,C_SESSION_ID,C_IS_INFORM) VALUES ('CSBANK','C009909','C009909CPM1','V5fyCG899RLsFOWb7MP_vf6','F')
+---------------------- End 2026-04-07 19:04:51 682 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:51.696] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:51 692    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_GRP_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,D_SYS_TRT_DATE,T_SYS_TRT_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D687994EA00BA','CSBANK','US','C009909','C009909','C009909CPM1','10.3.21.111','Login',TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:04:51','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:04:51','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:04:51','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:04:51 694 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.203] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 201    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 203 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.205] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 205    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:04:52 205 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.253] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 234    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 250 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.373] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 369    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 371 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.385] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 381    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 383 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.392] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 389    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT COUNT(*) AS RECCOUNT FROM CETRX.STD_NOTIFICATION  WHERE C_NOTI_ID IN ( SELECT C_NOTI_ID FROM CETRX.STD_NOTIFICATION_STATUS  WHERE  C_READ_STATUS = 'F'  AND  C_USER_ID = 'C009909CPM1'  AND  C_UNIT_CODE = 'C009909'  )
+---------------------- End 2026-04-07 19:04:52 391 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.401] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 399    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_FUNC_ID,T_OP_TIME FROM CETRX.TRX_FAVOR_FUNC  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  ORDER BY  T_OP_TIME DESC 
+---------------------- End 2026-04-07 19:04:52 399 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.405] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 401    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 403 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.408] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 405    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 407 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.416] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 414    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 416 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.418] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 414    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 416 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.432] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 430    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 430 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.492] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 488    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 490 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.494] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 490    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT DISTINCT C_WIDGET_NAME FROM CEUSER.SEC_WIDGETS_V2_LIST  WHERE  C_IS_ACTIVE = 'Y'  AND  C_ROLE_NAME IN ('MAKER')  ORDER BY  C_WIDGET_NAME 
+---------------------- End 2026-04-07 19:04:52 492 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.498] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 496    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT TAB.C_TAB_ID,TAB.C_TAB_NAME,TAB.I_TAB_SEQUENCE FROM CEUSER.SEC_WIDGETS_V2_TABS TAB LEFT JOIN CEUSER.SEC_WIDGETS_V2_LAYOUT LYT ON (TAB.C_TAB_ID = LYT.C_TAB_ID AND  TAB.C_UNIT_CODE = LYT.C_UNIT_CODE AND TAB.C_USER_ID = LYT.C_USER_ID )    WHERE  TAB.C_UNIT_CODE = 'C009909'  AND  TAB.C_USER_ID = 'C009909CPM1'  AND  LYT.C_PAGE_NAME = 'default'  ORDER BY  TAB.I_TAB_SEQUENCE ASC 
+---------------------- End 2026-04-07 19:04:52 498 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.506] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 502    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT DISTINCT C_WIDGET_NAME FROM CEUSER.SEC_WIDGETS_V2_LIST  WHERE  C_IS_ACTIVE = 'Y'  AND  C_ROLE_NAME IN ('MAKER')  ORDER BY  C_WIDGET_NAME 
+---------------------- End 2026-04-07 19:04:52 504 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.510] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 508    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 508 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.514] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 512    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:52 512 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.643] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 641    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_LAYOUT_INFO FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_PAGE_NAME = 'default' 
+---------------------- End 2026-04-07 19:04:52 643 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.648] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 646    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TAB_ID FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_PAGE_NAME = 'default' 
+---------------------- End 2026-04-07 19:04:52 646 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.766] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 704    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  DELETE FROM CEUSER.SEC_WIDGETS_V2_TABS  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[02]  INSERT INTO CEUSER.SEC_WIDGETS_V2_TABS (C_TAB_ID,C_TAB_NAME,I_TAB_SEQUENCE,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','Home',0,'C009909','C009909CPM1')
+[03]  DELETE FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[04]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998B500C6',{"comboId":"C2A_PendingApproval","title":"Pending Approval"},'C009909','C009909CPM1')
+[05]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[06]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979D684ABD019D687998B500C6","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{},"name":"CallToAction","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{},"name":"CalendarEvents","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{},"name":"ShortcutMenu","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":tr ...truncated...,'default')
+[07]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998BE00C7',{"title":"Recent requests","version":2,"subtitle":"Below is an overview of your recent requests"},'C009909','C009909CPM1')
+[08]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[09]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979D684ABD019D687998B500C6","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"subtitle":"Below is an overview of your recent requests","title":"Recent requests","version":2},"name":"CallToAction","id":"8A8284979D684ABD019D687998BE00C7","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{},"name":"CalendarEvents","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","heig ...truncated...,'default')
+[10]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998C800C8',{"title":"Upcoming events"},'C009909','C009909CPM1')
+[11]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[12]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979D684ABD019D687998B500C6","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"subtitle":"Below is an overview of your recent requests","title":"Recent requests","version":2},"name":"CallToAction","id":"8A8284979D684ABD019D687998BE00C7","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"title":"Upcoming events"},"name":"CalendarEvents","id":"8A8284979D684ABD019D687998C800C8","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true ...truncated...,'default')
+[13]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998D200C9',{"version":1,"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"periodDays":30,"funcIds":"","funcItemTypeList":"New","functionCount":5,"funcTypes":"PM"},"component":"c-recent-func","label":"Recent Functions"}]},'C009909','C009909CPM1')
+[14]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[15]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979D684ABD019D687998B500C6","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"subtitle":"Below is an overview of your recent requests","title":"Recent requests","version":2},"name":"CallToAction","id":"8A8284979D684ABD019D687998BE00C7","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"title":"Upcoming events"},"name":"CalendarEvents","id":"8A8284979D684ABD019D687998C800C8","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true ...truncated...,'default')
+[16]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998DA00CA',{"name":"Saved Reports","title":"Saved Reports"},'C009909','C009909CPM1')
+[17]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[18]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979D684ABD019D687998B500C6","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"subtitle":"Below is an overview of your recent requests","title":"Recent requests","version":2},"name":"CallToAction","id":"8A8284979D684ABD019D687998BE00C7","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"title":"Upcoming events"},"name":"CalendarEvents","id":"8A8284979D684ABD019D687998C800C8","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true ...truncated...,'default')
+---------------------- End 2026-04-07 19:04:52 758 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.847] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 770    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT TAB.C_TAB_ID,TAB.C_TAB_NAME,TAB.I_TAB_SEQUENCE,LYT.C_LAYOUT_INFO FROM CEUSER.SEC_WIDGETS_V2_TABS TAB LEFT JOIN CEUSER.SEC_WIDGETS_V2_LAYOUT LYT ON (TAB.C_TAB_ID = LYT.C_TAB_ID AND  TAB.C_UNIT_CODE = LYT.C_UNIT_CODE AND TAB.C_USER_ID = LYT.C_USER_ID )    WHERE  TAB.C_UNIT_CODE = 'C009909'  AND  TAB.C_USER_ID = 'C009909CPM1'  AND  LYT.C_PAGE_NAME = 'default'  ORDER BY  TAB.I_TAB_SEQUENCE ASC 
+---------------------- End 2026-04-07 19:04:52 839 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.859] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 859    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979D684ABD019D687998BE00C7'  AND  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 859 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.869] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 865    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979D684ABD019D687998BE00C7'  AND  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 867 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.881] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 879    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979D684ABD019D687998C800C8'  AND  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 879 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.891] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 889    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979D684ABD019D687998C800C8'  AND  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 891 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.900] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 899    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979D684ABD019D687998D200C9'  AND  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 899 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.908] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 904    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979D684ABD019D687998D200C9'  AND  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 906 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.916] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 915    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979D684ABD019D687998DA00CA'  AND  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 915 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:52.920] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:52 918    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979D684ABD019D687998DA00CA'  AND  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:04:52 920 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.036] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 030    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 034 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.040] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 036    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 038 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.040] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 034    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 036 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.086] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 084    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT FA_DOC_DUE_DT AS GROUP_DATE, COUNT(*) AS ASCOUNT FROM (SELECT C_PRODUCT_ID, C_MAIN_REF, C_CUST_ID, C_TRX_REF, I_EVENT_TIMES, C_BK_GROUP_ID, C_UNIT_CODE, FA_SEL_NM, FA_BUYER_NM, FA_DOC_CCY, FA_DOC_AMT, AUTH_AMT, AUTH_CCY, PARENT_MAIN_REF, FA_DOC_DT, FA_DOC_DUE_DT, CURRNT_STATUS, C_TRX_STATUS, D_CREA_DATE, D_RELE_DATE, C_FUNC_ID, C_EVENT_NAME, C_EVENT_STATUS, C_NOW_EVENT, C_LOCKED_FLAG, C_LOCKED_OP, C_RELE_BY FROM CETRX.FAEF_EM_INV WHERE   C_BK_GROUP_ID = 'CSBANK'  AND (( C_UNIT_CODE = 'C009909'  AND  C_PRODUCT_ID = 'P19080800001' )) AND C_TRX_STATUS IN ('P', 'A', 'T', 'R', 'M') AND FA_DOC_DUE_DT >= TO_DATE('2026-01-01', 'YYYY-MM-DD') AND FA_DOC_DUE_DT <= TO_DATE('2026-12-31', 'YYYY-MM-DD') ) TEMP_TABLE GROUP BY FA_DOC_DUE_DT
+---------------------- End 2026-04-07 19:04:53 086 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.091] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 086    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_ForYou]  SELECT COUNT(*) FROM (SELECT DISTINCT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, T1.C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_NEXT_FUNC T2 ON T1.C_PRODUCT_ID = T2.C_PRODUCT_ID AND T1.C2A_STATUS = T2.C2A_STATUS AND T1.C_TRX_STATUS = T2.C_TRX_STATUS LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909' AND C_UNIT_CODE = T1.C_UNIT_CODE) OR T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_GRP_CODE = 'C009909' AND C_USER_ID IN (SELECT C_ROLE_ID FROM CEUSER.SEC_USER_ROLE WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND C_UNIT_CODE = T1.C_UNIT_CODE)) AND (T1.C_TRX_STATUS = 'R' OR T1.C2A_STATUS IN ('Rejected by bank', 'Discrepancy notification', 'Document received') AND T1.C_TRX_STATUS = 'M' OR T1.C2A_STATUS IN ('Amendment(Detrimental)_fully authorized', 'Document discrepancy_fully authorized') AND T1.C_TRX_STATUS = 'A') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'TSUM' OR T1.C_MODULE = 'ABLF' OR T1.C_MODULE = 'UPLD') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC)
+---------------------- End 2026-04-07 19:04:53 090 ------------------------
+ [end]
+
+[start] [ERROR] [2026-04-07 19:04:53.095] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 089    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT FA_AGM_DUE_DT AS GROUP_DATE, COUNT(*) AS ASCOUNT FROM (SELECT C_MAIN_REF, C_TRX_REF, C_UNIT_CODE, C_PRODUCT_ID, C_FUNC_SHORT_NAME, CURRNT_STATUS, C_TRX_STATUS, C_EVENT_NAME, C_EVENT_STATUS, C_NOW_EVENT, I_EVENT_TIMES, C_CUST_ID, FA_BUYER_ID, FA_ANCHOR_ID, FA_AGM_VAL_DT, FA_AGM_DUE_DT, FA_TRX_DT, D_CREA_DATE, C_LOCKED_FLAG FROM CETRX.FAEF_EM_INV WHERE   C_BK_GROUP_ID = 'CSBANK'  AND (( C_UNIT_CODE = 'C009909'  AND  C_PRODUCT_ID = 'P19080800000' )) AND C_TRX_STATUS IN ('P', 'A', 'T', 'R', 'M') ) TEMP_TABLE GROUP BY FA_AGM_DUE_DT
+[!err] The following SQL index execute error:  1
+The caller is:Method [com.cs.eximap.log.CELogDAOExec.writeSQLError(...)] is called by:
+    +com.cs.core.dao.exec.DAORunner.executeQuery(...) in file: DAORunner.java at line: 129
+    +com.cs.eximap.ejb.dao.ASEExecuteToDatabaseBean.executeQuery(...) in file: ASEExecuteToDatabaseBean.java at line: 233
+    +com.cs.eximap.utility.ASDBHelper.executeQuery(...) in file: ASDBHelper.java at line: 66
+    +com.cs.eximap.utility.ASDBHelper.executeQuery(...) in file: ASDBHelper.java at line: 322
+    +com.cs.eximap.miscintf.DBHelper.getData(...) in file: DBHelper.java at line: 25
+    +com.cs.eximap.ejb.comm.RMICommunicatorProcess.getData(...) in file: RMICommunicatorProcess.java at line: 95
+    +com.cs.eximap.ejb.ctrl.ASECommunicatorBean.getData(...) in file: ASECommunicatorBean.java at line: 80
+    +com.cs.comm.RMICommunicator.callAppEjb(...) in file: RMICommunicator.java at line: 79
+    +com.cs.comm.WSCommunication.callAppEjb(...) in file: WSCommunication.java at line: 102
+    +com.cs.ce.core.helper.WSDBHelper.callDao(...) in file: WSDBHelper.java at line: 37
+    +com.cs.ce.core.helper.WSDBHelper.executeQuery(...) in file: WSDBHelper.java at line: 27
+    +com.cs.ce.core.helper.WSDBHelper.executeQuery(...) in file: WSDBHelper.java at line: 57
+    +com.cs.ceweb.openapi.CECalendarEventAPI.getEventRecord(...) in file: CECalendarEventAPI.java at line: 157
+    +com.cs.ceweb.openapi.CECalendarEventAPI.getCalendarEvents(...) in file: CECalendarEventAPI.java at line: 107
+    +com.cs.ceweb.servlets.CEVerifyAPITokenFilter.doFilter(...) in file: CEVerifyAPITokenFilter.java at line: 51
+    +com.cs.ceweb.servlets.CEResourceAccessFilter.doFilter(...) in file: CEResourceAccessFilter.java at line: 57
+    +com.cs.ceweb.secu.utility.CECommonSecurityWebFilter.doFilter(...) in file: CECommonSecurityWebFilter.java at line: 134
+    +com.cs.ceweb.servlets.CEPenTestFilter.doFilter(...) in file: CEPenTestFilter.java at line: 43
+    +com.cs.ceweb.secu.utility.CECommonSecurityWebFilter.doFilter(...) in file: CECommonSecurityWebFilter.java at line: 134
+    +com.cs.ceweb.servlets.CEPreventRefreshFilter.doFilter(...) in file: CEPreventRefreshFilter.java at line: 45
+    +com.cs.ceweb.secu.utility.CECommonSecurityWebFilter.doFilter(...) in file: CECommonSecurityWebFilter.java at line: 134
+    +com.cs.ceweb.servlets.CERequestFilter.doFilter(...) in file: CERequestFilter.java at line: 71
+    +com.cs.eximweb.servlets.CEDencrptURLFilter.doFilter(...) in file: CEDencrptURLFilter.java at line: 45
+    +com.cs.eximweb.servlets.CECharsetFilter.doFilter(...) in file: CECharsetFilter.java at line: 43
+    +com.cs.ceweb.openapi.CEOpenAPIFilter.doFilter(...) in file: CEOpenAPIFilter.java at line: 92
+
+ Exception:
+{{E}}[000415]DB exception for column not found. Please contact us for assistance.
+
+---------------------- End 2026-04-07 19:04:53 093 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.103] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 084    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 086 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.113] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 111    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 111 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.139] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 135    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT FA_DOC_DUE_DT AS GROUP_DATE, COUNT(*) AS ASCOUNT FROM (SELECT C_PRODUCT_ID, C_MAIN_REF, C_CUST_ID, C_TRX_REF, I_EVENT_TIMES, C_BK_GROUP_ID, C_UNIT_CODE, FA_SEL_NM, FA_BUYER_NM, FA_DOC_CCY, FA_DOC_AMT, AUTH_AMT, AUTH_CCY, PARENT_MAIN_REF, FA_DOC_DT, FA_DOC_DUE_DT, CURRNT_STATUS, C_TRX_STATUS, D_CREA_DATE, D_RELE_DATE, C_FUNC_ID, C_EVENT_NAME, C_EVENT_STATUS, C_NOW_EVENT, C_LOCKED_FLAG, C_LOCKED_OP, C_RELE_BY FROM CETRX.FAEF_EM_INV WHERE   C_BK_GROUP_ID = 'CSBANK'  AND (( C_UNIT_CODE = 'C009909'  AND  C_PRODUCT_ID = 'FHS0YffwVNuA' )) AND C_TRX_STATUS IN ('P', 'A', 'T', 'R', 'M') AND FA_DOC_DUE_DT >= TO_DATE('2026-01-01', 'YYYY-MM-DD') AND FA_DOC_DUE_DT <= TO_DATE('2026-12-31', 'YYYY-MM-DD') ) TEMP_TABLE GROUP BY FA_DOC_DUE_DT
+---------------------- End 2026-04-07 19:04:53 135 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.143] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 139    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_InProgress_Maker]  SELECT COUNT(*) FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF')
+---------------------- End 2026-04-07 19:04:53 143 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.145] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 141    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT FA_DOC_DUE_DT AS GROUP_DATE, COUNT(*) AS ASCOUNT FROM (SELECT C_PRODUCT_ID, C_MAIN_REF, C_CUST_ID, C_TRX_REF, I_EVENT_TIMES, C_BK_GROUP_ID, C_UNIT_CODE, FA_SEL_NM, FA_BUYER_NM, FA_DOC_CCY, FA_DOC_AMT, AUTH_AMT, AUTH_CCY, PARENT_MAIN_REF, FA_DOC_DT, FA_DOC_DUE_DT, CURRNT_STATUS, C_TRX_STATUS, D_CREA_DATE, D_RELE_DATE, C_FUNC_ID, C_EVENT_NAME, C_EVENT_STATUS, C_NOW_EVENT, C_LOCKED_FLAG, C_LOCKED_OP, C_RELE_BY FROM CETRX.FAEF_EM_INV WHERE   C_BK_GROUP_ID = 'CSBANK'  AND (( C_UNIT_CODE = 'C009909'  AND  C_PRODUCT_ID = 'epF3a6u4ZGAt' )) AND C_TRX_STATUS IN ('P', 'A', 'T', 'R', 'M') AND FA_DOC_DUE_DT >= TO_DATE('2026-01-01', 'YYYY-MM-DD') AND FA_DOC_DUE_DT <= TO_DATE('2026-12-31', 'YYYY-MM-DD') ) TEMP_TABLE GROUP BY FA_DOC_DUE_DT
+---------------------- End 2026-04-07 19:04:53 143 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.154] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 151    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 153 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.196] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 194    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT FA_DOC_DUE_DT AS GROUP_DATE, COUNT(*) AS ASCOUNT FROM (SELECT C_PRODUCT_ID, C_MAIN_REF, C_CUST_ID, C_TRX_REF, I_EVENT_TIMES, C_BK_GROUP_ID, C_UNIT_CODE, FA_SEL_NM, FA_BUYER_NM, FA_DOC_CCY, FA_DOC_AMT, AUTH_AMT, AUTH_CCY, PARENT_MAIN_REF, FA_DOC_DT, FA_DOC_DUE_DT, CURRNT_STATUS, C_TRX_STATUS, D_CREA_DATE, D_RELE_DATE, C_FUNC_ID, C_EVENT_NAME, C_EVENT_STATUS, C_NOW_EVENT, C_LOCKED_FLAG, C_LOCKED_OP, C_RELE_BY FROM CETRX.FAEF_EM_INV WHERE   C_BK_GROUP_ID = 'CSBANK'  AND (( C_UNIT_CODE = 'C009909'  AND  C_PRODUCT_ID = 'FHS0YffwVNuA' )) AND C_TRX_STATUS IN ('P', 'A', 'T', 'R', 'M') AND FA_DOC_DUE_DT >= TO_DATE('2026-01-01', 'YYYY-MM-DD') AND FA_DOC_DUE_DT <= TO_DATE('2026-12-31', 'YYYY-MM-DD') ) TEMP_TABLE GROUP BY FA_DOC_DUE_DT
+---------------------- End 2026-04-07 19:04:53 194 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.205] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 178    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_Closed]  SELECT COUNT(*) FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T1.C2A_STATUS IN ('Issued', 'Amended', 'Beneficiary rejected', 'Discrepancies rejected_fully authorized', 'Settled') AND T1.C_MODULE = 'IMLC' OR T1.CURRNT_STATUS IN ('Issued', 'Amended', 'Detrimental Amendment', 'Beneficiary Consent', 'Beneficiary Rejected', 'Document Presentation', 'Document Presentation', 'Settlement', 'Settled') AND T1.C_MODULE = 'EXCO' OR T1.C2A_STATUS IN ('Settled', 'Amendment_fully authorized', '') AND T1.C_MODULE = 'EXLC' OR T1.C_FUNC_ID IN ('F05030700899', 'F05030700901', 'F05030700908') AND T1.C2A_STATUS = 'Fully authorized' AND T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF') AND T1.C_TRX_STATUS IN ('M', 'A', 'S') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF')
+---------------------- End 2026-04-07 19:04:53 182 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.226] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 213    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_Drafts]  SELECT COUNT(*) FROM (SELECT DISTINCT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_NEXT_FUNC T2 ON T1.C_PRODUCT_ID = T2.C_PRODUCT_ID AND T1.C_TRX_STATUS = T2.C_TRX_STATUS LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909' AND C_UNIT_CODE = T1.C_UNIT_CODE) OR T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_GRP_CODE = 'C009909' AND C_USER_ID IN (SELECT C_ROLE_ID FROM CEUSER.SEC_USER_ROLE WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND C_UNIT_CODE = T1.C_UNIT_CODE)) AND T1.C_TRX_STATUS = 'Z' AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC)
+---------------------- End 2026-04-07 19:04:53 224 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.238] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 236    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 236 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.270] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 268    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_ACTIVE FROM CEUSER.SEC_WIDGETS_V2_LIST  WHERE  C_WIDGET_NAME = 'ShortcutMenu'  AND  C_ROLE_NAME IN ('MAKER') 
+---------------------- End 2026-04-07 19:04:53 270 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.337] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 334    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 336 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.347] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 123    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_FUNC_ID,T_OP_TIME FROM CETRX.TRX_FAVOR_FUNC  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  ORDER BY  T_OP_TIME DESC 
+---------------------- End 2026-04-07 19:04:53 346 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.342] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 272    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_FUNC_ID,C_MODULE FROM CETRX.TRX_ACT_LOG WHERE C_FUNC_ID IS NOT NULL AND C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' AND D_SYS_OP_DATE BETWEEN TO_DATE('2026-03-08','yyyy-MM-dd') AND TO_DATE('2026-04-07','yyyy-MM-dd') ORDER BY D_SYS_OP_DATE DESC,T_SYS_OP_TIME DESC
+---------------------- End 2026-04-07 19:04:53 340 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.358] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 355    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_PAGE_NAME FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+---------------------- End 2026-04-07 19:04:53 356 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.369] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 165    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT A.C_REPORT_ID,A.C_GRP_CODE,A.C_USER_ID,A.T_PIN_DATE,B.C_SOURCE_REPORT,B.C_REPORT_NAME,B.T_UPDATE_DATE,C.C_USER_DESC FROM CETRX.TRX_USER_REPORT_PIN A LEFT JOIN CETRX.TRX_USER_REPORT B ON A.C_REPORT_ID = B.C_REPORT_ID  LEFT JOIN CEUSER.SEC_USER_INFO C ON A.C_GRP_CODE = C.C_UNIT_CODE AND A.C_USER_ID = C.C_USER_ID  WHERE  A.C_GRP_CODE = 'C009909'  AND  A.C_USER_ID = 'C009909CPM1'  ORDER BY B.T_UPDATE_DATE DESC
+---------------------- End 2026-04-07 19:04:53 361 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.377] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 373    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 375 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.387] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 385    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_CRITERIA_DATA,C_TMPL_NAME,C_IS_DEFAULT FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'C2A_InProgress_Maker'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4 
+---------------------- End 2026-04-07 19:04:53 387 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.419] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 385    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  DELETE FROM CEUSER.SEC_WIDGETS_V2_TABS  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[02]  INSERT INTO CEUSER.SEC_WIDGETS_V2_TABS (C_TAB_ID,C_TAB_NAME,I_TAB_SEQUENCE,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','Home',0,'C009909','C009909CPM1')
+[03]  DELETE FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[04]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998BE00C7',{"name":"CallToAction","header":true,"title":"Recent requests","version":2,"headerButtons":"refresh","subtitle":"Below is an overview of your recent requests"},'C009909','C009909CPM1')
+[05]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[06]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"subtitle":"Below is an overview of your recent requests","name":"CallToAction","header":true,"title":"Recent requests","version":2,"headerButtons":"refresh"},"name":"CallToAction","id":"8A8284979D684ABD019D687998BE00C7","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979D684ABD019D687998D200C9","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizab ...truncated...,'default')
+[07]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998D200C9',{"name":"ShortcutMenu","header":false,"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"periodDays":30,"funcIds":"","funcItemTypeList":"New","functionCount":5,"funcTypes":"PM"},"component":"c-recent-func","label":"Recent Functions"}],"version":1,"headerButtons":"none"},'C009909','C009909CPM1')
+[08]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[09]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"subtitle":"Below is an overview of your recent requests","name":"CallToAction","header":true,"title":"Recent requests","version":2,"headerButtons":"refresh"},"name":"CallToAction","id":"8A8284979D684ABD019D687998BE00C7","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979D684ABD019D687998D200C9","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizab ...truncated...,'default')
+[10]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998DA00CA',{"name":"Saved Reports","header":true,"title":"Saved Reports","headerButtons":"refresh"},'C009909','C009909CPM1')
+[11]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[12]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"subtitle":"Below is an overview of your recent requests","name":"CallToAction","header":true,"title":"Recent requests","version":2,"headerButtons":"refresh"},"name":"CallToAction","id":"8A8284979D684ABD019D687998BE00C7","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979D684ABD019D687998D200C9","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizab ...truncated...,'default')
+[13]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979D684ABD019D687998AB00C5','8A8284979D684ABD019D687998C800C8',{"name":"CalendarEvents","header":true,"title":"Upcoming events","headerButtons":"none"},'C009909','C009909CPM1')
+[14]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_TAB_ID = '8A8284979D684ABD019D687998AB00C5' 
+[15]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979D684ABD019D687998AB00C5','C009909','C009909CPM1',{"widgets":[{"input":{"subtitle":"Below is an overview of your recent requests","name":"CallToAction","header":true,"title":"Recent requests","version":2,"headerButtons":"refresh"},"name":"CallToAction","id":"8A8284979D684ABD019D687998BE00C7","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979D684ABD019D687998D200C9","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizab ...truncated...,'default')
+---------------------- End 2026-04-07 19:04:53 417 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.437] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 437    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_UNIT_CODE,C_UNIT_NAME FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 437 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.560] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 556    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 556 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.576] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 573    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_InProgress_Maker]  SELECT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, (CASE WHEN T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF' THEN T1.C_TRX_STATUS ELSE T1.C2A_STATUS END) C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC
+---------------------- End 2026-04-07 19:04:53 576 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.622] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 620    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_UNIT_CODE,C_UNIT_NAME FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:04:53 622 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:04:53.628] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:04:53 626    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_CRITERIA_DATA,C_TMPL_NAME,C_IS_DEFAULT FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'C2A_InProgress_Maker'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4 
+---------------------- End 2026-04-07 19:04:53 626 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.133] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 129    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:02 129 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.135] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 135    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:05:02 135 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.150] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 148    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:02 148 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.156] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 152    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:05:02 154 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.186] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 184    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:05:02 184 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.200] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 196    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:02 198 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.204] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 200    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:05:02 202 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.225] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 223    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:05:02 225 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.239] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 235    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D6879BE1A00CE','CSBANK','US','C009909','C009909CPM1','10.3.21.111','tgFrsDBwNjju','FAEF',C009909/C009909CPM1 prepares to process function tgFrsDBwNjju View PO,TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:05:02','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:05:02','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:05:02 239 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.245] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 241    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_Inquire'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:05:02 243 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.253] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 247    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_PRODUCT_ID,C_MAIN_REF,C_TRX_REF,I_EVENT_TIMES,C_BK_GROUP_ID,C_UNIT_CODE,C_TRX_STATUS,FA_SBR_REF,FA_BUSI_TYPE,FA_BUYER_NM,FA_SEL_NM,FA_SBR_CCY FROM CETRX.FADA_EM_BSR WHERE  1=1   AND   1=1   AND   1=1   AND   1=1  AND CURRNT_STATUS = 'Received SBR' AND FA_BUSI_TYPE = 'POF'   AND   C_BK_GROUP_ID = 'CSBANK'  AND  C_UNIT_CODE = 'C009909'  ORDER BY FA_SBR_REF
+---------------------- End 2026-04-07 19:05:02 251 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.259] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 255    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_Inquire'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:05:02 257 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.299] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 295    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA WHERE C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' AND C_CATA_ID = 'tgFrsDBwNjju' AND I_CRITERIA_TYPE = 4 AND C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:05:02 297 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.608] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 604    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:02 606 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:02.621] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:02 621    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT COUNT(*) AS RECCOUNT FROM CETRX.STD_NOTIFICATION  WHERE C_NOTI_ID IN ( SELECT C_NOTI_ID FROM CETRX.STD_NOTIFICATION_STATUS  WHERE  C_READ_STATUS = 'F'  AND  C_USER_ID = 'C009909CPM1'  AND  C_UNIT_CODE = 'C009909'  )
+---------------------- End 2026-04-07 19:05:02 621 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:04.786] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:04 781    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:04 783 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:04.790] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:04 781    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:04 783 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:04.821] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:04 817    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:04 819 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:04.845] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:04 813    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:04 843 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:04.901] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:04 898    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:05:04 900 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:04.905] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:04 903    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:04 904 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:05.105] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:05 101    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:05 105 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:07.651] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:07 647    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:07 647 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:07.657] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:07 653    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:05:07 653 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:07.675] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:07 675    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:05:07 675 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:07.687] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:07 687    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:07 687 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:07.690] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:07 690    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:05:07 690 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:07.709] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:07 707    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:05:07 709 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:07.720] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:07 716    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D6879D38200D1','CSBANK','US','C009909','C009909CPM1','10.3.21.111','H41mNZC5cwS0','FAEF',C009909/C009909CPM1 prepares to process function H41mNZC5cwS0 View PO Details,TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:05:07','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:05:07','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:05:07 718 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:07.722] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:07 722    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_ViewInvDetail'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:05:07 722 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.120] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 118    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_ViewInvDetail'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:05:08 118 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.148] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 146    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:08 148 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.386] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 380    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:08 384 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.391] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 385    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:08 387 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.394] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 388    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:08 392 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.418] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 416    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:08 417 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.499] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 495    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:05:08 497 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.501] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 501    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:08 501 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:08.559] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:08 557    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:08 557 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:13.771] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:13 767    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:13 770 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:13.775] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:13 773    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:05:13 775 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:13.798] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:13 798    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:13 798 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:13.814] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:13 810    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D6879EB5000D2','CSBANK','US','C009909','C009909CPM1','10.3.21.111','H41mNZC5cwS0','FAEF',C009909/C009909CPM1 prepares to process function H41mNZC5cwS0 View PO Details,TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:05:13','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:05:13','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:05:13 812 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:14.254] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:14 252    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT C_CNTY_CODE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:14 254 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:14.256] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:14 256    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT C_CNTY_CODE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:14 256 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:14.260] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:14 258    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT I_AUTH_TYPE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' AND C_BK_GROUP_ID = 'CSBANK' 
+---------------------- End 2026-04-07 19:05:14 258 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:14.273] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:14 271    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT T_LAST_LOGIN_TIME FROM CEUSER.SEC_LOGIN_FAILURE_INFO WHERE C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:05:14 271 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:15.337] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:15 331    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:15 333 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:15.445] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:15 441    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:15 443 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:19.661] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:19 659    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:05:19 661 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:05:19.663] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:05:19 663    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:05:19 663 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:56.726] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:56 726    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:56 726 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:56.730] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:56 730    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:09:56 730 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:56.755] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:56 753    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:09:56 753 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:56.765] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:56 763    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:56 763 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:56.767] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:56 766    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:09:56 767 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:56.789] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:56 787    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:09:56 787 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:56.799] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:56 795    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D687E3CB900D6','CSBANK','US','C009909','C009909CPM1','10.3.21.111','H41mNZC5cwS0','FAEF',C009909/C009909CPM1 prepares to process function H41mNZC5cwS0 View PO Details,TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:09:56','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:09:56','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:09:56 797 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:56.803] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:56 800    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_ViewInvDetail'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:09:56 800 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:57.150] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:57 148    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_ViewInvDetail'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:09:57 148 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:57.178] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:57 176    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:57 176 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:57.799] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:57 795    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:57 795 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:57.818] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:57 813    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:57 814 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:57.867] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:57 863    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:57 865 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:57.886] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:57 884    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:57 885 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:57.957] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:57 953    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:09:57 955 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:57.960] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:57 957    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:57 958 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:09:58.024] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:09:58 022    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:09:58 024 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.367] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 365    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:05 367 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.373] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 370    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:10:05 373 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.397] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 395    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:10:05 397 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.406] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 404    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:05 406 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.410] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 408    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:10:05 408 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.431] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 429    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:10:05 429 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.440] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 436    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D687E5E7B00D9','CSBANK','US','C009909','C009909CPM1','10.3.21.111','H41mNZC5cwS0','FAEF',C009909/C009909CPM1 prepares to process function H41mNZC5cwS0 View PO Details,TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:10:05','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:10:05','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:10:05 438 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.444] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 441    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_ViewInvDetail'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:10:05 442 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.810] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 808    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_ViewInvDetail'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:10:05 810 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:05.861] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:05 858    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:05 860 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:06.086] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:06 083    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:06 085 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:06.088] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:06 086    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:06 086 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:06.090] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:06 083    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:06 090 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:06.110] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:06 108    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:06 108 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:06.205] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:06 203    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:10:06 205 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:06.209] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:06 207    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:06 209 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:06.231] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:06 229    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:06 229 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:15.244] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:15 241    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:15 243 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:15.250] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:15 248    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:10:15 250 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:15.260] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:15 258    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:15 260 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:15.270] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:15 270    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D687E84E400DA','CSBANK','US','C009909','C009909CPM1','10.3.21.111','H41mNZC5cwS0','FAEF',C009909/C009909CPM1 prepares to process function H41mNZC5cwS0 View PO Details,TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:10:15','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:10:15','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:10:15 270 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:15.642] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:15 640    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT C_CNTY_CODE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:15 640 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:15.644] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:15 642    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT C_CNTY_CODE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:15 642 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:15.646] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:15 644    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT I_AUTH_TYPE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' AND C_BK_GROUP_ID = 'CSBANK' 
+---------------------- End 2026-04-07 19:10:15 646 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:15.660] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:15 658    CREATE_BU:C009909    CREATE_BY:C009909CPM1    TRX_BU:C009909 ---------------------
+[01]  SELECT T_LAST_LOGIN_TIME FROM CEUSER.SEC_LOGIN_FAILURE_INFO WHERE C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:10:15 658 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:16.087] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:16 082    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:16 086 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:16.198] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:16 192    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:16 196 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.076] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 072    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:34 074 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.278] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 272    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:34 276 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.287] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 274    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:34 276 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.302] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 298    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT COUNT(*) AS RECCOUNT FROM CETRX.STD_NOTIFICATION  WHERE C_NOTI_ID IN ( SELECT C_NOTI_ID FROM CETRX.STD_NOTIFICATION_STATUS  WHERE  C_READ_STATUS = 'F'  AND  C_USER_ID = 'C009909CPM1'  AND  C_UNIT_CODE = 'C009909'  )
+---------------------- End 2026-04-07 19:10:34 300 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.311] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 307    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:34 309 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.313] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 310    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:34 312 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.363] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 359    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT A.C_REPORT_ID,A.C_GRP_CODE,A.C_USER_ID,A.T_PIN_DATE,B.C_SOURCE_REPORT,B.C_REPORT_NAME,B.T_UPDATE_DATE,C.C_USER_DESC FROM CETRX.TRX_USER_REPORT_PIN A LEFT JOIN CETRX.TRX_USER_REPORT B ON A.C_REPORT_ID = B.C_REPORT_ID  LEFT JOIN CEUSER.SEC_USER_INFO C ON A.C_GRP_CODE = C.C_UNIT_CODE AND A.C_USER_ID = C.C_USER_ID  WHERE  A.C_GRP_CODE = 'C009909'  AND  A.C_USER_ID = 'C009909CPM1'  ORDER BY B.T_UPDATE_DATE DESC
+---------------------- End 2026-04-07 19:10:34 363 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.373] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 353    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_ForYou]  SELECT COUNT(*) FROM (SELECT DISTINCT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, T1.C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_NEXT_FUNC T2 ON T1.C_PRODUCT_ID = T2.C_PRODUCT_ID AND T1.C2A_STATUS = T2.C2A_STATUS AND T1.C_TRX_STATUS = T2.C_TRX_STATUS LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909' AND C_UNIT_CODE = T1.C_UNIT_CODE) OR T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_GRP_CODE = 'C009909' AND C_USER_ID IN (SELECT C_ROLE_ID FROM CEUSER.SEC_USER_ROLE WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND C_UNIT_CODE = T1.C_UNIT_CODE)) AND (T1.C_TRX_STATUS = 'R' OR T1.C2A_STATUS IN ('Rejected by bank', 'Discrepancy notification', 'Document received') AND T1.C_TRX_STATUS = 'M' OR T1.C2A_STATUS IN ('Amendment(Detrimental)_fully authorized', 'Document discrepancy_fully authorized') AND T1.C_TRX_STATUS = 'A') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'TSUM' OR T1.C_MODULE = 'ABLF' OR T1.C_MODULE = 'UPLD') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC)
+---------------------- End 2026-04-07 19:10:34 371 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.380] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 376    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_InProgress_Maker]  SELECT COUNT(*) FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF')
+---------------------- End 2026-04-07 19:10:34 380 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.386] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 384    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_Closed]  SELECT COUNT(*) FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T1.C2A_STATUS IN ('Issued', 'Amended', 'Beneficiary rejected', 'Discrepancies rejected_fully authorized', 'Settled') AND T1.C_MODULE = 'IMLC' OR T1.CURRNT_STATUS IN ('Issued', 'Amended', 'Detrimental Amendment', 'Beneficiary Consent', 'Beneficiary Rejected', 'Document Presentation', 'Document Presentation', 'Settlement', 'Settled') AND T1.C_MODULE = 'EXCO' OR T1.C2A_STATUS IN ('Settled', 'Amendment_fully authorized', '') AND T1.C_MODULE = 'EXLC' OR T1.C_FUNC_ID IN ('F05030700899', 'F05030700901', 'F05030700908') AND T1.C2A_STATUS = 'Fully authorized' AND T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF') AND T1.C_TRX_STATUS IN ('M', 'A', 'S') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF')
+---------------------- End 2026-04-07 19:10:34 386 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.394] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 390    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_Drafts]  SELECT COUNT(*) FROM (SELECT DISTINCT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_NEXT_FUNC T2 ON T1.C_PRODUCT_ID = T2.C_PRODUCT_ID AND T1.C_TRX_STATUS = T2.C_TRX_STATUS LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909' AND C_UNIT_CODE = T1.C_UNIT_CODE) OR T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_GRP_CODE = 'C009909' AND C_USER_ID IN (SELECT C_ROLE_ID FROM CEUSER.SEC_USER_ROLE WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND C_UNIT_CODE = T1.C_UNIT_CODE)) AND T1.C_TRX_STATUS = 'Z' AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC)
+---------------------- End 2026-04-07 19:10:34 392 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.492] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 492    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:34 492 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.510] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 505    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=C2A_InProgress_Maker]  SELECT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, (CASE WHEN T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF' THEN T1.C_TRX_STATUS ELSE T1.C2A_STATUS END) C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C009909'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C009909CPM1' AND C_GRP_CODE = 'C009909') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC
+---------------------- End 2026-04-07 19:10:34 510 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.562] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 560    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_UNIT_CODE,C_UNIT_NAME FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:34 562 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:34.570] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:34 568    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_CRITERIA_DATA,C_TMPL_NAME,C_IS_DEFAULT FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'C2A_InProgress_Maker'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4 
+---------------------- End 2026-04-07 19:10:34 570 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.543] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 538    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:45 540 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.545] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 543    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:10:45 545 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.556] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 556    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:45 556 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.558] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 558    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:10:45 558 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.577] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 577    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:10:45 577 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.587] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 587    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:45 587 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.593] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 591    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:10:45 591 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.611] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 609    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:10:45 611 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.622] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 618    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D687EFB7000DF','CSBANK','US','C009909','C009909CPM1','10.3.21.111','a3alzVbMdKai','FAEF',C009909/C009909CPM1 prepares to process function a3alzVbMdKai Approve PO,TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:10:45','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:10:45','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:10:45 620 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.628] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 627    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_ApprPO'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:10:45 627 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.632] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 630    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_PRODUCT_ID,C_MAIN_REF,C_TRX_REF,I_EVENT_TIMES,C_BK_GROUP_ID,C_UNIT_CODE,C_TRX_STATUS,FA_SBR_REF,FA_BUSI_TYPE,FA_BUYER_NM,FA_SEL_NM,FA_SBR_CCY,CURRNT_STATUS FROM CETRX.FADA_EM_BSR WHERE  1=1   AND   1=1   AND   1=1   AND   1=1  AND FA_COUNTER_ID = 'C009909' AND FA_COUNTER_ROLE = 'BUYER' AND CURRNT_STATUS = 'Received SBR' AND FA_BUSI_TYPE = 'POF'   AND   C_BK_GROUP_ID = 'CSBANK'  AND  C_UNIT_CODE = 'C009909'  ORDER BY FA_SBR_REF
+---------------------- End 2026-04-07 19:10:45 632 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.638] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 636    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_ApprPO'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:10:45 636 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:45.672] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:45 668    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA WHERE C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' AND C_CATA_ID = 'a3alzVbMdKai' AND I_CRITERIA_TYPE = 4 AND C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:10:45 670 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.026] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 022    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:46 024 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.036] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 036    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT COUNT(*) AS RECCOUNT FROM CETRX.STD_NOTIFICATION  WHERE C_NOTI_ID IN ( SELECT C_NOTI_ID FROM CETRX.STD_NOTIFICATION_STATUS  WHERE  C_READ_STATUS = 'F'  AND  C_USER_ID = 'C009909CPM1'  AND  C_UNIT_CODE = 'C009909'  )
+---------------------- End 2026-04-07 19:10:46 036 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.054] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 052    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:46 052 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.054] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 052    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:46 054 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.079] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 057    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:46 059 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.099] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 095    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:46 097 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.168] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 165    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:10:46 167 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.172] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 170    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:46 172 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:46.279] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:46 274    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:46 276 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.816] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 814    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:50 816 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.821] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 819    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:10:50 821 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.841] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 841    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:10:50 841 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.851] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 851    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:50 851 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.858] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 855    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:10:50 855 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.877] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 875    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-04-07 19:10:50 875 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.886] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 883    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979D684ABD019D687F100100E2','CSBANK','US','C009909','C009909CPM1','10.3.21.111','OsGbB5jtlbFo','FAEF',C009909/C009909CPM1 prepares to process function OsGbB5jtlbFo Available PO for Approving,TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:10:50','HH24:MI:SS'),TO_DATE('2026-04-07','YYYY-MM-DD'),TO_DATE('15:10:50','HH24:MI:SS'),'C009909;C009909CPM1')
+---------------------- End 2026-04-07 19:10:50 885 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.890] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 888    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_HNew'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:10:50 888 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.904] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 902    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_JUMP_FLAG FROM CETRX.STD_TRX_REF WHERE C_REF_NAME = 'epF3a6u4ZGAt' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:50 904 ------------------------
+ [end]
+
+[start] [ERROR] [2026-04-07 19:10:50.907] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 904    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=QuerySQL]  SELECT C_REF_NO FROM CETRX.STD_TRX_REFUSING WHERE C_REF_NAME = 'epF3a6u4ZGAt' AND C_UNIT_CODE = 'C009909' AND C_REF_STATUS = 'R' FOR UPDATE OF C_REF_NO
+[02]  UPDATE CETRX.STD_TRX_REFUSING SET C_REF_STATUS='U' WHERE C_REF_NO='C_REF_NO' AND C_REF_NAME='epF3a6u4ZGAt' AND C_UNIT_CODE='C009909'
+
+ Exception:
+Can not find old reference number for ref name:epF3a6u4ZGAt
+
+---------------------- End 2026-04-07 19:10:50 907 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.924] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 909    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  [Id=QuerySQLOld]  SELECT * FROM CETRX.STD_TRX_REF WHERE C_UNIT_CODE = 'C009909' AND C_REF_NAME = 'epF3a6u4ZGAt' FOR UPDATE OF I_REF_SEQ
+[02]  UPDATE CETRX.STD_TRX_REF SET I_REF_SEQ = I_REF_SEQ+1 WHERE C_UNIT_CODE='C009909' AND C_REF_NAME='epF3a6u4ZGAt'
+[03]  [Id=QuerySQL]  SELECT * FROM CETRX.STD_TRX_REF WHERE C_UNIT_CODE = 'C009909' AND C_REF_NAME = 'epF3a6u4ZGAt' 
+---------------------- End 2026-04-07 19:10:50 924 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.928] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 926    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT REG_CNT_CD FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:50 926 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.932] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 930    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  INSERT INTO CETRX.STD_TRX_REFUSING (C_REF_NAME,C_UNIT_CODE,C_REF_NO,C_REF_STATUS,C_CREA_BY,C_CREA_TIME) VALUES ('epF3a6u4ZGAt','C009909','PO000001SCF','U','C009909CPM1','2026-04-07 15:10 PM')
+---------------------- End 2026-04-07 19:10:50 932 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.940] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 936    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  DELETE FROM CETRX.FAEF_EM_PO WHERE FA_SBR_REF = 'POFCSBANK260411309SBR' AND C_UNIT_CODE = 'C009909' AND C_TRX_STATUS = 'I' 
+---------------------- End 2026-04-07 19:10:50 938 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:50.954] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:50 952    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_PRODUCT_ID,C_MAIN_REF,C_TRX_REF,I_EVENT_TIMES,C_BK_GROUP_ID,C_UNIT_CODE,C_TRX_STATUS,FA_SBR_REF,PO_REF,PO_NO,PO_CCY,PO_AMT,PO_DT,PO_STATUS,PARENT_MAIN_REF,PO_MAX_LOAN_PERC FROM CETRX.FAEF_EM_PO WHERE ( 1=1  AND FA_SBR_REF = 'POFCSBANK260411309SBR' ) AND C_TRX_STATUS = 'I'  AND   C_BK_GROUP_ID = 'CSBANK'  AND  C_UNIT_CODE = 'C009909'   AND  C_UNIT_CODE = 'C009909'  ORDER BY PO_NO
+---------------------- End 2026-04-07 19:10:50 954 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.347] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 345    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C009909'  AND  C_USER_ID = 'C009909CPM1'  AND  C_CATA_ID = 'epF3a6u4ZGAt_HNew'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+---------------------- End 2026-04-07 19:10:51 345 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.393] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 391    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:51 391 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.637] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 633    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:51 635 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.639] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 635    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:51 637 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.645] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 641    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:51 643 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.667] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 665    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:51 665 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.744] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 742    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' AND C_USER_ID = 'C009909CPM1' 
+---------------------- End 2026-04-07 19:10:51 742 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.748] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 746    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:51 748 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:10:51.786] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:10:51 784    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:10:51 784 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:42:16.975] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:42:16 970    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  SELECT C_BK_GROUP_ID, C_CNTY_CODE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C009909' 
+---------------------- End 2026-04-07 19:42:16 974 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:42:16.987] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:42:16 983    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  DELETE FROM CETRX.STD_TRX_REFUSING WHERE C_UNIT_CODE = 'C009909' AND C_REF_NAME = 'epF3a6u4ZGAt' AND C_REF_NO = 'PO000001SCF' 
+[02]  INSERT INTO CETRX.STD_TRX_REFUSING (C_UNIT_CODE,C_REF_NAME,C_REF_NO,C_REF_STATUS,C_SESSION_ID) VALUES ('C009909','epF3a6u4ZGAt','PO000001SCF','R','V5fyCG899RLsFOWb7MP_vf6')
+---------------------- End 2026-04-07 19:42:16 987 ------------------------
+ [end]
+
+[start] [INFO] [2026-04-07 19:42:16.995] [C009909_C009909CPM1] 
+---------------------Begin 2026-04-07 19:42:16 989    CREATE_BU:C009909    CREATE_BY:C009909CPM1 ---------------------
+[01]  DELETE FROM CEUSER.SEC_LOGIN_SESSION WHERE C_BK_GROUP_ID = 'CSBANK' AND C_USER_ID = 'C009909CPM1' AND C_UNIT_CODE = 'C009909' AND C_SESSION_ID = 'V5fyCG899RLsFOWb7MP_vf6' 
+---------------------- End 2026-04-07 19:42:16 993 ------------------------
+ [end]

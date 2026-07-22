@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>BPOM</module-name>
+        <cubk-mapping-name>SYF_BPOM_CheckBPOAmend_SYF_BPOM_CAL_LIAB_ACNO_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_AC_NUMBER ALIAS="T0" DBFUNC="" DESC="Account Number" DT="12" HIDDEN="F" TYPE="F">LIAB_ACNO</C_AC_NUMBER>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_CUST_ID = '</SQL>
+            <SQL TYPE="FLD">BUYR_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

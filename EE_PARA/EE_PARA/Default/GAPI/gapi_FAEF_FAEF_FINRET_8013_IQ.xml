@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>F</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value>GAPI2IATrxBusiness</gapi-type-value>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>eLOAN</other-system-id>
+        <other-system-interface>8213</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FAEF</module>
+        <interface-mapping-name>FAEF_FINRET_8013</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>I</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <C_UNIT_CODE descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_TEMP3</C_UNIT_CODE>
+        <IA_D_POST_TODATE descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_PMT_VAL_DT</IA_D_POST_TODATE>
+        <IA_C_MODU_NAME descr="" ec-tag="" fv-type="V" op-tag="" order="">FAEF</IA_C_MODU_NAME>
+        <IA_C_REF_NO descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_DOC_REF</IA_C_REF_NO>
+        <IA_D_POST_FROMDATE descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_LAST_PINT_DT</IA_D_POST_FROMDATE>
+    </send-msg-map>
+    <recv-msg-map>
+        <FA_LOAN_INT_AMT descr="" fv-type="F" order="" sheet="" sheet-separator="">IA_Y_REACC_INT</FA_LOAN_INT_AMT>
+    </recv-msg-map>
+    <send-item/>
+</gapi>

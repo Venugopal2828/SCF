@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Form Output" Max="n" Min="0"
+    Name="FormOutput" PendingStore="Y" Screen="SCRN/DO/TSU_FormOutput.jsp"
+    StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="TSUM_FORM"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>FORM_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TSUM_EM_BASELINE">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Form ID" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FORM_ID</Element>
+        <Element DATATYPE="12" Desc="Form Name" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_50" FldType="" Value="">FORM_NAME</Element>
+        <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType=""
+            FldType="" Value="">C_TRX_REF</Element>
+    </Elements>
+</DO>

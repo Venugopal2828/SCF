@@ -1,0 +1,16 @@
+{
+	"id": "scf_onboarding_activity",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_onboarding_activity",
+			"display": "custom_sql_table",
+			"title": "SCF Onboarding Activity",
+			"desc": "Onboarding requests and customer registration statuses."
+		},
+		"data": {
+			"sql": "SELECT C_MAIN_REF,C_UNIT_CODE,PARTY_NM,FST_CNTC_NM,EMAIL_ADD,TEL_NO,CUST_CITY,FA_CUST_BK_NM,FA_CUST_ACC_NO,EE_CUSTOMER,REJECTION_FLAG FROM %EXIMTRX%.STAT_CE_CP WHERE (( EE_CUSTOMER ='YES'AND REJ_REASON IS NULL) OR( EE_CUSTOMER ='YES'AND REJ_REASON IS NOT NULL AND REJECTION_FLAG ='YES')  )   and C_MAIN_REF IN (select C_MAIN_REF from %EXIMTRX%.STAT_MASTER where C_TRX_STATUS = 'M'  AND (C_CP_UNIT_CODE ='CSBANK' OR C_UNIT_CODE='CSBANK') )  AND (C_CP_UNIT_CODE ='CSBANK' OR C_UNIT_CODE='CSBANK')"
+		}
+	}
+}

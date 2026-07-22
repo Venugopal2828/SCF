@@ -1,0 +1,38 @@
+{
+	"id": "WF0000032",
+	"type": "function",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF0000032",
+			"display": "chart.bar",
+			"title": "Counter Party Onboarding",
+			"desc": "Show total data of different business type agrrement has been created.",
+			"tooltip": "{\"text\":\"{a}<br/>{b}:{c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Counter Party Onboarding\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+					"pie": "{\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"line": "{\"xAxis\":{\"name\":\"Counter Party Onboarding\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Counter Party Onboarding\"}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Counter Party Onboarding\"}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "B7GuSDi0s7ST",
+				"extraSelect": "EE_CUSTOMER,COUNT (C_MAIN_REF) AS VL,C_UNIT_CODE",
+				"extraWhere": "",
+				"extraGroupBy": "EE_CUSTOMER,C_UNIT_CODE",
+				"extraOrderBy": "VL asc",
+				"overwrite": ["extraSelect","extraOrderBy"],
+                "catalog": ["EE_CUSTOMER"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "C_UNIT_CODE",
+			"valueField": "VL"
+		}
+	}
+}

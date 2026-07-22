@@ -1,0 +1,16 @@
+{
+	"id": "scf_financed_total",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_financed_total",
+			"display": "bar",
+			"title": "SCF Financed in Total",
+			"desc": "Total financed amounts by currency for settled invoices."
+		},
+		"data": {
+			"sql": "SELECT FA_LMT_CCY as \"Currency\", SUM(FA_LMT_AMT) as \"Total_Financed\" FROM %EXIMTRX%.FAEF_MASTER WHERE C_TRX_STATUS = 'S' AND FA_LMT_CCY IS NOT NULL GROUP BY FA_LMT_CCY"
+		}
+	}
+}

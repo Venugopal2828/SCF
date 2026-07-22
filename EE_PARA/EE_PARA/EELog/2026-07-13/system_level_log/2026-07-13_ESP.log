@@ -1,0 +1,76 @@
+
+[start] [INFO] [2026-07-13 12:31:59.442] [] shutdown hook. [end]
+
+[start] [DEBUG] [2026-07-13 12:31:59.446] [] stop all ... false [end]
+
+[start] [INFO] [2026-07-13 13:41:49.460] [System] via EE log config. [end]
+
+[start] [INFO] [2026-07-13 13:41:49.523] [] compile all  file in D:\EEBackup\EEPARA\EE_PARA\mfvr\codegen [end]
+
+[start] [DEBUG] [2026-07-13 13:41:49.547] [] Load all listener service ... [end]
+
+[start] [ERROR] [2026-07-13 13:41:55.148] [] Error:  [end]
+net.sf.ehcache.CacheException: java.io.FileNotFoundException: C:\Users\ANILKI~1\AppData\Local\Temp\81\esp_cache\%0053%0059%0053%004d_%0047%0041%0050%0049_%004c%0053%0054%004e.data (There is not enough space on the disk.)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.<init>(DiskStorageFactory.java:144) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.store.disk.DiskStore.create(DiskStore.java:134) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.store.DiskBackedMemoryStore.createDiskStore(DiskBackedMemoryStore.java:61) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.store.DiskBackedMemoryStore.create(DiskBackedMemoryStore.java:49) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.Cache.initialise(Cache.java:1097) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.CacheManager.initializeEhcache(CacheManager.java:1306) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.CacheManager.addCacheNoCheck(CacheManager.java:1337) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.CacheManager.addCache(CacheManager.java:1235) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.CacheManager.addCache(CacheManager.java:1202) ~[ehcache-core-2.6.8.jar:?]
+	at com.cs.esp.cache.MetaCacheManager.getCache(MetaCacheManager.java:225) ~[cs-common-5.6.0.jar:5.6.0]
+	at com.cs.esp.cache.MetaCacheManager.putxxx(MetaCacheManager.java:352) ~[cs-common-5.6.0.jar:5.6.0]
+	at com.cs.esp.cache.MetaCacheManager.list(MetaCacheManager.java:528) ~[cs-common-5.6.0.jar:5.6.0]
+	at com.cs.esp.service.ServiceManager.startAll(ServiceManager.java:251) ~[esp-core-5.6.0.jar:5.6.0]
+	at com.cs.esp.service.StartupThread.run(StartupThread.java:20) [esp-core-5.6.0.jar:5.6.0]
+	at java.lang.Thread.run(Thread.java:785) [?:1.8.0-internal]
+Caused by: java.io.FileNotFoundException: C:\Users\ANILKI~1\AppData\Local\Temp\81\esp_cache\%0053%0059%0053%004d_%0047%0041%0050%0049_%004c%0053%0054%004e.data (There is not enough space on the disk.)
+	at java.io.RandomAccessFile.open0(Native Method) ~[?:1.8.0-internal]
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:333) ~[?:1.8.0-internal]
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:257) ~[?:1.8.0-internal]
+	at net.sf.ehcache.store.disk.DiskStorageFactory.allocateRandomAccessFiles(DiskStorageFactory.java:206) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.store.disk.DiskStorageFactory.<init>(DiskStorageFactory.java:142) ~[ehcache-core-2.6.8.jar:?]
+	... 14 more
+
+[start] [INFO] [2026-07-13 14:27:40.044] [CSBANKOP] loading properties from home: D:\EEBackup\EEPARA\EE_PARA\mfvr\ [end]
+
+[start] [INFO] [2026-07-13 14:27:40.046] [CSBANKOP] via druid jdbc:oracle:thin:@dev-scfnew:1522:orclpdb [end]
+
+[start] [INFO] [2026-07-13 14:27:40.093] [CSBANKOP] meta:  url jdbc:oracle:thin:@dev-scfnew:1522:orclpdb user EXIMTRX driverClass oracle.jdbc.driver.OracleDriver [end]
+
+[start] [INFO] [2026-07-13 15:35:34.461] [] shutdown hook. [end]
+
+[start] [DEBUG] [2026-07-13 15:35:34.461] [] stop all ... false [end]
+
+[start] [INFO] [2026-07-13 15:37:51.571] [System] via EE log config. [end]
+
+[start] [INFO] [2026-07-13 15:37:51.611] [] compile all  file in D:\EEBackup\EEPARA\EE_PARA\mfvr\codegen [end]
+
+[start] [DEBUG] [2026-07-13 15:37:51.647] [] Load all listener service ... [end]
+
+[start] [ERROR] [2026-07-13 15:37:57.357] [] Error:  [end]
+net.sf.ehcache.CacheException: java.io.FileNotFoundException: C:\WINDOWS\TEMP\esp_cache\ehcache_auto_created4522644811210190450diskstore\%0053%0059%0053%004d_%0047%0041%0050%0049_%004c%0053%0054%004e.data (There is not enough space on the disk.)
+	at net.sf.ehcache.store.disk.DiskStorageFactory.<init>(DiskStorageFactory.java:144) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.store.disk.DiskStore.create(DiskStore.java:134) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.store.DiskBackedMemoryStore.createDiskStore(DiskBackedMemoryStore.java:61) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.store.DiskBackedMemoryStore.create(DiskBackedMemoryStore.java:49) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.Cache.initialise(Cache.java:1097) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.CacheManager.initializeEhcache(CacheManager.java:1306) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.CacheManager.addCacheNoCheck(CacheManager.java:1337) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.CacheManager.addCache(CacheManager.java:1235) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.CacheManager.addCache(CacheManager.java:1202) ~[ehcache-core-2.6.8.jar:?]
+	at com.cs.esp.cache.MetaCacheManager.getCache(MetaCacheManager.java:225) ~[cs-common-5.6.0.jar:5.6.0]
+	at com.cs.esp.cache.MetaCacheManager.putxxx(MetaCacheManager.java:352) ~[cs-common-5.6.0.jar:5.6.0]
+	at com.cs.esp.cache.MetaCacheManager.list(MetaCacheManager.java:528) ~[cs-common-5.6.0.jar:5.6.0]
+	at com.cs.esp.service.ServiceManager.startAll(ServiceManager.java:251) ~[esp-core-5.6.0.jar:5.6.0]
+	at com.cs.esp.service.StartupThread.run(StartupThread.java:20) [esp-core-5.6.0.jar:5.6.0]
+	at java.lang.Thread.run(Thread.java:785) [?:1.8.0-internal]
+Caused by: java.io.FileNotFoundException: C:\WINDOWS\TEMP\esp_cache\ehcache_auto_created4522644811210190450diskstore\%0053%0059%0053%004d_%0047%0041%0050%0049_%004c%0053%0054%004e.data (There is not enough space on the disk.)
+	at java.io.RandomAccessFile.open0(Native Method) ~[?:1.8.0-internal]
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:333) ~[?:1.8.0-internal]
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:257) ~[?:1.8.0-internal]
+	at net.sf.ehcache.store.disk.DiskStorageFactory.allocateRandomAccessFiles(DiskStorageFactory.java:206) ~[ehcache-core-2.6.8.jar:?]
+	at net.sf.ehcache.store.disk.DiskStorageFactory.<init>(DiskStorageFactory.java:142) ~[ehcache-core-2.6.8.jar:?]
+	... 14 more

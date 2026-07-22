@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start:FAEF Add PO");
+stp.setAutoProcess(true);
+var sUnitCode = stp.getMsgTagVal("CE_UNIT_CODE");
+stp.setCmpId(sUnitCode);
+var dtTm = stp.getXslMsgTagVal("/message/out-msg-content/Document/InitlBaselnSubmissn/Baseln/PurchsOrdrRef","DtOfIsse");
+stp.writeLog("dtTm========="+dtTm);
+var issDt = dtTm.substr(0,10);  
+stp.writeLog("issDt========="+issDt);
+stp.updateFieldValue("PO_DT",issDt);
+stp.updateFieldValue("PO_VAL_DT",issDt);  
+var poamt = stp.getXslMsgTagVal("/message/out-msg-content/Document/InitlBaselnSubmissn/Baseln/Goods","TtlNetAmt");
+var poccy = stp.getXslMsgTagAttribute("/message/out-msg-content/Document/InitlBaselnSubmissn/Baseln/Goods","TtlNetAmt","Ccy");
+stp.writeLog("poccy========="+poccy);
+stp.writeLog("poamt========="+poamt);
+stp.updateFieldValue("AUTH_CCY",poccy);
+stp.updateFieldValue("AUTH_AMT",poamt);
+var sMainRef = stp.SYS_getRefNo("P14042500001");
+stp.writeLog("sMainRef========="+sMainRef);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Uploaded PO");
+stp.setEventTimes(0);
+stp.writeLog("End:FAEF Add PO");]]></js-content>
+</root>

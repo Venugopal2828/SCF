@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>InitiatingParty</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X103_ORD_BKID_52A</C_MAIN_REF>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X103_ORD_BKID_52A</C_MAIN_REF>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">X103_ORD_BKNM_52A</SWF_FMT_NM>
+        <MX_PTY ALIAS="T0" DBFUNC="" DESC="Party" DT="2005" HIDDEN="F" TYPE="F">MX_INITGPTY</MX_PTY>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T1.SWF_FMT_NM</SQL>
+            <SQL TYPE="SQL">LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORD_BKNM_52A</SQL>
+            <SQL TYPE="SQL">%' AND</SQL>
+            <SQL DT="4" EEType="INTEGER" TYPE="TBL_FLD">T1.ORDER_NO</SQL>
+            <SQL TYPE="SQL">= '1' AND</SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">=</SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T1.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">AND</SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORD_BKID_52A</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

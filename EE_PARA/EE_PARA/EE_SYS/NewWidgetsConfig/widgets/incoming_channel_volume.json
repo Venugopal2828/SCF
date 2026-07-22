@@ -1,0 +1,16 @@
+{
+	"id": "incoming_channel_volume",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "incoming_channel_volume",
+			"display": "chart.bar",
+			"title": "Incoming Channel Volume",
+			"desc": "Displays incoming channel traffic volumes."
+		},
+		"data": {
+			"sql": "SELECT COALESCE(C_MSG_TYPE, 'UNKNOWN') as \"Channel\", COUNT(*) as \"Total\" FROM %EXIMSYS%.STP_IN_MSG_STO WHERE C_UNIT_CODE = '%USER_BU%' GROUP BY C_MSG_TYPE ORDER BY \"Total\" DESC"
+		}
+	}
+}

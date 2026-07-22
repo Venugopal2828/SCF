@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="">STD_BKE</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYM_PYMT_SYM_PYMT_chkRecBIC_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_CORR_ID ALIAS="T0" DBFUNC="" DESC="Corr ID" DT="12" HIDDEN="F" TYPE="F">AVAL_WT_BK_ID</C_CORR_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_SENDER_BANK_ID ='</SQL>
+            <SQL DT="var" DV="SYS_LOGIN_BIC" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">' and (C_BANK_ID like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">BICValueCUBK</SQL>
+            <SQL TYPE="SQL">',0,4),'%')) OR C_BANK_ID like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">BICValueCUBK</SQL>
+            <SQL TYPE="SQL">',0,6),'%')) OR C_BANK_ID like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">BICValueCUBK</SQL>
+            <SQL TYPE="SQL">',0,8),'%')) OR C_BANK_ID like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">BICValueCUBK</SQL>
+            <SQL TYPE="SQL">',0,11),'%')))</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

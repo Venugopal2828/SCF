@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PUOD</MODULE>
+        <MODULE_DESC>Purchase Order</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701046</ID>
+        <NAME>Process Amd PO</NAME>
+        <DESC>Process Amendment Purchase Order</DESC>
+        <FUNSHORTNAME>ProcessAmdPO</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">PUOD_ProcessPO.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701039</ID>
+        <NAME>Process Amd PO_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701039</ID>
+        <NAME>Process Amd PO_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000323</ID>
+        <NAME>Process Amd PO_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FADA</module>
+    <name>Loan_Percentage</name>
+    <desc>Loan_Percentage</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FADA_MASTER</table-name>
+        <table-desc>FADA_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>FA_BUYER_ID</sql>
+            <sql> ='</sql>
+            <field mf="F">FA_BUYER_ID</field>
+            <sql>' AND </sql>
+            <sql>FA_EF_ID</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_EF_ID</field>
+            <sql>' AND </sql>
+            <sql>FA_IF_ID</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_IF_ID</field>
+            <sql>' AND </sql>
+            <sql>FA_SEL_ID</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_SEL_ID</field>
+            <sql>' AND </sql>
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_TEMP4</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_MAX_LOAN_PERC fv_type="F" mf="F" oper="=">FA_MAX_LOAN_PERC</FA_MAX_LOAN_PERC>
+    </mapping>
+</root>

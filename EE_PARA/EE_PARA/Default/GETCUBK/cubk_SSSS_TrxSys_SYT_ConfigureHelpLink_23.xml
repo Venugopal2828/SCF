@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">EXT_CNTRY_LINKS</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>TrxSys_SYT_ConfigureHelpLink_23</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <URL ALIAS="T0" DBFUNC="" DESC="URL" DT="12" HIDDEN="F" TYPE="F">HELP_LINK_URL</URL>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">COUNTRY_CODE is null AND EVENT_SHORT_NAME ='</SQL>
+            <SQL DT="var" DV="SYS_ORG_FUNCTION_SHORT_NAME" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

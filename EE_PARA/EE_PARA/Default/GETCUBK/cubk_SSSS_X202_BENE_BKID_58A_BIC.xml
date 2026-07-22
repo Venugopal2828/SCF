@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>X202_BENE_BKID_58A_BIC</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X202_BENE_BKID_58A</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X202_BENE_BKID_58A</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">X202_BENE_BKNM_58A</PARTY_NM>
+        <CITY ALIAS="T0" DBFUNC="" DESC="City Name" DT="12" HIDDEN="F" TYPE="F">X202BENEBKADD1_58A</CITY>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">X202BENEBKADD2_58A</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address2" DT="12" HIDDEN="F" TYPE="F">X202BENEBKADD3_58A</ADD2>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="F" TYPE="F">X202_BENE_BKSW_58A</SW_ADD>
+        <AC1_NO ALIAS="T0" DBFUNC="" DESC="Account No1" DT="1" HIDDEN="F" TYPE="F">X202_BENEBKACNO58A</AC1_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="BIC" TYPE="TBL_FLD">T0.SW_ADD</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X202_BENE_BKSW_58A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T1.SWF_FMT_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X202_BENE_BKNM_58A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD1</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X202BENEBKADD1_58A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD2</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X202BENEBKADD2_58A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD3</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X202BENEBKADD3_58A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="4" EEType="INTEGER" TYPE="TBL_FLD">T1.ORDER_NO</SQL>
+            <SQL TYPE="SQL"> = '1' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T1.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X202_BENE_BKID_58A</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

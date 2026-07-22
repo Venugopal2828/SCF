@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Event Edit Rec">TrxEventEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>EXLC</MODULE>
+        <EVENT>STP</EVENT>
+        <TABLE_NAME>CETRX.EXLC_EM_ADV</TABLE_NAME>
+        <TABLE_DESC>EXLC_EM_ADV</TABLE_DESC>
+        <MAINREF>PARENT_MAIN_REF</MAINREF>
+        <TRXREF>PARENT_MAIN_REF</TRXREF>
+        <MAPPINGRULE></MAPPINGRULE>
+        <POST>YES</POST>
+        <BCTYPE>Edit Event</BCTYPE>
+        <O2MRULE></O2MRULE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Event Add Rec">TrxEventAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>EXLC</MODULE>
+        <EVENT>STP</EVENT>
+        <TABLE_NAME>CETRX.EXLC_EM_AMD</TABLE_NAME>
+        <TABLE_DESC>EXLC_EM_AMD</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE></MAPPINGRULE>
+        <POST>YES</POST>
+        <BCTYPE></BCTYPE>
+        <O2MRULE></O2MRULE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Master Add Rec">TrxMasterAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>EXLC</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.EXLC_MASTER</TABLE_NAME>
+        <TABLE_DESC>EXLC_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE></MAPPINGRULE>
+        <POST>YES</POST>
+        <BCTYPE>Add Master</BCTYPE>
+        <O2MRULE></O2MRULE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Transfer To">TrxTransferTo</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>EXLC</MODULE>
+        <EVENT>STP</EVENT>
+        <TABLE_NAME>CETRX.EXLC_EM_AMD</TABLE_NAME>
+        <TABLE_DESC>EXLC_EM_AMD</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE></MAPPINGRULE>
+        <POST>YES</POST>
+        <BCTYPE></BCTYPE>
+        <O2MRULE></O2MRULE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Generate Notification">TrxGenerateNotification</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>EXLC</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.EXLC_MASTER</TABLE_NAME>
+        <TABLE_DESC>EXLC_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE></MAPPINGRULE>
+        <POST>YES</POST>
+        <BCTYPE></BCTYPE>
+        <O2MRULE></O2MRULE>
+    </COMPONENT>
+</FUNCATTR>

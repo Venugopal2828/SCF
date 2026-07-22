@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="PaymentScheduleHeader" Name="PaymentScheduleHeader" PendingStore="N" Screen="SCRN/DO/PaymentScheduleHeader.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>PaymentSchedule</Component>
+    <PK>
+        <PKNAME>CPYT_C_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="EPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="EXCO_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IMCO_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Payment Reference" DispInGrid="Y" EDIT="N" EEType="Varchar_40" FldType="" Value="">CPYT_C_REF</Element>
+        <Element DATATYPE="-1" Desc="Payment Reason" DispInGrid="Y" EDIT="N" EEType="Long Varchar" FldType="" Value="">CPYT_C_PAY_FOR</Element>
+        <Element DATATYPE="12" Desc="Mix Payment Detail Information" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_420" FldType="" Value="">CPYT_C_MIX_PAY_DETAIL</Element>
+        <Element DATATYPE="3" Desc="Total Pay Out Amount in Transaction CCY" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">CPYT_N_PAY_TTL_AMT_TXCCY</Element>
+        <Element DATATYPE="3" Desc="Total Pay Out Amount in Local CCY" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">CPYT_N_PAY_TTL_AMT_LCY</Element>
+        <Element DATATYPE="3" Desc="Unpaid Amount In Transaction CCY" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">CPYT_N_UNPD_AMT_TXCCY</Element>
+        <Element DATATYPE="12" Desc="Schedule Templete Data" DispInGrid="N" EDIT="N" EEType="AutoGen_Ext_VARCHAR_100" FldType="" Value="">CPYT_SCHE_TEMP_DATA</Element>
+        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">CPYT_C_TRX_CCY</Element>
+    </Elements>
+    <DO Desc="PaymentSchedule" Name="PaymentSchedule" Max="n" Min="0" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="PAYMENTSCHEDULE" AutoGen-Parameter-Version="1.0">
+        <Elements>
+            <Element DATATYPE="12" Desc="Percentage" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">CPYT_C_PAY_PER</Element>
+            <Element DATATYPE="12" Desc="Sight/Def/Acc Flag" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">CPYT_C_SDA_FLAG</Element>
+            <Element DATATYPE="12" Desc="Tenor Type" DispInGrid="Y" EDIT="N" EEType="Varchar_40" FldType="" Value="">CPYT_C_TENOR_TYPE</Element>
+            <Element DATATYPE="2" Desc="Tenor Days" DispInGrid="Y" EDIT="N" EEType="Numeric_22" FldType="" Value="">CPYT_I_TENOR_DAYS</Element>
+            <Element DATATYPE="12" Desc="Tenor Description" DispInGrid="N" EDIT="N" EEType="Varchar_160" FldType="" Value="">CPYT_C_TENOR_DESC</Element>
+            <Element DATATYPE="91" Desc="Payment Tenor Start Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">CPYT_D_TENOR_START_DATE</Element>
+            <Element DATATYPE="3" Desc="Pay Amount In Transaction Currency" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">CPYT_N_PAY_AMT</Element>
+            <Element DATATYPE="91" Desc="Debit Maturity Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">CPYT_D_MAT_DATE</Element>
+            <Element DATATYPE="2" Desc="Reference Sequence" DispInGrid="N" EDIT="N" EEType="Numeric_22" FldType="" Value="">CPYT_I_SEQUENCE</Element>
+            <Element DATATYPE="91" Desc="Acceptance Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">CPYT_ACPT_DT</Element>
+            <Element DATATYPE="1" Desc="Pay Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">CPYT_PAY_CCY</Element>
+            <Element DATATYPE="3" Desc="Pay Transaction Currency Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">CPYT_N_PAY_TRXCCY_BAL</Element>
+	    <Element DATATYPE="12" Desc="Drawing Reference" DispInGrid="N" EDIT="N" EEType="VARCHAR20" FldType="" Value="">CPYT_DRAWING_REF</Element>
+        </Elements>
+    </DO>
+</DO>

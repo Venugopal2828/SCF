@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">FFIT_COMMIT1</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_CFRegister1_SYF_FFIT_COMMIT_NO_4</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <TRX_NO ALIAS="T0" DBFUNC="" DESC="Transaction No" DT="12" HIDDEN="F" TYPE="F">TEMP_CHAR1</TRX_NO>
+        <EXPT_ID ALIAS="T0" DBFUNC="" DESC="EXPT_ID" DT="12" HIDDEN="F" TYPE="F">EXPT_ID</EXPT_ID>
+        <EXPT_NM ALIAS="T0" DBFUNC="" DESC="EXPT_NM" DT="12" HIDDEN="F" TYPE="F">EXPT_NM</EXPT_NM>
+        <EXPT_NM_C ALIAS="T0" DBFUNC="" DESC="EXPT_NM_C" DT="12" HIDDEN="F" TYPE="F">EXPT_NM_C</EXPT_NM_C>
+        <IMPT_NM ALIAS="T0" DBFUNC="" DESC="IMPT_NM" DT="12" HIDDEN="F" TYPE="F">IMPT_NM</IMPT_NM>
+        <ACPT_BK_ID ALIAS="T0" DBFUNC="" DESC="ACPT_BK_ID" DT="12" HIDDEN="F" TYPE="F">ACPT_BK_ID</ACPT_BK_ID>
+        <ACPT_BK_NM ALIAS="T0" DBFUNC="" DESC="ACPT_BK_NM" DT="12" HIDDEN="F" TYPE="F">ACPT_BK_NM</ACPT_BK_NM>
+        <ACPT_BK_ADD ALIAS="T0" DBFUNC="" DESC="ACPT_BK_ADD" DT="12" HIDDEN="F" TYPE="F">ACPT_BK_ADD</ACPT_BK_ADD>
+        <DEBT_INSMT_TYPE ALIAS="T0" DBFUNC="" DESC="DEBT_INSMT_TYPE" DT="12" HIDDEN="F" TYPE="F">DEBT_INSMT_TYPE</DEBT_INSMT_TYPE>
+        <DEBT_INSMT_NO ALIAS="T0" DBFUNC="" DESC="DEBT_INSMT_NO" DT="12" HIDDEN="F" TYPE="F">DEBT_INSMT_NO</DEBT_INSMT_NO>
+        <COMMIT_CCY ALIAS="T0" DBFUNC="" DESC="COMMIT_CCY" DT="12" HIDDEN="F" TYPE="F">COMMIT_CCY</COMMIT_CCY>
+        <COMMIT_AMT ALIAS="T0" DBFUNC="" DESC="COMMIT_AMT" DT="2" HIDDEN="F" TYPE="F">COMMIT_AMT</COMMIT_AMT>
+        <COMMIT_DUE_DT ALIAS="T0" DBFUNC="" DESC="COMMIT_DUE_DT" DT="91" HIDDEN="F" TYPE="F">COMMIT_DUE_DT</COMMIT_DUE_DT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">COMMIT_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

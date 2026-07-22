@@ -1,0 +1,16 @@
+{
+	"id": "fx_rates",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "fx_rates",
+			"display": "custom_sql_table",
+			"title": "FX Exchange Rates",
+			"desc": "Display current currency exchange rates relative to USD."
+		},
+		"data": {
+			"sql": "SELECT C_FROM_CCY as \"Currency\", C_TO_CCY as \"Base\", F_VALUE as \"Rate\", C_DESC_ID as \"Rate_Type\" FROM %EXIMSYS%.STD_EXCHAN_RATE WHERE C_TO_CCY = 'USD' AND C_FROM_CCY IN ('EUR', 'GBP', 'AUD', 'CNY', 'JPY', 'CAD', 'CHF') AND C_DESC_ID = 'Selling Rate'"
+		}
+	}
+}

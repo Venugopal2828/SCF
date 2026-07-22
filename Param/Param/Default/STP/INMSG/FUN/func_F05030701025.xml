@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Action Reminder");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMsgReqrngActn = stp.getXslMsgTagVal("message/Document/ActnRmndr/MsgReqrngActn","Id");
+stp.writeLog("sMsgReqrngActn=========="+sMsgReqrngActn);
+var arrKeys = [["TSU_MESSAGE_ID",sMsgReqrngActn]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetRefUnitByMsgRqrngActn",arrKeys);
+var sMainRef = arrGetDataResult[0];
+stp.writeLog("sMainRef=========="+sMainRef);
+var sUnitCode = arrGetDataResult[2];
+stp.writeLog("sUnitCode=========="+sUnitCode);
+var sParentMainRef = arrGetDataResult[1];
+stp.writeLog("sParentMainRef=========="+sParentMainRef);
+stp.setCmpId(sUnitCode);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sParentMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Received Action Reminder");
+stp.writeLog("End: Received Action Reminder");]]></js-content>
+</root>

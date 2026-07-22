@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>EXCO</module>
+    <name>TENOR_INFO</name>
+    <desc>TENOR_INFO</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.EXCO_MASTER</table-name>
+        <table-desc>EXCO MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <DAY_MON_FLG fv_type="F" mf="F" oper="=">NEW_DAY_MON_FLG_TEMP</DAY_MON_FLG>
+        <DUE_DT fv_type="F" mf="F" oper="=">NEW_DUE_DT_TEMP</DUE_DT>
+        <TENOR_DAYS fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS_TEMP</TENOR_DAYS>
+        <TENOR_DETAILS fv_type="F" mf="F" oper="=">NEW_TENOR_DETAILS_TEMP</TENOR_DETAILS>
+        <TENOR_START_DT fv_type="F" mf="F" oper="=">NEW_TENOR_START_DT_TEMP</TENOR_START_DT>
+        <TENOR_TYPE fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE_TEMP</TENOR_TYPE>
+    </mapping>
+</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="GetDataBySBRref" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>GetDataBySBRref</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.FADA_EM_BSR</table-name>
+        <table-desc>FADA_EM_BSR</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <C_UNIT_CODE DESC="Company Code" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sUnitCode</C_UNIT_CODE>
+            <FA_SBR_REF DESC="SBR reference in EE" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sSBRref</FA_SBR_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <FA_BUSI_TYPE DESC="Business Type" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">FA_BUSI_TYPE</FA_BUSI_TYPE>
+        <FA_BUYER_ID DESC="Buyer ID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">FA_BUYER_ID</FA_BUYER_ID>
+        <FA_SEL_ID DESC="Seller ID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">FA_SEL_ID</FA_SEL_ID>
+        <FA_REQ_BUYER_APR_FLG DESC="Need Buyer Approve" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">FA_REQ_BUYER_APR_FLG</FA_REQ_BUYER_APR_FLG>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

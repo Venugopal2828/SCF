@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="INQMASTER_CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082301834</ID>
+    <MODULE>PYMT</MODULE>
+    <JSPFILE>screen/CATA/Inquire_Master_Catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Create Correspondence</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.PYMT_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="" HIDDEN="H">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Next Status" EEType="Varchar_35" HIDDEN="H">NXT_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Our Reference" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Applicant Account Number"
+            EEType="ACNO" HIDDEN="">X103_ORDCUACNO_50A</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="">X103_ORDCU_NM_50A</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Beneficiary Account Number"
+            EEType="ACNO" HIDDEN="">X103_BENECUACNO59A</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Beneficiary Name"
+            EEType="NM_CHAR35" HIDDEN="">X103_BENECU_NM_59A</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Original Account Number" EEType="" HIDDEN="">INW_X103_BENECUACNO59A</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Original Name" EEType="" HIDDEN="">INW_X103_BENECU_NM_59A</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Current Status"
+            EEType="Varchar_35" HIDDEN="">CURRNT_STATUS</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> ( </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">'</SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Applicant Account Number" DT="1" EEType="ACNO" TYPE="FLD">X103_ORDCUACNO_50A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Applicant Name" DT="12" EEType="NM_CHAR35" TYPE="FLD">X103_ORDCU_NM_50A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Beneficiary Account Number" DT="1" EEType="ACNO" TYPE="FLD">X103_BENECUACNO59A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG11</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Beneficiary Name" DT="12" EEType="NM_CHAR35" TYPE="FLD">X103_BENECU_NM_59A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP12</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE13</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG14</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Original Account Number" DT="12" EEType="" TYPE="FLD">INW_X103_BENECUACNO59A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP15</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE16</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG17</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Original Name" DT="12" EEType="" TYPE="FLD">INW_X103_BENECU_NM_59A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP18</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE19</SQL>
+        <SQL TYPE="SQL">' ) AND
+</SQL>
+        <SQL DESC="Current Status" DT="12" EEType="Varchar_35" TYPE="FLD">CURRNT_STATUS</SQL>
+        <SQL TYPE="SQL"> NOT IN ('OTT_REGISTER','REGISTER') AND
+(</SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> LIKE 'DI%' OR </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> LIKE 'OT%' OR </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> LIKE 'IT%')
+
+</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="Applicant Account Number" EEType="ACNO">X103_ORDCUACNO_50A</FIELD>
+        <FIELD DATATYPE="12" DESC="Applicant Name" EEType="NM_CHAR35">X103_ORDCU_NM_50A</FIELD>
+        <FIELD DATATYPE="1" DESC="Beneficiary Account Number" EEType="ACNO">X103_BENECUACNO59A</FIELD>
+        <FIELD DATATYPE="12" DESC="Beneficiary Name" EEType="NM_CHAR35">X103_BENECU_NM_59A</FIELD>
+        <FIELD DATATYPE="12" DESC="Original Account Number" EEType="">INW_X103_BENECUACNO59A</FIELD>
+        <FIELD DATATYPE="12" DESC="Original Name" EEType="">INW_X103_BENECU_NM_59A</FIELD>
+        <FIELD DATATYPE="12" DESC="Current Status" EEType="Varchar_35">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+    <SUBCATA BYGLOBAL="False" BYUNITCODE="False">
+        <ID>R49082301834</ID>
+        <MODULE>PYMT</MODULE>
+        <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+        <BYPAGE>Y</BYPAGE>
+        <DESC>enquire</DESC>
+        <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.PYMT_LEDGER</TABLENAME>
+        <FIELDLIST>
+            <FIELD DATATYPE="12" DESC="Our Reference" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+            <FIELD DATATYPE="12" DESC="Unit Code" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+            <FIELD DATATYPE="4" DESC="Event Times" EEType="" HIDDEN="">I_EVENT_TIMES</FIELD>
+            <FIELD DATATYPE="12" DESC="Function Short Name" EEType="" HIDDEN="">C_FUNC_SHORT_NAME</FIELD>
+            <FIELD DATATYPE="1" DESC="Transaction Reference" EEType="" HIDDEN="">C_TRX_REF</FIELD>
+            <FIELD DATATYPE="1" DESC="Function ID" EEType="" HIDDEN="">C_FUNC_ID</FIELD>
+            <FIELD DATATYPE="1" DESC="Event Status" EEType="" HIDDEN="">C_EVENT_STATUS</FIELD>
+        </FIELDLIST>
+        <VARLIST>
+            <VAR>OP</VAR>
+            <VAR>VALUE</VAR>
+            <VAR>LOG</VAR>
+        </VARLIST>
+        <CLAUSE/>
+        <CLAUSEFIELD/>
+    </SUBCATA>
+</CATA>

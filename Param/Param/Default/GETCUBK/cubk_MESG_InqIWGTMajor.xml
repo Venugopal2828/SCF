@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire IWGT Major Table" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>InqIWGTMajor</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.IWGT_EM_GTEE</table-name>
+        <table-desc>Guarantee Details</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <ADV_NO DESC="Advise Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</ADV_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <ADV_NO DESC="Advise Number" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sInqDataId</ADV_NO>
+        <GTEE_NO DESC="Guarantee Number" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sGteeNo</GTEE_NO>
+        <APPL_NM DESC="Applicant Name" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sApplNm</APPL_NM>
+        <GTEE_CCY DESC="Guarantee Currency" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sGteeCcy</GTEE_CCY>
+        <GTEE_AMT DESC="Guarantee Amount" DT="3" HIDDEN="" TYPE="V" WTYPE="CASE">sGteeAmt</GTEE_AMT>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

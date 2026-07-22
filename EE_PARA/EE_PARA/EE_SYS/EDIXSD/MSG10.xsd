@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-edifactoring-com:MSG10" targetNamespace="urn:schemas-edifactoring-com:MSG10" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="MSG10" type="MSG10Type"/>
+	<xs:complexType name="MSG10Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="EF" type="FType"/>
+			<xs:element name="IF" type="FType"/>
+			<xs:element name="MsgDate" type="xs:date"/>
+			<xs:element name="MsgFunction" type="NMax3Type"/>
+			<xs:element name="DocType" type="NMax3Type"/>
+			<xs:element name="OrigDocNr" type="AMax35Type"/>
+			<xs:element name="OrigDocDate" type="xs:date"/>
+			<xs:element name="OrigDocCurrency" type="A3Type"/>
+			<xs:element name="Seller" type="SellerType"/>
+			<xs:element name="Buyer" type="BuyerType"/>
+			<xs:element name="AdjustDetails" type="AdjustDetailsType" minOccurs="0"/>
+			<xs:element name="MsgText" type="AMax1400Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7Type"/>
+			<xs:element name="ReceiverCode" type="A7Type"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10Type" minOccurs="0"/>
+			<xs:element name="DateTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Status" type="NMax2Type" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FType">
+		<xs:sequence>
+			<xs:element name="FactorCode" type="A7Type"/>
+			<xs:element name="FactorName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SellerType">
+		<xs:sequence>
+			<xs:element name="SellerNr" type="AMax35Type"/>
+			<xs:element name="SellerName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BuyerType">
+		<xs:sequence>
+			<xs:element name="BuyerNr" type="AMax35Type"/>
+			<xs:element name="BuyerName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdjustDetailsType">
+		<xs:sequence>
+			<xs:element name="InvValueDate" type="xs:date" minOccurs="0"/>
+			<xs:element name="InvDueDate" type="xs:date" minOccurs="0"/>
+			<xs:element name="NetPmtTerms" type="NDef3Type" minOccurs="0"/>
+			<xs:element name="Discount1Days" type="NDef3Type" minOccurs="0"/>
+			<xs:element name="Discount1Perc" type="NDef3.4Type" minOccurs="0"/>
+			<xs:element name="Discount2Days" type="NDef3Type" minOccurs="0"/>
+			<xs:element name="Discount2Perc" type="NDef3.4Type" minOccurs="0"/>
+			<xs:element name="PmtCondition" type="NMax3Type" minOccurs="0"/>
+			<xs:element name="OrderNrRef" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

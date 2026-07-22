@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="GenericBuyerPricingPro" Max="1"
+    Min="1" Name="GenericBuyerPricingPro" PendingStore="N"
+    Screen="SCRN/o2m/EPPM_GenericBuyerPricingPro.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="PRICING_PROFILE"/>
+    <PK>
+        <PKNAME>PP_ID</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="BUYR_PRC_PRFL_ID" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_18" FldType="" Value="">PP_ID</Element>
+        <Element DATATYPE="91" Desc="Effective date" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">ACTV_ST_DT</Element>
+        <Element DATATYPE="12" Desc="B-Buyer;S-Supplier" DispInGrid="Y" EDIT="N"
+            EEType="FLAG_1" FldType="" Value="">PRFL_TP</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="12" Desc="Fixed Base Interest Rate" DispInGrid="Y"
+            EDIT="N" EEType="FLAG_20" FldType="" Value="">INT_BASE_RT_CD</Element>
+        <Element DATATYPE="12" Desc="Used to decide whether use flat rate"
+            DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_FLAT_INT</Element>
+        <Element DATATYPE="12" Desc="Status shown to the supplier"
+            DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">STAT_PRFL_CD</Element>
+        <Element DATATYPE="12" Desc="Pricing profile name" DispInGrid="N"
+            EDIT="N" EEType="Varchar_70" FldType="" Value="">PP_NM</Element>
+        <Element DATATYPE="2" Desc="Flat rate value" DispInGrid="N" EDIT="N"
+            EEType="Numeric_12_8" FldType="" Value="">FLAT_INT_RT</Element>
+        <Element DATATYPE="3" Desc="EPR Interest Margin" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">EPR_INT_MARGIN</Element>
+        <Element DATATYPE="6" Desc="Overdue Interest Margin" DispInGrid="N"
+            EDIT="N" EEType="FLOAT" FldType="" Value="">OVD_INT_MARGIN</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+    <DO Desc="EPPMMaginInterest" Max="n" Min="0" Name="EPPMMaginInterest"
+        PendingStore="N" Screen="SCRN/o2m/EPPM_MarginInterest.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="PP_INT_RULE"/>
+        <PK>
+            <PKNAME>INT_CAL_ID</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="PRICING_PROFILE">
+                <FKNAME PARENT_COL="PP_ID">PP_ID</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Margin Type" DispInGrid="Y" EDIT="N"
+                EEType="FLAG_18" FldType="" Value="">BASE_FRT_TP</Element>
+            <Element DATATYPE="3" Desc="Margin (bpts)" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">MARGIN_VAL</Element>
+            <Element DATATYPE="1" Desc="Beneficiary Type" DispInGrid="Y"
+                EDIT="N" EEType="INTERPRETER" FldType="" Value="">BENE_TP_CD</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Name" DispInGrid="Y"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">BENE_NM</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="Interest_ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_18" FldType="" Value="">INT_CAL_ID</Element>
+            <Element DATATYPE="12" Desc="BUYR_PRC_PRFL_ID" DispInGrid="N"
+                EDIT="N" EEType="Varchar_18" FldType="" Value="">PP_ID</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Interest collection account"
+                DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">ACC_INC_INT</Element>
+            <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CCY</Element>
+            <Element DATATYPE="3" Desc="Min" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">MIN_AMT</Element>
+            <Element DATATYPE="3" Desc="Max" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">MAX_AMT</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+        </Elements>
+    </DO>
+    <DO Desc="EPPMTRXFEE" Max="n" Min="0" Name="EPPM_TRXFEE" PendingStore="N"
+        Screen="SCRN/o2m/EPPM_EPRTRX.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="PP_FEE_RULE"/>
+        <PK>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>FEE_ID</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="PRICING_PROFILE"/>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="1" Desc="Fee Type" DispInGrid="Y" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">FEE_TP</Element>
+            <Element DATATYPE="1" Desc="Fee Type Unit" DispInGrid="Y" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">FEE_UNIT</Element>
+            <Element DATATYPE="3" Desc="Fee rate" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">FEE_TP_AMT</Element>
+            <Element DATATYPE="3" Desc="Min" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">MIN_AMT</Element>
+            <Element DATATYPE="3" Desc="Max" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">MAX_AMT</Element>
+            <Element DATATYPE="12" Desc="Charge Frequency" DispInGrid="Y"
+                EDIT="N" EEType="FLAG_1" FldType="" Value="">CHG_FREQ_CD</Element>
+            <Element DATATYPE="1" Desc="Beneficiary Type" DispInGrid="N"
+                EDIT="N" EEType="INTERPRETER" FldType="" Value="">BENE_TP_CD</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">BENE_NM</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Fee_ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_18" FldType="" Value="">FEE_ID</Element>
+            <Element DATATYPE="12" Desc="T - Transaction base; P - Percent base"
+                DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">BASE_CD</Element>
+            <Element DATATYPE="12" Desc="BUYR_PRC_PRFL_ID" DispInGrid="N"
+                EDIT="N" EEType="Varchar_18" FldType="" Value="">PP_ID</Element>
+            <Element DATATYPE="12" Desc="Fee Income account" DispInGrid="Y"
+                EDIT="N" EEType="Varchar_35" FldType="" Value="">ACC_INC_FEE</Element>
+            <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CCY</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+        </Elements>
+    </DO>
+    <DO Desc="EPPMPercentageFee" Max="n" Min="0" Name="EPPM_PercentFee"
+        PendingStore="N" Screen="SCRN/o2m/EPPM_EPRPECFEE.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="PP_FEE_RULE"/>
+        <PK>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>FEE_ID</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="PRICING_PROFILE"/>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="1" Desc="Fee Type" DispInGrid="Y" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">FEE_TP</Element>
+            <Element DATATYPE="1" Desc="Fee Type Unit" DispInGrid="Y" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">FEE_UNIT</Element>
+            <Element DATATYPE="3" Desc="Fee rate" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">FEE_TP_AMT</Element>
+            <Element DATATYPE="3" Desc="Min" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">MIN_AMT</Element>
+            <Element DATATYPE="3" Desc="Max" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">MAX_AMT</Element>
+            <Element DATATYPE="12" Desc="Charge Frequency" DispInGrid="Y"
+                EDIT="N" EEType="FLAG_1" FldType="" Value="">CHG_FREQ_CD</Element>
+            <Element DATATYPE="1" Desc="Beneficiary Type" DispInGrid="N"
+                EDIT="N" EEType="INTERPRETER" FldType="" Value="">BENE_TP_CD</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">BENE_NM</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Fee_ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_18" FldType="" Value="">FEE_ID</Element>
+            <Element DATATYPE="12" Desc="T - Transaction base; P - Percent base"
+                DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">BASE_CD</Element>
+            <Element DATATYPE="12" Desc="BUYR_PRC_PRFL_ID" DispInGrid="N"
+                EDIT="N" EEType="Varchar_18" FldType="" Value="">PP_ID</Element>
+            <Element DATATYPE="12" Desc="Fee Income account" DispInGrid="Y"
+                EDIT="N" EEType="Varchar_35" FldType="" Value="">ACC_INC_FEE</Element>
+            <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CCY</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+        </Elements>
+    </DO>
+</DO>

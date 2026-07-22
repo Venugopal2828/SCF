@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Forward DataSet Submission Report" Max="1" Min="1" Name="R2ForwdDataSetReport" PendingStore="Y" Screen="SCRN/DO/R2TSU_General017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_GENERAL017" AutoGen-Parameter-Version="1.0">
+    <Elements>
+        <Element DATATYPE="12" Desc="Message ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_MESSAGE_ID</Element>
+        <Element DATATYPE="12" Desc="Transaction Date/Time" DispInGrid="N" EDIT="N" EEType="Varcha_50" FldType="" Value="">TSU_TRX_DTTM</Element>
+        <Element DATATYPE="12" Desc="Common Submission Reference" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CMON_SUB_REF</Element>
+        <Element DATATYPE="1" Desc="Submitter BIC" DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+        <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="Y" EDIT="N" EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+        <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+        <Element DATATYPE="12" Desc="Pending Request For Action Type" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSUR2_REQ_ACT_TP</Element>
+        <Element DATATYPE="12" Desc="Request Action Description" DispInGrid="N" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_REQ_ACT_DESC</Element>
+    </Elements>
+    <DO Desc="R2RelatedRefs017" Max="n" Min="1" Name="R2RltdTxRefs017" PendingStore="N" Screen="SCRN/DO/R2TSU_RltdTxRefs017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RLTDREFS017" AutoGen-Parameter-Version="1.0">
+        <Elements>
+            <Element DATATYPE="12" Desc="Transaction TID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TID</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+            <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PO_DT</Element>
+            <Element DATATYPE="12" Desc="Established Baseline Identification" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BASELN_ID</Element>
+            <Element DATATYPE="12" Desc="Baseline Version" DispInGrid="N" EDIT="N" EEType="MICIdentifier" FldType="" Value="">TSU_BASELN_VRSN</Element>
+            <Element DATATYPE="12" Desc="Transaction Status 2" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSUR2_TRX_STATUS</Element>
+            <Element DATATYPE="12" Desc="Forced Match Dataset Flag" DispInGrid="N" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_FORCD_MTCH_FLG</Element>
+        </Elements>
+        <DO Desc="UserTransactionRef" Max="2" Min="0" Name="R2UsrTxRef017" PendingStore="N" Screen="SCRN/DO/R2TSU_UsrTxRef.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_USER_INFO017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Transaction TID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TID</Element>
+                <Element DATATYPE="12" Desc="TSU BIC" DispInGrid="Y" EDIT="N" EEType="Varchar_11" FldType="" Value="">TSU_BIC</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="CommercialDataSet" Max="1" Min="0" Name="R2ComrclDataSet017" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_COMM_DATASET017" AutoGen-Parameter-Version="1.0">
+        <Elements>
+            <Element DATATYPE="3" Desc="Commercial Invoice Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_COMM_AMT</Element>
+        </Elements>
+        <DO Desc="Document Identification" Name="DocumentIdentification1" PendingStore="N" Screen="SCRN/DO/TSU_DataSetId017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DOC_IDENTIFICATION017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Compared Dataset ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_DATA_ID</Element>
+                <Element DATATYPE="2" Desc="Compared Dataset Version" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_COMM_DATA_VRSN</Element>
+                <Element DATATYPE="1" Desc="Submitter BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Commercial Document Ref" Name="R2ComrclDocRef017" PendingStore="N" Screen="SCRN/DO/R2TSU_ComrclDocRef.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_COMM_DOC017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                <Element DATATYPE="91" Desc="Commercial Invoice Issue Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_COMM_DT</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Buyer Information" Max="1" Min="1" Name="R2BuyrInfo" PendingStore="N" Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_BUYER_INFO017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+                <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Seller Information" Max="1" Min="1" Name="R2SellrInfo" PendingStore="N" Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_SELLR_INFO017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+                <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            </Elements>
+        </DO>
+        <DO Desc="R2BillToInformation" Max="1" Min="0" Name="R2BillInfo" PendingStore="N" Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_BILL_INFO017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            </Elements>
+        </DO>
+        <DO Desc="R2Goods" Max="n" Min="1" Name="R2Goods017" PendingStore="N" Screen="SCRN/DO/R2TSU_Goods017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_GOODS017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PO_DT</Element>
+                <Element DATATYPE="12" Desc="Transaction TID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TID</Element>
+                <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                <Element DATATYPE="3" Desc="Lineitem Total Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_LINE_TTL_AMT</Element>
+                <Element DATATYPE="3" Desc="PO Total Net Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_NET_AMT</Element>
+                <Element DATATYPE="12" Desc="Freight Charges Associated With Goods" DispInGrid="N" EDIT="N" EEType="FreightCharges1Cd" FldType="" Value="">TSU_FRGHT_TP</Element>
+                <Element DATATYPE="12" Desc="DataSet Final Submit Flag" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_DS_FINAL_FLG</Element>
+            </Elements>
+            <DO Desc="R2LineItemDetails017" Max="n" Min="1" Name="R2LineItemDetails017" PendingStore="N" Screen="SCRN/DO/R2TSU_LineItem017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_LINEDETAIL017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                    <Element DATATYPE="12" Desc="Product Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_PDCTNM</Element>
+                    <Element DATATYPE="12" Desc="Freight Charges Associated With Goods" DispInGrid="N" EDIT="N" EEType="FreightCharges1Cd" FldType="" Value="">TSU_FRGHT_TP</Element>
+                    <Element DATATYPE="12" Desc="UOM Quantity Code" DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSUR2_QTY_UNIT_CD</Element>
+                    <Element DATATYPE="12" Desc="Quantity Other Unit" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_QTY_OTUNIT</Element>
+                    <Element DATATYPE="2" Desc="Quantity Value" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_VAL</Element>
+                    <Element DATATYPE="2" Desc="Quantity Factor" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_FCTR</Element>
+                    <Element DATATYPE="12" Desc="UOM Unit Price Code" DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSUR2_UNTPRIC_CD</Element>
+                    <Element DATATYPE="12" Desc="Unit Price Other Measure Code" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_UNTPRIC_OTUNIT</Element>
+                    <Element DATATYPE="3" Desc="Unit Price" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_UNITPRIC_AMT</Element>
+                    <Element DATATYPE="2" Desc="Unit Price Factor" DispInGrid="N" EDIT="N" EEType="Max15NumericText" FldType="" Value="">TSU_UNITPRIC_FCTR</Element>
+                    <Element DATATYPE="12" Desc="Product Origin" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PDCTORGN</Element>
+                    <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3" Desc="Lineitem Total Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_AMT</Element>
+                </Elements>
+                <DO Desc="Product Identifier" Name="PdctIdr" PendingStore="N" Screen="SCRN/DO/TSU_PDC_IDR017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_PRODCTIDR017" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Type" DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code" FldType="" Value="">TSU_PDC_TP</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Description" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_DESC</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTTP</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTID</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Product Characteristics" Name="PdctChrtcs" PendingStore="N" Screen="SCRN/DO/TSU_PDC_CHRTCS017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_PRODCTCHT017" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Type" DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code" FldType="" Value="">TSU_PDC_TP</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Description" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_DESC</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTTP</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTID</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Product Category" Name="PdctCtgy" PendingStore="N" Screen="SCRN/DO/TSU_PDC_CTGY017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_PRODCTCTG" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Type" DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code" FldType="" Value="">TSU_PDC_TP</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Description" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_DESC</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTTP</Element>
+                        <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTID</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Adjustment" Name="Adjustment4" PendingStore="N" Screen="SCRN/DO/TSU_Adjustment017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_ADJUST017" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                        <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                        <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                        <Element DATATYPE="12" Desc="Adjustment Direction" DispInGrid="Y" EDIT="N" EEType="AdjustDirection1Co" FldType="" Value="">TSU_ADJUST_DRCTN</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Charges" Name="ChargesDetails2" PendingStore="N" Screen="SCRN/DO/TSU_Freight_Chrgs017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CHARG017" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                        <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                        <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Tax" Name="Tax12" PendingStore="N" Screen="SCRN/DO/TSU_Tax017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TAX017" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                        <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                        <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Incoterms" Name="Incoterms2" PendingStore="N" Screen="SCRN/DO/TSU_Incoterms017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_INCOT017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Incoterms Code" DispInGrid="Y" EDIT="N" EEType="Incoterms1Code" FldType="" Value="">TSU_INCOTMS_CD</Element>
+                    <Element DATATYPE="12" Desc="Incoterms Location" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_INCOTMS_LCTN</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Adjustment" Name="Adjustment4" PendingStore="N" Screen="SCRN/DO/TSU_Adjustment017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_ADJUST017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                    <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                    <Element DATATYPE="12" Desc="Adjustment Direction" DispInGrid="Y" EDIT="N" EEType="AdjustDirection1Co" FldType="" Value="">TSU_ADJUST_DRCTN</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Charges" Name="ChargesDetails2" PendingStore="N" Screen="SCRN/DO/TSU_Freight_Chrgs017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CHARG017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                    <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Tax" Name="Tax12" PendingStore="N" Screen="SCRN/DO/TSU_Tax017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TAX017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                    <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Buyer Defined Information" Name="BuyrDfndInf" PendingStore="N" Screen="SCRN/DO/TSU_DefinedInformation017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_BUYR_DFINFO017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Defined Information Label" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DFINFO_LABLE</Element>
+                    <Element DATATYPE="12" Desc="Defined Information Description" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_DFINFO_DESC</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Seller Defined Information" Name="SellrDfndInf" PendingStore="N" Screen="SCRN/DO/TSU_DefinedInformation017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_SELLR_DFINFO017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Defined Information Label" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DFINFO_LABLE</Element>
+                    <Element DATATYPE="12" Desc="Defined Information Description" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_DFINFO_DESC</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Payment Terms" Name="PmtTerms" PendingStore="N" Screen="SCRN/DO/TSU_PmtTerm017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_PAYMTTEMS017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Payment Code" DispInGrid="Y" EDIT="N" EEType="PaymentTime1Code" FldType="" Value="">TSU_PMT_CD</Element>
+                <Element DATATYPE="2" Desc="Payment Days" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_PMT_DAYS</Element>
+                <Element DATATYPE="12" Desc="Other Terms" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_PMT_OT_TERM</Element>
+                <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                <Element DATATYPE="3" Desc="Payment  Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_PMT_AMT</Element>
+                <Element DATATYPE="2" Desc="Payment Percentage" DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_PMT_PER</Element>
+            </Elements>
+        </DO>
+        <DO Desc="SettlementTerms" Max="1" Min="1" Name="R2SttlmTerms017" PendingStore="N" Screen="SCRN/DO/R2TSU_Settlement017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_STTLM_TERMS017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="1" Desc="Financial Institution BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_FININST_BIC</Element>
+                <Element DATATYPE="12" Desc="Financial Institution Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_FININST_NM</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Financial Institution Country" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_FININST_CNTY</Element>
+                <Element DATATYPE="12" Desc="Beneficiary Account IBAN" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_IBAN</Element>
+                <Element DATATYPE="12" Desc="Beneficiary Account BBAN" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_BBAN</Element>
+                <Element DATATYPE="12" Desc="Beneficiary Account UPIC" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_UPIC</Element>
+                <Element DATATYPE="12" Desc="Beneficiary Account" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_ACC</Element>
+                <Element DATATYPE="12" Desc="Cash Account Nature" DispInGrid="N" EDIT="N" EEType="CashAccountTpCode" FldType="" Value="">TSU_CDTRAC_TPCD</Element>
+                <Element DATATYPE="12" Desc="Creditor Account Proprietary" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_CDTRAC_TPID</Element>
+                <Element DATATYPE="1" Desc="Creditor Account Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CDTRAC_CCY</Element>
+                <Element DATATYPE="12" Desc="Creditor Account Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_CDTRAC_NM</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="TransportDataSet017" Max="1" Min="0" Name="R2TrnsprtDataSet017" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_DTST017" AutoGen-Parameter-Version="1.0">
+        <Elements></Elements>
+        <DO Desc="Document Identification" Name="DocumentIdentification1" PendingStore="N" Screen="SCRN/DO/TSU_DataSetId017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DOC_IDENTIFICATION017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Compared Dataset ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_DATA_ID</Element>
+                <Element DATATYPE="2" Desc="Compared Dataset Version" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_COMM_DATA_VRSN</Element>
+                <Element DATATYPE="1" Desc="Submitter BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Buyer Information" Max="1" Min="1" Name="R2BuyrInfo" PendingStore="N" Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_BUYER_INFO017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+                <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Seller Information" Max="1" Min="1" Name="R2SellrInfo" PendingStore="N" Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_SELLR_INFO017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+                <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            </Elements>
+        </DO>
+        <DO Desc="ConsignorInformation017" Max="1" Min="1" Name="R2ConsignorInfo017" PendingStore="N" Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_CONSIGNOR_INF017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            </Elements>
+        </DO>
+        <DO Desc="ConsigneeInformation" Max="1" Min="0" Name="R2ConsigneeInfo017" PendingStore="N" Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_CONSIGNEE_INF017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            </Elements>
+        </DO>
+        <DO Desc="ShipToInformation" Max="1" Min="0" Name="R2ShipToInfo017" PendingStore="N" Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_SHIPTO_INF017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            </Elements>
+        </DO>
+        <DO Desc="TransportInformation" Max="n" Min="1" Name="R2TrnsprtInf017" PendingStore="N" Screen="SCRN/DO/R2TSU_TrnsprtInf017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_INF017" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Consignment Total Quantity UOM" DispInGrid="Y" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSU_CNSQTY_UNIT_CD</Element>
+                <Element DATATYPE="12" Desc="Consignment Total Quantity Other UOM" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNSQTY_OTUNIT</Element>
+                <Element DATATYPE="3" Desc="Consignment Total Quantity Value" DispInGrid="Y" EDIT="N" EEType="DecimalNumber" FldType="" Value="">TSU_CNSQTY_VAL</Element>
+                <Element DATATYPE="12" Desc="Total Volume UOM Code" DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSU_TTLVOL_UNIT_CD</Element>
+                <Element DATATYPE="12" Desc="Total Volume Other UOM" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TTLVOL_OTUNIT</Element>
+                <Element DATATYPE="3" Desc="Total Volume Value" DispInGrid="N" EDIT="N" EEType="DecimalNumber" FldType="" Value="">TSU_TTLVOL_VAL</Element>
+                <Element DATATYPE="12" Desc="Total Weight UOM Code" DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSU_TTLWGTL_UNIT_CD</Element>
+                <Element DATATYPE="12" Desc="Total Weight Other UOM" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TTLWGT_OTUNIT</Element>
+                <Element DATATYPE="3" Desc="Total Weight Value" DispInGrid="N" EDIT="N" EEType="DecimalNumber" FldType="" Value="">TSU_TTLWGT_VAL</Element>
+                <Element DATATYPE="91" Desc="Proposed Ship Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PROPSD_SHIP_DT</Element>
+                <Element DATATYPE="91" Desc="Actual Shipment Date" DispInGrid="Y" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_ACTL_SHIP_DT</Element>
+                <Element DATATYPE="12" Desc="Freight Charges Associated With Goods" DispInGrid="N" EDIT="N" EEType="FreightCharges1Cd" FldType="" Value="">TSU_FRGHT_TP</Element>
+            </Elements>
+            <DO Desc="Transport Document Reference" Name="TrnsprtDocRef" PendingStore="N" Screen="SCRN/DO/TSU_TrnsprtDocRef017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_DOC017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Transport Document Ref." DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TRAN_DOC_REF</Element>
+                    <Element DATATYPE="91" Desc="Transport Document Issue Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_TRAN_DOC_ISSUE_DT</Element>
+                </Elements>
+            </DO>
+            <DO Desc="TransportedGoods" Name="TrnsprtdGoods" PendingStore="N" Screen="SCRN/DO/TSU_TrnsprtdGoods017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_GOODS017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Goods Description" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_GOODS_DESC</Element>
+                </Elements>
+                <DO Desc="Purchase Order Reference" Name="PurchsOrdrRef" PendingStore="N" Screen="SCRN/DO/TSU_PurchsOrdrRef017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_PURCHSORD017" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="PO ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                        <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PO_DT</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Buyer Defined Information" Name="BuyrDfndInf" PendingStore="N" Screen="SCRN/DO/TSU_DefinedInformation017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_BUYR_DFINFO017" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Defined Information Label" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DFINFO_LABLE</Element>
+                        <Element DATATYPE="12" Desc="Defined Information Description" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_DFINFO_DESC</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Seller Defined Information" Name="SellrDfndInf" PendingStore="N" Screen="SCRN/DO/TSU_DefinedInformation017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_SELLR_DFINFO017" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Defined Information Label" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DFINFO_LABLE</Element>
+                        <Element DATATYPE="12" Desc="Defined Information Description" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_DFINFO_DESC</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Routing Summary" Name="RtgSummaryR2" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTGSUM_R2" AutoGen-Parameter-Version="1.0">
+                <Elements></Elements>
+                <DO Desc="Individual Transport" Name="IndvTrnsprtR2" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_INDVR2" AutoGen-Parameter-Version="1.0">
+                    <Elements></Elements>
+                    <DO Desc="Transport By Air" Name="TransportByAir2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByAir017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_AIR017" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Air Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_AIR_CARR_NM</Element>
+                        </Elements>
+                        <DO Desc="Departure Airport" Name="DprtureAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DprtureAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DPRTUR_AIR" AutoGen-Parameter-Version="1.0">
+                            <Elements>
+                                <Element DATATYPE="12" Desc="Departure Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DP_AIRCD</Element>
+                                <Element DATATYPE="12" Desc="Departure Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRNM</Element>
+                                <Element DATATYPE="12" Desc="Departure Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRTWN</Element>
+                            </Elements>
+                        </DO>
+                        <DO Desc="Destination Airport" Name="DstnAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DstnAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DSTN_AIR" AutoGen-Parameter-Version="1.0">
+                            <Elements>
+                                <Element DATATYPE="12" Desc="Destination Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DT_AIRCD</Element>
+                                <Element DATATYPE="12" Desc="Destination Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRNM</Element>
+                                <Element DATATYPE="12" Desc="Destination Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRTWN</Element>
+                            </Elements>
+                        </DO>
+                    </DO>
+                    <DO Desc="Transport By Sea" Name="TransportBySeaR2" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtBySea017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_SEAR2" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Port Of Loading" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_LOAD</Element>
+                            <Element DATATYPE="12" Desc="Port Of Discharge" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_DSCH</Element>
+                            <Element DATATYPE="12" Desc="Vessel Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_VSSLNM</Element>
+                            <Element DATATYPE="12" Desc="Sea Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_SEA_CARR_NM</Element>
+                        </Elements>
+                    </DO>
+                    <DO Desc="Transport By Road" Name="TransportByRoad2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByRoad017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_ROAD017" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                            <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                            <Element DATATYPE="12" Desc="Road Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ROAD_CARR_NM</Element>
+                        </Elements>
+                    </DO>
+                    <DO Desc="Transport By Rail" Name="TransportByRail2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByRail017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_RAIL017" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                            <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                            <Element DATATYPE="12" Desc="Rail Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RAIL_CARR_NM</Element>
+                        </Elements>
+                    </DO>
+                </DO>
+                <DO Desc="Multimodal Transport" Name="R2MltmdlTrnsprt" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_MltmdlTrnsprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRNS_MLTMDL" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Routing Summary Taking in Charge" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_TAK_CHG</Element>
+                        <Element DATATYPE="12" Desc="Place Of Final Destination" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_FNL_DSTN</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Incoterms" Name="Incoterms2" PendingStore="N" Screen="SCRN/DO/TSU_Incoterms017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_INCOT017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Incoterms Code" DispInGrid="Y" EDIT="N" EEType="Incoterms1Code" FldType="" Value="">TSU_INCOTMS_CD</Element>
+                    <Element DATATYPE="12" Desc="Incoterms Location" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_INCOTMS_LCTN</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Charges" Name="ChargesDetails2" PendingStore="N" Screen="SCRN/DO/TSU_Freight_Chrgs017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CHARG017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                    <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                </Elements>
+            </DO>
+        </DO>
+    </DO>
+    <DO Desc="R2InsuranceDataSet017" Max="1" Min="0" Name="R2InsrncDataSet017" PendingStore="N" Screen="SCRN/DO/R2TSU_InsrncDataset017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_INSRNC_DATASET017" AutoGen-Parameter-Version="1.0">
+        <Elements>
+            <Element DATATYPE="12" Desc="Dataset ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_ID</Element>
+            <Element DATATYPE="2" Desc="Dataset Version" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_DS_VRSN</Element>
+            <Element DATATYPE="1" Desc="Submitter BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+            <Element DATATYPE="91" Desc="Issued Date of Insurance Certificate" DispInGrid="Y" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_ISS_DT</Element>
+            <Element DATATYPE="12" Desc="Issuer Name of Insurance Certificate" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_NM</Element>
+            <Element DATATYPE="12" Desc="Issuer ID of Insurance Certificate" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_ID</Element>
+            <Element DATATYPE="12" Desc="Issuer ID Type of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Issuer Country of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_ISSR_CNTY</Element>
+            <Element DATATYPE="12" Desc="Issuer Street Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_STREET</Element>
+            <Element DATATYPE="12" Desc="Issuer Post Code of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_ISSR_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Issuer Town of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_TOWN</Element>
+            <Element DATATYPE="12" Desc="Issuer Country Subdivision of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_CNTY_SUB</Element>
+            <Element DATATYPE="12" Desc="Insurance Document Ref" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_INSRNC_DOC_REF</Element>
+            <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="3" Desc="Insured Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_INSRD_AMT</Element>
+            <Element DATATYPE="12" Desc="Insured Goods" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_INSRD_GOODS</Element>
+            <Element DATATYPE="91" Desc="Insurance Policy Effective Date" DispInGrid="N" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_EFFCTV_DT</Element>
+            <Element DATATYPE="12" Desc="Issued Street Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISS_STREET</Element>
+            <Element DATATYPE="12" Desc="Issued Post Code of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_ISS_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Issued Town of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISS_TOWN</Element>
+            <Element DATATYPE="12" Desc="Issued Country Subdivision of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISS_CNTY_SUB</Element>
+            <Element DATATYPE="12" Desc="Issued Country of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_ISS_CNTY</Element>
+            <Element DATATYPE="12" Desc="Assured Party BIC" DispInGrid="N" EDIT="N" EEType="BICIdentifier" FldType="" Value="">TSU_ASSR_BIC</Element>
+            <Element DATATYPE="12" Desc="Assured Party Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ASSR_NM</Element>
+            <Element DATATYPE="12" Desc="Assured Party ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ASSR_ID</Element>
+            <Element DATATYPE="12" Desc="Assured Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ASSR_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Assured Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ASSR_STREET</Element>
+            <Element DATATYPE="12" Desc="Assured Party Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_ASSR_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Assured Party Town" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ASSR_TOWN</Element>
+            <Element DATATYPE="12" Desc="Assured Party Country Subdivision" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ASSR_CNTY_SUB</Element>
+            <Element DATATYPE="12" Desc="Assured Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_ASSR_CNTY</Element>
+            <Element DATATYPE="12" Desc="Claims Payable At - Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_CLMS_STREET</Element>
+            <Element DATATYPE="12" Desc="Claims Payable At - Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_CLMS_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Claims Payable At - Town" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CLMS_TOWN</Element>
+            <Element DATATYPE="12" Desc="Claims Payable At - Country Subdivision" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CLMS_CNTY_SUB</Element>
+            <Element DATATYPE="12" Desc="Claims Payable At - Country" DispInGrid="N" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_CLMS_CNTY</Element>
+            <Element DATATYPE="1" Desc="Claims Payable At - Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CLMS_PYBL_IN</Element>
+        </Elements>
+        <DO Desc="Transport Information" Name="Dt_Trnsprt" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_CERT" AutoGen-Parameter-Version="1.0">
+            <Elements></Elements>
+            <DO Desc="Transport By Air" Name="TransportByAir2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByAir017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_AIR017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Air Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_AIR_CARR_NM</Element>
+                </Elements>
+                <DO Desc="Departure Airport" Name="DprtureAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DprtureAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DPRTUR_AIR" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Departure Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DP_AIRCD</Element>
+                        <Element DATATYPE="12" Desc="Departure Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRNM</Element>
+                        <Element DATATYPE="12" Desc="Departure Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRTWN</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Destination Airport" Name="DstnAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DstnAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DSTN_AIR" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Destination Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DT_AIRCD</Element>
+                        <Element DATATYPE="12" Desc="Destination Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRNM</Element>
+                        <Element DATATYPE="12" Desc="Destination Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRTWN</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Transport By Sea" Name="TransportBySeaR2" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtBySea017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_SEAR2" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Port Of Loading" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_LOAD</Element>
+                    <Element DATATYPE="12" Desc="Port Of Discharge" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_DSCH</Element>
+                    <Element DATATYPE="12" Desc="Vessel Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_VSSLNM</Element>
+                    <Element DATATYPE="12" Desc="Sea Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_SEA_CARR_NM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Transport By Road" Name="TransportByRoad2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByRoad017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_ROAD017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                    <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                    <Element DATATYPE="12" Desc="Road Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ROAD_CARR_NM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Transport By Rail" Name="TransportByRail2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByRail017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_RAIL017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                    <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                    <Element DATATYPE="12" Desc="Rail Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RAIL_CARR_NM</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Clauses Required" Name="R2ClausesReqrd" PendingStore="N" Screen="SCRN/DO/R2TSU_ClausesReqrd.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CLAUSE_REQRD" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Clauses Required" DispInGrid="Y" EDIT="N" EEType="InsuranceClause1Co" FldType="" Value="">TSU_CLAUS_REQRD</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Insurance Conditions" Name="R2InsrdConds" PendingStore="N" Screen="SCRN/DO/R2TSU_InsrdConds.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_INSRNC_CONDS" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Insurance Conditions" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_350" FldType="" Value="">TSU_INSRNC_CONDS</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="CertificateDataSet" Max="n" Min="0" Name="R2CertDataSet017" PendingStore="N" Screen="SCRN/DO/R2TSU_CertDataSet017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_CERT_DS017" AutoGen-Parameter-Version="1.0">
+        <Elements>
+            <Element DATATYPE="12" Desc="Dataset ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_ID</Element>
+            <Element DATATYPE="2" Desc="Dataset Version" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_DS_VRSN</Element>
+            <Element DATATYPE="1" Desc="Submitter BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+            <Element DATATYPE="12" Desc="Certificate Type" DispInGrid="Y" EDIT="N" EEType="TaxTypeCode" FldType="" Value="">TSU_CERT_TP</Element>
+            <Element DATATYPE="12" Desc="Certificate of Origin" DispInGrid="N" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_CERT_ORGN</Element>
+            <Element DATATYPE="12" Desc="Certificate of Quality" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_CERT_QLTY</Element>
+            <Element DATATYPE="12" Desc="Certificate of Analysis" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_CERT_ANLYS</Element>
+            <Element DATATYPE="12" Desc="Weight UOM Code" DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSU_WGT_UNIT_CD</Element>
+            <Element DATATYPE="12" Desc="Weight Other Unit" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_WGT_OTUNIT</Element>
+            <Element DATATYPE="3" Desc="Weight Value" DispInGrid="N" EDIT="N" EEType="DecimalNumber" FldType="" Value="">TSU_WGT_VAL</Element>
+            <Element DATATYPE="2" Desc="Weight Factor" DispInGrid="N" EDIT="N" EEType="Max15NumericText" FldType="" Value="">TSU_WGT_FCTR</Element>
+            <Element DATATYPE="12" Desc="UOM Quantity Code" DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSUR2_QTY_UNIT_CD</Element>
+            <Element DATATYPE="12" Desc="Quantity Other Unit" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_QTY_OTUNIT</Element>
+            <Element DATATYPE="2" Desc="Quantity Value" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_VAL</Element>
+            <Element DATATYPE="2" Desc="Quantity Factor" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_FCTR</Element>
+            <Element DATATYPE="12" Desc="Certificate of Health Indication" DispInGrid="N" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_HLTH_INDCTN</Element>
+            <Element DATATYPE="12" Desc="Phytosanitary Indication" DispInGrid="N" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_PHYTOSN_INDCTN</Element>
+            <Element DATATYPE="91" Desc="Issued Date of Insurance Certificate" DispInGrid="Y" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_ISS_DT</Element>
+            <Element DATATYPE="12" Desc="Issued Street Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISS_STREET</Element>
+            <Element DATATYPE="12" Desc="Issued Post Code of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_ISS_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Issued Town of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISS_TOWN</Element>
+            <Element DATATYPE="12" Desc="Issued Country Subdivision of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISS_CNTY_SUB</Element>
+            <Element DATATYPE="12" Desc="Issued Country of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_ISS_CNTY</Element>
+            <Element DATATYPE="12" Desc="Issuer Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_NM</Element>
+            <Element DATATYPE="12" Desc="Issuer ID of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_ID</Element>
+            <Element DATATYPE="12" Desc="Issuer ID Type of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Issuer Street Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_STREET</Element>
+            <Element DATATYPE="12" Desc="Issuer Post Code of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_ISSR_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Issuer Town of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_TOWN</Element>
+            <Element DATATYPE="12" Desc="Issuer Country Subdivision of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_CNTY_SUB</Element>
+            <Element DATATYPE="12" Desc="Issuer Country of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_ISSR_CNTY</Element>
+            <Element DATATYPE="91" Desc="Inspection From Date" DispInGrid="N" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_INSPCTN_FR_DT</Element>
+            <Element DATATYPE="91" Desc="Inspection To Date" DispInGrid="N" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_INSPCTN_TO_DT</Element>
+            <Element DATATYPE="12" Desc="Authorized inspector must be present?" DispInGrid="N" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_AUTH_INSPC_IND</Element>
+            <Element DATATYPE="12" Desc="Certificate ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CERT_ID</Element>
+            <Element DATATYPE="12" Desc="Goods Description" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_GOODS_DESC</Element>
+        </Elements>
+        <DO Desc="LineItem" Name="DT_LineItm" PendingStore="N" Screen="SCRN/DO/R2TSU_Cert_LineItem.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_LINEITEM" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PO_DT</Element>
+            </Elements>
+            <DO Desc="Line Item Id" Name="R2LineItmId" PendingStore="N" Screen="SCRN/DO/R2TSU_LineItmId.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_LINEITM_ID" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Transport Information" Name="Dt_Trnsprt" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_CERT" AutoGen-Parameter-Version="1.0">
+            <Elements></Elements>
+            <DO Desc="Transport By Air" Name="TransportByAir2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByAir017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_AIR017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Air Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_AIR_CARR_NM</Element>
+                </Elements>
+                <DO Desc="Departure Airport" Name="DprtureAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DprtureAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DPRTUR_AIR" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Departure Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DP_AIRCD</Element>
+                        <Element DATATYPE="12" Desc="Departure Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRNM</Element>
+                        <Element DATATYPE="12" Desc="Departure Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRTWN</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Destination Airport" Name="DstnAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DstnAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DSTN_AIR" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Destination Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DT_AIRCD</Element>
+                        <Element DATATYPE="12" Desc="Destination Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRNM</Element>
+                        <Element DATATYPE="12" Desc="Destination Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRTWN</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Transport By Sea" Name="TransportBySeaR2" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtBySea017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_SEAR2" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Port Of Loading" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_LOAD</Element>
+                    <Element DATATYPE="12" Desc="Port Of Discharge" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_DSCH</Element>
+                    <Element DATATYPE="12" Desc="Vessel Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_VSSLNM</Element>
+                    <Element DATATYPE="12" Desc="Sea Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_SEA_CARR_NM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Transport By Road" Name="TransportByRoad2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByRoad017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_ROAD017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                    <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                    <Element DATATYPE="12" Desc="Road Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ROAD_CARR_NM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Transport By Rail" Name="TransportByRail2" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_TrnsprtByRail017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_BY_RAIL017" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                    <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                    <Element DATATYPE="12" Desc="Rail Carrier Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RAIL_CARR_NM</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Certificate Related Party" Name="DT_CertParty" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CERT_PARTY" AutoGen-Parameter-Version="1.0">
+            <Elements></Elements>
+            <DO Desc="Consignor" Name="DT_Consgnr" PendingStore="N" Screen="SCRN/DO/TSU_PartyIdentification26.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CONSGNR" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                    <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                    <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                    <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                    <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                    <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                    <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                    <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+                    <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Consignee" Name="DT_Consgn" PendingStore="N" Screen="SCRN/DO/TSU_PartyIdentification26.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CONSGN" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                    <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                    <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                    <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                    <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                    <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                    <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                    <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+                    <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Manufacturer" Name="DT_Manfctr" PendingStore="N" Screen="SCRN/DO/TSU_PartyIdentification26.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_MANFCTR" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+                    <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+                    <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+                    <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+                    <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+                    <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+                    <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+                    <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Additional Information" Name="DT_AddtlInf" PendingStore="N" Screen="SCRN/DO/R2TSU_DT_AddtlInf.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_ADDTL_INF" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Additional Information" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_350B" FldType="" Value="">TSU_ADDTL_INF</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="OtherCertificateDataSet017" Max="n" Min="0" Name="R2OthrCertDataSet017" PendingStore="N" Screen="SCRN/DO/R2TSU_OthrCertDataSet017.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_OTHER_DTST017" AutoGen-Parameter-Version="1.0">
+        <Elements>
+            <Element DATATYPE="12" Desc="Dataset ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_ID</Element>
+            <Element DATATYPE="2" Desc="Dataset Version" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_DS_VRSN</Element>
+            <Element DATATYPE="1" Desc="Submitter BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+            <Element DATATYPE="12" Desc="Certificate ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CERT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Certificate Type" DispInGrid="Y" EDIT="N" EEType="TradeFinServ2Code" FldType="" Value="">TSU_OTCERT_TP</Element>
+            <Element DATATYPE="91" Desc="Issued Date of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_ISS_DT</Element>
+            <Element DATATYPE="12" Desc="Issuer Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_NM</Element>
+            <Element DATATYPE="12" Desc="Issuer ID of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_ID</Element>
+            <Element DATATYPE="12" Desc="Issuer ID Type of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Issuer Street Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_STREET</Element>
+            <Element DATATYPE="12" Desc="Issuer Post Code of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_ISSR_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Issuer Town of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_TOWN</Element>
+            <Element DATATYPE="12" Desc="Issuer Country Subdivision of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_CNTY_SUB</Element>
+            <Element DATATYPE="12" Desc="Issuer Country of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_ISSR_CNTY</Element>
+        </Elements>
+        <DO Desc="Certificate Information" Name="DT_CertInf" PendingStore="N" Screen="SCRN/DO/R2TSU_DT_CertInf.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CERT_INF" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Certificate Information" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_350" FldType="" Value="">TSU_CERT_INF</Element>
+            </Elements>
+        </DO>
+    </DO>
+</DO>

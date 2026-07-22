@@ -1,0 +1,28 @@
+{
+  "id": "WF0000025",
+  "type": "sql",
+  "pub": "true",
+  "configuration": {
+    "ui": {
+      "id": "WF0000025",
+      "display": "chart.bar",
+      "title": "EE Operational Summary",
+      "desc": "Show all EE Operational Summary transactions here.",
+			"tooltip": "{\"text\":\"{a}<br/>{c} transaction(s) with status [{b}] comes in.{d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"EE Operational Summary\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+					"line": "{\"xAxis\":{\"name\":\"EE Operational Summary\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"EE Operational Summary\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"EE Operational Summary\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+        }
+      }
+    },
+      "data": {
+	  "sql": "SELECT C_UNIT_CODE,METRIC_LABEL,VL FROM (SELECT C_UNIT_CODE,'Total Active Financing' AS METRIC_LABEL,ROUND(SUM(FA_TTL_LOAN_AMT)) AS VL FROM EXIMTRX.FAEF_MASTER WHERE C_TRX_STATUS = 'M' AND FA_TTL_LOAN_AMT IS NOT NULL GROUP BY C_UNIT_CODE UNION ALL SELECT C_UNIT_CODE, 'Total Invoice Value' AS METRIC_LABEL,ROUND(SUM(FA_TTL_LOAN_BAL)) AS VL FROM EXIMTRX.FAEF_MASTER WHERE FA_TTL_LOAN_BAL IS NOT NULL GROUP BY C_UNIT_CODE UNION ALL SELECT C_UNIT_CODE,'New customer onboarding' AS METRIC_LABEL, COUNT(SELF_ENROL) AS VL FROM EXIMTRX.FADA_PRE_CREDIT GROUP BY C_UNIT_CODE ORDER BY C_UNIT_CODE)",
+      "dataSetField": "C_UNIT_CODE",
+      "nameField": "METRIC_LABEL", 
+      "valueField": "VL"
+    }
+  }
+}

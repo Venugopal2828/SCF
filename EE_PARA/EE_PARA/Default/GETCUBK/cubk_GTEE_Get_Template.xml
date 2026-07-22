@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>Y</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TMPL_EVENT</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>GTEE</module-name>
+        <cubk-mapping-name>Get_Template</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <TEMP_NAME ALIAS="T0" DBFUNC="" DESC="Template Name" DT="12" HIDDEN="F" TYPE="V">A</TEMP_NAME>
+        <CUST_NM ALIAS="T0" DBFUNC="" DESC="Customer Name" DT="12" HIDDEN="F" TYPE="V">B</CUST_NM>
+        <CE_CUSTOMER ALIAS="T0" DBFUNC="" DESC="Belong To" DT="1" HIDDEN="F" TYPE="V">C</CE_CUSTOMER>
+        <CONTENT ALIAS="T0" DBFUNC="" DESC="Template" DT="2005" HIDDEN="T" TYPE="F">GTEE_DETAILS</CONTENT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_4" TYPE="TBL_FLD">T0.EXPIRY_TYPE</SQL>
+            <SQL TYPE="SQL">= '</SQL>
+            <SQL TYPE="FLD">EXPIRY_TYPE</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_4" TYPE="TBL_FLD">T0.FORM_OF_UNDERTAKING</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">FORM_OF_UNDERTAKING</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.LANG_CD</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">LANG_CD</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.GTEE_TYPE</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">GTEE_TYPE</SQL>
+            <SQL TYPE="SQL">' AND (</SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.CLASSIFICATION</SQL>
+            <SQL TYPE="SQL"> = 'I' OR </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.CLASSIFICATION</SQL>
+            <SQL TYPE="SQL"> ='D' ) AND (</SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.ISSU_METHOD</SQL>
+            <SQL TYPE="SQL"> ='A' OR </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.ISSU_METHOD</SQL>
+            <SQL TYPE="SQL"> ='C' ) AND </SQL>
+            <SQL DT="1" EEType="SYS_CHAR_1" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> ='M' </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

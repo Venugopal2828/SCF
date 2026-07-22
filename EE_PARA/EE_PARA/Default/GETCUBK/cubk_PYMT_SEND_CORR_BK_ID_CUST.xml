@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SEND_CORR_BK_ID_CUST</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <CNTY_CODE ALIAS="T0" DESC="Country Code" DT="1" TYPE="S">SYS_BANK_COUNTRY</CNTY_CODE>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SEND_CORR_BK_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">SEND_CORR_BK_ID</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">SEND_CORR_BK_NM</PARTY_NM>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">SEND_CORR_BK_ADD1</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address 2" DT="12" HIDDEN="F" TYPE="F">SEND_CORR_BK_ADD2</ADD2>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="Address 3" DT="12" HIDDEN="F" TYPE="F">SEND_CORR_BK_ADD3</ADD3>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T0.PARTY_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SEND_CORR_BK_NM</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD1</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SEND_CORR_BK_ADD1</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD2</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SEND_CORR_BK_ADD2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD3</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SEND_CORR_BK_ADD3</SQL>
+            <SQL TYPE="SQL">%' AND (</SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.RECORDER_TYPE</SQL>
+            <SQL TYPE="SQL"> = 'Customer' OR </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.RECORDER_TYPE</SQL>
+            <SQL TYPE="SQL"> = 'NonCustomer' ) AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SEND_CORR_BK_ID</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_UNIT_CODE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">%'
+            </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

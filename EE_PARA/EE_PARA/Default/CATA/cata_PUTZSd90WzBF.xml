@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>PUTZSd90WzBF</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC></DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_WEEKEND_CCY</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Add Flag" EEType="Varchar_1" HIDDEN="">C_ADD_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Currency" EEType="CCY" HIDDEN="">C_CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="SYS_CHAR_1" HIDDEN="">C_TRX_STATUS</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Currency" DT="1" EEType="CCY" TYPE="FLD">C_CCY</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="1" DESC="Currency" EETYPE="CCY">C_CCY</FIELD>
+    </CLAUSEFIELD>
+</CATA>

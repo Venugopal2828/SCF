@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Dynamic Discounting Rate" Name="DDRate" PendingStore="N" Screen="SCRN/o2m/FADA_DDRate.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="FADA_DD_RATE"></TABLE_NAME>
+    <PK>
+        <PKNAME>FA_DD_RT_ID</PKNAME>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FADA_EM_RATE">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Days From" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">FA_DD_D_FROM</Element>
+        <Element DATATYPE="12" Desc="Days To" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">FA_DD_D_TO</Element>
+        <Element DATATYPE="2" Desc="Rate" DispInGrid="Y" EDIT="N" EEType="Numeric_18_3" FldType="" Value="">FA_DD_RATE</Element>
+        <Element DATATYPE="12" Desc="Rate ID" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DD_RT_ID</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+    </Elements>
+</DO>

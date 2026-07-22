@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/SBLC_Beneficiary_Reply_Main.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FORM>
+        <ID>F90000000083</ID>
+        <NAME/>
+    </FORM>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">SBLC</MODULE>
+        <MODULE_DESC>Standby Letter Of Credit</MODULE_DESC>
+        <EVENT>Beneficiary_Replay</EVENT>
+        <ID>F05030703407</ID>
+        <NAME>Beneficiary_Reply</NAME>
+        <DESC>Beneficiary Reply</DESC>
+        <FUNSHORTNAME>BeneficiaryReply</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="BeneficiariesSBLC">R00000008955</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000008966</CATALOGID>
+        <TransferTo>F00000006677</TransferTo>
+        <OutSWIFT>F00000006678</OutSWIFT>
+    </FUNCTION>
+</FUNC>

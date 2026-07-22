@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root fileType="FI" UNIT_CODE="CSBANK">
+	<BANK_MASTER>
+		<field fv-type="F" Column="CITY HEADING">CITY</field>
+	  <field fv-type="F" Column="COUNTRY NAME">CNTY_CODE</field>
+    <field fv-type="F" Column="BIC CODE+BRANCH CODE">SWIFT_ADD_HO</field>
+    <field fv-type="F" Column="BIC CODE+BRANCH CODE">SW_ADD</field>
+    <field fv-type="F" Column="BRANCH CODE">BR_INFO</field>
+    <field fv-type="F" Column="PHYSICAL ADDRESS 1">ADD1</field>
+		<field fv-type="F" Column="PHYSICAL ADDRESS 2">ADD2</field>
+		<field fv-type="F" Column="PHYSICAL ADDRESS 3">ADD3</field>
+		<field fv-type="F" Column="BIC CODE+BRANCH CODE">C_MAIN_REF</field>
+    <field fv-type="V" Column="CSBANK">C_CP_UNIT_CODE</field> 
+    <field fv-type="V" Column="CSBANK">C_BK_GROUP_ID</field> 
+    <field fv-type="V" Column="US">C_CNTY_CODE</field> 
+	</BANK_MASTER>
+	<SWF_ADD_DO>		
+		<field fv-type="V" Column="1">ORDER_NO</field> 
+  	<field fv-type="F" Column="BIC CODE+BRANCH CODE">C_MAIN_REF</field> 
+	  <field fv-type="F" method="SUBSTR" db-column-name="SWF_FMT_NM">
+	  	<mapping-column fv-type="F" start="0" end="35">INSTITUTION NAME</mapping-column> 
+	  </field>
+		<field fv-type="F" Column="PHYSICAL ADDRESS 1">SWIFT_FMT_ADD1</field>
+		<field fv-type="F" Column="PHYSICAL ADDRESS 2">SWIFT_FMT_ADD2</field>
+		<field fv-type="F" Column="PHYSICAL ADDRESS 3">SWIFT_FMT_ADD3</field>		
+	</SWF_ADD_DO>
+	<POST_ADD_DO>
+  	<field fv-type="V" Column="1">ORDER_NO</field> 
+  	<field fv-type="F" Column="BIC CODE+BRANCH CODE">C_MAIN_REF</field> 
+  	<field fv-type="F" Column="INSTITUTION NAME+CRLF+PHYSICAL ADDRESS 1+SPACE +PHYSICAL ADDRESS 2+CRLF+PHYSICAL ADDRESS 3+SPACE +PHYSICAL ADDRESS 4+CRLF+LOCATION+CRLF+COUNTRY NAME">POSTAL_FMT_ADD</field> 
+  </POST_ADD_DO>
+ 	<POST_ADD_DO>
+  	<field fv-type="V" Column="2">ORDER_NO</field> 
+  	<field fv-type="F" Column="BIC CODE+BRANCH CODE">C_MAIN_REF</field> 
+  	<field fv-type="F" Column="INSTITUTION NAME+CRLF+POB NUMBER+CRLF+POB LOCATION+CRLF+POB COUNTRY NAME">POSTAL_FMT_ADD</field> 
+ 	</POST_ADD_DO>
+</root>
+

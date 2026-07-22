@@ -1,0 +1,37 @@
+<root>
+	<main Name="Agreement" splitType="byRow" sheetName="InvoiceDetail" row="3">
+		<cell col="A" EEType="VARCHAR" allowEmpty="T" desc="Reference">REF</cell>
+		<cell col="B" EEType="VARCHAR" allowEmpty="F" desc="Unit Code">C_UNIT_CODE</cell>
+		<cell col="C" EEType="VARCHAR" allowEmpty="F" desc="Business Type">FA_BUSI_TYPE</cell>
+		<cell col="D" EEType="VARCHAR" allowEmpty="F" desc="Main Customer Id">FA_ANCHOR_ID</cell>
+		<cell col="E" EEType="VARCHAR" allowEmpty="F" desc="Main Customer Register ID">FA_ANCHOR_REG_NO</cell>
+		<cell col="F" EEType="VARCHAR" allowEmpty="F" desc="Main Customer Name">FA_ANCHOR_NM</cell>
+		<cell col="G" EEType="VARCHAR" allowEmpty="F" desc="Agreement Number">FA_CNTR_DOC_NO</cell>
+	</main>
+	<child Name="Invoice" splitType="byRow" sheetName="InvoiceDetail" row="7">
+		<cell col="A" EEType="VARCHAR" allowEmpty="F" desc="SBR Ref">FA_SBR_REF</cell>
+		<cell col="B" EEType="VARCHAR" allowEmpty="F" desc="Register ID">FA_COUNTER_REG_NO</cell>
+		<cell col="C" EEType="VARCHAR" allowEmpty="F" desc="Counterparty Name">FA_COUNTER_NM</cell>
+		<cell col="D" EEType="VARCHAR" allowEmpty="F" desc="DocType">FA_DOC_TYPE</cell>
+		<cell col="E" EEType="VARCHAR" allowEmpty="F" desc="Doc Nr">FA_DOC_NO</cell>
+		<cell col="F" EEType="VARCHAR" allowEmpty="F" desc="Doc Currency">FA_DOC_CCY</cell>
+		<cell col="G" EEType="VARCHAR" allowEmpty="F" desc="Doc Amt">FA_DOC_AMT</cell>
+		<cell col="H" EEType="VARCHAR" allowEmpty="F" desc="Doc Date">FA_DOC_DT</cell>
+		<cell col="I" EEType="VARCHAR" allowEmpty="F" desc="Doc ValDate">FA_DOC_VAL_DT</cell>
+		<cell col="J" EEType="VARCHAR" allowEmpty="F" desc="Doc Due Date">FA_DOC_DUE_DT</cell>
+		<cell col="K" EEType="VARCHAR" allowEmpty="T" desc="">FA_LAST_PMT_DT</cell>
+		<cell col="L" EEType="VARCHAR" allowEmpty="T" desc="">PLC_LOADNG</cell>
+		<cell col="M" EEType="VARCHAR" allowEmpty="T" desc="">PLC_DSTN</cell>
+		<cell col="N" EEType="VARCHAR" allowEmpty="T" desc="">SHPPG_CPNY_NM</cell>
+		<cell col="O" EEType="VARCHAR" allowEmpty="T" desc="">VSSL_NM</cell>
+		<cell col="P" EEType="VARCHAR" allowEmpty="T" desc="">FA_BENE_NM</cell>
+		<cell col="Q" EEType="VARCHAR" allowEmpty="T" desc="">FA_GOODS_CATEGORY</cell>
+		<cell col="R" EEType="VARCHAR" allowEmpty="T" desc="">FA_GOODS_DES</cell>
+		<cell col="S" EEType="VARCHAR" allowEmpty="T" desc="">FA_CRN_INV_LINK_NO</cell>
+		<cell col="T" EEType="VARCHAR" allowEmpty="T" desc="">PO_NO</cell>
+	</child>
+	<keys>
+		<field>REF</field>
+	</keys>
+	<unit>FA_ANCHOR_ID</unit>
+</root>

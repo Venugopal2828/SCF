@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="">CFNC_CENTRAL</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_FinanceRePaymentHeader_InitFinanceAmount_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <CFNC_N_FINC_TTL_AMT ALIAS="T0" DBFUNC="" DESC="Finance Total Amount" DT="3" HIDDEN="F" TYPE="F">CFNC_N_CR_AMT</CFNC_N_FINC_TTL_AMT>
+        <C_TRX_CCY ALIAS="T0" DBFUNC="" DESC="C_TRX_CCY" DT="1" HIDDEN="F" TYPE="V">C_TRX_CCY_M</C_TRX_CCY>
+        <CFNC_N_FINC_TTL_BAL ALIAS="T0" DBFUNC="" DESC="Finance Total Balance" DT="3" HIDDEN="F" TYPE="F">CFNC_N_CR_BAL</CFNC_N_FINC_TTL_BAL>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">INT_C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

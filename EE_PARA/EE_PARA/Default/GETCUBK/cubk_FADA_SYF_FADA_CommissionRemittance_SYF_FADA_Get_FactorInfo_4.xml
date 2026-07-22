@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_FACTOR</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>SYF_FADA_CommissionRemittance_SYF_FADA_Get_FactorInfo_4</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_IF_COMM_BK4 ALIAS="T0" DBFUNC="" DESC="Comm Bank4" DT="12" HIDDEN="F" TYPE="F">FA_IF_COMM_BK2</FA_IF_COMM_BK4>
+        <FA_IF_COMM_ACNO4 ALIAS="T0" DBFUNC="" DESC="Comm A/C No. 4" DT="12" HIDDEN="F" TYPE="F">FA_IF_AC_NO1</FA_IF_COMM_ACNO4>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_IF_CCY4 = '</SQL>
+            <SQL TYPE="FLD">FA_DOC_CCY</SQL>
+            <SQL TYPE="SQL">' AND FA_FACTOR_ID = '</SQL>
+            <SQL TYPE="FLD">FA_FACTOR_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

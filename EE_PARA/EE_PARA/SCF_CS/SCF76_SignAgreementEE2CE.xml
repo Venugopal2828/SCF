@@ -1,0 +1,147 @@
+<SCF76>
+	<MsgInfo>
+		<SenderCode />
+		<ReceiverCode />
+		<CreatedBy />
+		<!-- Retrieve EE Login User// -->
+		<SequenceNr />
+		<!--System automatically genereated integer// -->
+		<MsgType>SCF.001.AGR</MsgType>       <!--MSG_TYPE></MSG_TYPE -->
+		<!--Here using for Message Type exchanging between CE and EE // -->
+		<FileIndex />
+		<SubFileIndex />
+		<DateTime />
+		<!--System automatically genereated system datetime// -->
+		<Status />
+		<Error />
+	</MsgInfo>
+	<EF>
+		<FactorCode />
+		<FactorName />
+	</EF>
+	<IF>
+		<FactorCode />
+		<FactorName />
+	</IF>
+	<FromTurnaround />
+	<OriginalRequestNr />
+	<ReplyNr />
+	<ReplyDate />
+	<Customer>
+		<!--> Additional Fields Begin -->
+		<CustomerType>CUST_TYPE</CustomerType> <!--CUST_TYPE></CUST_TYPE -->
+		<!--Retrieve Customer 3-Tier from Agreement// -->
+		<CustomeRole>FA_ANCHOR_ROLE</CustomeRole> <!--FA_ANCHOR_ROLE></FA_ANCHOR_ROLE -->
+		<!--Retrieve Customer Business Role from Agreement// -->
+		<BusiType>FA_BUSI_TYPE</BusiType>   <!--FA_BUSI_TYPE></FA_BUSI_TYPE -->
+		<!--> Additional Fields End -->
+		<CustomerNr>FA_ANCHOR_ID</CustomerNr> <!--FA_ANCHOR_ID></FA_ANCHOR_ID -->
+		<!--Retrieve Customer ID from Agreement// -->
+		<CustomerName>FA_ANCHOR_NM</CustomerName>  <!--FA_ANCHOR_NM></FA_ANCHOR_NM -->
+		<!--Retrieve Customer Name from Agreement// -->
+		<CustomerEmail>FA_ANCHOR_ADD_ML</CustomerEmail>
+		<CustomerCcy>FA_ANCHOR_CCY</CustomerCcy>
+		<CustomerCompanyRegNr>FA_CUST_REG_NO</CustomerCompanyRegNr>
+		<AgmPaymentTerm>FA_PMT_TERMS</AgmPaymentTerm>
+		<ExportFactorOwnCustomerNumber />
+	</Customer>
+	<Counterparty>
+		<SBRMain>
+			<!-- Empty node for this function// -->
+			<!--> Additional Fields Begin -->
+			<SBRStatus></SBRStatus>
+			<!-- 1, Success 2, Fail / -->
+			<FailReason></FailReason>
+			<!-- Reason / -->
+			<SBRRef />
+			<AgmNr>C_MAIN_REF</AgmNr>
+			<OurCustInd />
+			<CounterpartyRole />
+			<CounterpartyType />
+			<!--> Additional Fields end -->
+			<CounterpartyCompanyRegNr />
+			<CounterpartyNr />
+			<CounterpartyName />
+			<ResponseAgency />
+			<ExportFactorOwnCounterpartyNr />
+			<NameCont />
+			<Street />
+			<City />
+			<State />
+			<Postcode />
+			<Country />
+			<ContactName />
+			<Telephone />
+			<Fax />
+			<Email />
+			<CounterpartyNatureOfBusiness />
+			<Currency />
+			<MsgFunction />
+			<ServiceOffered />
+			<EFServiceCharge />
+			<EFServiceChargeCurrency />
+			<EFDiscountingChargeToTheSupplierPerc />
+			<EFCommissionToTheSupplierPerc />
+			<FlatRate />
+			<BaseRate />
+			<InvAvalFunding />
+			<TtlInvLoanAmt />
+			<TtlInvBal />
+			<POAvalFunding />
+			<TtlPOLoanAmt />
+			<TtlPOBal />
+		</SBRMain>
+		<!-- Here To Add SBR Limit and Price and AutoProcess Information Begin 
+			empty node no values// -->
+		<SBRDetail>
+			<SBRControl>
+				<AckFlg />
+				<AutoFin />
+				<AutoDebit />
+				<AnchorAcct />
+				<CounterPartyAcct />
+				<NeedbuyerAprv />
+				<FinCutoffDays />
+				<MinFinAmt />
+				<MaxFinAmt />
+				<GraceDays />
+				<InvFinMode />
+				<PoolMaxAmt />
+				<PoolMinAmt />
+				<PoolMaxPeriod />
+				<PoolMinPeriod />
+			</SBRControl>
+			<SBRPrice>
+				<CommRate />
+				<HandlChg />
+				<IntRate />
+				<IntRateSpread />
+				<PenalRateSpread />
+				<MaxLoanPerc />
+				<RebateRate />
+				<RebateAcct />
+				<IntRateType />
+				<!--<PmtGrceDays />-->
+				<ChgPaidBy />
+				<!-- <VatRate />-->
+				<ChgFreqCD />
+				<FinInfo />
+			</SBRPrice>
+		</SBRDetail>
+		<!-- Here To Add SBR Limit and Price and AutoProcess Information End// -->
+	</Counterparty>
+	<DocumentsObtained>
+		<RegistrationForm />
+		<ListOfUltimateBeneficiaryOwners />
+		<ListOfKeyManagers />
+		<ListOfBoardMembers />
+		<ListOfSignatories />
+		<KYCQuestionnaire />
+		<AMLQuestionnaire />
+		<AnyRelevantAdverseInformation />
+		<ControlForPossibleActivities />
+		<SeeSeparateMail />
+		<Others />
+	</DocumentsObtained>
+	<MsgText></MsgText>
+</SCF76>

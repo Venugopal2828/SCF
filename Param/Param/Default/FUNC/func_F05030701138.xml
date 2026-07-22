@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701138</ID>
+        <NAME>AddPO</NAME>
+        <DESC>Add PO</DESC>
+        <FUNSHORTNAME>AddPO</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_AddPO.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701131</ID>
+        <NAME>AddPO_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701131</ID>
+        <NAME>AddPO_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000416</ID>
+        <NAME>AddPO_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

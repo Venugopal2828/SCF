@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C14111100000</CATALOGID>
+        <ID>F05030701131</ID>
+        <NAME>Credit Note Transfer Catalog</NAME>
+        <DESC>Credit Note Transfer</DESC>
+        <FUNSHORTNAME>CrditNoteTran</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>IQ</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Get Data">TrxManagerGetData</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">FAEF_ReqCNTrans.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701124</ID>
+        <NAME>Credit Note Transfer Catalog_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701124</ID>
+        <NAME>Credit Note Transfer Catalog_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000409</ID>
+        <NAME>Credit Note Transfer Catalog_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

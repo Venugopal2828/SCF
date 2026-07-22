@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Processed Purchase Order");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sRptId = stp.getXslMsgTagVal("message/Document/BaselnMtchRpt/RptId","Id");
+stp.writeLog("sRptId=========="+sRptId);
+//var sBIC = sRptId.substr(0,11);
+//var sBIC = sRptId.split("-")[0];
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC=========="+sBIC);
+var sBuyrBkBIC = stp.getXslMsgTagVal("message/Document/BaselnMtchRpt/BuyrBk","BIC");
+var sSellrBkBIC = stp.getXslMsgTagVal("message/Document/BaselnMtchRpt/SellrBk","BIC");
+var sBuyrNm = stp.getXslMsgTagVal("message/Document/BaselnMtchRpt/Buyr","Nm");
+var sSellrNm = stp.getXslMsgTagVal("message/Document/BaselnMtchRpt/Sellr","Nm");
+var sUnitNm = "";
+if (sBIC == sBuyrBkBIC){
+sUnitNm = sBuyrNm;
+} else{
+sUnitNm = sSellrNm;
+}
+var arrKeys = [["C_UNIT_NAME",sUnitNm]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetUnitCodeByNm",arrKeys);
+var sUnitCode = arrGetDataResult[0];
+stp.setCmpId(sUnitCode);
+var sTxId = stp.getXslMsgTagVal("message/Document/BaselnMtchRpt/TxId","Id");
+var arrKeys1 = [["TSU_TID",sTxId]];
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetMainRefByTxId",arrKeys1);
+var sMainRef = arrGetDataResult1[0];
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+var NoOfMismatch = stp.getXslMsgTagVal("message/Document/BaselnMtchRpt/Rpt","NbOfMisMtchs");
+stp.updateFieldValue("CURRNT_STATUS","Received Match Report");
+if(parseInt(NoOfMismatch) > 0){
+stp.updateFieldValue("CURRNT_STATUS","Received Mismatch Report");
+}
+stp.writeLog("End: Received Processed Purchase Order");]]></js-content>
+</root>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FAEF_PMT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>SYF_FAEF_Payment_Get_FA_PMT_CCY</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_PMT_CCY ALIAS="T0" DBFUNC="" DESC="Payment CCY" DT="1" HIDDEN="F" TYPE="F">ACC_CCY</FA_PMT_CCY>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_BUSI_TYPE = 'POF' AND (FA_BUSI_STATUS = 'PAYINSTR' OR FA_BUSI_STATUS = 'PMT') AND FA_BUYER_ID ='</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_SEL_ID='</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

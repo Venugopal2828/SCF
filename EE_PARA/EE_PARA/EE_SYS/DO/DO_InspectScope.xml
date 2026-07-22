@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Inspect Scope" Max="n" Min="1" Name="InspectScope" PendingStore="N" Screen="SCRN/DO/ABLF_InspectScope.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="ABLF_INSPEC_SCOPE"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>INSPEC_ID</PKNAME>
+        <PKNAME>FA_CNTR_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="ABLF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Inspect Institution ID" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">INSPEC_ID</Element>
+        <Element DATATYPE="12" Desc="Inspect Institution Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">INSPEC_NM</Element>
+        <Element DATATYPE="1" Desc="Inspect Institution Type" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">INSPEC_TP</Element>
+        <Element DATATYPE="1" Desc="Deduct Inspect Institution Limits?" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">DEDUCT_LMT</Element>
+        <Element DATATYPE="12" Desc="Inspect Agreement No." DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">INSPEC_ARG_NO</Element>
+        <Element DATATYPE="12" Desc="Contract Reference No." DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">FA_CNTR_REF</Element>
+    </Elements>
+</DO>

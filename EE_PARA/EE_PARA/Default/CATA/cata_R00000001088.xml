@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+        <FIELD NAME="_TRX_TYPE" VALUE="INCOMING_MAINTENANCE"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082300558</ID>
+    <MODULE>SYST</MODULE>
+    <JSPFILE>screen/CATA/IncomingSwiftCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>PC VIEW</DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STP_IN_MSG_STO</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Function Name" EEType="Varchar_35" HIDDEN="H">C_FUNC_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Message Type" EEType="Varchar_10" HIDDEN="">C_MESSAGE_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Status" EEType="Varchar_1" HIDDEN="">C_PROC_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Sender" EEType="Varchar_100" HIDDEN="">C_ADBIC_LC</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="STP Code" EEType="Varchar_32" HIDDEN="H">C_STP_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Send To" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Reference Number" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="BANK GROUP ID" EEType="" HIDDEN="H">C_BK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="H">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Message ID" EEType="Varchar_64" HIDDEN="H">C_MSG_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="2" DESC="I_MSG_NUMS" EEType="Numeric_22" HIDDEN="H">I_MSG_NUMS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Proc Time" EEType="DATE" HIDDEN="H">T_PROC_TIME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="T_RECV_TIME" EEType="DATE" HIDDEN="H">T_RECV_TIME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="C_MSG_TYPE" EEType="Varchar_25" HIDDEN="H">C_MSG_TYPE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Message Type" DT="12" EEType="Varchar_10" TYPE="FLD">C_MESSAGE_TYPE</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Status" DT="12" EEType="Varchar_1" TYPE="FLD">C_PROC_STATUS</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="STP Code" DT="12" EEType="Varchar_32" TYPE="FLD">C_STP_CODE</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Reference Number" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="C_MSG_TYPE" DT="12" EEType="Varchar_25" TYPE="FLD">C_MSG_TYPE</SQL>
+        <SQL TYPE="SQL"> = 'InSwiftForm'
+ORDER BY </SQL>
+        <SQL DESC="STP Code" DT="12" EEType="Varchar_32" TYPE="FLD">C_STP_CODE</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Message Type" EEType="Varchar_10">C_MESSAGE_TYPE</FIELD>
+        <FIELD DATATYPE="12" DESC="Status" EEType="Varchar_1">C_PROC_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="STP Code" EEType="Varchar_32">C_STP_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Reference Number" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="C_MSG_TYPE" EEType="Varchar_25">C_MSG_TYPE</FIELD>
+        <FIELD DATATYPE="12" DESC="STP Code" EEType="Varchar_32">C_STP_CODE</FIELD>
+    </CLAUSEFIELD>
+</CATA>

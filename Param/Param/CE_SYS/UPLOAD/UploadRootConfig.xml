@@ -1,0 +1,321 @@
+<root>
+	<!--msgSet name="EESTD" type="CSStandard">
+  	<spliters>
+  		<spliter type="xml" spliter="SingleRecordXMLSplitter">
+  		</spliter>
+			<spliter type="excel" spliter="ExcelByRowSplitter">
+  		</spliter>
+  	</spliters>
+  	<submsgs>
+			<submsg name="tsmt.018.001.01">
+				<keys type="xml" formatter="SendEEXSLFormatter">
+					<XSLID>X00000000001</XSLID>
+					<business_keys>
+						<key path="/root/OCBC/FA_DOC_NO"/>
+					</business_keys>
+					<unit path="/root/OCBC/C_UNIT_CODE"></unit>
+				</keys>
+				<keys type="excel" formatter="SendEEXSLFormatter">
+					<XSLID>X00000000002</XSLID>
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+	<msgSet name="EEISO" type="ISO20022">
+		<spliters>
+			<spliter type="xml" spliter="SingleRecordXMLSplitter"></spliter>
+		</spliters>
+		<submsgs>
+			<submsg name="tsin.004.001.01">
+				<keys type="xml" formatter="SendEEXSLFormatter">
+					<XSLID/>
+					<business_keys>
+						<key path="/root/FinInvc/InvcHdr/Id"/>
+					</business_keys>
+					<unit path="/root/FinInvc/InvcHdr/C_UNIT_CODE"></unit>
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+	<msgSet name="CESTD" type="CSStandard">
+  	<spliters>
+  		<spliter type="xml" spliter="SingleRecordXMLSplitter">
+  		</spliter-->
+	<!--带DO的Excel-->
+	<!--spliter type="excel" spliter="ExcelSingleDOSplitter"-->
+	<!--不带DO的Excel-->
+	<!--spliter type="excel" spliter="ExcelByRowSplitter"-->
+	<!--param name="subMsgType">tsmt.018.001.02</param>
+  		</spliter>
+  	</spliters>
+  	<submsgs>
+			<submsg name="tsmt.018.001.02">
+				<keys type="xml" formatter="SendCEXSLFormatter">
+					<XSLID>X00000000003</XSLID>
+					<business_keys>
+						<key path="/Document/OCBC/MainRef"/>
+					</business_keys>
+					<unit path="/Document/OCBC/UnitCode"></unit>
+				</keys>
+				<keys type="excel" formatter="ExcelFormatter">
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+	<msgSet name="CEISO" type="ISO20022">
+		<spliters>
+			<spliter type="xml" spliter="SingleRecordXMLSplitter"></spliter>
+		</spliters>
+		<submsgs>
+			<submsg name="tsin.004.001.02">
+				<keys type="xml" formatter="SendCEXSLFormatter">
+						<XSLID>X00000000004</XSLID>
+					<business_keys>
+						<key path="/root/FinInvc/InvcHdr/FA_DOC_NO"/>
+					</business_keys>
+					<unit path="/root/FinInvc/InvcHdr/C_UNIT_CODE"></unit>
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet-->
+	<!--SAX时不需要type类型-->
+	<msgSet name="Invoice_S" type="CSStandard">
+		<spliters>
+			<spliter type="xml" spliter="SingleRecordXMLSplitter">
+  		</spliter>
+			<spliter type="excel" spliter="ExcelByRowSplitter"><!--split file-->
+			</spliter>
+		</spliters>
+		<submsgs>
+			<submsg name="tsmt.018.001.01">
+				<keys type="xml" formatter="SendEEXSLFormatter">
+					<XSLID>EESTDXML</XSLID>
+					<business_keys>
+						<key path="/root/OCBC/FA_DOC_NO"/>
+					</business_keys>
+					<unit path="/root/OCBC/C_UNIT_CODE"/>
+				</keys>
+				<keys type="excel" formatter="SendEEXSLFormatter">
+					<XSLID>EEXLSXML</XSLID>
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+		<!--msgSet name="Invoice" type="CSStandard">
+		<spliters>
+			<spliter type="xml" spliter="SingleRecordXMLSplitter">
+  		</spliter>
+			<spliter type="excel" spliter="ExcelByRowSplitter">
+			</spliter>
+		</spliters>
+		<submsgs>
+			<submsg name="tsmt.018.001.01">
+				<keys type="xml" formatter="SendEEXSLFormatter">
+					<XSLID>EESTDXML</XSLID>
+					<business_keys>
+						<key path="/root/OCBC/FA_DOC_NO"/>
+					</business_keys>
+					<unit path="/root/OCBC/C_UNIT_CODE"/>
+				</keys>
+				<keys type="excel" formatter="SendEEXSLFormatter">
+					<XSLID>EEXLSXML</XSLID>
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet-->
+		<msgSet name="Invoice_M" type="CSStandard">
+  	<spliters>
+  		<spliter type="xml" spliter="SingleRecordXMLSplitter">
+  		</spliter>
+	<!--带DO的Excel-->
+	<spliter type="excel" spliter="ExcelSingleDOSplitter">
+	<!--不带DO的Excel-->
+	<!--spliter type="excel" spliter="ExcelByRowSplitter"-->
+	<!--param name="subMsgType">tsmt.018.001.02</param-->
+  		</spliter>
+		<!-- added by praveen -->
+		<spliter type="csv" spliter="CSVSingleDOSplitter">
+  		</spliter>
+  	</spliters>
+  	<submsgs>
+			<submsg name="tsmt.018.001.02">
+				<keys type="xml" formatter="SendCEXSLFormatter">
+					<XSLID>CESTDXML</XSLID>
+					<business_keys>
+						<key path="/Document/OCBC/MainRef"/>
+					</business_keys>
+					<unit path="/Document/OCBC/UnitCode"></unit>
+				</keys>
+				<keys type="excel" formatter="ExcelFormatter">
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+	<msgSet name="EEISO" type="ISO20022">
+		<spliters>
+			<spliter type="xml" spliter="SingleRecordXMLSplitter"/>
+		</spliters>
+		<submsgs>
+			<submsg name="tsin.004.001.01">
+				<keys type="xml" formatter="SendEEXSLFormatter">
+					<XSLID/>
+					<business_keys>
+						<key path="/root/FinInvc/InvcHdr/Id"/>
+					</business_keys>
+					<unit path="/root/FinInvc/InvcHdr/C_UNIT_CODE"/>
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+	<msgSet name="CESAX">
+		<spliters>
+          <spliter type="xml" spliter="MultiRecordsXMLSplitter">
+          </spliter>
+          <spliter type="excel" spliter="ExcelBySAXSplitter">
+            <param name="subMsgType">tsmt.018.001.02</param>
+          </spliter>
+        </spliters>
+		<submsgs>
+			<submsg name="tsmt.018.001.02">
+				<keys type="xml" formatter="SendCEXSLFormatter">
+					<XSLID>CESAXXML</XSLID>
+					<business_keys>
+						<key path="/Document/OCBC/MainRef"/>
+					</business_keys>
+					<unit path="/Document/UnitCode"/>
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+	<msgSet name="SBR" type="CSStandard">
+		<spliters>
+			<!--带DO的Excel-->
+			<spliter type="excel" spliter="ExcelSingleDOSplitter">
+				<!--不带DO的Excel-->
+				<!--spliter type="excel" spliter="ExcelByRowSplitter"-->
+				<param name="subMsgType">SBR</param>
+			</spliter>
+			<!-- added by praveen -->
+			<spliter type="csv" spliter="CSVSingleDOSplitter">
+				<param name="subMsgType">SBR</param>
+			</spliter>
+		</spliters>
+		<submsgs>
+			<submsg name="SBR">
+				<keys type="excel" formatter="ExcelFormatter">
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+	<msgSet name="Counterparty" type="SCFStandard">
+  	  <spliters>
+	  <!--带DO的Excel-->
+	    <spliter type="excel" spliter="ExcelSingleDOSplitter">
+  	    </spliter>
+		<spliter type="xml" spliter="SingleRecordXMLSplitter">
+ 		</spliter>
+		<!-- added by praveen -->
+			<spliter type="csv" spliter="CSVSingleDOSplitter">
+				<param name="subMsgType">SBR</param>
+			</spliter>
+  	  </spliters>
+  	  <submsgs>
+			<submsg name="SCF75">
+			    <keys type="excel" formatter="SendEEXSLFormatter">
+				    <XSLID>SCF75XLSXML</XSLID>
+				</keys>
+				<keys type="xml" formatter="SendEEXSLFormatter">
+					<XSLID/>
+					<business_keys>
+					    <key path="/SCF75/MsgInfo/SequenceNr"/>
+					</business_keys>
+					<unit path="/SCF75/Customer/CustomerNr"/>
+				</keys>
+			</submsg>
+      </submsgs>
+	</msgSet>
+	<msgSet name="Invoice" type="SCFStandard">
+  	  <spliters>
+	  <!--带DO的Excel-->
+	    <spliter type="excel" spliter="ExcelSingleDOSplitter">
+  	    </spliter>
+		<spliter type="xml" spliter="SingleRecordXMLSplitter">
+ 		</spliter>
+		<spliter type="pdf" spliter="SingleRecordPDFSplitter">
+			<param name="subMsgType">SCF79</param>
+ 		</spliter>
+		<spliter type="png" spliter="SingleRecordPDFSplitter">
+			<param name="subMsgType">SCF79</param>
+ 		</spliter>
+		<spliter type="jpg" spliter="SingleRecordPDFSplitter">
+			<param name="subMsgType">SCF79</param>
+ 		</spliter>
+		<spliter type="csv" spliter="CSVSingleDOSplitter">
+            <param name="subMsgType">SCF79</param>
+        </spliter>
+  	  </spliters>
+  	  <submsgs>
+			<submsg name="SCF79">
+			    <keys type="excel" formatter="SendEEXSLFormatter">
+				    <XSLID>SCF79XLSXML</XSLID>
+				</keys>
+				<keys type="xml" formatter="SendEEXSLFormatter">
+					<XSLID/>
+					<business_keys>
+					    <key path="/SCF79/MsgInfo/SequenceNr"/>
+					</business_keys>
+					<unit path="/SCF79/Customer/CustomerNr"/>
+				</keys>
+				<keys type="pdf" formatter="SendEEXSLFormatter">
+					<XSLID/>
+					<business_keys>
+					    <key path="/SCF79/MsgInfo/SequenceNr"/>
+					</business_keys>
+					<unit path="/SCF79/Customer/CustomerNr"/>
+				</keys>
+				<keys type="png" formatter="SendEEXSLFormatter">
+					<XSLID/>
+					<business_keys>
+					    <key path="/SCF79/MsgInfo/SequenceNr"/>
+					</business_keys>
+					<unit path="/SCF79/Customer/CustomerNr"/>
+				</keys>
+				<keys type="jpg" formatter="SendEEXSLFormatter">
+					<XSLID/>
+					<business_keys>
+					    <key path="/SCF79/MsgInfo/SequenceNr"/>
+					</business_keys>
+					<unit path="/SCF79/Customer/CustomerNr"/>
+					<!-- ADDED BT PRAVEEN -->
+				</keys>
+				<keys type="csv" formatter="CSVFormatter">
+					<XSLID>SCF79XLSXML</XSLID>
+            </keys>
+			</submsg>
+      </submsgs>
+	</msgSet>
+	<msgSet name="PO" type="SCFStandard">
+  	  <spliters>
+	  <!--带DO的Excel-->
+	    <spliter type="excel" spliter="ExcelSingleDOSplitter">
+  	    </spliter>
+		<spliter type="xml" spliter="SingleRecordXMLSplitter">
+ 		</spliter>
+  	  </spliters>
+  	  <submsgs>
+			<submsg name="SCF59">
+			    <keys type="excel" formatter="SendEEXSLFormatter">
+				    <XSLID>SCF59XLSXML</XSLID>
+				</keys>
+				<keys type="xml" formatter="SendEEXSLFormatter">
+					<XSLID/>
+					<business_keys>
+					    <key path="/SCF59/MsgInfo/SequenceNr"/>
+					</business_keys>
+					<unit path="/SCF59/Customer/CustomerNr"/>
+				</keys>
+			</submsg>
+      </submsgs>
+	</msgSet>
+	
+</root>

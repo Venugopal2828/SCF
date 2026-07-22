@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PUOD</MODULE>
+        <MODULE_DESC>Purchase Order</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C14021300000</CATALOGID>
+        <ID>F05030701033</ID>
+        <NAME>Amendment Decision</NAME>
+        <DESC>Amendment Decision</DESC>
+        <FUNSHORTNAME>AmdDesc</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">PUOD_AmdDesc.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701026</ID>
+        <NAME>Amendment Decision_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701026</ID>
+        <NAME>Amendment Decision_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000310</ID>
+        <NAME>Amendment Decision_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>FunctionSSJS</JS_CLASS>
+    </CAL>
+</FUNC>

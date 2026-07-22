@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNGRP AutoGen-Parameter-Version="1.0" DESC="PYMT Capture Inward Payment"
+    NAME="CaptureInwardPayments" ROWS="8" TYPE="T">
+    <FUNCTION FUNCTYPE="PM" forGPC="Y">
+        <MODULE DESC="Clean Payment">PYMT</MODULE>
+        <ID>F05030703260</ID>
+        <NAME>Proc_Inc_103</NAME>
+        <DESC>Settle Incoming MT103</DESC>
+    </FUNCTION>
+    <FUNCTION FUNCTYPE="PM" forGPC="Y">
+        <MODULE DESC="Clean Payment">PYMT</MODULE>
+        <ID>F05030703269</ID>
+        <NAME>PYMT_Invest</NAME>
+        <DESC>Inward TT Investigation</DESC>
+    </FUNCTION>
+    <FUNCTION FUNCTYPE="EC" forGPC="Y">
+        <MODULE DESC="Clean Payment">PYMT</MODULE>
+        <ID>F05030703243</ID>
+        <NAME>ITT_FixPending</NAME>
+        <DESC>Update Saved/Correct Capture ITT</DESC>
+    </FUNCTION>
+    <FUNCTION FUNCTYPE="PM" forGPC="Y">
+        <MODULE DESC="Clean Payment">PYMT</MODULE>
+        <ID>F05030703287</ID>
+        <NAME>ReversePayment_ITT</NAME>
+        <DESC>Capture Reversal of Principle ITT</DESC>
+    </FUNCTION>
+    <FUNCTION FUNCTYPE="PM" forGPC="Y">
+        <MODULE DESC="Clean Payment">PYMT</MODULE>
+        <ID>F05030703239</ID>
+        <NAME>ITTRecoverAdditionalCharges</NAME>
+        <DESC>Capture Additional Charges  ITT</DESC>
+    </FUNCTION>
+    <FUNCTION FUNCTYPE="MM" forGPC="Y">
+        <MODULE DESC="Clean Payment">PYMT</MODULE>
+        <ID>F05030703192</ID>
+        <NAME>Cancel_ITT</NAME>
+        <DESC>Cancellation of Transaction  ITT</DESC>
+    </FUNCTION>
+    <FUNCTION FUNCTYPE="PM" forGPC="Y">
+        <MODULE DESC="Clean Payment">PYMT</MODULE>
+        <ID>F05030703241</ID>
+        <NAME>ITTReverseCharges</NAME>
+        <DESC>Capture Reversal of Charges/VAT  ITT</DESC>
+    </FUNCTION>
+    <FUNCTION FUNCTYPE="DP" forGPC="Y">
+        <MODULE DESC="Clean Payment">PYMT</MODULE>
+        <ID>F05030703242</ID>
+        <NAME>ITT_CancelPending</NAME>
+        <DESC>Cancel  ITT</DESC>
+    </FUNCTION>
+</FUNGRP>

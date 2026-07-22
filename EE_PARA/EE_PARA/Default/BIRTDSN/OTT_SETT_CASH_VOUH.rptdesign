@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.2.v20070205-1728 Build &lt;20070205-1728></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.xml" name="Data Source" id="1172">
+            <property name="FILELIST">X:\STBANK\ZM\AP\FORM\form_schema_PYMT_CompOutPmt.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.xml.dataSet" name="Data Set" id="1947">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CASH_SETT_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CASH_SETT_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">SUSP_AC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CASH_SETT_CCY</property>
+                    <property name="nativeName">CASH_SETT_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CASH_SETT_AMT</property>
+                    <property name="nativeName">CASH_SETT_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">SUSP_AC</property>
+                    <property name="nativeName">SUSP_AC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">table0#-TNAME-#table0#:#[/domData]#:#{CASH_SETT_CCY;String;/CASH_SETT_CCY},{CASH_SETT_AMT;String;/CASH_SETT_AMT},{C_MAIN_REF;String;/C_MAIN_REF},{SUSP_AC;String;/SUSP_AC}</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CASH_SETT_CCY</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CASH_SETT_CCY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CASH_SETT_AMT</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CASH_SETT_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="MAX_ROW">-1</property>
+            <property name="XML_FILE">X:\STBANK\ZM\AP\FORM\form_schema_PYMT_CompOutPmt.xml</property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-header>
+                <grid id="5">
+                    <property name="height">0.59375in</property>
+                    <property name="width">6.15625in</property>
+                    <column id="6">
+                        <property name="width">2.8229166667in</property>
+                    </column>
+                    <column id="7">
+                        <property name="width">3.3333333333in</property>
+                    </column>
+                    <row id="8">
+                        <property name="height">0.59375in</property>
+                        <cell id="9">
+                            <image id="1773">
+                                <property name="source">embed</property>
+                                <property name="imageName">Report_Logo.JPG</property>
+                            </image>
+                        </cell>
+                        <cell id="10"/>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="2181">
+                    <property name="width">100%</property>
+                    <column id="2182"/>
+                    <row id="2189">
+                        <cell id="2190">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                        </cell>
+                    </row>
+                    <row id="2183">
+                        <cell id="2184">
+                            <text id="2187">
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<CENTER><B>This is an electronically generated advice and requires no bank signature 
+</B></CENTER>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                    <row id="2185">
+                        <cell id="2186">
+                            <text id="2188">
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">6pt</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<br>Stanbic Bank Zambia Limited. Registered Commercial Bank – Registered in Zambia Reg. No. 6559 <br>
+Stanbic Bank Zambia Limited provides the details as “information only” and the clients should view the contents of their advice to confirm whether transaction have been successfully processed.  Based on the aforesaid Stanbic Bank Zambia Limited makes no representation or warranty, whether express or implied as to the integrity, accuracy, completeness or reliability of any information contained herein.]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="1938">
+            <text-property name="text">  </text-property>
+        </label>
+        <label id="1703">
+            <text-property name="text">  </text-property>
+        </label>
+        <grid id="1953">
+            <property name="width">100%</property>
+            <column id="1939"/>
+            <column id="1940"/>
+            <row id="1941">
+                <cell id="1942">
+                    <grid id="1926">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">7pt</property>
+                        <property name="width">100%</property>
+                        <column id="1927">
+                            <property name="textAlign">justify</property>
+                        </column>
+                        <row id="1928">
+                            <property name="textAlign">justify</property>
+                            <cell id="1929">
+                                <label id="1934">
+                                    <text-property name="text">INTERNATIONAL BUSINESS CENTRE</text-property>
+                                </label>
+                                <label id="1937">
+                                    <text-property name="text">PO BOX 31955 LUSAKA ZAMBIA</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="1943">
+                    <grid id="2039">
+                        <property name="textAlign">right</property>
+                        <property name="width">100%</property>
+                        <column id="2040"/>
+                        <row id="2041">
+                            <cell id="2042">
+                                <label id="2045">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Cash Voucher</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="2043">
+                            <cell id="2044"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <label id="669">
+            <text-property name="text">  </text-property>
+        </label>
+        <grid id="670">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">9pt</property>
+            <property name="width">100%</property>
+            <column id="671">
+                <property name="width">0.8229166667in</property>
+            </column>
+            <column id="672">
+                <property name="width">5.1666666667in</property>
+            </column>
+            <row id="673">
+                <cell id="674">
+                    <label id="677">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Date:</text-property>
+                    </label>
+                </cell>
+                <cell id="675">
+                    <text id="3">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<value-of format ="dd MMMM yyyy">new Date()</value-of>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <label id="81">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">22pt</property>
+            <property name="fontWeight">bold</property>
+            <text-property name="text">                                                                                              Credit</text-property>
+        </label>
+        <grid id="92">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">9pt</property>
+            <property name="width">100%</property>
+            <column id="93">
+                <property name="width">1.96875in</property>
+                <property name="textAlign">left</property>
+            </column>
+            <column id="94">
+                <property name="width">4.0208333333in</property>
+                <property name="textAlign">left</property>
+            </column>
+            <row id="95">
+                <cell id="96">
+                    <label id="132">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Transaction Reference Number:</text-property>
+                    </label>
+                </cell>
+                <cell id="97">
+                    <data id="1951">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">C_MAIN_REF</property>
+                                <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">C_MAIN_REF</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="295">
+                <cell id="296">
+                    <label id="298">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Forex Settlement  Suspense Account:</text-property>
+                    </label>
+                </cell>
+                <cell id="297">
+                    <data id="1952">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">SUSP_AC</property>
+                                <expression name="expression">dataSetRow["SUSP_AC"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">SUSP_AC</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="101">
+                <cell id="102">
+                    <label id="135">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Amount:</text-property>
+                    </label>
+                </cell>
+                <cell id="103">
+                    <grid id="1566">
+                        <property name="height">0.40625in</property>
+                        <property name="width">2.2083333333in</property>
+                        <column id="1567">
+                            <property name="width">0.7604166667in</property>
+                            <property name="textAlign">left</property>
+                        </column>
+                        <column id="1568">
+                            <property name="width">1.4479166667in</property>
+                            <property name="textAlign">left</property>
+                        </column>
+                        <row id="1569">
+                            <property name="height">0.40625in</property>
+                            <cell id="1570">
+                                <data id="1949">
+                                    <property name="dataSet">Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">CASH_SETT_CCY</property>
+                                            <expression name="expression">dataSetRow["CASH_SETT_CCY"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">CASH_SETT_CCY</property>
+                                </data>
+                            </cell>
+                            <cell id="1571">
+                                <data id="1950">
+                                    <structure name="numberFormat">
+                                        <property name="category">Custom</property>
+                                        <property name="pattern">###,##0.00</property>
+                                    </structure>
+                                    <property name="dataSet">Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">CASH_SETT_AMT</property>
+                                            <expression name="expression">dataSetRow["CASH_SETT_AMT"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">CASH_SETT_AMT</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="300">
+                <cell id="301">
+                    <label id="303">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">IBC:</text-property>
+                    </label>
+                </cell>
+                <cell id="302">
+                    <label id="1574">
+                        <text-property name="text">Zambia</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <label id="1558">
+            <text-property name="text">   </text-property>
+        </label>
+        <label id="1560">
+            <text-property name="text">  </text-property>
+        </label>
+        <label id="1561">
+            <text-property name="text">   </text-property>
+        </label>
+        <table id="1517">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">9pt</property>
+            <property name="height">2.7395833333in</property>
+            <property name="width">5.9895833333in</property>
+            <column id="1527">
+                <property name="width">2.7083333333in</property>
+            </column>
+            <column id="1528">
+                <property name="width">3.28125in</property>
+            </column>
+            <header>
+                <row id="1518">
+                    <cell id="1519">
+                        <label id="1529">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Teller/Waste Stamp:</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1520">
+                        <label id="1530">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">    Authorised Signatories:</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="1521">
+                    <property name="height">2.5in</property>
+                    <cell id="1522">
+                        <grid id="2192">
+                            <property name="height">2.5208333333in</property>
+                            <property name="width">2.0625in</property>
+                            <column id="2193">
+                                <property name="width">2.0625in</property>
+                            </column>
+                            <row id="2194">
+                                <property name="height">2.5208333333in</property>
+                                <cell id="2195">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                    <cell id="1523">
+                        <table id="1541">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="height">2.4479166667in</property>
+                            <property name="width">3.21875in</property>
+                            <column id="1554">
+                                <property name="width">1.3020833333in</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </column>
+                            <column id="1555">
+                                <property name="width">1.9166666667in</property>
+                            </column>
+                            <detail>
+                                <row id="1545">
+                                    <property name="height">1.4166666667in</property>
+                                    <cell id="1546">
+                                        <text id="1556">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Operator:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1547"/>
+                                </row>
+                                <row id="1548">
+                                    <property name="height">1.6979166667in</property>
+                                    <cell id="1549">
+                                        <text id="1557">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Signing Officer:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1550"/>
+                                </row>
+                            </detail>
+                        </table>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">Report_Logo.JPG</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwg
+                JC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIy
+                MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABEAPoDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+qt5qVjp0fmX17b2qf3p5VQfmT7H8q89+OOrXmmeCbZLK6lt
+                3ub1Y5GiYqWjEcjEZGMcqvcflmvGtZ8Aano2l6Z4huYpbzSL63huJrm3X54d6hiHB6YJwG6HAztJAHZQ
+                wsakVKUrXMp1HF2SPo+fx74RtxmTxLpR/wBy6R//AEEn3/KoB8SPBrMB/wAJFYg+8mMfn07/AJGvD7TS
+                fhP9kjlu/FmvCR13GIWxVk+9w2ImGeCOD29OnV6L8Mvhv4lQf2R4p1Kd+cxrcxJL35KNEGHfsOntWksN
+                ShrLm+4lTqPsepweMfDFyQsPiLSnY9FF5Hu79s57GtlHWRQyMGU9CDkV4/d/s/aW6kWevX0ZycfaI1lH
+                fH3dnTj/ADjHm/iXRL34WeILcaV4gjnuArSE2x8tlI5AkQMeD6HggHj0mGGpVXanPX0G6k46yR9VUUiO
+                siK6nKsMg+1JJIkMTyyuqRopZnY4CgdST2FcJsOorlpPiR4Niufs7eIrHeDjKvuX/vofL2PftXQWOo2W
+                qWwudPvLe7gJKiWCQOuR1GQcZqnCUVdoSknomWaKKKkYUUUUAFFFVtQvoNL0261C6Yrb2sLzSsASQigs
+                TgdeAaErgWaKwfC3i/S/GFrc3OleeYLeXymeVNm5sZ4Gc9x1xW9TlFxdnuJNNXQUVzc3jzw7B4uTwvJe
+                41RyF2eWdoYjcFLdAxHb39a6SnKMo2utwuFFFFSMKKwLjxx4WtbmW3uPEGnRTQu0ciPcKCjKSCD6EEH8
+                jU9h4s8O6pcJb2OuadcTucLFHcoXY+y5yeh/I1XJK17C5l3NiiiipGFFFFABRRXOab450HWPElxoFhcy
+                zX9uJPOXyXRUKNtYEsBkg+mR+RqlFu7S2E2kdHRRRUjPGP2g5ymn6FBuwHlnfGcfdVR7f3vX/Eavw18S
+                2XjnwPc+FLuJ7ea1sBZSeWwzJAUMYdcjhsDkYwDj1wOf/aHf954dUfeCXR646iP/AA/zjIq+Kreb4ZfE
+                fS/FNoko0y9jH2mNeAxx++THv8sgB6tnsvHpwip4eMPtateqZzNtVG+mh6Za/C3wXaQ+WuhQSEjBeZmd
+                j75J4P0x29BXO698C/DuoskukXE+kzIcgLmaPvztYhgeezADHTpj06CeK5t47iCRZIZUDo6nIZSMgj2x
+                UlcUcRVi7qTNnTi1ax4n/wAKp8fMfsreNnNjjbj7XcHI/wBzp36Z7fTHI/Ef4c2ngTSNLaG8mu57p5hc
+                yuoRCQAV2qDxwTnJOfYYx9NV45+0DPANF0eHzkFx9pdvL34bZ5bZOPTIHOR/h14bE1J1YxexlUpxUW0e
+                peH5/tXhvS7jn97ZxPz7oDXmHx/1K7t9D0rTondLW7kla4AOA+xQVVumRls49VB7ZHofgpt3gTw8c5/4
+                ltvn6+WtO8VeFdN8X6O2m6kj7d2+KWM4eJ8EblPrgnr61y0pqnWUnsmaSi5QsjifCPww8D6j4T0+7aA6
+                m88KtLc/apBlyPmGFYBcEkYxkYweRWjqlz4Z+E/hK4soJprVrwTy2qlXkaSbYONwHH8IBYjgdeK871j4
+                VeK/BSXOseHdZeaGCNpJTA7QTbVBYkrnDADtnnsvTHQeHfF8vjn4Y+KE1mCG41HTLGYifylBZWjfa2P4
+                WyjZxgcDp26pw5vfU+aNzNNR0tZnOfCz4iaR4VsNUXxDe3TT3EqujbWmLBVIOT+Hf/6w9k13xz4f8N6f
+                Z3mq3rW6XqF7ZPJdnkAUE8AccMOuAM15r8BbCyvdJ1o3VrBcFbmPBmiDEcH16dP84wOy8deLPCOg3ljZ
+                6zpa6pqAG62tktUleIHIBBfAXJXHBycdMCliYwliGkn529B021Tu2RaT8ZPCWr6lDYLNdW0s7hI2uIdq
+                sxJAGQTjp3x/Ot7xT430TwabMaxNLH9r3+UY4i4OzGc46feFeA/FS+XULrT7xfCk/h9milGZoxE8+3G0
+                lQBgr788+3HX/tDkhvDmB/Dd85wOkX+fw/EP6rTc4LpK/XsL2kuWT7Hb658XPCWg6i9hLdy3U8Z2yi0j
+                3rGcHILEhSRgggEkHOehxd1/WbDX/hXrup6ZcCe0m0q62OARyI3BBB5BBBGDXO+LvBPhrS/hTqBstGs4
+                pYLQSJceUPODZBz5h+b269OOBWB8P2ZvgJ4uDNu2pfKP/Acf5/w6VnGlTcFOF7ppFc0uflfUzfhX450L
+                wZ4T1I6tdP50t6THBEu+RwEHOOgHB5OBxjPGB6v4R+IOg+NDNFpksyXUK75La4j2SBc43cEgjPHBOO+K
+                88+BugaRqWh6pdahplreTrd+UstxEshVdoOBnOOSc46/hgYdnZxeF/2i47HT8xW32oKsSLhQksO4rjso
+                LcDp8o9Pl2rUqdSpNK/MtfIiEpRjF9Dvb2fwIPjDElza3LeJd0aA7GMJk8sFHIzjcEwAfUDuuR1/ijxd
+                o3g+wS71i68oSErDEi7pJSBkhR/MnAGRkjNeO6p/yc5GMkZuoOMcH/Rl6/5/+tB4wiTxN+0Db6TfsWtE
+                lgtwgOMxiPzGXI6ZJYfj6j5Z+rxk48zduW4+dpOy6nf6V8bPCeqahDZY1C1knkEcZntwQzE4A+QsRk+o
+                H869GrPXQtIQQhdKsVEBVosW6Dyyv3SvHBGBjHStCuKo4N+4rG0b9T5v8O6FpviP42a5p2rW/wBotGvL
+                5zH5jJ8wmfBypB/z3xxe+MPgjw/4U0/TL3Ro2tJpp2jaHzncMApbeNxJBUgDqPvD0yMjS9Fvdf8AjJrt
+                jYazPpM5vL5hdQbtwAmfj5WU8/Xt37XfGvhDVPAd7YeItUvLfxRCZRBnUxITuAZwGBc5GFPUkZHK9Met
+                e1aPvdNv60Oa14vTruez6Vr8em/DvTdb8RXXkBbGCS5nkUk7mCjJAGckkdup6Cubk+OfgxLgxiS/eMEj
+                zltSF4zzgkN29P5HGrqHjjwzN8PLbX9ahR9OvowPscsQlMkgyTHtPBIKnk4Hy5JFeY+N/Een6/4Fml0v
+                wJc2FkHRodSltkhVPmAONvXIyvBxz14OOKjRjN+/F790kaznZaM9pvvFOkaf4XPiOW536XsSQTRqWyGY
+                KOOvUjOenfGKwb34teELHSLXUXv3dboO0MEcRMpCsVJK/wAAypxuxnB9DjhOf+GWGBOdrEZPoL7j/PH4
+                Vr/CLwb4dv8AwNHqN9pFre3dzJKkkt1GJOFdlAAbheB2xnH5HsKcIylK+krBzybSXY7rwr410TxlbSy6
+                TcOzwkCWGVCkkec4yPQ4PIJ9OoIryb4aZHxy8RAZHzXwI6f8vH0Hp6Dp+UXwVRbb4l61axFvKjtJlUHP
+                RZ1Az/n/AOtzdt4nuPCPxC8WalaW7S3G68hj4+SNmuOHfpgDHTAycD3XojQ5XOnDqkZ894xlLue96l8Q
+                NA0vxHH4fkmmn1STaFgtoTIdzZwpI4B4zzjAOTxzXUV5N8GPDFo2ny+L7u5S/wBWvpJB5pJZoPmO4Nn/
+                AJaMeSfTAHGc+s1wV4QhLlj039Tog21dniX7Q1s7QaBdbSYlNxEx5wCyoQPTord+34jtdf0WH4gfC2FI
+                AGuJbSO6s23Y2zBOATxjOSh9Nx6GrXxL8MSeK/BN5Z2yb76HFzajOMyKD8v/AAJSy/8AAq4v4IeMopdO
+                PhO+lCXdszvZ7zgyRkksmP7ynccf3e3ynHRFt0FKG8GZuyqNPqL8JNbfxB4Q1Lwbe3Nxb3tpE8cMqsUl
+                SFsqMc5DI3HbAKj1A8t0TwzrbeNbrRLTUPsGvw+YEYyvH5zpnIV15yVBZSQAQDyOMdz48tZvh18VLHxb
+                Yxv9gvHMkyKcBmOfOT/gQIcZ/iJ7LxZ+MGlm3utH8f6JKu1vLLyIOCwG+KU+uRxk+ij6dMJpT5o7TX4m
+                Ulpr0/IiCfHBIzY7p26r5v8AopOOf4+vpz1+nbjPHXhDUPC8Fjd69qv2zWtRMjSASmTYiDgs7YLE7gOw
+                G04zwV+j/D/iax13wpbeIBIlvbSQmSYyPhYSud4YnHCkNycdM14bLJJ8XPi/EYo2bRrYgHcOBaoTkt0I
+                LtxjGRuH93iaFWfO3KKilvZDnBW3u3se7eFrSTT/AAhotlMpWW3sIInU9QVjUEfpWT461TxXpVnaT+Ft
+                Ji1Bg7Nch/mIULgAJuUnJOcg8bemDx1lFeap+9zNXOhq6tc8O1fx/wDEPXdPm0m08E31jJcoYnnNrMSA
+                wIOCyqFz/eJ/I8jo/Anw2utC8B6zp986JqeswPFIA2VhXYyopI6kb2JI9cDgCvTqK2lifd5YRsifZ63b
+                PnbwLqvjD4frqGnDwPqV9NdSrglJECOAw+8qMrqeOQQODzj7ul4303xNp/j7SvGtt4eursPBBPLaRoZv
+                JlVMPG2wHGOMPjGT7ce70Vbxd58/KrvfzF7JcvKfO/xHh8a+N7bTNRm8IXVnAizRwW0QeeYZAy0g2jYD
+                hcAqDwc9sdL8d9F1bWG0AaXpd5feWt15n2eBpAmRFgNtHGcH8j6ZHsdFJYppxaj8N/xB0rp67nK+NbO5
+                u/hrqdpa28s1w9kFSGNCXY8cBRzn/PFcT4E0PV7X4L+KNNudNu4b64F4IYJoSkkm6BVXAPXJ4H+RXsFF
+                ZxrOMOS3W5XJ73MfPfg9fiL4D0W5ubPw3Jd2k85ElrJCxmVgvDhVw2DkDgEfL/DWv8O/CPiHV/Hs/jPx
+                JaS2YDvKkU0ZjaSRtygBG+YKingnB4Xrg49torSWLbUtEm+pCo2trseK6l4b1p/2gk1hNMu2037RAxuV
+                iJjIECqST7EY/wA8S/E/wRrqeK4PGXhqF7idPLeaGJd0iyR8K4X+MEBQRyeO4+77LRSWKkpRaWyt8huk
+                mmn1PJNM8c/EvWbu2toPBaWwEi/aJryKWBCmfm278beP94+x7et0UVjUnGT92Ni4prd3PnSCDxX4X+J+
+                ta9Y+FNSv1e8uxEPs8gR1eViGDAHjGD6HP5XfEv/AAsb4l/ZdOk8MnTrSKXzVEyNEobBXc7vg8Bjwoyc
+                ngn7vv1FdH1vVS5VddSPZbq+h418Q/h5fwfDrQtP0WKa+fSN4ljiXLSB1JZ1Ucn5+ijs3tms3VtW8b+L
+                fh5Locfgq4tLe2ijSeeQOHm8thhYodqnJKg9wAD0OCPd6KmOKaS5ldp3G6au2up45/YerD9m46UdNvDq
+                W4kWvkN5x/03d9zGfu89uOeOtdZ8JdOvNL+Htna31tPbXCyzM0c8ZRxmRiCQQO1dvRUTruUXG27uNQs0
+                zxP4U6Fq+m/EnWrq+0u+traSCcRzT27IjEzqQASMHjn6D8oPBnhW+l+KniQatot4NIvkvYzJNA6RSo84
+                IAbA6jBGMdMjpx7nRVvFSbbturExpJWPD9H0zxL8LPHM9tZadqGreG7xgzm3t2lIXnDHb0kXoezDsONv
+                t4IZQRnBGeRilorKrVdRptalQjy6IK8Z+JfwwvW1OTxT4UDrebvOuLWD5XMgyfNjwRl84yByTyOa9mop
+                UqsqUuaI5xUlZnzxefEiy8aeD5/DnimM2mqqN1pfquIjMm4L5gHMZPKk4x8zH5cYG18JNVtfFXg3UvA2
+                rPv2RN9nLYLeSxPQY4ZH5HplcY28d94q+G3h3xazz3Vsba/YY+2Wx2OfTd2b8Rn0Irm/CPwbPhfxNDrJ
+                8QzTG3ZvLjjgCb1IIIcktxzjAA6A5HGO11qEqTitHv8APyMeSakr6nlFnovjGa9v/AFgZpEW6L3Ua5WL
+                cMgSO3UIQFI6Z+XAJxj6C8C+CrPwTon2SFhNdzEPdXJGDK3OB7KM4A/xrpUhijkkkSNFeUhpGVQC5AAB
+                J78AD8KfWFfFSqrlSsvzZcKSi7hRRRXKahRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFF
+                ABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFF
+                ABRRRQAUUUUAFFFFABRRRQB//9k=
+            </property>
+        </structure>
+    </list-property>
+</report>

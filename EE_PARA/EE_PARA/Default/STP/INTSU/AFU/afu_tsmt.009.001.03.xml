@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[var OurBIC=stp.getTSUBIC();
+//generate TSU_SEQ_NUM for DO--S
+stp.genDOTsuSeqNum(); 
+//generate TSU_SEQ_NUM for DO--E
+var BYRBK_BIC =stp.getValue("/Document/BaselnAmdmntReq/Baseln/BuyrBk","BIC");
+var TSU_BYRBK_BIC = BYRBK_BIC[0];
+stp.writeLog("TSU_BYRBK_BIC="+TSU_BYRBK_BIC);
+var SELLRBK_BIC = stp.getValue("/Document/BaselnAmdmntReq/Baseln/SellrBk","BIC");
+var TSU_SELLRBK_BIC = SELLRBK_BIC[0];
+stp.writeLog("TSU_SELLRBK_BIC="+TSU_SELLRBK_BIC);
+var SubmitrBIC = stp.getValue("/Document/BaselnAmdmntReq/Baseln/SubmitrBaselnId/Submitr","BIC");
+var TSUSubmitrBIC = SubmitrBIC[0];
+stp.writeLog("TSUSubmitrBIC="+TSUSubmitrBIC);
+stp.writeLog("Begin:AmendRequest");
+var GetTxId = stp.getValue("/Document/BaselnAmdmntReq/TxId","Id");
+var bu = stp.getTSUUnitCode();
+var fld_list  = stp.addFieldList(null,"C_MAIN_REF");
+var sql_condition = stp.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+sql_condition = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+var result   = stp.executeQuery("TSUM_EM_BASELINE",fld_list,sql_condition);
+var mainRef= stp.getDBFieldValue(result,"C_MAIN_REF");
+stp.writeLog("mainRef="+mainRef);
+stp.setAutoProcess(true);
+stp.updateFieldValue("/root/domData","DELETE_ALL_DATA","Y");
+stp.updateFieldValue("","C_MAIN_REF",mainRef);
+stp.updateFieldValue("","C_TRX_REF",mainRef);
+var fld_list2 = stp.addFieldList(null,"TSU_AMD_TIMES");   
+var sql_condition2 = stp.addSQLCondition(null,"C_MAIN_REF",mainRef);
+sql_condition2  = stp.addSQLCondition(sql_condition2,"C_UNIT_CODE",bu); 
+var result2   = stp.executeQuery("TSUM_MASTER",fld_list2,sql_condition2);
+var amdNo_org = stp.getDBFieldValue(result2,"TSU_AMD_TIMES");
+stp.writeLog("amdNo_org="+amdNo_org);
+var amdNo=stp.toInteger(amdNo_org)+1;
+stp.writeLog("amdNo="+amdNo);
+stp.updateFieldValue("/root/domData","TSU_AMD_TIMES",amdNo);
+var amdRef=mainRef+"_"+amdNo;
+stp.writeLog("amdRef="+amdRef);
+//stp.updateFieldValue("","TSU_AMD_REF",amdRef);
+var OthrBkCtctPrsn = stp.getValue("/Document/BaselnAmdmntReq/OthrBkCtctPrsn","BIC");
+		if (OthrBkCtctPrsn[0] != undefined)
+		{
+			stp.updateFieldValue("/root/domData/R2InvolvedPartyInfoRe/OtherBk","TSU_CONT_ID",0);
+		}
+		
+		var Incotrmscd = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/Incotrms","Cd");
+		var IncotrmsOthr = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/Incotrms","Othr");
+		if (Incotrmscd[0] != undefined || IncotrmsOthr[0] != undefined)
+		{
+			stp.updateFieldValue("/root/domData/R2GoodsRe/Incoterms1","TSU_LNITMNB",0);
+		}
+		
+		var AdjstmntTp = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/Adjstmnt","Tp");
+		var AdjstmntOthr = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/Adjstmnt","OthrAdjstmntTp");
+		if (AdjstmntTp[0] != undefined || AdjstmntOthr[0] != undefined)
+		{
+			stp.updateFieldValue("/root/domData/R2GoodsRe/Adjustmtents","TSU_LNITMNB",0);
+		}
+	  
+		var AdjstmntDrctn = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/Adjstmnt","Drctn");
+		var AdjstmntAMT = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/Adjstmnt","Amt");
+		var nlength = AdjstmntDrctn.length;
+		if (AdjstmntAMT[0] != undefined)
+		{
+		  for(var k=0;k<nlength;k++)
+		  {
+		    stp.writeLog("AdjstmntDrctn:"+ AdjstmntDrctn[k]);
+		    stp.writeLog("AdjstmntAMT:"+ AdjstmntAMT[k]);
+		    var xpath2="/root/domData/R2GoodsRe/Adjustmtents["+stp.toDouble(k+1)+"]";
+		    var DRCTN = AdjstmntDrctn[k];
+		    var AMOUNT = AdjstmntAMT[k];
+		    stp.writeLog("DRCTN = "+ DRCTN);
+		    stp.writeLog("AMOUNT"+AMOUNT);
+		    if (DRCTN =='ADDD')
+		    {
+		    	stp.updateFieldValue(xpath2,"TSU_IAFT_AMT_CAL",AMOUNT);
+		    }    
+		    if (DRCTN =='SUBS')
+		    {
+		    	var Fuzhi ='-'+AMOUNT;
+		    	stp.writeLog("Fuzhi="+Fuzhi);
+		    	stp.updateFieldValue(xpath2,"TSU_IAFT_AMT_CAL",Fuzhi);
+		    }  
+		  }
+		}
+	  
+		var LineAdjstmntDrctn = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/LineItmDtls/Adjstmnt","Drctn");
+		var LineAdjstmntAMT = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/LineItmDtls/Adjstmnt","Amt");
+		var mlength = LineAdjstmntDrctn.length;
+		if (LineAdjstmntAMT[0] != undefined)
+		{
+		  for(var j=0;j<mlength;j++)
+		  {
+		    var xpath="/root/domData/R2GoodsRe/R2LineItemDetails7/Adjustmtents["+stp.toDouble(j+1)+"]";
+		    var LDRCTN = LineAdjstmntDrctn[j];
+		    var LAMOUNT = LineAdjstmntAMT[j];
+		    if (LDRCTN =='ADDD')
+		    {
+		    	stp.updateFieldValue(xpath,"TSU_IAFT_AMT_CAL",LAMOUNT);
+		    }    
+		    if (LDRCTN =='SUBS')
+		    {
+		    	var LineFuzhi ='-'+LAMOUNT;
+		    	stp.updateFieldValue(xpath,"TSU_IAFT_AMT_CAL",LineFuzhi);
+		    }  
+		  }
+		}
+	  
+		var FreightChg = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/FrghtChrgs/Chrgs","Tp");
+		if(FreightChg[0] != undefined)
+		{
+			stp.updateFieldValue("/root/domData/R2GoodsRe/FrghtChrgs","TSU_LNITMNB",0);
+		}
+		
+		var TaxTp = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/Tax","Tp");
+		if(TaxTp[0] != undefined)
+		{
+			stp.updateFieldValue("/root/domData/R2GoodsRe/Tax3","TSU_LNITMNB",0);
+		}
+	  
+		var BuyrSdSubmitgBk = stp.getValue("/Document/BaselnAmdmntReq/Baseln/BuyrSdSubmitgBk","BIC");
+		var SellrSdSubmitgBk = stp.getValue("/Document/BaselnAmdmntReq/Baseln/SellrSdSubmitgBk","BIC");
+		var BillTo = stp.getValue("/Document/BaselnAmdmntReq/Baseln/BllTo/PstlAdr","Ctry");
+		var ShipTo = stp.getValue("/Document/BaselnAmdmntReq/Baseln/ShipTo/PstlAdr","Ctry");
+		var Consignee = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Consgn/PstlAdr","Ctry");
+		if (BuyrSdSubmitgBk[0] == undefined)
+		{
+			stp.deleNode("/root/domData/R2InvolvedPartyInfoRe","BuyrSdSubmitgBk");
+		}
+		if (SellrSdSubmitgBk[0] == undefined)
+		{
+			stp.deleNode("/root/domData/R2InvolvedPartyInfoRe","SellrSdSubmitgBk");
+		}
+		if (BillTo[0] == undefined)
+		{
+			stp.deleNode("/root/domData/R2InvolvedPartyInfoRe","BillTo");		    
+		}
+		if (ShipTo[0] == undefined)
+		{
+			stp.deleNode("/root/domData/R2InvolvedPartyInfoRe","ShipTo");  
+		}
+		if (Consignee[0] == undefined)
+		{
+			stp.deleNode("/root/domData/R2InvolvedPartyInfoRe","Consignee");
+		}
+	
+		var InsrncDataSetReqrd  = stp.getValue("/Document/BaselnAmdmntReq/Baseln/InsrncDataSetReqrd/Submitr","BIC");
+		if (InsrncDataSetReqrd[0] == undefined)
+		{
+			stp.deleNode("/root/domData/R2DatasetRequiredRe","InsuranceDataSetRequired");
+		}
+		
+		var IBAN = stp.getValue("/Document/BaselnAmdmntReq/Baseln/SttlmTerms/CdtrAcct/Id","IBAN");
+		var BBAN = stp.getValue("/Document/BaselnAmdmntReq/Baseln/SttlmTerms/CdtrAcct/Id","BBAN");
+		var UPIC = stp.getValue("/Document/BaselnAmdmntReq/Baseln/SttlmTerms/CdtrAcct/Id","UPIC");
+		var PrtryAcct = stp.getValue("/Document/BaselnAmdmntReq/Baseln/SttlmTerms/CdtrAcct/Id/PrtryAcct","Id");
+		if (IBAN[0] == undefined && BBAN[0] == undefined && UPIC[0] == undefined && PrtryAcct[0] == undefined)
+		{
+			stp.deleNode("/root/domData","R2SettlementTermsRe");
+		}
+	  
+		var IBAN = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/SttlmTerms/CdtrAcct/Id","IBAN");
+		var BBAN = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/SttlmTerms/CdtrAcct/Id","BBAN");
+		var UPIC = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/SttlmTerms/CdtrAcct/Id","UPIC");
+		var PrtryAcct = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/SttlmTerms/CdtrAcct/Id/PrtryAcct","Id");
+		if (IBAN[0] == undefined && BBAN[0] == undefined && UPIC[0] == undefined && PrtryAcct[0] == undefined)
+		{
+			stp.deleNode("/root/domData/R2PaymentObligationRe","R2SettlementTerms2");
+		}
+	  
+		var PaymentTermsRe = stp.getRecords("R2PaymentTermsRe");
+		stp.writeLog("PaymentTermsRe.length = "+ PaymentTermsRe.length);
+		for (var i = 0; i<PaymentTermsRe.length;i++)
+		{
+			var ref = "PMT" + (i+1);
+			stp.writeLog("ref = "+ ref);
+		  stp.setDOValue(PaymentTermsRe[i],"TSU_IAFT_NO",ref);
+		}
+	  
+		var PmtTermOblgtnRe = stp.getRecords("R2PaymentObligationRe.PaymentTerms1");
+		stp.writeLog("PmtTermOblgtnRe.length = "+ PmtTermOblgtnRe.length);
+		for (var i = 0; i<PmtTermOblgtnRe.length;i++)
+		{
+			var ref = "OBLGN" + (i+1);
+			stp.writeLog("ref = "+ ref);
+		  stp.setDOValue(PmtTermOblgtnRe[i],"TSU_IAFT_NO",ref);
+		}
+		
+		var SttlmTermsRe = stp.getRecords("R2SettlementTermsRe");
+		stp.writeLog("SttlmTermsRe.length = "+ SttlmTermsRe.length);
+		for (var i = 0; i<SttlmTermsRe.length;i++)
+		{
+			stp.updateFieldValue("/root/domData/R2SettlementTermsRe","TSU_IDX",0);
+		}
+	  
+		var R2SettlementTermsRe = stp.getValue("/Document/BaselnAmdmntReq/Baseln/SttlmTerms/CdtrAcct","Id");
+		var R2PaymentObligationRe = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/OblgrBk","BIC");
+		var BuyerUserDefinedInformationRe = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/BuyrDfndInf","Labl");
+		var SellerUserDefinedInformationRe = stp.getValue("/Document/BaselnAmdmntReq/Baseln/Goods/SellrDfndInf","Labl");
+		
+		if(R2SettlementTermsRe[0] == undefined)
+		{
+			stp.createDeleDo("R2SettlementTermsRe");
+		}
+		if(R2PaymentObligationRe[0] == undefined)
+		{
+			stp.createDeleDo("R2PaymentObligationRe");
+		}
+		if(BuyerUserDefinedInformationRe[0] == undefined && SellerUserDefinedInformationRe[0] == undefined)
+		{
+			stp.createDeleDo("UserDefinedInformationRe");
+		}
+stp.setFunc("InCoE009");
+//Get Buyer/Seller/Bill To/Ship To/Consignee Names -S
+stp.writeLog("TSU_BYRBK_BIC="+ TSU_BYRBK_BIC);
+stp.updateFieldValue("/root/domData","TSU_BUYER_BK_BIC",TSU_BYRBK_BIC);
+stp.SYS_getCUBK("TSU_BYRBK_BIC","TSU_BUYER_BK_BIC","/root/domData/R2InvolvedPartyInfoRe/BuyerBank");
+ // Get Buyerbk Name and ID from the Buyer BIC
+stp.writeLog("TSU_SELLRBK_BIC:"+ TSU_SELLRBK_BIC);
+stp.updateFieldValue("/root/domData","TSU_SEL_BK_BIC",TSU_SELLRBK_BIC);
+stp.SYS_getCUBK("TSU_SELLRBK_BIC","TSU_SEL_BK_BIC","/root/domData/R2InvolvedPartyInfoRe/SellerBank");  
+    // Get Sellerbk Name and ID from the Seller BIC
+		
+var Buyer  =stp.getValue("/Document/BaselnAmdmntReq/Baseln/Buyr","Nm");
+		var Buyer = Buyer[0];
+		stp.writeLog("Buyer = "+Buyer);
+		stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Buyer);
+		stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfoRe/Buyer");
+		
+		var Seller =stp.getValue("/Document/BaselnAmdmntReq/Baseln/Sellr","Nm");
+		var Seller = Seller[0];
+		stp.writeLog("Seller = "+Seller);
+		stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Seller);
+		stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfoRe/Seller");
+		
+		var BillTo =stp.getValue("/Document/BaselnAmdmntReq/Baseln/BllTo","Nm");
+		var BillTo = BillTo[0];
+		stp.writeLog("BillTo = "+BillTo);
+		stp.updateFieldValue("/root/domData","TSU_PARTY_NM",BillTo);
+		if(BillTo!= undefined)
+		{ 
+			stp.writeLog("BillTo");
+			stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfoRe/BillTo");  
+		}
+		
+		var ShipTo =stp.getValue("/Document/BaselnAmdmntReq/Baseln/ShipTo","Nm");
+		var ShipTo = ShipTo[0];
+		stp.writeLog("ShipTo = "+ShipTo);
+		stp.updateFieldValue("/root/domData","TSU_PARTY_NM",ShipTo);
+		if(ShipTo!= undefined)
+		{
+			stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfoRe/ShipTo");  
+		}	
+	
+		var Consignee =stp.getValue("/Document/BaselnAmdmntReq/Baseln/Consgn","Nm");
+		var Consignee = Consignee[0];
+		stp.writeLog("Consignee = "+Consignee);
+		stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Consignee);
+		if(Consignee!= undefined)
+	  {
+	  	stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfoRe/Consignee");  
+	  }
+		//Get Buyer/Seller/Bill To/Ship To/Consignee Names -E
+		var OblgrBk = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/OblgrBk","BIC");
+		var RcptBk = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/RcptBk","BIC");
+		var nlength = OblgrBk.length;
+		if(OblgrBk[0] != undefined)
+		{
+			for(var k=0;k<nlength;k++)
+			{
+				var OblgrBkk = OblgrBk[k];
+				stp.updateFieldValue("/root/domData","TSU_OBLGR_BK",OblgrBkk);
+				stp.writeLog("OblgrBkk = "+OblgrBkk);
+				stp.SYS_getCUBK("TSU_OBLGR_BK","TSU_OBLGR_BK","/root/domData/R2PaymentObligationRe["+stp.toDouble(k+1)+"]"); 
+				var RcptBkk = RcptBk[k];
+				stp.updateFieldValue("/root/domData","TSU_RCPTBK",RcptBkk);
+				stp.writeLog("RcptBkk = "+RcptBkk);
+				stp.SYS_getCUBK("TSU_RCPT_BK","TSU_RCPTBK","/root/domData/R2PaymentObligationRe["+stp.toDouble(k+1)+"]"); 
+			}
+		
+	
+		stp.writeLog("End: R2AmendmentRequest");
+//Get Buyer/Seller/Bill To/Ship To/Consignee Names -S
+	
+stp.writeLog("TSU_BYRBK_BIC="+ TSU_BYRBK_BIC);
+stp.updateFieldValue("/root/domData","TSU_BUYER_BK_BIC",TSU_BYRBK_BIC);
+stp.SYS_getCUBK("TSU_BYRBK_BIC","TSU_BUYER_BK_BIC","/root/domData/R2InvolvedPartyInfo/BuyerBank");       // Get Buyerbk Name and ID from the Buyer BIC
+
+stp.writeLog("TSU_SELLRBK_BIC:"+ TSU_SELLRBK_BIC);
+stp.updateFieldValue("/root/domData","TSU_SEL_BK_BIC",TSU_SELLRBK_BIC);
+stp.SYS_getCUBK("TSU_SELLRBK_BIC","TSU_SEL_BK_BIC","/root/domData/R2InvolvedPartyInfo/SellerBank");   // Get Sellerbk Name and ID from the Seller BIC
+  
+var Buyer  =stp.getValue("/Document/BaselnAmdmntReq/Baseln/Buyr","Nm");
+var Buyer = Buyer[0];
+stp.writeLog("Buyer = "+Buyer);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Buyer);
+stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfo/Buyer");
+  
+var Seller =stp.getValue("/Document/BaselnAmdmntReq/Baseln/Sellr","Nm");
+var Seller = Seller[0];
+stp.writeLog("Seller = "+Seller);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Seller);
+stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfo/Seller");
+  
+var BillTo =stp.getValue("/Document/BaselnAmdmntReq/Baseln/BllTo","Nm");
+var BillTo = BillTo[0];
+stp.writeLog("BillTo = "+BillTo);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",BillTo);
+if(BillTo!= undefined)
+{ 
+	stp.writeLog("BillTo");
+	stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfo/BillTo");  
+}
+
+var ShipTo =stp.getValue("/Document/BaselnAmdmntReq/Baseln/ShipTo","Nm");
+var ShipTo = ShipTo[0];
+stp.writeLog("ShipTo = "+ShipTo);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",ShipTo);
+if(ShipTo!= undefined)
+{
+	stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfo/ShipTo");  
+}	
+
+var Consignee =stp.getValue("/Document/BaselnAmdmntReq/Baseln/Consgn","Nm");
+var Consignee = Consignee[0];
+stp.writeLog("Consignee = "+Consignee);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Consignee);
+if(Consignee!= undefined)
+{
+	stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2InvolvedPartyInfo/Consignee");  
+}
+  
+//Get Buyer/Seller/Bill To/Ship To/Consignee Names -E
+	
+var OblgrBk = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/OblgrBk","BIC");
+var RcptBk = stp.getValue("/Document/BaselnAmdmntReq/Baseln/PmtOblgtn/RcptBk","BIC");
+var nlength = OblgrBk.length;
+if(OblgrBk[0] != undefined)
+{
+	for(var k=0;k<nlength;k++)
+	{
+		var OblgrBkk = OblgrBk[k];
+		stp.updateFieldValue("/root/domData","TSU_OBLGR_BK",OblgrBkk);
+		stp.writeLog("OblgrBkk = "+OblgrBkk);
+		stp.SYS_getCUBK("TSU_OBLGR_BK","TSU_OBLGR_BK","/root/domData/R2PaymentObligation["+stp.toDouble(k+1)+"]"); 
+		var RcptBkk = RcptBk[k];
+		stp.updateFieldValue("/root/domData","TSU_RCPTBK",RcptBkk);
+		stp.writeLog("RcptBkk = "+RcptBkk);
+		stp.SYS_getCUBK("TSU_RCPT_BK","TSU_RCPTBK","/root/domData/R2PaymentObligation["+stp.toDouble(k+1)+"]"); 
+	}
+}	
+
+stp.SYS_getCUBK("TSU_BYRBK_BIC","TSU_BUYER_BK_BIC"); // Get the Buyerbk Name and ID from the Buyer BIC
+stp.SYS_getCUBK("TSU_SELLRBK_BIC","TSU_SEL_BK_BIC");      // Get the Sellerbk Name and ID from the Seller BIC]]></js-content>
+</root>

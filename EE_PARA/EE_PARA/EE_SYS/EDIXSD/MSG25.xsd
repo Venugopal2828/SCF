@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- ____ XMLSpy v2006 U (http://www.altova.com) _ any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-edifactoring-com:MSG25" targetNamespace="urn:schemas-edifactoring-com:MSG25" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="MSG25" type="MSG25Type"/>
+	<xs:complexType name="MSG25Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="EF" type="FType"/>
+			<xs:element name="IF" type="FType"/>
+			<xs:element name="MsgDate" type="xs:date"/>
+			<xs:element name="MsgFunction" type="NMax3Type"/>
+			<xs:element name="Seller" type="SellerType"/>
+			<xs:element name="SellerDetails" type="SellerDetailsType"/>
+			<xs:element name="BuyerDetails" type="BuyerDetailsType" maxOccurs="999"/>
+			<xs:element name="MsgText" type="AMax1400Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7Type"/>
+			<xs:element name="ReceiverCode" type="A7Type"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10Type" minOccurs="0"/>
+			<xs:element name="DateTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FType">
+		<xs:sequence>
+			<xs:element name="FactorCode" type="A7Type"/>
+			<xs:element name="FactorName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SellerType">
+		<xs:sequence>
+			<xs:element name="SellerNr" type="AMax35Type"/>
+			<xs:element name="SellerName" type="AMax35Type"/>
+			<xs:element name="NameCont" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="Street" type="AMax35Type"/>
+			<xs:element name="City" type="AMax35Type"/>
+			<xs:element name="State" type="AMax9Type" minOccurs="0"/>
+			<xs:element name="Postcode" type="AMax9Type"/>
+			<xs:element name="Country" type="A2Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SellerDetailsType">
+		<xs:sequence>
+			<xs:element name="BusinessProduct" type="AMax70Type"/>
+			<xs:element name="NetPmtTerms" type="NDef3Type"/>
+			<xs:element name="ExpNrInvoices" type="NDef5Type"/>
+			<xs:element name="ExpNrCreditNotes" type="NDef5Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BuyerDetailsType">
+		<xs:sequence>
+			<xs:element name="BuyerNr" type="AMax35Type"/>
+			<xs:element name="BuyerName" type="AMax35Type"/>
+			<xs:element name="NameCont" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="Street" type="AMax35Type"/>
+			<xs:element name="City" type="AMax35Type"/>
+			<xs:element name="State" type="AMax9Type" minOccurs="0"/>
+			<xs:element name="Postcode" type="AMax9Type"/>
+			<xs:element name="Country" type="A2Type"/>
+			<xs:element name="ContactName" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="Telephone" type="AMax25Type" minOccurs="0"/>
+			<xs:element name="Fax" type="AMax25Type" minOccurs="0"/>
+			<xs:element name="Email" type="AMax70Type" minOccurs="0"/>
+			<xs:element name="MainInvCurrency" type="A3Type" minOccurs="0"/>
+			<xs:element name="AccountNr" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="BankName" type="AMax70Type" minOccurs="0"/>
+			<xs:element name="BranchName" type="AMax70Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

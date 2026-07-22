@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>FAEF</MODULE>
+        <DESC>Finance Voucher</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>4</DC_VALID_TYPE>
+        <STPCODE></STPCODE>
+        <COPYNUMS>0</COPYNUMS>
+        <PRINTERNAME></PRINTERNAME>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME></PPRINTERNAME>
+        <PRINTSTATE>A</PRINTSTATE>
+        <MAILID></MAILID>
+        <PT></PT>
+        <FAXID></FAXID>
+        <GAPITYPE></GAPITYPE>
+        <GAPIRULE></GAPIRULE>
+        <FLDLIST></FLDLIST>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"></C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"></C_TRX_DESC>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="" CONS_NAME="BK_FIN_OUTSTD">BK_FIN_OUTSTD</C_GL>
+            <C_SL FV_TYPE=""></C_SL>
+            <C_CURRENCY FV_TYPE="F">FA_LMT_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_TTL_LOAN_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""></D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""></C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"></C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"></C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"></C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"></C_INTEREST_RATE2>
+            <C_REF_NUMBER FV_TYPE=""></C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="V">Total Financed Amount</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE=""></C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""></C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""></C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""></C_AO_CODE>
+            <C_CU_REL_CODE FV_TYPE=""></C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE=""></C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""></C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""></C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""></C_VCH_SPECIAL3>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"></C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"></C_TRX_DESC>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="" CONS_NAME="BK_INT_RCV">BK_INT_RCV</C_GL>
+            <C_SL FV_TYPE=""></C_SL>
+            <C_CURRENCY FV_TYPE="F">FA_LMT_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_PAID_INT_SUM</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""></D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""></C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"></C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"></C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"></C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"></C_INTEREST_RATE2>
+            <C_REF_NUMBER FV_TYPE=""></C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="V">Upfront Net Interest</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE=""></C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""></C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""></C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""></C_AO_CODE>
+            <C_CU_REL_CODE FV_TYPE=""></C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE=""></C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""></C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""></C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""></C_VCH_SPECIAL3>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"></C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"></C_TRX_DESC>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="S" SCRIPT="var FA_BUSI_TYPE = DV.getFieldValue('FA_BUSI_TYPE');  \nvar FA_ANCHOR_ACC = DV.getFieldValue('FA_ANCHOR_ACC');  \nvar FA_COUNTER_ACC = DV.getFieldValue('FA_COUNTER_ACC'); \nif(FA_BUSI_TYPE == 'PF'){  \n DV.appendField(FA_COUNTER_ACC);  \n}else{    \n  DV.appendField(FA_ANCHOR_ACC);   \n}">var FA_BUSI_TYPE = DV.getFieldValue('FA_BUSI_TYPE');  
+            var FA_ANCHOR_ACC = DV.getFieldValue('FA_ANCHOR_ACC');  
+            var FA_COUNTER_ACC = DV.getFieldValue('FA_COUNTER_ACC'); 
+            if(FA_BUSI_TYPE == 'PF'){  
+             DV.appendField(FA_COUNTER_ACC);  
+            }else{    
+              DV.appendField(FA_ANCHOR_ACC);   
+            }</C_GL>
+            <C_SL FV_TYPE=""></C_SL>
+            <C_CURRENCY FV_TYPE="F">FA_LMT_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_SEL_AC_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""></D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""></C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"></C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"></C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"></C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"></C_INTEREST_RATE2>
+            <C_REF_NUMBER FV_TYPE=""></C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="V">Amount to Seller</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE=""></C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""></C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""></C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""></C_AO_CODE>
+            <C_CU_REL_CODE FV_TYPE=""></C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE=""></C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""></C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""></C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""></C_VCH_SPECIAL3>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"></C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"></C_TRX_DESC>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="" CONS_NAME="BK_INT_RCV">BK_INT_RCV</C_GL>
+            <C_SL FV_TYPE=""></C_SL>
+            <C_CURRENCY FV_TYPE="F">FA_LMT_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_REBATE_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""></D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""></C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"></C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"></C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"></C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"></C_INTEREST_RATE2>
+            <C_REF_NUMBER FV_TYPE=""></C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="V">Rebate Interest</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE=""></C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""></C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""></C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""></C_AO_CODE>
+            <C_CU_REL_CODE FV_TYPE=""></C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE=""></C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""></C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""></C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""></C_VCH_SPECIAL3>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"></C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"></C_TRX_DESC>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_REBATE_ACCOUNT</C_GL>
+            <C_SL FV_TYPE=""></C_SL>
+            <C_CURRENCY FV_TYPE="F">FA_LMT_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_REBATE_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""></D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""></C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"></C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"></C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"></C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"></C_INTEREST_RATE2>
+            <C_REF_NUMBER FV_TYPE=""></C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="V">Rebate Interest</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE=""></C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""></C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""></C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""></C_AO_CODE>
+            <C_CU_REL_CODE FV_TYPE=""></C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE=""></C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""></C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""></C_VCH_SPECIAL2>
+            <C_VCH_SPECIAL3 FV_TYPE=""></C_VCH_SPECIAL3>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>     

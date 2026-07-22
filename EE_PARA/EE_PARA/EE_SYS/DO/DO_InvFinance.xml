@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Finance" Max="100" Min="0" Name="InvFinance" PendingStore="N" Screen="SCRN/o2m/FAEF_InvFinancing.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>FactExportFinancing</Component>
+    <PK>
+        <PKNAME>FA_DOC_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Doc Ref" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_REF</Element>
+        <Element DATATYPE="12" Desc="Doc No." DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_NO</Element>
+        <Element DATATYPE="1" Desc="Doc CCY" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">FA_DOC_CCY</Element>
+        <Element DATATYPE="3" Desc="Doc Amt" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_DOC_AMT</Element>
+        <Element DATATYPE="3" Desc="Limit Approved For Invoice" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_INV_LMT_APPRV</Element>
+        <Element DATATYPE="3" Desc="Invoice Available Loan Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">INV_LOAN_AVL</Element>
+        <Element DATATYPE="3" Desc="Credit Notes Summary Amount" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_CRN_AMT_SUM</Element>
+        <Element DATATYPE="91" Desc="Doc Value Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="Doc Due Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_DUE_DT</Element>
+        <Element DATATYPE="3" Desc="Doc Balance" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_DOC_BAL</Element>
+        <Element DATATYPE="2" Desc="Loan Percent" DispInGrid="N" EDIT="N" EEType="Numeric_7_4" FldType="" Value="">FA_LOAN_PERC</Element>
+        <Element DATATYPE="3" Desc="Invoice Loan Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_LOAN_AMT</Element>
+        <Element DATATYPE="91" Desc="Loan Value Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_LOAN_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="Financing Due Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_LOAN_DUE_DT</Element>
+        <Element DATATYPE="12" Desc="Loan Status" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_LOAN_STATUS</Element>
+        <Element DATATYPE="12" Desc="Document Status" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_STATUS</Element>
+        <Element DATATYPE="3" Desc="Invoice Total Loan Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_FIN_LOAN_AMT</Element>
+        <Element DATATYPE="3" Desc="Invoice Loan Balance" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_LOAN_BAL</Element>
+        <Element DATATYPE="4" Desc="Invoice Loan Times" DispInGrid="Y" EDIT="N" EEType="INTEGER" FldType="" Value="">FA_INV_LOAN_TIMES</Element>
+        <Element DATATYPE="1" Desc="Interest Charge Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_INT_CHG_TYPE</Element>
+        <Element DATATYPE="2" Desc="Summary Percentage" DispInGrid="N" EDIT="N" EEType="Numeric_7_4" FldType="" Value="">FA_SUM_PERCENT</Element>
+        <Element DATATYPE="91" Desc="Last Pay Interest Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_LAST_PINT_DT</Element>
+        <Element DATATYPE="2" Desc="Payment Grace Day" DispInGrid="N" EDIT="N" EEType="Numeric_22" FldType="" Value="">FA_PMT_GRC_DAY</Element>
+        <Element DATATYPE="12" Desc="Invoice Loan ID" DispInGrid="N" EDIT="N" EEType="Varchar_50" FldType="" Value="">FA_INV_LOAN_ID</Element>
+        <Element DATATYPE="4" Desc="Temporary Interest9" DispInGrid="N" EDIT="N" EEType="AutoGen_Ext_INTEGER_0" FldType="" Value="">TEMP_INT9</Element>
+        <Element DATATYPE="12" Desc="Seller ID" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_ID</Element>
+        <Element DATATYPE="12" Desc="Temporary field 3" DispInGrid="N" EDIT="N" EEType="Varchar_65" FldType="" Value="">FA_TEMP3</Element>
+        <Element DATATYPE="3" Desc="Temporary field 6" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP6</Element>
+        <Element DATATYPE="3" Desc="Temporary field 7" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP7</Element>
+        <Element DATATYPE="12" Desc="Clerk ID" DispInGrid="N" EDIT="N" EEType="Varchar_32" FldType="" Value="">CLERK_ID</Element>
+        <Element DATATYPE="1" Desc="Commission Charge Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_COMM_CHG_TYPE</Element>
+        <Element DATATYPE="2" Desc="Invoice Financing Interest Days" DispInGrid="N" EDIT="N" EEType="Numeric_22" FldType="" Value="">FA_INV_INT_DAYS</Element>
+        <Element DATATYPE="12" Desc="Temporary field 4" DispInGrid="N" EDIT="N" EEType="AutoGen_Ext_VARCHAR_60" FldType="" Value="">FA_TEMP4</Element>
+        <Element DATATYPE="3" Desc="Loan Interest Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_LOAN_INT_AMT</Element>
+        <Element DATATYPE="8" Desc="Loan Interest Rate" DispInGrid="Y" EDIT="N" EEType="RATE" FldType="" Value="">FA_LOAN_INT_RT</Element>
+        <Element DATATYPE="3" Desc="Invoice Loan Balance Per Trx." DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_LOAN_EBAL</Element>
+        <Element DATATYPE="8" Desc="Transfer Limit FX Rate" DispInGrid="N" EDIT="N" EEType="RATE" FldType="" Value="">FA_TRF_FX_RT</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 16" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT16</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 15" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT15</Element>
+        <Element DATATYPE="3" Desc="Credit Notes Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_CRN_BAL</Element>
+        <Element DATATYPE="3" Desc="FA_REBATE _AMT" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_REBATE_AMT</Element>
+        <Element DATATYPE="3" Desc="Interest Summary Amount" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_LOAN_INT_SM_AMT</Element>
+        <Element DATATYPE="3" Desc="Adjust Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_ADJ_AMT</Element>
+        <Element DATATYPE="3" Desc="Adjust Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_ADJ_BAL</Element>
+        <Element DATATYPE="12" Desc="PO No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">PO_NO</Element>
+        <Element DATATYPE="3" Desc="PO Loan Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">PO_LOAN_BAL</Element>
+        <Element DATATYPE="2" Desc="Loan Days" DispInGrid="N" EDIT="N" EEType="Numeric_22" FldType="" Value="">FA_LOAN_DAYS</Element>
+        <Element DATATYPE="92" Desc="D_SYS_OP_TIME" DispInGrid="N" EDIT="N" EEType="SYS_TIME_0" FldType="" Value="">T_SYS_OP_TIME</Element>
+    </Elements>
+</DO>

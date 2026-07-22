@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">PYMT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>X203_21_REF</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X203_21_REF</C_MAIN_REF>
+            <MERGE_FLAG_202 ALIAS="T0" DESC="Merge Flag 202" DT="1" TYPE="V">YES</MERGE_FLAG_202>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X203_21_REF</C_MAIN_REF>
+        <X103_SETT_CCY_32A ALIAS="T0" DBFUNC="" DESC="Interbank Settled Amount CCY" DT="1" HIDDEN="F" TYPE="F">X203_32B_CCY</X103_SETT_CCY_32A>
+        <X103_SETT_AMT_32A ALIAS="T0" DBFUNC="" DESC="Interbank Settled Amount" DT="3" HIDDEN="F" TYPE="F">X203_32B_AMT</X103_SETT_AMT_32A>
+        <X202_ADV_BKSW_B2 ALIAS="T0" DBFUNC="" DESC="Advising Bank SWIFT Address" DT="1" HIDDEN="F" TYPE="F">X103_ADV_BKSW_B2</X202_ADV_BKSW_B2>
+        <X202_MEDI_BKID_56A ALIAS="T0" DBFUNC="" DESC="Intermediary Bank ID" DT="12" HIDDEN="T" TYPE="F">X203_56_PARTY_ID</X202_MEDI_BKID_56A>
+        <X202_MEDI_BKNM_56A ALIAS="T0" DBFUNC="" DESC="Intermediary Bank Name" DT="12" HIDDEN="T" TYPE="F">X203_56D_PARTY_NAME</X202_MEDI_BKNM_56A>
+        <X202MEDIBKADD1_56A ALIAS="T0" DBFUNC="" DESC="Intermediary Bank Address1" DT="12" HIDDEN="T" TYPE="F">X203_56D_PARTY_ADD1</X202MEDIBKADD1_56A>
+        <X202MEDIBKADD2_56A ALIAS="T0" DBFUNC="" DESC="Intermediary Bank Address2" DT="12" HIDDEN="T" TYPE="F">X203_56D_PARTY_ADD2</X202MEDIBKADD2_56A>
+        <X202MEDIBKADD3_56A ALIAS="T0" DBFUNC="" DESC="Intermediary Bank Address3" DT="12" HIDDEN="T" TYPE="F">X203_56D_PARTY_ADD3</X202MEDIBKADD3_56A>
+        <X202_MEDI_BKSW_56A ALIAS="T0" DBFUNC="" DESC="Intermediary Bank SWIFT Address" DT="1" HIDDEN="T" TYPE="F">X203_56A_IDENTIFIER</X202_MEDI_BKSW_56A>
+        <X202_TAG_56A ALIAS="T0" DBFUNC="" DESC="Tag 56A" DT="12" HIDDEN="T" TYPE="F">X203_56_TAG</X202_TAG_56A>
+        <X202_MEDIBKACNO56A ALIAS="T0" DBFUNC="" DESC="Intermediary Bank Account No" DT="1" HIDDEN="T" TYPE="F">X203_56_PARTY_IDENTIFIER</X202_MEDIBKACNO56A>
+        <X202_ACC_BKID_57A ALIAS="T0" DBFUNC="" DESC="Account With Bank ID" DT="12" HIDDEN="T" TYPE="F">X203_57_PARTY_ID</X202_ACC_BKID_57A>
+        <X202_ACC_BKNM_57A ALIAS="T0" DBFUNC="" DESC="Account With Bank Name" DT="12" HIDDEN="T" TYPE="F">X203_57D_PARTY_NAME</X202_ACC_BKNM_57A>
+        <X202_ACCBKADD1_57A ALIAS="T0" DBFUNC="" DESC="Account With Bank Address1" DT="12" HIDDEN="T" TYPE="F">X203_57D_PARTY_ADD1</X202_ACCBKADD1_57A>
+        <X202_ACCBKADD2_57A ALIAS="T0" DBFUNC="" DESC="Account With Bank Address2" DT="12" HIDDEN="T" TYPE="F">X203_57D_PARTY_ADD2</X202_ACCBKADD2_57A>
+        <X202_ACCBKADD3_57A ALIAS="T0" DBFUNC="" DESC="Account With Bank Address3" DT="12" HIDDEN="T" TYPE="F">X203_57D_PARTY_ADD3</X202_ACCBKADD3_57A>
+        <X202_ACC_BKSW_57A ALIAS="T0" DBFUNC="" DESC="Account With Bank SWIFT Address" DT="1" HIDDEN="T" TYPE="F">X203_57A_IDENTIFIER</X202_ACC_BKSW_57A>
+        <X202_TAG_57A ALIAS="T0" DBFUNC="" DESC="Tag 57A" DT="12" HIDDEN="T" TYPE="F">X203_57_TAG</X202_TAG_57A>
+        <X202_ACC_BKACNO57A ALIAS="T0" DBFUNC="" DESC="Account With Bank Account No" DT="1" HIDDEN="T" TYPE="F">X203_57_PARTY_IDENTIFIER</X202_ACC_BKACNO57A>
+        <X202_BENE_BKID_58A ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank ID" DT="12" HIDDEN="T" TYPE="F">X203_58_PARTY_ID</X202_BENE_BKID_58A>
+        <X202_BENE_BKNM_58A ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank Name" DT="12" HIDDEN="T" TYPE="F">X203_58D_PARTY_NAME</X202_BENE_BKNM_58A>
+        <X202BENEBKADD1_58A ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank Address1" DT="12" HIDDEN="T" TYPE="F">X203_58D_PARTY_ADD1</X202BENEBKADD1_58A>
+        <X202BENEBKADD2_58A ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank Address2" DT="12" HIDDEN="T" TYPE="F">X203_58D_PARTY_ADD2</X202BENEBKADD2_58A>
+        <X202BENEBKADD3_58A ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank Address3" DT="12" HIDDEN="T" TYPE="F">X203_58D_PARTY_ADD3</X202BENEBKADD3_58A>
+        <X202_BENE_BKSW_58A ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank SWIFT Address" DT="1" HIDDEN="T" TYPE="F">X203_58A_IDENTIFIER</X202_BENE_BKSW_58A>
+        <X202_TAG_58A ALIAS="T0" DBFUNC="" DESC="Tag 58A" DT="12" HIDDEN="T" TYPE="F">X203_58_TAG</X202_TAG_58A>
+        <X202_BENEBKACNO58A ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank Account No" DT="1" HIDDEN="T" TYPE="F">X203_58_PARTY_IDENTIFIER</X202_BENEBKACNO58A>
+        <X202_BKTOBK_INFO72 ALIAS="T0" DBFUNC="" DESC="Sender to Receiver Information" DT="12" HIDDEN="T" TYPE="F">X203_72_NARR</X202_BKTOBK_INFO72>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'M' AND ( </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.CPYT_PAY_COV_MSG</SQL>
+            <SQL TYPE="SQL"> = 'MT202' OR </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.CPYT_PAY_COV_MSG</SQL>
+            <SQL TYPE="SQL"> = 'MT202COV') AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X203_21_REF</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.MERGE_FLAG_202</SQL>
+            <SQL TYPE="SQL"> = 'YES'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

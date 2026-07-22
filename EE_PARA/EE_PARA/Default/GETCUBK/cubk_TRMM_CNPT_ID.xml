@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey" AutoGen-Parameter-Version="1.0">
+    <key-mapping>
+        <module-name>TRMM</module-name>
+        <cubk-mapping-name>CNPT_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRCP_MASTER</table-name>
+        </tables>
+        <key-fields>
+            <CNPT_ID ALIAS="T0" DESC="Counterparty ID" DT="12" TYPE="F">CNPT_ID</CNPT_ID>
+            <C_TRX_STATUS ALIAS="T0" DESC="C_TRX_STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <CNPT_SWADD ALIAS="T0" DBFUNC="" DESC="Counterparty SWIFT" DT="1" HIDDEN="F" TYPE="F">CNPT_SWADD</CNPT_SWADD>
+        <CNPT_FULL_NM ALIAS="T0" DBFUNC="" DESC="Counterparty Full Name" DT="12" HIDDEN="F" TYPE="F">CNPT_FULL_NM</CNPT_FULL_NM>
+        <CNPT_TP ALIAS="T0" DBFUNC="" DESC="Counterparty Type" DT="12" HIDDEN="F" TYPE="F">CNPT_TP</CNPT_TP>
+        <CNPT_BUSI_UNIT ALIAS="T0" DBFUNC="" DESC="Counterparty Business Unit" DT="12" HIDDEN="F" TYPE="F">CNPT_BUSI_UNIT</CNPT_BUSI_UNIT>
+        <CNPT_SHORT_NM ALIAS="T0" DBFUNC="" DESC="Counterparty Short Name" DT="12" HIDDEN="F" TYPE="F">CNPT_SHORT_NM</CNPT_SHORT_NM>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

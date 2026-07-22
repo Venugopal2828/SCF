@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Commercial DataSet" Max="1" Min="0"
+    Name="R2ComrclDataset" PendingStore="Y"
+    Screen="SCRN/DO/R2TSU_CommercialDataset.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="TSUM_DS_COMRCL"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>C_TRX_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TSUM_EM_COMTRNS">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType=""
+            FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Dataset ID" DispInGrid="Y" EDIT="N"
+            EEType="Max35Text" FldType="" Value="">TSU_DS_ID</Element>
+        <Element DATATYPE="2" Desc="Dataset Version" DispInGrid="Y" EDIT="N"
+            EEType="Number" FldType="" Value="">TSU_DS_VRSN</Element>
+        <Element DATATYPE="12" Desc="Submitter BIC" DispInGrid="Y" EDIT="N"
+            EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+    </Elements>
+    <DO Desc="Buyer" Max="1" Min="1" Name="DT_Buyer" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTYR2"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_IDX</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_DS_COMRCL">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="Y" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="Y"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Seller" Max="1" Min="1" Name="DT_Seller" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTYR2"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_IDX</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_DS_COMRCL">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="Y" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="Y"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+    </DO>
+    <DO Desc="BillTo" Max="1" Min="0" Name="DT_BillTo" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTYR2"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_IDX</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_DS_COMRCL">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="Y" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="Y"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Commercial Document Reference" Max="1" Min="1"
+        Name="R2DT_ComrclDocRef" PendingStore="N"
+        Screen="SCRN/DO/TSU_ComrclDocRef.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_DS_COMM_R2"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_COMM_REF</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_DS_COMRCL">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="Y"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+            <Element DATATYPE="91" Desc="Commercial Invoice Issue Date"
+                DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_COMM_DT</Element>
+            <Element DATATYPE="3" Desc="Commercial Invoice Amount"
+                DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_COMM_AMT</Element>
+            <Element DATATYPE="12" Desc="Transaction Currency" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="12" Desc="Seller Bank ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+        </Elements>
+        <DO Desc="Goods" Max="n" Min="1" Name="R2DT_Goods" PendingStore="N"
+            Screen="SCRN/DO/R2TSU_DTGoods.jsp" StoreInto="D" StoreType="T">
+            <TABLE_NAME Name="TSUM_DT_GOODS_R2"/>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>TSU_COMM_REF</PKNAME>
+                <PKNAME>TSU_PO_ID</PKNAME>
+            </PK>
+            <FKS>
+                <FK PARENT_TABLE="TSUM_DS_COMM_R2">
+                    <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                    <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                    <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                    DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EDIT="N"
+                    EEType="DATE" FldType="" Value="">TSU_PO_DT</Element>
+                <Element DATATYPE="12" Desc="Transaction TID" DispInGrid="Y"
+                    EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TID</Element>
+                <Element DATATYPE="1" Desc="Identification Issuer BIC"
+                    DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_ISSR_BIC</Element>
+                <Element DATATYPE="12" Desc="Submitter Transaction Ref."
+                    DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_SUBMITR_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="DataSet Final Submit Flag"
+                    DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_DS_FINAL_FLG</Element>
+                <Element DATATYPE="3" Desc="Lineitem Total Amount"
+                    DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_LINE_TTL_AMT</Element>
+                <Element DATATYPE="3" Desc="PO Total Net Amount" DispInGrid="N"
+                    EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_NET_AMT</Element>
+                <Element DATATYPE="12"
+                    Desc="Freight Charges Associated With Goods" DispInGrid="N"
+                    EDIT="N" EEType="FreightCharges1Cd" FldType="" Value="">TSU_FRGHT_TP</Element>
+                <Element DATATYPE="12" Desc="Forced Match Dataset Flag"
+                    DispInGrid="N" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_FORCD_MTCH_FLG</Element>
+                <Element DATATYPE="12" Desc="Transaction Currency"
+                    DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                <Element DATATYPE="12" Desc="Settlement Instruction"
+                    DispInGrid="N" EDIT="N" EEType="Varchar_2000" FldType="" Value="">TSU_SETTLEMENT</Element>
+                <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N"
+                    EDIT="N" EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+                <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N"
+                    EDIT="N" EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+                <Element DATATYPE="12" Desc="Buyer Bank Name" DispInGrid="N"
+                    EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+                <Element DATATYPE="12" Desc="Seller Bank ID" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+                <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                    EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+                <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N"
+                    EDIT="N" EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+                <Element DATATYPE="12" Desc="Goods Description" DispInGrid="N"
+                    EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_GOODS_DESC</Element>
+            </Elements>
+            <DO Desc="Commercial LineItems" Max="n" Min="1"
+                Name="R2DT_ComrclLineItms" PendingStore="N"
+                Screen="SCRN/DO/R2TSU_DT_LineItem.jsp" StoreInto="D" StoreType="T">
+                <TABLE_NAME Name="TSUM_DT_LINEITEM_R2"/>
+                <PK>
+                    <PKNAME>C_MAIN_REF</PKNAME>
+                    <PKNAME>C_UNIT_CODE</PKNAME>
+                    <PKNAME>C_TRX_REF</PKNAME>
+                    <PKNAME>TSU_COMM_REF</PKNAME>
+                    <PKNAME>TSU_LNITMNB</PKNAME>
+                    <PKNAME>TSU_PO_ID</PKNAME>
+                </PK>
+                <FKS>
+                    <FK PARENT_TABLE="TSUM_DT_GOODS_R2">
+                        <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                        <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                        <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                    </FK>
+                </FKS>
+                <Elements>
+                    <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                    <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                    <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                    <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                    <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                        EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                    <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="Y"
+                        EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                    <Element DATATYPE="3"
+                        Desc="Quantity Tolerance Minus Percent" DispInGrid="N"
+                        EDIT="N" EEType="Demical_5_2" FldType="" Value="">TSU_QTYTLRN_MPCT</Element>
+                    <Element DATATYPE="3" Desc="Quantity Tolerance Plus Percent"
+                        DispInGrid="N" EDIT="N" EEType="Demical_5_2" FldType="" Value="">TSU_QTYTLRN_PPCT</Element>
+                    <Element DATATYPE="12" Desc="UOM Quantity Code"
+                        DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code"
+                        FldType="" Value="">TSUR2_QTY_UNIT_CD</Element>
+                    <Element DATATYPE="12" Desc="Quantity Other Unit"
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_QTY_OTUNIT</Element>
+                    <Element DATATYPE="2" Desc="Quantity Value" DispInGrid="N"
+                        EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_VAL</Element>
+                    <Element DATATYPE="2" Desc="Quantity Factor" DispInGrid="N"
+                        EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_FCTR</Element>
+                    <Element DATATYPE="12" Desc="UOM Unit Price Code"
+                        DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code"
+                        FldType="" Value="">TSUR2_UNTPRIC_CD</Element>
+                    <Element DATATYPE="12" Desc="Unit Price Other Measure Code"
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_UNTPRIC_OTUNIT</Element>
+                    <Element DATATYPE="3" Desc="Unit Price" DispInGrid="N"
+                        EDIT="N" EEType="AMT" FldType="" Value="">TSU_UNITPRIC_AMT</Element>
+                    <Element DATATYPE="2" Desc="Unit Price Factor"
+                        DispInGrid="N" EDIT="N" EEType="Max15NumericText"
+                        FldType="" Value="">TSU_UNITPRIC_FCTR</Element>
+                    <Element DATATYPE="12" Desc="Product Name" DispInGrid="Y"
+                        EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_PDCTNM</Element>
+                    <Element DATATYPE="12" Desc="Product Origin" DispInGrid="N"
+                        EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PDCTORGN</Element>
+                    <Element DATATYPE="12"
+                        Desc="Freight Charges Associated With Goods"
+                        DispInGrid="N" EDIT="N" EEType="FreightCharges1Cd"
+                        FldType="" Value="">TSU_FRGHT_TP</Element>
+                    <Element DATATYPE="12" Desc="Transaction Currency"
+                        DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3" Desc="Lineitem Total Amount"
+                        DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_AMT</Element>
+                </Elements>
+                <DO Desc="Product Identifier" Max="n" Min="0" Name="DT_PdctIdr"
+                    PendingStore="N" Screen="SCRN/DO/TSU_DT_PDC_IDR.jsp"
+                    StoreInto="D" StoreType="T">
+                    <TABLE_NAME Name="TSUM_DT_PDC_IDR"/>
+                    <PK>
+                        <PKNAME>C_MAIN_REF</PKNAME>
+                        <PKNAME>C_UNIT_CODE</PKNAME>
+                        <PKNAME>C_TRX_REF</PKNAME>
+                        <PKNAME>TSU_COMM_REF</PKNAME>
+                        <PKNAME>TSU_LNITMNB</PKNAME>
+                        <PKNAME>TSU_PO_ID</PKNAME>
+                        <PKNAME>TSU_SEQ_NUM</PKNAME>
+                    </PK>
+                    <FKS>
+                        <FK PARENT_TABLE="TSUM_DT_LINEITEM_R2">
+                            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_LNITMNB">TSU_LNITMNB</FKNAME>
+                            <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                        </FK>
+                    </FKS>
+                    <Elements>
+                        <Element DATATYPE="12" Desc="MAIN REF. NO."
+                            DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                        <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                            DispInGrid="N" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_COMM_REF</Element>
+                        <Element DATATYPE="12" Desc="PO ID" DispInGrid="N"
+                            EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                        <Element DATATYPE="12" Desc="Lineitem No."
+                            DispInGrid="N" EDIT="N" EEType="Max70Text"
+                            FldType="" Value="">TSU_LNITMNB</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Type"
+                            DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code"
+                            FldType="" Value="">TSU_PDC_TP</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Description"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_DESC</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Other Type"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_OTTP</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Other ID"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_OTID</Element>
+                        <Element DATATYPE="2"
+                            Desc="Sequence No. to Account Records"
+                            DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Product Characteristics" Max="n" Min="0"
+                    Name="DT_PdctChrtcs" PendingStore="N"
+                    Screen="SCRN/DO/TSU_PDC_CHRTCS.jsp" StoreInto="D" StoreType="T">
+                    <TABLE_NAME Name="TSUM_DT_PDC_CHRTCS"/>
+                    <PK>
+                        <PKNAME>C_MAIN_REF</PKNAME>
+                        <PKNAME>C_UNIT_CODE</PKNAME>
+                        <PKNAME>C_TRX_REF</PKNAME>
+                        <PKNAME>TSU_COMM_REF</PKNAME>
+                        <PKNAME>TSU_LNITMNB</PKNAME>
+                        <PKNAME>TSU_PO_ID</PKNAME>
+                        <PKNAME>TSU_SEQ_NUM</PKNAME>
+                    </PK>
+                    <FKS>
+                        <FK PARENT_TABLE="TSUM_DT_LINEITEM_R2">
+                            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_LNITMNB">TSU_LNITMNB</FKNAME>
+                            <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                        </FK>
+                    </FKS>
+                    <Elements>
+                        <Element DATATYPE="12" Desc="MAIN REF. NO."
+                            DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                        <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                            DispInGrid="N" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_COMM_REF</Element>
+                        <Element DATATYPE="12" Desc="PO ID" DispInGrid="N"
+                            EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                        <Element DATATYPE="12" Desc="Lineitem No."
+                            DispInGrid="N" EDIT="N" EEType="Max70Text"
+                            FldType="" Value="">TSU_LNITMNB</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Type"
+                            DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code"
+                            FldType="" Value="">TSU_PDC_TP</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Description"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_DESC</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Other Type"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_OTTP</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Other ID"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_OTID</Element>
+                        <Element DATATYPE="2"
+                            Desc="Sequence No. to Account Records"
+                            DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Product Category" Max="n" Min="0" Name="DT_PdctCtgy"
+                    PendingStore="N" Screen="SCRN/DO/TSU_DT_PDC_CTGY.jsp"
+                    StoreInto="D" StoreType="T">
+                    <TABLE_NAME Name="TSUM_DT_PDC_CTGY"/>
+                    <PK>
+                        <PKNAME>C_MAIN_REF</PKNAME>
+                        <PKNAME>C_UNIT_CODE</PKNAME>
+                        <PKNAME>C_TRX_REF</PKNAME>
+                        <PKNAME>TSU_COMM_REF</PKNAME>
+                        <PKNAME>TSU_LNITMNB</PKNAME>
+                        <PKNAME>TSU_PO_ID</PKNAME>
+                        <PKNAME>TSU_SEQ_NUM</PKNAME>
+                    </PK>
+                    <FKS>
+                        <FK PARENT_TABLE="TSUM_DT_LINEITEM_R2">
+                            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_LNITMNB">TSU_LNITMNB</FKNAME>
+                            <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                        </FK>
+                    </FKS>
+                    <Elements>
+                        <Element DATATYPE="12" Desc="MAIN REF. NO."
+                            DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                        <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                            DispInGrid="N" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_COMM_REF</Element>
+                        <Element DATATYPE="12" Desc="PO ID" DispInGrid="N"
+                            EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                        <Element DATATYPE="12" Desc="Lineitem No."
+                            DispInGrid="N" EDIT="N" EEType="Max70Text"
+                            FldType="" Value="">TSU_LNITMNB</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Type"
+                            DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code"
+                            FldType="" Value="">TSU_PDC_TP</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Description"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_DESC</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Other Type"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_OTTP</Element>
+                        <Element DATATYPE="12"
+                            Desc="Product Category/Identifier/Characteristics Other ID"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_PDC_OTID</Element>
+                        <Element DATATYPE="2"
+                            Desc="Sequence No. to Account Records"
+                            DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Adjustment" Max="n" Min="0" Name="DT_Adjstmnt"
+                    PendingStore="N" Screen="SCRN/DO/TSU_DT_Adjustment.jsp"
+                    StoreInto="D" StoreType="T">
+                    <TABLE_NAME Name="TSUM_DT_ADJUST"/>
+                    <PK>
+                        <PKNAME>C_MAIN_REF</PKNAME>
+                        <PKNAME>C_UNIT_CODE</PKNAME>
+                        <PKNAME>C_TRX_REF</PKNAME>
+                        <PKNAME>TSU_COMM_REF</PKNAME>
+                        <PKNAME>TSU_LNITMNB</PKNAME>
+                        <PKNAME>TSU_PO_ID</PKNAME>
+                        <PKNAME>TSU_SEQ_NUM</PKNAME>
+                    </PK>
+                    <FKS>
+                        <FK PARENT_TABLE="TSUM_DT_LINEITEM_R2">
+                            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_LNITMNB">TSU_LNITMNB</FKNAME>
+                            <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                        </FK>
+                    </FKS>
+                    <Elements>
+                        <Element DATATYPE="12" Desc="MAIN REF. NO."
+                            DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                        <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                            DispInGrid="N" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_COMM_REF</Element>
+                        <Element DATATYPE="12" Desc="PO ID" DispInGrid="N"
+                            EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                        <Element DATATYPE="12" Desc="Lineitem No."
+                            DispInGrid="N" EDIT="N" EEType="Max70Text"
+                            FldType="" Value="">TSU_LNITMNB</Element>
+                        <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y"
+                            EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                        <Element DATATYPE="12" Desc="Common Other Type"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                        <Element DATATYPE="12" Desc="Transaction Currency"
+                            DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                        <Element DATATYPE="3"
+                            Desc="Common Amount for Charges, Adjustment etc."
+                            DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                        <Element DATATYPE="3"
+                            Desc="Common Calculating Amount for Charges, Adjustment etc."
+                            DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT_CAL</Element>
+                        <Element DATATYPE="12" Desc="Adjustment Direction"
+                            DispInGrid="Y" EDIT="N" EEType="AdjustDirection1Co"
+                            FldType="" Value="">TSU_ADJUST_DRCTN</Element>
+                        <Element DATATYPE="2"
+                            Desc="Common Rate for Charges, Adjustment etc."
+                            DispInGrid="N" EDIT="N" EEType="PercentageRate"
+                            FldType="" Value="">TSU_IAFT_RT</Element>
+                        <Element DATATYPE="2"
+                            Desc="Sequence No. to Account Records"
+                            DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Freight Charges" Max="n" Min="0" Name="DT_FrghtChrgs"
+                    PendingStore="N" Screen="SCRN/DO/TSU_DT_Freight_Chrgs.jsp"
+                    StoreInto="D" StoreType="T">
+                    <TABLE_NAME Name="TSUM_DT_FRT"/>
+                    <PK>
+                        <PKNAME>C_MAIN_REF</PKNAME>
+                        <PKNAME>C_UNIT_CODE</PKNAME>
+                        <PKNAME>C_TRX_REF</PKNAME>
+                        <PKNAME>TSU_COMM_REF</PKNAME>
+                        <PKNAME>TSU_LNITMNB</PKNAME>
+                        <PKNAME>TSU_PO_ID</PKNAME>
+                        <PKNAME>TSU_TRAN_INF</PKNAME>
+                        <PKNAME>TSU_SEQ_NUM</PKNAME>
+                    </PK>
+                    <FKS>
+                        <FK PARENT_TABLE="TSUM_DT_LINEITEM_R2">
+                            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_LNITMNB">TSU_LNITMNB</FKNAME>
+                            <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                        </FK>
+                    </FKS>
+                    <Elements>
+                        <Element DATATYPE="12" Desc="MAIN REF. NO."
+                            DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                        <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                            DispInGrid="N" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_COMM_REF</Element>
+                        <Element DATATYPE="12" Desc="Transport Information Ref."
+                            DispInGrid="N" EDIT="N" EEType="Max70Text"
+                            FldType="" Value="">TSU_TRAN_INF</Element>
+                        <Element DATATYPE="12" Desc="PO ID" DispInGrid="N"
+                            EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                        <Element DATATYPE="12" Desc="Lineitem No."
+                            DispInGrid="N" EDIT="N" EEType="Max70Text"
+                            FldType="" Value="">TSU_LNITMNB</Element>
+                        <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y"
+                            EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                        <Element DATATYPE="12" Desc="Common Other Type"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                        <Element DATATYPE="12" Desc="Transaction Currency"
+                            DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                        <Element DATATYPE="3"
+                            Desc="Common Amount for Charges, Adjustment etc."
+                            DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                        <Element DATATYPE="2"
+                            Desc="Common Rate for Charges, Adjustment etc."
+                            DispInGrid="N" EDIT="N" EEType="PercentageRate"
+                            FldType="" Value="">TSU_IAFT_RT</Element>
+                        <Element DATATYPE="2"
+                            Desc="Sequence No. to Account Records"
+                            DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Tax" Max="n" Min="0" Name="DT_Tax" PendingStore="N"
+                    Screen="SCRN/DO/TSU_DT_Tax.jsp" StoreInto="D" StoreType="T">
+                    <TABLE_NAME Name="TSUM_DT_TAX"/>
+                    <PK>
+                        <PKNAME>C_MAIN_REF</PKNAME>
+                        <PKNAME>C_UNIT_CODE</PKNAME>
+                        <PKNAME>C_TRX_REF</PKNAME>
+                        <PKNAME>TSU_COMM_REF</PKNAME>
+                        <PKNAME>TSU_LNITMNB</PKNAME>
+                        <PKNAME>TSU_PO_ID</PKNAME>
+                        <PKNAME>TSU_SEQ_NUM</PKNAME>
+                    </PK>
+                    <FKS>
+                        <FK PARENT_TABLE="TSUM_DT_LINEITEM_R2">
+                            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                            <FKNAME PARENT_COL="TSU_LNITMNB">TSU_LNITMNB</FKNAME>
+                            <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                        </FK>
+                    </FKS>
+                    <Elements>
+                        <Element DATATYPE="12" Desc="MAIN REF. NO."
+                            DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                            EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                        <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                            DispInGrid="N" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_COMM_REF</Element>
+                        <Element DATATYPE="12" Desc="PO ID" DispInGrid="N"
+                            EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                        <Element DATATYPE="12" Desc="Lineitem No."
+                            DispInGrid="N" EDIT="N" EEType="Max70Text"
+                            FldType="" Value="">TSU_LNITMNB</Element>
+                        <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y"
+                            EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                        <Element DATATYPE="12" Desc="Common Other Type"
+                            DispInGrid="Y" EDIT="N" EEType="Max35Text"
+                            FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                        <Element DATATYPE="12" Desc="Transaction Currency"
+                            DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                        <Element DATATYPE="3"
+                            Desc="Common Amount for Charges, Adjustment etc."
+                            DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                        <Element DATATYPE="2"
+                            Desc="Common Rate for Charges, Adjustment etc."
+                            DispInGrid="N" EDIT="N" EEType="PercentageRate"
+                            FldType="" Value="">TSU_IAFT_RT</Element>
+                        <Element DATATYPE="2"
+                            Desc="Sequence No. to Account Records"
+                            DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Incoterms" Max="1" Min="0" Name="DT_Incotrms"
+                PendingStore="N" Screen="SCRN/DO/TSU_Incoterms.jsp"
+                StoreInto="D" StoreType="T">
+                <TABLE_NAME Name="TSUM_DT_INCOTMS"/>
+                <PK>
+                    <PKNAME>C_MAIN_REF</PKNAME>
+                    <PKNAME>C_UNIT_CODE</PKNAME>
+                    <PKNAME>C_TRX_REF</PKNAME>
+                    <PKNAME>TSU_COMM_REF</PKNAME>
+                    <PKNAME>TSU_PO_ID</PKNAME>
+                    <PKNAME>TSU_TRAN_INF</PKNAME>
+                    <PKNAME>TSU_SEQ_NUM</PKNAME>
+                </PK>
+                <FKS>
+                    <FK PARENT_TABLE="TSUM_DT_GOODS_R2">
+                        <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                        <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                        <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                    </FK>
+                </FKS>
+                <Elements>
+                    <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                    <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                    <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                    <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                    <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                        EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                    <Element DATATYPE="12" Desc="Transport Information Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_TRAN_INF</Element>
+                    <Element DATATYPE="12" Desc="Incoterms Location"
+                        DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_INCOTMS_LCTN</Element>
+                    <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y"
+                        EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type"
+                        DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                    <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                        DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Adjustment" Max="n" Min="0" Name="DT_Adjstmnt"
+                PendingStore="N" Screen="SCRN/DO/TSU_DT_Adjustment.jsp"
+                StoreInto="D" StoreType="T">
+                <TABLE_NAME Name="TSUM_DT_ADJUST"/>
+                <PK>
+                    <PKNAME>C_MAIN_REF</PKNAME>
+                    <PKNAME>C_UNIT_CODE</PKNAME>
+                    <PKNAME>C_TRX_REF</PKNAME>
+                    <PKNAME>TSU_COMM_REF</PKNAME>
+                    <PKNAME>TSU_LNITMNB</PKNAME>
+                    <PKNAME>TSU_PO_ID</PKNAME>
+                    <PKNAME>TSU_SEQ_NUM</PKNAME>
+                </PK>
+                <FKS>
+                    <FK PARENT_TABLE="TSUM_DT_GOODS_R2">
+                        <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                        <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                        <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                    </FK>
+                </FKS>
+                <Elements>
+                    <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                    <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                    <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                    <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                    <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                        EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                    <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N"
+                        EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                    <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y"
+                        EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type"
+                        DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                    <Element DATATYPE="12" Desc="Transaction Currency"
+                        DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3"
+                        Desc="Common Amount for Charges, Adjustment etc."
+                        DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                    <Element DATATYPE="3"
+                        Desc="Common Calculating Amount for Charges, Adjustment etc."
+                        DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT_CAL</Element>
+                    <Element DATATYPE="12" Desc="Adjustment Direction"
+                        DispInGrid="Y" EDIT="N" EEType="AdjustDirection1Co"
+                        FldType="" Value="">TSU_ADJUST_DRCTN</Element>
+                    <Element DATATYPE="2"
+                        Desc="Common Rate for Charges, Adjustment etc."
+                        DispInGrid="N" EDIT="N" EEType="PercentageRate"
+                        FldType="" Value="">TSU_IAFT_RT</Element>
+                    <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                        DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Freight Charges" Max="n" Min="0" Name="DT_FrghtChrgs"
+                PendingStore="N" Screen="SCRN/DO/TSU_DT_Freight_Chrgs.jsp"
+                StoreInto="D" StoreType="T">
+                <TABLE_NAME Name="TSUM_DT_FRT"/>
+                <PK>
+                    <PKNAME>C_MAIN_REF</PKNAME>
+                    <PKNAME>C_UNIT_CODE</PKNAME>
+                    <PKNAME>C_TRX_REF</PKNAME>
+                    <PKNAME>TSU_COMM_REF</PKNAME>
+                    <PKNAME>TSU_LNITMNB</PKNAME>
+                    <PKNAME>TSU_PO_ID</PKNAME>
+                    <PKNAME>TSU_TRAN_INF</PKNAME>
+                    <PKNAME>TSU_SEQ_NUM</PKNAME>
+                </PK>
+                <FKS>
+                    <FK PARENT_TABLE="TSUM_DT_GOODS_R2">
+                        <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                        <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                        <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                    </FK>
+                </FKS>
+                <Elements>
+                    <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                    <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                    <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                    <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                    <Element DATATYPE="12" Desc="Transport Information Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_TRAN_INF</Element>
+                    <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                        EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                    <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N"
+                        EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                    <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y"
+                        EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type"
+                        DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                    <Element DATATYPE="12" Desc="Transaction Currency"
+                        DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3"
+                        Desc="Common Amount for Charges, Adjustment etc."
+                        DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                    <Element DATATYPE="2"
+                        Desc="Common Rate for Charges, Adjustment etc."
+                        DispInGrid="N" EDIT="N" EEType="PercentageRate"
+                        FldType="" Value="">TSU_IAFT_RT</Element>
+                    <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                        DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Tax" Max="n" Min="0" Name="DT_Tax" PendingStore="N"
+                Screen="SCRN/DO/TSU_DT_Tax.jsp" StoreInto="D" StoreType="T">
+                <TABLE_NAME Name="TSUM_DT_TAX"/>
+                <PK>
+                    <PKNAME>C_MAIN_REF</PKNAME>
+                    <PKNAME>C_UNIT_CODE</PKNAME>
+                    <PKNAME>C_TRX_REF</PKNAME>
+                    <PKNAME>TSU_COMM_REF</PKNAME>
+                    <PKNAME>TSU_LNITMNB</PKNAME>
+                    <PKNAME>TSU_PO_ID</PKNAME>
+                    <PKNAME>TSU_SEQ_NUM</PKNAME>
+                </PK>
+                <FKS>
+                    <FK PARENT_TABLE="TSUM_DT_GOODS_R2">
+                        <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                        <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                        <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                    </FK>
+                </FKS>
+                <Elements>
+                    <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                    <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                    <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                    <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                    <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                        EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                    <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N"
+                        EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                    <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y"
+                        EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                    <Element DATATYPE="12" Desc="Common Other Type"
+                        DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                    <Element DATATYPE="12" Desc="Transaction Currency"
+                        DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                    <Element DATATYPE="3"
+                        Desc="Common Amount for Charges, Adjustment etc."
+                        DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                    <Element DATATYPE="2"
+                        Desc="Common Rate for Charges, Adjustment etc."
+                        DispInGrid="N" EDIT="N" EEType="PercentageRate"
+                        FldType="" Value="">TSU_IAFT_RT</Element>
+                    <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                        DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Buyer Defined Information" Max="n" Min="0"
+                Name="DT_DfndInf" PendingStore="N"
+                Screen="SCRN/DO/TSU_DefinedInformation.jsp" StoreInto="D" StoreType="T">
+                <TABLE_NAME Name="TSUM_DT_DEDINFO"/>
+                <PK>
+                    <PKNAME>C_MAIN_REF</PKNAME>
+                    <PKNAME>C_UNIT_CODE</PKNAME>
+                    <PKNAME>C_TRX_REF</PKNAME>
+                    <PKNAME>C_DO_NAME</PKNAME>
+                    <PKNAME>TSU_COMM_REF</PKNAME>
+                    <PKNAME>TSU_PO_ID</PKNAME>
+                    <PKNAME>TSU_TRAN_DOC_REF</PKNAME>
+                    <PKNAME>TSU_TRAN_INF</PKNAME>
+                    <PKNAME>TSU_SEQ_NUM</PKNAME>
+                </PK>
+                <FKS>
+                    <FK PARENT_TABLE="TSUM_DT_GOODS_R2">
+                        <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                        <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                        <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                    </FK>
+                </FKS>
+                <Elements>
+                    <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                    <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                    <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                    <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                    <Element DATATYPE="12" Desc="Transport Document Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TRAN_DOC_REF</Element>
+                    <Element DATATYPE="12" Desc="Transport Information Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_TRAN_INF</Element>
+                    <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                        EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                    <Element DATATYPE="12" Desc="Defined Information Label"
+                        DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DFINFO_LABLE</Element>
+                    <Element DATATYPE="12"
+                        Desc="Defined Information Description" DispInGrid="Y"
+                        EDIT="N" EEType="Max140Text" FldType="" Value="">TSU_DFINFO_DESC</Element>
+                    <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                        DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Seller Defined Information" Max="n" Min="0"
+                Name="DT_SellDfndInf" PendingStore="N"
+                Screen="SCRN/DO/TSU_DefinedInformation.jsp" StoreInto="D" StoreType="T">
+                <TABLE_NAME Name="TSUM_DT_SELLDEDINFO"/>
+                <PK>
+                    <PKNAME>C_MAIN_REF</PKNAME>
+                    <PKNAME>C_UNIT_CODE</PKNAME>
+                    <PKNAME>C_TRX_REF</PKNAME>
+                    <PKNAME>C_DO_NAME</PKNAME>
+                    <PKNAME>TSU_COMM_REF</PKNAME>
+                    <PKNAME>TSU_PO_ID</PKNAME>
+                    <PKNAME>TSU_TRAN_DOC_REF</PKNAME>
+                    <PKNAME>TSU_TRAN_INF</PKNAME>
+                    <PKNAME>TSU_SEQ_NUM</PKNAME>
+                </PK>
+                <FKS>
+                    <FK PARENT_TABLE="TSUM_DT_GOODS_R2">
+                        <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                        <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                        <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_COMM_REF">TSU_COMM_REF</FKNAME>
+                        <FKNAME PARENT_COL="TSU_PO_ID">TSU_PO_ID</FKNAME>
+                    </FK>
+                </FKS>
+                <Elements>
+                    <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                    <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_TRX_REF</Element>
+                    <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N"
+                        EDIT="N" EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                    <Element DATATYPE="12" Desc="Commercial Invoice Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                    <Element DATATYPE="12" Desc="Transport Document Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TRAN_DOC_REF</Element>
+                    <Element DATATYPE="12" Desc="Transport Information Ref."
+                        DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_TRAN_INF</Element>
+                    <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                        EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                    <Element DATATYPE="12" Desc="Defined Information Label"
+                        DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DFINFO_LABLE</Element>
+                    <Element DATATYPE="12"
+                        Desc="Defined Information Description" DispInGrid="Y"
+                        EDIT="N" EEType="Max140Text" FldType="" Value="">TSU_DFINFO_DESC</Element>
+                    <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                        DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                </Elements>
+            </DO>
+        </DO>
+    </DO>
+    <DO Desc="Payment Terms" Max="n" Min="1" Name="DT_PmtTerms" PendingStore="N"
+        Screen="SCRN/DO/TSU_pmtTerm_DO.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_DT_PMT"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_DS_COMRCL">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="3" Desc="Payment  Amount" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">TSU_PMT_AMT</Element>
+            <Element DATATYPE="12" Desc="Payment Code" DispInGrid="Y" EDIT="N"
+                EEType="PaymentTime1Code" FldType="" Value="">TSU_PMT_CD</Element>
+            <Element DATATYPE="2" Desc="Payment Days" DispInGrid="N" EDIT="N"
+                EEType="Number" FldType="" Value="">TSU_PMT_DAYS</Element>
+            <Element DATATYPE="12" Desc="Other Terms" DispInGrid="Y" EDIT="N"
+                EEType="Max140Text" FldType="" Value="">TSU_PMT_OT_TERM</Element>
+            <Element DATATYPE="2" Desc="Payment Percentage" DispInGrid="Y"
+                EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_PMT_PER</Element>
+            <Element DATATYPE="12" Desc="Transaction Currency" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Settlement Terms" Max="1" Min="1" Name="R2DT_SttlmTerms"
+        PendingStore="N" Screen="SCRN/DO/R2TSU_Settlement_DO.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_DT_SETT_R2"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_DS_COMRCL">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="1" Desc="Financial Institution BIC"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_FININST_BIC</Element>
+            <Element DATATYPE="12" Desc="Financial Institution Name"
+                DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_FININST_NM</Element>
+            <Element DATATYPE="12" Desc="Financial Institution Country"
+                DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_FININST_CNTY</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Account" DispInGrid="Y"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_ACC</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Account BBAN"
+                DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_BBAN</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Account IBAN"
+                DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_IBAN</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Account UPIC"
+                DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_UPIC</Element>
+            <Element DATATYPE="12" Desc="Creditor Account Proprietary"
+                DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_CDTRAC_TPID</Element>
+            <Element DATATYPE="12" Desc="Cash Account Nature" DispInGrid="N"
+                EDIT="N" EEType="CashAccountTpCode" FldType="" Value="">TSU_CDTRAC_TPCD</Element>
+            <Element DATATYPE="12" Desc="Creditor Account Currency"
+                DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CDTRAC_CCY</Element>
+            <Element DATATYPE="12" Desc="Creditor Account Name" DispInGrid="Y"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_CDTRAC_NM</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+        </Elements>
+    </DO>
+</DO>

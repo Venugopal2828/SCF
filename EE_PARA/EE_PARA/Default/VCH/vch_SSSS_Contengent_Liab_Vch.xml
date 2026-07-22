@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>SSSS</MODULE>
+        <DESC>Contengent Liability Voucher</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>8</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>R</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="S">var Mod;
+var ccy;
+var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+DV.writeLog("SYS_MODULE_NAME cr"+SYS_MODULE_NAME);
+var country = DV.getCountryCode();
+DV.writeLog("country"+country);
+if(SYS_MODULE_NAME=='IMLC'){
+        Mod = 'IL';
+        ccy = DV.getFieldValue("LC_CCY");
+   DV.writeLog("1"+ccy);
+}
+else if(SYS_MODULE_NAME=='IMCO')
+{
+ 	Mod = 'IC';
+         ccy = DV.appendField("COLL_CCY");
+}
+var item_name= Mod+'_'+ccy;
+DV.writeLog("item_name"+item_name);
+var sql = "item_c='012" + "'" + " and CNTY_CODE='" + country + "'" + " and ITEM_NAME='" + item_name + "'"; 
+DV.writeLog("sql"+sql);
+DV.SYS_getTableData('FIELD_1_X','eximtrx.data_master',sql);
+DV.writeLog("2 sql");</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="S">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+ if(SYS_MODULE_NAME=='IMLC'){
+ var lc_ccy = DV.getFieldValue("LC_CCY");
+ DV.appendField(lc_ccy);
+ }
+ else if(SYS_MODULE_NAME=='IMCO'){
+ var COLL_CCY = DV.getFieldValue("COLL_CCY");
+ DV.appendField(COLL_CCY);
+ }</C_CURRENCY>
+            <N_AMT FV_TYPE="S">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+DV.writeLog("SYS_MODULE_NAME dr bal"+SYS_MODULE_NAME); 
+var SYS_FUNCTION_NAME = DV.getFieldValue("CURRNT_STATUS");
+var SYS_FUNCTION_NAME1 = DV.SYS_FUNCTION_NAME;
+DV.writeLog("SYS_FUNCTION_NAME1"+SYS_FUNCTION_NAME1);
+DV.writeLog("SYS_FUNCTION_NAME"+SYS_FUNCTION_NAME);
+DV.writeLog("SYS_FUNCTION_NAME dr bal "+SYS_FUNCTION_NAME);
+ if(SYS_MODULE_NAME=='IMLC'){
+DV.writeLog("1");
+    var LC_BAL = DV.getFieldValue("LC_BAL");
+DV.writeLog("2"+LC_BAL);
+    //DV.appendField(LC_BAL);
+   if(SYS_FUNCTION_NAME=='Issued LC' || SYS_FUNCTION_NAME1=='IMLC_IssueLC'){
+   DV.appendField( LC_BAL);
+
+DV.writeLog(" LC_BAL"+ LC_BAL);
+   }
+   else if(SYS_FUNCTION_NAME=='IMLC_Amend' || SYS_FUNCTION_NAME1=="IMLC Amend After Registration"){
+    var inc_amt=DV.toFloat(DV.getFieldValue("INC_LIAB_AMT"));
+    var det_flg=DV.getFieldValue("DETRMNTL_FLG");
+    if(inc_amt &gt; 0 &amp;&amp; det_flg =='No'){
+        DV.appendField(inc_amt);
+    }
+   } 
+  else if(SYS_FUNCTION_NAME=="Bene Accepts Amendment" || SYS_FUNCTION_NAME1=='Bene Accepts Amendment'){
+    var inc_amt=DV.toFloat(DV.getFieldValue("INC_LIAB_AMT"));
+    var det_flg=DV.getFieldValue("DETRMNTL_FLG");
+    if(inc_amt &gt; 0){
+        DV.appendField(inc_amt);
+    }
+   }
+   else
+   {
+     DV.appendField(LC_BAL);
+   }
+  }
+  else if(SYS_MODULE_NAME=='IMCO'){
+   var DRWG_AMT_CCY = DV.getFieldValue("DRWG_AMT_CCY");
+  DV.appendField(DRWG_AMT_CCY);
+  }</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="S">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+ if(SYS_MODULE_NAME=='IMLC'){
+  var ISSUE_DT = DV.getFieldValue("ISSUE_DT");
+  DV.appendField(ISSUE_DT);
+ }
+ else if(SYS_MODULE_NAME=='IMCO'){
+ var AVLI_DATE = DV.getFieldValue("AVLI_DATE");
+ DV.appendField(AVLI_DATE);
+ }</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">N</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="S" USED="N">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+var ccy1; 
+var baseCCY =DV.SYS_LCY ;
+var defaultRate = '1';
+var cnty = DV.getCountryCode();
+  if(SYS_MODULE_NAME=='IMLC'){
+  ccy1 = DV.getFieldValue("LC_CCY");
+  }
+  else if(SYS_MODULE_NAME=='IMCO'){
+  ccy1 = DV.getFieldValue("COLL_CCY");
+  }
+if(ccy1!= null){
+  if(ccy1 != baseCCY){
+	sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='TT Buying' "; 	
+	DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);
+  }else{
+	DV.appendField(defaultRate);
+  }
+}else{
+	DV.appendField(defaultRate);
+}</C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="S" USED="N">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+ var ccy1; 
+ var baseCCY =DV.SYS_LCY ;
+ var defaultRate = '1';
+ var cnty = DV.getCountryCode();
+   if(SYS_MODULE_NAME=='IMLC'){
+   ccy1 = DV.getFieldValue("LC_CCY");
+   }
+   else if(SYS_MODULE_NAME=='IMCO'){
+   ccy1 = DV.getFieldValue("COLL_CCY");
+   }
+ if(ccy1!= null){
+   if(ccy1 != baseCCY){
+ 	sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='TT Buying' "; 	
+ 	DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);
+   }else{
+ 	DV.appendField(defaultRate);
+   }
+ }else{
+ 	DV.appendField(defaultRate);
+ }</C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="V">BankLiability</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="">BankLiability</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE=""/>
+            <C_VCH_SPECIAL1 FV_TYPE="V">BankLiability</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="S">var ccy;
+ var Mod;
+ var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+DV.writeLog("SYS_MODULE_NAME om"+SYS_MODULE_NAME);
+DV.writeLog("9");
+ var country = DV.getCountryCode(); 
+DV.writeLog("2");
+ var c_cust_id = DV.getFieldValue("C_CUST_ID");
+DV.writeLog("country dr"+country);
+ if(SYS_MODULE_NAME=='IMLC'){
+    c_cust_id = DV.getFieldValue("APPL_ID");
+    DV.writeLog("c_cust_id"+c_cust_id);
+    Mod = 'IL';
+    ccy = DV.getFieldValue("LC_CCY");
+ }
+ else if(SYS_MODULE_NAME=='IMCO')
+ {
+     c_cust_id = DV.getFieldValue("DRWE_ID");
+     Mod = 'IC';
+     ccy = DV.getFieldValue("COLL_CCY");
+ }
+ var item_name= Mod+'C';
+ var c_cr_dr = 'L';
+ DV.writeLog("item_name"+item_name);
+ DV.writeLog("c_cr_dr"+c_cr_dr);
+var sql = "c_cl_fcty_type='" + item_name + "'"  + " and c_cust_id='"+ c_cust_id + "'" + " and C_CNTY_CODE='" + country + "'" + " and ";
+sql = sql + "C_CURRENCY='" + ccy + "'" + "and C_DBT_CRDT='" +c_cr_dr+ "'"; 
+DV.SYS_getTableData('C_AC_NUMBER','eximsys.std_ac_number',sql);</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="S">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+  if(SYS_MODULE_NAME=='IMLC'){
+  var LC_CCY = DV.getFieldValue("LC_CCY");
+  DV.appendField(LC_CCY);
+  }
+  else if(SYS_MODULE_NAME=='IMCO'){
+  var COLL_CCY = DV.getFieldValue("COLL_CCY");
+  DV.appendField(COLL_CCY);
+  }</C_CURRENCY>
+            <N_AMT FV_TYPE="S">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+DV.writeLog("SYS_MODULE_NAME dr bal"+SYS_MODULE_NAME);
+var SYS_FUNCTION_NAME = DV.getFieldValue("CURRNT_STATUS");
+var SYS_FUNCTION_NAME1 = DV.SYS_FUNCTION_NAME;
+DV.writeLog("SYS_FUNCTION_NAME1 dr bal "+SYS_FUNCTION_NAME1);
+DV.writeLog("SYS_FUNCTION_NAME dr bal "+SYS_FUNCTION_NAME);
+ if(SYS_MODULE_NAME=='IMLC'){
+DV.writeLog("1");
+   var LC_BAL = DV.getFieldValue("LC_BAL");
+   DV.writeLog("2"+LC_BAL);
+   //DV.appendField( LC_BAL);
+   if(SYS_FUNCTION_NAME=='Issued LC' || SYS_FUNCTION_NAME1=='IMLC_IssueLC'){
+   DV.appendField( LC_BAL);
+DV.writeLog(" LC_BAL"+ LC_BAL);
+   }
+   else if(SYS_FUNCTION_NAME=='IMLC_Amend' || SYS_FUNCTION_NAME1=="IMLC Amend After Registration"){
+    var inc_amt=DV.toFloat(DV.getFieldValue("INC_LIAB_AMT"));
+    var det_flg=DV.getFieldValue("DETRMNTL_FLG");
+    if(inc_amt &gt; 0 &amp;&amp; det_flg =='No'){
+        DV.appendField(inc_amt);
+    }
+   } 
+  else if(SYS_FUNCTION_NAME=="Bene Accepts Amendment" || SYS_FUNCTION_NAME1=="Bene Accepts Amendment"){
+    var inc_amt=DV.toFloat(DV.getFieldValue("INC_LIAB_AMT"));
+    var det_flg=DV.getFieldValue("DETRMNTL_FLG");
+    if(inc_amt &gt; 0){
+        DV.appendField(inc_amt);
+    }
+   }
+   else
+   {
+     DV.appendField(LC_BAL);
+   }
+  }
+  else if(SYS_MODULE_NAME=='IMCO'){
+   var DRWG_AMT_CCY = DV.getFieldValue("DRWG_AMT_CCY");
+  DV.appendField(DRWG_AMT_CCY);
+  }</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">ISSUE_DT</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="S">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+  if(SYS_MODULE_NAME=='IMLC'){
+  var ISSUE_DT = DV.getFieldValue("ISSUE_DT");
+   DV.appendField(ISSUE_DT);
+  }
+  else if(SYS_MODULE_NAME=='IMCO'){
+  var ISSUE_DT = DV.getFieldValue("AVLI_DATE");
+  DV.appendField(ISSUE_DT);
+  }</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">N</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="S" USED="N">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+var ccy1; 
+var baseCCY =DV.SYS_LCY ;
+var defaultRate = '1';
+var cnty = DV.getCountryCode();
+  if(SYS_MODULE_NAME=='IMLC'){
+  ccy1 = DV.getFieldValue("LC_CCY");
+  }
+  else if(SYS_MODULE_NAME=='IMCO'){
+  ccy1 = DV.getFieldValue("COLL_CCY");
+  }
+if(ccy1!= null){
+  if(ccy1 != baseCCY){
+	sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='TT Buying' "; 	
+	DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);
+  }else{
+	DV.appendField(defaultRate);
+  }
+}else{
+	DV.appendField(defaultRate);
+}</C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="S" USED="N">var SYS_MODULE_NAME = DV.SYS_MODULE_NAME;
+ var ccy1; 
+ var baseCCY =DV.SYS_LCY ;
+ var defaultRate = '1';
+ var cnty = DV.getCountryCode();
+   if(SYS_MODULE_NAME=='IMLC'){
+   ccy1 = DV.getFieldValue("LC_CCY");
+   }
+   else if(SYS_MODULE_NAME=='IMCO'){
+   ccy1 = DV.getFieldValue("COLL_CCY");
+   }
+ if(ccy1!= null){
+   if(ccy1 != baseCCY){
+ 	sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='TT Buying' "; 	
+ 	DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);
+   }else{
+ 	DV.appendField(defaultRate);
+   }
+ }else{
+ 	DV.appendField(defaultRate);
+ }</C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="V">CustLiability</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="">CustLiability</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE=""/>
+            <C_VCH_SPECIAL1 FV_TYPE="V">CustLiability</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

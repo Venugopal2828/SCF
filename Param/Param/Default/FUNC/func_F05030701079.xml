@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FADA</MODULE>
+        <MODULE_DESC>Finance Data</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C14050700002</CATALOGID>
+        <ID>F05030701079</ID>
+        <NAME>Request for CAA</NAME>
+        <DESC>Request for Credit Cover Revision</DESC>
+        <FUNSHORTNAME>CAAReqst</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_CAAReqst.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701072</ID>
+        <NAME>Request for CAA_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701072</ID>
+        <NAME>Request for CAA_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000356</ID>
+        <NAME>Request for CAA_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

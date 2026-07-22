@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="TBPO PAY_TERMS" Max="n" Min="0" Name="TBPO_PAY_TERMS" PendingStore="N" Screen="SCRN/DO/BPO_Payment_Terms.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="TBPO_PAY_TERMS"></TABLE_NAME>
+    <PK>
+        <PKNAME>TSU_PMT_CD</PKNAME>
+        <PKNAME>DO_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="BPOM_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Other Terms" DispInGrid="N" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_PMT_OT_TERM</Element>
+        <Element DATATYPE="12" Desc="Payment Code" DispInGrid="Y" EDIT="N" EEType="PaymentTime1Code" FldType="" Value="">TSU_PMT_CD</Element>
+        <Element DATATYPE="2" Desc="Payment Days" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_PMT_DAYS</Element>
+        <Element DATATYPE="2" Desc="Payment Percentage" DispInGrid="N" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_PMT_PER</Element>
+        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+        <Element DATATYPE="3" Desc="Payment  Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_PMT_AMT</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="DO REF" DispInGrid="Y" EDIT="N" EEType="RELATED_REF" FldType="" Value="">DO_REF</Element>
+    </Elements>
+</DO>

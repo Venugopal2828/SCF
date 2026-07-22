@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <taskId>XR902U0N0Q05</taskId>
+    <taskName>MMDLMaturityDateVoucherBatch</taskName>
+    <component>SQLExecuTaskMulti</component>
+    <desc>MM Maturity Date Voucher Batch</desc>
+    <cuttime_check>T</cuttime_check>
+    <single-thread>false</single-thread>
+    <function></function>
+    <MULTI>YES</MULTI>
+    <TABLELIST>
+        <TABLENAME ALIAS="t1" MASTER="YES">%EXIMTRX%.TRMM_MASTER</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="C_MAIN_REF" DATATYPE="12" DESC="MAIN REF. NO." EEType="SYS_VARCHAR_40" HIDDEN="">t1.C_MAIN_REF</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT DISTINCT </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">t1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.TRMM_MASTER t1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">t1.C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> ='M' AND </SQL>
+        <SQL DT="91" EEType="DATE" POS="WHEFLD" TYPE="FLD">t1.MATURITY_DT</SQL>
+        <SQL TYPE="SQL"> &lt;= </SQL>
+        <SQL DT="var" DV="SYS_BUSI_DATE" TYPE="FldValue">FldValue0</SQL>
+        <SQL TYPE="SQL"> AND ( </SQL>
+        <SQL DT="12" EEType="Varchar_30" POS="WHEFLD" TYPE="FLD">t1.SETL_ACTION</SQL>
+        <SQL TYPE="SQL"> &lt;&gt; 'ReturnDoc' AND </SQL>
+        <SQL DT="12" EEType="Varchar_30" POS="WHEFLD" TYPE="FLD">t1.SETL_ACTION</SQL>
+        <SQL TYPE="SQL"> &lt;&gt;'CancelConf' ) AND </SQL>
+        <SQL DT="12" EEType="Varchar_40" POS="WHEFLD" TYPE="FLD">t1.CURRENT_STATUS</SQL>
+        <SQL TYPE="SQL"> ='BackFinish' AND SEND_VOU_VDT IS NOT NULL AND </SQL>
+        <SQL DT="1" EEType="INTERPRETER" ISFC="Y" POS="WHEFLD" TYPE="FLD">t1.CLS_FLG</SQL>
+        <SQL TYPE="SQL"> ='No' AND (</SQL>
+        <SQL DT="12" EEType="INTERPRETER" ISFC="Y" POS="WHEFLD" TYPE="FLD">t1.DEAL_TP</SQL>
+        <SQL TYPE="SQL"> ='IP' OR (</SQL>
+        <SQL DT="12" EEType="INTERPRETER" ISFC="Y" POS="WHEFLD" TYPE="FLD">t1.DEAL_TP</SQL>
+        <SQL TYPE="SQL"> ='IT' AND (( </SQL>
+        <SQL DT="12" EEType="INTERPRETER" ISFC="Y" POS="WHEFLD" TYPE="FLD">t1.WHT_SEND_MT202_FLG</SQL>
+        <SQL TYPE="SQL"> ='Yes' AND </SQL>
+        <SQL DT="12" EEType="INTERPRETER" ISFC="Y" POS="WHEFLD" TYPE="FLD">t1.SEND_MT202_FLG</SQL>
+        <SQL TYPE="SQL"> ='Yes') OR </SQL>
+        <SQL DT="12" EEType="INTERPRETER" ISFC="Y" POS="WHEFLD" TYPE="FLD">t1.WHT_SEND_MT202_FLG</SQL>
+        <SQL TYPE="SQL"> ='No')))</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="1" EETYPE="SYS_CHAR_1">t1.C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="91" EETYPE="DATE">t1.MATURITY_DT</FIELD>
+        <FIELD DATATYPE="12" EETYPE="Varchar_30">t1.SETL_ACTION</FIELD>
+        <FIELD DATATYPE="12" EETYPE="Varchar_30">t1.SETL_ACTION</FIELD>
+        <FIELD DATATYPE="12" EETYPE="Varchar_40">t1.CURRENT_STATUS</FIELD>
+        <FIELD DATATYPE="1" EETYPE="INTERPRETER">t1.CLS_FLG</FIELD>
+        <FIELD DATATYPE="12" EETYPE="INTERPRETER35">t1.DEAL_TP</FIELD>
+        <FIELD DATATYPE="12" EETYPE="INTERPRETER35">t1.DEAL_TP</FIELD>
+        <FIELD DATATYPE="12" EETYPE="FLAG_3">t1.WHT_SEND_MT202_FLG</FIELD>
+        <FIELD DATATYPE="12" EETYPE="FLAG_3">t1.SEND_MT202_FLG</FIELD>
+        <FIELD DATATYPE="12" EETYPE="FLAG_3">t1.WHT_SEND_MT202_FLG</FIELD>
+    </CLAUSEFIELD>
+    <before-days-fld></before-days-fld>
+    <view-table></view-table>
+    <tables></tables>
+    <sql-task></sql-task>
+    <report-list></report-list>
+</root>

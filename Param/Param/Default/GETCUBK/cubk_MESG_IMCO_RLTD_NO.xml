@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire IMCO Major Table" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>IMCO_RLTD_NO</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.IMCO_EM_TRXN</table-name>
+        <table-desc>Import Collection Transaction</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <COLL_NO DESC="Collection Ref Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</COLL_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <COLL_NO DESC="Collection Ref Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</COLL_NO>
+        <DRWE_NM DESC="Drawee Name" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">DRWE_NM</DRWE_NM>
+        <COLL_CCY DESC="Collection Currency" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">COLL_CCY</COLL_CCY>
+        <COLL_AMT DESC="Collection Amount" DT="3" HIDDEN="" TYPE="F" WTYPE="CASE">COLL_AMT</COLL_AMT>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

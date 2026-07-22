@@ -1,0 +1,1 @@
+stp.setFunc("ReceiveMT769");

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("Begin: Assign function R2StatusExtensionNotification");
+var GetTxId = stp.getValue("/Document/StsXtnsnNtfctn/TxId","Id");//add
+stp.writeLog("TSU_BIC="+GetTxId[0]);//add
+var bu=stp.getTSUUnitCode();
+stp.writeLog("C_UNIT_CODE="+bu);
+
+var fld_list = stp.addFieldList(null,"C_MAIN_REF");     
+var sql_condition = stp.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+sql_condition     = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+sql_condition = stp.addSQLCondition(sql_condition,"C_TRX_STATUS","M");
+var result = stp.executeQuery("TSUM_EM_BASELINE",fld_list,sql_condition);
+var mainRef = stp.getDBFieldValue(result,"C_MAIN_REF");
+stp.writeLog ("C_MAIN_REF="+mainRef);
+stp.updateFieldValue("","C_MAIN_REF",mainRef);
+stp.updateFieldValue("","C_TRX_REF",mainRef);
+//Modify by huyechao 2014-01-09--S
+var status = stp.getValue("/Document/StsXtnsnNtfctn/XtndedSts","Sts");
+stp.updateFieldValue("","TSUR2_TRX_STATUS",status[0]);
+//Modify by huyechao 2014-01-09--E
+
+// for reqforactn begin
+//setNodeAttribute(String xPath)
+
+var TSU_REQ_ACT_TP = stp.getValue("/Document/StsXtnsnNtfctn/ReqForActn","Tp");
+stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+if ( TSU_REQ_ACT_TP[0]== undefined)
+{
+	stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");	
+	stp.updateFieldValue("/root/domData","TSU_REQ_ACT_DESC","");
+	stp.setNodeAttribute("/root/domData/TSU_REQ_ACT_DESC");
+}
+//for reqforactn end
+
+var OurBIC=stp.getTSUBIC();
+stp.writeLog("ourBIC="+OurBIC);
+
+var FirstREF = stp.getValue("/Document/StsXtnsnNtfctn/UsrTxRef","Id" );
+var FirstBIC = stp.getValue("/Document/StsXtnsnNtfctn/UsrTxRef/IdIssr","BIC");
+var SecondREF = stp.getValue("/Document/StsXtnsnNtfctn/UsrTxRef","Id");
+var SecondBIC = stp.getValue("/Document/StsXtnsnNtfctn/UsrTxRef/IdIssr","BIC");
+
+
+stp.writeLog("FirstREF==========================================================                     "+FirstREF[0]);
+stp.writeLog("FirstBIC==========================================================                     "+FirstBIC[0]);
+stp.writeLog("SecondREF==========================================================                     "+SecondREF[0]);
+stp.writeLog("SecondBIC==========================================================                     "+SecondBIC[0]);
+
+var BIC1 = stp.compareString(FirstBIC,OurBIC);
+var BIC2 = stp.compareString(SecondBIC,OurBIC);
+stp.writeLog("BIC1--------------------" +BIC1);
+stp.writeLog("BIC2--------------------" +BIC2);
+
+if(BIC1 == "true")
+{
+    stp.writeLog("333333333333          -----------------------------------------------------$$$$$$$$$$$$$$$$$$$$$$%%%%%%%%%%%");
+    stp.updateFieldValue("TSU_OUR_BIC",FirstBIC);
+	stp.updateFieldValue("TSU_OUR_REF",FirstREF);
+	stp.updateFieldValue("TSU_THEIR_REF",SecondREF);
+	stp.updateFieldValue("TSU_THEIR_BIC",SecondBIC);
+	//stp.updateFieldValue("C_MAIN_REF",FirstREF);		
+}
+if(BIC2 == "true")
+{
+	stp.writeLog("1111111111111111          -----------------------------------------------------$$$$$$$$$$$$$$$$$$$$$$%%%%%%%%%%%");
+	stp.updateFieldValue("TSU_OUR_BIC",SecondBIC);
+	stp.updateFieldValue("TSU_OUR_REF",SecondREF);
+	stp.updateFieldValue("TSU_THEIR_REF",FirstREF);
+	stp.updateFieldValue("TSU_THEIR_BIC",FirstBIC);	
+	//stp.updateFieldValue("C_MAIN_REF",SecondREF);	
+}
+stp.setAutoProcess(true); 
+stp.setFunc("R2StatusExtensionsNotification");
+stp.writeLog("End: Assign function R2StatusExtensionNotification");]]></js-content>
+</root>

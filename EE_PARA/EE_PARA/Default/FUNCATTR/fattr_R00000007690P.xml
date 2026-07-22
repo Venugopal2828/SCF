@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR AutoGen-Parameter-Version="1.0">
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Master Edit Rec">TrxMasterEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE/>
+        <IS_ALLOWED_PRINT/>
+        <MODULE>PYMT</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.PYMT_MASTER</TABLE_NAME>
+        <TABLE_DESC>PYMT_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Edit Master</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Event Edit Rec">TrxEventEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE/>
+        <IS_ALLOWED_PRINT/>
+        <MODULE>PYMT</MODULE>
+        <EVENT>Inward Payments</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.PYMT_EVENT</TABLE_NAME>
+        <TABLE_DESC>PYMT_EVENT</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Edit Event</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Generate Swift">TrxGenerateSwift</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>PYMT</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.</TABLE_NAME>
+        <TABLE_DESC/>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE/>
+    </COMPONENT>
+</FUNCATTR>

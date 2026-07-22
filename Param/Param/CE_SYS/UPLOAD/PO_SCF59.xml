@@ -1,0 +1,26 @@
+<root>
+	<main Name="Agreement" splitType="byRow" sheetName="PO" row="3">
+		<cell col="A" EEType="VARCHAR" allowEmpty="T" desc="Reference">REF</cell>
+		<cell col="B" EEType="VARCHAR" allowEmpty="F" desc="Unit Code">C_UNIT_CODE</cell>
+		<cell col="C" EEType="VARCHAR" allowEmpty="F" desc="Business Type">FA_BUSI_TYPE</cell>
+		<cell col="D" EEType="VARCHAR" allowEmpty="F" desc="Main Customer Id">FA_ANCHOR_ID</cell>
+		<cell col="E" EEType="VARCHAR" allowEmpty="F" desc="Main Customer Register ID">FA_ANCHOR_REG_NO</cell>
+		<cell col="F" EEType="VARCHAR" allowEmpty="F" desc="Main Customer Name">FA_ANCHOR_NM</cell>
+		<cell col="G" EEType="VARCHAR" allowEmpty="F" desc="Agreement Number">FA_CNTR_DOC_NO</cell>
+	</main>
+	<child Name="PO" splitType="byRow" sheetName="PO" row="7">
+		<cell col="A" EEType="VARCHAR" allowEmpty="F" desc="SBR Ref">FA_SBR_REF</cell>
+		<cell col="B" EEType="VARCHAR" allowEmpty="F" desc="Register ID">FA_COUNTER_REG_NO</cell>
+		<cell col="C" EEType="VARCHAR" allowEmpty="F" desc="Counterparty Name">FA_COUNTER_NM</cell>
+		<cell col="D" EEType="VARCHAR" allowEmpty="F" desc="DocType">FA_DOC_TYPE</cell>
+		<cell col="E" EEType="VARCHAR" allowEmpty="F" desc="Doc Nr">PO_NO</cell>
+		<cell col="F" EEType="VARCHAR" allowEmpty="F" desc="Doc Currency">PO_CCY</cell>
+		<cell col="G" EEType="VARCHAR" allowEmpty="F" desc="Doc Amt">PO_AMT</cell>
+		<cell col="H" EEType="VARCHAR" allowEmpty="F" desc="Doc Date">PO_DT</cell>
+		<cell col="I" EEType="VARCHAR" allowEmpty="F" desc="Latest Shipment Date">FA_LATEST_SHIP_DT</cell>
+	</child>
+	<keys>
+		<field>REF</field>
+	</keys>
+	<unit>FA_ANCHOR_ID</unit>
+</root>

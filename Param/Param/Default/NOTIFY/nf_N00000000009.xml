@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[var sEmailId=NS.createMail("CSBankSupport","Apply for Import LC");
+//var sEmailto = NS.getFieldValue("EMAIL_TO");
+var sEmailto = "michael.song@chinasystems.com";
+NS.writeLog("sEmailto="+sEmailto);
+if (sEmailto != null) {
+    NS.attachFormReport(sEmailId,"IMLC_ApplyImpLc");
+    NS.setAutoSend(sEmailId, true);
+ 
+}
+var nsTask = NS.createNotification("Apply Import LC Task");
+var authUsers = NS.getNextAuthorizerInfo();
+NS.setNotifyTo(nsTask,authUsers);
+var sSubject = "Waiting for Approve "+NS.getFieldValue("C_MAIN_REF");
+NS.setNotifySubject(nsTask,sSubject);
+var comp = NS.getCompanyInfo("C_UNIT_CODE");
+NS.setNotifyPara(nsTask,"C_MAIN_REF",NS.getFieldValue("C_MAIN_REF"));
+NS.setNotifyPara(nsTask,"C_UNIT_CODE",comp[0]);
+NS.setNotifyPara(nsTask,"I_EVENT_TIMES",NS.getEventTimes());
+NS.setNotifyPara(nsTask,"CATA_FUNC_ID",NS.getFuncId());
+
+var nscurrentapplylc = NS.createNotification("Apply Import LC Current User");
+var nscurrentuser = NS.getCurrentUserInfo();
+NS.appendNotifyTo(nscurrentapplylc,nscurrentuser);
+var sSub = "L/C is submitted: "+NS.getFieldValue("C_MAIN_REF");
+NS.setNotifySubject(nscurrentapplylc,sSub);]]></js-content>
+</root>

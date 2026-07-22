@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="X101_SEQ_B_23E_NEW" Max="n" Min="0"
+    Name="X101_SEQ_B_23E_NEW" PendingStore="N"
+    Screen="SCRN/DO/101_SEQ_B_23E.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="X101_SEQ_B_23E_NEW"/>
+    <PK>
+        <PKNAME>C_DO_NAME</PKNAME>
+        <PKNAME>I_SEQ_NUM</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="PYMT_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Instruction Code" DispInGrid="N" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">X103_INSTRCODE_23E</Element>
+    </Elements>
+</DO>

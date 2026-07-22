@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <module>DISC</module>
+    <name>testInvLoan</name>
+    <desc>testInvLoan</desc>
+    <head-info>
+        <table-name>DISC_INV</table-name>
+        <table-desc>DISC_INV</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>T</mr-flag>
+        <err-info>aaaa</err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition/>
+    </head-info>
+    <mapping>
+        <FA_LOAN_AMT fv_type="F" mf="F" oper="+=">FA_LOAN_PRIN_AMT</FA_LOAN_AMT>
+        <FA_LOAN_INT_AMT fv_type="F" mf="F" oper="+=">FA_LOAN_INT_AMT</FA_LOAN_INT_AMT>
+        <FA_INV_DIS_TIMES fv_type="F" mf="F" oper="+=">1</FA_INV_DIS_TIMES>
+    </mapping>
+</root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("Start: Assign function incoming020");
+var GetTxId = stp.getValue("/Document/MisMtchAccptnc/TxId","Id");
+var bu = stp.getTSUUnitCode();
+var fld_list  = stp.addFieldList(null,"C_MAIN_REF");
+var sql_condition = stp.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+sql_condition = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+var result   = stp.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+var C_MAIN_REF= stp.getDBFieldValue(result,"C_MAIN_REF");
+stp.writeLog("C_MAIN_REF:"+C_MAIN_REF);
+stp.updateFieldValue("/root/domData","C_MAIN_REF",C_MAIN_REF);
+stp.setAutoProcess(true);
+stp.updateFieldValue("/root/domData","TSU_COE_STS",'C2B');
+stp.setFunc("ReceiveMisMatchRejection");
+stp.writeLog("End: Assign function incoming020");]]></js-content>
+</root>

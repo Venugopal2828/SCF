@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>P16032200000</ID>
+    <CRTJSP POS="C">FAEF_ReqCNTrans.jsp</CRTJSP>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_MultiCatalog.jsp</JSPFILE>
+    <ADAPT/>
+    <TABLENAME>CETRX.TRX_INBOX</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Main Ref." EEType="" HIDDEN="" NOEVENT="N">C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Company Code" EEType="" HIDDEN="H" NOEVENT="N">C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Trx Status" EEType="" HIDDEN="H" NOEVENT="N">C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="3" DESC="Authorise Amount" EEType="AMT" HIDDEN="" ISAMT="Y" NOEVENT="N">AUTH_AMT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Authorise CCY" EEType="CCY" HIDDEN="" NOEVENT="N">AUTH_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" NOEVENT="N">CURRNT_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="" HIDDEN="H" NOEVENT="N">C_FUNC_SHORT_NAME</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC>Authorise Transaction</DESC>
+    <CLAUSE>
+        <SQL DESC="Trx Status" DT="12" EEType="" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+        <SQL EEType="" TYPE="SQL"> IN (&apos;P&apos;,&apos;T&apos;,&apos;R&apos;) ORDER BY </SQL>
+        <SQL DESC="Main Ref." DT="12" EEType="" TYPE="FLD" WTYPE="CASE">C_MAIN_REF</SQL>
+        <SQL EEType="" TYPE="SQL"> DESC</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Trx Status">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Main Ref.">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

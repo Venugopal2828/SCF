@@ -1,0 +1,138 @@
+<root>
+	<regexp-lib>
+		<item name="invalid.char" ignorecase="false"><![CDATA[[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]]]></item>
+		<item name="xss.iframe"><![CDATA[<iframe\s*]]></item>
+		<item name="xss.script"><![CDATA[<[/]?\s*script\.*>]]></item>
+		<item name="xss.html"><![CDATA[<\s*(image |img |iframe ).*>]]></item>
+		<item name="sys.valid.char"><![CDATA[^[a-z 0-9,_/')(=+-.]*$]]></item>
+		<item name="sys.strict.valid.char"><![CDATA[^\s*[a-z0-9_]*\s*$]]></item>
+		<item name="valid.number" ignorecase="false"><![CDATA[^[0-9]*[.]?[0-9]*$]]></item>
+		<item name="valid.integer" ignorecase="false"><![CDATA[^[0-9]*$]]></item>
+		<item name="valid.char"><![CDATA[^[a-z0-9='_%]*$]]></item>
+		<item name="valid.char.fundesc"><![CDATA[^[a-z0-9-/\s)(]*$]]></item>
+		<item name="valid.criteria.op"><![CDATA[^like|=|<|>|<>$]]></item>
+		<item name="valid.criteria.value"><![CDATA[^[%]?[a-z0-9 '_|-]*[%]?$]]></item>
+	</regexp-lib>
+	<fieldcheck>
+		<known-check>
+			<whitelist>
+				<regexp-item name="valid.integer"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>OP_TOTAL</fld>
+				<fld>CATA_NUM</fld>
+				<fld>CATA_CURR</fld>
+				<fld>totalPageNum</fld>
+				<fld>currentPageNo</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.strict.valid.char"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>IMG_INDEX</fld>
+				<fld>OP_TYPE</fld>
+				<fld>ITEM_NAME</fld>
+				<fld>FUNC_ID</fld>
+				<fld>PRODUCT_ID</fld>
+				<fld>C_PRODUCT_ID</fld>
+				<fld>INI_ITEM_ID</fld>
+				<fld>LOGIN_NAME</fld>
+				<fld>EXCELTYPE</fld>
+				<fld>ID</fld>
+				<fld>CATA_ITEM_ID</fld>
+				<fld>SEARCH_FLD</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.valid.char"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>SEL_TYPE</fld>
+				<fld>autoField</fld>
+			  <fld>PRODUCT_NAME</fld>
+				<fld>C_BUSINESS_UNIT</fld>
+				<fld>_TRX_STATUS</fld>
+				<fld>_ACT_TYPE</fld>
+				<fld>TRAN_NAME</fld>
+				<fld>TRAN_TYPE</fld>
+				<fld>UNIT_CODE</fld>
+				<fld>INIT_SELECTED</fld>
+				<fld>CE_SELECT_CATAFIELD</fld>
+				<fld>_Sub_Sel_CheckBox</fld>
+				<fld>_Root_Sel_CheckBox</fld>
+				<fld>FUNC_DESC</fld>
+				<fld>PREV_TRAN_NAME</fld>
+				<fld>SELECTEDFIELDS</fld>
+				<fld>SAVED</fld>
+				<fld>ExcelType</fld>
+				<fld>IMG_INQ_TYPE</fld>
+				<fld>TRXL_TYPE</fld>
+				<fld>DoType</fld>
+				<fld>CATA_PAGE_SIZE</fld>
+				<fld>TITLE_NAME</fld>
+				<fld>MENU_LOGIN_FLAG</fld>
+				<fld>C_UNIT_CODE</fld>
+				<fld>C_USER_ID</fld>
+				<fld>C_PRODUCT_NAME</fld>
+				<fld>LOGOUT_CLOSE</fld>
+				<fld>ITEM_RDO</fld>
+				<fld>_continue</fld>
+				<fld>SetCataTo</fld>
+				<fld>CataCheckElement</fld>
+				<fld>GetCataFrom</fld>
+				<fld>ITEM_ID</fld>
+				<fld>CATA_TYPE</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="valid.criteria.op"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>SEARCH_OP</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="valid.criteria.value"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>SEARCH_VALUE</fld>
+				<fld>HAVE_SQL_CONDITION</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="valid.char.fundesc"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>FUN_DESC</fld>
+			</fields>
+		</known-check>
+		<unknown-check>
+			<whitelist>
+			</whitelist>
+			<blacklist>
+				<regexp-item name="xss.script"/>
+				<regexp-item name="xss.iframe"/>
+				<regexp-item name="xss.html"/>
+				<regexp-item name="invalid.char"/>
+			</blacklist>
+		</unknown-check>
+	</fieldcheck>
+</root>

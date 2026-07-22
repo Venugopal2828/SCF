@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>X103_BENECU_ID_59A_NONCU</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_TRX_STATUS ALIAS="T0" DESC="C_TRX_STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X103_BENECU_ID_59A</C_MAIN_REF>
+            <CNTY_CODE ALIAS="T0" DESC="CNTY_CODE" DT="1" TYPE="S">SYS_BANK_COUNTRY</CNTY_CODE>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X103_BENECU_ID_59A</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">X103_BENECU_NM_59A</PARTY_NM>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">X103BENECUADD1_59A</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address2" DT="12" HIDDEN="F" TYPE="F">X103BENECUADD2_59A</ADD2>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="Address3" DT="12" HIDDEN="F" TYPE="F">X103BENECUADD3_59A</ADD3>
+        <RECORDER_TYPE ALIAS="T0" DBFUNC="" DESC="Record Type" DT="1" HIDDEN="F" TYPE="F">RECORDER_TYPE</RECORDER_TYPE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T0.PARTY_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_BENECU_NM_59A</SQL>
+            <SQL TYPE="SQL">%' AND (</SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.RECORDER_TYPE</SQL>
+            <SQL TYPE="SQL"> = 'Customer' OR </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.RECORDER_TYPE</SQL>
+            <SQL TYPE="SQL"> = 'NonCustomer') AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_BENECU_ID_59A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'M' AND </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+        <condition seq="2">
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'M' AND
+            </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">%' AND
+            </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_BENECU_NM_59A</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

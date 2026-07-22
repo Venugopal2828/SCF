@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">SHGT_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>IMCO</module-name>
+        <cubk-mapping-name>SG_NO</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SG_NO</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">SG_NO</C_MAIN_REF>
+        <SG_CCY ALIAS="T0" DBFUNC="" DESC="Shipping Guarantee CCY" DT="1" HIDDEN="F" TYPE="F">SG_CCY</SG_CCY>
+        <SG_AMT ALIAS="T0" DBFUNC="" DESC="Shipping Guarantee Amount" DT="3" HIDDEN="F" TYPE="F">SG_AMT</SG_AMT>
+        <APPL_ID ALIAS="T0" DBFUNC="" DESC="Applicant ID" DT="1" HIDDEN="F" TYPE="F">DRWE_ID</APPL_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="SYS_VARCHAR_16" TYPE="TBL_FLD">T0.C_FUNC_SHORT_NAME</SQL>
+            <SQL TYPE="SQL"> &lt;&gt; 'REG_SG_IC' ORDER BY </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

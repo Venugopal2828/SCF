@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/FAEF_IndirectPayment.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <VOUCHER>
+        <ID>F00000001063</ID>
+        <NAME/>
+    </VOUCHER>
+    <EDI>
+        <ID>F00000001064</ID>
+        <NAME/>
+    </EDI>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>SCF Transaction</MODULE_DESC>
+        <EVENT>EFTransaction</EVENT>
+        <ID>F05030702867</ID>
+        <NAME>IndirectPayment</NAME>
+        <DESC>Indirect Payment</DESC>
+        <FUNSHORTNAME>IndirectPayment</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>Y</ADDMASTER>
+        <ATTR_ID name="IndirectPayment">R00000006005</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000006084</CATALOGID>
+        <GAPI>F00000001065</GAPI>
+        <TransferTo>F00000001066</TransferTo>
+    </FUNCTION>
+</FUNC>

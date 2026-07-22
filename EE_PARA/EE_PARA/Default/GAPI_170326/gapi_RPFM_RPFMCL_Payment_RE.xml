@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>T</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value>TrxGenerateLMTS</gapi-type-value>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>LMTS</other-system-id>
+        <other-system-interface>CL104</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>RPFM</module>
+        <interface-mapping-name>RPFMCL_Payment</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>R</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <LM_TRX_REF ec-tag="N" fv-type="F" op-tag="N" order="1">PART_CNTR_REF</LM_TRX_REF>
+        <LM_RSV_LINK ec-tag="Y" fv-type="F" op-tag="N" order="2">LM_RSV_LINK</LM_RSV_LINK>
+    </send-msg-map>
+    <recv-msg-map/>
+    <send-item/>
+</gapi>

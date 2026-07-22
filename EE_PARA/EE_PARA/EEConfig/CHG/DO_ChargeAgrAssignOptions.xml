@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="charge agreements be assigned from" Max="n" Min="0"
+    Name="ChargeAgrAssignOptions" PendingStore="Y" Screen="ChargeAgrAssign"
+    StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="STD_CHG_RATE_RULE"/>
+    <PK>
+        <PKNAME>CSID</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="CSID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">CSID</Element>
+        <Element DATATYPE="12" Desc="Product Code" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">C_PRODUCT_CODE</Element>
+        <Element DATATYPE="12" Desc="Commission Code" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">C_COMMISSION_CODE</Element>
+        <Element DATATYPE="12" Desc="Charge Rate Description" DispInGrid="Y"
+            EDIT="N" EEType="Varchar_128" FldType="" Value="">C_CHARGE_RATE_DESC</Element>
+        <Element DATATYPE="12" Desc="Calculate Type" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_30" FldType="" Value="">C_CALCULATE_TYPE</Element>
+        <Element DATATYPE="1" Desc="Agreement Currency" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">C_CCY</Element>
+        <Element DATATYPE="91" Desc="Form Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">D_FORM_DATE</Element>
+        <Element DATATYPE="91" Desc="To Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">D_TO_DATE</Element>
+    </Elements>
+</DO>

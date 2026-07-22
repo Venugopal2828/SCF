@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_CLEARING</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>button2_205</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_CNTY_CODE ALIAS="T0" DESC="Country Code" DT="1" TYPE="S">SYS_BANK_COUNTRY</C_CNTY_CODE>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_ACCT_NR ALIAS="T0" DBFUNC="" DESC="C_ACCT_NR" DT="12" HIDDEN="F" TYPE="F">LIAB_ACNO</C_ACCT_NR>
+        <C_ACCT_WITH_ID ALIAS="T0" DBFUNC="" DESC="Account Held With ID" DT="12" HIDDEN="F" TYPE="F">X202_ACC_BKID_57A</C_ACCT_WITH_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="CCY" TYPE="TBL_FLD">T0.C_ACCT_CCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">LC_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_11" TYPE="TBL_FLD">T0.C_ACCT_WITH_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">X202_ACC_BKID_57A</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CLEAR_VALID</SQL>
+            <SQL TYPE="SQL"> = 'T' AND </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.C_CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

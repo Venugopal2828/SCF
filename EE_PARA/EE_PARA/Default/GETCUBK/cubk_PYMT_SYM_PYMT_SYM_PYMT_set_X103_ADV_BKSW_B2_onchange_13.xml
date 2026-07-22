@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYM_PYMT_SYM_PYMT_set_X103_ADV_BKSW_B2_onchange_13</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKID_B2</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKNM_B2</PARTY_NM>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD1_B2</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address2" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD2_B2</ADD2>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="Address3" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD3_B2</ADD3>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="BIC" TYPE="TBL_FLD">T0.SW_ADD</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">X103_ADV_BKSW_B2</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

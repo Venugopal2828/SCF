@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">EXLC</MODULE>
+        <MODULE_DESC>Export Letters of Credit</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030700905</ID>
+        <NAME>EXLC Received Doc Presentation</NAME>
+        <DESC>Received Document Presentation</DESC>
+        <FUNSHORTNAME>RecvdDocPrestin</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">EXLC_RecvdDocPrestin.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700904</ID>
+        <NAME>EXLC Received Doc Presentation_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700904</ID>
+        <NAME>EXLC Received Doc Presentation_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000116</ID>
+        <NAME>EXLC Received Doc Presentation_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="FinanceEstablishment" Max="1" Min="1"
+    Name="FinanceEstablishment" PendingStore="Y"
+    Screen="SCRN/DO/FinanceEstablishment.jsp" StoreInto="C" StoreType="C">
+    <Component>FinanceEstablish</Component>
+    <PK>
+        <PKNAME>CFNC_C_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="CFNC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="EPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="EXCO_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="RPFM_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="1" Desc="Finance Account Number" DispInGrid="N"
+            EDIT="N" EEType="ACNO" FldType="" Value="">CFNC_C_AC_NO</Element>
+        <Element DATATYPE="12" Desc="Finance Account Type" DispInGrid="N"
+            EDIT="N" EEType="Varchar_10" FldType="" Value="">CFNC_C_AC_TYPE</Element>
+        <Element DATATYPE="12" Desc="Finance Approve Status" DispInGrid="N"
+            EDIT="N" EEType="Varchar_1" FldType="" Value="">CFNC_C_APPROVE_STATUS</Element>
+        <Element DATATYPE="1" Desc="Finance CCY" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">CFNC_C_CCY</Element>
+        <Element DATATYPE="12" Desc="Finance Function Name" DispInGrid="N"
+            EDIT="N" EEType="Varchar_16" FldType="" Value="">CFNC_C_FUNC_NAME</Element>
+        <Element DATATYPE="2" Desc="Grace Days" DispInGrid="N" EDIT="N"
+            EEType="Numeric_22" FldType="" Value="">CFNC_C_GRACE_DAYS</Element>
+        <Element DATATYPE="1" Desc="Grace Days Flag" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">CFNC_C_GRACE_FLG</Element>
+        <Element DATATYPE="12" Desc="Finance Init Flag" DispInGrid="N" EDIT="N"
+            EEType="Varchar_40" FldType="" Value="">CFNC_C_INIT_FLG</Element>
+        <Element DATATYPE="12" Desc="Interest Calculation Type" DispInGrid="N"
+            EDIT="N" EEType="Varchar_40" FldType="" Value="">CFNC_C_INT_MODE</Element>
+        <Element DATATYPE="12" Desc="Interest Calculation Method" DispInGrid="N"
+            EDIT="N" EEType="Varchar_40" FldType="" Value="">CFNC_C_INT_MTHD</Element>
+        <Element DATATYPE="12" Desc="Finance Last Reference" DispInGrid="N"
+            EDIT="N" EEType="Varchar_40" FldType="" Value="">CFNC_C_LAST_REF</Element>
+        <Element DATATYPE="12" Desc="Finance Last Type" DispInGrid="N" EDIT="N"
+            EEType="Varchar_40" FldType="" Value="">CFNC_C_LAST_TYPE</Element>
+        <Element DATATYPE="12" Desc="Finance Reference" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_40" FldType="" Value="">CFNC_C_REF</Element>
+        <Element DATATYPE="1" Desc="Finance Type" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">CFNC_C_TYPE</Element>
+        <Element DATATYPE="12" Desc="Finance Type Description" DispInGrid="N"
+            EDIT="N" EEType="Varchar_140" FldType="" Value="">CFNC_C_TYPE_DESC</Element>
+        <Element DATATYPE="12" Desc="Finance Unit Code" DispInGrid="N" EDIT="N"
+            EEType="Varchar_12" FldType="" Value="">CFNC_C_UNIT_CODE</Element>
+        <Element DATATYPE="91" Desc="Start Date" DispInGrid="N" EDIT="Y"
+            EEType="DATE" FldType="" Value="">CFNC_D_DT</Element>
+        <Element DATATYPE="91" Desc="End Date" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">CFNC_D_DUE_DT</Element>
+        <Element DATATYPE="91" Desc="Payment Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">CFNC_D_PAY_DT</Element>
+        <Element DATATYPE="91" Desc="Finance Post From Date" DispInGrid="N"
+            EDIT="N" EEType="DATE" FldType="" Value="">CFNC_D_POST_FROM_DT</Element>
+        <Element DATATYPE="91" Desc="Finance Post To Date" DispInGrid="N"
+            EDIT="N" EEType="DATE" FldType="" Value="">CFNC_D_POST_TO_DT</Element>
+        <Element DATATYPE="91" Desc="Finance Register Date" DispInGrid="N"
+            EDIT="N" EEType="DATE" FldType="" Value="">CFNC_D_REG_DT</Element>
+        <Element DATATYPE="2" Desc="Interest Days Basis" DispInGrid="N" EDIT="N"
+            EEType="Numeric_22" FldType="" Value="">CFNC_I_BASIC_DAYS</Element>
+        <Element DATATYPE="2" Desc="Period" DispInGrid="Y" EDIT="N"
+            EEType="Numeric_22" FldType="" Value="">CFNC_I_DAYS</Element>
+        <Element DATATYPE="2" Desc="Finance Number" DispInGrid="N" EDIT="N"
+            EEType="Numeric_22" FldType="" Value="">CFNC_I_FINC_TIMES</Element>
+        <Element DATATYPE="3" Desc="Finance Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CFNC_N_AMT_LCCCY</Element>
+        <Element DATATYPE="3" Desc="Finance Transaction Amount" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CFNC_N_AMT_TXCCY</Element>
+        <Element DATATYPE="3" Desc="Finance Balance" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CFNC_N_BAL</Element>
+        <Element DATATYPE="8" Desc="Finance Close Rate" DispInGrid="N" EDIT="N"
+            EEType="RATE" FldType="" Value="">CFNC_N_CCY_CLOSE_RT</Element>
+        <Element DATATYPE="8" Desc="Finance Customer Rate" DispInGrid="N"
+            EDIT="N" EEType="RATE" FldType="" Value="">CFNC_N_CCY_CUST_RT</Element>
+        <Element DATATYPE="8" Desc="Finance Exchange Rate" DispInGrid="N"
+            EDIT="N" EEType="RATE" FldType="" Value="">CFNC_N_CCY_EXCH_RT</Element>
+        <Element DATATYPE="3" Desc="Finance Total Amount" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CFNC_N_FINC_TTL_AMT</Element>
+        <Element DATATYPE="3" Desc="Finance Total Balance" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CFNC_N_FINC_TTL_BAL</Element>
+        <Element DATATYPE="8" Desc="Base Rate" DispInGrid="N" EDIT="N"
+            EEType="RATE" FldType="" Value="">CFNC_N_LIBOR_RT</Element>
+        <Element DATATYPE="8" Desc="Margin" DispInGrid="N" EDIT="N"
+            EEType="RATE" FldType="" Value="">CFNC_N_MARGIN_RT</Element>
+        <Element DATATYPE="2" Desc="Finance Percentage" DispInGrid="N" EDIT="N"
+            EEType="Numeric_18_3" FldType="" Value="">CFNC_N_PCT</Element>
+        <Element DATATYPE="8" Desc="Interest Rate" DispInGrid="N" EDIT="N"
+            EEType="RATE" FldType="" Value="">CFNC_N_RT</Element>
+        <Element DATATYPE="12" Desc="Finance Origin Main Reference"
+            DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">CFNC_C_ORIGIN_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Finance Origin Module" DispInGrid="N"
+            EDIT="N" EEType="" FldType="" Value="">CFNC_C_ORIGIN_MODULE</Element>
+        <Element DATATYPE="3" Desc="Interest Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CFNC_N_PRE_INT</Element>
+        <Element DATATYPE="12" Desc="Finance Origin Transaction Reference"
+            DispInGrid="N" EDIT="N" EEType="RELATED_REF" FldType="" Value="">CFNC_C_ORIGIN_TRX_REF</Element>
+        <Element DATATYPE="3" Desc="Net Amount Payable" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CFNC_N_NET_AMT</Element>
+        <Element DATATYPE="91" Desc="Master Maturity Date" DispInGrid="N"
+            EDIT="N" EEType="DATE" FldType="" Value="">CFNC_D_MAST_MATU_DT</Element>
+        <Element DATATYPE="3" Desc="Transaction Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CFNC_N_TRX_AMT</Element>
+        <Element DATATYPE="1" Desc="Finance Transaction CCY" DispInGrid="N"
+            EDIT="N" EEType="CCY" FldType="" Value="">CFNC_C_TRX_CCY</Element>
+        <Element DATATYPE="12" Desc="Finance Reference" DispInGrid="N" EDIT="N"
+            EEType="Varchar_40" FldType="" Value="">CFNC_C_RELT_REF</Element>
+        <Element DATATYPE="12" Desc="Interest Payable By" DispInGrid="N"
+            EDIT="N" EEType="Varchar_20" FldType="" Value="">CFNC_C_PAY_BY</Element>
+        <Element DATATYPE="12" Desc="Interest Payable At" DispInGrid="N"
+            EDIT="N" EEType="Varchar_40" FldType="" Value="">CFNC_C_INT_PAYABLE</Element>
+        <Element DATATYPE="3" Desc="Margin Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CFNC_N_MARGIN_AMT</Element>
+        <Element DATATYPE="12" Desc="Finance Flag" DispInGrid="N" EDIT="N"
+            EEType="FLAG" FldType="" Value="">CFNC_C_FINANCE_FLG</Element>
+        <Element DATATYPE="3" Desc="Base Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CFNC_N_LIBOR_AMT</Element>
+        <Element DATATYPE="12" Desc="Finance Account Description" DispInGrid="N"
+            EDIT="N" EEType="NARR(4*35)" FldType="" Value="">CFNC_AC_DESC</Element>
+        <Element DATATYPE="1" Desc="Finance Bank Int Account No" DispInGrid="N"
+            EDIT="N" EEType="ACNO" FldType="" Value="">CFNC_N_BANK_INT_AC_NO</Element>
+        <Element DATATYPE="12" Desc="DISCOUNT TAB KEY" DispInGrid="N" EDIT="N"
+            EEType="Varchar_128" FldType="" Value="">DISCOUNT_TAB_KEY</Element>
+        <Element DATATYPE="1" Desc="Inclusive/Exclusive" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">INC_EXC</Element>
+        <Element DATATYPE="2" Desc="Inclusive Period" DispInGrid="N" EDIT="N"
+            EEType="Numeric_22" FldType="" Value="">INC_PERIOD</Element>
+        <Element DATATYPE="12" Desc="C_FUNC_SHORT_NAME" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_FUNC_SHORT_NAME</Element>
+        <Element DATATYPE="12" Desc="CFNC RELA_MAIN_REF" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR16" FldType="" Value="">CFNC_RELA_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="CFNC DRAWING_REF" DispInGrid="N" EDIT="N"
+            EEType="RELATED_REF" FldType="" Value="">CFNC_DRAWING_REF</Element>
+        <Element DATATYPE="1" Desc="Principal Installment" DispInGrid="N"
+            EDIT="N" EEType="INTERPRETER" FldType="" Value="">CFNC_PRINCIPAL_INSTAL_FLG</Element>
+        <Element DATATYPE="1" Desc="Principal Installment Interval"
+            DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">CFNC_PRINCIPAL_INTERVAL</Element>
+        <Element DATATYPE="1" Desc="Interest Installment" DispInGrid="N"
+            EDIT="N" EEType="INTERPRETER" FldType="" Value="">CFNC_INTEREST_INSTAL_FLG</Element>
+        <Element DATATYPE="1" Desc="Interest Installment Interval"
+            DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">CFNC_INTEREST_INTERVAL</Element>
+        <Element DATATYPE="1" Desc="Discount Flag" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">DISCNT_FLG</Element>
+        <Element DATATYPE="91" Desc="CFNC C STATUS" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">CFNC_C_STATUS</Element>
+        <Element DATATYPE="1" Desc="Base Rate Type" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">CFNC_N_LIBOR_RT_TYPE</Element>
+        <Element DATATYPE="2" Desc="Transaction Local CCY" DispInGrid="N"
+            EDIT="N" EEType="Numeric_18_3" FldType="" Value="">CFNC_N_TRXCCY_LCY</Element>
+        <Element DATATYPE="91" Desc="Overdue Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">CFNC_OVERDUE_DT</Element>
+        <Element DATATYPE="1" Desc="Need Payment?" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">CFNC_PAYMENT_FLAG</Element>
+        <Element DATATYPE="8" Desc="Penalty Rate" DispInGrid="N" EDIT="N"
+            EEType="RATE" FldType="" Value="">CFNC_N_PNLT_RT</Element>
+        <Element DATATYPE="1" Desc="Interest Rate Type" DispInGrid="N" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">CFNC_N_RT_TYPE</Element>
+        <Element DATATYPE="12" Desc="Rate Type Narrative" DispInGrid="N"
+            EDIT="N" EEType="CHAR_20" FldType="" Value="">CFNC_N_RT_NARR</Element>
+    </Elements>
+</DO>

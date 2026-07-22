@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">IWGT</MODULE>
+        <MODULE_DESC>Inward Guarantees</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C08091700000</CATALOGID>
+        <ID>F05030700920</ID>
+        <NAME>Claim Payment Instructions</NAME>
+        <DESC>Claim / Payment Instructions</DESC>
+        <FUNSHORTNAME>ClmPmtInstr</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+    	<COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+        <CONFIRMID/>
+        <RIGHTID/>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">IWGT_ClmPmtInstr.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID></ID>
+        <NAME>Claim Payment Instructions_FORM</NAME>
+    </FORM>
+    <NOTIFY>
+        <ID>N00000000131</ID>
+        <NAME>Claim Payment Instructions_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

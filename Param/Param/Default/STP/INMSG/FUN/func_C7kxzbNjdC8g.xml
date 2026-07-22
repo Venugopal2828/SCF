@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive PO Uploaded Status");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMainRef = stp.getSimpleRef(17);
+stp.writeLog("sMainRef======================"+sMainRef);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+var sUnitCode = stp.getMsgTagVal("C_UNIT_CODE");
+stp.setCmpId(sUnitCode);
+stp.updateFieldValue("CURRNT_STATUS","Receive PO Uploaded Status");
+stp.writeLog("End: Receive PO Uploaded Status");]]></js-content>
+</root>

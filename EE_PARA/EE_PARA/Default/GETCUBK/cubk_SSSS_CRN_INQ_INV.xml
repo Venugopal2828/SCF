@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>CRN_INQ_INV</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <FA_DOC_NO ALIAS="T0" DESC="Doc No." DT="12" TYPE="F">FA_CRN_INV_LINK_NO</FA_DOC_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <FA_DOC_NO ALIAS="T0" DBFUNC="" DESC="Doc No." DT="12" HIDDEN="F" TYPE="F">FA_CRN_INV_LINK_NO</FA_DOC_NO>
+        <FA_DOC_AMT ALIAS="T0" DBFUNC="" DESC="Doc Amt" DT="3" HIDDEN="F" TYPE="F">FA_TEMP_AMT12</FA_DOC_AMT>
+        <FA_DOC_BAL ALIAS="T0" DBFUNC="" DESC="Doc Balance" DT="3" HIDDEN="F" TYPE="F">FA_TEMP_AMT11</FA_DOC_BAL>
+        <FA_PMT_TERMS ALIAS="T0" DBFUNC="" DESC="Payment Terms" DT="12" HIDDEN="F" TYPE="F">FA_PMT_TERMS</FA_PMT_TERMS>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

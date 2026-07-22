@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">SBLC_EM_DRAW</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SBLC</module-name>
+        <cubk-mapping-name>SYF_SBLC_SBLC_Update_ConfirmBusinessCheck_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <DRAW_CLOSE_FLAG ALIAS="T0" DBFUNC="" DESC="Drawing Close Flag" DT="1" HIDDEN="F" TYPE="F">TEMP_DRAW_CLOSE_FLAG</DRAW_CLOSE_FLAG>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' AND DRAW_CLOSE_FLAG ='NO'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

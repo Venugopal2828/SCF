@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" MULTI="YES" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R00000012556</ID>
+    <MODULE>SSSS</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC></DESC>
+    <TABLELIST>
+        <TABLENAME ALIAS="T1">%EXIMTRX%.ABLF_MASTER</TABLENAME>
+        <TABLENAME ALIAS="T2" MASTER="YES">%EXIMTRX%.ABLF_EM_REG</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="FA_CNTR_REF" DATATYPE="12" DESC="Contract Reference No." EEType="Varchar_40" HIDDEN="">T1.FA_CNTR_REF</FIELD>
+        <FIELD ALIAS="" COL="FA_CNTR_DOC_NO" DATATYPE="12" DESC="Contract Document No." EEType="Varchar_105" HIDDEN="">T1.FA_CNTR_DOC_NO</FIELD>
+        <FIELD ALIAS="" COL="FA_CUST_ID" DATATYPE="12" DESC="Customer ID" EEType="Varchar_10" HIDDEN="">T1.FA_CUST_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_CUST_NM" DATATYPE="12" DESC="Customer Name" EEType="Varchar_35" HIDDEN="">T1.FA_CUST_NM</FIELD>
+        <FIELD ALIAS="" COL="FA_BUSI_TYPE" DATATYPE="1" DESC="Business Type" EEType="INTERPRETER" HIDDEN="">T1.FA_BUSI_TYPE</FIELD>
+        <FIELD ALIAS="" COL="REG_INSPEC_NM" DATATYPE="12" DESC="Inspect Institution Name" EEType="Varchar_70" HIDDEN="">T2.REG_INSPEC_NM</FIELD>
+        <FIELD ALIAS="" COL="REG_NO" DATATYPE="1" DESC="Registration Number" EEType="AutoGen_Trx_CHAR_20" HIDDEN="">T2.REG_NO</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="Contract Reference No." DT="12" EEType="Varchar_40" POS="SELFLD" TYPE="FLD">T1.FA_CNTR_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Contract Document No." DT="12" EEType="Varchar_105" POS="SELFLD" TYPE="FLD">T1.FA_CNTR_DOC_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Customer ID" DT="12" EEType="Varchar_10" POS="SELFLD" TYPE="FLD">T1.FA_CUST_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Customer Name" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T1.FA_CUST_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Business Type" DT="1" EEType="INTERPRETER" POS="SELFLD" TYPE="FLD">T1.FA_BUSI_TYPE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Inspect Institution Name" DT="12" EEType="Varchar_70" POS="SELFLD" TYPE="FLD">T2.REG_INSPEC_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Registration Number" DT="1" EEType="AutoGen_Trx_CHAR_20" POS="SELFLD" TYPE="FLD">T2.REG_NO</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.ABLF_MASTER T1</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.ABLF_EM_REG T2</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="Contract Reference No." DT="12" EEType="Varchar_40" POS="WHEFLD" TYPE="FLD">T1.FA_CNTR_REF</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Contract Document No." DT="12" EEType="Varchar_105" POS="WHEFLD" TYPE="FLD">T1.FA_CNTR_DOC_NO</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP2</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE3</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Inspect Institution Name" DT="12" EEType="Varchar_70" POS="WHEFLD" TYPE="FLD">T2.REG_INSPEC_NM</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP4</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE5</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Registration Number" DT="1" EEType="AutoGen_Trx_CHAR_20" POS="WHEFLD" TYPE="FLD">T2.REG_NO</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> =</SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> AND </SQL>
+        <SQL DESC="Customer ID" DT="12" EEType="Varchar_10" POS="WHEFLD" TYPE="FLD">T1.FA_CUST_ID</SQL>
+        <SQL DT="var" DV="SYS_CE_BUSI_UNIT" OPTYPE="OPERATE" TYPE="OP">OP8</SQL>
+        <SQL TYPE="SQL"> AND </SQL>
+        <SQL DESC="Contract Status" DT="12" EEType="INTERPRETER" ISFC="Y" POS="WHEFLD" TYPE="FLD">T1.CNTR_STATUS</SQL>
+        <SQL TYPE="SQL">='A' AND </SQL>
+        <SQL DESC="Limit Balance" DT="3" EEType="AMT" POS="WHEFLD" TYPE="FLD">T1.FA_LMT_BAL</SQL>
+        <SQL TYPE="SQL"> &gt; 0 AND </SQL>
+        <SQL DESC="Business Type" DT="1" EEType="INTERPRETER" POS="WHEFLD" TYPE="FLD">T1.FA_BUSI_TYPE</SQL>
+        <SQL TYPE="SQL"> = 'ABLF' AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">T1.C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'M' AND </SQL>
+        <SQL DESC="C_LOCKED_FLAG" DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">T1.C_LOCKED_FLAG</SQL>
+        <SQL TYPE="SQL"> = 'F'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Contract Reference No." EETYPE="Varchar_40">T1.FA_CNTR_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Contract Document No." EETYPE="Varchar_105">T1.FA_CNTR_DOC_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Inspect Institution Name" EETYPE="Varchar_70">T2.REG_INSPEC_NM</FIELD>
+        <FIELD DATATYPE="1" DESC="Registration Number" EETYPE="AutoGen_Trx_CHAR_20">T2.REG_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T1.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T2.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Customer ID" EETYPE="Varchar_10">T1.FA_CUST_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Contract Status" EETYPE="FLAG_10">T1.CNTR_STATUS</FIELD>
+        <FIELD DATATYPE="3" DESC="Limit Balance" EETYPE="AMT">T1.FA_LMT_BAL</FIELD>
+        <FIELD DATATYPE="1" DESC="Business Type" EETYPE="INTERPRETER">T1.FA_BUSI_TYPE</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EETYPE="SYS_CHAR_1">T1.C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="1" DESC="C_LOCKED_FLAG" EETYPE="SYS_CHAR_1">T1.C_LOCKED_FLAG</FIELD>
+    </CLAUSEFIELD>
+</CATA>

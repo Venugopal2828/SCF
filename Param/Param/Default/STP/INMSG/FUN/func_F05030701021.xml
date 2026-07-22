@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Invoice Acknowledgement");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sAckdMsgRef = stp.getXslMsgTagVal("message/Document/Ack/AckdMsgRef","Id");
+stp.writeLog("sAckdMsgRef======"+sAckdMsgRef);
+var arrKeys = [["TSU_MESSAGE_ID",sAckdMsgRef]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetRefUnitforAck",arrKeys);
+var sMainRef = arrGetDataResult[1];
+var sUnitCode = arrGetDataResult[0];
+stp.setCmpId(sUnitCode);
+stp.setMainRef(sMainRef);
+stp.writeLog("sMainRef***"+sMainRef);
+stp.writeLog("sUnitCode***"+sUnitCode);
+var sTxId = stp.getXslMsgTagVal("message/Document/Ack/TxId","Id");
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);;
+stp.updateFieldValue("CURRNT_STATUS","Acknowledgement");
+stp.writeLog("End: Invoice Acknowledgement");]]></js-content>
+</root>

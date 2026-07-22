@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_PRICING</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>SYF_FAEF_Financing_SYF_FAEF_Get_Pricing_2</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_FIN_INFO ALIAS="T0" DBFUNC="" DESC="Financing Information" DT="12" HIDDEN="F" TYPE="F">FA_FIN_INFO</FA_FIN_INFO>
+        <FA_INV_CCY1 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 1" DT="1" HIDDEN="F" TYPE="F">FA_REMI_CCY1</FA_INV_CCY1>
+        <FA_INV_CCY2 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 2" DT="1" HIDDEN="F" TYPE="F">FA_REMI_CCY2</FA_INV_CCY2>
+        <FA_INV_CCY3 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 3" DT="1" HIDDEN="F" TYPE="F">FA_REMI_CCY3</FA_INV_CCY3>
+        <FA_INV_CCY4 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 4" DT="1" HIDDEN="F" TYPE="F">FA_REMI_CCY4</FA_INV_CCY4>
+        <FA_INV_CCY5 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 5" DT="1" HIDDEN="F" TYPE="F">FA_REMI_CCY5</FA_INV_CCY5>
+        <FA_LOAN_RT_TYPE1 ALIAS="T0" DBFUNC="" DESC="Loan Rate Type 1" DT="1" HIDDEN="F" TYPE="F">FA_TEMP_RT_TYPE1</FA_LOAN_RT_TYPE1>
+        <FA_LOAN_RT_TYPE2 ALIAS="T0" DBFUNC="" DESC="Loan Rate Type 2" DT="1" HIDDEN="F" TYPE="F">FA_TEMP_RT_TYPE2</FA_LOAN_RT_TYPE2>
+        <FA_LOAN_RT_TYPE3 ALIAS="T0" DBFUNC="" DESC="Loan Rate Type 3" DT="1" HIDDEN="F" TYPE="F">FA_TEMP_RT_TYPE3</FA_LOAN_RT_TYPE3>
+        <FA_LOAN_RT_TYPE4 ALIAS="T0" DBFUNC="" DESC="Loan Rate Type 4" DT="1" HIDDEN="F" TYPE="F">FA_TEMP_RT_TYPE4</FA_LOAN_RT_TYPE4>
+        <FA_LOAN_RT_TYPE5 ALIAS="T0" DBFUNC="" DESC="Loan Rate Type 5" DT="1" HIDDEN="F" TYPE="F">FA_TEMP_RT_TYPE5</FA_LOAN_RT_TYPE5>
+        <FA_MAX_LOAN_PERC ALIAS="T0" DBFUNC="" DESC="Maximal Loan Percentage" DT="4" HIDDEN="F" TYPE="F">FA_MAX_LOAN_PERC</FA_MAX_LOAN_PERC>
+        <FA_IRT_SPREAD ALIAS="T0" DBFUNC="" DESC="Financing Interest Margin" DT="8" HIDDEN="F" TYPE="F">FA_TEMP5</FA_IRT_SPREAD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_PRICING_VAL_DT=(select max(FA_PRICING_VAL_DT) from FADA_PRICING where FA_PRICING_VAL_DT &lt; = to_date('</SQL>
+            <SQL TYPE="FLD">TRX_DT</SQL>
+            <SQL TYPE="SQL">','</SQL>
+            <SQL DT="var" DV="SYS_DATE_FORMAT" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">') AND FA_SEL_ID='</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_BUYER_ID='</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">'AND FA_IF_ID='</SQL>
+            <SQL TYPE="FLD">FA_IF_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_BUSI_STATUS='PCI' AND FA_BUSI_TYPE='EF') and FA_IF_ID = '</SQL>
+            <SQL TYPE="FLD">FA_IF_ID</SQL>
+            <SQL TYPE="SQL">' and FA_SEL_ID='</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' and FA_BUYER_ID = '</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_BUSI_STATUS='PCI' AND FA_BUSI_TYPE='EF' AND C_TRX_STATUS='M'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

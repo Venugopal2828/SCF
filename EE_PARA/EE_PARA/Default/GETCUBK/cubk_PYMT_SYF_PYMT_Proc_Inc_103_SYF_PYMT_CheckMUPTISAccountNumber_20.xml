@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_CLEARING</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_Proc_Inc_103_SYF_PYMT_CheckMUPTISAccountNumber_20</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_ACCT_NR ALIAS="T0" DBFUNC="" DESC="C_ACCT_NR" DT="12" HIDDEN="F" TYPE="F">TEMP_ACC_NO</C_ACCT_NR>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">BIC_CODE = 'TANZTZTZXXX' AND c_cnty_code = 'TZ' AND c_acct_ccy = 'TZS'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

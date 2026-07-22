@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>EPLC</module-name>
+        <cubk-mapping-name>PRES_BK_CLM_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">CLM_BK_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">CLM_BK_NM</PARTY_NM>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="ADDRESS1" DT="12" HIDDEN="F" TYPE="F">CLM_BK_ADD1</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="ADDRESS2" DT="12" HIDDEN="F" TYPE="F">CLM_BK_ADD2</ADD2>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="ADDRESS3" DT="12" HIDDEN="F" TYPE="F">CLM_BK_ADD3</ADD3>
+        <MAIL_ADD ALIAS="T0" DBFUNC="" DESC="Mail Address" DT="12" HIDDEN="F" TYPE="F">CLM_BK_MAIL_ADD</MAIL_ADD>
+        <LANG_CD ALIAS="T0" DBFUNC="" DESC="Language Code" DT="1" HIDDEN="T" TYPE="F">CLM_BK_LANG</LANG_CD>
+        <EMAIL_ADD ALIAS="T0" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="T" TYPE="F">CLM_BK_EMAIL</EMAIL_ADD>
+        <BK_CORR_MEDIUM ALIAS="T0" DBFUNC="" DESC="Bank Correspondent Medium" DT="1" HIDDEN="F" TYPE="F">CLM_BK_CORE_MED</BK_CORR_MEDIUM>
+        <FAX_NO ALIAS="T0" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="T" TYPE="F">CLM_BK_FAX</FAX_NO>
+        <TLX_NO ALIAS="T0" DBFUNC="" DESC="Telex No" DT="12" HIDDEN="F" TYPE="F">CLM_BK_TLX</TLX_NO>
+        <SW_TAG_VAR ALIAS="T0" DBFUNC="" DESC="Swfit Tag Variable" DT="12" HIDDEN="F" TYPE="F">CLM_BK_SW_TAG</SW_TAG_VAR>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="F" TYPE="F">CLM_BK_SW_ADD</SW_ADD>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

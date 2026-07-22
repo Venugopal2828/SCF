@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: ABL Receive Agreement");
+stp.autoCreateCustomerUser();
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+//var sMainRef = stp.getSimpleRef(17);
+var sMainRef = stp.getMsgTagVal("C_MAIN_REF");
+stp.writeLog("sMainRef======================"+sMainRef);
+stp.setMainRef(sMainRef);
+var sUnitCode = stp.getMsgTagVal("FA_CUST_ID");
+stp.writeLog("sUnitCode======================"+sUnitCode);
+stp.setCmpId(sUnitCode);
+stp.updateFieldValue("CURRNT_STATUS","Received Main Customer");
+stp.writeLog("End: ABL Receive Agreement");]]></js-content>
+</root>

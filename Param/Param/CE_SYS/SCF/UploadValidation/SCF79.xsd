@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="SCF79" type="SCF79Type"/>
+	<xs:complexType name="SCF79Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="EF" type="FType"/>
+			<xs:element name="IF" type="FType"/>
+			<xs:element name="InvoiceBatchNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="InvoiceBatchDate" type="DateC" minOccurs="0"/>
+			<xs:element name="InvoiceBatchCurrency" type="A3TypeC" minOccurs="0"/>
+			<xs:element name="TotalAmountOfInvoices" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="TotalAmountOfCreditNotes" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="Customer" type="CustType"/>
+			<xs:element name="InvCreditNoteDetails" type="InvCreditNoteType" maxOccurs="10000"/>
+			<xs:element name="ControlTot" type="ControlTotType"/>
+			<xs:element name="MsgText" type="AMax1400TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="ReceiverCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10TypeC" minOccurs="0"/>
+			<xs:element name="MsgType" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="FileIndex" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SubFileIndex" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="DateTime" type="DateTimeC"/>
+			<xs:element name="Status" type="NMax2TypeC" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FType">
+		<xs:sequence>
+			<xs:element name="FactorCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="FactorName" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustType">
+		<xs:sequence>
+			<xs:element name="CustomerCompanyRegNr" type="AMax35Type"/>
+			<xs:element name="CustomerNr" type="AMax35Type"/>
+			<xs:element name="CustomerName">
+				 <xs:simpleType>
+				    <xs:restriction base="AMax35Type">
+				      <xs:minLength value="1"/>
+				    </xs:restriction>
+				  </xs:simpleType>
+			</xs:element>
+			<xs:element name="UnitCode" type="AMax35Type"/>
+			<xs:element name="BusiType" type="BIType"/>
+			<xs:element name="MaxLoanPerc" type="NDef3TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InvCreditNoteType">
+		<xs:sequence>
+			<xs:element name="CounterpartyCompanyRegNr" type="AMax35Type"/>
+			<xs:element name="CounterpartyNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="CounterpartyName">
+				 <xs:simpleType>
+				    <xs:restriction base="AMax35Type">
+				      <xs:minLength value="1"/>
+				    </xs:restriction>
+				  </xs:simpleType>
+			</xs:element>
+			<xs:element name="DocType" type="N123Type"/>
+			<xs:element name="SBRRef" type="AMax35Type"/>
+			<xs:element name="DocNr">
+				<xs:simpleType>
+				    <xs:restriction base="AMax35Type">
+				      <xs:minLength value="1"/>
+				    </xs:restriction>
+				  </xs:simpleType>
+			</xs:element>
+			<xs:element name="DocDate" type="xs:date"/>
+			<xs:element name="InvoiceCurrency" type="A3Type" minOccurs="1"/>
+			<xs:element name="DocAmt" type="NMax14.2Type" minOccurs="1"/>
+			<xs:element name="DocValDate" type="xs:date" minOccurs="1"/>
+			<xs:element name="DocDueDate" type="xs:date" minOccurs="1"/>
+			<xs:element name="AgreedPmtDate" type="DateC"/>
+			<xs:element name="ConfirmedAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="PmtCondition" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="InvoiceRefNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="PORefNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="DocStatus" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ApplyDate" type="DateC" minOccurs="0"/>
+			<xs:element name="DocAdjAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="FinTrxRef" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="FinAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="FinValDate" type="DateC" minOccurs="0"/>
+			<xs:element name="FinIntRate" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="IntAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="RebateAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="RebateRate" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="NetIntAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="FinDueDate" type="DateC" minOccurs="0"/>
+			<xs:element name="FinTimes" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="InvFinBal" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="InvFinId" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="PmtType" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="IntPaid" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="RefundIntAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="PrincipalPaid" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SttlTrxRef" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SttlDate" type="DateC" minOccurs="0"/>
+			<xs:element name="SttlAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="FailReason" type="AMax1400TypeC" minOccurs="0"/>
+			<xs:element name="TransportInfor" type="TransportInforType" minOccurs="0"/>
+			<xs:element name="GoodsInfor" type="GoodsType" minOccurs="0"/>
+			<xs:element name="RealBene" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TransportInforType">
+		<xs:sequence>
+			<xs:element name="LoadingPort" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ShipCorp" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ShipName" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="DischargePort" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GoodsType">
+		<xs:sequence>
+			<xs:element name="GoodsCategory" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="GoodsDescr" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControlTotType">
+		<xs:sequence>
+			<xs:element name="TotNrInvoices" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="TotNrCreditNotes" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

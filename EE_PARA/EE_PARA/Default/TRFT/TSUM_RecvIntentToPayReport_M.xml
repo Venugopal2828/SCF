@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>TSUM</module>
+    <name>RecvIntentToPayReport</name>
+    <desc>RecvIntentToPayReport</desc>
+    <head-info>
+        <DO name="TSUMULTI" path="TSUMULTI/MULTIDOM"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.TSUM_GOODS_R2</table-name>
+        <table-desc>TSUM_GOODS_R2</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>TSU_PO_ID</sql>
+            <sql> = '</sql>
+            <field mf="F">TSU_PO_ID</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <TSU_ACCUM_NET_AMT fv_type="F" mf="F" oper="=">TSU_ACCUM_NET_AMT</TSU_ACCUM_NET_AMT>
+    </mapping>
+</root>

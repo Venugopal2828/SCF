@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>F</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>Message Queue</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>1</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>ARF_CE_EE</other-system-id>
+        <other-system-interface>BKTS.FAEF.006.INVAPR</other-system-interface>
+        <recv-time-out>1</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_BANK</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FAEF</module>
+        <interface-mapping-name>BKTS_FAEF_006_INVAPR</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>R</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <DO name="InvTRF" path="InvTRF"/>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map/>
+    <recv-msg-map>
+        <FA_BUYER_ID descr="" fv-type="F" order="1" sheet="" sheet-separator="">FA_BUYER_ID</FA_BUYER_ID>
+        <FA_DOC_NO descr="" doxpath="InvTRF" fv-type="F" order="2" sheet="" sheet-separator="">FA_DOC_NO</FA_DOC_NO>
+        <FA_INV_BUYER_APR_FLG descr="" fv-type="F" order="3" sheet="" sheet-separator="">FA_INV_BUYER_APR_FLG</FA_INV_BUYER_APR_FLG>
+        <FA_CUST_INSTR descr="" fv-type="F" order="4" sheet="" sheet-separator="">FA_CUST_INSTR</FA_CUST_INSTR>
+        <C_MAIN_REF descr="" fv-type="F" order="5" sheet="" sheet-separator="">C_MAIN_REF</C_MAIN_REF>
+        <MSG_TYPE descr="" fv-type="F" order="6" sheet="" sheet-separator="">MSG_TYPE</MSG_TYPE>
+    </recv-msg-map>
+    <send-item/>
+</gapi>

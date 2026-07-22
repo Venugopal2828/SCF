@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_CableOut_SYF_FFIT_X742_58A_ID_7</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <SWIFT_CODE ALIAS="T0" DBFUNC="" DESC="SWIFT Code" DT="1" HIDDEN="F" TYPE="F">X742_58A_BIC</SWIFT_CODE>
+        <GTS_ADD ALIAS="T0" DBFUNC="" DESC="GTS Address" DT="12" HIDDEN="F" TYPE="F">X742_58A_ADD</GTS_ADD>
+        <BK_FULL_NM ALIAS="T0" DBFUNC="" DESC="Bank Full Name" DT="12" HIDDEN="F" TYPE="F">X742_58A_NM</BK_FULL_NM>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">BK_ID='</SQL>
+            <SQL TYPE="FLD">X742_58A_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

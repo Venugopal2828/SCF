@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TRAN</MODULE>
+        <MODULE_DESC>View Transaction</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>Xzv0UO0P17BA</ID>
+        <NAME>Receive Transaction from EE</NAME>
+        <DESC>Receive Transaction from EE</DESC>
+        <FUNSHORTNAME>ReceTranEE</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+    	<COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+        <CONFIRMID/>
+        <RIGHTID/>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">TRAN_ReceiveUploadMsg.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID></ID>
+        <NAME>Receive Transaction from EE_FORM</NAME>
+    </FORM>
+    <NOTIFY>
+        <ID></ID>
+        <NAME>Receive Transaction from EE_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>FunctionSSJS</JS_CLASS>
+    </CAL>
+</FUNC>

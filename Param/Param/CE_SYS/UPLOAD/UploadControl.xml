@@ -1,0 +1,57 @@
+<!--root>
+    <upload size="2000" syncSize="1000" syncRec="100">XLSX,XLS,XML,ZIP,PDF,JPG,PNG</upload>
+    <magic>
+        <type format="ZIP">
+<number leng="4" offset="0">50 4B 03 04</number>
+        </type >
+       <type format="XLS">
+<number leng="8" offset="0">D0 CF 11 E0 A1 B1 1A E1</number>
+        </type>
+       <type format="XLSX">
+<number leng="8" offset="0">50 4B 03 04 14 00 06 00</number>
+       </type>
+	   <type format="PDF">
+            <number leng="7" offset="0">25 50 44 46 2D 31 2E</number>
+       </type>
+        <type format="JPG">
+            <number leng="3" offset="0">FF D8 FF</number>
+        </type>
+        <type format="PNG">
+            <number leng="8" offset="0">89 50 4E 47 0D 0A 1A 0A</number>
+        </type>
+    </magic>
+    <mime>
+        <cont type="text/XML">xml</cont>
+ </mime>
+</root-->
+<root>
+    <upload size="2000" syncSize="1000" syncRec="100">
+        XLSX,XLS,CSV,XML,ZIP,PDF,JPG,PNG
+    </upload>
+
+    <magic>
+        <type format="ZIP">
+            <number leng="4" offset="0">50 4B 03 04</number>
+        </type>
+        <type format="XLS">
+            <number leng="8" offset="0">D0 CF 11 E0 A1 B1 1A E1</number>
+        </type>
+        <type format="XLSX">
+            <number leng="8" offset="0">50 4B 03 04 14 00 06 00</number>
+        </type>
+        <type format="PDF">
+            <number leng="7" offset="0">25 50 44 46 2D 31 2E</number>
+        </type>
+        <type format="JPG">
+            <number leng="3" offset="0">FF D8 FF</number>
+        </type>
+        <type format="PNG">
+            <number leng="8" offset="0">89 50 4E 47 0D 0A 1A 0A</number>
+        </type>
+    </magic>
+
+    <mime>
+        <cont type="text/XML">xml</cont>
+        <cont type="text/csv">csv</cont>
+    </mime>
+</root>

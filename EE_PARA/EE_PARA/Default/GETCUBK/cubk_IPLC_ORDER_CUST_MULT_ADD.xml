@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>IPLC</module-name>
+        <cubk-mapping-name>ORDER_CUST_MULT_ADD</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <ORDER_NO ALIAS="T0" DESC="Order Number" DT="4" TYPE="F">ORDER_CUST_ORDER_NO</ORDER_NO>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">ORDER_CUST_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <ORDER_NO ALIAS="T0" DBFUNC="" DESC="Order Number" DT="4" HIDDEN="F" TYPE="F">ORDER_CUST_ORDER_NO</ORDER_NO>
+        <SWF_FMT_NM ALIAS="T0" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">ORDER_CUST_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T0" DBFUNC="" DESC="Address Line1" DT="12" HIDDEN="F" TYPE="F">ORDER_CUST_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T0" DBFUNC="" DESC="Address Line2" DT="12" HIDDEN="F" TYPE="F">ORDER_CUST_ADD2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T0" DBFUNC="" DESC="Address Line3" DT="12" HIDDEN="F" TYPE="F">ORDER_CUST_ADD3</SWIFT_FMT_ADD3>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">ORDER_CUST_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

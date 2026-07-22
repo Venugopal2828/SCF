@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>X103_ORDCU_ID_50A_BANK</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X103_ORDCU_ID_50A</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X103_ORDCU_ID_50A</C_MAIN_REF>
+        <NOTES ALIAS="T0" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="F" TYPE="F">X103_B2_NOTES</NOTES>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="F" TYPE="F">X103_ORDCU_SW_50A</SW_ADD>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="ADDRESS1" DT="12" HIDDEN="T" TYPE="F">X103_ORDCUADD1_50A</ADD1>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="ADDRESS3" DT="12" HIDDEN="T" TYPE="F">X103_ORDCUADD3_50A</ADD3>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="T" TYPE="F">X103_ORDCU_NM_50A</PARTY_NM>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="ADDRESS2" DT="12" HIDDEN="T" TYPE="F">X103_ORDCUADD2_50A</ADD2>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T0.PARTY_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_NM_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD1</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCUADD1_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD2</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCUADD2_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD3</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCUADD3_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">%'
+            </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

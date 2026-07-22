@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">PYMT_EVENT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_DueDiliOutPmt_SYF_PYMT_Chk_DD_Duplicate_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">DUPLICATE_TRN</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_BK_GROUP_ID = '</SQL>
+            <SQL DT="var" DV="SYS_BANK_GROUP" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">' and ((CR_CCY = '</SQL>
+            <SQL TYPE="FLD">CR_CCY</SQL>
+            <SQL TYPE="SQL">' and cr_calc_amt = </SQL>
+            <SQL TYPE="FLD">CR_CALC_AMT</SQL>
+            <SQL TYPE="SQL">) and  (DB_CCY = '</SQL>
+            <SQL TYPE="FLD">DB_CCY</SQL>
+            <SQL TYPE="SQL">' and DB_CALC_AMT = </SQL>
+            <SQL TYPE="FLD">DB_CALC_AMT</SQL>
+            <SQL TYPE="SQL">)) and to_char(D_SYS_OP_DATE, 'YYYY-MM-DD') &gt; '</SQL>
+            <SQL TYPE="FLD">SEVEN_DAYS_BACK</SQL>
+            <SQL TYPE="SQL">' and X103_ORDCU_ID_50A = '</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">' and c_main_ref &lt;&gt; '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' AND I_EVENT_TIMES = (select MAX(I_EVENT_TIMES) from eximtrx.pymt_LEDGER WHERE c_main_ref = T0.C_MAIN_REF ) and CANCEL_FLG &lt;&gt; 'Yes' and APPL_CNTY_RES = '</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

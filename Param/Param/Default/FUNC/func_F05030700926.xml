@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">EXCO</MODULE>
+        <MODULE_DESC>Export Collections</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C08100200003</CATALOGID>
+        <ID>F05030700926</ID>
+        <NAME>EXCO Payment Instructions</NAME>
+        <DESC>Payment Instructions</DESC>
+        <FUNSHORTNAME>PmtInstr</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">EXCO_PmtInstr.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700925</ID>
+        <NAME>EXCO Payment Instructions_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700925</ID>
+        <NAME>EXCO Payment Instructions_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000137</ID>
+        <NAME>EXCO Payment Instructions_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

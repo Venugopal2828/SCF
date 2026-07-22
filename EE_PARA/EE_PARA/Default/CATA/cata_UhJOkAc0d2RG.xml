@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" DATABASE="EEPDB" SCHEMA="EXIMMETA">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_DOC_REP" VALUE="TRUE"/>
+        <FIELD NAME="_SHOW_SEL_ALL" VALUE="N"/>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>UhJOkAc0d2RG</ID>
+    <MODULE>SYST</MODULE>
+    <JSPFILE>screen/CATA/DocRepRendCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>ResendDoc_cata</DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.TRX_REPDOCSEND_MAIL</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Bank Group" EEType="" HIDDEN="">C_BANK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Document Name"
+            EEType="Varchar_120" HIDDEN="">C_DOC_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Main Ref. No." EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Module" EEType="" HIDDEN="">C_MODULE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Mail Rule Name"
+            EEType="Varchar_46" HIDDEN="">C_MAIL_RULE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Mail Status" EEType="" HIDDEN="">C_MAIL_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Mail From" EEType="" HIDDEN="">C_MAIL_FROM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Mail To" EEType="" HIDDEN="">C_MAIL_TO</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Mail Send Date" EEType="DATE" HIDDEN="">D_MAIL_SEND_DATE</FIELD>
+        <FIELD CONFIG="" DATATYPE="12" DESC="Type" EEType="" HIDDEN="H">C_MAIL_GEN_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Template Name" EEType="" HIDDEN="">C_REPORT_TEMPLATE_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Mail Index" EEType="" HIDDEN="">C_MAIL_INDEX</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Main Ref. No." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Document Name" DT="12" EEType="Varchar_120" TYPE="FLD">C_DOC_NAME</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Mail Send Date" DT="91" EEType="DATE" TYPE="FLD">D_MAIL_SEND_DATE</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Mail Status" DT="12" EEType="" TYPE="FLD">C_MAIL_STATUS</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' AND 
+</SQL>
+        <SQL DESC="Type" DT="12" EEType="" TYPE="FLD">C_MAIL_GEN_TYPE</SQL>
+        <SQL TYPE="SQL"> = 'D'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Main Ref. No." EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Document Name" EEType="Varchar_120">C_DOC_NAME</FIELD>
+        <FIELD DATATYPE="91" DESC="Mail Send Date" EEType="DATE">D_MAIL_SEND_DATE</FIELD>
+        <FIELD DATATYPE="12" DESC="Mail Status" EEType="">C_MAIL_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Type" EEType="">C_MAIL_GEN_TYPE</FIELD>
+    </CLAUSEFIELD>
+</CATA>

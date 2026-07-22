@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Collateral Items" Max="n" Min="0" Name="CollaterallItem" PendingStore="N" Screen="SCRN/o2m/INVT_Collateral_Item.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="CLTR_ITEM"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>CLTR_ID</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="1" Desc="C_TRX_STATUS" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_1" FldType="" Value="">C_TRX_STATUS</Element>
+        <Element DATATYPE="12" Desc="Collateral ID" DispInGrid="Y" EDIT="N" EEType="Varchar_40" FldType="" Value="">CLTR_ID</Element>
+        <Element DATATYPE="12" Desc="Collateral Name" DispInGrid="Y" EDIT="N" EEType="Varchar_40" FldType="" Value="">CLTR_NM</Element>
+        <Element DATATYPE="12" Desc="Collateral Category" DispInGrid="Y" EDIT="N" EEType="Varchar_70" FldType="" Value="">CLTR_CATEGORY</Element>
+        <Element DATATYPE="12" Desc="Certificate of Origin" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">CERT_ORIG</Element>
+        <Element DATATYPE="3" Desc="Market Price" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">MKT_PRICE</Element>
+        <Element DATATYPE="3" Desc="Adjusted Price" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">VALUED_PRICE</Element>
+        <Element DATATYPE="91" Desc="Price Adjust Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">ADJ_DT</Element>
+        <Element DATATYPE="12" Desc="Price Units" DispInGrid="N" EDIT="N" EEType="FLAG_10" FldType="" Value="">UNIT</Element>
+        <Element DATATYPE="3" Desc="Quantity" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">QTY</Element>
+        <Element DATATYPE="3" Desc="Gross Value" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">GRS_AMT</Element>
+        <Element DATATYPE="-1" Desc="Goods Description (Tag45A)" DispInGrid="N" EDIT="N" EEType="TEXTAREA_6500" FldType="" Value="">GOODS_DESC</Element>
+        <Element DATATYPE="91" Desc="Collection Registration Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">REG_DT</Element>
+        <Element DATATYPE="12" Desc="Manufacturer" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">MAKDER</Element>
+    </Elements>
+</DO>

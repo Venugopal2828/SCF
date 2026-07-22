@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>EXCO</module>
+    <name>NEW_DRWE_INFO</name>
+    <desc>NEW_DRWE_INFO</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.EXCO_MASTER</table-name>
+        <table-desc>EXCO MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <DRWE_ADD1 fv_type="F" mf="F" oper="=">TEMP_DRWE_ADD1</DRWE_ADD1>
+        <DRWE_ADD2 fv_type="F" mf="F" oper="=">TEMP_DRWE_ADD2</DRWE_ADD2>
+        <DRWE_ADD3 fv_type="F" mf="F" oper="=">TEMP_DRWE_ADD3</DRWE_ADD3>
+        <DRWE_CORR_MED fv_type="F" mf="F" oper="=">TEMP_DRWE_CORR_MED</DRWE_CORR_MED>
+        <DRWE_EMAIL fv_type="F" mf="F" oper="=">TEMP_DRWE_EMAIL</DRWE_EMAIL>
+        <DRWE_FAX fv_type="F" mf="F" oper="=">TEMP_DRWE_FAX</DRWE_FAX>
+        <DRWE_ID fv_type="F" mf="F" oper="=">TEP_DRWE_ID</DRWE_ID>
+        <DRWE_LANG fv_type="F" mf="F" oper="=">TEMP_DRWE_LANG</DRWE_LANG>
+        <DRWE_MAIL_ADD fv_type="F" mf="F" oper="=">TEMP_DRWE_MAIL_ADD</DRWE_MAIL_ADD>
+        <DRWE_NM fv_type="F" mf="F" oper="=">TEMP_DRWE_NM</DRWE_NM>
+        <DRWE_TEL_NO fv_type="F" mf="F" oper="=">TEMP_DRWE_TEL_NO</DRWE_TEL_NO>
+    </mapping>
+</root>

@@ -1,0 +1,16 @@
+{
+	"id": "ee_alerts",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "ee_alerts",
+			"display": "custom_sql_table",
+			"title": "EE Alerts and Notifications Widget",
+			"desc": "Critical warning center for bank staff regarding pending approvals, onboarding requests, and overdue payments."
+		},
+		"data": {
+			"sql": "SELECT 'Pending Financing Approval' as \"Alert\", C_MAIN_REF as \"Details\", 'High' as \"Priority\" FROM %EXIMTRX%.FADA_MASTER WHERE C_TRX_STATUS = 'P' UNION ALL SELECT 'Supplier Onboarding Request', 'Supplier ABC Corp', 'Medium' FROM DUAL UNION ALL SELECT 'Payment Overdue Notice', 'Anchor XYZ payment overdue', 'Critical' FROM DUAL"
+		}
+	}
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FADA</module>
+    <name>FA_BUYER_ID</name>
+    <desc>FA_BUYER_ID</desc>
+    <head-info>
+        <DO name="DFAgreement" path="DFAgreement"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.STAT_MASTER</table-name>
+        <table-desc>Static Master Table</table-desc>
+        <ledger-op/>
+        <op-type>I</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False"/>
+    </head-info>
+    <mapping>
+        <BK_BR_CODE fv_type="F" mf="F" oper="=">FA_BUYER_BK_BRCH</BK_BR_CODE>
+        <CE_CUSTOMER fv_type="V" oper="=">Yes</CE_CUSTOMER>
+        <CUST_CITY fv_type="F" mf="F" oper="=">FA_BUYER_CITY</CUST_CITY>
+        <CUST_TYPE fv_type="F" mf="F" oper="=">FA_BUYER_ID</CUST_TYPE>
+        <C_CP_UNIT_CODE fv_type="F" mf="F" oper="=">C_CP_UNIT_CODE</C_CP_UNIT_CODE>
+        <C_MAIN_REF fv_type="F" mf="F" oper="=">FA_BUYER_ID</C_MAIN_REF>
+        <C_TRX_STATUS fv_type="V" oper="=">M</C_TRX_STATUS>
+        <C_UNIT_CODE fv_type="F" mf="F" oper="=">C_UNIT_CODE</C_UNIT_CODE>
+        <EMAIL_ADD fv_type="F" mf="F" oper="=">FA_BUYER_CONT_MAIL</EMAIL_ADD>
+        <FAX_NO fv_type="F" mf="F" oper="=">FA_BUYER_CONT_FAX</FAX_NO>
+        <FA_CUST_FLAG fv_type="V" oper="=">2</FA_CUST_FLAG>
+        <FA_CUST_PROV fv_type="F" mf="F" oper="=">FA_BUYER_PROV</FA_CUST_PROV>
+        <IS_FACTOR_FLAG fv_type="V" oper="=">YES</IS_FACTOR_FLAG>
+        <PARTY_NM fv_type="F" mf="F" oper="=">FA_BUYER_NM</PARTY_NM>
+        <POST_CODE fv_type="F" mf="F" oper="=">FA_BUYER_POSTBOX</POST_CODE>
+        <RECORDER_TYPE fv_type="V" oper="=">Customer</RECORDER_TYPE>
+        <TEL_NO fv_type="F" mf="F" oper="=">FA_BUYER_CONT_TEL</TEL_NO>
+    </mapping>
+</root>

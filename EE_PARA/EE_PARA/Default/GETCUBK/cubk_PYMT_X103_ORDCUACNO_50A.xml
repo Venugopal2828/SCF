@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>X103_ORDCUACNO_50A</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_CNTY_CODE ALIAS="T0" DESC="Country Code" DT="1" TYPE="S">SYS_BANK_COUNTRY</C_CNTY_CODE>
+            <C_AC_NUMBER ALIAS="T0" DESC="Account Number" DT="12" TYPE="F">X103_ORDCUACNO_50A</C_AC_NUMBER>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_AC_NUMBER ALIAS="T0" DBFUNC="" DESC="Account Number" DT="12" HIDDEN="F" TYPE="F">X103_ORDCUACNO_50A</C_AC_NUMBER>
+        <C_CUST_ID ALIAS="T0" DBFUNC="" DESC="Customer Id" DT="12" HIDDEN="F" TYPE="F">X103_ORDCU_ID_50A</C_CUST_ID>
+        <C_CURRENCY ALIAS="T0" DBFUNC="" DESC="Currency" DT="12" HIDDEN="F" TYPE="F">DB_CCY</C_CURRENCY>
+        <C_AC_IDENTIFIER ALIAS="T0" DBFUNC="" DESC="Override Ind" DT="12" HIDDEN="F" TYPE="F">C_AC_IDENTIFIER</C_AC_IDENTIFIER>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> like '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> like '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCUACNO_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T0.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> like '%</SQL>
+            <SQL TYPE="FLD">DB_CCY</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> LIKE '%%' AND </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.C_CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+        <condition seq="2">
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCUACNO_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.C_CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+        <condition seq="3">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCUACNO_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.C_CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+        <condition seq="4">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> like '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> like '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCUACNO_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T0.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">DB_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.C_CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP3</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+        <condition seq="5">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCU_ID_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ORDCUACNO_50A</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T0.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">CR_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.C_CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP4</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

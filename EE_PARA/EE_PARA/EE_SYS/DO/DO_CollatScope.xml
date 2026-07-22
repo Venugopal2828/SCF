@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Collat Scope" Max="n" Min="1" Name="CollatScope" PendingStore="N" Screen="SCRN/DO/ABLF_CollatScope.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="ABLF_COLL_SCOPE"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>FA_CNTR_REF</PKNAME>
+        <PKNAME>COLLAT_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="ABLF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Contract Reference No." DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">FA_CNTR_REF</Element>
+        <Element DATATYPE="12" Desc="Collateral ID" DispInGrid="Y" EDIT="N" EEType="CHAR_30" FldType="" Value="">COLLAT_ID</Element>
+        <Element DATATYPE="12" Desc="Collateral Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">COLLAT_NM</Element>
+        <Element DATATYPE="12" Desc="Collateral Type" DispInGrid="Y" EDIT="N" EEType="INTERPRETER35" FldType="" Value="">COLLAT_TP</Element>
+        <Element DATATYPE="12" Desc="Region Name" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">REGION</Element>
+    </Elements>
+</DO>

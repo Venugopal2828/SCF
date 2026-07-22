@@ -1,0 +1,37 @@
+{
+	"id": "WF000005",
+	"type": "function",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF000005",
+			"display": "chart.bar",
+			"title": "Multiple Series",
+			"desc": "Show Several Series in the same Chart.",
+			"tooltip": "{\"text\":\"{a}<br/>{b} day ago: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of days\"}}",
+					"line": "{\"xAxis\":{\"name\":\"Number of days\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of days\"}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of days\"}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "F05030701982",
+				"extraSelect": "T2.PRES_DT,T2.C_UNIT_CODE, (TO_DATE(sysdate ) - TO_DATE(T2.PRES_DT)) NM, COUNT(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(T2.PRES_DT)),'d' )) as VL",
+				"extraWhere": "",
+				"extraGroupBy": "T2.PRES_DT,T2.C_UNIT_CODE,(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(T2.PRES_DT)),'d' ))",
+				"extraOrderBy": "T2.C_UNIT_CODE, NM asc",
+				"overwrite": ["extraSelect", "extraOrderBy"],
+				"catalog": ["PRES_DT"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "NM",
+			"valueField": "VL"
+		}
+	}
+}

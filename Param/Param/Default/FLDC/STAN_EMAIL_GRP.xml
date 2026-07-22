@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <module>STAN</module>
+    <separater></separater>
+    <full_display>false</full_display>
+    <fld_name>EMAIL_GRP</fld_name>
+    <type>T</type>
+    <settings>
+        <value_field>EMAIL_LIST</value_field>
+        <table_name dsType="TD">CETRX.STD_EMAIL</table_name>
+        <display_field>EMAILGRP_NM</display_field>
+        <condition>
+            <sql TYPE="COL">C_UNIT_CODE</sql>
+            <sql>= '</sql>
+            <sql TYPE="SYS">SYS_CHILD_UNIT</sql>
+            <sql>' AND </sql>
+            <sql TYPE="COL">EMAILTRX_TYPE</sql>
+            <sql>= 'G'</sql>
+        </condition>
+    </settings>
+    <distinct>false</distinct>
+</root>

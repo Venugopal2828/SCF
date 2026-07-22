@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire EXLC Major Table" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>EXLC_RLTD_NO</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.EXLC_EM_ADV</table-name>
+        <table-desc>Export Letters of Credit Advise</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <ADV_NO DESC="Advise Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</ADV_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <LC_NO DESC="LC Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">LC_NO</LC_NO>
+        <ADV_NO DESC="Advise Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</ADV_NO>
+        <BENE_NM DESC="Beneficiary Name" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_NM</BENE_NM>
+        <LC_CCY DESC="LC Currency" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">LC_CCY</LC_CCY>
+        <LC_AMT DESC="LC Amount" DT="3" HIDDEN="" TYPE="F" WTYPE="CASE">LC_AMT</LC_AMT>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

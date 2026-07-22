@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>T</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value>GAPI2IATrxBusiness</gapi-type-value>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>eLOAN</other-system-id>
+        <other-system-interface>8061</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>EPLC</module>
+        <interface-mapping-name>Amend_TakeDown_Confirm_eLoan</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>R</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <C_UNIT_CODE descr="" ec-tag="N" fv-type="F" op-tag="N" order="1">E_UNIT_CODE</C_UNIT_CODE>
+        <IA_C_ACCOUNT_TYPE descr="" ec-tag="N" fv-type="F" op-tag="N" order="2">E_ACCOUNT_TYPE</IA_C_ACCOUNT_TYPE>
+        <IA_C_BORROWER_ID descr="" ec-tag="N" fv-type="F" op-tag="N" order="3">E_BORROWER_ID</IA_C_BORROWER_ID>
+        <IA_C_CCY_CODE descr="" ec-tag="N" fv-type="F" op-tag="N" order="4">LC_CCY</IA_C_CCY_CODE>
+        <IA_C_CREATE_BY descr="" ec-tag="N" fv-type="" op-tag="N" order="5"/>
+        <IA_C_CREATE_FROM descr="" ec-tag="N" fv-type="V" op-tag="N" order="6">EXIMBILLS</IA_C_CREATE_FROM>
+        <IA_C_CUST_CODE descr="" ec-tag="N" fv-type="" op-tag="N" order="7"/>
+        <IA_C_DIS_LOCALCCY descr="" ec-tag="N" fv-type="F" op-tag="N" order="8">E_IA_C_DIS_LOCALCCY</IA_C_DIS_LOCALCCY>
+        <IA_C_FUNCTION_ID descr="" ec-tag="N" fv-type="F" op-tag="N" order="9">E_FUNCTION_ID</IA_C_FUNCTION_ID>
+        <IA_C_MODU_NAME descr="" ec-tag="N" fv-type="V" op-tag="N" order="10">EPLC</IA_C_MODU_NAME>
+        <IA_C_REF_NO descr="" ec-tag="N" fv-type="F" op-tag="N" order="11">C_MAIN_REF</IA_C_REF_NO>
+        <IA_C_TRANS_CODE descr="" ec-tag="N" fv-type="" op-tag="N" order="12"/>
+        <IA_D_CREATE_DATE descr="" ec-tag="N" fv-type="" op-tag="N" order="13"/>
+        <IA_D_DUE_DATE descr="" ec-tag="N" fv-type="F" op-tag="N" order="14">EXPIRY_DT</IA_D_DUE_DATE>
+        <IA_D_TRX_VALDATE descr="" ec-tag="N" fv-type="F" op-tag="N" order="15">AMD_DT</IA_D_TRX_VALDATE>
+        <IA_I_BASE_DAYS descr="" ec-tag="N" fv-type="" op-tag="N" order="16"/>
+        <IA_I_CCY_DEC descr="" ec-tag="N" fv-type="" op-tag="N" order="17"/>
+        <IA_I_LOCALCCY_DEC descr="" ec-tag="N" fv-type="" op-tag="N" order="19"/>
+        <IA_N_BUSINESS_TAX descr="" ec-tag="N" fv-type="" op-tag="N" order="20"/>
+        <IA_N_FIX_BAS_RATE descr="" ec-tag="N" fv-type="" op-tag="N" order="21"/>
+        <IA_N_FIX_SPR_RATE descr="" ec-tag="N" fv-type="" op-tag="N" order="22"/>
+        <IA_N_STAMP_TAX descr="" ec-tag="N" fv-type="" op-tag="N" order="24"/>
+        <IA_Y_PAID_INT descr="" ec-tag="N" fv-type="F" op-tag="N" order="25">TTL_CONF_COMM</IA_Y_PAID_INT>
+        <IA_Y_TRX_AMT descr="" ec-tag="N" fv-type="F" op-tag="N" order="26">NEW_LC_AMT</IA_Y_TRX_AMT>
+    </send-msg-map>
+    <recv-msg-map/>
+    <send-item/>
+</gapi>

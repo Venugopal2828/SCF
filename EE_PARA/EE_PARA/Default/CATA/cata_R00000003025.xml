@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082300996</ID>
+    <MODULE>IWGT</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Advise Inward Amendment</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.IWGT_EM_AMD</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Our Reference" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Amendment Reference"
+            EEType="RELATED_REF" HIDDEN="">AMD_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Applicant" EEType="NM_CHAR35" HIDDEN="">APPL_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Beneficiary" EEType="NM_CHAR35" HIDDEN="">BENE_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="CCY" EEType="CCY" HIDDEN="">GTEE_CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="Guarantee Amount" EEType="AMT" HIDDEN="">GTEE_AMT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Amendment Date" EEType="DATE" HIDDEN="">AMD_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Function" EEType="" HIDDEN="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Current Status"
+            EEType="Varchar_35" HIDDEN="H">CURRNT_STATUS</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Our Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> ='M' AND </SQL>
+        <SQL DESC="Current Status" DT="12" EEType="Varchar_35" TYPE="FLD">CURRNT_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'RegInwardAmend' ORDER BY </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Current Status" EEType="Varchar_35">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

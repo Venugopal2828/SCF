@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FAEF_PMT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>SYF_FAEF_Settlement_SYF_FAEF_GET_SETTL_EF_3</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_PMT_DT ALIAS="T0" DBFUNC="" DESC="Payment Date" DT="91" HIDDEN="F" TYPE="F">FA_PMT_DT</FA_PMT_DT>
+        <FA_PMT_REF ALIAS="T0" DBFUNC="" DESC="Payment Reference" DT="12" HIDDEN="F" TYPE="F">FA_TEMP2</FA_PMT_REF>
+        <FA_PMT_TYPE ALIAS="T0" DBFUNC="" DESC="Payment Type" DT="1" HIDDEN="F" TYPE="F">FA_PMT_TYPE</FA_PMT_TYPE>
+        <FA_PMT_CCY ALIAS="T0" DBFUNC="" DESC="Payment CCY" DT="1" HIDDEN="F" TYPE="F">ACC_CCY</FA_PMT_CCY>
+        <FA_PMT_AMT_SUM ALIAS="T0" DBFUNC="" DESC="Payment Amount Summary" DT="3" HIDDEN="F" TYPE="F">FA_PMT_AMT_SUM</FA_PMT_AMT_SUM>
+        <FA_TTL_AMT_CLEARED ALIAS="T0" DBFUNC="" DESC="Total Amount Cleared" DT="3" HIDDEN="F" TYPE="F">FA_TTL_AMT_CLEARED</FA_TTL_AMT_CLEARED>
+        <FA_TTL_AMT_DEDUCT ALIAS="T0" DBFUNC="" DESC="Total Amount Deducted" DT="3" HIDDEN="F" TYPE="F">FA_TTL_AMT_DEDUCT</FA_TTL_AMT_DEDUCT>
+        <THEIR_REF_NO ALIAS="T0" DBFUNC="" DESC="Their Reference No" DT="12" HIDDEN="F" TYPE="F">THEIR_REF_NO</THEIR_REF_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_BUSI_TYPE = 'EF' AND (FA_BUSI_STATUS = 'PMT' OR FA_BUSI_STATUS = 'PUG') AND C_FUNC_SHORT_NAME='InEDI11or13' AND FA_BUYER_NM ='</SQL>
+            <SQL TYPE="FLD">FA_BUYER_NM</SQL>
+            <SQL TYPE="SQL">' AND FA_SEL_NM='</SQL>
+            <SQL TYPE="FLD">FA_SEL_NM</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

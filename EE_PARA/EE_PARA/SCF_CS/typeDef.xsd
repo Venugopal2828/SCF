@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="typeBase.xsd"/>
+	<xs:simpleType name="DateC">
+		<xs:union memberTypes="xs:date A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="DateTimeC">
+		<xs:union memberTypes="xs:dateTime A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="A7TypeC">
+		<xs:union memberTypes="A7Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="A2TypeC">
+		<xs:union memberTypes="A2Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="A3TypeC">
+		<xs:union memberTypes="A3Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax7TypeC">
+		<xs:union memberTypes="AMax7Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax9TypeC">
+		<xs:union memberTypes="AMax9Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax16TypeC">
+		<xs:union memberTypes="AMax16Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax25TypeC">
+		<xs:union memberTypes="AMax25Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax35TypeC">
+		<xs:union memberTypes="AMax35Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax70TypeC">
+		<xs:union memberTypes="AMax70Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax350TypeC">
+		<xs:union memberTypes="AMax350Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax700TypeC">
+		<xs:union memberTypes="AMax700Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax1400TypeC">
+		<xs:union memberTypes="AMax1400Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax3500TypeC">
+		<xs:union memberTypes="AMax3500Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="AMax7000TypeC">
+		<xs:union memberTypes="AMax7000Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NMax1TypeC">
+		<xs:union memberTypes="NMax1Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NMax2TypeC">
+		<xs:union memberTypes="NMax2Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NDef3TypeC">
+		<xs:union memberTypes="NDef3Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="MDef3TypeC">
+		<xs:union memberTypes="MDef3Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NMax3TypeC">
+		<xs:union memberTypes="NMax3Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NMax10TypeC">
+		<xs:union memberTypes="NMax10Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NMax15TypeC">
+		<xs:union memberTypes="NMax15Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NDef3.4TypeC">
+		<xs:union memberTypes="NDef3.4Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NDef5TypeC">
+		<xs:union memberTypes="NDef5Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="NMax14.2TypeC">
+		<xs:union memberTypes="NMax14.2Type A0Type"/>
+	</xs:simpleType>
+	<xs:complexType name="ErrorType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="code" type="NMax2Type" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="YNTypeC">
+		<xs:union memberTypes="YNType A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="N12TypeC">
+		<xs:union memberTypes="N12Type A0Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="N123TypeC">
+		<xs:union memberTypes="N123Type A0Type"/>
+	</xs:simpleType>
+</xs:schema> 

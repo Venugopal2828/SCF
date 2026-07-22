@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>PYMT</module>
+    <name>DI_Reissue_next_status_pending</name>
+    <desc>DI_Reissue_next_status_pending</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.PYMT_MASTER</table-name>
+        <table-desc>PYMT_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info>The original transaction is currently being used by another fucntion in pending</err-info>
+        <imme-update>T</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">RELATED_REF_NO</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <NXT_STATUS fv_type="V" oper="=">END</NXT_STATUS>
+    </mapping>
+</root>

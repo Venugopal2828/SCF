@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Warehouse Regulatory Authority"
+    Max="n" Min="0" Name="WarehouseRgltAuth" PendingStore="N"
+    Screen="SCRN/o2m/CNTR_Warehouse_Rglt_Auth.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="CNTR_WAREHOUSE"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>RGLT_ID</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="Regulator ID" DispInGrid="Y" EDIT="Y"
+            EEType="Varchar_40" FldType="" Value="">RGLT_ID</Element>
+        <Element DATATYPE="12" Desc="Regulator Name" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_70" FldType="" Value="">RGLT_NM</Element>
+        <Element DATATYPE="12" Desc="Credit Required?" DispInGrid="Y" EDIT="Y"
+            EEType="FLAG_10" FldType="" Value="">LMT_CNTL_FLAG</Element>
+        <Element DATATYPE="12" Desc="Agreement No" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">AGR_NO</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType=""
+            FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="1" Desc="C_TRX_STATUS" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_TRX_STATUS</Element>
+    </Elements>
+</DO>

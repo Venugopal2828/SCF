@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>OWGT.008.Amd</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>OWGT</module>
+        <map-name>Amended</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <C_MAIN_REF descr="" fv-type="F" intfconv="N">CEMainRef</C_MAIN_REF>
+        <BK_MAIN_REF descr="" fv-type="F" intfconv="N">BkMainRef</BK_MAIN_REF>
+        <C_UNIT_CODE descr="" fv-type="F" intfconv="N">CustId</C_UNIT_CODE>
+        <NEW_BENE_NM descr="" fv-type="F" intfconv="N">BnfcryNm</NEW_BENE_NM>
+        <NEW_BENE_ADD1 descr="" fv-type="F" intfconv="N">BnfcryAdr1</NEW_BENE_ADD1>
+        <NEW_BENE_ADD2 descr="" fv-type="F" intfconv="N">BnfcryAdr2</NEW_BENE_ADD2>
+        <NEW_BENE_ADD3 descr="" fv-type="F" intfconv="N">BnfcryAdr3</NEW_BENE_ADD3>
+        <TEMP_GTEE_AMT descr="" fv-type="F" intfconv="N">GteeAmt</TEMP_GTEE_AMT>
+        <NEW_GTEE_AMT descr="" fv-type="F" intfconv="N">GteeAmt</NEW_GTEE_AMT>
+        <TEMP_GTEE_BAL descr="" fv-type="F" intfconv="N">GteeBala</TEMP_GTEE_BAL>
+        <NEW_GTEE_BAL descr="" fv-type="F" intfconv="N">GteeBala</NEW_GTEE_BAL>
+        <AMD_DETAILS descr="" fv-type="F" intfconv="N">AmdmntDtls</AMD_DETAILS>
+        <NO_OF_AMD descr="" fv-type="F" intfconv="N">NoOfAmdmnt</NO_OF_AMD>
+        <NEW_EXPIRY_TYPE descr="" fv-type="F" intfconv="N">NewExpType</NEW_EXPIRY_TYPE>
+        <NEW_EXPIRY_DT descr="" fv-type="F" intfconv="N">NewDtOfExp</NEW_EXPIRY_DT>
+        <INC_AMT descr="" fv-type="F" intfconv="N">IncAmt</INC_AMT>
+        <DEC_AMT descr="" fv-type="F" intfconv="N">DecAmt</DEC_AMT>
+        <CURRNT_STATUS descr="" fv-type="F" intfconv="N">CurSts</CURRNT_STATUS>
+        <NXT_STATUS descr="" fv-type="F" intfconv="N">NxtSts</NXT_STATUS>
+        <NEW_EXPIRY_COND descr="" fv-type="F" intfconv="N">NEW_EXPIRY_COND</NEW_EXPIRY_COND>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="ExpRemi" Max="100" Min="0"
+    Name="ExpRemi" PendingStore="N" Screen="SCRN/o2m/FAEF_ExpFacRemi.jsp"
+    StoreInto="C" StoreType="C">
+    <Component>FactExportComisReit</Component>
+    <PK>
+        <PKNAME>FA_SEL_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FADA_REMI">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Seller ID" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_SEL_ID</Element>
+        <Element DATATYPE="12" Desc="Seller Name" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_SEL_NM</Element>
+        <Element DATATYPE="1" Desc="Doc CCY" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">FA_DOC_CCY</Element>
+        <Element DATATYPE="3" Desc="Sub Total Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">FA_SEL_SUBTTL_AMT</Element>
+        <Element DATATYPE="3" Desc="Sub Total Deducted" DispInGrid="Y" EDIT="Y"
+            EEType="AMT" FldType="" Value="">FA_SEL_SUBTTL_DEDUCT</Element>
+        <Element DATATYPE="12" Desc="Remittance Reference" DispInGrid="N"
+            EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_REMI_REF</Element>
+    </Elements>
+</DO>

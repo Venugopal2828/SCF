@@ -1,0 +1,61 @@
+stp.setAutoProcess(true);
+stp.writeLog("============ReceiveInvoiceData====start============");
+stp.setGapiRule("TSU_005_InvInstr");
+
+var C_REF = stp.getXMLNodeValue("C_MAIN_REF");
+var POST_FIN = stp.getXMLNodeValue("TSU_POST_FIN");
+var COMDATA_INS = stp.getXMLNodeValue("TSU_COMDATA_INS");
+//var UNIT_ID= stp.getXMLNodeValue("C_UNIT_CODE");
+var CUST_ID = stp.getXMLNodeValue("TSU_CUST_ID");
+var DOC_CUSTREF = stp.getXMLNodeValue("TSU_CUST_REF");
+var Inv_ref = stp.getXMLNodeValue("TSU_INV_REF");
+var Inv_IssDt = stp.getXMLNodeValue("TSU_INV_ISSUE_DT");
+var COMM_AMT = stp.getXMLNodeValue("TSU_COMM_AMT");
+var CUST_ACNO = stp.getXMLNodeValue("TSU_CUST_ACC");
+var CCY = stp.getXMLNodeValue("TSU_CCY");
+
+//stp.updateFieldValue("C_UNIT_CODE",UNIT_ID);
+stp.updateFieldValue("TSU_CUST_ID", CUST_ID);
+stp.updateFieldValue("TSU_POST_FIN", POST_FIN);
+stp.updateFieldValue("TSU_COMDATA_INS", COMDATA_INS);
+stp.updateFieldValue("TSU_DOC_CUSTREF", DOC_CUSTREF);
+stp.updateFieldValue("TSU_COMM_REF", Inv_ref);
+stp.updateFieldValue("TSU_COMM_DT", Inv_IssDt);
+stp.updateFieldValue("TSU_COMM_AMT", COMM_AMT);
+stp.updateFieldValue("TSU_CUST_ACC", CUST_ACNO);
+stp.updateFieldValue("TSU_CCY", CCY);
+/* Generate the C_MAIN_REF 2013/7/31*/
+var bu1 = stp.getTSUBIC();
+var LA = 'DS';
+var ref = stp.SYS_getRefNo("TSUM");
+var prf = bu1 + LA + ref;
+stp.writeLog("222222222222" + prf);
+stp.updateFieldValue("C_MAIN_REF", prf);
+
+/*END*/
+//var bu = stp.getTSUUnitCode();
+var bu = stp.getBusiUnit();
+stp.writeLog("BU:" + bu);
+var fld_list = stp.addFieldList(null, "TSU_PO_ID");
+fld_list = stp.addFieldList(fld_list, "TSU_BUYER_NM");
+fld_list = stp.addFieldList(fld_list, "TSU_SEL_NM");
+fld_list = stp.addFieldList(fld_list, "TSU_TID");
+fld_list = stp.addFieldList(fld_list, "TSU_BUYER_BK_ID");
+fld_list = stp.addFieldList(fld_list, "TSU_SEL_BK_ID");
+var sql_condition = stp.addSQLCondition(null, "C_MAIN_REF", C_REF);
+sql_condition = stp.addSQLCondition(sql_condition, "C_UNIT_CODE", bu);
+var result = stp.executeQuery("TSUM_MASTER", fld_list, sql_condition);
+var poid = stp.getDBFieldValue(result, "TSU_PO_ID");
+var buname = stp.getDBFieldValue(result, "TSU_BUYER_NM");
+var selname = stp.getDBFieldValue(result, "TSU_SEL_NM");
+var tsutid = stp.getDBFieldValue(result, "TSU_TID");
+var BbankNm = stp.getDBFieldValue(result, "TSU_BUYER_BK_ID");
+var SbankNm = stp.getDBFieldValue(result, "TSU_SEL_BK_ID");
+stp.updateFieldValue("TSU_PO_ID", poid);
+stp.updateFieldValue("TSU_BUYER_NM", buname);
+stp.updateFieldValue("TSU_SEL_NM", selname);
+stp.updateFieldValue("TSU_TID", tsutid);
+stp.updateFieldValue("TSU_BUYER_BK_ID", BbankNm);
+stp.updateFieldValue("TSU_SEL_BK_ID", SbankNm);
+stp.updateFieldValue("TSU_INV_STAT", "UNPR");
+stp.writeLog("============ReceiveInvoiceData====end============");

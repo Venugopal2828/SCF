@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>C08092500000</ID>
+    <MODULE>OWGT</MODULE>
+    <EVENT>Transaction</EVENT>
+    <CRTJSP POS="C">OWGT_ApplyForAmd.jsp</CRTJSP>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_MultiCatalog.jsp</JSPFILE>
+    <ADAPT>
+        <CLASS/>
+        <PROPERTY/>
+    </ADAPT>
+    <TABLENAME>CETRX.OWGT_EM_GTEEDTLS</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Main Ref." EEType="" HIDDEN="H" NOEVENT="Y">C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_TRX_REF" EEType="" HIDDEN="H" NOEVENT="Y">C_TRX_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Company Code" EEType="" HIDDEN="H" NOEVENT="Y">C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Our Reference Number" EEType="RELATED_REF" HIDDEN="" NOEVENT="Y">CUST_NO</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" NOEVENT="Y">GTEE_NO</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="1" DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" NOEVENT="Y">BENE_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="1" DESC="Guarantee Currency" EEType="CCY" HIDDEN="" NOEVENT="Y">GTEE_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="3" DESC="Guarantee Amount" EEType="AMT" HIDDEN="" NOEVENT="Y">GTEE_AMT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="3" DESC="Guarantee Balance" EEType="AMT" HIDDEN="H" NOEVENT="Y">GTEE_BAL</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H" NOEVENT="N">I_EVENT_TIMES</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" NOEVENT="N">CURRNT_STATUS</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC>Apply for Amendment</DESC>
+    <CLAUSE>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="NOCASE">CUST_NO</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="NOCASE">GTEE_NO</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Beneficiary Name" DT="1" TYPE="FLD" WTYPE="NOCASE">BENE_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Guarantee Currency" DT="1" TYPE="FLD" WTYPE="NOCASE">GTEE_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG11</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="NOCASE">GTEE_AMT</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP12</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE13</SQL>
+        <SQL TYPE="SQL">) AND (</SQL>
+        <SQL DESC="Guarantee Balance" DT="3" TYPE="FLD" WTYPE="NOCASE">GTEE_BAL</SQL>
+        <SQL TYPE="SQL">&gt;0) AND </SQL>
+        <SQL DESC="Current Status" DT="12" TYPE="FLD" WTYPE="NOCASE">CURRNT_STATUS</SQL>
+        <SQL TYPE="SQL"> = &apos;GTEE Issued&apos; ORDER BY </SQL>
+        <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="NOCASE">GTEE_NO</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="RELATED_REF">CUST_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Guarantee Number" EEType="RELATED_REF">GTEE_NO</FIELD>
+        <FIELD DATATYPE="1" DESC="Beneficiary Name" EEType="NM_CHAR35">BENE_NM</FIELD>
+        <FIELD DATATYPE="1" DESC="Guarantee Currency" EEType="CCY">GTEE_CCY</FIELD>
+        <FIELD DATATYPE="3" DESC="Guarantee Amount" EEType="AMT">GTEE_AMT</FIELD>
+        <FIELD DATATYPE="3" DESC="Guarantee Balance" EEType="AMT">GTEE_BAL</FIELD>
+        <FIELD DATATYPE="12" DESC="Current Status" EEType="NARR(1*35)">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Guarantee Number" EEType="RELATED_REF">GTEE_NO</FIELD>
+    </CLAUSEFIELD>
+    <CLAUSEVAR/>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

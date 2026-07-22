@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swift AutoGen-Parameter-Version="1.0">
+    <head-info>
+        <form-id>sendtobank_sw_mt799</form-id>
+        <form-name>sendtobank_sw_mt799</form-name>
+        <mt-desc>Free Format Message</mt-desc>
+        <telexhead>
+            <TO_NAME type="V"></TO_NAME>
+            <TO_ADD type="V"></TO_ADD>
+            <FM type="V"></FM>
+            <TELEX_NO type="V"></TELEX_NO>
+            <TEST_NO type="V"></TEST_NO>
+            <ON_CCY type="V"></ON_CCY>
+            <ON_AMT type="V"></ON_AMT>
+            <DATED type="V"></DATED>
+            <TEST_WITH type="V"></TEST_WITH>
+        </telexhead>
+        <module-name>SSSS</module-name>
+        <mt>799</mt>
+        <combined-flag></combined-flag>
+        <mt-limit-length>10000</mt-limit-length>
+        <io>O</io>
+        <COPYNUMS>1</COPYNUMS>
+        <to-telex>F</to-telex>
+        <PRINTERNAME></PRINTERNAME>
+        <check-js></check-js>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME></PPRINTERNAME>
+        <PRINTSTATE>R</PRINTSTATE>
+        <PT></PT>
+        <MAILID></MAILID>
+        <non-regular>FALSE</non-regular>
+    </head-info>
+    <tags>
+        <tag>
+            <order>00</order>
+            <tag-code>B1</tag-code>
+            <tag-desc>Outgoing SWIFT Header 1</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="25" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>B2</tag-code>
+            <tag-desc>Receiver's BIC Code</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <doxpath>AdviceForBankCust</doxpath>
+            <segment-1 cols="21" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>V</fv-type>
+                    <fv-value>I799</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>4</element-len>
+                    <rows>1</rows>
+                </element>
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>SEND_TO_BK_SW_ADD</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>5</start-position>
+                    <element-len>11</element-len>
+                    <rows>1</rows>
+                </element>
+                <element>
+                    <fv-type>V</fv-type>
+                    <fv-value>N</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>16</start-position>
+                    <element-len>1</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>5</scol>
+                    <len>11</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>20</tag-code>
+            <tag-desc>Transaction Reference Number</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <doxpath>AdviceForBankCust</doxpath>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>BANK_N90_REF_20</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>16</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>16</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>21</tag-code>
+            <tag-desc>Related Reference Number</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <doxpath>AdviceForBankCust</doxpath>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>BANK_N90_REF_21</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>16</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>16</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>79</tag-code>
+            <tag-desc>Narrative</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <doxpath>AdviceForBankCust</doxpath>
+            <segment-1 cols="50" illegal-char="" rows="105" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>BANK_NARR_TAG_79</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>50</element-len>
+                    <rows>105</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>1750</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>20Z</tag-code>
+            <tag-desc>Transaction Reference Number</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>21T</tag-code>
+            <tag-desc>Customer Business Reference</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>21S</tag-code>
+            <tag-desc>Bank Business Reference</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>29S</tag-code>
+            <tag-desc>Customer Identifier</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="40" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>29P</tag-code>
+            <tag-desc>Processing Bank Identifier</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="11" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>29U</tag-code>
+            <tag-desc>Lead Bank Identifier</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="11" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>B9</tag-code>
+            <tag-desc>Customer Address</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+    </tags>
+</swift>

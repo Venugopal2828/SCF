@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POST_ADD_DO</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        <table-name ALIAS="T2" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>BPOM</module-name>
+        <cubk-mapping-name>SUPLR_ID</cubk-mapping-name>
+        <select-type>U</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="F">SUPLR_ID</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="J">T2.C_MAIN_REF</C_MAIN_REF>
+            <ORDER_NO ALIAS="T2" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="J">T0.C_MAIN_REF</C_MAIN_REF>
+            <ORDER_NO ALIAS="T0" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T2" DBFUNC="" DESC="SWIFT Format Name" DT="12" HIDDEN="F" TYPE="F">SUPLR_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T2" DBFUNC="" DESC="Bank Contact SWIFT Format Address1" DT="12" HIDDEN="F" TYPE="F">SUPLR_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T2" DBFUNC="" DESC="Bank Contact SWIFT Format Address2" DT="12" HIDDEN="F" TYPE="F">SUPLR_ADD2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T2" DBFUNC="" DESC="Bank Contact SWIFT Format Address3" DT="12" HIDDEN="F" TYPE="F">SUPLR_ADD3</SWIFT_FMT_ADD3>
+        <POSTAL_FMT_ADD ALIAS="T0" DBFUNC="" DESC="Bank Postal Format Address" DT="12" HIDDEN="F" TYPE="F">SUPLR_MAIL_ADD</POSTAL_FMT_ADD>
+        <CUST_CORR_MED ALIAS="T1" DBFUNC="" DESC="Customer Correspondent Medium" DT="1" HIDDEN="F" TYPE="F">SUPLR_CORR_MED</CUST_CORR_MED>
+        <EMAIL_ADD ALIAS="T1" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="F" TYPE="F">SUPLR_EMAIL</EMAIL_ADD>
+        <FAX_NO ALIAS="T1" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="F" TYPE="F">SUPLR_FAX</FAX_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> &lt;&gt; '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' AND (CUST_TP='SP' OR CUST_TP='BH') AND (SUPLR_TP='B' OR (UPLOAD_BUYR_ID='</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' AND SUPLR_TP='O')) AND SUPLR_STATUS='A'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

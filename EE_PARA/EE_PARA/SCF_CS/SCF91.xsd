@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="SCF91" type="SCF91Type"/>
+	<xs:complexType name="SCF91Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="Customer" type="CustType"/>
+			<xs:element name="LoanDetails" type="LoanDetailsType" maxOccurs="10000"/>
+			<xs:element name="MsgText" type="AMax1400TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="ReceiverCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10TypeC" minOccurs="0"/>
+			<xs:element name="MsgType" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="FileIndex" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SubFileIndex" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="DateTime" type="DateTimeC"/>
+			<xs:element name="Status" type="NMax2TypeC" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustType">
+		<xs:sequence>
+			<xs:element name="CustomerCompanyRegNr" type="AMax35Type"/>
+			<xs:element name="CustomerNr" type="AMax35Type"/>
+			<xs:element name="CustomerName" type="AMax35Type"/>
+			<xs:element name="UnitCode" type="AMax35Type"/>
+			<xs:element name="BusiType" type="BIType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LoanDetailsType">
+		<xs:sequence>
+			<xs:element name="CounterpartyCompanyRegNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="CounterpartyNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="CounterpartyName" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SBRRef" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="CtrcRef" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="RegNo" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="LoanID" type="AMax35Type"/>
+			<xs:element name="LoanCcy" type="A3Type"/>
+			<xs:element name="LoanTtlAmt" type="NMax14.2Type"/>
+			<xs:element name="LoanPerc" type="NDef3.4TypeC"/>
+			<xs:element name="LoanValDate" type="xs:date"/>
+			<xs:element name="LoanDueDate" type="xs:date"/>
+			<xs:element name="LoanLimitExRate" type="NMax14.2Type" minOccurs="0"/>
+			<xs:element name="ChgType" type="NMax1Type" minOccurs="0"/>
+			<xs:element name="ChgRate" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="ChgCcy" type="A3TypeC" minOccurs="0"/>
+			<xs:element name="ChgAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="Chgs" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="IntChgType" type="NMax1Type"/>
+			<xs:element name="BaseRateType" type="NMax1Type" minOccurs="0"/>
+			<xs:element name="FlatRate" type="NDef3.4TypeC" minOccurs="0"/>
+			<xs:element name="IntBaseRate" type="NDef3.4TypeC" minOccurs="0"/>
+			<xs:element name="SprRate" type="NDef3.4TypeC" minOccurs="0"/>
+			<xs:element name="IntRate" type="NDef3.4TypeC"/>
+			<xs:element name="UpfIntAmt" type="NMax14.2TypeC" minOccurs="0"/>
+			<xs:element name="IntPaidAmt" type="NMax14.2TypeC"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

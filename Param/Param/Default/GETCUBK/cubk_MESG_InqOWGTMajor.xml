@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire OWGT Major Table" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>InqOWGTMajor</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.OWGT_EM_GTEEDTLS</table-name>
+        <table-desc>Guarantee Details</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <GTEE_NO DESC="Guarantee Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</GTEE_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <GTEE_NO DESC="Guarantee Number" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sInqDataId</GTEE_NO>
+        <BENE_NM DESC="Beneficiary Name" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sBeneNm</BENE_NM>
+        <GTEE_CCY DESC="Guarantee Currency" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sGteeCcy</GTEE_CCY>
+        <GTEE_AMT DESC="Guarantee Amount" DT="3" HIDDEN="" TYPE="V" WTYPE="CASE">sGteeAmt</GTEE_AMT>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

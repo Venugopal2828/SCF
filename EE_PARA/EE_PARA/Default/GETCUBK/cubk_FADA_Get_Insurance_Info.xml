@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>Get_Insurance_Info</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <INSU_POLICY_NO ALIAS="T0" DBFUNC="" DESC="Insurance Policy Number" DT="12" HIDDEN="F" TYPE="F">FA_INCO_ID</INSU_POLICY_NO>
+        <INSU_CO_NM ALIAS="T0" DBFUNC="" DESC="Insurance Company Name" DT="12" HIDDEN="F" TYPE="F">FA_INCO_NM</INSU_CO_NM>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">FA_CUST_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/R2TSUM_AdviseIncomingBaseline_EE.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="F">
+        <SCREEN DO="BuyerBank">TSUM_BuyerBanksInfomation</SCREEN>
+        <SCREEN DO="BuyrSdSubmitgBk">R2TSU_BuyersideSubmtBank</SCREEN>
+        <SCREEN DO="SellerBank">TSUM_SellerBankInformation</SCREEN>
+        <SCREEN DO="SellrSdSubmitgBk">R2TSU_SellerSideSubmitBank</SCREEN>
+    </DOSCREEN>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>Open Account Module</MODULE_DESC>
+        <EVENT>R2SIBOSMaintenance</EVENT>
+        <ID>F05030704016</ID>
+        <NAME>R2AdviseIncomingBaseline</NAME>
+        <DESC>Advise Incoming Baseline</DESC>
+        <FUNSHORTNAME>AdvisePO</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>S</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="R2AdviseIncomingBaseline">R00000012650</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000012655</CATALOGID>
+        <GAPI>F00000008753</GAPI>
+    </FUNCTION>
+</FUNC>

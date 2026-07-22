@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive Uploaded Status");
+stp.setAutoProcess(true);
+//stp.setUserId("CSBANK");
+var sMainRef = stp.getSimpleRef("17");
+stp.writeLog("sMainRef======================"+sMainRef);
+stp.setMainRef(sMainRef);
+var aIndex = stp.getMsgTagVal("INDEX").split("_");
+stp.writeLog("aIndex======================"+aIndex);
+var sUnitCode = aIndex[aIndex.length-2];
+stp.writeLog("sUnitCode======================"+sUnitCode);
+var fileindex = aIndex[aIndex.length-1];
+stp.writeLog("fileindex======================"+fileindex);
+var iIndex = fileindex.lastIndexOf(".");
+stp.writeLog("iIndex======================"+iIndex);
+if(iIndex>0){
+    fileindex = fileindex.substring(0,iIndex);
+stp.writeLog("fileindex======================"+fileindex);
+}
+var tp = stp.getMsgTagVal("TYPE");
+stp.writeLog("TYPE======================"+tp);
+stp.updateFieldValue("TYPE",tp);
+stp.updateFieldValue("C_BATCH_ID",fileindex);
+stp.writeLog("sUnitCode======================"+sUnitCode);
+stp.setCmpId(sUnitCode);
+stp.writeLog("End: Receive Uploaded Status");]]></js-content>
+</root>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns="urn:iso:std:iso:20022:tech:xsd:camt.110.001.01" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:iso:std:iso:20022:tech:xsd:camt.110.001.01">
+    <xs:element name="Document" type="Document"/>
+    <xs:complexType name="AccountIdentification4Choice__1"><xs:choice>
+            <xs:element name="IBAN" type="IBAN2007Identifier"></xs:element>
+            <xs:element name="Othr" type="GenericAccountIdentification1__1"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:simpleType name="ActiveCurrencyCode"><xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{3,3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ActiveOrHistoricCurrencyAndAmount_SimpleType">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="5"/>
+            <xs:totalDigits value="18"/>
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="ActiveOrHistoricCurrencyAndAmount"><xs:simpleContent>
+            <xs:extension base="ActiveOrHistoricCurrencyAndAmount_SimpleType">
+                <xs:attribute name="Ccy" type="ActiveOrHistoricCurrencyCode" use="required"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="ActiveOrHistoricCurrencyCode"><xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{3,3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="AdditionalRequestData1Choice__1"><xs:choice>
+            <xs:element name="ReqdCompstn" type="CompensationRequest1__1"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:simpleType name="BICFIDec2014Identifier"><xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z0-9]{4,4}[A-Z]{2,2}[A-Z0-9]{2,2}([A-Z0-9]{3,3}){0,1}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="BranchAndFinancialInstitutionIdentification6__1"><xs:sequence>
+            <xs:element name="FinInstnId" type="FinancialInstitutionIdentification18__1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="CASE_Amount_SimpleType">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="5"/>
+            <xs:totalDigits value="14"/>
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="CASE_Amount"><xs:simpleContent>
+            <xs:extension base="CASE_Amount_SimpleType">
+                <xs:attribute name="Ccy" type="ActiveCurrencyCode" use="required"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="CASE_DateTime"><xs:restriction base="xs:dateTime">
+            <xs:pattern value=".*(\+|-)((0[0-9])|(1[0-3])):[0-5][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CASE_RestrictedFINXMax105Text"><xs:restriction base="xs:string">
+            <xs:pattern value="[0-9a-zA-Z/\-\?:\(\)\.,'\+ ]+"/>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="105"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CASE_RestrictedFINXMax140Text"><xs:restriction base="xs:string">
+            <xs:pattern value="[0-9a-zA-Z/\-\?:\(\)\.,'\+ ]+"/>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="140"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CASE_RestrictedFINXMax16Text"><xs:restriction base="xs:string">
+            <xs:pattern value="([0-9a-zA-Z\-\?:\(\)\.,'\+ ]([0-9a-zA-Z\-\?:\(\)\.,'\+ ]*(/[0-9a-zA-Z\-\?:\(\)\.,'\+ ])?)*)"/>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="16"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CASE_RestrictedFINXMax34Text"><xs:restriction base="xs:string">
+            <xs:pattern value="([0-9a-zA-Z\-\?:\(\)\.,'\+ ]([0-9a-zA-Z\-\?:\(\)\.,'\+ ]*(/[0-9a-zA-Z\-\?:\(\)\.,'\+ ])?)*)"/>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="34"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CASE_RestrictedFINXMax35Text"><xs:restriction base="xs:string">
+            <xs:pattern value="[0-9a-zA-Z/\-\?:\(\)\.,'\+ ]+"/>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="35"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="CashAccount40__1"><xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="Id" type="AccountIdentification4Choice__1"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="Ccy" type="ActiveOrHistoricCurrencyCode"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CompensationRequest1__1"><xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="CompstnAcct" type="CashAccount40__1"></xs:element>
+            <xs:element name="Prd" type="DatePeriod2"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="Amt" type="CASE_Amount"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="XpctdValDt" type="ISODate"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="IntrstRate" type="PercentageRate"></xs:element>
+            <xs:element maxOccurs="2" minOccurs="0" name="Rsn" type="CASE_RestrictedFINXMax140Text"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DateAndDateTime2Choice__1"><xs:choice>
+            <xs:element name="Dt" type="ISODate"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="DatePeriod2"><xs:sequence>
+            <xs:element name="FrDt" type="ISODate"></xs:element>
+            <xs:element name="ToDt" type="ISODate"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Document">
+        <xs:sequence>
+            <xs:element name="InvstgtnReq" type="InvestigationRequestV01"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="ExternalInvestigationAction1Code"><xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ExternalInvestigationActionReason1Code"><xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ExternalInvestigationInstrument1Code"><xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ExternalInvestigationReason1Code_fixed"><xs:restriction base="xs:string">
+            <xs:enumeration value="RQUF"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ExternalInvestigationServiceLevel1Code"><xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ExternalInvestigationType1Code_fixed"><xs:restriction base="xs:string">
+            <xs:enumeration value="RQUF"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FinancialInstitutionIdentification18__1"><xs:sequence>
+            <xs:element name="BICFI" type="BICFIDec2014Identifier"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GenericAccountIdentification1__1"><xs:sequence>
+            <xs:element name="Id" type="CASE_RestrictedFINXMax34Text"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="IBAN2007Identifier"><xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ISODate"><xs:restriction base="xs:date"/>
+    </xs:simpleType>
+    <xs:complexType name="InvestigationActionReason1Choice__1"><xs:choice>
+            <xs:element name="Cd" type="ExternalInvestigationActionReason1Code"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="InvestigationActionReason1__1"><xs:sequence>
+            <xs:element name="Rsn" type="InvestigationActionReason1Choice__1"></xs:element>
+            <xs:element maxOccurs="2" minOccurs="0" name="AddtlInf" type="CASE_RestrictedFINXMax105Text"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InvestigationReason1Choice__1"><xs:choice>
+            <xs:element name="Cd" type="ExternalInvestigationReason1Code_fixed"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="InvestigationReason2__1"><xs:sequence>
+            <xs:element name="Rsn" type="InvestigationReason1Choice__1"></xs:element>
+            <xs:element name="AddtlReqData" type="AdditionalRequestData1Choice__1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InvestigationRequest2__1"><xs:sequence>
+            <xs:element name="MsgId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element name="RqstrInvstgtnId" type="CASE_RestrictedFINXMax16Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="RspndrInvstgtnId" type="CASE_RestrictedFINXMax16Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="EIR" type="UUIDv4Identifier"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="ReqActn" type="InvestigationRequestAction1__1"></xs:element>
+            <xs:element name="InvstgtnTp" type="InvestigationType1Choice__1"></xs:element>
+            <xs:element name="UndrlygInstrm" type="UnderlyingInvestigationInstrument1Choice__1"></xs:element>
+            <xs:element name="Undrlyg" type="UnderlyingData2Choice__1"></xs:element>
+            <xs:element name="Rqstr" type="Party40Choice__1"></xs:element>
+            <xs:element name="Rspndr" type="Party40Choice__1"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="ReqOrgtr" type="Party40Choice__1"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="SvcLvl" type="InvestigationServiceLevel1Choice__1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InvestigationRequestAction1Choice__1"><xs:choice>
+            <xs:element name="Cd" type="ExternalInvestigationAction1Code"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="InvestigationRequestAction1__1"><xs:sequence>
+            <xs:element name="Actn" type="InvestigationRequestAction1Choice__1"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="ActnRsn" type="InvestigationActionReason1__1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InvestigationRequestV01"><xs:sequence>
+            <xs:element name="InvstgtnReq" type="InvestigationRequest2__1"></xs:element>
+            <xs:element name="InvstgtnData" type="InvestigationReason2__1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="InvestigationServiceLevel1Choice__1"><xs:choice>
+            <xs:element name="Cd" type="ExternalInvestigationServiceLevel1Code"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="InvestigationType1Choice__1"><xs:choice>
+            <xs:element name="Cd" type="ExternalInvestigationType1Code_fixed"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="OriginalGroupInformation29__1"><xs:sequence>
+            <xs:element name="OrgnlMsgId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element name="OrgnlMsgNmId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlCreDtTm" type="CASE_DateTime"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Party40Choice__1"><xs:choice>
+            <xs:element name="Agt" type="BranchAndFinancialInstitutionIdentification6__1"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:simpleType name="PercentageRate"><xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="10"/>
+            <xs:totalDigits value="11"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="UUIDv4Identifier"><xs:restriction base="xs:string">
+            <xs:pattern value="[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="UnderlyingData2Choice__1"><xs:choice>
+            <xs:element name="IntrBk" type="UnderlyingPaymentTransaction7__1"></xs:element>
+            <xs:element name="StmtNtry" type="UnderlyingStatementEntry5__1"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="UnderlyingGroupInformation1__1"><xs:sequence>
+            <xs:element name="OrgnlMsgId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element name="OrgnlMsgNmId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlCreDtTm" type="CASE_DateTime"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlMsgDlvryChanl" type="CASE_RestrictedFINXMax35Text"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="UnderlyingInvestigationInstrument1Choice__1"><xs:choice>
+            <xs:element name="Cd" type="ExternalInvestigationInstrument1Code"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="UnderlyingPaymentTransaction7__1"><xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlGrpInf" type="UnderlyingGroupInformation1__1"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlInstrId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlEndToEndId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlTxId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlUETR" type="UUIDv4Identifier"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlIntrBkSttlmAmt" type="CASE_Amount"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlIntrBkSttlmDt" type="ISODate"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="UnderlyingStatementEntry5__1"><xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlAcct" type="CashAccount40__1"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlGrpInf" type="OriginalGroupInformation29__1"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlStmtId" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlNtryRef" type="CASE_RestrictedFINXMax35Text"></xs:element>
+            <xs:element maxOccurs="1" minOccurs="0" name="OrgnlUETR" type="UUIDv4Identifier"></xs:element>
+            <xs:element name="OrgnlNtryAmt" type="ActiveOrHistoricCurrencyAndAmount"></xs:element>
+            <xs:element name="OrgnlNtryValDt" type="DateAndDateTime2Choice__1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>GTEE</module-name>
+        <cubk-mapping-name>APPL_ADD1_BANK</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">POST_ADD_DO</table-name>
+        	<table-name ALIAS="T2" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">APPL_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <AC1_CCY ALIAS="T0" DBFUNC="" DESC="Account Currency1" DT="1" HIDDEN="F" TYPE="F">AC1_CCY</AC1_CCY>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

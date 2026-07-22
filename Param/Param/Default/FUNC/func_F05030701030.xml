@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PUOD</MODULE>
+        <MODULE_DESC>Purchase Order</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701030</ID>
+        <NAME>Receive Delta Report</NAME>
+        <DESC>Received Delta Report</DESC>
+        <FUNSHORTNAME>RecDltRpt</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">PUOD_RecDltRpt.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701023</ID>
+        <NAME>Receive Delta Report_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701023</ID>
+        <NAME>Receive Delta Report_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000307</ID>
+        <NAME>Receive Delta Report_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

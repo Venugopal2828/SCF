@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <element name="domData">
+        <complexType>
+            <sequence>
+                <element name="C_BG_DESC"/>
+                <element name="C_BG_ID"/>
+                <element name="C_BG_VERSION"/>
+                <element name="C_BK_GROUP_ID"/>
+                <element name="C_CNTY_CODE"/>
+                <element name="C_CP_UNIT_CODE"/>
+                <element name="C_OBG_DESC"/>
+                <element name="C_OBG_ID"/>
+                <element name="C_OBG_VERSION"/>
+                <element name="C_OBK_GROUP_ID"/>
+                <element name="C_OCNTY_CODE"/>
+                <element name="C_TYPE"/>
+                <element name="D_BG_ACTIVE_DATE"/>
+                <element name="OP_TYPE"/>
+                <element name="SLAFuncFlowDo">
+                    <complexType>
+                        <sequence>
+                            <element name="C_BG_DESC"/>
+                            <element name="C_BG_ID"/>
+                            <element name="C_BG_VERSION"/>
+                            <element name="C_BK_GROUP_ID"/>
+                            <element name="C_CNTY_CODE"/>
+                            <element name="C_CP_UNIT_CODE"/>
+                            <element name="C_DO_NAME"/>
+                            <element name="C_FUNCGRP_ID"/>
+                            <element name="C_FUNC_DESC"/>
+                            <element name="C_FUNC_ID"/>
+                            <element name="C_MODU_NAME"/>
+                            <element name="C_STEP_NAME"/>
+                            <element name="I_FUNC_SEQ_NO"/>
+                            <element name="I_STEP_SEQ_NO"/>
+                            <element name="SLAFuncFlowCondDo">
+                                <complexType>
+                                    <sequence>
+                                        <element name="C_DO_NAME"/>
+                                        <element name="I_STEP_SEQ_NO"/>
+                                        <element name="I_FUNC_SEQ_NO"/>
+                                        <element name="I_TO_STEP_NO"/>
+                                        <element name="I_TO_FUNC_NO"/>
+                                        <element name="C_TO_STEP_NAME"/>
+                                        <element name="C_TO_FUNC_DESC"/>
+                                        <element name="C_TO_FUNC_ID"/>
+                                        <element name="C_TO_FUNCGRP_ID"/>
+                                        <element name="C_GATEWAY_TYPE"/>
+                                        <element name="C_BG_VERSION"/>
+                                        <element name="C_BG_ID"/>
+                                        <element name="SLAFuncFlowCondDefDo">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="C_DO_NAME"/>
+                                                    <element name="C_AND_OR"/>
+                                                    <element name="C_FIELD_TYPE"/>
+                                                    <element name="C_FIELD_ID"/>
+                                                    <element name="C_FIELD_VALUE"/>
+                                                    <element name="C_OPERATOR"/>
+                                                    <element name="C_CASE_SENSTIVE"/>
+                                                    <element name="C_BG_VERSION"/>
+                                                    <element name="C_BG_ID"/>
+                                                    <element name="I_COND_SEQ_NO"/>
+                                                    <element name="I_TO_FUNC_NO"/>
+                                                    <element name="I_TO_STEP_NO"/>
+                                                    <element name="I_STEP_SEQ_NO"/>
+                                                    <element name="I_FUNC_SEQ_NO"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SLA_BGDESC"/>
+                <element name="_TRX_STATUS"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

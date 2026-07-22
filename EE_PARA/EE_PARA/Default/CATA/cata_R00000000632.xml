@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>C06052900099</ID>
+    <MODULE>SECU</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Release User Function</DESC>
+    <TABLENAME SCHEMA="EXIMUSER">EXIMUSER.SEC_USER_INFO</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="User ID" EEType="" HIDDEN="">C_USER_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="User Description"
+            EEType="Varchar_60" HIDDEN="">C_USER_DESC</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="BANK GROUP ID" EEType="" HIDDEN="">C_BK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="BUSINESS UNIT" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="User Type" EEType="INTEGER" HIDDEN="">I_USER_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="User Level" EEType="INTEGER" HIDDEN="">I_USER_LEVEL</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="Event State" EEType="INTEGER" HIDDEN="H">I_EVENT_STATE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="User ID" DT="12" EEType="" TYPE="FLD">C_USER_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' ORDER BY </SQL>
+        <SQL DESC="User ID" DT="12" EEType="" TYPE="FLD">C_USER_ID</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="User ID" EEType="">C_USER_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="User ID" EEType="">C_USER_ID</FIELD>
+    </CLAUSEFIELD>
+</CATA>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="CounterpartyNonNettingCCY" Max="n" Min="0" Name="CounterpartyNonNettingCCY" PendingStore="N" Screen="SCRN/DO/CounterpartyNonNettingCCY.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="CNPT_NONNET_CCY_DO"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>DO_INDEX_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TRCP_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="Data Object Index No." DispInGrid="N" EDIT="N" EEType="ABKID" FldType="" Value="">DO_INDEX_NO</Element>
+        <Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_14" FldType="" Value="">CNPT_ID</Element>
+        <Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CNPT_SHORT_NM</Element>
+        <Element DATATYPE="1" Desc="Counterparty SWIFT" DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">CNPT_SWADD</Element>
+        <Element DATATYPE="1" Desc="Non Netting Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">NON_NET_CCY</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

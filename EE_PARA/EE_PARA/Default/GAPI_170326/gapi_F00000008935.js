@@ -1,0 +1,1 @@
+DV.appendField("FA_InvVerify_ME", "VerifyInv", "FA_DOC_VERIFIED=='Rejected'");

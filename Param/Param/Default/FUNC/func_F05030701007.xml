@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">INVC</MODULE>
+        <MODULE_DESC>Invoice</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701007</ID>
+        <NAME>Received Mismatch Decision</NAME>
+        <DESC>Received Mismatch Decision</DESC>
+        <FUNSHORTNAME>RecvdMismatch</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">INVC_RecvdMismtchDesin.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701000</ID>
+        <NAME>Received Mismatch Decision_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701000</ID>
+        <NAME>Received Mismatch Decision_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000281</ID>
+        <NAME>Received Mismatch Decision_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

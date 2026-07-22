@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>EPLC</module>
+    <name>EPLC_FOR_APPL_CHARGES</name>
+    <desc>EPLC_FOR_APPL_CHARGES</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.EPLC_EM_NEGO</table-name>
+        <table-desc>EPLC_EM_NEGO</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <ADDIT_PRES_BK_AMTS fv_type="V" oper="=">0</ADDIT_PRES_BK_AMTS>
+        <ADV_BK_CHGS fv_type="V" oper="=">0</ADV_BK_CHGS>
+        <OUR_CHGS_APPL fv_type="V" oper="=">0</OUR_CHGS_APPL>
+        <PRES_BK_CHGS fv_type="V" oper="=">0</PRES_BK_CHGS>
+    </mapping>
+</root>

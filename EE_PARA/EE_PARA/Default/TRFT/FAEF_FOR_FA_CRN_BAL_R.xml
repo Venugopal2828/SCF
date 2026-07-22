@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FAEF</module>
+    <name>FOR_FA_CRN_BAL</name>
+    <desc>FOR_FA_CRN_BAL</desc>
+    <head-info>
+        <DO name="PaymentReg" path="PaymentReg"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.INVC_MASTER</table-name>
+        <table-desc>INVC_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>FA_DOC_NO</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_CRN_INV_LINK_NO</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_CRN_BAL fv_type="F" mf="F" oper="-=">FA_PMT_AMT</FA_CRN_BAL>
+    </mapping>
+</root>

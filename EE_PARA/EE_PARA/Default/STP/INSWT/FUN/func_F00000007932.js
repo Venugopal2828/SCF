@@ -1,0 +1,32 @@
+stp.writeLog("===================InMT202 Start==================");
+stp.setAutoProcess(true);
+stp.setEventTimes(0);
+
+var TagB6 = stp.getSWIFTTagValue("B6");
+var FactorBIC = TagB6.substr(14, 11);
+stp.writeLog("---------------FactorBIC=" + FactorBIC);
+var fld_list = stp.addFieldList(null, "FA_FACTOR_ID");
+fld_list = stp.addFieldList(fld_list, "FA_FACTOR_NM");
+var sql_condition = stp.addSQLCondition(null, "FA_FACTOR_BIC", FactorBIC);
+var result = stp.executeQuery("FADA_FACTOR", fld_list, sql_condition);
+var FA_FACTOR_ID = stp.getDBFieldValue(result, "FA_FACTOR_ID");
+stp.updateFieldValue("FA_FACTOR_ID", FA_FACTOR_ID);
+stp.writeLog("---------------FA_FACTOR_ID=" + FA_FACTOR_ID);
+var FA_FACTOR_NM = stp.getDBFieldValue(result, "FA_FACTOR_NM");
+stp.updateFieldValue("FA_FACTOR_NM", FA_FACTOR_NM);
+stp.writeLog("---------------FA_FACTOR_NM=" + FA_FACTOR_NM);
+
+var pre = 'IF';
+stp.updateFieldValue("FA_BUSI_TYPE", pre);
+var UnitCode = stp.getBusiUnit();
+var date = stp.getSysBusiDate();
+stp.updateFieldValue("TRX_DT", date);
+year = date.substr(2, 2);
+month = date.substr(5, 2);
+var sub = 'IST';
+var ref = stp.SYS_getRefNo("InMT202_REF");
+var mainref = pre + UnitCode + year + month + ref + sub;
+stp.updateFieldValue("C_MAIN_REF", mainref);
+stp.writeLog("---------------C_MAIN_REF=" + mainref);
+stp.updateFieldValue("FA_BUSI_STATUS", 'MT202');
+stp.writeLog("===================InMT202 End==================");

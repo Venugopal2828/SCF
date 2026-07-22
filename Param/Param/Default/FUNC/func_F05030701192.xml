@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FADA</MODULE>
+        <MODULE_DESC>Finance Data</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701192</ID>
+        <NAME>Receive SBR for Supplier</NAME>
+        <DESC>Receive SBR for Supplier</DESC>
+        <FUNSHORTNAME>RecSBRSeller</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FADA_RecSBR.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701184</ID>
+        <NAME>a_FORM</NAME>
+    </FORM>
+    <FORM>
+        <ID>F05030701200</ID>
+        <NAME>Receive SBR for Supplier_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701184</ID>
+        <NAME>a_ACCOUT</NAME>
+    </VOUCHER>
+    <VOUCHER>
+        <ID>A05030701200</ID>
+        <NAME>Receive SBR for Supplier_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000490</ID>
+        <NAME>Receive SBR for Supplier_NOTIFY</NAME>
+    </NOTIFY>
+    <NOTIFY>
+        <ID>N00000000480</ID>
+        <NAME>a_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

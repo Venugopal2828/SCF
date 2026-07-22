@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id>Q_CE</recv-queue-id>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>TSU.005.InvInstr</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>DOCM</module>
+        <interface-mapping-name>InvoiceInstr</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <C_MAIN_REF descr="Main Ref." ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">TSU_BK_MAIN_REF</C_MAIN_REF>
+        <C_UNIT_CODE descr="C_UNIT_CODE" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">C_UNIT_CODE</C_UNIT_CODE>
+        <TSU_PO_ID descr="PO Id" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">TSU_PO_ID</TSU_PO_ID>
+        <TSU_PO_DT descr="TSU_PO_DT" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">TSU_PO_DT</TSU_PO_DT>
+        <TSU_CCY descr="TSU_CCY" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">TSU_CCY</TSU_CCY>
+        <TSU_CUST_ID descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">C_UNIT_CODE</TSU_CUST_ID>
+        <TSU_CUST_REF descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">C_MAIN_REF</TSU_CUST_REF>
+        <TSU_INV_ISSUE_DT descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">TSU_INV_ISSUE_DT</TSU_INV_ISSUE_DT>
+        <TSU_COMM_REF descr="Invoice Reference" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="9">TSU_COMM_REF</TSU_COMM_REF>
+        <TSU_COMM_DT descr="TSU_INV_ISSUE_DT" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="10">TSU_INV_ISSUE_DT</TSU_COMM_DT>
+        <TSU_INV_REF descr="Invoice Ref" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="11">TSU_INV_REF</TSU_INV_REF>
+        <TSU_FINAL_FLAG descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="12"/>
+        <TSU_POST_FIN descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="13">IS_FIN</TSU_POST_FIN>
+        <TSU_COMDATA_INS descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="14">TSU_COMDATA_INS</TSU_COMDATA_INS>
+        <TSU_COMM_AMT descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="16">TSU_INV_AMT</TSU_COMM_AMT>
+        <TSU_CUST_ACC descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="17">TSU_CUST_ACC</TSU_CUST_ACC>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="18">TSU.005.InvInstr</MSG_TYPE>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item/>
+</gapi>

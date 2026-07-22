@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <desc>Update guarantee details when claim comes</desc>
+    <module>OWGT</module>
+    <name>UpdateGteeDetailsForClaim</name>
+    <head-info>
+        <table-name>CETRX.OWGT_EM_GTEEDTLS</table-name>
+        <table-desc>Guarantee Details</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info>Update guarantee details failure when demerge BKTS.OWGT.009.Clm</err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition>
+            <sql type="TBL_FLD">GTEE_NO</sql>
+            <sql type="SQL">=&apos;</sql>
+            <field mf="F">GTEE_NO</field>
+            <sql type="SQL">&apos; AND </sql>
+            <sql type="TBL_FLD">C_UNIT_CODE</sql>
+            <sql type="SQL">=&apos;</sql>
+            <field mf="F">C_UNIT_CODE</field>
+            <sql type="SQL">&apos;</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <GTEE_BAL fv_type="F" mf="F" oper="=">GTEE_BAL</GTEE_BAL>
+    </mapping>
+</root>

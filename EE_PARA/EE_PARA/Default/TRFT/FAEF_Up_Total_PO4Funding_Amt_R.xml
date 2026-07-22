@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FAEF</module>
+    <name>Up_Total_PO4Funding_Amt</name>
+    <desc>Up_Total_PO4Funding_Amt</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FADA_MASTER</table-name>
+        <table-desc>FADA MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql type="TBL_FLD">FA_SBR_REF</sql>
+            <sql type="SQL">= '</sql>
+            <field mf="F">FA_SBR_REF</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">FA_BUSI_STATUS</sql>
+            <sql type="SQL">='SBR'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_TTL_PO_LOAN_BAL fv_type="F" mf="F" oper="-=">FA_PAID_PRIN_SUM</FA_TTL_PO_LOAN_BAL>
+        <FA_LMT_BAL fv_type="F" mf="F" oper="+=">TEMP_BP_AMT9</FA_LMT_BAL>
+    </mapping>
+</root>

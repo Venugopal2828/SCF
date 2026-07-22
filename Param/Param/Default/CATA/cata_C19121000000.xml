@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>C19121000000</ID>
+    <MODULE>FAEF</MODULE>
+    <EVENT>System</EVENT>
+    <CRTJSP POS="A">FAEF_InvFin_Cri.jsp</CRTJSP>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_MultiCatalog.jsp</JSPFILE>
+    <ADAPT>
+        <CLASS>com.cs.ceweb.utility.catalog.CECatalogForSelectInvc</CLASS>
+        <PROPERTY>
+            <prop descr="INTF_GETDATAID" name="INTF_GETDATAID">R</prop>
+            <prop descr="MAX_TREC_SIZE" name="MAX_TREC_SIZE">0</prop>
+            <prop descr="MAX_PREC_SIZE" name="MAX_PREC_SIZE">0</prop>
+        </PROPERTY>
+    </ADAPT>
+    <TABLENAME>CETRX.FAEF_EM_INV</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="N" DATATYPE="12" DESC="Main Ref." EEType="" HIDDEN="H" NOEVENT="N">C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="N" DATATYPE="12" DESC="C_TRX_REF" EEType="" HIDDEN="H" NOEVENT="N">C_TRX_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="N" DATATYPE="12" DESC="Company Code" EEType="" HIDDEN="H" NOEVENT="N">C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Doc No." EEType="" HIDDEN="" NOEVENT="N">FA_DOC_NO</FIELD>
+        <FIELD ALIAS="" CONFIG="N" DATATYPE="12" DESC="Trx Status" EEType="" HIDDEN="H" NOEVENT="N">C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="N" DATATYPE="12" DESC="SBR reference in EE" EEType="" HIDDEN="H" NOEVENT="N">FA_SBR_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Doc Ref" EEType="" HIDDEN="" NOEVENT="N">FA_DOC_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="91" DESC="Doc Date" EEType="DATE" HIDDEN="" NOEVENT="N">FA_DOC_DT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Buyer Name" EEType="" HIDDEN="" NOEVENT="N">FA_BUYER_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Seller Name" EEType="" HIDDEN="" NOEVENT="N">FA_SEL_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="1" DESC="Doc CCY" EEType="CCY" HIDDEN="" NOEVENT="N">FA_DOC_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="3" DESC="Doc Amt" EEType="AMT" HIDDEN="" NOEVENT="N">FA_DOC_AMT</FIELD>
+        <FIELD ALIAS="" CONFIG="N" DATATYPE="12" DESC="Parent Main Reference" EEType="" HIDDEN="H" NOEVENT="N">PARENT_MAIN_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="3" DESC="Invoice Loan Amount" EEType="AMT" HIDDEN="" NOEVENT="N">FA_INV_LOAN_AMT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="3" DESC="Settled Amount" EEType="AMT" HIDDEN="" NOEVENT="N">FA_PAID_PRIN_AMT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Document Status" EEType="" HIDDEN="" NOEVENT="N">FA_DOC_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="91" DESC="Doc Due Date" EEType="DATE" HIDDEN="" NOEVENT="N">FA_DOC_DUE_DT</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC>View Invoice ME Catalog</DESC>
+    <CLAUSE>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="Doc No." DT="12" TYPE="FLD" WTYPE="NOCASE">FA_DOC_NO</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">&apos; AND  </SQL>
+        <SQL DESC="Doc CCY" DT="1" TYPE="FLD" WTYPE="NOCASE">FA_DOC_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP2</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE3</SQL>
+        <SQL TYPE="SQL">&apos; AND  </SQL>
+        <SQL DESC="Seller Name" DT="12" TYPE="FLD" WTYPE="NOCASE">FA_SEL_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP4</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE5</SQL>
+        <SQL TYPE="SQL">&apos; AND  </SQL>
+        <SQL DESC="Doc Date" DT="91" TYPE="FLD" WTYPE="NOCASE">FA_DOC_DT</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">&apos;)</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Doc No." EEType="">FA_DOC_NO</FIELD>
+        <FIELD DATATYPE="1" DESC="Doc CCY" EEType="CCY">FA_DOC_CCY</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller Name" EEType="">FA_SEL_NM</FIELD>
+        <FIELD DATATYPE="91" DESC="Doc Date" EEType="DATE">FA_DOC_DT</FIELD>
+    </CLAUSEFIELD>
+    <CLAUSEVAR/>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

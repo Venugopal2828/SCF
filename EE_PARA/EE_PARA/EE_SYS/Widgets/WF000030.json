@@ -1,0 +1,28 @@
+{
+	"id": "WF000030",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF000030",
+			"display": "chart.bar",
+			"title": "Business Type Transactions",
+			"desc": "Show Several Series in the same Chart.",
+			"tooltip": "{\"text\":\"{a}<br/>{b} day ago: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of transactions\"}}",
+					"line": "{\"xAxis\":{\"name\":\"Number of transactions\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of transactions\"}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of transactions\"}}"
+				}
+			}
+		},
+		"data": {
+			"sql": "SELECT 'Business Transactions' AS C_UNIT_CODE, FA_BUSI_TYPE AS CATEGORY, COUNT(*) AS VL FROM EXIMTRX.FADA_MASTER WHERE FA_BUSI_TYPE IN ('PF','RD','POF','DD') AND C_UNIT_CODE = '{{SYS_BUSI_UNIT}}' GROUP BY FA_BUSI_TYPE ORDER BY FA_BUSI_TYPE ASC",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "CATEGORY",
+			"valueField": "VL"
+		}
+	}
+}

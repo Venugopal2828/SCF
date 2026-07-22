@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="CommodityMarketPrice" Max="n" Min="0" Name="CommodityMarketPrice" PendingStore="N" Screen="SCRN/o2m/CMDT_CommodityPrice.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>CommodityMarketPrice</Component>
+    <PK>
+        <PKNAME>COMDT_ID</PKNAME>
+        <PKNAME>UPDATE_DT</PKNAME>
+        <PKNAME>I_EVENT_TIMES</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Commodity ID" DispInGrid="Y" EDIT="N" EEType="VARCHAR16" FldType="" Value="">COMDT_ID</Element>
+        <Element DATATYPE="12" Desc="Price Units" DispInGrid="Y" EDIT="N" EEType="FLAG_10" FldType="" Value="">UNIT</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="Y" EDIT="Y" EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="2" Desc="Exchange Rate" DispInGrid="N" EDIT="N" EEType="Numeric_18_6" FldType="" Value="">EXCH_RATE</Element>
+        <Element DATATYPE="3" Desc="UNIT_PRICE" DispInGrid="Y" EDIT="Y" EEType="AMT" FldType="" Value="">UNIT_PRICE</Element>
+        <Element DATATYPE="12" Desc="ISSUER" DispInGrid="Y" EDIT="Y" EEType="TEXTAREA_70" FldType="" Value="">ISSUER</Element>
+        <Element DATATYPE="91" Desc="UPDATE_DT" DispInGrid="Y" EDIT="Y" EEType="DATE" FldType="" Value="">UPDATE_DT</Element>
+        <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="3" Desc="Unit Price to LCY" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">LCY_PRICE</Element>
+    </Elements>
+</DO>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Forward Intent To Pay Notification");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sRptId = stp.getXslMsgTagVal("message/Document/FwdInttToPayNtfctn/NtfctnId","Id");
+var sTxId = stp.getXslMsgTagVal("message/Document/FwdInttToPayNtfctn/TxId","Id");
+stp.writeLog("sRptId=========="+sRptId);
+stp.writeLog("sTxId=========="+sTxId);
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC=========="+sBIC);
+stp.updateFieldValue("TSU_PCBK_BIC",sBIC);
+var arrKeys = [["TSU_TID",sTxId],["TSU_PCBK_BIC",sBIC]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetBothInforByTxIdAndPCBKBIC",arrKeys);
+var sBuyrBkBIC = arrGetDataResult[0];
+var sSellrBkBIC = arrGetDataResult[2];
+var sBuyrNm = arrGetDataResult[3];
+var sSellrNm = arrGetDataResult[1];
+var sTtlNetAmt = arrGetDataResult[4];
+var sRelNo = arrGetDataResult[5];
+var sUnitNm = "";
+if (sBIC == sBuyrBkBIC){
+sUnitNm = sBuyrNm;
+} else{
+sUnitNm = sSellrNm;
+}
+var arrKeys1 = [["C_UNIT_NAME",sUnitNm]];
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetUnitCodeByNm",arrKeys1);
+var sUnitCode = arrGetDataResult1[0];
+stp.writeLog("sUnitCode=========="+sUnitCode);
+stp.setCmpId(sUnitCode);
+var sMainRef = stp.SYS_getRefNo("P08091000000");
+stp.setMainRef(sMainRef);
+var sPOId = stp.getXslMsgTagVals("message/Document/FwdInttToPayNtfctn/InttToPay/ByPurchsOrdr/PurchsOrdrRef","Id");
+var sCcy = "";
+var sNetAMt = 0;
+if(sPOId != null){
+stp.updateFieldValue("PROCESS_TYPE","BYPO");
+stp.updateFieldValue("RLTD_NO",sRelNo);
+stp.writeLog("sRelNo=========="+sRelNo);
+sCcy = stp.getXslMsgTagAttribute("message/Document/FwdInttToPayNtfctn/InttToPay/ByPurchsOrdr","NetAmt","Ccy");
+sNetAMt = stp.getXslMsgTagVal("message/Document/FwdInttToPayNtfctn/InttToPay/ByPurchsOrdr","NetAmt");
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+stp.updateFieldValue("TPC","Intent to Pay");
+stp.updateFieldValue("MSG_SUBJECT","Intent to Pay by Purchase Order");
+stp.updateFieldValue("TSU_TTL_NET_AMT",sTtlNetAmt);
+} else {
+stp.updateFieldValue("PROCESS_TYPE","BYIN");
+var sInvcNo = stp.getXslMsgTagVal("message/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc/ComrclDocRef","InvcNb");
+sCcy = stp.getXslMsgTagAttribute("message/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc","NetAmt","Ccy");
+sNetAMt = stp.getXslMsgTagVal("message/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc","NetAmt");
+var arrKeys2 = [["C_UNIT_CODE",sUnitCode],["TSU_COMM_REF",sInvcNo]];
+var arrGetDataResult2 = stp.SYS_getCUBKVal("GetParentRefByComRefAndUnitCode",arrKeys2);
+var sParentRef = arrGetDataResult2[0];
+var sCommAmt = arrGetDataResult2[1];
+var sRltdNo = arrGetDataResult2[2];
+stp.updateFieldValue("RLTD_NO",sRltdNo);
+stp.updateFieldValue("PARENT_MAIN_REF",sParentRef);
+stp.updateFieldValue("TPC","Intent to Pay");
+stp.updateFieldValue("MSG_SUBJECT","Intent to Pay by Invoice");
+stp.updateFieldValue("TSU_COMM_AMT",sCommAmt);
+}
+stp.updateFieldValue("TSU_CCY",sCcy);
+stp.updateFieldValue("TSU_NET_AMT",sNetAMt);
+stp.updateFieldValue("CURRNT_STATUS","Forward Intent To Pay Notification");
+stp.updateFieldValue("NXT_STATUS","Waiting for Report");
+stp.writeLog("End: Forward Intent To Pay Notification");]]></js-content>
+</root>

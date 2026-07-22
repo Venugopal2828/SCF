@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="TEMPLATE:GOODS" type="normal" jspFilePath_0="" jspFilePath_1="">
+    <CRTJSP POS="C"></CRTJSP>
+    <key-mapping>
+        <module-name>IMLC</module-name>
+        <cubk-mapping-name>TEMPLATE_GOODS</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.TMPL_EVENT</table-name>
+        <table-desc></table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <TEMP_NAME DESC="" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">TEMP_NAME</TEMP_NAME>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <TEMP_NAME DESC="Template Name" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">TEMP_NAME</TEMP_NAME>
+        <C_CONTENT DESC="CONTENT" DT="2005" HIDDEN="" TYPE="F" WTYPE="NOCASE">GOODS_DESC</C_CONTENT>
+    </field-mapping>
+    <CLAUSE>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">TEMP_TYPE</SQL>
+        <SQL TYPE="SQL"> = 'General Template' AND (</SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">CUST_SPEC</SQL>
+        <SQL TYPE="SQL"> = 'No' OR </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">CUST_ID</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DT="sys" DV="SYS_BUSI_UNIT" TYPE="OP">VALUE</SQL>
+        <SQL TYPE="SQL">) AND </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">C_MODU_NAME</SQL>
+        <SQL TYPE="SQL"> = 'IPLC' AND </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">ACTIVE_FLAG</SQL>
+        <SQL TYPE="SQL"> = 'Y'</SQL>
+    </CLAUSE>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

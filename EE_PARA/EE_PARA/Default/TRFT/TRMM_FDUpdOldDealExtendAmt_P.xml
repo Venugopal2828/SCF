@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>TRMM</module>
+    <name>FDUpdOldDealExtendAmt</name>
+    <desc></desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.TRMM_MASTER</table-name>
+        <table-desc>Money Market Master</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql type="TBL_FLD">DEAL_NO</sql>
+            <sql type="SQL"> ='</sql>
+            <field mf="F">OLD_DEAL_NO</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <EXTD_AMT fv_type="F" mf="F" oper="=">TRX_AMT</EXTD_AMT>
+    </mapping>
+</root>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302482</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STD_TIMEZONE</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Sub Country" EEType="Varchar_16" HIDDEN="">C_SUB_CNTY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="DST Changed" EEType="CHAR1" HIDDEN="">C_DST_CHANGED</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Country Code" DT="1" EEType="CNTY" TYPE="FLD">C_CNTY_CODE</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">'
+</SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Sub Country" DT="12" EEType="Varchar_16" TYPE="FLD">C_SUB_CNTY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="1" DESC="Country Code" EEType="CNTY">C_CNTY_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Sub Country" EEType="Varchar_16">C_SUB_CNTY</FIELD>
+    </CLAUSEFIELD>
+</CATA>

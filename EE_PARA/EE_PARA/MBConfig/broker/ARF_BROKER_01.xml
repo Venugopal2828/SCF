@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <broker>
+        <id>ARF_BROKER_01</id>
+        <name>ARF_BROKER_01</name>
+        <desc>ARF_BROKER_01</desc>
+        <init-state>START</init-state>
+        <RegisterServices>
+            <service ref="FinanceReq"/>
+            <service ref="InqCatalogData"/>
+            <service ref="SOAInqLimits"/>
+            <service ref="SCFCalculator"/>
+            <service ref="SOAUpldInvMerge"/>
+            <service ref="LockUnlockInv"/>
+        </RegisterServices>
+        <listeners>
+            <listener ref="FinanceReq"/>
+            <listener ref="InqCatalogData"/>
+            <listener ref="SOAInqLimits"/>
+            <listener ref="SCFCalculator"/>
+            <listener ref="SOAUpldInvMerge"/>
+            <listener ref="LockUnlockInv"/>
+        </listeners>
+        <entitlement/>
+        <senders>
+            <sender ref="InqCatalogData"/>
+            <sender ref="InqCatalogData_S"/>
+            <sender ref="CE2EEUploadInv_S"/>
+        </senders>
+        <receivers/>
+    </broker>
+</root>

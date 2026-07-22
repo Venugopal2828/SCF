@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FAEF</module>
+    <name>PAYMENT_STATUS</name>
+    <desc>PAYMENT_STATUS</desc>
+    <head-info>
+        <DO name="BuyPayment" path="BuyPayment"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.INVC_MASTER</table-name>
+        <table-desc>INVC_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>FA_DOC_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_DOC_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_BUSI_STATUS fv_type="V" oper="=">PAYINSTR</FA_BUSI_STATUS>
+        <FA_DOC_STATUS fv_type="V" oper="=">PAYINSTR</FA_DOC_STATUS>
+    </mapping>
+</root>

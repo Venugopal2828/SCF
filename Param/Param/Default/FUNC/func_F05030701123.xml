@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>System</EVENT>
+        <CATALOGID>C14091900001</CATALOGID>
+        <ID>F05030701123</ID>
+        <NAME>View Settlement</NAME>
+        <DESC>View Settlement</DESC>
+        <FUNSHORTNAME>ViewSTL</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>IQ</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Inq">TrxManagerInq</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">FAEF_RecSettle.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701116</ID>
+        <NAME>View Settlement_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701116</ID>
+        <NAME>View Settlement_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000401</ID>
+        <NAME>View Settlement_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

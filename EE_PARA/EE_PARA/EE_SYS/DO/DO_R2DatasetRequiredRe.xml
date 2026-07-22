@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="DataSet Required" Max="1" Min="0"
+    Name="R2DatasetRequiredRe" PendingStore="Y">
+    <Elements/>
+    <DO DATATYPE="2005" Desc="Commercial Data SetRequired"
+        Field="TSU_DS_REQRD_COMM" Max="1" Min="1"
+        Name="CommercialDataSetRequired" PendingStore="N" Screen=""
+        StoreInto="D" StoreType="X">
+        <Elements/>
+        <DO DATATYPE="2005" Desc="DataSet Required Submitter"
+            Field="TSU_DS_SUBMIT" Max="n" Min="1" Name="R2DataSetReqrdSubmitr"
+            PendingStore="N" Screen="SCRN/DO/R2TSU_DataSetReqrdSubmitr.jsp"
+            StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="1" Desc="Dataset Submitter BIC"
+                    DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_DS_SUBMIT_BIC</Element>
+                <Element DATATYPE="12" Desc="DataSet Submitter ID"
+                    DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_SUBMIT_ID</Element>
+                <Element DATATYPE="12" Desc="Dataset Submitter Name"
+                    DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_DS_SUBMIT_NM</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO DATATYPE="2005" Desc="Transport DataSet Required"
+        Field="TSU_DS_REQRD_TRNS" Max="1" Min="0"
+        Name="TransportDataSetRequired" PendingStore="N" Screen="" StoreInto="D" StoreType="X">
+        <Elements/>
+        <DO DATATYPE="2005" Desc="DataSet Required Submitter"
+            Field="TSU_DS_SUBMIT" Max="n" Min="1" Name="R2DataSetReqrdSubmitr"
+            PendingStore="N" Screen="SCRN/DO/R2TSU_DataSetReqrdSubmitr.jsp"
+            StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="1" Desc="Dataset Submitter BIC"
+                    DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_DS_SUBMIT_BIC</Element>
+                <Element DATATYPE="12" Desc="DataSet Submitter ID"
+                    DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_SUBMIT_ID</Element>
+                <Element DATATYPE="12" Desc="Dataset Submitter Name"
+                    DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_DS_SUBMIT_NM</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Insurance DataSet Required" Max="1" Min="0"
+        Name="InsuranceDataSetRequired" PendingStore="N"
+        Screen="SCRN/DO/R2TSU_InsrncDataSetReqrd.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_DS_REQRD_INSUR"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Issuer Flag"
+                DispInGrid="N" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_MTCH_ISS_FLG</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Issuer ID"
+                DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_MTCH_ISS_ID</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Issuer ID Type"
+                DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_MTCH_ISS_IDTP</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Issuer Name"
+                DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_MTCH_ISS_NM</Element>
+            <Element DATATYPE="1" Desc="Must Be Matched - Issuer Country Code"
+                DispInGrid="N" EDIT="N" EEType="CNTY" FldType="" Value="">TSU_MTCH_ISS_CTRY</Element>
+            <Element DATATYPE="12"
+                Desc="Issue Match Date/Time Must Be Matched - Issue Date"
+                DispInGrid="Y" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_MTCH_ISS_DTTM</Element>
+            <Element DATATYPE="12"
+                Desc="Must Be Matched - Transport Information" DispInGrid="Y"
+                EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_MTCH_TRNS</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Insured Amount"
+                DispInGrid="Y" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_MTCH_AMT</Element>
+            <Element DATATYPE="12"
+                Desc="Must Be Matched - Assured (Insured) Party" DispInGrid="N"
+                EDIT="N" EEType="AssuredType1Code" FldType="" Value="">TSU_MTCH_ASSRD_PTY</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+        <DO DATATYPE="2005" Desc="DataSet Required Submitter"
+            Field="TSU_DS_SUBMIT" Max="n" Min="1" Name="R2DataSetReqrdSubmitr"
+            PendingStore="N" Screen="SCRN/DO/R2TSU_DataSetReqrdSubmitr.jsp"
+            StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="1" Desc="Dataset Submitter BIC"
+                    DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_DS_SUBMIT_BIC</Element>
+                <Element DATATYPE="12" Desc="DataSet Submitter ID"
+                    DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_SUBMIT_ID</Element>
+                <Element DATATYPE="12" Desc="Dataset Submitter Name"
+                    DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_DS_SUBMIT_NM</Element>
+            </Elements>
+        </DO>
+        <DO DATATYPE="2005" Desc="Clauses Required" Field="TSU_CLAUSE_REQRD"
+            Max="n" Min="0" Name="R2ClausesReqrd" PendingStore="N"
+            Screen="SCRN/DO/R2TSU_ClausesReqrd.jsp" StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="12" Desc="Clauses Required" DispInGrid="Y"
+                    EDIT="N" EEType="InsuranceClause1Co" FldType="" Value="">TSU_CLAUS_REQRD</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Certificate DataSet Required" Max="n" Min="0"
+        Name="CertificateDataSetRequired" PendingStore="N"
+        Screen="SCRN/DO/R2TSU_CertDataSetReqrd.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_DS_REQRD_CERT"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Certificate Type" DispInGrid="Y"
+                EDIT="N" EEType="TaxTypeCode" FldType="" Value="">TSU_CERT_TP</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Issuer Flag"
+                DispInGrid="N" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_MTCH_ISS_FLG</Element>
+            <Element DATATYPE="12"
+                Desc="Issue Match Date/Time Must Be Matched - Issue Date"
+                DispInGrid="N" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_MTCH_ISS_DTTM</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Issuer ID"
+                DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_MTCH_ISS_ID</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Issuer ID Type"
+                DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_MTCH_ISS_IDTP</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Issuer Name"
+                DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_MTCH_ISS_NM</Element>
+            <Element DATATYPE="1" Desc="Must Be Matched - Issuer Country Code"
+                DispInGrid="N" EDIT="N" EEType="CNTY" FldType="" Value="">TSU_MTCH_ISS_CTRY</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Manufacture Name"
+                DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_MTCH_MAUF_NM</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Inspection Date/Time"
+                DispInGrid="Y" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_MTCH_INSPC_DTTM</Element>
+            <Element DATATYPE="12" Desc="Must Be Matched - Consignee"
+                DispInGrid="Y" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_MTCH_CONSGN</Element>
+            <Element DATATYPE="12" Desc="Authorized inspector must be present?"
+                DispInGrid="Y" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_AUTH_INSPC_IND</Element>
+            <Element DATATYPE="12" Desc="Manufacture ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_MANUF_ID</Element>
+            <Element DATATYPE="12" Desc="Manufacture ID Type" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_MANUF_IDTP</Element>
+            <Element DATATYPE="12" Desc="Manufacture Country" DispInGrid="N"
+                EDIT="N" EEType="CNTY" FldType="" Value="">TSU_MANUF_CTRY</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+        <DO DATATYPE="2005" Desc="DataSet Required Submitter"
+            Field="TSU_DS_SUBMIT" Max="n" Min="1" Name="R2DataSetReqrdSubmitr"
+            PendingStore="N" Screen="SCRN/DO/R2TSU_DataSetReqrdSubmitr.jsp"
+            StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="1" Desc="Dataset Submitter BIC"
+                    DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_DS_SUBMIT_BIC</Element>
+                <Element DATATYPE="12" Desc="DataSet Submitter ID"
+                    DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_SUBMIT_ID</Element>
+                <Element DATATYPE="12" Desc="Dataset Submitter Name"
+                    DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_DS_SUBMIT_NM</Element>
+            </Elements>
+        </DO>
+        <DO DATATYPE="2005" Desc="Line Item Id" Field="TSU_LINEITM_ID" Max="n"
+            Min="0" Name="R2LineItmId" PendingStore="N"
+            Screen="SCRN/DO/R2TSU_LineItmId.jsp" StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="Y"
+                    EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO DATATYPE="2005" Desc="Other Certificate DataSet Required"
+        Field="TSU_OT_DS_CERT" Max="n" Min="0"
+        Name="OtherCertificateDataSetRequired" PendingStore="N"
+        Screen="SCRN/DO/R2TSU_OthrCertDataSetReqrd.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Other Certificate Type" DispInGrid="Y"
+                EDIT="N" EEType="TradeFinServ2Code" FldType="" Value="">TSU_OTCERT_TP</Element>
+        </Elements>
+        <DO DATATYPE="2005" Desc="DataSet Required Submitter"
+            Field="TSU_DS_SUBMIT" Max="n" Min="1" Name="R2DataSetReqrdSubmitr"
+            PendingStore="N" Screen="SCRN/DO/R2TSU_DataSetReqrdSubmitr.jsp"
+            StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="1" Desc="Dataset Submitter BIC"
+                    DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_DS_SUBMIT_BIC</Element>
+                <Element DATATYPE="12" Desc="DataSet Submitter ID"
+                    DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_SUBMIT_ID</Element>
+                <Element DATATYPE="12" Desc="Dataset Submitter Name"
+                    DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_DS_SUBMIT_NM</Element>
+            </Elements>
+        </DO>
+    </DO>
+</DO>

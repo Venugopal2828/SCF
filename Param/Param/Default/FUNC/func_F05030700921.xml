@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">IWGT</MODULE>
+        <MODULE_DESC>Inward Guarantees</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030700921</ID>
+        <NAME>Received Guarantee</NAME>
+        <DESC>Received Guarantee</DESC>
+        <FUNSHORTNAME>RecvdGtee</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">IWGT_RecvdGtee.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700920</ID>
+        <NAME>Received Guarantee_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700920</ID>
+        <NAME>Received Guarantee_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000132</ID>
+        <NAME>Received Guarantee_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

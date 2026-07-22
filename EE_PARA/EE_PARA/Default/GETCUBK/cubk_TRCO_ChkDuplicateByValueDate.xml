@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRCO_NDF_FIXING_RT</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>TRCO</module-name>
+        <cubk-mapping-name>ChkDuplicateByValueDate</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <COMT_CCY ALIAS="T0" DESC="" DT="1" TYPE="F">COMT_CCY</COMT_CCY>
+            <PRICE_CCY ALIAS="T0" DESC="" DT="1" TYPE="F">PRICE_CCY</PRICE_CCY>
+            <VAL_DT ALIAS="T0" DESC="Value Date" DT="91" TYPE="F">VAL_DT</VAL_DT>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FIX_RT ALIAS="T0" DBFUNC="" DESC="Fixing Rate" DT="3" HIDDEN="F" TYPE="V">TempCommDataTp</FIX_RT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="CCY" TYPE="TBL_FLD">T0.COMT_CCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">COMT_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="CCY" TYPE="TBL_FLD">T0.PRICE_CCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">PRICE_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="91" EEType="DATE" TYPE="TBL_FLD">T0.VAL_DT</SQL>
+            <SQL TYPE="SQL"> = TO_DATE('</SQL>
+            <SQL TYPE="FLD">VAL_DT</SQL>
+            <SQL TYPE="SQL">','yyyy-MM-dd')</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<upload size="200000" syncSize="1000" syncRec="100">XLSX|XLS|XML|ZIP</upload>
+	<magic>
+		<type format="ZIP">
+			<number leng="4" offset="0">50 4B 03 04</number>
+		</type>
+		<type format="XLS">
+			<number leng="8" offset="0">D0 CF 11 E0 A1 B1 1A E1</number>
+		</type>
+		<type format="XLSX">
+			<number leng="8" offset="0">50 4B 03 04 14 00 06 00</number>
+		</type>
+	</magic>
+	<mime>
+		<cont type="text/XML">xml</cont>
+	</mime>
+</root>

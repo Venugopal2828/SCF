@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Eligible Collateral Items" Max="n"
+    Min="0" Name="EligibleCollItem" PendingStore="N"
+    Screen="SCRN/o2m/CNTR_Eligible_Coll_Item.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="CNTR_CLTR"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>CLTR_ID</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="Collateral ID" DispInGrid="Y" EDIT="Y"
+            EEType="Varchar_40" FldType="" Value="">CLTR_ID</Element>
+        <Element DATATYPE="12" Desc="Collateral Name" DispInGrid="Y" EDIT="Y"
+            EEType="Varchar_40" FldType="" Value="">CLTR_NM</Element>
+        <Element DATATYPE="12" Desc="Collateral Category" DispInGrid="Y"
+            EDIT="Y" EEType="Varchar_70" FldType="" Value="">CLTR_CATEGORY</Element>
+        <Element DATATYPE="1" Desc="CCY" DispInGrid="Y" EDIT="N" EEType="CCY"
+            FldType="" Value="">CLTR_CCY</Element>
+        <Element DATATYPE="3" Desc="Collateral CAP" DispInGrid="Y" EDIT="Y"
+            EEType="AMT" FldType="" Value="">CLTR_GAP</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType=""
+            FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

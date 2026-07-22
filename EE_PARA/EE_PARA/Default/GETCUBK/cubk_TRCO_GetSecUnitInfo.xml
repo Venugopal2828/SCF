@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey" AutoGen-Parameter-Version="1.0">
+    <key-mapping>
+        <module-name>TRCO</module-name>
+        <cubk-mapping-name>GetSecUnitInfo</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMUSER%" TYPE="U">SEC_BUSINESS_UNIT</table-name>
+        </tables>
+        <key-fields>
+            <C_UNIT_CODE ALIAS="T0" DESC="UNIT CODE" DT="12" TYPE="F">BR_ID</C_UNIT_CODE>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_BIC ALIAS="T0" DBFUNC="" DESC="BIC" DT="1" HIDDEN="F" TYPE="F">BR_SWADD</C_BIC>
+        <C_BK_GROUP_ID ALIAS="T0" DBFUNC="" DESC="BANK GROUP ID" DT="12" HIDDEN="F" TYPE="F">BR_BK_GP</C_BK_GROUP_ID>
+        <C_CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country Code" DT="1" HIDDEN="F" TYPE="F">BR_CNTY_CD</C_CNTY_CODE>
+        <C_IS_PROC_CENTER ALIAS="T0" DBFUNC="" DESC="Is Process Center" DT="12" HIDDEN="F" TYPE="F">BR_TP</C_IS_PROC_CENTER>
+        <C_LOCAL_CCY ALIAS="T0" DBFUNC="" DESC="Local Currency" DT="12" HIDDEN="F" TYPE="F">BR_LOCAL_CCY</C_LOCAL_CCY>
+        <C_PARENT_UNIT ALIAS="T0" DBFUNC="" DESC="Parent Unit" DT="12" HIDDEN="F" TYPE="F">BELGS_PROC_CETR_ID</C_PARENT_UNIT>
+        <C_SUB_COUNTRY ALIAS="T0" DBFUNC="" DESC="Sub Country" DT="12" HIDDEN="F" TYPE="F">BR_SUB_CNTY_CD</C_SUB_COUNTRY>
+        <I_BU_MAX_LEVEL ALIAS="T0" DBFUNC="" DESC="BU Max Level" DT="2" HIDDEN="F" TYPE="F">BR_MAX_LVL</I_BU_MAX_LEVEL>
+        <C_UNIT_CODE ALIAS="T0" DBFUNC="" DESC="UNIT CODE" DT="12" HIDDEN="F" TYPE="F">BR_CD</C_UNIT_CODE>
+        <C_UNIT_NAME ALIAS="T0" DBFUNC="" DESC="Unit Name" DT="12" HIDDEN="F" TYPE="F">BR_EN_NM</C_UNIT_NAME>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="SellerRequest" Max="100" Min="0" Name="SelReq" PendingStore="N" Screen="SCRN/o2m/FADA_DFSUBAgreement.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>FactDFSellerReq</Component>
+    <PK>
+        <PKNAME>FA_PCA_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FADA_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Insurance Agreement No." DispInGrid="N" EDIT="N" EEType="Varchar_20" FldType="" Value="">FA_INSU_AGR_NO</Element>
+        <Element DATATYPE="12" Desc="Pre Credit Assess Request Ref No." DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="Counter Party Reference">FA_PCA_REF</Element>
+        <Element DATATYPE="1" Desc="Is Insurance?" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_INSU_COMP_FLAG</Element>
+        <Element DATATYPE="12" Desc="Buyer ID" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer Name" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_NM</Element>
+        <Element DATATYPE="12" Desc="Buyer Name 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_NM2</Element>
+        <Element DATATYPE="12" Desc="Buyer Post Box No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_POSTBOX</Element>
+        <Element DATATYPE="12" Desc="Buyer Post Code" DispInGrid="N" EDIT="N" EEType="Varchar_9" FldType="" Value="">FA_BUYER_POSTCODE</Element>
+        <Element DATATYPE="12" Desc="Buyer City" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_CITY</Element>
+        <Element DATATYPE="12" Desc="Buyer Province" DispInGrid="N" EDIT="N" EEType="Varchar_19" FldType="" Value="">FA_BUYER_PROV</Element>
+        <Element DATATYPE="1" Desc="Service Request" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_SERVICE_REQ</Element>
+        <Element DATATYPE="1" Desc="Customer Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_CUST_FLAG</Element>
+        <Element DATATYPE="1" Desc="Is Blacklist ?" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_BLACKLIST</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 8" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT8</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Tel No." DispInGrid="N" EDIT="N" EEType="Varchar_25" FldType="" Value="">FA_BUYER_CONT_TEL</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_CONT_NM</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Mail" DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">FA_BUYER_CONT_MAIL</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Fax No." DispInGrid="N" EDIT="N" EEType="Varchar_25" FldType="" Value="">FA_BUYER_CONT_FAX</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Address" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_CONT_ADDR</Element>
+        <Element DATATYPE="1" Desc="Direct Contact Allowed Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_BUYER_CNTC_FLG</Element>
+        <Element DATATYPE="12" Desc="Buyer Bank Branch" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">FA_BUYER_BK_BRCH</Element>
+        <Element DATATYPE="12" Desc="Buyer Account No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_AC_NO</Element>
+        <Element DATATYPE="1" Desc="Applied Limit Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">FA_APPL_LMT_CCY</Element>
+        <Element DATATYPE="3" Desc="Applied Limit Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_APPL_LMT_AMT</Element>
+        <Element DATATYPE="1" Desc="Limit Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_LMT_TYPE</Element>
+        <Element DATATYPE="12" Desc="IF ID" DispInGrid="N" EDIT="N" EEType="Varchar_7" FldType="" Value="">FA_IF_ID</Element>
+        <Element DATATYPE="12" Desc="Import Factor Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_IF_NM</Element>
+        <Element DATATYPE="1" Desc="Remittance Currency 1" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">FA_REMI_CCY1</Element>
+        <Element DATATYPE="3" Desc="Remittance AMT1" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_REMI_AMT1</Element>
+        <Element DATATYPE="12" Desc="Seller ID" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_ID</Element>
+        <Element DATATYPE="12" Desc="Seller Name" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_NM</Element>
+        <Element DATATYPE="12" Desc="Seller Name2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_NM2</Element>
+        <Element DATATYPE="12" Desc="Seller Address" DispInGrid="N" EDIT="N" EEType="TEXTAREA_105" FldType="" Value="">FA_SEL_ADDR</Element>
+        <Element DATATYPE="12" Desc="Seller Post Code" DispInGrid="N" EDIT="N" EEType="Varchar_9" FldType="" Value="">FA_SEL_POST_CODE</Element>
+        <Element DATATYPE="12" Desc="Seller City" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_CITY</Element>
+        <Element DATATYPE="12" Desc="Seller Province" DispInGrid="N" EDIT="N" EEType="Varchar_19" FldType="" Value="">FA_SEL_PROV</Element>
+        <Element DATATYPE="12" Desc="Seller Bank Branch" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">FA_SEL_BK_BR</Element>
+        <Element DATATYPE="12" Desc="Seller Contactor Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_CONT_NM</Element>
+        <Element DATATYPE="12" Desc="Seller Contactor Tel No." DispInGrid="N" EDIT="N" EEType="Varchar_25" FldType="" Value="">FA_SEL_CONT_TEL</Element>
+        <Element DATATYPE="12" Desc="Seller Contactor Fax No." DispInGrid="N" EDIT="N" EEType="Varchar_25" FldType="" Value="">FA_SEL_CONT_FAX</Element>
+        <Element DATATYPE="1" Desc="Seller Direct Contact Allowed Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_SEL_CNTC_FLG</Element>
+        <Element DATATYPE="12" Desc="Seller Contactor Mail" DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">FA_SEL_CONT_MAIL</Element>
+        <Element DATATYPE="12" Desc="Seller Contactor Address" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_CONT_ADDR</Element>
+        <Element DATATYPE="12" Desc="Document Requested" DispInGrid="N" EDIT="N" EEType="TEXTAREA_800" FldType="" Value="">FA_DOC_REQD</Element>
+        <Element DATATYPE="1" Desc="Business Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_BUSI_TYPE</Element>
+        <Element DATATYPE="91" Desc="Transaction Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">TRX_DT</Element>
+        <Element DATATYPE="3" Desc="Last Financed Limit" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_LMT</Element>
+        <Element DATATYPE="1" Desc="Seller Account No." DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">FA_SEL_AC_NO</Element>
+        <Element DATATYPE="8" Desc="Temporary Rate" DispInGrid="N" EDIT="N" EEType="RATE" FldType="" Value="">FA_TEMP_RATE</Element>
+        <Element DATATYPE="3" Desc="Temporary field 1" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP1</Element>
+        <Element DATATYPE="12" Desc="Temporary field 2" DispInGrid="N" EDIT="N" EEType="Varchar_65" FldType="" Value="">FA_TEMP2</Element>
+        <Element DATATYPE="12" Desc="Temporary field 3" DispInGrid="N" EDIT="N" EEType="Varchar_65" FldType="" Value="">FA_TEMP3</Element>
+        <Element DATATYPE="12" Desc="Combined Limit Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER3" FldType="" Value="">COMBN_LMT_FLG</Element>
+        <Element DATATYPE="4" Desc="Buyer Limit Percentage" DispInGrid="N" EDIT="N" EEType="INTEGER" FldType="" Value="">BUYER_LMT_PERC</Element>
+        <Element DATATYPE="4" Desc="Supplier Limit Percentage" DispInGrid="N" EDIT="N" EEType="INTEGER" FldType="" Value="">SEL_LMT_PERC</Element>
+        <Element DATATYPE="4" Desc="Insurance Limit Percentage" DispInGrid="N" EDIT="N" EEType="INTEGER" FldType="" Value="">INCO_LMT_PERC</Element>
+        <Element DATATYPE="2" Desc="% of Margin" DispInGrid="N" EDIT="N" EEType="Numeric_9_5" FldType="" Value="">MARGIN_PERC</Element>
+        <Element DATATYPE="1" Desc="Margin Account No." DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">MARGIN_AC_NO</Element>
+        <Element DATATYPE="12" Desc="Counterparty Register No" DispInGrid="N" EDIT="N" EEType="CHAR_16" FldType="" Value="">FA_COUNTER_REG_NO</Element>
+        <Element DATATYPE="1" Desc="Counterparty Customer Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_COUNTER_TYPE</Element>
+        <Element DATATYPE="1" Desc="Counterparty Is CE Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_COUNTER_CE_FLG</Element>
+    </Elements>
+</DO>

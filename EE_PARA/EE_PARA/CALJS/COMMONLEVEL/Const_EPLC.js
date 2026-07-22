@@ -1,0 +1,1 @@
+var DISC_DET_ORG = "";

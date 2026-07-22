@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="charge agreement assign records" Max="n" Min="0"
+    Name="ChargeAgrAssign" PendingStore="Y" Screen="" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="STT_CHG_RATE"/>
+    <PK>
+        <PKNAME>CSID</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="CSID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">CSID</Element>
+        <Element DATATYPE="12" Desc="Customer Flag" DispInGrid="Y" EDIT="N"
+            EEType="Character_1" FldType="" Value="">C_CUST_FLAG</Element>
+        <Element DATATYPE="2" Desc="Assign Level" DispInGrid="Y" EDIT="N"
+            EEType="Numeric_22" FldType="" Value="">I_ASSIGN_LEVEL</Element>
+        <Element DATATYPE="12" Desc="Level Value" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_50" FldType="" Value="">C_LEVEL_VALUE</Element>
+        <Element DATATYPE="12" Desc="Product Code" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">C_PRODUCT_CODE</Element>
+        <Element DATATYPE="12" Desc="Commission Code" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">C_COMMISSION_CODE</Element>
+        <Element DATATYPE="12" Desc="Charge Rate Description" DispInGrid="Y"
+            EDIT="N" EEType="Varchar_128" FldType="" Value="">C_CHARGE_RATE_DESC</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">C_CCY</Element>
+        <Element DATATYPE="12" Desc="Default Flag" DispInGrid="Y" EDIT="N"
+            EEType="Character_1" FldType="" Value="">C_DEFAULT_FLAG</Element>
+        <Element DATATYPE="12" Desc="Charge Rule ID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">C_CHARGE_RULE_ID</Element>
+        <Element DATATYPE="1" Desc="Status" DispInGrid="Y" EDIT="N" EEType=""
+            FldType="" Value="">C_TRX_STATUS</Element>
+        <Element DATATYPE="12" Desc="Refuse Reason" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">C_REFUSE_REASON</Element>
+        <Element DATATYPE="1" Desc="C_LOCKED_FLAG" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_LOCKED_FLAG</Element>
+        <Element DATATYPE="12" Desc="C_LOCKED_OP" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_LOCKED_OP</Element>
+        <Element DATATYPE="12" Desc="Add Flag" DispInGrid="N" EDIT="N"
+            EEType="Varchar_1" FldType="" Value="">C_ADD_FLAG</Element>
+        <!-- EE-8618 churchill 20170815 _S -->    
+        <!--    
+        <Element DATATYPE="12" Desc="action" DispInGrid="N" EDIT="N" EEType=""
+            FldType="" Value="">C_ACTION</Element>
+         -->
+        <Element DATATYPE="12" Desc="action" DispInGrid="N" EDIT="N" EEType="" FldType="" Value="">C_ACTION_TYPE</Element>
+        <!-- EE-8618 churchill 20170815 _E -->
+        <Element DATATYPE="12" Desc="edit default" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR1" FldType="" Value="">C_DEFAULT_TEMP</Element>
+    </Elements>
+</DO>

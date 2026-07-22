@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[// for reqforactn begin
+//setNodeAttribute(String xPath)
+
+var TSU_REQ_ACT_TP = stp.getValue("/Document/ErrRpt/ReqForActn","Tp");
+stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+// Marked for sending the mismatch.amend accept/reject with an error
+//if ( TSU_REQ_ACT_TP[0]== undefined)
+//{
+	//stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");	
+//	stp.updateFieldValue("/root/domData","TSU_REQ_ACT_DESC","");
+                             //stp.setNodeAttribute("/root/domData/TSU_REQ_ACT_DESC");
+//}
+//for reqforactn end
+var bu=stp.getTSUUnitCode();
+var RjctdMsgRef = stp.getValue("/Document/ErrRpt/RjctdMsgRef","Id");
+if (RjctdMsgRef[0] != undefined)
+{
+    stp.writeLog("Begin: Assign function R2ReceiveErrorReport");
+    stp.writeLog("RjctdMsgRef="+RjctdMsgRef[0]);
+    var fld_list                 = stp.addFieldList(null,"C_TRX_REF"); 
+    var sql_condition    = stp.addSQLCondition(null,"C_MSG_ID",RjctdMsgRef[0]); 
+    sql_condition          = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);   
+    var result	          = stp.executeQuery("EXIMSYS.TSU_MSGS",fld_list,sql_condition); 
+    var C_TRX_REF   = stp.getDBFieldValue(result,"C_TRX_REF");
+    stp.writeLog("C_TRX_REF:"+C_TRX_REF);
+    stp.updateFieldValue("/root/domData","C_MAIN_REF",C_TRX_REF);
+    stp.updateFieldValue("/root/domData","C_TRX_REF",C_TRX_REF);
+        
+	stp.setAutoProcess(true); 
+	stp.setFunc("R2ReceiveErrorReport");
+	stp.writeLog("End: Assign function R2ReceiveErrorReport");
+}
+
+else
+{   stp.writeLog("Begin: Assign function R2ReceiveSpecialErrorReport");
+    var OurBIC=stp.getTSUBIC();
+    var mainRef=stp.SYS_getRefNo("TSUM");
+    mainRef = OurBIC + "ER" + mainRef;
+    stp.writeLog("mainref="+mainRef);
+    stp.updateFieldValue("/root/domData","C_MAIN_REF",mainRef);
+    stp.updateFieldValue("/root/domData","C_TRX_REF",mainRef);
+    stp.updateFieldValue("/root/domData","TSU_ERR_STATUS","Unarranged");
+    
+    stp.setAutoProcess(true); 
+    stp.setFunc("ReceiveSpecialErrorReport");
+    stp.writeLog("End: Assign function R2ReceiveSpecialErrorReport");
+}]]></js-content>
+</root>

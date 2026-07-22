@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>FA_BUYER_CONT</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">FA_BUYER_ID</C_MAIN_REF>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <FST_CNTC_EMAIL ALIAS="T0" DBFUNC="" DESC="First Contact Email Address" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_MAIL</FST_CNTC_EMAIL>
+        <FST_CNTC_NM ALIAS="T0" DBFUNC="" DESC="First Contact Person Name" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_NM</FST_CNTC_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T1" DBFUNC="" DESC="Bank Contact SWIFT Format Address1" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_POSTBOX</SWIFT_FMT_ADD1>
+        <FAX_NO ALIAS="T0" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_FAX</FAX_NO>
+        <FST_CNTC_TEL_NO ALIAS="T0" DBFUNC="" DESC="First Contact Telephone No" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_TEL</FST_CNTC_TEL_NO>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR AutoGen-Parameter-Version="1.0">
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Master Add Rec">TrxMasterAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>FAEF</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.FAEF_MASTER</TABLE_NAME>
+        <TABLE_DESC>FAEF_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Add Master</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Event Add Rec">TrxEventAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>FAEF</MODULE>
+        <EVENT>EFTransaction</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.FAEF_PMT</TABLE_NAME>
+        <TABLE_DESC>FAEF_PMT</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>FA_PMT_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Add Event</BCTYPE>
+    </COMPONENT>
+</FUNCATTR>

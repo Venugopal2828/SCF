@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="">STDS_PAGE</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>SYF_FAEF_Financing_SYF_FAEF_getDOdata_InvFinance_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <LM_OUTD_APV ALIAS="T0" DBFUNC="" DESC="SYSFLD:LM_OUTD_APV" DT="3" HIDDEN="F" TYPE="F">LM_OUTD_APV</LM_OUTD_APV>
+        <LM_OUTD_APL ALIAS="T0" DBFUNC="" DESC="SYSFLD:LM_OUTD_APL" DT="3" HIDDEN="F" TYPE="F">LM_OUTD_APL</LM_OUTD_APL>
+        <LM_OUTC_APV ALIAS="T0" DBFUNC="" DESC="SYSFLD:LM_OUTC_APV" DT="3" HIDDEN="F" TYPE="F">LM_OUTC_APV</LM_OUTC_APV>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">LM_ID='</SQL>
+            <SQL TYPE="FLD">FA_TEMP2</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

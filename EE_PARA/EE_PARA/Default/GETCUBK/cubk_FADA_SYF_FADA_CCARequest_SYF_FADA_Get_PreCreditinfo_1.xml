@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_PRE_CREDIT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>SYF_FADA_CCARequest_SYF_FADA_Get_PreCreditinfo_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_APPL_LMT_CCY ALIAS="T0" DBFUNC="" DESC="Applied Limit Currency" DT="1" HIDDEN="F" TYPE="F">FA_LMT_ASS_CCY</FA_APPL_LMT_CCY>
+        <FA_APPL_LMT_AMT ALIAS="T0" DBFUNC="" DESC="Applied Limit Amount" DT="3" HIDDEN="F" TYPE="F">FA_LMT_ASS_AMT</FA_APPL_LMT_AMT>
+        <FA_PMT_TERMS ALIAS="T0" DBFUNC="" DESC="Payment Terms" DT="12" HIDDEN="F" TYPE="F">FA_PMT_TERMS</FA_PMT_TERMS>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_SEL_ID='</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND  FA_BUYER_ID='</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">' AND  FA_IF_ID='</SQL>
+            <SQL TYPE="FLD">FA_IF_ID</SQL>
+            <SQL TYPE="SQL">' AND C_TRX_STATUS='M' AND  FA_BUSI_TYPE='EF'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

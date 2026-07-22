@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>GTEE</module>
+    <name>GTEE_AmdtoMaster</name>
+    <desc>GTEE_AmdtoMaster</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.GTEE_MASTER</table-name>
+        <table-desc>GTEE_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql type="TBL_FLD">C_MAIN_REF</sql>
+            <sql type="SQL"> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <BASE_BAL fv_type="F" mf="F" oper="=">NEW_BASE_BAL</BASE_BAL>
+        <EXPIRY_DT fv_type="F" mf="F" oper="=">TEMP_EXPIRY_DT</EXPIRY_DT>
+        <GTEE_AMT fv_type="F" mf="F" oper="=">TEMP_GTEE_AMT</GTEE_AMT>
+        <GTEE_BAL fv_type="F" mf="F" oper="=">TEMP_GTEE_BAL</GTEE_BAL>
+        <EXPIRY_TYPE fv_type="F" mf="F" oper="=">TEMP_TENOR_TYPE</EXPIRY_TYPE>
+        <EXPIRY_COND fv_type="F" mf="F" oper="=">TEMP_EXPIRY_PLC_NA</EXPIRY_COND>
+        <BENE_ADD1 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD1</BENE_ADD1>
+        <BENE_ADD2 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD2</BENE_ADD2>
+        <BENE_ADD3 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD3</BENE_ADD3>
+        <BENE_NM fv_type="F" mf="F" oper="=">TEMP_BENE_NM</BENE_NM>
+        <BENE_ID fv_type="F" mf="F" oper="=">TEMP_BENE_ID</BENE_ID>
+        <GTEE_DETAILS fv_type="F" mf="F" oper="=">AMEND_DETAILS_TEMP</GTEE_DETAILS>
+    </mapping>
+</root>

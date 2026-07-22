@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="PaymentRegForClean" Max="1" Min="1"
+    Name="PaymentRegForClean" PendingStore="N"
+    Screen="SCRN/DO/PaymentRegForClean.jsp" StoreInto="C" StoreType="C">
+    <Component>PaymentRegForClean</Component>
+    <PK>
+        <PKNAME>CPYT_C_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="PYMT_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Payment Reference" DispInGrid="N" EDIT="N"
+            EEType="Varchar_40" FldType="" Value="">CPYT_C_REF</Element>
+    </Elements>
+    <DO DATATYPE="2005" Desc="MT103ForClean" Field="MT103FORCLEAN" Max="1"
+        Min="0" Name="MT103ForClean" PendingStore="N" Screen="" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Beneficiary Customer Address1"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103BENECUADD1_59A</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Customer Address2"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103BENECUADD2_59A</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Customer Address3"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103BENECUADD3_59A</Element>
+            <Element DATATYPE="12" Desc="Intermediary Bank Address1"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103MEDIBKADD1_56A</Element>
+            <Element DATATYPE="12" Desc="Intermediary Bank Address2"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103MEDIBKADD2_56A</Element>
+            <Element DATATYPE="12" Desc="Intermediary Bank Address3"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103MEDIBKADD3_56A</Element>
+            <Element DATATYPE="1" Desc="Receiver's Correspondent Account No"
+                DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">X103RECCORRACNO54A</Element>
+            <Element DATATYPE="12" Desc="Sending Bank Address1" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103SENDBKADD1_51A</Element>
+            <Element DATATYPE="12" Desc="Sending Bank Address2" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103SENDBKADD2_51A</Element>
+            <Element DATATYPE="12" Desc="Sending Bank Address3" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103SENDBKADD3_51A</Element>
+            <Element DATATYPE="1" Desc="Sender's Correspondent Bank Account No"
+                DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">X103SENDCORACNO53A</Element>
+            <Element DATATYPE="12" Desc="Sender's Correspondent Bank Address1"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103SENDCORADD153A</Element>
+            <Element DATATYPE="12" Desc="Sender's Correspondent Bank Address2"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103SENDCORADD253A</Element>
+            <Element DATATYPE="12" Desc="Sender's Correspondent Bank Address3"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103SENDCORADD353A</Element>
+            <Element DATATYPE="1" Desc="Third Reimbursement Institution Medium"
+                DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103SENDCORRMED53A</Element>
+            <Element DATATYPE="1"
+                Desc="Third Reimbursement Institution Account No" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">X103TRDREIMACNO55A</Element>
+            <Element DATATYPE="12"
+                Desc="Third Reimbursement Institution Address1" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103TRDREIMADD155A</Element>
+            <Element DATATYPE="12"
+                Desc="Third Reimbursement Institution Address2" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103TRDREIMADD255A</Element>
+            <Element DATATYPE="12"
+                Desc="Third Reimbursement Institution Address3" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103TRDREIMADD355A</Element>
+            <Element DATATYPE="12" Desc="Ordering Customer ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">X103_ORDCU_ID_50A</Element>
+            <Element DATATYPE="12" Desc="Ordering Customer Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_ORDCU_NM_50A</Element>
+            <Element DATATYPE="12" Desc="Ordering Customer Address1"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ORDCUADD1_50A</Element>
+            <Element DATATYPE="12" Desc="Ordering Customer Address2"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ORDCUADD2_50A</Element>
+            <Element DATATYPE="12" Desc="Ordering Customer Address3"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ORDCUADD3_50A</Element>
+            <Element DATATYPE="1" Desc="Ordering Customer SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_ORDCU_SW_50A</Element>
+            <Element DATATYPE="12" Desc="Tag 50A" DispInGrid="N" EDIT="N"
+                EEType="SW_TAG" FldType="" Value="">X103_TAG_50A</Element>
+            <Element DATATYPE="1" Desc="Ordering Customer Account No"
+                DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">X103_ORDCUACNO_50A</Element>
+            <Element DATATYPE="1" Desc="Country of Residence" DispInGrid="N"
+                EDIT="N" EEType="CNTY" FldType="" Value="">APPL_CNTY_RES</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Customer ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">X103_BENECU_ID_59A</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Customer Name"
+                DispInGrid="N" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_BENECU_NM_59A</Element>
+            <Element DATATYPE="1" Desc="Country of Residence of Beneficiary"
+                DispInGrid="N" EDIT="N" EEType="CNTY" FldType="" Value="">BENE_CNTY_RES</Element>
+            <Element DATATYPE="1" Desc="Beneficiary Account Type" DispInGrid="N"
+                EDIT="N" EEType="INTERPRETER" FldType="" Value="">BENE_AC_TYPE</Element>
+            <Element DATATYPE="1" Desc="Beneficiary Customer Account No"
+                DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">X103_BENECUACNO59A</Element>
+            <Element DATATYPE="12" Desc="Account With Bank ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">X103_ACC_BKID_57A</Element>
+            <Element DATATYPE="12" Desc="Account With Bank Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_ACC_BKNM_57A</Element>
+            <Element DATATYPE="12" Desc="Tag 57A" DispInGrid="N" EDIT="N"
+                EEType="SW_TAG" FldType="" Value="">X103_TAG_57A</Element>
+            <Element DATATYPE="1" Desc="Account With Bank Account No"
+                DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">X103_ACC_BKACNO57A</Element>
+            <Element DATATYPE="1" Desc="Debit Account No" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">CPYT_DR_AC</Element>
+            <Element DATATYPE="12" Desc="Sender to Receiver Information2"
+                DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_BK2BK_INF2_72</Element>
+            <Element DATATYPE="12" Desc="Sender to Receiver Information3"
+                DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_BK2BK_INF3_72</Element>
+            <Element DATATYPE="12" Desc="Sender to Receiver Information4"
+                DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_BK2BK_INF4_72</Element>
+            <Element DATATYPE="12" Desc="Sender to Receiver Information6"
+                DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_BK2BK_INF6_72</Element>
+            <Element DATATYPE="3" Desc="Credit Calculated Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CR_CALC_AMT</Element>
+            <Element DATATYPE="3" Desc="Debit Calculated Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">DB_CALC_AMT</Element>
+            <Element DATATYPE="1" Desc="Payment Type" DispInGrid="N" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">PMT_TYPE</Element>
+            <Element DATATYPE="12" Desc="Cheque Number" DispInGrid="N" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">CHEQ_NO</Element>
+            <Element DATATYPE="8" Desc="Exchange Rate" DispInGrid="N" EDIT="N"
+                EEType="RATE" FldType="" Value="">X103_EXCH_RT_36</Element>
+            <Element DATATYPE="91" Desc="Value Date" DispInGrid="N" EDIT="N"
+                EEType="DATE" FldType="" Value="">X103_VALUE_DT_32A</Element>
+            <Element DATATYPE="12" Desc="Details of Charges" DispInGrid="N"
+                EDIT="N" EEType="Varchar_3" FldType="" Value="">X103_DET_CHG_71A</Element>
+            <Element DATATYPE="12" Desc="Account With Bank Address1"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ACCBKADD1_57A</Element>
+            <Element DATATYPE="12" Desc="Account With Bank Address2"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ACCBKADD2_57A</Element>
+            <Element DATATYPE="12" Desc="Account With Bank Address3"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ACCBKADD3_57A</Element>
+            <Element DATATYPE="1" Desc="Account With Bank Correspondence Medium"
+                DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103_ACC_BKMED57A</Element>
+            <Element DATATYPE="1" Desc="Account With Bank SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_ACC_BKSW_57A</Element>
+            <Element DATATYPE="12" Desc="Advising Bank Address1" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ADV_BKADD1_B2</Element>
+            <Element DATATYPE="12" Desc="Advising Bank Address2" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ADV_BKADD2_B2</Element>
+            <Element DATATYPE="12" Desc="Advising Bank Address3" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ADV_BKADD3_B2</Element>
+            <Element DATATYPE="12" Desc="Advising Bank ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">X103_ADV_BKID_B2</Element>
+            <Element DATATYPE="1" Desc="Advising Bank Correspondence Medium"
+                DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103_ADV_BKMED_B2</Element>
+            <Element DATATYPE="12" Desc="Advising Bank Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_ADV_BKNM_B2</Element>
+            <Element DATATYPE="1" Desc="Advising Bank SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_ADV_BKSW_B2</Element>
+            <Element DATATYPE="1"
+                Desc="Beneficiary Customer Correspondence Medium" DispInGrid="N"
+                EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103_BENECUMED_59A</Element>
+            <Element DATATYPE="1" Desc="Beneficiary Customer SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_BENECU_SW_59A</Element>
+            <Element DATATYPE="12" Desc="Sender to Receiver Information1"
+                DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_BK2BK_INF1_72</Element>
+            <Element DATATYPE="12" Desc="Sender to Receiver Information5"
+                DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_BK2BK_INF5_72</Element>
+            <Element DATATYPE="12" Desc="Bank Operation Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_4" FldType="" Value="">X103_BKOP_CODE_23B</Element>
+            <Element DATATYPE="12" Desc="Envelope Contents" DispInGrid="N"
+                EDIT="N" EEType="Varchar_350" FldType="" Value="">X103_ENV_CONT_77T</Element>
+            <Element DATATYPE="12" Desc="Instruction Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_35" FldType="" Value="">X103_INSTRCODE_23E</Element>
+            <Element DATATYPE="3" Desc="Instructed Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">X103_INSTR_AMT_33B</Element>
+            <Element DATATYPE="1" Desc="Instructed Amount CCY" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">X103_INSTR_CCY_33B</Element>
+            <Element DATATYPE="1" Desc="Intermediary Bank Account No"
+                DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">X103_MEDIBKACNO56A</Element>
+            <Element DATATYPE="12" Desc="Intermediary Bank ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">X103_MEDI_BKID_56A</Element>
+            <Element DATATYPE="1" Desc="Intermediary Bank Correspondence Medium"
+                DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103_MEDI_BKMED56A</Element>
+            <Element DATATYPE="12" Desc="Intermediary Bank Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_MEDI_BKNM_56A</Element>
+            <Element DATATYPE="1" Desc="Intermediary Bank SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_MEDI_BKSW_56A</Element>
+            <Element DATATYPE="1" Desc="Ordering Bank Account No" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">X103_ORDBKACNO_52A</Element>
+            <Element DATATYPE="12" Desc="Ordering Bank Address1" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ORDBKADD1_52A</Element>
+            <Element DATATYPE="12" Desc="Ordering Bank Address2" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ORDBKADD2_52A</Element>
+            <Element DATATYPE="12" Desc="Ordering Bank Address3" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_ORDBKADD3_52A</Element>
+            <Element DATATYPE="1" Desc="Ordering Customer Correspondence Medium"
+                DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103_ORDCU_MED_50A</Element>
+            <Element DATATYPE="12" Desc="Ordering Bank ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">X103_ORD_BKID_52A</Element>
+            <Element DATATYPE="1" Desc="Ordering Bank Correspondence Medium"
+                DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103_ORD_BKMED_52A</Element>
+            <Element DATATYPE="12" Desc="Ordering Bank Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_ORD_BKNM_52A</Element>
+            <Element DATATYPE="1" Desc="Ordering Bank SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_ORD_BKSW_52A</Element>
+            <Element DATATYPE="3" Desc="Receiver's Charges" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">X103_RECCHGAMT_71G</Element>
+            <Element DATATYPE="1" Desc="Receiver's Charges CCY" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">X103_RECCHGCCY_71G</Element>
+            <Element DATATYPE="12" Desc="Receiver's Correspondent Address1"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_RECCORADD154A</Element>
+            <Element DATATYPE="12" Desc="Receiver's Correspondent Address2"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_RECCORADD254A</Element>
+            <Element DATATYPE="12" Desc="Receiver's Correspondent Address3"
+                DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">X103_RECCORADD354A</Element>
+            <Element DATATYPE="12" Desc="Receiver's Correspondent ID"
+                DispInGrid="N" EDIT="N" EEType="BKID" FldType="" Value="">X103_RECCORRID_54A</Element>
+            <Element DATATYPE="1"
+                Desc="Receiver's Correspondent Correspondence Medium"
+                DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103_RECCORRMED54A</Element>
+            <Element DATATYPE="12" Desc="Receiver's Correspondent Name"
+                DispInGrid="N" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_RECCORRNM_54A</Element>
+            <Element DATATYPE="1" Desc="Receiver's Correspondent SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_RECCORRSW_54A</Element>
+            <Element DATATYPE="12" Desc="Regulatory Reporting1" DispInGrid="N"
+                EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_REG_REP1_77B</Element>
+            <Element DATATYPE="12" Desc="Regulatory Reporting2" DispInGrid="N"
+                EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_REG_REP2_77B</Element>
+            <Element DATATYPE="12" Desc="Regulatory Reporting3" DispInGrid="N"
+                EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_REG_REP3_77B</Element>
+            <Element DATATYPE="12" Desc="Regulatory Reporting" DispInGrid="N"
+                EDIT="N" EEType="NARR(3*35)" FldType="" Value="">X103_REG_REP_77B</Element>
+            <Element DATATYPE="12" Desc="Remittance Information1" DispInGrid="N"
+                EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_REMIT_INF1_70</Element>
+            <Element DATATYPE="12" Desc="Remittance Information2" DispInGrid="N"
+                EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_REMIT_INF2_70</Element>
+            <Element DATATYPE="12" Desc="Remittance Information3" DispInGrid="N"
+                EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_REMIT_INF3_70</Element>
+            <Element DATATYPE="12" Desc="Remittance Information4" DispInGrid="N"
+                EDIT="N" EEType="CHAR_35" FldType="" Value="">X103_REMIT_INF4_70</Element>
+            <Element DATATYPE="1" Desc="Sending Bank Account No" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">X103_SENDBKACNO51A</Element>
+            <Element DATATYPE="1" Desc="Sending Bank Correspondence Medium"
+                DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">X103_SENDBKMED_51A</Element>
+            <Element DATATYPE="3" Desc="Sender's Charges" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">X103_SENDCHGAMT71F</Element>
+            <Element DATATYPE="1" Desc="Sender's Charges CCY" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">X103_SENDCHGCCY71F</Element>
+            <Element DATATYPE="12" Desc="Sender's Correspondent Bank ID"
+                DispInGrid="N" EDIT="N" EEType="BKID" FldType="" Value="">X103_SENDCORRID53A</Element>
+            <Element DATATYPE="12" Desc="Sender's Correspondent Name"
+                DispInGrid="N" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_SENDCORRNM53A</Element>
+            <Element DATATYPE="1" Desc="Sender's Correspondent SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_SENDCORRSW53A</Element>
+            <Element DATATYPE="12" Desc="Sending Bank ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">X103_SEND_BKID_51A</Element>
+            <Element DATATYPE="12" Desc="Sending Bank Name" DispInGrid="N"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_SEND_BKNM_51A</Element>
+            <Element DATATYPE="1" Desc="Sending Bank SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_SEND_BKSW_51A</Element>
+            <Element DATATYPE="12" Desc="Sender's Reference" DispInGrid="N"
+                EDIT="N" EEType="Varchar_16" FldType="" Value="">X103_SEND_NO_20</Element>
+            <Element DATATYPE="3" Desc="Interbank Settled Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">X103_SETT_AMT_32A</Element>
+            <Element DATATYPE="1" Desc="Interbank Settled Amount CCY"
+                DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">X103_SETT_CCY_32A</Element>
+            <Element DATATYPE="12" Desc="Tag 52A" DispInGrid="N" EDIT="N"
+                EEType="SW_TAG" FldType="" Value="">X103_TAG_52A</Element>
+            <Element DATATYPE="12" Desc="Tag 53A" DispInGrid="N" EDIT="N"
+                EEType="SW_TAG" FldType="" Value="">X103_TAG_53A</Element>
+            <Element DATATYPE="12" Desc="Tag 54A" DispInGrid="N" EDIT="N"
+                EEType="SW_TAG" FldType="" Value="">X103_TAG_54A</Element>
+            <Element DATATYPE="12" Desc="Tag 55A" DispInGrid="N" EDIT="N"
+                EEType="SW_TAG" FldType="" Value="">X103_TAG_55A</Element>
+            <Element DATATYPE="12" Desc="Tag 56A" DispInGrid="N" EDIT="N"
+                EEType="SW_TAG" FldType="" Value="">X103_TAG_56A</Element>
+            <Element DATATYPE="12" Desc="Tag 59A" DispInGrid="N" EDIT="N"
+                EEType="SW_TAG" FldType="" Value="">X103_TAG_59A</Element>
+            <Element DATATYPE="12" Desc="Time Indication" DispInGrid="N"
+                EDIT="N" EEType="Varchar_19" FldType="" Value="">X103_TIME_INDI_13C</Element>
+            <Element DATATYPE="12" Desc="Third Reimbursement Institution ID"
+                DispInGrid="N" EDIT="N" EEType="BKID" FldType="" Value="">X103_TRDREIMID_55A</Element>
+            <Element DATATYPE="12" Desc="Third Reimbursement Institution Medium"
+                DispInGrid="N" EDIT="N" EEType="Varchar_20" FldType="" Value="">X103_TRDREIMMED55A</Element>
+            <Element DATATYPE="12" Desc="Third Reimbursement Institution Name"
+                DispInGrid="N" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">X103_TRDREIMNM_55A</Element>
+            <Element DATATYPE="1"
+                Desc="Third Reimbursement Institution SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">X103_TRDREIMSW_55A</Element>
+            <Element DATATYPE="12" Desc="Transaction Type Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_3" FldType="" Value="">X103_TRX_TYPCD_26T</Element>
+        </Elements>
+    </DO>
+</DO>

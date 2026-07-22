@@ -1,0 +1,2 @@
+DV.appendField("EPLC_UPDATE_TTL_CONF_COMM");
+DV.appendField("EPLC_UPDATE_UNPAID_CONF_COMM");

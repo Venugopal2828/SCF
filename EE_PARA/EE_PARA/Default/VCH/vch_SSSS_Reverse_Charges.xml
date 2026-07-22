@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>SSSS</MODULE>
+        <DESC>Reverse Charges</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>0</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>R</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">ChargeForm.TrxCharge.CHG_CUSTOMER_ID</C_CUST_ID>
+            <DO name="ChargeForm" path="ChargeForm.TrxCharge"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">ChargeForm.TrxCharge.CHG_GL_AC_NUMBER</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">ChargeForm.TrxCharge.CHG_COLLECT_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="S">var ex=DV.getCurrentDoData('CHG_TEMP1');
+ var amt=DV.getCurrentDoData('CHG_COLLECT_AMT');
+ 
+ if(ex != null){
+  if (ex.equals('exclude')){
+    amt='0';
+  }
+  }
+  DV.appendField(amt);</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">CHG_VALUE_DATE</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">CHG_VALUE_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">N</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="Y">CHG_TRX_RATE</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="V" USED="N">1</C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="V">COMMISSION</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE="F"/>
+            <C_CUST_CODE FV_TYPE="V">No</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="V">C</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE="F">ChargeForm.TrxCharge.CPYT_RET_SWT_FLAG</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="S">var cash=DV.getFieldValue('CHG_CASH_IND');
+var currency = DV.getFieldValue('CHG_FLD_LOCAL_CUST_CCY');
+if (cash.equals('Yes')){
+   var country = DV.getCountryCode();
+   var sql = "item_c='006" + "'" + " and cnty_code='" + country + "'" + " and item_name='" + currency + "'";
+   DV.SYS_getTableData('FIELD_1_X','eximtrx.data_master',sql);
+} else {
+   var acc;
+   acc = DV.getFieldValue('CHG_FLD_LOCAL_CUST_AC_NO');
+   DV.appendField(acc);
+}</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">CHG_FLD_LOCAL_CUST_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="S">var dest=DV.getFieldValue('CHG_FLD_ALL_CHARGE_FOR');
+  var amt=DV.getFieldValue('CHG_FLD_LOCAL_PAY_TOTALE_IN_PAYCCY');
+  
+  if(dest != null){
+   if (dest.equals('F')){
+     amt='0';
+   }
+   }
+   DV.appendField(amt);</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">CHG_VALUE_DATE</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">CHG_VALUE_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">N</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="Y">CHG_TRX_RATE</C_EXCHGE_RATE1>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="S" USED="N">var ccy1 = DV.getFieldValue("CHG_FLD_LOCAL_CUST_CCY"); var baseCCY =DV.SYS_LCY ;    var defaultRate = '1';   var rate= '123456789';   var cnty = DV.getCountryCode(); if(ccy1!=baseCCY){      	DV.appendField(rate); }else{     	DV.appendField(defaultRate);  }</C_INTEREST_RATE1>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="S">var type;
+  var cash=DV.getFieldValue('CHG_CASH_IND');
+   if (cash.equals('No')){
+     type ='CUSTOMER';
+   }else{
+     type ='BANK';
+   }
+   DV.appendField(type);</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE=""/>
+            <C_CUST_CODE FV_TYPE="V">No</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="V">C</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE="S">var dest=DV.getFieldValue("CHG_FLD_ALL_CHARGE_FOR");
+ if(dest != null &amp;&amp; dest.equals('F')){
+   DV.appendField('');
+ }else{
+   var cash=DV.getFieldValue('CHG_CASH_IND');
+   if (cash.equals('No')){
+     var acc=DV.getFieldValue('CHG_FLD_LOCAL_CUST_AC_NO');
+     var sql="C_AC_NUMBER='" + acc + "'";
+     DV.SYS_getTableData('C_AC_TITLE','eximsys.std_ac_number',sql);
+   }else{
+     var title ='SETTLEMENT SUSPENSE';
+     DV.appendField(title);
+   }
+ }</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="V">PositionAcc</C_GL>
+            <C_SL FV_TYPE="F"/>
+            <C_CURRENCY FV_TYPE="F">CHG_LOCAL_FX_CCY_CR</C_CURRENCY>
+            <N_AMT FV_TYPE="F">CHG_LOCAL_FX_AMT_CR</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">CHG_TRX_DATE</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">CHG_VALUE_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="F"/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="F" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="F" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="F" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F"/>
+            <C_VOUCHER_DESC FV_TYPE="V">Credit</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="F"/>
+            <C_CUST_BS_GROUP FV_TYPE="F"/>
+            <C_CUST_BS_TYPE FV_TYPE="F"/>
+            <C_AO_CODE FV_TYPE="F"/>
+            <C_CU_REL_CODE FV_TYPE="F"/>
+            <C_CUST_CNTY_CODE FV_TYPE="F"/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="V">PositionAcc</C_GL>
+            <C_SL FV_TYPE="F"/>
+            <C_CURRENCY FV_TYPE="F">CHG_LOCAL_FX_CCY_DR</C_CURRENCY>
+            <N_AMT FV_TYPE="F">CHG_LOCAL_FX_AMT_DR</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">CHG_TRX_DATE</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">CHG_VALUE_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="F"/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="F" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="F" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="F" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F"/>
+            <C_VOUCHER_DESC FV_TYPE="V">Debit</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="F"/>
+            <C_CUST_BS_GROUP FV_TYPE="F"/>
+            <C_CUST_BS_TYPE FV_TYPE="F"/>
+            <C_AO_CODE FV_TYPE="F"/>
+            <C_CU_REL_CODE FV_TYPE="F"/>
+            <C_CUST_CNTY_CODE FV_TYPE="F"/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="V">PositionAcc</C_GL>
+            <C_SL FV_TYPE="F"/>
+            <C_CURRENCY FV_TYPE="F">CHG_FOREIGN_FX_CCY_CR</C_CURRENCY>
+            <N_AMT FV_TYPE="F">CHG_FOREIGN_FX_AMT_CR</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">CHG_TRX_DATE</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">CHG_VALUE_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="F"/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="F" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="F" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="F" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F"/>
+            <C_VOUCHER_DESC FV_TYPE="V">Credit</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="F"/>
+            <C_CUST_BS_GROUP FV_TYPE="F"/>
+            <C_CUST_BS_TYPE FV_TYPE="F"/>
+            <C_AO_CODE FV_TYPE="F"/>
+            <C_CU_REL_CODE FV_TYPE="F"/>
+            <C_CUST_CNTY_CODE FV_TYPE="F"/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="V">PositionAcc</C_GL>
+            <C_SL FV_TYPE="F"/>
+            <C_CURRENCY FV_TYPE="F">CHG_FOREIGN_FX_CCY_DR</C_CURRENCY>
+            <N_AMT FV_TYPE="F">CHG_FOREIGN_FX_AMT_DR</N_AMT>
+            <D_BOOKING_DATE FV_TYPE="F">CHG_TRX_DATE</D_BOOKING_DATE>
+            <D_VALUE_DATE FV_TYPE="F">CHG_VALUE_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="F"/>
+            <C_EXCHGE_RATE1 FV_TYPE="F" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="F" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="F" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="F" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F"/>
+            <C_VOUCHER_DESC FV_TYPE="V">Debit</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="F"/>
+            <C_CUST_BS_GROUP FV_TYPE="F"/>
+            <C_CUST_BS_TYPE FV_TYPE="F"/>
+            <C_AO_CODE FV_TYPE="F"/>
+            <C_CU_REL_CODE FV_TYPE="F"/>
+            <C_CUST_CNTY_CODE FV_TYPE="F"/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

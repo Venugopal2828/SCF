@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FAEF_LOAN</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>FA_LOAN_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <FA_LOAN_ID ALIAS="T0" DESC="Loan Reference No." DT="12" TYPE="F">FA_LOAN_ID</FA_LOAN_ID>
+            <C_TRX_STATUS ALIAS="T0" DESC="C_TRX_STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_LOAN_ID ALIAS="T0" DBFUNC="" DESC="Loan Reference No." DT="12" HIDDEN="F" TYPE="F">FA_LOAN_ID</FA_LOAN_ID>
+        <FA_LOAN_CCY ALIAS="T0" DBFUNC="" DESC="Financing Currency" DT="1" HIDDEN="F" TYPE="F">FA_LOAN_CCY</FA_LOAN_CCY>
+        <FA_TTL_LOAN_BAL ALIAS="T0" DBFUNC="" DESC="Total Loan Balance" DT="3" HIDDEN="F" TYPE="F">FA_TTL_LOAN_BAL</FA_TTL_LOAN_BAL>
+        <FA_LOAN_VAL_DT ALIAS="T0" DBFUNC="" DESC="Loan Value Date" DT="91" HIDDEN="F" TYPE="F">FA_LOAN_VAL_DT</FA_LOAN_VAL_DT>
+        <FA_INT_CHG_TYPE ALIAS="T0" DBFUNC="" DESC="Interest Charge Type" DT="1" HIDDEN="F" TYPE="F">FA_INT_CHG_TYPE</FA_INT_CHG_TYPE>
+        <FA_REBATE_ACCOUNT ALIAS="T0" DBFUNC="" DESC="FA _REBATE_ACCOUNT" DT="1" HIDDEN="F" TYPE="F">FA_REBATE_ACCOUNT</FA_REBATE_ACCOUNT>
+        <FA_REBATE_AMT ALIAS="T0" DBFUNC="" DESC="FA_REBATE _AMT" DT="3" HIDDEN="F" TYPE="F">FA_REBATE_AMT</FA_REBATE_AMT>
+        <FA_REBATE_RATE ALIAS="T0" DBFUNC="" DESC="Rebate Rate" DT="8" HIDDEN="F" TYPE="F">FA_REBATE_RATE</FA_REBATE_RATE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.FA_SBR_REF</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">FA_SBR_REF</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> ='M' AND (</SQL>
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.FA_LOAN_STATUS</SQL>
+            <SQL TYPE="SQL">&lt;&gt;'STL' OR </SQL>
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.FA_LOAN_STATUS</SQL>
+            <SQL TYPE="SQL"> IS NULL)</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

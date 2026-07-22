@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">SHGT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>IPLC</module-name>
+        <cubk-mapping-name>SG_NO</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SG_NO</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <SG_AMT ALIAS="T0" DBFUNC="" DESC="SG_AMT" DT="3" HIDDEN="F" TYPE="F">SG_AMT</SG_AMT>
+        <SG_CCY ALIAS="T0" DBFUNC="" DESC="SG_CCY" DT="1" HIDDEN="F" TYPE="F">SG_CCY</SG_CCY>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_16" TYPE="TBL_FLD">T0.LC_NO</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,1 @@
+DV.appendSWIFT("PYMT_pacs.010.001.03_COL");

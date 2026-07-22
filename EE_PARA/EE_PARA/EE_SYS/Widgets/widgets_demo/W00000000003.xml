@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WIDGET NAME="invoice_status">
+	<PATTERN>
+		<TYPE>bar</TYPE>
+		<TITLE>Invoice Status</TITLE>
+		<RENDERCONTROL>div2</RENDERCONTROL>
+		<AXIS>y</AXIS>
+		<PERIOD Mapping_Field="D_CREA_DATE" Period_value="L">50</PERIOD>
+		<ROWNUM>4</ROWNUM>
+		<INTERVAL/>
+	</PATTERN>
+	<!-- <WIDGET-CLASS>InvoiceStatus</WIDGET-CLASS> -->
+	<!-- <WIDGET-SQL>SQL</WIDGET-SQL> -->
+	<MAP_TBL>
+		<TABLES>
+			<TABLE ALIAS="" schema="%EXIMTRX%">GTEE_MASTER</TABLE>
+		</TABLES>
+		<FIELDS>
+			<FIELD DESC="C_USER_ID" FIELD="C_USER_ID" TBL_ALIAS="" TYPE="" HIDDEN = "" DBFUNC=""/>
+			<FIELD DESC="GTEE_CCY" FIELD="GTEE_CCY" TBL_ALIAS="" TYPE="" DBFUNC=""></FIELD>
+            <FIELD DESC="GTEE_AMT"     FIELD="GTEE_AMT" TBL_ALIAS="" TYPE="" HIDDEN = "" DBFUNC="SUM">				
+			<!--criteria field-->
+			  <GROUPBY>GTEE_CCY,C_USER_ID</GROUPBY>
+			</FIELD>
+		</FIELDS>
+	</MAP_TBL>
+	<CLAUSE BYUNITCODE="True">
+		<SQL EETYPE="" TYPE="TBL_FLD" TBL_ALIAS="">C_TRX_STATUS</SQL>
+		<SQL TYPE="SQL"> = 'M' </SQL>
+	</CLAUSE>
+</WIDGET>

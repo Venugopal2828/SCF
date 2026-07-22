@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey" AutoGen-Parameter-Version="1.0">
+    <key-mapping>
+        <module-name>TRMM</module-name>
+        <cubk-mapping-name>OUR_NS_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRNB_ACNO_DO</table-name>
+        </tables>
+        <key-fields>
+            <NOSTRO_CCY ALIAS="T0" DESC="Nostro CCY" DT="1" TYPE="F">TRX_CCY</NOSTRO_CCY>
+            <NS_BK_SWADD ALIAS="T0" DESC="Nostro Bank SWIFT Address" DT="1" TYPE="F">NOSTRO_BK_SW_ADD</NS_BK_SWADD>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <NS_BK_ID ALIAS="T0" DBFUNC="" DESC="Nostro Bank Code" DT="12" HIDDEN="F" TYPE="F">NOSTRO_BK_ID</NS_BK_ID>
+        <NS_BK_SWADD ALIAS="T0" DBFUNC="" DESC="Nostro Bank SWIFT Address" DT="1" HIDDEN="F" TYPE="F">NOSTRO_BK_SW_ADD</NS_BK_SWADD>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

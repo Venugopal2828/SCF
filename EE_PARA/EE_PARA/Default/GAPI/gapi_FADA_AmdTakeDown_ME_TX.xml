@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>T</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value>TrxGenerateLMTS</gapi-type-value>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>LMTS</other-system-id>
+        <other-system-interface>CL101</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FADA</module>
+        <interface-mapping-name>AmdTakeDown_ME</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>T</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <DO name="DFAgreement" path="DFAgreement"/>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <C_TRX_REF descr="" ec-tag="" fv-type="F" op-tag="" order="">C_MAIN_REF</C_TRX_REF>
+        <LM_TRX_AMT2 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_OP_TYPE descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_FACI_TP1 descr="" ec-tag="" fv-type="V" op-tag="" order="">Insurance</LM_FACI_TP1>
+        <LM_DRCR_MRK1 descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_TEMP3</LM_DRCR_MRK1>
+        <LM_CSL_DESC descr="" ec-tag="" fv-type="V" op-tag="" order="">Factoring</LM_CSL_DESC>
+        <LM_DRCR_MRK descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_TEMP3</LM_DRCR_MRK>
+        <LM_CUST_ID1 descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_IF_ID</LM_CUST_ID1>
+        <LM_RCUST_ID2 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_DRCR_MRK2 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_CUST_ID2 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_TRX_AMT descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_TEMP_AMT8</LM_TRX_AMT>
+        <LM_CSL_DESC1 descr="" ec-tag="" fv-type="V" op-tag="" order="">Factoring</LM_CSL_DESC1>
+        <LM_RSV_LINK descr="" ec-tag="" fv-type="F" op-tag="" order="">LM_RSV_LINK</LM_RSV_LINK>
+        <LM_TRX_CCY descr="" doxpath="DFAgreement" ec-tag="" fv-type="F"
+            op-tag="" order="">FA_APPL_LMT_CCY</LM_TRX_CCY>
+        <LM_TRX_CCY1 descr="" doxpath="DFAgreement" ec-tag="" fv-type="F"
+            op-tag="" order="">FA_APPL_LMT_CCY</LM_TRX_CCY1>
+        <LM_PARENT_REF descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_CSL_DESC2 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_PAY_REF descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_DUE_DAY descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_TRX_REF descr="" ec-tag="" fv-type="F" op-tag="" order="">C_MAIN_REF</LM_TRX_REF>
+        <LM_TRX_CCY2 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_RCUST_ID descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_BUYER_ID</LM_RCUST_ID>
+        <LM_TRX_AMT1 descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_TEMP_AMT8</LM_TRX_AMT1>
+        <LM_CUST_ID descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_BUYER_ID</LM_CUST_ID>
+        <LM_FACI_TP descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_BUSI_TYPE</LM_FACI_TP>
+        <LM_FACI_TP2 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_VALU_DAY descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_TXUN_ID descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_RCUST_ID1 descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_IF_ID</LM_RCUST_ID1>
+        <LM_PAY_REF1 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <LM_PAY_REF2 descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <HLM_COMP descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <HLM_FLAG descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+    </send-msg-map>
+    <recv-msg-map>
+        <LM_RSV_LINK descr="" fv-type="F" order="" sheet="" sheet-separator="">LM_RSV_LINK</LM_RSV_LINK>
+    </recv-msg-map>
+    <send-item/>
+</gapi>

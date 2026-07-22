@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Amendment Purchase Order");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sRptId = stp.getXslMsgTagVal("message/Document/FullPushThrghRpt/RptId","Id");
+stp.writeLog("sRptId=========="+sRptId);
+//var sBIC = sRptId.substr(0,11);
+//var sBIC = sRptId.split("-")[0];
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC=========="+sBIC);
+stp.updateFieldValue("TSU_PCBK_BIC",sBIC);
+var sBuyrBkBIC = stp.getXslMsgTagVal("message/Document/FullPushThrghRpt/PushdThrghBaseln/BuyrBk","BIC");
+var sSellrBkBIC = stp.getXslMsgTagVal("message/Document/FullPushThrghRpt/PushdThrghBaseln/SellrBk","BIC");
+var sBuyrNm = stp.getXslMsgTagVal("message/Document/FullPushThrghRpt/PushdThrghBaseln/Buyr","Nm");
+var sSellrNm = stp.getXslMsgTagVal("message/Document/FullPushThrghRpt/PushdThrghBaseln/Sellr","Nm");
+var sUnitNm = "";
+if (sBIC == sBuyrBkBIC){
+sUnitNm = sBuyrNm;
+stp.updateFieldValue("TSU_TRX_ROLE","BUYER");
+} else{
+sUnitNm = sSellrNm;
+stp.updateFieldValue("TSU_TRX_ROLE","SELLER");
+}
+var arrKeys = [["C_UNIT_NAME",sUnitNm]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetUnitCodeByNm",arrKeys);
+var sUnitCode = arrGetDataResult[0];
+stp.setCmpId(sUnitCode);
+var sMainRef = stp.getSimpleRef("17");
+stp.setMainRef(sMainRef);
+stp.writeLog("sMainRef=========="+sMainRef);
+var sTxId = stp.getXslMsgTagVal("message/Document/FullPushThrghRpt/TxId","Id");
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+stp.updateFieldValue("CURRNT_STATUS","Received Amendment Purchase Order");
+stp.updateFieldValue("NXT_STATUS","Waiting for Delta Report");
+stp.updateFieldValue("TSUR2_REQ_ACT_TP","ARBA");
+stp.writeLog("End: Received Amendment Purchase Order");]]></js-content>
+</root>

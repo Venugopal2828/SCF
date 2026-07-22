@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <module>FAEF</module>
+    <separater></separater>
+    <full_display>false</full_display>
+    <fld_name>DOC_LIST</fld_name>
+    <type>T</type>
+    <settings>
+        <value_field>C_IMG_INDX</value_field>
+        <table_name dsType="TD">CETRX.TRX_IMAGES_DTAL</table_name>
+        <display_field>C_IMG_DOC_DESC</display_field>
+        <condition>
+            <sql TYPE="COL">C_MAIN_REF</sql>
+            <sql>= '</sql>
+            <sql TYPE="FLD" mf="F">C_MAIN_REF</sql>
+            <sql>' AND </sql>
+            <sql TYPE="COL">C_UNIT_CODE</sql>
+            <sql>= '</sql>
+            <sql TYPE="SYS">SYS_CHILD_UNIT</sql>
+            <sql>' AND </sql>
+            <sql TYPE="COL">I_EVENT_TIMES</sql>
+            <sql>= </sql>
+            <sql TYPE="FLD" mf="F">I_EVENT_TIMES</sql>
+            <sql> ORDER BY </sql>
+            <sql TYPE="COL">C_IMG_DOC_DESC</sql>
+        </condition>
+    </settings>
+    <distinct>true</distinct>
+</root>

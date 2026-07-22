@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Collateral Variety" Max="n" Min="1"
+    Name="CollateralVariety" PendingStore="N"
+    Screen="SCRN/DO/ABLF_CollateralVariety.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="PARTY_GOODS"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>I_SEQ_NUM</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TRDP_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="1" Desc="Goods Category ID" DispInGrid="Y" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">GOODS_CATE</Element>
+        <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_10" FldType="" Value="">PARTY_ID</Element>
+    </Elements>
+</DO>

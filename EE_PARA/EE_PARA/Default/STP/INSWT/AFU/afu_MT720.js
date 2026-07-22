@@ -1,0 +1,1 @@
+stp.setFunc("EPLC_ReceiveMT720");

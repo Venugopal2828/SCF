@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_DD_RATE</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>Get_DDRate_Rule</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_DD_RATE ALIAS="T0" DBFUNC="" DESC="Dynamic Discounting Rate" DT="2" HIDDEN="F" TYPE="F">FA_TEMP_RT_TYPE1</FA_DD_RATE>
+        <FA_DD_RT_ID ALIAS="T0" DBFUNC="" DESC="Dynamic Discounting Rate ID" DT="12" HIDDEN="F" TYPE="F">FA_TEMP6</FA_DD_RT_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">TSU_PO_ID</SQL>
+            <SQL TYPE="SQL">' AND (</SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.FA_DD_D_FROM</SQL>
+            <SQL TYPE="SQL"> &lt;= </SQL>
+            <SQL TYPE="FLD">FA_LOAN_DAYS</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL TYPE="FLD">FA_LOAN_DAYS</SQL>
+            <SQL TYPE="SQL">&lt;= </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.FA_DD_D_TO</SQL>
+            <SQL TYPE="SQL">)</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

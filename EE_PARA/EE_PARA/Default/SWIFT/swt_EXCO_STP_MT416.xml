@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swift AutoGen-Parameter-Version="1.0">
+    <head-info>
+        <form-id>STP_MT416</form-id>
+        <form-name>STP_MT416</form-name>
+        <mt-desc>Advice of Non-Payment/Non-Acceptance</mt-desc>
+        <telexhead>
+            <TO_NAME type="V"></TO_NAME>
+            <TO_ADD type="V"></TO_ADD>
+            <FM type="V"></FM>
+            <TELEX_NO type="V"></TELEX_NO>
+            <TEST_NO type="V"></TEST_NO>
+            <ON_CCY type="V"></ON_CCY>
+            <ON_AMT type="V"></ON_AMT>
+            <DATED type="V"></DATED>
+            <TEST_WITH type="V"></TEST_WITH>
+        </telexhead>
+        <module-name>EXCO</module-name>
+        <mt>416</mt>
+        <combined-flag></combined-flag>
+        <mt-limit-length>10000</mt-limit-length>
+        <io>I</io>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME></PRINTERNAME>
+        <check-js></check-js>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME></PPRINTERNAME>
+        <PRINTSTATE>R</PRINTSTATE>
+        <PT></PT>
+        <MAILID></MAILID>
+        <non-regular>FALSE</non-regular>
+    </head-info>
+    <tags>
+        <tag>
+            <order>00</order>
+            <tag-code>B3</tag-code>
+            <tag-desc>Incoming SWIFT Header 3</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase></Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="25" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>B4</tag-code>
+            <tag-desc>Incoming SWIFT Header 4</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase></Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="37" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>B5</tag-code>
+            <tag-desc>Incoming SWIFT Header 5</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase></Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="25" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>B6</tag-code>
+            <tag-desc>Incoming SWIFT Header 6</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase></Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="51" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>14</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+                <fb>
+                    <srow>1</srow>
+                    <scol>15</scol>
+                    <len>12</len>
+                    <vtype>B</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>20</tag-code>
+            <tag-desc>Sender's Reference</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase></Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>COLL_BK_REF</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>16</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>16</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>21</tag-code>
+            <tag-desc>Related Reference</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>C_MAIN_REF</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>16</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>16</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>23E</tag-code>
+            <tag-desc>Advice Type</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>4</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>51A</tag-code>
+            <tag-desc>Sending Institution</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+            <segment-2 cols="11" illegal-char="" rows="1" segment-no="1"></segment-2>
+            <segment-2-fbs></segment-2-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>53A</tag-code>
+            <tag-desc>Sender's Correspondent</tag-desc>
+            <tag-type>D</tag-type>
+            <relation-tags>
+                <rela-setting></rela-setting>
+                <rela-tag-code>53A</rela-tag-code>
+                <rela-tag-code>53B</rela-tag-code>
+            </relation-tags>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group>53</tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>35</len>
+                    <vtype>C</vtype>
+                    <prefix>/</prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+            <segment-2 cols="11" illegal-char="" rows="1" segment-no="1"></segment-2>
+            <segment-2-fbs></segment-2-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>53B</tag-code>
+            <tag-desc>Sender's Correspondent</tag-desc>
+            <tag-type>R</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group>53</tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>35</len>
+                    <vtype>C</vtype>
+                    <prefix>/</prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+            <segment-2 cols="35" illegal-char="" rows="1" segment-no="1"></segment-2>
+            <segment-2-fbs></segment-2-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>71F</tag-code>
+            <tag-desc>Sender's Charges</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase></Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="18" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>SEND_CCY</fv-value>
+                    <value-type>U</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>3</element-len>
+                    <rows>1</rows>
+                </element>
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>SEND_AMT</fv-value>
+                    <value-type>A</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>4</start-position>
+                    <element-len>15</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>3</len>
+                    <vtype>U</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+                <fb>
+                    <srow>1</srow>
+                    <scol>4</scol>
+                    <len>15</len>
+                    <vtype>A</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>77A</tag-code>
+            <tag-desc>Reason for Non-Payment/Non-Acceptance</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="20" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>RESN_NON_PMTACPT</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix></element-prefix>
+                    <element-desc></element-desc>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>35</element-len>
+                    <rows>20</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>700</len>
+                    <vtype>C</vtype>
+                    <prefix></prefix>
+                    <descr></descr>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>21A</tag-code>
+            <tag-desc>Related Sequence Reference</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>01</order>
+            <tag-code>23E</tag-code>
+            <tag-desc>Advice Type</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>21C</tag-code>
+            <tag-desc>Principal's Reference</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>32A</tag-code>
+            <tag-desc>Face Amount of Document(s)</tag-desc>
+            <tag-type>D</tag-type>
+            <relation-tags>
+                <rela-setting></rela-setting>
+                <rela-tag-code>32A</rela-tag-code>
+                <rela-tag-code>32K</rela-tag-code>
+                <rela-tag-code>32B</rela-tag-code>
+            </relation-tags>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group>32</tag-group>
+            <sequence></sequence>
+            <segment-1 cols="24" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>32K</tag-code>
+            <tag-desc>Face Amount of Document(s)</tag-desc>
+            <tag-type>R</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group>32</tag-group>
+            <sequence></sequence>
+            <segment-1 cols="24" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>32B</tag-code>
+            <tag-desc>Face Amount of Document(s)</tag-desc>
+            <tag-type>R</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group>32</tag-group>
+            <sequence></sequence>
+            <segment-1 cols="18" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>50D</tag-code>
+            <tag-desc>Principal</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+            <segment-2 cols="35" illegal-char="" rows="4" segment-no="1"></segment-2>
+            <segment-2-fbs></segment-2-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>59</tag-code>
+            <tag-desc>Drawee</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+            <segment-2 cols="35" illegal-char="" rows="4" segment-no="1"></segment-2>
+            <segment-2-fbs></segment-2-fbs>
+        </tag>
+        <tag>
+            <order>01</order>
+            <tag-code>71F</tag-code>
+            <tag-desc>Sender's Charges</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="18" illegal-char="" rows="1" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+        <tag>
+            <order>01</order>
+            <tag-code>77A</tag-code>
+            <tag-desc>Reason for Non-Payment/Non-Acceptance</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>O</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group></tag-group>
+            <sequence></sequence>
+            <segment-1 cols="35" illegal-char="" rows="20" segment-no="0"></segment-1>
+            <segment-1-fbs></segment-1-fbs>
+        </tag>
+    </tags>
+</swift>

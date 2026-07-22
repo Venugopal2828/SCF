@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>SSSS</module>
+    <separater/>
+    <full_display>false</full_display>
+    <blank_value/>
+    <multilang>N</multilang>
+    <fld_name>INT_BASE_RT_CD</fld_name>
+    <type>T</type>
+    <settings>
+        <value_field>INT_BASE_RT_CD</value_field>
+        <table_name schema="%EXIMTRX%">%EXIMTRX%.COMM_PROD_INTBASERT</table_name>
+        <display_field>INT_BASE_RT_DESP</display_field>
+        <condition>
+            <sql type="COL">INST_CD</sql>
+            <sql> = '</sql>
+            <sql type="SV">SYS_PC_UNIT</sql>
+            <sql>' AND </sql>
+            <sql type="COL">CNTRY_CD</sql>
+            <sql> = '</sql>
+            <sql type="SV">SYS_BANK_COUNTRY</sql>
+            <sql>'</sql>
+        </condition>
+    </settings>
+</root>

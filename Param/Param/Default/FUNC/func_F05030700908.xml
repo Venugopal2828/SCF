@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">EXLC</MODULE>
+        <MODULE_DESC>Export Letters of Credit</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030700908</ID>
+        <NAME>EXLC Payment Instructions</NAME>
+        <DESC>Payment Instructions</DESC>
+        <FUNSHORTNAME>PmtInstr</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">EXLC_PmtInstr.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700907</ID>
+        <NAME>EXLC Payment Instructions_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700907</ID>
+        <NAME>EXLC Payment Instructions_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000119</ID>
+        <NAME>EXLC Payment Instructions_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

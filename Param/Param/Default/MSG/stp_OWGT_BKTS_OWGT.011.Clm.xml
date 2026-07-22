@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>OWGT.011.Clm</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>OWGT</module>
+        <map-name>ReceivedClaim</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <BK_MAIN_REF descr="" fv-type="F" intfconv="N">BkMainRef</BK_MAIN_REF>
+        <CLM_AMT descr="" fv-type="F" intfconv="N">ClmAmt</CLM_AMT>
+        <CLM_CCY descr="" fv-type="F" intfconv="N">ClmCcy</CLM_CCY>
+        <CLM_DT descr="Date of Claim" fv-type="F" intfconv="N">ClmDt</CLM_DT>
+        <CLM_NO descr="" fv-type="F" intfconv="N">ClmRef</CLM_NO>
+        <CURRNT_STATUS descr="" fv-type="F" intfconv="N">CurSts</CURRNT_STATUS>
+        <C_MAIN_REF descr="" fv-type="F" intfconv="N">CEMainRef</C_MAIN_REF>
+        <C_UNIT_CODE descr="" fv-type="F" intfconv="N">CustId</C_UNIT_CODE>
+        <GTEE_BAL descr="" fv-type="F" intfconv="N">GteeBala</GTEE_BAL>
+        <GTEE_NO descr="" fv-type="F" intfconv="N">GteeRef</GTEE_NO>
+        <NATURE_OF_CLM descr="" fv-type="F" intfconv="N">NatureOfClm</NATURE_OF_CLM>
+        <NO_OF_CLM descr="" fv-type="F" intfconv="N">NoOfClm</NO_OF_CLM>
+        <NXT_STATUS descr="" fv-type="F" intfconv="N">NxtSts</NXT_STATUS>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[var TSU_REQ_ACT_TP = stp.getValue("/Document/ActvtyRpt/Rpt/PdgReqForActn","Tp");
+stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+if ( TSU_REQ_ACT_TP[0]== undefined)
+{
+	stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");
+stp.updateFieldValue("/root/domData","TSU_PDC_DESC","");
+stp.setNodeAttribute("/root/domData/TSU_PDC_DESC");
+}
+var bu=stp.getTSUUnitCode();
+var RltdMsgRef = stp.getValue("/Document/ActvtyRpt/RltdMsgRef","Id");
+if (RltdMsgRef[0] != undefined)
+{
+stp.writeLog("Begin: Assign function R2ActivityReport");
+
+var MainRef = stp.getValue("/Document/ActvtyRpt/RltdMsgRef","Id");
+stp.writeLog("MainRef="+MainRef[0]);
+stp.updateFieldValue("","C_MAIN_REF",MainRef[0]);
+stp.updateFieldValue("","C_TRX_REF",MainRef[0]);
+stp.setAutoProcess(true);
+stp.setFunc("R2ActivityReport");
+stp.writeLog("End: Assign function R2ActivityReport");
+}
+if (RltdMsgRef[0] == undefined)
+{   
+    stp.writeLog("Begin: Assign function R2ReceiveSpecialActivityReport");
+    var OurBIC=stp.getTSUBIC();
+    var mainRef=stp.SYS_getRefNo("TSUM");
+    mainRef = OurBIC + "AP" + mainRef;
+    stp.writeLog("mainref="+mainRef);
+    stp.updateFieldValue("/root/domData","C_MAIN_REF",mainRef);
+    stp.updateFieldValue("/root/domData","C_TRX_REF",mainRef);
+	stp.updateFieldValue("/root/domData","TSU_ERR_STATUS","Unarranged");
+    
+    stp.setAutoProcess(true); 
+    stp.setFunc("Receive Special Activity Report");
+    stp.writeLog("End: Assign function R2ReceiveSpecialActivyReport19");
+}]]></js-content>
+</root>

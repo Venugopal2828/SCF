@@ -1,0 +1,135 @@
+clusteringcache: eecache # eecache|redis
+mode: j2ee # eecluster|j2ee|k8s|nacos|eureka
+host: "http://localhost:9080" # If the mode setting is eureka, please set it like http://localhost:8080/eureka.If the mode setting is nacos, please set it like 10.39.104.38:8848. If the mode setting is eecluster, please ignore this. If the mode setting is j2ee, please set it like http://localhost:8080 or empty
+ip: "&" # Local machine's IP address, If & means let system to get the IP
+port: 9080 # All services' server-port
+# All defined services in EE
+services:
+  -
+    name: EximBatchService
+    basePath: EximBatchService # basePath
+    ip: "&" # Where the [EximBatchService] service run, If &  means user the above IP
+    port: "&" # [EximBatchService] service's server-port,If & means user the above port
+    endpoints:
+      -
+        name: Batch
+        endPointPath: /api/system/batch
+        actions:
+          -
+            action: list
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: startJob
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: pauseJob
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: stopJob
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: executeTask
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: youAreMaster
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: executeSubTask
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: getMasterInfo
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: getData
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: reexecuteJob
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+  -
+    name: EximBillWeb
+    basePath: EximBillWeb # basePath
+    ip: "&" # Where the [EximBillWeb] service run, If &  means user the above IP
+    port: "&" # [EximBillWeb] service's server-port,If & means user the above port
+    endpoints:
+      -
+        name: EECache
+        endPointPath: /api/system/eecache
+        actions:
+          -
+            action: get
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: put
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: remove
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: removeAll
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: getKeys
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+  -
+    name: EximBirtService
+    basePath: EximBirtService # basePath
+    ip: "&" # Where the [EximBirtService] service run, If &  means user the above IP
+    port: "&" # [EximBirtService] service's server-port,If & means user the above port
+    endpoints:
+      -
+        name: Birt
+        endPointPath: /api/system/birt
+        actions:
+          -
+            action: online
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: batchReport
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: tsuMessage
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: other
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+  -
+    name: EximServices
+    basePath: EximServices # basePath
+    ip: "&" # Where the [EximServices] service run, If &  means user the above IP
+    port: "&" # [EximServices] service's server-port,If & means user the above port
+    endpoints:
+      -
+        name: userAuth
+        endPointPath: /api/system/userAuth
+        actions:
+          -
+            action: normalLoginAuth
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: FAP
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set
+          -
+            action: SSOLoginAuth
+            url: "&" # It is required to be integrated with other system,If & means not set
+            reformatClass: "&" # It is required to be integrated with other system, If & means not set

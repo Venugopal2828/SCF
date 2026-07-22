@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>X103_ORDCU_ID_50A_INTRF</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <CNTY_CODE ALIAS="T0" DESC="CNTY_CODE" DT="1" TYPE="S">SYS_BANK_COUNTRY</CNTY_CODE>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X103_ORDCU_ID_50A</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">X103_ORDCU_NM_50A</PARTY_NM>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X103_ORDCU_ID_50A</C_MAIN_REF>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">X103_ORDCUADD1_50A</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address 2" DT="12" HIDDEN="F" TYPE="F">X103_ORDCUADD2_50A</ADD2>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="Address 3" DT="12" HIDDEN="F" TYPE="F">X103_ORDCUADD3_50A</ADD3>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="County Code" DT="1" HIDDEN="F" TYPE="F">APPL_CNTY_RES</CNTY_CODE>
+        <DRT_DEAL_IND ALIAS="T0" DBFUNC="" DESC="Direct Dealing Indicator" DT="1" HIDDEN="F" TYPE="F">DRT_DEAL_IND</DRT_DEAL_IND>
+        <RECORDER_TYPE ALIAS="T0" DBFUNC="" DESC="Record Type" DT="1" HIDDEN="F" TYPE="F">RECORDER_TYPE</RECORDER_TYPE>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>FADA_SEL_ID2</cubk-mapping-name>
+        <select-type>U</select-type>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="Customer ID" DT="12" TYPE="F">FA_SEL_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">FA_SEL_ID</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Customer Name" DT="12" HIDDEN="F" TYPE="F">FA_SEL_NM</PARTY_NM>
+        <FA_CUST_NM2 ALIAS="T0" DBFUNC="" DESC="Customer Name 2" DT="12" HIDDEN="F" TYPE="F">FA_SEL_NM2</FA_CUST_NM2>
+        <FA_EDI_MSG_ID ALIAS="T0" DBFUNC="" DESC="EDI Message ID" DT="12" HIDDEN="F" TYPE="F">FA_SEL_EDI_ID</FA_EDI_MSG_ID>
+        <CUST_TYPE ALIAS="T0" DBFUNC="" DESC="Customer Type" DT="1" HIDDEN="F" TYPE="F">CUST_TYPE</CUST_TYPE>
+        <EMAIL_ADD ALIAS="T0" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="F" TYPE="F">FA_SEL_ADDR</EMAIL_ADD>
+        <FA_CUST_REG_NO ALIAS="T0" DBFUNC="" DESC="Customer Register No." DT="12" HIDDEN="F" TYPE="F">FA_CUST_REG_NO</FA_CUST_REG_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">(</SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.FA_CUST_TYPE</SQL>
+            <SQL TYPE="SQL">='2' OR </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.FA_CUST_TYPE</SQL>
+            <SQL TYPE="SQL">='3') AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.IS_FACTOR_FLAG</SQL>
+            <SQL TYPE="SQL">='YES' AND </SQL>
+            <SQL DT="1" EEType="SYS_CHAR_1" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL">='M' AND </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FADA</module>
+    <name>FA_BUYER_ID_SWF</name>
+    <desc>FA_BUYER_ID_SWF</desc>
+    <head-info>
+        <DO name="DFAgreement" path="DFAgreement"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.SWF_ADD_DO</table-name>
+        <table-desc>SWF_ADD_DO</table-desc>
+        <ledger-op/>
+        <op-type>I</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False"/>
+    </head-info>
+    <mapping>
+        <C_DO_NAME fv_type="V" oper="=">SwFMTAddress</C_DO_NAME>
+        <C_MAIN_REF fv_type="F" mf="F" oper="=">FA_BUYER_ID</C_MAIN_REF>
+        <C_UNIT_CODE fv_type="F" mf="F" oper="=">C_UNIT_CODE</C_UNIT_CODE>
+        <I_SEQ_NUM fv_type="V" oper="=">1</I_SEQ_NUM>
+        <ORDER_NO fv_type="V" oper="=">1</ORDER_NO>
+        <SWF_FMT_NM fv_type="F" mf="F" oper="=">FA_BUYER_CONT_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 fv_type="F" mf="F" oper="=">FA_BUYER_CONT_ADDR</SWIFT_FMT_ADD1>
+    </mapping>
+</root>

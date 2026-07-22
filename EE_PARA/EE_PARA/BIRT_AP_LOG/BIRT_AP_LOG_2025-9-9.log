@@ -1,0 +1,2725 @@
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@e725b33a
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-373a771c5c0f41edb20b65a33d734d3d--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-373a771c5c0f41edb20b65a33d734d3d---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-74f3bf4034564e9e9d852afccb31f33a--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@b5d45950
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@18617d14
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-32f7199c32744b92b1dd69ec03c8b3ea--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyNS0wOS0wOQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-32f7199c32744b92b1dd69ec03c8b3ea---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-017f94db00fd4ef697d1a8b2ba19a10d--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/f94afa0f09884a7c86413ac47f5e8190.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-f8938598e7cb431aa7f046cd320b7b5d--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@99640269
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@40c4582a
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-01354402fd6c459191400200ffba35b2--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-01354402fd6c459191400200ffba35b2---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@ce19a2d3
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@1286d7ed
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@1286d7ed
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-f8938598e7cb431aa7f046cd320b7b5d---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-017f94db00fd4ef697d1a8b2ba19a10d---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@e725b33a
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@d7a2dbcf
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-c868f2a85a8c4af080d95eacec264411--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-c868f2a85a8c4af080d95eacec264411---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-55816c24ca0442cda918f25f9b2d2e8c--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@e6aca78
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@748e20d8
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-ec014fb9def14bd9a3bdb84f7d4415b5--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyNC0wOS0wNQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyNC0wOS0wNQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-ec014fb9def14bd9a3bdb84f7d4415b5---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-eb50960252ad4c25b6a0a24e91114336--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/d7c854633c7646debea40c4b01e2689e.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-e176a6b9e65f454da3ac99deacdb5c87--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@bb623d3c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@8ff433d3
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-bf201cb4148c4ee4bcf51727e9716ec0--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-bf201cb4148c4ee4bcf51727e9716ec0---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@e8acda95
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@ff005a54
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@ff005a54
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-e176a6b9e65f454da3ac99deacdb5c87---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-eb50960252ad4c25b6a0a24e91114336---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@d7a2dbcf
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@bf00cc7c
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-9babfd12110c498bb3a24055c07e3207--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-9babfd12110c498bb3a24055c07e3207---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-6316ca47599e4ab98efafa9e4f53871c--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@61cfe265
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@18617d14
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-6a82d25e9996400abd01776afed1f76d--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@3426c245
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-436a20afd4f74c74a6818b3384d097cd--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-436a20afd4f74c74a6818b3384d097cd---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@9f79ff9
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@710670ba
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@710670ba
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-6a82d25e9996400abd01776afed1f76d---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@bf00cc7c
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@d58d522
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-8496f6d77b35426c99a2d6ca6cbed0ba--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-8496f6d77b35426c99a2d6ca6cbed0ba---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-6524d17eced343dca67150f9174adbbd--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@18e28ee5
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-2d0b7d2d116d469e93a1ad3b0006bc9f--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@76ce8bcb
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-e4c55d75f69a423db574ca9528f6bf36--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-e4c55d75f69a423db574ca9528f6bf36---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@38549709
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@6ade11bf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@6ade11bf
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-2d0b7d2d116d469e93a1ad3b0006bc9f---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@d58d522
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@931d224e
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-fb49262b3bd14d1bba1af6447ffc9532--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-fb49262b3bd14d1bba1af6447ffc9532---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-72ace038de7c4c69a4d16173a7055888--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@78e43e8
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dadba867
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-441e0fb40345464b977ed553a0340fa4--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@e1321b85
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-92a10cca6c464d859e309f8e3e8e05a9--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-92a10cca6c464d859e309f8e3e8e05a9---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@27ea77cc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@ca49e611
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@ca49e611
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-441e0fb40345464b977ed553a0340fa4---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@931d224e
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@5d6f8ef2
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-5a1dc7b62cfc4f57975a19912c8cb186--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-5a1dc7b62cfc4f57975a19912c8cb186---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-80240408772e4bc899e4cc533bd613f5--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@e5a56c3a
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dace317e
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-3f0fa4a9689d4e5191bbea151ae6dab0--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@df1e9b07
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-eb835b119955469aaf60d2e3a657a6e4--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-eb835b119955469aaf60d2e3a657a6e4---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@bcaafb0c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@e417cb79
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@e417cb79
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-3f0fa4a9689d4e5191bbea151ae6dab0---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@5d6f8ef2
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@3906973d
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-e7bbb9ef8d66491f9ae1c15f1c079dd1--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-e7bbb9ef8d66491f9ae1c15f1c079dd1---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-f609a862a84d43e3bcdddcdff2f88279--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@c715aeb9
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-836ecb61d2fe409c9c4142f8b3071311--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@badb6bb9
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-6edbcc91532841baa4c0156ff2b8ca53--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-6edbcc91532841baa4c0156ff2b8ca53---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@53ba98a7
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@e6e4e34b
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@e6e4e34b
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-836ecb61d2fe409c9c4142f8b3071311---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@3906973d
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@ff3e62b4
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-12f9e30c1cd84cfaac3701f1691afb2f--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-12f9e30c1cd84cfaac3701f1691afb2f---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-8565c6c8304e4426bec2d266f9812e38--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@c47ec39c
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-92bf522511d041bd8303b9788e188aac--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@c0bec256
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-b329b47c83da4921831387215668733b--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-b329b47c83da4921831387215668733b---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@e704d48
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@efdc44f5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@efdc44f5
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-92bf522511d041bd8303b9788e188aac---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@ff3e62b4
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@1d29bcfd
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-ca06b6bd70f34dda98b16f877d0a1696--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-ca06b6bd70f34dda98b16f877d0a1696---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-67c0518b73e74db49d3a5967d0dba859--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@fbcf05fb
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@4992c3eb
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-592764b27004432ca85f789e8ec3caab--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@8a695e97
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-ec30afaa90cd4c948462a0fc65b2c13c--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-ec30afaa90cd4c948462a0fc65b2c13c---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@faf8bbc4
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@688fec4f
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@688fec4f
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-592764b27004432ca85f789e8ec3caab---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@1d29bcfd
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@f60e9ff8
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-1b4f96bdb41346a3906d7ddc68b03156--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-1b4f96bdb41346a3906d7ddc68b03156---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-0312ee34fd6547539596aa1fdd5f695b--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@5241f899
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dace317e
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-11ad924a442e4829b0c2271aabe58ec0--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@fe95ac11
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-bde6b9cdc0be447e812899e2e973dc7e--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-bde6b9cdc0be447e812899e2e973dc7e---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@5cc0d08c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@64672d50
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@64672d50
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-11ad924a442e4829b0c2271aabe58ec0---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@f60e9ff8
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@37343231
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-015ce5d4005745cc818b1765ea082b9e--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-015ce5d4005745cc818b1765ea082b9e---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-77bdfa9effb943f6a80d394cf4a9e182--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@898757b1
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dadba867
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/FADA_Business Summary.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-b797e53f9f1d4393ab267a6c581177d7--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = QW5jaG9yIEN1c3RvbWVyIE5hbWU%3D%7C__dataType%7CString%3BQWdyZWVtZW50IERvY3VtZW50IE5v%7C__dataType%7CString%3BQnVzaW5lc3MgVHlwZQ%3D%3D%7CUEY%3D__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = QW5jaG9yIEN1c3RvbWVyIE5hbWU=|__dataType|String;QWdyZWVtZW50IERvY3VtZW50IE5v|__dataType|String;QnVzaW5lc3MgVHlwZQ==|UEY=__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-b797e53f9f1d4393ab267a6c581177d7---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-febef5d9ea8a47c29883e1f127269321--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/FADA_Business Summary.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/855604e424064e5bb4138ddc3d8aaff5.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-d4ef65bdb7a64e65aab3d4ddacda5ec8--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@92388a51
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@38f8329e
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-09a2b209dc3c4859a5fe2b4e0d39648a--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-09a2b209dc3c4859a5fe2b4e0d39648a---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@7d74511e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@aa7622b2
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@aa7622b2
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-d4ef65bdb7a64e65aab3d4ddacda5ec8---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-febef5d9ea8a47c29883e1f127269321---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@37343231
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@dc25d3ac
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-44fc8c12ed204fb8a21cca99c9bd7266--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-44fc8c12ed204fb8a21cca99c9bd7266---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-7660da995ae344e98bb7b68ee63575eb--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@fe1d39fc
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dace317e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/TF_TRX_Pending.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-9652919404d447ad9d8f51f15b59e5d9--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = RW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BTW91ZGxl%7CSVBMQw%3D%3D__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;TW91ZGxl|SVBMQw==__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-9652919404d447ad9d8f51f15b59e5d9---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-9ab565bd00d0452badf2336857b15cf2--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/TF_TRX_Pending.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/480abc68ec064d8e8607da20efa36f31.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-2bad33fc53654ffcb6dbdc1adfced1b0--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@820e5f83
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@61206b54
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-8f0da7b6d41c4da0ba026d5caab5c064--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-8f0da7b6d41c4da0ba026d5caab5c064---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@49abfe53
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@42d9cab6
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@42d9cab6
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-2bad33fc53654ffcb6dbdc1adfced1b0---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-9ab565bd00d0452badf2336857b15cf2---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@dc25d3ac
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@b00f5363
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-c84b2931bced4f1bb4f0448433c161b9--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-c84b2931bced4f1bb4f0448433c161b9---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-cdd1b69750bb43b7b0549557413daf4e--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@18a53d32
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@18617d14
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_SET_Document.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-a21691f7a004464d84fe859dc181fcb1--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyNC0wOS0xNw%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyNC0wOS0xNw==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-a21691f7a004464d84fe859dc181fcb1---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-b1bd977a8d5d4a59aa146d7a882247ec--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_SET_Document.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/10b3661b8e584b66985d1353e2e9673a.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-91e944bbcb7946fc9109cfb4a4f75c54--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@182f2ce7
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@75f191f8
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-623126d846984976b54aa36e45af52c6--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-623126d846984976b54aa36e45af52c6---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@36da2928
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@86e0849b
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@86e0849b
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-91e944bbcb7946fc9109cfb4a4f75c54---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-b1bd977a8d5d4a59aa146d7a882247ec---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@b00f5363
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@60038cb7
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-9f5edd4545cf41d3b4fbee9d6b54ae61--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-9f5edd4545cf41d3b4fbee9d6b54ae61---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-eff7c81db63642399363b534e35c07da--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@97ad42a3
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@9ecbd463
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_EST_DocNotFinanced.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = pdf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-b78d02bbcaf94ba58a7ef6737557ca17--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyNC0wOS0wMw%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyNC0wOS0wMw==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-b78d02bbcaf94ba58a7ef6737557ca17---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-0c717fb58ef447ac8d6fbcbc40d3e80b--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_EST_DocNotFinanced.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/bd9e8018cd964a4694e8deb281d65899.pdf
+[MARK]>>> docType = pdf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-7d140d062e3c4f419db5d04994614440--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@b7df9c31
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@7389a45f
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-473f97d4a57a4742afcc7bb9193b0fcc--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-473f97d4a57a4742afcc7bb9193b0fcc---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@f6e148a3
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@e7780608
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@e7780608
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-7d140d062e3c4f419db5d04994614440---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-0c717fb58ef447ac8d6fbcbc40d3e80b---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@60038cb7
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@a0dfcf9f
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-45554c84fd354a87baf688bd04f291a0--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-45554c84fd354a87baf688bd04f291a0---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-bcb3581000f6412b835848982b0e45ba--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@c43261a9
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_EST_DocNotFinanced.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-60c84e242cc948f48b3df6bf928229ac--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyNC0wOS0wMw%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyNC0wOS0wMw==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-60c84e242cc948f48b3df6bf928229ac---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-c159d59442b54d75854c47e6e33350ae--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_EST_DocNotFinanced.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/bd9e8018cd964a4694e8deb281d65899.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-5f26b4d55c7a41c2a7c702e9018f93b9--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@180c3f92
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@3fbf99b6
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-a50e44cf8b484dbcba9497f1fe8da0b0--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-a50e44cf8b484dbcba9497f1fe8da0b0---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@6da6027
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@c210f13b
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@c210f13b
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-5f26b4d55c7a41c2a7c702e9018f93b9---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-c159d59442b54d75854c47e6e33350ae---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@a0dfcf9f
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@db5011d6
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-72532c51858a48cdb9088284a155f28c--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-72532c51858a48cdb9088284a155f28c---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-a13c2191db1e4a90be3870b10d169b19--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@86723060
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/EXCO_OTD_Collection.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = pdf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-b1f7f0ec3afe4ae3ae2ff54d083ebc66--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = RHJhd2VyIE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = RHJhd2VyIE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-b1f7f0ec3afe4ae3ae2ff54d083ebc66---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-97c226c38d104c548bd2c17d1b5bbcef--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/EXCO_OTD_Collection.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/b2d785ae2b234ce4b1b5482aa1d4975d.pdf
+[MARK]>>> docType = pdf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-5680f325b19e4f48b264462ebce1fb77--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@11c90393
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@92de9616
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-73fb47ebe17745ab9d96407b3cd921b5--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-73fb47ebe17745ab9d96407b3cd921b5---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@857c983e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@1adb95cd
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@1adb95cd
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-5680f325b19e4f48b264462ebce1fb77---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-97c226c38d104c548bd2c17d1b5bbcef---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@db5011d6
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@ce5a748f
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-dd1aaca4c3f8438b9986c61a39e0913b--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-dd1aaca4c3f8438b9986c61a39e0913b---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-733618a48deb4d1da8d44c8a95245b17--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@f19b9c68
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dace317e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/EXCO_OTD_Collection.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-88d3cfd22bc649359d0317802fdcb06c--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = RHJhd2VyIE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = RHJhd2VyIE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-88d3cfd22bc649359d0317802fdcb06c---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-37247acedc76495ba06afeaf0d36e9eb--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/EXCO_OTD_Collection.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/b2d785ae2b234ce4b1b5482aa1d4975d.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-5a52dea67e2849ddbe5b74024e50cd5d--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@ae7a4c42
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@1dd18b9
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-22c0c5d723b3421eacadcc4200c47e27--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-22c0c5d723b3421eacadcc4200c47e27---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@97267fb5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@f8a6aee1
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@f8a6aee1
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-5a52dea67e2849ddbe5b74024e50cd5d---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-37247acedc76495ba06afeaf0d36e9eb---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@ce5a748f
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@fb5f2293
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-c56ff8095ba54b7a8180cecc4cc174b7--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-c56ff8095ba54b7a8180cecc4cc174b7---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-06d4c84181154706b89ea7d68b9c9515--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@9fa3ada9
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@4992c3eb
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/EXCO_SET_Collection.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-3c163d270384417dbf266b7161a6fcad--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyNC0wOS0wNQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyNC0wOS0wNQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-3c163d270384417dbf266b7161a6fcad---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-949e00e0afe04a04aa8fca05f49d81b5--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/EXCO_SET_Collection.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/b2201662070845c2a8db5042479a05f5.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-3e117c3334df40be9830fb88898c42f3--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@16b44da8
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@12a9e710
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-a7e1b36636a24fee81a6f924741fdf48--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-a7e1b36636a24fee81a6f924741fdf48---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@eeb45bd6
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@1af80ff
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@1af80ff
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-3e117c3334df40be9830fb88898c42f3---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-949e00e0afe04a04aa8fca05f49d81b5---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@fb5f2293
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@8665bb8b
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-3b131cd25230421086542df422f4a9f4--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-3b131cd25230421086542df422f4a9f4---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-db28fa059f0149cca8b24b0a4574c88b--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@82e5590b
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@18617d14
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/EXCO_EST_ColFinanced.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-b638104019454044a7a9bdcab9ceffe9--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyNC0wOS0wMw%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyNC0wOS0wMw==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-b638104019454044a7a9bdcab9ceffe9---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-83badadd578d45c4bb0d50491535bb5e--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/EXCO_EST_ColFinanced.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/af66db8295704c0db10850d01a8a7098.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-e9be46e59cc74682a70c681d6b2739b1--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@985d0b80
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@6789b3a6
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-021ed5e8e3524a1996a5c0c2f378c32f--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-021ed5e8e3524a1996a5c0c2f378c32f---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@85b8d00f
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@8c99c452
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@8c99c452
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-e9be46e59cc74682a70c681d6b2739b1---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-83badadd578d45c4bb0d50491535bb5e---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@8665bb8b
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@adc09233
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-cd121b25569e4fd4a6789884cc3e5a6f--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-cd121b25569e4fd4a6789884cc3e5a6f---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-53f8990a5335469f8b6843f244002fa5--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@963ff47d
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-09438e0732034acaaed96431b99d0218--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@a9f052f5
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-5f6559530a4540dc9fc3bbba4b9f6862--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-5f6559530a4540dc9fc3bbba4b9f6862---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@2993aa1d
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@a7761c8f
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@a7761c8f
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-09438e0732034acaaed96431b99d0218---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@adc09233
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@83e6242f
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-5535fed799944bc2b66aed3f05aaeeb8--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-5535fed799944bc2b66aed3f05aaeeb8---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-a88e3f9c4a7c40d0a3325869e1dfa8cc--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@cff4fe1f
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@18617d14
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-87ef573f2c0944e8aa8def587c24b80c--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@9f041127
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-6e68858b253a4234ab16576b26819d4a--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-6e68858b253a4234ab16576b26819d4a---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@3bfd5262
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@346b03ca
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@346b03ca
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-87ef573f2c0944e8aa8def587c24b80c---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@83e6242f
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@d96087bc
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-e4185d0e1df7471e9e84e02e77db25fb--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-e4185d0e1df7471e9e84e02e77db25fb---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-f9212a500ccf4302b2617525ad30f805--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@8dc38b4c
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@4992c3eb
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_OTD_Document.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-dd12bb8eab2c43f0ba314b86a8078201--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = QXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-dd12bb8eab2c43f0ba314b86a8078201---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-df7a09e24cfb4c89969b999bb7e95dd4--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_OTD_Document.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/4a7aff46424344f8a64b8ac6f2b8cea9.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-aa5923377fef4ef592af0debe1dc4b6a--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@948a7e9c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@8be7bf31
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-930622fe548e44da9cfaad8c858eca01--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-930622fe548e44da9cfaad8c858eca01---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@bbfd5a78
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@86851e62
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@86851e62
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-aa5923377fef4ef592af0debe1dc4b6a---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-df7a09e24cfb4c89969b999bb7e95dd4---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@d96087bc
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@5b6a061c
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-f59261e55c4a497dad8eeb72d4b604d6--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-f59261e55c4a497dad8eeb72d4b604d6---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-660bedd479b04a7d83a960553d194d0c--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@4ec48801
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@18617d14
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_OTD_Document.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-e4a31aea18f74ed5bb3c8a53eedc0dce--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = QXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-e4a31aea18f74ed5bb3c8a53eedc0dce---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-6852be76c119413593023f76984a558a--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_OTD_Document.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/d61a983fd8874fcdb220ed177bb9dcde.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-c162686c392d4badb83e72a7649fba77--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@b7cc0955
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@a4f51d9a
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-660385be05774da48af372ea1ad29f60--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-660385be05774da48af372ea1ad29f60---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@60323d8b
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@263bed74
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@263bed74
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-c162686c392d4badb83e72a7649fba77---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-6852be76c119413593023f76984a558a---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@5b6a061c
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@7bebcd87
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-953bc08fb63645c2a4255aa164306677--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-953bc08fb63645c2a4255aa164306677---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-131a1a3a3636416b8e75b31cdece0e00--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@83cb192f
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@748e20d8
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_OTD_Document.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-9789a78a557d4e12a1bee0341b83a8f8--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = QXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-9789a78a557d4e12a1bee0341b83a8f8---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-a0bc2270d47d4b338b0fd19711b0fcda--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_OTD_Document.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/041d85e0d52c4e8ba595541c3c3d9d46.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-dbc8adf79e0e4317a8b6d0ca453982da--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@efa03381
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@9d535e4d
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-16107c440ab949b8b5af69c6624601c2--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-16107c440ab949b8b5af69c6624601c2---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@4cd8d928
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@e1daf455
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@e1daf455
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-dbc8adf79e0e4317a8b6d0ca453982da---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-a0bc2270d47d4b338b0fd19711b0fcda---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@7bebcd87
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@cf220a22
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-17dab63712304000be22620a550d7831--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-17dab63712304000be22620a550d7831---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-4299d805097148058c645a8f527ecd73--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@9de823
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_OTD_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-f79ce50cc94a4234ba584c8b92331c82--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyMS0wOS0wMg%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyMS0wOS0wMg==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-f79ce50cc94a4234ba584c8b92331c82---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-f91c6cc8563b47b0911f1f5d24532832--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_OTD_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/4908048d6e4b4d76908ccee4f8c83de4.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-f45b72173b5c40c4a660cc124b2056f3--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@c5bf17d7
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@aa86661d
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-f41832b7668b4a36bed8430bf872c0ef--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-f41832b7668b4a36bed8430bf872c0ef---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@4a03ab9a
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@1a087b58
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@1a087b58
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-f45b72173b5c40c4a660cc124b2056f3---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-f91c6cc8563b47b0911f1f5d24532832---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@cf220a22
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@27a6b439
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-00ec9a0a9bec48ce98ac0521d92d0209--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-00ec9a0a9bec48ce98ac0521d92d0209---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-919fe59410ca4dd8b81c9282abb5e72e--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@670aedab
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_OTD_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-24f535cbf99840d6b158d8694399f02e--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyMy0wOS0wMQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyMy0wOS0wMQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-24f535cbf99840d6b158d8694399f02e---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-abead13d0e4444cca95015bf17050e36--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_OTD_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/3f3ecd3756964c1c8cdd4a0ddb1cdea6.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-120f48e15b9c46fe9e583678942ca053--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@30d596a0
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@e89e0a84
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-eaba4e8dcc2a4ee9b202c267a5301dd6--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-eaba4e8dcc2a4ee9b202c267a5301dd6---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@6316c4a5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@4f6bfe22
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@4f6bfe22
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-120f48e15b9c46fe9e583678942ca053---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-abead13d0e4444cca95015bf17050e36---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@27a6b439
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@76153d15
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-7f6b3c6353d241a4b90a2b21fff39286--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-7f6b3c6353d241a4b90a2b21fff39286---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-c2f6bc0001de45b49b5bd1e9a94e7ef5--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@3daad4c8
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dace317e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_OTD_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = pdf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-544baec3310b4c33ace8c1523d887203--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyMy0wOS0wMQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyMy0wOS0wMQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-544baec3310b4c33ace8c1523d887203---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-120c8649b4994369b05afb9e702adcb6--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_OTD_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/3f3ecd3756964c1c8cdd4a0ddb1cdea6.pdf
+[MARK]>>> docType = pdf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-32ef2db45d2d4328a7671dd260957dfa--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@487ff09c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@89d64e50
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-7f9e059ff5fb4823afbd57f1d72f873a--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-7f9e059ff5fb4823afbd57f1d72f873a---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@6d20b611
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@a1275fcf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@a1275fcf
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-32ef2db45d2d4328a7671dd260957dfa---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-120c8649b4994369b05afb9e702adcb6---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@76153d15
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@13b3f5a1
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-36070c27f1cf465eb6637866ac722472--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-36070c27f1cf465eb6637866ac722472---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-f1d25e544731471d946c69b7e91779ab--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@5fc31f32
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@748e20d8
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-9062669070b34af5a1a03f127468b7ea--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyMy0wOS0wMQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyMy0wOS0wMQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-9062669070b34af5a1a03f127468b7ea---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-5e3ec0f262d944c2b743388dfe392072--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/6d1e7e74fb7c4bd2884a2b66cfba53e8.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-ab3fa84122d546f39477b1e276ac712b--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@42687ede
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@877e2410
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-e818d7641e9243b2a5ae9a57e3eeed05--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-e818d7641e9243b2a5ae9a57e3eeed05---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@e3cfef67
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@f867f71a
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@f867f71a
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-ab3fa84122d546f39477b1e276ac712b---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-5e3ec0f262d944c2b743388dfe392072---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@13b3f5a1
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@ce5dde34
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-4e682a830a7f4bc59a68ff10708b037c--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-4e682a830a7f4bc59a68ff10708b037c---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-4c0ef0eb2d794258ae1ae2a7f0f76c30--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@866a831d
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@748e20d8
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-b9682fef7a4148c899d4c5a1e53c156e--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyMy0wOS0wMQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyMy0wOS0wMQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-b9682fef7a4148c899d4c5a1e53c156e---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-151fead3c5d841c6a7b5ea926490bac3--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/6d1e7e74fb7c4bd2884a2b66cfba53e8.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-0954a0afffaa4ab1b6e9e09c316ecb7b--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@9e136c68
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@5267d1f1
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-36b9e68e3cf8497ebfe47ecbaa7a2060--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-36b9e68e3cf8497ebfe47ecbaa7a2060---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@986f5005
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@18255fc2
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@18255fc2
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-0954a0afffaa4ab1b6e9e09c316ecb7b---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-151fead3c5d841c6a7b5ea926490bac3---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@ce5dde34
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@f01a167b
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-62b7a0df8a4f4ba1b67e3f06fc237f11--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-62b7a0df8a4f4ba1b67e3f06fc237f11---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-b5b7353508634d85ae9c1b5d82c1246a--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@d418c12
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dace317e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-bb792dcfde554fa5b09e246622e7ec74--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyMy0wOS0wMQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyMy0wOS0wMQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-bb792dcfde554fa5b09e246622e7ec74---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-1b1918c01c7741838d42fccb7b98aa19--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/6d1e7e74fb7c4bd2884a2b66cfba53e8.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-47aef74f77024fb9af8f31e7988c0c7c--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@19a0ba30
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@5f0453ff
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-e0ee99d98c574571b8048915557db92f--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-e0ee99d98c574571b8048915557db92f---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@cae3cd5b
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@436dc83d
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@436dc83d
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-47aef74f77024fb9af8f31e7988c0c7c---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-1b1918c01c7741838d42fccb7b98aa19---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@f01a167b
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@b4eea29b
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-2bcfb0a431ab4b278c3c0f824ecfe665--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-2bcfb0a431ab4b278c3c0f824ecfe665---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-93fae5b387ed469eba02145a088035df--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@73b17813
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@39a5bae5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IMCO_OTD_Collection.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-6a742ebb53fd4a0cbac5966d4dceb8f3--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = RHJhd2VlIE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = RHJhd2VlIE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-6a742ebb53fd4a0cbac5966d4dceb8f3---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-1fcec33b11314bc98f4ce791f97074d1--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IMCO_OTD_Collection.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/69bd9578d630481c8adb45d5b0ef6521.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-679717dff55d42c6852c4d0478ddfb49--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@84ea0be7
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@e325a742
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-cd1e2ab13d1047c5bb5e8412b5167674--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-cd1e2ab13d1047c5bb5e8412b5167674---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@c694898
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@592d4896
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@592d4896
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-679717dff55d42c6852c4d0478ddfb49---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-1fcec33b11314bc98f4ce791f97074d1---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@b4eea29b
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@d2c439eb
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-6af4fb9dc0b94c1e931e348b32d32cee--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-6af4fb9dc0b94c1e931e348b32d32cee---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-e7f9b27331b04802873b3d253ac7a1b4--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@82664e1e
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@748e20d8
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-e18f9133e49a49e39f49ec51b942d1cd--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyMy0wOS0wMQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyMy0wOS0wMQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-e18f9133e49a49e39f49ec51b942d1cd---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-e31fb42ee3ad4d8784c9f8ff330871a5--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/IPLC_VOL_Issue.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/455cc0d8ced544dfa9506f802c28d74f.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-b7cd68d18f68450f9bedb6760fd0a065--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@b5de9d7f
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@2d5b7093
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-7dc22d4c49a743ffb3cf59cf1af1c5e9--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-7dc22d4c49a743ffb3cf59cf1af1c5e9---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@2e47bcd5
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@8a198496
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@8a198496
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-b7cd68d18f68450f9bedb6760fd0a065---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-e31fb42ee3ad4d8784c9f8ff330871a5---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@d2c439eb
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@2b4544b3
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-51c7ffb5b37d49f0af7fcb062e014ad7--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-51c7ffb5b37d49f0af7fcb062e014ad7---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-4fc07cc0c6414d3d91a50d4edecd54b0--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@834b836
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dace317e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/EPLC_EST_NotFinanced.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-ab661a43205f496086d596a05171267a--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyNS0wOS0wOQ==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-ab661a43205f496086d596a05171267a---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-2567e0e40aeb4514ad636413b243caef--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/EPLC_EST_NotFinanced.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/bf7c8a7b5cee4178abbdd293437cdff2.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-b8c0e2071aed4ca9917f5395fe799bff--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@80094dbe
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@aacfddae
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-2e792711966f4861882c009a9483d249--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-2e792711966f4861882c009a9483d249---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@15b4d4c6
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@c779bd5a
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@c779bd5a
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-b8c0e2071aed4ca9917f5395fe799bff---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-2567e0e40aeb4514ad636413b243caef---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@2b4544b3
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@b5225fb7
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-2f47127a2e5747388e5b7bcd49092b08--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-2f47127a2e5747388e5b7bcd49092b08---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-83ad5816664e4c69a7c2153091fbbe4e--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@ca6a0415
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@748e20d8
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/SHGT_VOL_report.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-4aaee6685fe6472c8596564fd52e324c--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ%3D%3D%7CMjAyMi0wOS0wMg%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0wOS0wOQ%3D%3D__dataType%7CDateTime%3BQXBwbGljYW50IE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = U3RhcnQgRGF0ZQ==|MjAyMi0wOS0wMg==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0wOS0wOQ==__dataType|DateTime;QXBwbGljYW50IE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-4aaee6685fe6472c8596564fd52e324c---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-a7f2c6d420174f4782508efb50f431fa--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/SHGT_VOL_report.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/4dfed2e33e4243488b434874b34e284d.doc
+[MARK]>>> docType = doc
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:175) >---UUID-3e1f8bffc4c044db9311859db2885466--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:182)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@c2e1c6e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@b12a6750
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-9991ac53dc114c5b9768abc5651088a8--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-9991ac53dc114c5b9768abc5651088a8---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@b6e9e7bf
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@746c68c8
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@746c68c8
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-3e1f8bffc4c044db9311859db2885466---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-a7f2c6d420174f4782508efb50f431fa---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@b5225fb7
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@400e7545
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-5d9add816d4d48c7b3ac2058548d0d3a--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-5d9add816d4d48c7b3ac2058548d0d3a---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-3031b1eb6dab43b2aceee83b29d0a8b6--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@19366867
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@18617d14
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-e7725867ce0f475db6a55a18356c8443--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@33a229b2
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-2027ff906ae0422a829973dee5cc5b14--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-2027ff906ae0422a829973dee5cc5b14---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@d187aeed
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@5a4abb83
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@5a4abb83
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-e7725867ce0f475db6a55a18356c8443---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@400e7545
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@5cdc82a
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-5e5510d5c1814a0bbde56e19a84ed279--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-5e5510d5c1814a0bbde56e19a84ed279---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-a0fca41f3fe94132881c915756ee171c--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@9e416505
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dadba867
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-44ae31ab6de54345b3953829d83fe245--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@36aff383
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-ad3c6d0033b14a9690e5bbf5d6713f85--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-ad3c6d0033b14a9690e5bbf5d6713f85---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@d3808667
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@bf9667f1
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@bf9667f1
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-44ae31ab6de54345b3953829d83fe245---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@5cdc82a
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@8ba238df
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-47cc76e8011649c0808f2d2852e0ecca--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-47cc76e8011649c0808f2d2852e0ecca---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-0d414c5f21b84422a971705afd04df23--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@467d4cf8
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@9ecbd463
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-1b30c7814b024969b58744730bfceb5e--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@7011672
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-d4e6e0b27b1c4836b91d236cc0289110--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-d4e6e0b27b1c4836b91d236cc0289110---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@1e691340
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@96973611
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@96973611
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-1b30c7814b024969b58744730bfceb5e---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@8ba238df
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@acc0ca3
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-37e7396519234cd0bfbb4e5d302793aa--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-37e7396519234cd0bfbb4e5d302793aa---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-ff4d62036cc54a45be447c993475ac15--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@3e0d2775
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@dadba867
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-236f16be6daf4569803c7dafc6e0f508--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@6ec1faf8
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-58a22f86526f4c978ab823cc6798e8ec--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-58a22f86526f4c978ab823cc6798e8ec---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@3709aa63
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@bd11af54
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@bd11af54
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-236f16be6daf4569803c7dafc6e0f508---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@acc0ca3
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@b5c5767d
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-27e5f9adbeda468ea7e57bcace250d86--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-27e5f9adbeda468ea7e57bcace250d86---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-8cf14f9abd5b45c2ab318a034e7a2d19--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@1b23a9d7
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@748e20d8
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-94e51b22df934ac0b383cd47b3a0389b--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@f8dae7f
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-9f7f2780b1644718b7ae0070f80a9ee9--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-9f7f2780b1644718b7ae0070f80a9ee9---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@f0bdc6be
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@6cda0e20
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@6cda0e20
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-94e51b22df934ac0b383cd47b3a0389b---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@b5c5767d
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@c2b11ffe
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-b172fc1c70da4951a0ddb4dfbd79dff4--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-b172fc1c70da4951a0ddb4dfbd79dff4---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-c375635674bd46438ff2083d903f4b54--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@1196acdc
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@748e20d8
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-590561fae0de4ffda25888584b6ae713--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@df6333ca
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-0527dba6e9dd490cae577bf3133b68ad--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-0527dba6e9dd490cae577bf3133b68ad---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@2cca87f4
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@b12eb73c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@b12eb73c
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-590561fae0de4ffda25888584b6ae713---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@c2b11ffe
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@1701ec0c
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-9764dda8b4364d43987c1fedca4bb1da--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-9764dda8b4364d43987c1fedca4bb1da---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-24f1f406ea6a4f1d8be2efcb6f50d000--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@1fb30b67
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@c032fbcc
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:864) >---UUID-901ecc80c63d40e1b33dbd00801552b0--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:867)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:884)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@9c0ac64e
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:169) >---UUID-772a164fb94d4564bfb96c2a62821ccc--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:170) <---UUID-772a164fb94d4564bfb96c2a62821ccc---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:887)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@753f774c
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:891)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:952)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@18cf4ca4
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:955)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@13e820ec
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:959)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@13e820ec
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:967) <---UUID-901ecc80c63d40e1b33dbd00801552b0---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@1701ec0c
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@933bf42c

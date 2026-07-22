@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRCO_BROKER_DATA</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>TRCO</module-name>
+        <cubk-mapping-name>Chk_DuplicateRecordByBrokerID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <BROKER_ID ALIAS="T0" DBFUNC="" DESC="" DT="12" HIDDEN="F" TYPE="F">BROKER_ID</BROKER_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.BROKER_ID</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">BROKER_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

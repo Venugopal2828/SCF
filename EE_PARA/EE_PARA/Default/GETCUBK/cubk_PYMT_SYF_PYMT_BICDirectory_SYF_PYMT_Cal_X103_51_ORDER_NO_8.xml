@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_BICDirectory_SYF_PYMT_Cal_X103_51_ORDER_NO_8</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T0" DBFUNC="" DESC="SWIFT Format Name" DT="12" HIDDEN="F" TYPE="F">X103_SEND_BKNM_51A</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address1" DT="12" HIDDEN="F" TYPE="F">X103SENDBKADD1_51A</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address2" DT="12" HIDDEN="F" TYPE="F">X103SENDBKADD2_51A</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address3" DT="12" HIDDEN="F" TYPE="F">X103SENDBKADD3_51A</SWIFT_FMT_ADD3>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">ORDER_NO = </SQL>
+            <SQL TYPE="FLD">X103_51_ORDER_NO</SQL>
+            <SQL TYPE="SQL"> AND C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">X103_SEND_BKID_51A</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

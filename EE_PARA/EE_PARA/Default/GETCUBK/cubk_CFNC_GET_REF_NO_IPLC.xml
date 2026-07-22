@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>CFNC</module-name>
+        <cubk-mapping-name>GET_REF_NO_IPLC</cubk-mapping-name>
+        <select-type>U</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">CPYT_SCHEDULE</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">IPLC_EM_NEGO</table-name>
+        	<table-name ALIAS="T2" SCHEMA="%EXIMTRX%" TYPE="U">IPLC_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T2" DESC="MAIN REF. NO." DT="12" TYPE="F">RELA_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="F">RELA_MAIN_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T2" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">RELA_MAIN_REF</C_MAIN_REF>
+        <PRES_CCY ALIAS="T1" DBFUNC="" DESC="Presentation Currency" DT="1" HIDDEN="F" TYPE="F">TRX_CCY</PRES_CCY>
+        <PRES_AMT ALIAS="T1" DBFUNC="" DESC="Presentation Amount" DT="3" HIDDEN="F" TYPE="F">TRX_AMT</PRES_AMT>
+        <AVAL_BY ALIAS="T2" DBFUNC="" DESC="Available By" DT="1" HIDDEN="F" TYPE="F">AVAL_BY</AVAL_BY>
+        <TENOR_DAYS ALIAS="T2" DBFUNC="" DESC="Tenor Days" DT="4" HIDDEN="F" TYPE="F">TENOR_DAYS</TENOR_DAYS>
+        <TENOR_TYPE ALIAS="T2" DBFUNC="" DESC="Tenor Type" DT="1" HIDDEN="T" TYPE="F">TENOR_TYPE</TENOR_TYPE>
+        <APPL_ID ALIAS="T2" DBFUNC="" DESC="Applicant ID" DT="1" HIDDEN="T" TYPE="F">APPL_ID</APPL_ID>
+        <APPL_NM ALIAS="T2" DBFUNC="" DESC="Applicant Name" DT="12" HIDDEN="T" TYPE="F">APPL_NM</APPL_NM>
+        <APPL_ADD1 ALIAS="T2" DBFUNC="" DESC="Applicant Address1" DT="12" HIDDEN="T" TYPE="F">APPL_ADD1</APPL_ADD1>
+        <APPL_ADD2 ALIAS="T2" DBFUNC="" DESC="Applicant Address2" DT="12" HIDDEN="T" TYPE="F">APPL_ADD2</APPL_ADD2>
+        <APPL_ADD3 ALIAS="T2" DBFUNC="" DESC="Applicant Address3" DT="12" HIDDEN="T" TYPE="F">APPL_ADD3</APPL_ADD3>
+        <BENE_ID ALIAS="T2" DBFUNC="" DESC="Beneficiary ID" DT="12" HIDDEN="T" TYPE="F">BENE_ID</BENE_ID>
+        <BENE_NM ALIAS="T2" DBFUNC="" DESC="Beneficiary Name" DT="12" HIDDEN="T" TYPE="F">BENE_NM</BENE_NM>
+        <BENE_ADD1 ALIAS="T2" DBFUNC="" DESC="Beneficiary Address1" DT="12" HIDDEN="T" TYPE="F">BENE_ADD1</BENE_ADD1>
+        <BENE_ADD2 ALIAS="T2" DBFUNC="" DESC="Beneficiary Address2" DT="12" HIDDEN="T" TYPE="F">BENE_ADD2</BENE_ADD2>
+        <BENE_ADD3 ALIAS="T2" DBFUNC="" DESC="Beneficiary Address3" DT="12" HIDDEN="T" TYPE="F">BENE_ADD3</BENE_ADD3>
+        <DRAWING_REF ALIAS="T1" DBFUNC="" DESC="Drawing Reference" DT="12" HIDDEN="T" TYPE="F">RELA_DRAW_REF</DRAWING_REF>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

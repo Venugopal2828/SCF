@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR AutoGen-Parameter-Version="1.0">
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Generate GAPI">TrxGenerateGAPI</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>GTEE</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.</TABLE_NAME>
+        <TABLE_DESC/>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>GAPIs</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Event Edit Rec">TrxEventEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>GTEE</MODULE>
+        <EVENT>Issue</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.GTEE_EM_ISS</TABLE_NAME>
+        <TABLE_DESC>GTEE_EM_ISS</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Edit Event</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Event Edit Rec">TrxEventEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>GTEE</MODULE>
+        <EVENT>Claim</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.GTEE_STL_CLM</TABLE_NAME>
+        <TABLE_DESC>GTEE_STL_CLM</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>CLM_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Edit Event</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Event Edit Rec">TrxEventEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>GTEE</MODULE>
+        <EVENT>Claim</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.GTEE_EM_STL</TABLE_NAME>
+        <TABLE_DESC>GTEE_EM_STL</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>CLM_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Edit Event</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Master Edit Rec">TrxMasterEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>GTEE</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.GTEE_MASTER</TABLE_NAME>
+        <TABLE_DESC>GTEE_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Edit Master</BCTYPE>
+    </COMPONENT>
+</FUNCATTR>

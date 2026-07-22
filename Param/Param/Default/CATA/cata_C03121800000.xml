@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>C03121800000</ID>
+    <MODULE>STAN</MODULE>
+    <EVENT>Exchange Rate</EVENT>
+    <CRTJSP POS=""/>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_SecuCatalog.jsp</JSPFILE>
+    <ADAPT/>
+    <TABLENAME>CETRX.STT_EXCHAN_RATE</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Bank Group ID" EEType="" HIDDEN="" NOEVENT="Y">C_BK_GROUP_ID</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Country Code" EEType="" HIDDEN="" NOEVENT="Y">C_CNTY_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Add Flag" EEType="" HIDDEN="" NOEVENT="Y">C_ADD_FLAG</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Transaction Status" EEType="" HIDDEN="" NOEVENT="Y">C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="From CCY" EEType="" HIDDEN="" NOEVENT="Y">C_FROM_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="To CCY" EEType="" HIDDEN="" NOEVENT="Y">C_TO_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_EXCH_INT_TYPE" EEType="" HIDDEN="" NOEVENT="Y">C_EXCH_INT_TYPE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP1</VAR>
+        <VAR>OP2</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC/>
+    <CLAUSE>
+        <SQL DESC="C_EXCH_INT_TYPE" DT="12" TYPE="FLD" WTYPE="CASE">C_EXCH_INT_TYPE</SQL>
+        <SQL TYPE="SQL"> = &apos;E&apos; and </SQL>
+        <SQL DESC="From CCY" DT="12" TYPE="FLD" WTYPE="CASE">C_FROM_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP10</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP21</SQL>
+        <SQL TYPE="SQL">&apos;</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="1" DESC="C_EXCH_INT_TYPE" EEType="">C_EXCH_INT_TYPE</FIELD>
+        <FIELD DATATYPE="1" DESC="From CCY" EEType="">C_FROM_CCY</FIELD>
+    </CLAUSEFIELD>
+    <CLAUSEVAR/>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

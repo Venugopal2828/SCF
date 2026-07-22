@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/PYMT_Reversals.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FORM>
+        <ID>F00000005311</ID>
+        <NAME/>
+    </FORM>
+    <VOUCHER>
+        <ID>F00000005310</ID>
+        <NAME/>
+    </VOUCHER>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PYMT</MODULE>
+        <MODULE_DESC>Clean Payment</MODULE_DESC>
+        <EVENT>Outward Payments</EVENT>
+        <ID>F05030703286</ID>
+        <NAME>ReverseOTT</NAME>
+        <DESC>Reverse OTT</DESC>
+        <FUNSHORTNAME>OTTReverPYMT</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="ReversalsPayment">R00000007701</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000007791</CATALOGID>
+    </FUNCTION>
+</FUNC>

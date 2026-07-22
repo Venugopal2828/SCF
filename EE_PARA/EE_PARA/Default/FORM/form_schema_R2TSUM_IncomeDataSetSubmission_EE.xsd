@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <element name="domData">
+        <complexType>
+            <sequence>
+                <element name="C_MAIN_REF"/>
+                <element name="R2CertDataset">
+                    <complexType>
+                        <sequence>
+                            <element name="C_MAIN_REF"/>
+                            <element name="C_TRX_REF"/>
+                            <element name="C_UNIT_CODE"/>
+                            <element name="TSUR2_QTY_UNIT_CD"/>
+                            <element name="TSU_AUTH_INSPC_IND"/>
+                            <element name="TSU_CERT_ANLYS"/>
+                            <element name="TSU_CERT_ID"/>
+                            <element name="TSU_CERT_ORGN"/>
+                            <element name="TSU_CERT_QLTY"/>
+                            <element name="TSU_CERT_TP"/>
+                            <element name="TSU_DS_ID"/>
+                            <element name="TSU_DS_VRSN"/>
+                            <element name="TSU_GOODS_DESC"/>
+                            <element name="TSU_HLTH_INDCTN"/>
+                            <element name="TSU_INSPCTN_FR_DT"/>
+                            <element name="TSU_INSPCTN_TO_DT"/>
+                            <element name="TSU_ISSR_CNTY"/>
+                            <element name="TSU_ISSR_CNTY_SUB"/>
+                            <element name="TSU_ISSR_ID"/>
+                            <element name="TSU_ISSR_ID_TP"/>
+                            <element name="TSU_ISSR_NM"/>
+                            <element name="TSU_ISSR_POST_CD"/>
+                            <element name="TSU_ISSR_STREET"/>
+                            <element name="TSU_ISSR_TOWN"/>
+                            <element name="TSU_ISS_CNTY"/>
+                            <element name="TSU_ISS_CNTY_SUB"/>
+                            <element name="TSU_ISS_DT"/>
+                            <element name="TSU_ISS_POST_CD"/>
+                            <element name="TSU_ISS_STREET"/>
+                            <element name="TSU_ISS_TOWN"/>
+                            <element name="TSU_PHYTOSN_INDCTN"/>
+                            <element name="TSU_QTY_FCTR"/>
+                            <element name="TSU_QTY_OTUNIT"/>
+                            <element name="TSU_QTY_VAL"/>
+                            <element name="TSU_SUBMITR_BIC"/>
+                            <element name="TSU_WGT_FCTR"/>
+                            <element name="TSU_WGT_OTUNIT"/>
+                            <element name="TSU_WGT_UNIT_CD"/>
+                            <element name="TSU_WGT_VAL"/>
+                            <element name="DT_LineItm">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PO_ID"/>
+                                        <element name="TSU_PO_DT"/>
+                                        <element name="R2LineItmId">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_LNITMNB"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="Dt_Trnsprt">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TransportByAir2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_AIR_CARR_NM"/>
+                                                    <element name="DprtureAirprt">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="TSU_RTG_DP_AIRCD"/>
+                                                                <element name="TSU_RTG_DP_AIRNM"/>
+                                                                <element name="TSU_RTG_DP_AIRTWN"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DstnAirprt">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="TSU_RTG_DT_AIRCD"/>
+                                                                <element name="TSU_RTG_DT_AIRNM"/>
+                                                                <element name="TSU_RTG_DT_AIRTWN"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="TransportBySeaR2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_RTG_PORT_LOAD"/>
+                                                    <element name="TSU_RTG_PORT_DSCH"/>
+                                                    <element name="TSU_VSSLNM"/>
+                                                    <element name="TSU_SEA_CARR_NM"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="TransportByRoad2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_RTG_PLC_RCT"/>
+                                                    <element name="TSU_RTG_PLC_DLV"/>
+                                                    <element name="TSU_ROAD_CARR_NM"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="TransportByRail2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_RTG_PLC_RCT"/>
+                                                    <element name="TSU_RTG_PLC_DLV"/>
+                                                    <element name="TSU_RAIL_CARR_NM"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_CertParty">
+                                <complexType>
+                                    <sequence>
+                                        <element name="DT_Consgnr">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_PARTY_NM"/>
+                                                    <element name="TSU_PARTY_ID"/>
+                                                    <element name="TSU_PARTY_ID_TP"/>
+                                                    <element name="TSU_STREET_NM"/>
+                                                    <element name="TSU_POST_CD"/>
+                                                    <element name="TSU_TOWN_NM"/>
+                                                    <element name="TSU_CNTY_SUB_DIVI"/>
+                                                    <element name="TSU_PARTY_CNTY"/>
+                                                    <element name="CUST_ID"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="DT_Consgn">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_PARTY_NM"/>
+                                                    <element name="TSU_PARTY_ID"/>
+                                                    <element name="TSU_PARTY_ID_TP"/>
+                                                    <element name="TSU_STREET_NM"/>
+                                                    <element name="TSU_POST_CD"/>
+                                                    <element name="TSU_TOWN_NM"/>
+                                                    <element name="TSU_CNTY_SUB_DIVI"/>
+                                                    <element name="TSU_PARTY_CNTY"/>
+                                                    <element name="CUST_ID"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="DT_Manfctr">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_PARTY_NM"/>
+                                                    <element name="TSU_PARTY_ID"/>
+                                                    <element name="TSU_PARTY_ID_TP"/>
+                                                    <element name="TSU_STREET_NM"/>
+                                                    <element name="TSU_POST_CD"/>
+                                                    <element name="TSU_TOWN_NM"/>
+                                                    <element name="TSU_CNTY_SUB_DIVI"/>
+                                                    <element name="TSU_PARTY_CNTY"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_AddtlInf">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_ADDTL_INF"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="R2ComrclDataset">
+                    <complexType>
+                        <sequence>
+                            <element name="C_MAIN_REF"/>
+                            <element name="C_TRX_REF"/>
+                            <element name="C_UNIT_CODE"/>
+                            <element name="TSU_DS_ID"/>
+                            <element name="TSU_DS_VRSN"/>
+                            <element name="TSU_SUBMITR_BIC"/>
+                            <element name="DT_Buyer">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PARTY_NM"/>
+                                        <element name="TSU_PARTY_ID"/>
+                                        <element name="TSU_PARTY_ID_TP"/>
+                                        <element name="TSU_PARTY_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="TSU_IDX"/>
+                                        <element name="CUST_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_Seller">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PARTY_NM"/>
+                                        <element name="TSU_PARTY_ID"/>
+                                        <element name="TSU_PARTY_ID_TP"/>
+                                        <element name="TSU_PARTY_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="TSU_IDX"/>
+                                        <element name="CUST_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_BillTo">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PARTY_NM"/>
+                                        <element name="TSU_PARTY_ID"/>
+                                        <element name="TSU_PARTY_ID_TP"/>
+                                        <element name="TSU_PARTY_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="TSU_IDX"/>
+                                        <element name="CUST_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="R2DT_ComrclDocRef">
+                                <complexType>
+                                    <sequence>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="TSU_COMM_REF"/>
+                                        <element name="TSU_COMM_DT"/>
+                                        <element name="TSU_COMM_AMT"/>
+                                        <element name="TSU_CCY"/>
+                                        <element name="TSU_BUYER_BK_ID"/>
+                                        <element name="TSU_BUYER_BK_BIC"/>
+                                        <element name="TSU_BUYER_BK_NM"/>
+                                        <element name="TSU_SEL_BK_ID"/>
+                                        <element name="TSU_SEL_BK_BIC"/>
+                                        <element name="TSU_SEL_BK_NM"/>
+                                        <element name="R2DT_Goods">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="C_MAIN_REF"/>
+                                                    <element name="C_TRX_REF"/>
+                                                    <element name="C_UNIT_CODE"/>
+                                                    <element name="TSU_COMM_REF"/>
+                                                    <element name="TSU_PO_ID"/>
+                                                    <element name="TSU_PO_DT"/>
+                                                    <element name="TSU_TID"/>
+                                                    <element name="TSU_ISSR_BIC"/>
+                                                    <element name="TSU_SUBMITR_TRX_REF"/>
+                                                    <element name="TSU_DS_FINAL_FLG"/>
+                                                    <element name="TSU_LINE_TTL_AMT"/>
+                                                    <element name="TSU_TTL_NET_AMT"/>
+                                                    <element name="TSU_FRGHT_TP"/>
+                                                    <element name="TSU_FORCD_MTCH_FLG"/>
+                                                    <element name="TSU_CCY"/>
+                                                    <element name="TSU_SETTLEMENT"/>
+                                                    <element name="TSU_BUYER_BK_ID"/>
+                                                    <element name="TSU_BUYER_BK_BIC"/>
+                                                    <element name="TSU_BUYER_BK_NM"/>
+                                                    <element name="TSU_SEL_BK_ID"/>
+                                                    <element name="TSU_SEL_BK_NM"/>
+                                                    <element name="TSU_SEL_BK_BIC"/>
+                                                    <element name="TSU_GOODS_DESC"/>
+                                                    <element name="R2DT_ComrclLineItms">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_LNITMNB"/>
+                                                                <element name="TSU_QTYTLRN_MPCT"/>
+                                                                <element name="TSU_QTYTLRN_PPCT"/>
+                                                                <element name="TSUR2_QTY_UNIT_CD"/>
+                                                                <element name="TSU_QTY_OTUNIT"/>
+                                                                <element name="TSU_QTY_VAL"/>
+                                                                <element name="TSU_QTY_FCTR"/>
+                                                                <element name="TSUR2_UNTPRIC_CD"/>
+                                                                <element name="TSU_UNTPRIC_OTUNIT"/>
+                                                                <element name="TSU_UNITPRIC_AMT"/>
+                                                                <element name="TSU_UNITPRIC_FCTR"/>
+                                                                <element name="TSU_PDCTNM"/>
+                                                                <element name="TSU_PDCTORGN"/>
+                                                                <element name="TSU_FRGHT_TP"/>
+                                                                <element name="TSU_CCY"/>
+                                                                <element name="TSU_TTL_AMT"/>
+                                                                <element name="DT_PdctIdr">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="C_MAIN_REF"/>
+                                                                            <element name="C_TRX_REF"/>
+                                                                            <element name="C_UNIT_CODE"/>
+                                                                            <element name="TSU_COMM_REF"/>
+                                                                            <element name="TSU_PO_ID"/>
+                                                                            <element name="TSU_LNITMNB"/>
+                                                                            <element name="TSU_PDC_TP"/>
+                                                                            <element name="TSU_PDC_DESC"/>
+                                                                            <element name="TSU_PDC_OTTP"/>
+                                                                            <element name="TSU_PDC_OTID"/>
+                                                                            <element name="TSU_SEQ_NUM"/>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                                <element name="DT_PdctChrtcs">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="C_MAIN_REF"/>
+                                                                            <element name="C_TRX_REF"/>
+                                                                            <element name="C_UNIT_CODE"/>
+                                                                            <element name="TSU_COMM_REF"/>
+                                                                            <element name="TSU_PO_ID"/>
+                                                                            <element name="TSU_LNITMNB"/>
+                                                                            <element name="TSU_PDC_TP"/>
+                                                                            <element name="TSU_PDC_DESC"/>
+                                                                            <element name="TSU_PDC_OTTP"/>
+                                                                            <element name="TSU_PDC_OTID"/>
+                                                                            <element name="TSU_SEQ_NUM"/>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                                <element name="DT_PdctCtgy">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="C_MAIN_REF"/>
+                                                                            <element name="C_TRX_REF"/>
+                                                                            <element name="C_UNIT_CODE"/>
+                                                                            <element name="TSU_COMM_REF"/>
+                                                                            <element name="TSU_PO_ID"/>
+                                                                            <element name="TSU_LNITMNB"/>
+                                                                            <element name="TSU_PDC_TP"/>
+                                                                            <element name="TSU_PDC_DESC"/>
+                                                                            <element name="TSU_PDC_OTTP"/>
+                                                                            <element name="TSU_PDC_OTID"/>
+                                                                            <element name="TSU_SEQ_NUM"/>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                                <element name="DT_Adjstmnt">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="C_MAIN_REF"/>
+                                                                            <element name="C_TRX_REF"/>
+                                                                            <element name="C_UNIT_CODE"/>
+                                                                            <element name="TSU_COMM_REF"/>
+                                                                            <element name="TSU_PO_ID"/>
+                                                                            <element name="TSU_LNITMNB"/>
+                                                                            <element name="TSU_IAFT_TP"/>
+                                                                            <element name="TSU_IAFT_OT_TP"/>
+                                                                            <element name="TSU_CCY"/>
+                                                                            <element name="TSU_IAFT_AMT"/>
+                                                                            <element name="TSU_IAFT_AMT_CAL"/>
+                                                                            <element name="TSU_ADJUST_DRCTN"/>
+                                                                            <element name="TSU_IAFT_RT"/>
+                                                                            <element name="TSU_SEQ_NUM"/>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                                <element name="DT_FrghtChrgs">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="C_MAIN_REF"/>
+                                                                            <element name="C_TRX_REF"/>
+                                                                            <element name="C_UNIT_CODE"/>
+                                                                            <element name="TSU_COMM_REF"/>
+                                                                            <element name="TSU_TRAN_INF"/>
+                                                                            <element name="TSU_PO_ID"/>
+                                                                            <element name="TSU_LNITMNB"/>
+                                                                            <element name="TSU_IAFT_TP"/>
+                                                                            <element name="TSU_IAFT_OT_TP"/>
+                                                                            <element name="TSU_CCY"/>
+                                                                            <element name="TSU_IAFT_AMT"/>
+                                                                            <element name="TSU_IAFT_RT"/>
+                                                                            <element name="TSU_SEQ_NUM"/>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                                <element name="DT_Tax">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="C_MAIN_REF"/>
+                                                                            <element name="C_TRX_REF"/>
+                                                                            <element name="C_UNIT_CODE"/>
+                                                                            <element name="TSU_COMM_REF"/>
+                                                                            <element name="TSU_PO_ID"/>
+                                                                            <element name="TSU_LNITMNB"/>
+                                                                            <element name="TSU_IAFT_TP"/>
+                                                                            <element name="TSU_IAFT_OT_TP"/>
+                                                                            <element name="TSU_CCY"/>
+                                                                            <element name="TSU_IAFT_AMT"/>
+                                                                            <element name="TSU_IAFT_RT"/>
+                                                                            <element name="TSU_SEQ_NUM"/>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DT_Incotrms">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_TRAN_INF"/>
+                                                                <element name="TSU_INCOTMS_LCTN"/>
+                                                                <element name="TSU_IAFT_TP"/>
+                                                                <element name="TSU_IAFT_OT_TP"/>
+                                                                <element name="TSU_SEQ_NUM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DT_Adjstmnt">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_LNITMNB"/>
+                                                                <element name="TSU_IAFT_TP"/>
+                                                                <element name="TSU_IAFT_OT_TP"/>
+                                                                <element name="TSU_CCY"/>
+                                                                <element name="TSU_IAFT_AMT"/>
+                                                                <element name="TSU_IAFT_AMT_CAL"/>
+                                                                <element name="TSU_ADJUST_DRCTN"/>
+                                                                <element name="TSU_IAFT_RT"/>
+                                                                <element name="TSU_SEQ_NUM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DT_FrghtChrgs">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_TRAN_INF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_LNITMNB"/>
+                                                                <element name="TSU_IAFT_TP"/>
+                                                                <element name="TSU_IAFT_OT_TP"/>
+                                                                <element name="TSU_CCY"/>
+                                                                <element name="TSU_IAFT_AMT"/>
+                                                                <element name="TSU_IAFT_RT"/>
+                                                                <element name="TSU_SEQ_NUM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DT_Tax">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_LNITMNB"/>
+                                                                <element name="TSU_IAFT_TP"/>
+                                                                <element name="TSU_IAFT_OT_TP"/>
+                                                                <element name="TSU_CCY"/>
+                                                                <element name="TSU_IAFT_AMT"/>
+                                                                <element name="TSU_IAFT_RT"/>
+                                                                <element name="TSU_SEQ_NUM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DT_DfndInf">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_TRAN_DOC_REF"/>
+                                                                <element name="TSU_TRAN_INF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_DFINFO_LABLE"/>
+                                                                <element name="TSU_DFINFO_DESC"/>
+                                                                <element name="TSU_SEQ_NUM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DT_SellDfndInf">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_TRAN_DOC_REF"/>
+                                                                <element name="TSU_TRAN_INF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_DFINFO_LABLE"/>
+                                                                <element name="TSU_DFINFO_DESC"/>
+                                                                <element name="TSU_SEQ_NUM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_PmtTerms">
+                                <complexType>
+                                    <sequence>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="TSU_PMT_AMT"/>
+                                        <element name="TSU_PMT_CD"/>
+                                        <element name="TSU_PMT_DAYS"/>
+                                        <element name="TSU_PMT_OT_TERM"/>
+                                        <element name="TSU_PMT_PER"/>
+                                        <element name="TSU_CCY"/>
+                                        <element name="TSU_SEQ_NUM"/>
+                                        <element name="TSU_PO_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="R2DT_SttlmTerms">
+                                <complexType>
+                                    <sequence>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="TSU_FININST_BIC"/>
+                                        <element name="TSU_FININST_NM"/>
+                                        <element name="TSU_FININST_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="TSU_BENE_ACC"/>
+                                        <element name="TSU_BENE_BBAN"/>
+                                        <element name="TSU_BENE_IBAN"/>
+                                        <element name="TSU_BENE_UPIC"/>
+                                        <element name="TSU_CDTRAC_TPID"/>
+                                        <element name="TSU_CDTRAC_TPCD"/>
+                                        <element name="TSU_CDTRAC_CCY"/>
+                                        <element name="TSU_CDTRAC_NM"/>
+                                        <element name="TSU_SEQ_NUM"/>
+                                        <element name="TSU_PO_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="R2InsrncDataset">
+                    <complexType>
+                        <sequence>
+                            <element name="C_MAIN_REF"/>
+                            <element name="C_TRX_REF"/>
+                            <element name="C_UNIT_CODE"/>
+                            <element name="TSU_ASSR_BIC"/>
+                            <element name="TSU_ASSR_CNTY"/>
+                            <element name="TSU_ASSR_CNTY_SUB"/>
+                            <element name="TSU_ASSR_ID"/>
+                            <element name="TSU_ASSR_ID_TP"/>
+                            <element name="TSU_ASSR_NM"/>
+                            <element name="TSU_ASSR_POST_CD"/>
+                            <element name="TSU_ASSR_STREET"/>
+                            <element name="TSU_ASSR_TOWN"/>
+                            <element name="TSU_CCY"/>
+                            <element name="TSU_CLMS_CNTY"/>
+                            <element name="TSU_CLMS_CNTY_SUB"/>
+                            <element name="TSU_CLMS_POST_CD"/>
+                            <element name="TSU_CLMS_PYBL_IN"/>
+                            <element name="TSU_CLMS_STREET"/>
+                            <element name="TSU_CLMS_TOWN"/>
+                            <element name="TSU_DS_ID"/>
+                            <element name="TSU_DS_VRSN"/>
+                            <element name="TSU_EFFCTV_DT"/>
+                            <element name="TSU_INSRD_AMT"/>
+                            <element name="TSU_INSRD_GOODS"/>
+                            <element name="TSU_INSRNC_DOC_REF"/>
+                            <element name="TSU_ISSR_CNTY"/>
+                            <element name="TSU_ISSR_CNTY_SUB"/>
+                            <element name="TSU_ISSR_ID"/>
+                            <element name="TSU_ISSR_ID_TP"/>
+                            <element name="TSU_ISSR_NM"/>
+                            <element name="TSU_ISSR_POST_CD"/>
+                            <element name="TSU_ISSR_STREET"/>
+                            <element name="TSU_ISSR_TOWN"/>
+                            <element name="TSU_ISS_CNTY"/>
+                            <element name="TSU_ISS_CNTY_SUB"/>
+                            <element name="TSU_ISS_DT"/>
+                            <element name="TSU_ISS_POST_CD"/>
+                            <element name="TSU_ISS_STREET"/>
+                            <element name="TSU_ISS_TOWN"/>
+                            <element name="TSU_SUBMITR_BIC"/>
+                            <element name="Dt_Trnsprt">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TransportByAir2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_AIR_CARR_NM"/>
+                                                    <element name="DprtureAirprt">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="TSU_RTG_DP_AIRCD"/>
+                                                                <element name="TSU_RTG_DP_AIRNM"/>
+                                                                <element name="TSU_RTG_DP_AIRTWN"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DstnAirprt">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="TSU_RTG_DT_AIRCD"/>
+                                                                <element name="TSU_RTG_DT_AIRNM"/>
+                                                                <element name="TSU_RTG_DT_AIRTWN"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="TransportBySeaR2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_RTG_PORT_LOAD"/>
+                                                    <element name="TSU_RTG_PORT_DSCH"/>
+                                                    <element name="TSU_VSSLNM"/>
+                                                    <element name="TSU_SEA_CARR_NM"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="TransportByRoad2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_RTG_PLC_RCT"/>
+                                                    <element name="TSU_RTG_PLC_DLV"/>
+                                                    <element name="TSU_ROAD_CARR_NM"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="TransportByRail2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_RTG_PLC_RCT"/>
+                                                    <element name="TSU_RTG_PLC_DLV"/>
+                                                    <element name="TSU_RAIL_CARR_NM"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="R2ClausesReqrd">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_CLAUS_REQRD"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="R2InsrdConds">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_INSRNC_CONDS"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="R2OthrCertDataset">
+                    <complexType>
+                        <sequence>
+                            <element name="C_MAIN_REF"/>
+                            <element name="C_TRX_REF"/>
+                            <element name="C_UNIT_CODE"/>
+                            <element name="TSU_CERT_ID"/>
+                            <element name="TSU_DS_ID"/>
+                            <element name="TSU_DS_VRSN"/>
+                            <element name="TSU_ISSR_CNTY"/>
+                            <element name="TSU_ISSR_CNTY_SUB"/>
+                            <element name="TSU_ISSR_ID"/>
+                            <element name="TSU_ISSR_ID_TP"/>
+                            <element name="TSU_ISSR_NM"/>
+                            <element name="TSU_ISSR_POST_CD"/>
+                            <element name="TSU_ISSR_STREET"/>
+                            <element name="TSU_ISSR_TOWN"/>
+                            <element name="TSU_ISS_DT"/>
+                            <element name="TSU_OTCERT_TP"/>
+                            <element name="TSU_SUBMITR_BIC"/>
+                            <element name="DT_CertInf">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_CERT_INF"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="R2RltdTxRefs">
+                    <complexType>
+                        <sequence>
+                            <element name="TSU_DS_FINAL_FLG"/>
+                            <element name="TSU_FORCD_MTCH_FLG"/>
+                            <element name="TSU_PO_DT"/>
+                            <element name="TSU_PO_ID"/>
+                            <element name="TSU_SUBMITR_TRX_REF"/>
+                            <element name="TSU_TID"/>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="R2TrnsprtDataset">
+                    <complexType>
+                        <sequence>
+                            <element name="C_MAIN_REF"/>
+                            <element name="C_TRX_REF"/>
+                            <element name="C_UNIT_CODE"/>
+                            <element name="TSU_ACTL_SHIP_DT"/>
+                            <element name="TSU_CNSQTY_OTUNIT"/>
+                            <element name="TSU_CNSQTY_UNIT_CD"/>
+                            <element name="TSU_CNSQTY_VAL"/>
+                            <element name="TSU_DS_ID"/>
+                            <element name="TSU_DS_VRSN"/>
+                            <element name="TSU_FRGHT_TP"/>
+                            <element name="TSU_PROPSD_SHIP_DT"/>
+                            <element name="TSU_SUBMITR_BIC"/>
+                            <element name="TSU_TRAN_INF"/>
+                            <element name="TSU_TTLVOL_OTUNIT"/>
+                            <element name="TSU_TTLVOL_UNIT_CD"/>
+                            <element name="TSU_TTLVOL_VAL"/>
+                            <element name="TSU_TTLWGTL_UNIT_CD"/>
+                            <element name="TSU_TTLWGT_OTUNIT"/>
+                            <element name="TSU_TTLWGT_VAL"/>
+                            <element name="DT_Buyer">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PARTY_NM"/>
+                                        <element name="TSU_PARTY_ID"/>
+                                        <element name="TSU_PARTY_ID_TP"/>
+                                        <element name="TSU_PARTY_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="TSU_IDX"/>
+                                        <element name="CUST_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_Seller">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PARTY_NM"/>
+                                        <element name="TSU_PARTY_ID"/>
+                                        <element name="TSU_PARTY_ID_TP"/>
+                                        <element name="TSU_PARTY_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="TSU_IDX"/>
+                                        <element name="CUST_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_Consignor">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PARTY_NM"/>
+                                        <element name="TSU_PARTY_ID"/>
+                                        <element name="TSU_PARTY_ID_TP"/>
+                                        <element name="TSU_PARTY_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="TSU_IDX"/>
+                                        <element name="CUST_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_Consignee">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PARTY_NM"/>
+                                        <element name="TSU_PARTY_ID"/>
+                                        <element name="TSU_PARTY_ID_TP"/>
+                                        <element name="TSU_PARTY_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="TSU_IDX"/>
+                                        <element name="CUST_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_ShipTo">
+                                <complexType>
+                                    <sequence>
+                                        <element name="TSU_PARTY_NM"/>
+                                        <element name="TSU_PARTY_ID"/>
+                                        <element name="TSU_PARTY_ID_TP"/>
+                                        <element name="TSU_PARTY_CNTY"/>
+                                        <element name="TSU_STREET_NM"/>
+                                        <element name="TSU_POST_CD"/>
+                                        <element name="TSU_TOWN_NM"/>
+                                        <element name="TSU_CNTY_SUB_DIVI"/>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="TSU_IDX"/>
+                                        <element name="CUST_ID"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="R2DT_TrnsprtDocRef">
+                                <complexType>
+                                    <sequence>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="TSU_TRAN_DOC_REF"/>
+                                        <element name="TSU_TRAN_DOC_ISSUE_DT"/>
+                                        <element name="TSU_TRAN_INF"/>
+                                        <element name="R2DT_TrnsprtdGoods">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="C_MAIN_REF"/>
+                                                    <element name="C_TRX_REF"/>
+                                                    <element name="C_UNIT_CODE"/>
+                                                    <element name="TSU_TRAN_INF"/>
+                                                    <element name="TSU_TRAN_DOC_REF"/>
+                                                    <element name="TSU_PO_ID"/>
+                                                    <element name="TSU_PO_DT"/>
+                                                    <element name="TSU_GOODS_DESC"/>
+                                                    <element name="TSU_TID"/>
+                                                    <element name="TSU_SUBMITR_TRX_REF"/>
+                                                    <element name="TSU_ISSR_BIC"/>
+                                                    <element name="TSU_DS_FINAL_FLG"/>
+                                                    <element name="TSU_FRGHT_TP"/>
+                                                    <element name="TSU_FORCD_MTCH_FLG"/>
+                                                    <element name="DT_DfndInf">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_TRAN_DOC_REF"/>
+                                                                <element name="TSU_TRAN_INF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_DFINFO_LABLE"/>
+                                                                <element name="TSU_DFINFO_DESC"/>
+                                                                <element name="TSU_SEQ_NUM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="DT_SellDfndInf">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="C_MAIN_REF"/>
+                                                                <element name="C_TRX_REF"/>
+                                                                <element name="C_UNIT_CODE"/>
+                                                                <element name="TSU_COMM_REF"/>
+                                                                <element name="TSU_TRAN_DOC_REF"/>
+                                                                <element name="TSU_TRAN_INF"/>
+                                                                <element name="TSU_PO_ID"/>
+                                                                <element name="TSU_DFINFO_LABLE"/>
+                                                                <element name="TSU_DFINFO_DESC"/>
+                                                                <element name="TSU_SEQ_NUM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="RtgSummaryR2">
+                                <complexType>
+                                    <sequence>
+                                        <element name="IndvTrnsprtR2">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TransportByAir2">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="TSU_AIR_CARR_NM"/>
+                                                                <element name="DprtureAirprt">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="TSU_RTG_DP_AIRCD"/>
+                                                                            <element name="TSU_RTG_DP_AIRNM"/>
+                                                                            <element name="TSU_RTG_DP_AIRTWN"/>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                                <element name="DstnAirprt">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="TSU_RTG_DT_AIRCD"/>
+                                                                            <element name="TSU_RTG_DT_AIRNM"/>
+                                                                            <element name="TSU_RTG_DT_AIRTWN"/>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="TransportBySeaR2">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="TSU_RTG_PORT_LOAD"/>
+                                                                <element name="TSU_RTG_PORT_DSCH"/>
+                                                                <element name="TSU_VSSLNM"/>
+                                                                <element name="TSU_SEA_CARR_NM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="TransportByRoad2">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="TSU_RTG_PLC_RCT"/>
+                                                                <element name="TSU_RTG_PLC_DLV"/>
+                                                                <element name="TSU_ROAD_CARR_NM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                    <element name="TransportByRail2">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="TSU_RTG_PLC_RCT"/>
+                                                                <element name="TSU_RTG_PLC_DLV"/>
+                                                                <element name="TSU_RAIL_CARR_NM"/>
+                                                            </sequence>
+                                                        </complexType>
+                                                    </element>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element name="R2MltmdlTrnsprt">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="TSU_RTG_TAK_CHG"/>
+                                                    <element name="TSU_RTG_FNL_DSTN"/>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_Incotrms">
+                                <complexType>
+                                    <sequence>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="TSU_COMM_REF"/>
+                                        <element name="TSU_PO_ID"/>
+                                        <element name="TSU_TRAN_INF"/>
+                                        <element name="TSU_INCOTMS_LCTN"/>
+                                        <element name="TSU_IAFT_TP"/>
+                                        <element name="TSU_IAFT_OT_TP"/>
+                                        <element name="TSU_SEQ_NUM"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="DT_FrghtChrgs">
+                                <complexType>
+                                    <sequence>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_TRX_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="TSU_COMM_REF"/>
+                                        <element name="TSU_TRAN_INF"/>
+                                        <element name="TSU_PO_ID"/>
+                                        <element name="TSU_LNITMNB"/>
+                                        <element name="TSU_IAFT_TP"/>
+                                        <element name="TSU_IAFT_OT_TP"/>
+                                        <element name="TSU_CCY"/>
+                                        <element name="TSU_IAFT_AMT"/>
+                                        <element name="TSU_IAFT_RT"/>
+                                        <element name="TSU_SEQ_NUM"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Submit"/>
+                <element name="Submit2"/>
+                <element name="TEMP_CHAR1"/>
+                <element name="TSUR2_TRX_STATUS__DESC__"/>
+                <element name="TSUR2_TRX_STATUS"/>
+                <element name="TSU_BUYER_BK_BIC"/>
+                <element name="TSU_BUYER_BK_ID"/>
+                <element name="TSU_BUYER_BK_NM"/>
+                <element name="TSU_BUYER_NM"/>
+                <element name="TSU_CCY"/>
+                <element name="TSU_CMON_SUB_REF"/>
+                <element name="TSU_COE_SR_BIC"/>
+                <element name="TSU_COE_STS__DESC__"/>
+                <element name="TSU_COE_STS"/>
+                <element name="TSU_COMM_DATA_ID"/>
+                <element name="TSU_COMM_REF"/>
+                <element name="TSU_INSTRUCTION__DESC__"/>
+                <element name="TSU_INSTRUCTION"/>
+                <element name="TSU_INV_STAT__DESC__"/>
+                <element name="TSU_INV_STAT"/>
+                <element name="TSU_MESSAGE_ID"/>
+                <element name="TSU_MTCH_ENGINE__DESC__"/>
+                <element name="TSU_MTCH_ENGINE"/>
+                <element name="TSU_PARTY_NM"/>
+                <element name="TSU_PO_ID_TEMP"/>
+                <element name="TSU_SEL_BK_BIC"/>
+                <element name="TSU_SEL_BK_ID"/>
+                <element name="TSU_SEL_BK_NM"/>
+                <element name="TSU_SEL_NM"/>
+                <element name="TSU_TRX_DTTM"/>
+                <element name="TSU_TRX_STATUS__DESC__"/>
+                <element name="TSU_TRX_STATUS"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

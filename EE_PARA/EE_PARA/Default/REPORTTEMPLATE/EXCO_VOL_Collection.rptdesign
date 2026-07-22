@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[function FormatNumber(num,ccy){
+  decpoint = ".";
+  sep = ",";
+  // need a string for operations
+  if(num == null || num == '' || num == 0.00 || num == '0.00' || num == 0 || num == '0' ){
+	if(ccy != "JPY" &amp;&amp; ccy != "VND")
+		return "0.00";
+	else
+		return "0";  
+  }
+  num = num.toString();
+  // separate the whole number and the fraction if possible
+  a = num.split(decpoint);
+  x = a[0]; // decimal
+  y = a[1]; // fraction
+  z = "";
+  if (typeof(x) != "undefined") {
+    // reverse the digits. regexp works from left to right.
+    for (i=x.length-1;i>=0;i--)
+      z += x.charAt(i);
+    // add seperators. but undo the trailing one, if there
+    z = z.replace(/(\d{3})/g, "$1" + sep);
+    if (z.slice(-sep.length) == sep)
+      z = z.slice(0, -sep.length);
+    x = "";
+    // reverse again to get back the number
+    for (i=z.length-1;i>=0;i--)
+      x += z.charAt(i);
+    // add the fraction back in, if it was there
+    if (typeof(y) != "undefined" &amp;&amp; y.length > 0) {
+      if (y.length>0 &amp;&amp; y.length<2) 
+        y = y + "0";
+        y = y.substr(0,2);
+        x += "." + y;
+    }
+    else {
+      if(ccy != "JPY" &amp;&amp; ccy != "VND")
+    	x += ".00";
+    }
+  }
+  return x;
+}]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Drawer Name" id="99127">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="BU Code" id="99128">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Start Date" id="99129">
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">BirtDateTime.now()</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="End Date" id="99130">
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">BirtDateTime.now()</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.39.104.106:30102/EEPDB</property>
+            <property name="odaUser">EXIMTRX</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">RVhJTVRSWA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set 1" id="1297">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">C_MAIN_REF</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <text-property name="heading">C_MAIN_REF</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DRWR_ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DRWR_ID</text-property>
+                    <text-property name="heading">DRWR_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DRWR_NM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DRWR_NM</text-property>
+                    <text-property name="heading">DRWR_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DRWE_NM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DRWE_NM</text-property>
+                    <text-property name="heading">DRWE_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLL_BK_NM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COLL_BK_NM</text-property>
+                    <text-property name="heading">COLL_BK_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DELVR_DOC_AGST</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DELVR_DOC_AGST</text-property>
+                    <text-property name="heading">DELVR_DOC_AGST</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLL_CCY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COLL_CCY</text-property>
+                    <text-property name="heading">COLL_CCY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLL_TRX_CCY_AMT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">COLL_TRX_CCY_AMT</text-property>
+                    <text-property name="heading">COLL_TRX_CCY_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLL_DT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COLL_DT</text-property>
+                    <text-property name="heading">COLL_DT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DUE_DT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DUE_DT</text-property>
+                    <text-property name="heading">DUE_DT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">C_UNIT_CODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">C_UNIT_CODE</text-property>
+                    <text-property name="heading">C_UNIT_CODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">C_CP_UNIT_CODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">C_CP_UNIT_CODE</text-property>
+                    <text-property name="heading">C_CP_UNIT_CODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LOCAL_AMT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">LOCAL_AMT</text-property>
+                    <text-property name="heading">LOCAL_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">C_TRX_STATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">C_TRX_STATUS</text-property>
+                    <text-property name="heading">C_TRX_STATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LOCAL_RATE</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">LOCAL_RATE</text-property>
+                    <text-property name="heading">LOCAL_RATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CFNC_C_TYPE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CFNC_C_TYPE</text-property>
+                    <text-property name="heading">CFNC_C_TYPE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CFNC_N_RT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">CFNC_N_RT</text-property>
+                    <text-property name="heading">CFNC_N_RT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CFNC_D_DT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CFNC_D_DT</text-property>
+                    <text-property name="heading">CFNC_D_DT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">C_MAIN_REF_19</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <text-property name="heading">C_MAIN_REF</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">DRWR_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">DRWR_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">DRWE_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">COLL_BK_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">DELVR_DOC_AGST</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">COLL_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">COLL_TRX_CCY_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">COLL_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">DUE_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">C_UNIT_CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">C_CP_UNIT_CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">LOCAL_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">C_TRX_STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">LOCAL_RATE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">CFNC_C_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">CFNC_N_RT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">CFNC_D_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">C_MAIN_REF_19</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[
+var sql = this.queryText;
+if(params["Drawer Name"].value != ""&amp;&amp;params["Drawer Name"].value != null){
+        sql=sql+ " AND LOWER(T1.DRWR_NM) LIKE LOWER('%"+ params["Drawer Name"]+"%')";   
+}
+if(params["BU Code"].value != ""&amp;&amp;params["BU Code"].value != null){
+        sql=sql+ " AND LOWER(T1.C_UNIT_CODE) LIKE LOWER('%"+ params["BU Code"]+"%')";   
+}
+if (params["End Date"].value!= null &amp;&amp; params["End Date"].value!= ""){
+        sql=sql+" AND T1.COLL_DT <= TO_DATE('" + params["End Date"] + "','YYYY-MM-DD')";
+}
+if (params["Start Date"].value!= null &amp;&amp; params["Start Date"].value!= ""){
+        sql=sql+" AND T1.COLL_DT >= TO_DATE('" + params["Start Date"] + "','YYYY-MM-DD')";
+}
+sql=sql+" ORDER BY T2.C_MAIN_REF";
+this.queryText = sql;
+
+
+]]></method>
+            <method name="afterOpen"><![CDATA[importPackage(Packages.com.cs.scf.util);
+var slog = "-----EXCO_Volume Report-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">DRWR_ID</property>
+                    <property name="nativeName">DRWR_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">DRWR_NM</property>
+                    <property name="nativeName">DRWR_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">DRWE_NM</property>
+                    <property name="nativeName">DRWE_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">COLL_BK_NM</property>
+                    <property name="nativeName">COLL_BK_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">DELVR_DOC_AGST</property>
+                    <property name="nativeName">DELVR_DOC_AGST</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">COLL_CCY</property>
+                    <property name="nativeName">COLL_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">COLL_TRX_CCY_AMT</property>
+                    <property name="nativeName">COLL_TRX_CCY_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">COLL_DT</property>
+                    <property name="nativeName">COLL_DT</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">DUE_DT</property>
+                    <property name="nativeName">DUE_DT</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">C_UNIT_CODE</property>
+                    <property name="nativeName">C_UNIT_CODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">C_CP_UNIT_CODE</property>
+                    <property name="nativeName">C_CP_UNIT_CODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">LOCAL_AMT</property>
+                    <property name="nativeName">LOCAL_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">C_TRX_STATUS</property>
+                    <property name="nativeName">C_TRX_STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">LOCAL_RATE</property>
+                    <property name="nativeName">LOCAL_RATE</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">CFNC_C_TYPE</property>
+                    <property name="nativeName">CFNC_C_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">CFNC_N_RT</property>
+                    <property name="nativeName">CFNC_N_RT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">CFNC_D_DT</property>
+                    <property name="nativeName">CFNC_D_DT</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">C_MAIN_REF_19</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[         
+	  SELECT T1.C_MAIN_REF,
+	     T1.DRWR_ID,
+       T1.DRWR_NM,
+       T1.DRWE_NM,
+       T1.COLL_BK_NM,
+       T1.DELVR_DOC_AGST,
+       T1.COLL_CCY,
+       T1.COLL_TRX_CCY_AMT,
+       T1.COLL_DT,
+       T1.DUE_DT,
+       T1.C_UNIT_CODE,
+       T1.C_CP_UNIT_CODE,
+       T1.LOCAL_AMT,
+       T1.C_TRX_STATUS,
+       T1.LOCAL_RATE,
+       T2.CFNC_C_TYPE,
+       T2.CFNC_N_RT,
+       T2.CFNC_D_DT,
+       T2.C_MAIN_REF
+  FROM EXIMTRX.EXCO_MASTER T1 LEFT JOIN EXIMSYS.CFNC_MAIN T2 ON T1.C_MAIN_REF =T2.C_MAIN_REF 
+  WHERE T1.COLL_DT IS NOT NULL AND C_TRX_STATUS = 'M'
+	
+	]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>LM_CSL_DESC</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>80</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>LM_CSL_DESC</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LM_CSL_DESC</design:label>
+            <design:formattingHints>
+              <design:displaySize>80</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>LM_DUE_DAY</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>LM_DUE_DAY</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LM_DUE_DAY</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>LM_CUST_ID</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>LM_CUST_ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LM_CUST_ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">8.5in</property>
+            <property name="width">18in</property>
+            <property name="orientation">landscape</property>
+            <property name="leftMargin">0in</property>
+            <property name="bottomMargin">0.125in</property>
+            <property name="showHeaderOnFirst">true</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="55">
+            <property name="width">17.716666666666665in</property>
+            <property name="dataSet">Data Set 1</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWR_ID</property>
+                    <text-property name="displayName">DRWR_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DRWR_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWR_NM</property>
+                    <text-property name="displayName">DRWR_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DRWR_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWE_NM</property>
+                    <text-property name="displayName">DRWE_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DRWE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_BK_NM</property>
+                    <text-property name="displayName">COLL_BK_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLL_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DELVR_DOC_AGST</property>
+                    <text-property name="displayName">DELVR_DOC_AGST</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DELVR_DOC_AGST"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CCY</property>
+                    <text-property name="displayName">COLL_CCY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLL_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_TRX_CCY_AMT</property>
+                    <text-property name="displayName">COLL_TRX_CCY_AMT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLL_TRX_CCY_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_DT</property>
+                    <text-property name="displayName">COLL_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLL_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">DUE_DT</property>
+                    <text-property name="displayName">DUE_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">C_UNIT_CODE</property>
+                    <text-property name="displayName">C_UNIT_CODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_UNIT_CODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">C_CP_UNIT_CODE</property>
+                    <text-property name="displayName">C_CP_UNIT_CODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_CP_UNIT_CODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LOCAL_AMT</property>
+                    <text-property name="displayName">LOCAL_AMT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LOCAL_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">LOCAL_RATE</property>
+                    <text-property name="displayName">LOCAL_RATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LOCAL_RATE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="58"/>
+            <column id="59"/>
+            <column id="60"/>
+            <column id="62"/>
+            <column id="63"/>
+            <column id="610">
+                <property name="width">6.5in</property>
+            </column>
+            <header>
+                <row id="73">
+                    <property name="backgroundColor">#FFFFFF</property>
+                    <cell id="74">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <label id="664">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">14pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Business Volume Report</text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="89">
+                    <property name="backgroundColor">#FFFFFF</property>
+                    <cell id="90">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="97733">
+                            <property name="width">100%</property>
+                            <column id="1676">
+                                <property name="width">20%</property>
+                            </column>
+                            <column id="1677">
+                                <property name="width">60%</property>
+                            </column>
+                            <column id="1678">
+                                <property name="width">20%</property>
+                            </column>
+                            <row id="1535">
+                                <cell id="1536"/>
+                                <cell id="1537">
+                                    <label id="98594">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">14pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Export Collection</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="1538"/>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="172">
+                    <property name="height">0.6166666666666667in</property>
+                    <property name="backgroundColor">#FFFFFF</property>
+                    <cell id="173">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <text id="199">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">14pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="textUnderline">none</property>
+                            <property name="marginBottom">5pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[Date <VALUE-OF format="MM/dd/yyyy">new Date()</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+        </table>
+        <table id="97901">
+            <property name="verticalAlign">bottom</property>
+            <property name="width">17.725in</property>
+            <property name="dataSet">Data Set 1</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWR_ID</property>
+                    <text-property name="displayName">DRWR_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DRWR_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWR_NM</property>
+                    <text-property name="displayName">DRWR_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DRWR_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWE_NM</property>
+                    <text-property name="displayName">DRWE_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DRWE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_BK_NM</property>
+                    <text-property name="displayName">COLL_BK_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLL_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DELVR_DOC_AGST</property>
+                    <text-property name="displayName">DELVR_DOC_AGST</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DELVR_DOC_AGST"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CCY</property>
+                    <text-property name="displayName">COLL_CCY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLL_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_TRX_CCY_AMT</property>
+                    <text-property name="displayName">COLL_TRX_CCY_AMT</text-property>
+                    <expression name="expression" type="javascript">this.value = FormatNumber(dataSetRow["COLL_TRX_CCY_AMT"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_DT</property>
+                    <text-property name="displayName">COLL_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLL_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">DUE_DT</property>
+                    <text-property name="displayName">DUE_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">C_UNIT_CODE</property>
+                    <text-property name="displayName">C_UNIT_CODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_UNIT_CODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">C_CP_UNIT_CODE</property>
+                    <text-property name="displayName">C_CP_UNIT_CODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_CP_UNIT_CODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LOCAL_AMT</property>
+                    <text-property name="displayName">LOCAL_AMT</text-property>
+                    <expression name="expression" type="javascript">this.value = FormatNumber(dataSetRow["LOCAL_AMT"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">LOCAL_RATE</property>
+                    <text-property name="displayName">LOCAL_RATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LOCAL_RATE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CFNC_C_TYPE</property>
+                    <text-property name="displayName">CFNC_C_TYPE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CFNC_C_TYPE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CFNC_N_RT</property>
+                    <text-property name="displayName">CFNC_N_RT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CFNC_N_RT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="99154">
+                <property name="width">0.25in</property>
+            </column>
+            <column id="97974">
+                <property name="width">1.2083333333333333in</property>
+            </column>
+            <column id="97975">
+                <property name="width">0.9666666666666667in</property>
+            </column>
+            <column id="99059">
+                <property name="width">1in</property>
+            </column>
+            <column id="99071">
+                <property name="width">0.9in</property>
+            </column>
+            <column id="97976">
+                <property name="width">0.6in</property>
+            </column>
+            <column id="97977">
+                <property name="width">0.9666666666666667in</property>
+            </column>
+            <column id="97978">
+                <property name="width">1.1833333333333333in</property>
+            </column>
+            <column id="98618">
+                <property name="width">0.925in</property>
+            </column>
+            <column id="97979">
+                <property name="width">1.375in</property>
+            </column>
+            <column id="97980">
+                <property name="width">0.8416666666666667in</property>
+            </column>
+            <column id="97981">
+                <property name="width">1.2333333333333334in</property>
+            </column>
+            <column id="97982">
+                <property name="width">0.9166666666666666in</property>
+            </column>
+            <column id="97983">
+                <property name="width">1.1666666666666667in</property>
+            </column>
+            <column id="99085">
+                <property name="width">1.1916666666666667in</property>
+            </column>
+            <column id="99110">
+                <property name="width">0.8833333333333333in</property>
+            </column>
+            <column id="99098">
+                <property name="width">1.0916666666666666in</property>
+            </column>
+            <column id="97984">
+                <property name="width">1.025in</property>
+            </column>
+            <header>
+                <row id="97902">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="textAlign">left</property>
+                    <cell id="99149"/>
+                    <cell id="97903">
+                        <label id="98600">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Reference Number</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97904">
+                        <label id="97986">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Drawer ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="99048">
+                        <label id="99072">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Drawer Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="99060">
+                        <label id="99073">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Drawee Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97905">
+                        <label id="97987">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Drawee Country</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97906">
+                        <label id="97988">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Collection Bank</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97907">
+                        <label id="98601">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Deliver Documents Against&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="98610">
+                        <label id="98619">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Currency&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97908">
+                        <label id="97990">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Collection Amount&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97909">
+                        <label id="97991">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Exchange Rate&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97910">
+                        <label id="97992">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Amount in Local&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97911">
+                        <label id="97993">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Financing Type&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97912">
+                        <label id="97994">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Date Received&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="99074">
+                        <label id="99086">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Tenor Maturity Date&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="99099">
+                        <label id="99111">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Branch Code&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="99087">
+                        <label id="99112">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Process Center Code&#13;
+</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97913">
+                        <label id="97995">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Financing Rate&#13;
+</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="98918">
+                <property name="groupName">C_MAIN_REF</property>
+                <expression name="keyExpr" type="javascript">row["C_MAIN_REF"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["C_MAIN_REF"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="98919">
+                        <cell id="99150"/>
+                        <cell id="98920"/>
+                        <cell id="98921"/>
+                        <cell id="99051"/>
+                        <cell id="99063"/>
+                        <cell id="98922"/>
+                        <cell id="98923"/>
+                        <cell id="98924"/>
+                        <cell id="98925"/>
+                        <cell id="98926"/>
+                        <cell id="98927"/>
+                        <cell id="98928"/>
+                        <cell id="98929"/>
+                        <cell id="98930"/>
+                        <cell id="99077"/>
+                        <cell id="99102"/>
+                        <cell id="99090"/>
+                        <cell id="98931"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="98932">
+                        <cell id="99152"/>
+                        <cell id="98933"/>
+                        <cell id="98934"/>
+                        <cell id="99053"/>
+                        <cell id="99065"/>
+                        <cell id="98935"/>
+                        <cell id="98936"/>
+                        <cell id="98937"/>
+                        <cell id="98938"/>
+                        <cell id="98939"/>
+                        <cell id="98940"/>
+                        <cell id="98941"/>
+                        <cell id="98942"/>
+                        <cell id="98943"/>
+                        <cell id="99079"/>
+                        <cell id="99104"/>
+                        <cell id="99092"/>
+                        <cell id="98944"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="97914">
+                    <cell id="99151"/>
+                    <cell id="97915">
+                        <data id="99113">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">C_MAIN_REF</property>
+                        </data>
+                    </cell>
+                    <cell id="97916">
+                        <data id="99114">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">DRWR_ID</property>
+                        </data>
+                    </cell>
+                    <cell id="99052">
+                        <data id="99116">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">DRWR_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="99064">
+                        <data id="99117">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">DRWE_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="97917"/>
+                    <cell id="97918">
+                        <data id="99118">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">COLL_BK_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="97919">
+                        <data id="99119">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">DELVR_DOC_AGST</property>
+                        </data>
+                    </cell>
+                    <cell id="98613">
+                        <data id="99120">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">COLL_CCY</property>
+                        </data>
+                    </cell>
+                    <cell id="97920">
+                        <data id="99121">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">COLL_TRX_CCY_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="97921">
+                        <data id="99155">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">LOCAL_RATE</property>
+                        </data>
+                    </cell>
+                    <cell id="97922">
+                        <data id="99156">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">LOCAL_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="97923">
+                        <data id="99157">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">CFNC_C_TYPE</property>
+                        </data>
+                    </cell>
+                    <cell id="97924">
+                        <data id="99122">
+                            <property name="fontSize">8pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">MM/dd/yyyy</property>
+                            </structure>
+                            <property name="resultSetColumn">COLL_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="99078">
+                        <data id="99123">
+                            <property name="fontSize">8pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">MM/dd/yyyy</property>
+                            </structure>
+                            <property name="resultSetColumn">DUE_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="99103">
+                        <data id="99124">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">C_UNIT_CODE</property>
+                        </data>
+                    </cell>
+                    <cell id="99091">
+                        <data id="99126">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">C_CP_UNIT_CODE</property>
+                        </data>
+                    </cell>
+                    <cell id="97925">
+                        <data id="99158">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">CFNC_N_RT</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="97962">
+                    <property name="height">0.5416666666666666in</property>
+                    <cell id="99153"/>
+                    <cell id="97963"/>
+                    <cell id="97964"/>
+                    <cell id="99058"/>
+                    <cell id="99070"/>
+                    <cell id="97965"/>
+                    <cell id="97966"/>
+                    <cell id="97967"/>
+                    <cell id="98617"/>
+                    <cell id="97968"/>
+                    <cell id="97969"/>
+                    <cell id="97970"/>
+                    <cell id="97971"/>
+                    <cell id="97972"/>
+                    <cell id="99084"/>
+                    <cell id="99109"/>
+                    <cell id="99097"/>
+                    <cell id="97973"/>
+                </row>
+            </footer>
+        </table>
+        <label id="1147">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">11pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">********** END OF REPORT **********</text-property>
+        </label>
+    </body>
+</report>

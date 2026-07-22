@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082301731</ID>
+    <MODULE>IAAC</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Inquire Accrual Accrue Catalog</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.IAAC_ACCRUALLAY</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Event No." EEType="Varchar_6" HIDDEN="">IA_C_EVENT_NO</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="Accrual Rate"
+            EEType="Decimal_15_10" HIDDEN="">IA_N_ACCRUAL_RATE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="Accrual Interest" EEType="AMT" HIDDEN="">IA_Y_ACCRUAL_INT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Post From Date" EEType="DATE" HIDDEN="">IA_D_POST_FROMDATE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Post To Date" EEType="DATE" HIDDEN="">IA_D_POST_TODATE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="5" DESC="Base Days" EEType="SMALLINT" HIDDEN="">IA_I_BASE_DAYS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Reference No." EEType="Varchar_35" HIDDEN="">IA_C_REF_NO</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Module Name" EEType="Varchar_4" HIDDEN="">IA_C_MODU_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Unit" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Event No." DT="12" EEType="Varchar_6" TYPE="FLD">IA_C_EVENT_NO</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' ORDER BY </SQL>
+        <SQL DESC="Event No." DT="12" EEType="Varchar_6" TYPE="FLD">IA_C_EVENT_NO</SQL>
+        <SQL TYPE="SQL"> ASC</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Event No." EEType="Varchar_6">IA_C_EVENT_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Event No." EEType="Varchar_6">IA_C_EVENT_NO</FIELD>
+    </CLAUSEFIELD>
+</CATA>

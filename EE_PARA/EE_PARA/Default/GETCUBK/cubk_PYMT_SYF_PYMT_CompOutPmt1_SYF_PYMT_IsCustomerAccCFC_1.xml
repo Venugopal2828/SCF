@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_CompOutPmt1_SYF_PYMT_IsCustomerAccCFC_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_AC_DESC ALIAS="T0" DBFUNC="" DESC="Account Description" DT="12" HIDDEN="F" TYPE="F">CUSTOMER_CFC_GROUPING</C_AC_DESC>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_CNTY_CODE = '</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">' AND C_AC_NUMBER = '</SQL>
+            <SQL TYPE="FLD">X103_ORDCUACNO_50A</SQL>
+            <SQL TYPE="SQL">' AND C_AC_DESC = 'CFC' AND C_UNIT_CODE = '</SQL>
+            <SQL DT="var" DV="SYS_BUSI_UNIT" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

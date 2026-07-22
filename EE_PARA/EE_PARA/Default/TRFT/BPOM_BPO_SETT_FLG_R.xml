@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>BPOM</module>
+    <name>BPO_SETT_FLG</name>
+    <desc>BPO_SETT_FLG</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FAEF_MASTER</table-name>
+        <table-desc>FAEF_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <BPO_SETT_FLG fv_type="V" oper="=">YES</BPO_SETT_FLG>
+    </mapping>
+</root>

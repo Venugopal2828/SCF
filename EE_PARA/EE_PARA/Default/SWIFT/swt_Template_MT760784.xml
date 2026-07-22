@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0"
+    descr="Issue of a Demand Guarantee/Standby Letter of Credit" length="10000" non-regular="FALSE">
+    <tags>
+        <tag>
+            <tag-code>B3</tag-code>
+            <tag-desc>Incoming SWIFT Header 3</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>2</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="0" rows="25"/>
+        </tag>
+        <tag>
+            <tag-code>B4</tag-code>
+            <tag-desc>Incoming SWIFT Header 4</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>2</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="0" rows="37"/>
+        </tag>
+        <tag>
+            <tag-code>B5</tag-code>
+            <tag-desc>Incoming SWIFT Header 5</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>2</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="0" rows="25"/>
+        </tag>
+        <tag>
+            <tag-code>B6</tag-code>
+            <tag-desc>Incoming SWIFT Header 6</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>2</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="0" rows="51"/>
+        </tag>
+        <tag>
+            <tag-code>15A</tag-code>
+            <tag-desc>New Sequence</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000006</sequence>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>27</tag-code>
+            <tag-desc>Sequence of Total</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000006</sequence>
+            <tag-group/>
+            <segment-1 cols="3" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>22A</tag-code>
+            <tag-desc>Purpose of message</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000006</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>72Z</tag-code>
+            <tag-desc>Sender to Receiver Information</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000006</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="6"/>
+        </tag>
+        <tag>
+            <tag-code>23X</tag-code>
+            <tag-desc>File Identification</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000006</sequence>
+            <tag-group/>
+            <segment-1 cols="70" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>15B</tag-code>
+            <tag-desc>New Sequence</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>20</tag-code>
+            <tag-desc>Undertaking  Number</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>30</tag-code>
+            <tag-desc>Date of Issue</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="6" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>22D</tag-code>
+            <tag-desc>Form of Undertaking</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>40C</tag-code>
+            <tag-desc>Applicable Rules</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>23B</tag-code>
+            <tag-desc>Expiry Type</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>31E</tag-code>
+            <tag-desc>Date of Expiry</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="6" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>35G</tag-code>
+            <tag-desc>Expiry Condition/Event</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>50</tag-code>
+            <tag-desc>Applicant</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>51</tag-code>
+            <tag-desc>Obligor/Instructing Party</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>52A</tag-code>
+            <tag-desc>Issuer</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>52</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>52D</tag-code>
+            <tag-desc>Issuer</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>52</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>59</tag-code>
+            <tag-desc>Beneficiary</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>59</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>59A</tag-code>
+            <tag-desc>Beneficiary</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>59</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>56A</tag-code>
+            <tag-desc>Advising Bank</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>56</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>56D</tag-code>
+            <tag-desc>Advising Bank</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>56</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>23</tag-code>
+            <tag-desc>Advising Bank Reference</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>57A</tag-code>
+            <tag-desc>Advise Through Bank</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>57</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>57D</tag-code>
+            <tag-desc>Advise Through Bank</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>57</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>32B</tag-code>
+            <tag-desc>Undertaking Amount</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="18" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>39F</tag-code>
+            <tag-desc>Supplementary Information About Amount</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase></Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="65" illegal-char="" rows="12"></segment-1>
+        </tag>
+        <tag>
+            <tag-code>41F</tag-code>
+            <tag-desc>Available With...</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>41</tag-group>
+            <segment-1 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>41G</tag-code>
+            <tag-desc>Available With...</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>41</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>71D</tag-code>
+            <tag-desc>Charges</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="6"/>
+        </tag>
+        <tag>
+            <tag-code>45C</tag-code>
+            <tag-desc>Document and Presentation Instructions</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="100"/>
+        </tag>
+        <tag>
+            <tag-code>77U</tag-code>
+            <tag-desc>Undertaking Terms and Conditions</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="1350"/>
+        </tag>
+        <tag>
+            <tag-code>49</tag-code>
+            <tag-desc>Confirmation Instructions</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="7" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>58A</tag-code>
+            <tag-desc>Requested Confirmation Party</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>58</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>58D</tag-code>
+            <tag-desc>Requested Confirmation Party</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group>58</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>44J</tag-code>
+            <tag-desc>Governing Law/Jurisdiction</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="38" illegal-char="" rows="1"></segment-1>
+            <segment-2 cols="66" illegal-char="" rows="1"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>23F</tag-code>
+            <tag-desc>Automatic Extension Period</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>78</tag-code>
+            <tag-desc>Automatic Extension Non-Extension Notification</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>26E</tag-code>
+            <tag-desc>Automatic Extension Notification Period</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="3" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>31S</tag-code>
+            <tag-desc>Automatic Extension Final Expiry Date</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="6" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>48B</tag-code>
+            <tag-desc>Demand Indicator</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>48D</tag-code>
+            <tag-desc>Transfer Indicator</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>39E</tag-code>
+            <tag-desc>Transfer Conditions</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>45L</tag-code>
+            <tag-desc>Underlying Transaction Details</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="50"/>
+        </tag>
+        <tag>
+            <tag-code>24E</tag-code>
+            <tag-desc>Delivery of Original Undertaking</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>24G</tag-code>
+            <tag-desc>Delivery To/Collection By</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000007</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+            <segment-2 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>15C</tag-code>
+            <tag-desc>New Sequence</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>31C</tag-code>
+            <tag-desc>Requested Date of Issue</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="6" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>22D[01]</tag-code>
+            <tag-desc>Form of Undertaking</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>40C[01]</tag-code>
+            <tag-desc>Applicable Rules</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>22K</tag-code>
+            <tag-desc>Type of Undertaking</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>23B[01]</tag-code>
+            <tag-desc>Expiry Type</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>31E[01]</tag-code>
+            <tag-desc>Date of Expiry</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="6" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>35G[01]</tag-code>
+            <tag-desc>Expiry Condition/Event</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>50 [01]</tag-code>
+            <tag-desc>Applicant</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>51 [01]</tag-code>
+            <tag-desc>Obligor/Instructing Party</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>52A[01]</tag-code>
+            <tag-desc>Issuer</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group>52</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>52D[01]</tag-code>
+            <tag-desc>Issuer</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group>52</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>59 [01]</tag-code>
+            <tag-desc>Beneficiary</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+            <segment-2 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>32B[01]</tag-code>
+            <tag-desc>Undertaking Amount</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="18" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>39F[01]</tag-code>
+            <tag-desc>Supplementary Information About Amount</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>57A[01]</tag-code>
+            <tag-desc>'Advise Through' Bank</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group>57</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"></segment-1>
+            <segment-2 cols="11" illegal-char="" rows="1"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>57D[01]</tag-code>
+            <tag-desc>'Advise Through' Bank</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group>57</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="1"></segment-1>
+            <segment-2 cols="35" illegal-char="" rows="4"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>41F[01]</tag-code>
+            <tag-desc>Available With...</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group>41</tag-group>
+            <segment-1 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>41G[01]</tag-code>
+            <tag-desc>Available With...</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group>41</tag-group>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>71D[01]</tag-code>
+            <tag-desc>Charges</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="6"/>
+        </tag>
+        <tag>
+            <tag-code>45C[01]</tag-code>
+            <tag-desc>Document and Presentation Instructions</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="100"/>
+        </tag>
+        <tag>
+            <tag-code>77L</tag-code>
+            <tag-desc>Requested Local Undertaking Terms and Conditions</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="1350"/>
+        </tag>
+        <tag>
+            <tag-code>22Y</tag-code>
+            <tag-desc>Standard Wording Required</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>40D</tag-code>
+            <tag-desc>Standard Wording Requested Language</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="2" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>44J[01]</tag-code>
+            <tag-desc>Governing Law/Jurisdiction</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group></tag-group>
+            <segment-1 cols="38" illegal-char="" rows="1"></segment-1>
+            <segment-2 cols="66" illegal-char="" rows="1"></segment-2>
+        </tag>
+        <tag>
+            <tag-code>23F[01]</tag-code>
+            <tag-desc>Automatic Extension Period</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>78 [01]</tag-code>
+            <tag-desc>Automatic Extension Non-Extension Notification</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>26E[01]</tag-code>
+            <tag-desc>Automatic Extension Notification Period</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="3" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>31S[01]</tag-code>
+            <tag-desc>Automatic Extension Final Expiry Date</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="6" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>48B[01]</tag-code>
+            <tag-desc>Demand Indicator</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>48D[01]</tag-code>
+            <tag-desc>Transfer Indicator</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>39E[01]</tag-code>
+            <tag-desc>Transfer Conditions</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>45L[01]</tag-code>
+            <tag-desc>Underlying Transaction Details</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="50"/>
+        </tag>
+        <tag>
+            <tag-code>24E[01]</tag-code>
+            <tag-desc>Delivery of Local Undertaking</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>24G[01]</tag-code>
+            <tag-desc>Delivery To/Collection By</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence>S00000000008</sequence>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+            <segment-2 cols="65" illegal-char="" rows="12"/>
+        </tag>
+        <tag>
+            <tag-code>12</tag-code>
+            <tag-desc>Sub-Message Type</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="3" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>27A</tag-code>
+            <tag-desc>Message Index/Total</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="3" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>21A</tag-code>
+            <tag-desc>Customer Reference Number</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>21T</tag-code>
+            <tag-desc>Customer Business Reference</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>25F</tag-code>
+            <tag-desc>Text  Purpose</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="5" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>21P</tag-code>
+            <tag-desc>Bank Reference Number</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>21S</tag-code>
+            <tag-desc>Bank Business Reference</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>13E</tag-code>
+            <tag-desc>Message Creation Date Time</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="12" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>23E</tag-code>
+            <tag-desc>Method of Transmission</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>22K[01]</tag-code>
+            <tag-desc>Type of Undertaking</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>12H</tag-code>
+            <tag-desc>Wording of GuaranteeUndertaking</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>22B</tag-code>
+            <tag-desc>Special Terms</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="4" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>12L</tag-code>
+            <tag-desc>Language of Standard Wording</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="2" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>31S[02]</tag-code>
+            <tag-desc>Approximate Expiry Date</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="6" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>53C</tag-code>
+            <tag-desc>Liability Account</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>25A</tag-code>
+            <tag-desc>Charges Account</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>20E</tag-code>
+            <tag-desc>Reference</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>31R</tag-code>
+            <tag-desc>Reference Date</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="12" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>71F</tag-code>
+            <tag-desc>Total Order/Contract Amount</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="18" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>37J</tag-code>
+            <tag-desc>Undertaking Value in Percent</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="12" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>49Z</tag-code>
+            <tag-desc>Special Agreements</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="65" illegal-char="" rows="50"/>
+        </tag>
+        <tag>
+            <tag-code>29A</tag-code>
+            <tag-desc>Customer Contact</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>29D</tag-code>
+            <tag-desc>Beneficiary  Contact</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>29F</tag-code>
+            <tag-desc>Local Undertaking Beneficiary Contact</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>72Z[01]</tag-code>
+            <tag-desc>Corporate to Bank Information</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="6"/>
+        </tag>
+        <tag>
+            <tag-code>23X[01]</tag-code>
+            <tag-desc>File Identification</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="70" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>29S</tag-code>
+            <tag-desc>Customer Identifier</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="40" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>29P</tag-code>
+            <tag-desc>Processing Bank Identifie</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="11" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>29U</tag-code>
+            <tag-desc>Lead Bank Identifier</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="11" illegal-char="" rows="1"/>
+        </tag>
+    </tags>
+</root>

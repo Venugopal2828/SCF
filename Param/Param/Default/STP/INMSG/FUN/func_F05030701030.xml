@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Delta Report");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sRptId = stp.getXslMsgTagVal("message/Document/DltaRpt/RptId","Id");
+stp.writeLog("sRptId=========="+sRptId);
+//var sBIC = sRptId.substr(0,11);
+//var sBIC = sRptId.split("-")[0];
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC=========="+sBIC);
+var sBuyrBkBIC = stp.getXslMsgTagVal("message/Document/DltaRpt/BuyrBk","BIC");
+var sSellrBkBIC = stp.getXslMsgTagVal("message/Document/DltaRpt/SellrBk","BIC");
+var sBuyrNm = stp.getXslMsgTagVal("message/Document/DltaRpt/Buyr","Nm");
+var sSellrNm = stp.getXslMsgTagVal("message/Document/DltaRpt/Sellr","Nm");
+var sUnitNm = "";
+if (sBIC == sBuyrBkBIC){
+sUnitNm = sBuyrNm;
+} else{
+sUnitNm = sSellrNm;
+}
+var arrKeys = [["C_UNIT_NAME",sUnitNm]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetUnitCodeByNm",arrKeys);
+var sUnitCode = arrGetDataResult[0];
+stp.setCmpId(sUnitCode);
+var sTxId = stp.getXslMsgTagVal("message/Document/DltaRpt/TxId","Id");
+var sNxtSts = "Waiting for Delta Report";
+var arrKeys1 = [["TSU_TID",sTxId],["NXT_STATUS",sNxtSts]];
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetMainRefByTxIdForDltaRpt",arrKeys1);
+var sMainRef = arrGetDataResult1[0];
+stp.writeLog("sMainRef=========="+sMainRef);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+stp.updateFieldValue("CURRNT_STATUS","Received Delta Report");
+stp.updateFieldValue("NXT_STATUS","Waiting for Baseline Report");
+stp.writeLog("End: Received Delta Report");]]></js-content>
+</root>

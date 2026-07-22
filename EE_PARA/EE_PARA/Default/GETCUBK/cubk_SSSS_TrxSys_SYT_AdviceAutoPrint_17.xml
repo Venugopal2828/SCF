@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="">SYS_AUTH_SEQUENCE</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>TrxSys_SYT_AdviceAutoPrint_17</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_CLASSES ALIAS="T0" DBFUNC="" DESC="Classes" DT="12" HIDDEN="F" TYPE="F">TEMP_RESULT</C_CLASSES>
+        <C_FUNC_ID ALIAS="T0" DBFUNC="" DESC="C_FUNC_ID" DT="1" HIDDEN="F" TYPE="V">TEMP_RESULT2</C_FUNC_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">mainRefNumberCUBK</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

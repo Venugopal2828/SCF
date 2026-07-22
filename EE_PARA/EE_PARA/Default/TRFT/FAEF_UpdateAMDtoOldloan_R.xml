@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FAEF</module>
+    <name>UpdateAMDtoOldloan</name>
+    <desc>Update Roll over AMD to Old loan</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.INVC_LOAN</table-name>
+        <table-desc>INVC_LOAN</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql type="TBL_FLD">C_MAIN_REF</sql>
+            <sql type="SQL"> = '</sql>
+            <field mf="F">FA_DOC_REF</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">FA_INV_LOAN_ID</sql>
+            <sql type="SQL"> = '</sql>
+            <field mf="F">FA_OLD_LOAN_ID</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_LOAN_DUE_DT fv_type="F" mf="F" oper="=">FA_LOAN_DUE_DT</FA_LOAN_DUE_DT>
+        <FA_LOAN_INT_RT fv_type="F" mf="F" oper="=">FA_LOAN_INT_RT</FA_LOAN_INT_RT>
+        <FA_INT_CHG_TYPE fv_type="F" mf="F" oper="=">FA_INT_CHG_TYPE</FA_INT_CHG_TYPE>
+        <FA_INV_LOAN_ID fv_type="F" mf="F" oper="=">FA_INV_LOAN_ID</FA_INV_LOAN_ID>
+        <EXTEN_PRCPL fv_type="F" mf="F" oper="=">EXTEN_PRCPL</EXTEN_PRCPL>
+        <EXTEN_INT_MTHD fv_type="F" mf="F" oper="=">EXTEN_INT_MTHD</EXTEN_INT_MTHD>
+        <FA_AMD_FIN_EFF_DT fv_type="F" mf="F" oper="=">FA_AMD_FIN_EFF_DT</FA_AMD_FIN_EFF_DT>
+        <FA_OLD_INT_CHG_TYPE fv_type="F" mf="F" oper="=">FA_OLD_INT_CHG_TYPE</FA_OLD_INT_CHG_TYPE>
+        <FA_OLD_IRT_SPREAD fv_type="F" mf="F" oper="=">FA_OLD_IRT_SPREAD</FA_OLD_IRT_SPREAD>
+        <FA_OLD_LOAN_DUE_DT fv_type="F" mf="F" oper="=">FA_OLD_LOAN_DUE_DT</FA_OLD_LOAN_DUE_DT>
+        <FA_OLD_LOAN_ID fv_type="F" mf="F" oper="=">FA_OLD_LOAN_ID</FA_OLD_LOAN_ID>
+        <FA_OLD_LOAN_INT_RT fv_type="F" mf="F" oper="=">FA_OLD_LOAN_INT_RT</FA_OLD_LOAN_INT_RT>
+        <FA_OLD_OVD_IRT_SPREAD fv_type="F" mf="F" oper="=">FA_OLD_OVD_IRT_SPREAD</FA_OLD_OVD_IRT_SPREAD>
+        <FA_OLD_XBOR_RT fv_type="F" mf="F" oper="=">FA_OLD_XBOR_RT</FA_OLD_XBOR_RT>
+    </mapping>
+</root>

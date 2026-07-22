@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EXCO_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_FinancRegister1_SYF_FFIT_EXPT_ID_12</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <DRWR_ID ALIAS="T0" DBFUNC="" DESC="Drawer ID" DT="12" HIDDEN="F" TYPE="F">EXPT_ID</DRWR_ID>
+        <DRWR_NM ALIAS="T0" DBFUNC="" DESC="Drawer Name" DT="12" HIDDEN="F" TYPE="F">EXPT_NM</DRWR_NM>
+        <COLL_BK_ID ALIAS="T0" DBFUNC="" DESC="Collecting Bank ID" DT="12" HIDDEN="F" TYPE="F">ACPT_BK_ID</COLL_BK_ID>
+        <COLL_BK_NM ALIAS="T0" DBFUNC="" DESC="Collecting Bank Name" DT="12" HIDDEN="F" TYPE="F">ACPT_BK_NM</COLL_BK_NM>
+        <COLL_BK_ADD1 ALIAS="T0" DBFUNC="" DESC="Collecting Bank Address1" DT="12" HIDDEN="F" TYPE="F">ACPT_BK_ADD</COLL_BK_ADD1>
+        <COLL_CCY ALIAS="T0" DBFUNC="" DESC="Collection Currency" DT="1" HIDDEN="F" TYPE="F">TEMP_CHAR1</COLL_CCY>
+        <COLL_TRX_CCY_AMT ALIAS="T0" DBFUNC="" DESC="Collection Amount (COLL CCY)" DT="3" HIDDEN="F" TYPE="F">ACPT_AMT</COLL_TRX_CCY_AMT>
+        <DRWE_NM ALIAS="T0" DBFUNC="" DESC="Drawee Name" DT="12" HIDDEN="F" TYPE="F">IMPT_NM</DRWE_NM>
+        <TENOR_DAYS ALIAS="T0" DBFUNC="" DESC="Tenor Days" DT="4" HIDDEN="F" TYPE="F">TENOR_DAYS</TENOR_DAYS>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">TRX_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

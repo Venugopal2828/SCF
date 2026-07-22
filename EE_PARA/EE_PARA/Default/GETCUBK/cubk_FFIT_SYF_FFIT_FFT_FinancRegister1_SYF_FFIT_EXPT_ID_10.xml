@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EPLC_EM_NEGO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_FinancRegister1_SYF_FFIT_EXPT_ID_10</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <BENE_BK_ID ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank ID" DT="12" HIDDEN="F" TYPE="F">EXPT_ID</BENE_BK_ID>
+        <BENE_BK_NM ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank Name" DT="12" HIDDEN="F" TYPE="F">EXPT_NM</BENE_BK_NM>
+        <BENE_NM ALIAS="T0" DBFUNC="" DESC="Beneficiary Name" DT="12" HIDDEN="F" TYPE="F">EXPT_NM_C</BENE_NM>
+        <ISSUE_BK_SW_ADD ALIAS="T0" DBFUNC="" DESC="Issuing Bank SWIFT Address" DT="1" HIDDEN="F" TYPE="F">ISSUE_BK_ID</ISSUE_BK_SW_ADD>
+        <ISSUE_BK_NM ALIAS="T0" DBFUNC="" DESC="Issuing Bank Name of Original LC" DT="12" HIDDEN="F" TYPE="F">ISSUE_BK_NM</ISSUE_BK_NM>
+        <LC_CCY ALIAS="T0" DBFUNC="" DESC="LC Currency" DT="1" HIDDEN="F" TYPE="F">TEMP_CHAR1</LC_CCY>
+        <PRES_AMT ALIAS="T0" DBFUNC="" DESC="Presentation Amount" DT="3" HIDDEN="F" TYPE="F">ACPT_AMT</PRES_AMT>
+        <LC_NO ALIAS="T0" DBFUNC="" DESC="LC Number" DT="12" HIDDEN="F" TYPE="F">LC_NO</LC_NO>
+        <APPL_NM ALIAS="T0" DBFUNC="" DESC="Applicant Name" DT="12" HIDDEN="F" TYPE="F">IMPT_NM</APPL_NM>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">TRX_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

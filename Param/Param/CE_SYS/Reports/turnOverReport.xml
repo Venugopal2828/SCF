@@ -1,0 +1,95 @@
+<root>
+	<FILTERS>
+		<FILTER DESC="Product" ALIAS="ReportProduct" FIELDTYPE="FLDC" FIELDTYPECONFIG="SSSS:RPTFLT_PRODUCT"/>
+		<FILTER DESC="Transaction Type" ALIAS="RequestType" FIELDTYPE="FLDC" FIELDTYPECONFIG="SSSS:RPTFLT_REQUESTTYPE"/>
+		<FILTER DESC="Currency" ALIAS="Currency" EEType="CCY" FIELDTYPE="FLDC" FIELDTYPECONFIG="SSSS:RPTFLT_CCY"/>
+		<FILTER DESC="Counterparty Name" ALIAS="Counterparty" FIELDTYPE="FLDC" FIELDTYPECONFIG="SSSS:RPTFLT_COUNTERPARTY"/>
+		<FILTER DESC="Company Code" ALIAS="CIF" FIELDTYPE="FLDC" FIELDTYPECONFIG="SSSS:CIF"/>
+	</FILTERS>
+	<FILTERVALUEMAPPING>
+		<ALIAS NAME="RequestType">
+			<REPORTPRODUCT NAME="IMLC">
+				<ITEM TYPE="New">Apply for LC;Awaiting Bank Verification LC App;Import LC Issued</ITEM>
+				<ITEM TYPE="Amendment">Request for Amendment;Awaiting Bank Verification LC Amd;Request for Amendment;Import LC Amended;Beneficiary Consent;Beneficiary Decision</ITEM>
+				<ITEM TYPE="Decision on Discrepancy">Decision on Discrepancies</ITEM>
+				<ITEM TYPE="Document Presentation">Document Presentation;Payment Advice</ITEM>
+			</REPORTPRODUCT>
+			<REPORTPRODUCT NAME="EXCO">
+				<ITEM TYPE="New">Collection Creation;Issued Collection</ITEM>
+				<ITEM TYPE="Amendment">Amendment;Issued Amendment</ITEM>
+			</REPORTPRODUCT>
+			<REPORTPRODUCT NAME="IMCO">
+				<ITEM TYPE="Payment Instructions">Payment Instructions</ITEM>
+				<ITEM TYPE="Request for Acceptance">Request for Acceptance</ITEM>
+			</REPORTPRODUCT>
+			<REPORTPRODUCT NAME="EXLC">
+				<ITEM TYPE="Export LC Advise">Export LC Advise</ITEM>
+				<ITEM TYPE="Decision on Discrepancy">Disposal Instructions</ITEM>
+				<ITEM TYPE="Document Presentation">Document Presentation;Documents Presented;Settlement</ITEM>
+			</REPORTPRODUCT>
+			<REPORTPRODUCT NAME="OWGT">
+				<ITEM TYPE="New">Apply for Guarantee;Guarantee Issued;Guarantee Application rejected;Guarantee Application accepted;Resubmit Guarantee</ITEM>
+				<ITEM TYPE="Amendment">Apply Guarantee Amendment;Guarantee Amendment accepted;Guarantee Amendment rejected;Guarantee Amended;Resubmit Guarantee Amendment</ITEM>
+			</REPORTPRODUCT>
+			<REPORTPRODUCT NAME="IWGT">
+				<ITEM TYPE="Claim/Other Instructions">Claim / Payment Instructions;Claim Received;Settled</ITEM>
+				<ITEM TYPE="Advised/Received">Inward Guarantee Received</ITEM>
+			</REPORTPRODUCT>
+		</ALIAS>
+	</FILTERVALUEMAPPING>
+	<REPORT>
+		<REPORTPRODUCT NAME="IMLC">
+			<MASTER>
+				<TABLE>IMLC_EM_ISSUE</TABLE>
+				<CLAUSE></CLAUSE>
+				<EVENTS>
+					<TABLE>IMLC_EM_AMD</TABLE>
+					<TABLE>IMLC_EM_NEGO</TABLE>
+				</EVENTS>
+			</MASTER>
+		</REPORTPRODUCT>
+		<REPORTPRODUCT NAME="EXCO">
+			<MASTER>
+				<TABLE>EXCO_EM_CREATE</TABLE>
+				<CLAUSE></CLAUSE>
+				<EVENTS>
+					<TABLE>EXCO_EM_AMD</TABLE>
+				</EVENTS>
+			</MASTER>
+		</REPORTPRODUCT>
+		<REPORTPRODUCT NAME="IMCO">
+			<MASTER>
+				<TABLE>IMCO_EM_TRXN</TABLE>
+				<CLAUSE></CLAUSE>
+				<EVENTS/>
+			</MASTER>
+		</REPORTPRODUCT>
+		<REPORTPRODUCT NAME="EXLC">
+			<MASTER>
+				<TABLE>EXLC_EM_ADV</TABLE>
+				<CLAUSE></CLAUSE>
+				<EVENTS>
+					<TABLE>EXLC_EM_DOC</TABLE>
+				</EVENTS>
+			</MASTER>
+		</REPORTPRODUCT>
+		<REPORTPRODUCT NAME="OWGT">
+			<MASTER>
+				<TABLE>OWGT_EM_GTEEDTLS</TABLE>
+				<CLAUSE></CLAUSE>
+				<EVENTS>
+					<TABLE>OWGT_EM_AMD</TABLE>
+				</EVENTS>
+			</MASTER>
+		</REPORTPRODUCT>
+		<REPORTPRODUCT NAME="IWGT">
+			<MASTER>
+				<TABLE>IWGT_EM_GTEE</TABLE>
+				<CLAUSE></CLAUSE>
+				<EVENTS>
+					<TABLE>IWGT_EM_STLMNT</TABLE>
+				</EVENTS>
+			</MASTER>
+		</REPORTPRODUCT>
+	</REPORT>
+</root>

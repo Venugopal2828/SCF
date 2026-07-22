@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="Notification"
+			allowInstanceContent="false"
+			supportedModes="view edit config help"
+			supportedWindowStates="maximize minimize"
+			iScope="com.cs.widgets.Notification" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.NotificationJS" src="Notification/notification.js"/>
+	<iw:resource globalid="com.cs.resources.NotificationCSS" src="Notification/notification.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="listSize" alias="listSize" lang=""
+				 readOnly="false" value="9"/>
+		<iw:item id="funcid" alias="funcid" lang=""
+				 readOnly="false" value="F05030701115"/>
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Notice">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="view.labels">
+		<iw:item id="button.labels" alias="Labels" lang=""
+				 readOnly="true" value="Labels">
+		</iw:item>
+		<iw:item id="button.filter" alias="Filter" lang=""
+				 readOnly="true" value="Filter">
+		</iw:item>
+		<iw:item id="btnlabel.save" alias="save" lang=""
+				 readOnly="true" value="Save">
+		</iw:item>
+		<iw:item id="btnlabel.cancel" alias="cancel" lang=""
+				 readOnly="true" value="Cancel">
+		</iw:item>
+		<iw:item id="label.total" alias="Total" lang=""
+				 readOnly="true" value="Total">
+		</iw:item>
+		<iw:item id="openMore" alias="openMore" lang=""
+				 readOnly="true" value="Open More">
+		</iw:item>
+		<iw:item id="item.read" alias="Read" lang=""
+				 readOnly="true" value="Read">
+		</iw:item>
+		<iw:item id="item.unread" alias="Unread" lang=""
+				 readOnly="true" value="Unread">
+		</iw:item>
+		<iw:item id="item.all" alias="All" lang=""
+				 readOnly="true" value="All">
+		</iw:item>
+		<iw:item id="button.more" alias="read" lang=""
+				 readOnly="true" value="More">
+		</iw:item>
+		<iw:item id="item.markRead" alias="MarkRead" lang=""
+				 readOnly="true" value="Mark as read">
+		</iw:item>
+		<iw:item id="item.markUnread" alias="MarkUnread" lang=""
+				 readOnly="true" value="Mark as unread">
+		</iw:item>
+		<iw:item id="norec" alias="norec" lang=""
+				 readOnly="true" value="No Record">
+		</iw:item>
+		<iw:item id="labelSize" alias="labelSize" lang=""
+				 readOnly="true" value="Show notifications in widget: ">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+			<div class="com-cs-widget-Notification">
+				<div class="panelActionButtons"></div>
+				<div class="panelRecords"></div>
+				<div class="panelOpenMore"></div>
+			</div>
+		]]>
+	</iw:content>
+	<iw:content mode="edit"><![CDATA[
+			<div class="com-cs-widget-NotificationEdit">
+				<div class="panelOptions"></div>
+				<div class="panelConfirm"></div>
+			</div>
+		]]>
+	</iw:content>
+	<iw:content mode="help"><![CDATA[
+			<div class="com-cs-widget-NotificationHelp">
+				Notification
+			</div>
+		]]>
+	</iw:content>
+</iw:iwidget>

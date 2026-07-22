@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey" AutoGen-Parameter-Version="1.0">
+    <key-mapping>
+        <module-name>TRMM</module-name>
+        <cubk-mapping-name>ChkExtendAmt</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRMM_MASTER</table-name>
+        </tables>
+        <key-fields>
+            <DEAL_NO ALIAS="T0" DESC="Deal Number" DT="12" TYPE="F">OLD_DEAL_NO</DEAL_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <EXTD_AMT ALIAS="T0" DBFUNC="" DESC="Extend Amount" DT="3" HIDDEN="F" TYPE="F">TEMP_AMT</EXTD_AMT>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

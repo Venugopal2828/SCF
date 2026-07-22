@@ -1,0 +1,598 @@
+var csFuncLevelProto = Object.create(csFuncLevelBaseProto || {});
+csFuncLevelProto.SYF_FADA_Chk_confirm = function() {
+    try {
+
+        if (document.MAINFORM.FA_APPL_LMT_CCY.value == '') {
+            if (!confirm('The Credit Currency is null, the Buyer ID is invalid!')) {
+
+                return false;
+            }
+        }
+        if (document.MAINFORM.FA_BUYER_ID.value == '') {
+            alert('Please select buyer!');
+            return false;
+        }
+        if (document.MAINFORM.FA_EF_COMM_RT.value == 0) {
+            if (!confirm('EF commission rate is 0!')) {
+                return false;
+            }
+        }
+        if (document.MAINFORM.FA_EF_HAN_CHG_AMT.value == 0) {
+            if (!confirm('EF handling charge per document is 0!')) {
+                return false;
+            }
+        }
+        if (document.MAINFORM.FA_IF_COMM_RT.value == 0) {
+            if (!confirm('IF commission rate is 0!')) {
+                return false;
+            }
+        }
+        if (document.MAINFORM.FA_IF_HAN_CHG_AMT.value == 0) {
+            if (!confirm('IF handling charge per document is 0!')) {
+                return false;
+            }
+        }
+        if (document.MAINFORM.FA_IRT_SPREAD.value == 0) {
+            if (!confirm('Margin Rate is 0!')) {
+                return false;
+            }
+        }
+        if (document.MAINFORM.FA_OVD_IRT_SPREAD.value == 0) {
+            if (!confirm('Penalty Interest Rate is 0!')) {
+                return false;
+            }
+        }
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Chk_isEmpty = function(value) {
+    try {
+
+        if (value == null || value.length == 0) {
+            return true;
+        }
+        return false;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.PostconditionOnInit = function() {
+    try {
+
+        SYT_RELE_CREA_BY();
+        if (SYS_FUNCTION_TYPE == 'EC' || SYS_FUNCTION_TYPE == 'PM') {
+            document.MAINFORM.TRX_DT.value = SYS_BUSI_DATE;
+            document.MAINFORM.CLERK_ID.value = SYS_USER_ID;
+        }
+        //for Documents:
+        SYF_FADA_GET_FA_CUST_TYPE2();
+        var custType = document.MAINFORM.FA_CUST_TYPE2.value;
+        if (custType == "2") {
+            document.MAINFORM.C_BU_ID.value = SYS_BUSI_UNIT;
+        } else {
+            document.MAINFORM.C_BU_ID.value = "DOC";
+        }
+        SYF_FADA_Get_FA_CNTR_DOC_NO();
+        SYF_FADA_FA_SERVICE_REQ();
+
+       SYS_GetTableDataByRule_S('Get_CE_MAIN_REF', '1', 'Y');
+               alert(document.MAINFORM.FA_TEMP3.value);
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Get_Buyer_Back = function() {
+    try {
+
+        var lmtCCY = document.MAINFORM.FA_APPL_LMT_CCY.value;
+        if (lmtCCY != '' && lmtCCY != null) {
+            document.MAINFORM.FA_EF_HAN_CHG_CCY.value = lmtCCY;
+            document.MAINFORM.FA_EF_OTH_CHG_CCY.value = lmtCCY;
+            document.MAINFORM.FA_IF_HAN_CHG_CCY.value = lmtCCY;
+            document.MAINFORM.FA_IF_OTH_CHG_CCY.value = lmtCCY;
+            document.MAINFORM.FA_OTH_CHG_CCY.value = lmtCCY;
+            document.MAINFORM.FA_HAN_CHG_CCY.value = lmtCCY;
+        }
+
+        SYF_FADA_FA_SERVICE_REQ();
+        SYF_FADA_Get_EDI4_information();
+        SYF_FADA_IF_Handle_Charge();
+        SYF_FADA_IF_Other_Charge();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Chk_TTL_Rate = function() {
+    try {
+
+        if (document.MAINFORM.FA_TTL_COMM_RT.value == 0) {
+            SYS_CheckError(document.MAINFORM.FA_TTL_COMM_RT, 'Total commission rate cannot be zero! ');
+            return false;
+        }
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Get_Buyer_ID = function() {
+    try {
+
+        /*sqlcondition = "C_TRX_STATUS = 'M' and FA_BUSI_TYPE = 'EF' and FA_BUSI_STATUS = 'CCR' and FA_IF_ID= '" + document.MAINFORM.FA_IF_ID.value + "' and FA_SEL_ID= '" + document.MAINFORM.FA_SEL_ID.value + "'";
+        SYS_InqCUBK_Sql('FA_BUYER_NAME', sqlcondition);*/
+        SYS_InqCUBK_byCondition('FA_BUYER_NAME', '1');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Get_Buyer_NM = function() {
+    try {
+
+        /*sqlcondition = "C_TRX_STATUS = 'M' and FA_BUSI_TYPE = 'EF' and FA_BUSI_STATUS = 'PCR' and FA_IF_ID= '" + document.MAINFORM.FA_IF_ID.value + "' and FA_SEL_ID= '" + document.MAINFORM.FA_SEL_ID.value + "'";
+        SYS_InqCUBK_Sql('FA_BUYER_ID', sqlcondition);*/
+        SYS_InqCUBK_byCondition('FA_BUYER_ID', '1');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Chk_isFixRateOrNull = function(value) {
+    try {
+
+        if ("1" == value) {
+            return true;
+        }
+        return SYF_FADA_Chk_isEmpty(value);
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Cal_FA_HAN_CHG_CCY = function() {
+    try {
+
+        document.MAINFORM.FA_HAN_CHG_CCY.value = document.MAINFORM.FA_EF_HAN_CHG_CCY.value;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.PreconditionOnInit = function() {
+    try {
+
+        exchRateOnLoadFlag = false;
+        //SYT_RELE_CREA_BY();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Cal_FA_TTL_OTH_CHG = function() {
+    try {
+
+        document.MAINFORM.FA_TTL_OTH_CHG.value = SYS_BeFloat(document.MAINFORM.FA_EF_OTH_CHG_AMT.value) + SYS_BeFloat(document.MAINFORM.FA_IF_OTH_CHG_AMT.value);
+        document.MAINFORM.FA_TTL_OTH_CHG.value = SYT_CCY_AMT(document.MAINFORM.FA_EF_OTH_CHG_CCY.value, document.MAINFORM.FA_TTL_OTH_CHG.value);
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Cal_FA_TTL_COMM_RT = function() {
+    try {
+
+        document.MAINFORM.FA_TTL_COMM_RT.value = (SYS_BeFloat(document.MAINFORM.FA_IF_COMM_RT.value) * 1000 + SYS_BeFloat(document.MAINFORM.FA_EF_COMM_RT.value) * 1000) / 1000;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.ConfirmBusinessCheck = function() {
+    try {
+
+        return SYF_FADA_Chk_confirm();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Cal_FA_TTL_HAN_CHG = function() {
+    try {
+
+        document.MAINFORM.FA_TTL_HAN_CHG.value = SYS_BeFloat(document.MAINFORM.FA_EF_HAN_CHG_AMT.value) + SYS_BeFloat(document.MAINFORM.FA_IF_HAN_CHG_AMT.value);
+        document.MAINFORM.FA_TTL_HAN_CHG.value = SYT_CCY_AMT(document.MAINFORM.FA_EF_HAN_CHG_CCY.value, document.MAINFORM.FA_TTL_HAN_CHG.value);
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_MPO_LOAN_RT = function() {
+    try {
+
+        if (document.MAINFORM.FA_INV_CCY1.value != null && document.MAINFORM.FA_INV_CCY1.value != '') {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE1, 'M');
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE1, 'P');
+            document.MAINFORM.FA_LOAN_RT_TYPE1.value = 0;
+        }
+        if (document.MAINFORM.FA_INV_CCY2.value != null && document.MAINFORM.FA_INV_CCY2.value != '') {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE2, 'M');
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE2, 'P');
+            document.MAINFORM.FA_LOAN_RT_TYPE2.value = 0;
+        }
+        if (document.MAINFORM.FA_INV_CCY3.value != null && document.MAINFORM.FA_INV_CCY3.value != '') {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE3, 'M');
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE3, 'P');
+            document.MAINFORM.FA_LOAN_RT_TYPE3.value = 0;
+        }
+        if (document.MAINFORM.FA_INV_CCY4.value != null && document.MAINFORM.FA_INV_CCY4.value != '') {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE4, 'M');
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE4, 'P');
+            document.MAINFORM.FA_LOAN_RT_TYPE4.value = 0;
+        }
+        if (document.MAINFORM.FA_INV_CCY5.value != null && document.MAINFORM.FA_INV_CCY5.value != '') {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE5, 'M');
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.FA_LOAN_RT_TYPE5, 'P');
+            document.MAINFORM.FA_LOAN_RT_TYPE5.value = 0;
+        }
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Cal_FA_OTH_CHG_CCY = function() {
+    try {
+
+        document.MAINFORM.FA_OTH_CHG_CCY.value = document.MAINFORM.FA_EF_OTH_CHG_CCY.value;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Get_Pricing_Info = function() {
+    try {
+
+        //var FieldList = "FA_TTL_HAN_CHG;FA_TTL_OTH_CHG;FA_OTH_CHG_CCY;FA_TTL_COMM_RT;FA_EF_OTH_CHG_AMT;FA_IF_COMM_RT;FA_EF_COMM_RT;FA_IF_OTH_CHG_AMT;FA_IF_OTH_CHG_CCY;FA_IF_HAN_CHG_AMT;FA_IF_HAN_CHG_CCY;FA_EF_HAN_CHG_AMT;FA_EF_HAN_CHG_CCY;FA_COLLAT_RT;FA_MAX_LOAN_PERC;FA_INV_CCY1;FA_INV_CCY2;FA_INV_CCY3;FA_INV_CCY4;FA_INV_CCY5;FA_LOAN_RT_TYPE1;FA_LOAN_RT_TYPE2;FA_LOAN_RT_TYPE3;FA_LOAN_RT_TYPE4;FA_LOAN_RT_TYPE5;FA_IRT_SPREAD;FA_DOC_REQD;FA_FIN_INFO;FA_OVD_IRT_SPREAD";
+        //var MappingList = "FA_TTL_HAN_CHG;FA_TTL_OTH_CHG;FA_OTH_CHG_CCY;FA_TTL_COMM_RT;FA_EF_OTH_CHG_AMT;FA_IF_COMM_RT;FA_EF_COMM_RT;FA_IF_OTH_CHG_AMT;FA_IF_OTH_CHG_CCY;FA_IF_HAN_CHG_AMT;FA_IF_HAN_CHG_CCY;FA_EF_HAN_CHG_AMT;FA_EF_HAN_CHG_CCY;FA_COLLAT_RT;FA_MAX_LOAN_PERC;FA_INV_CCY1;FA_INV_CCY2;FA_INV_CCY3;FA_INV_CCY4;FA_INV_CCY5;FA_LOAN_RT_TYPE1;FA_LOAN_RT_TYPE2;FA_LOAN_RT_TYPE3;FA_LOAN_RT_TYPE4;FA_LOAN_RT_TYPE5;FA_IRT_SPREAD;FA_DOC_REQD;FA_FIN_INFO;FA_OVD_IRT_SPREAD";
+        SYS_GetTableDataByRule_S('SYF_FADA_EFPricing_SYF_FADA_Get_Pricing_Info_0', '1', 'Y');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Get_RefNo = function(ref) {
+    try {
+
+        var pre = document.MAINFORM.FA_BUSI_TYPE.value;
+        var UnitCode = SYS_BUSI_UNIT;
+        //UnitCode=UnitCode.substr(0,4);
+        var year = getDate(SYS_DATE_FORMAT, SYS_BUSI_DATE);
+        var month = getDate(SYS_DATE_FORMAT, SYS_BUSI_DATE);
+        year = year.substr(2, 2);
+        month = month.substr(5, 2);
+        var sub = 'PPF';
+        document.MAINFORM.C_MAIN_REF.value = pre + UnitCode + year + month + ref + sub;
+        document.MAINFORM.FA_PRICING_REF.value = document.MAINFORM.C_MAIN_REF.value;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Chk_MAX_LOAN_PERC = function() {
+    try {
+
+        var MaxPerc = document.MAINFORM.FA_MAX_LOAN_PERC.value;
+        if (MaxPerc > 100) {
+            alert("The value input can't exceed 100!");
+            document.MAINFORM.FA_MAX_LOAN_PERC.value = 0;
+        }
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Chk_COLLAT_RT = function() {
+    try {
+
+        var collatRT = document.MAINFORM.FA_COLLAT_RT.value;
+        if (collatRT > 100) {
+            alert("The value input can't be more than 100!");
+            document.MAINFORM.FA_COLLAT_RT.value = 0;
+        }
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.InitValues = function() {
+    try {
+alert(document.MAINFORM.FA_TEMP3.value);
+        document.MAINFORM.FA_BUSI_TYPE.value = 'EF';
+        document.MAINFORM.FA_BUSI_STATUS.value = 'PCI';
+        //document.MAINFORM.FA_EF_HAN_CHG_CCY.value='';
+        //document.MAINFORM.FA_IF_HAN_CHG_CCY.value='';
+        //document.MAINFORM.FA_EF_OTH_CHG_CCY.value='';
+        //document.MAINFORM.FA_IF_OTH_CHG_CCY.value='';
+        //document.MAINFORM.FA_HAN_CHG_CCY.value='';
+        //document.MAINFORM.FA_OTH_CHG_CCY.value='';
+        //document.MAINFORM.FA_MSG_TEXT.value='';
+        //document.MAINFORM.FA_BUYER_NM.value='';
+        SYS_GetRefNo('FAEF_PRICING', 'SYF_FADA_Get_RefNo', "", "MAINREF", "", "MAINREF");
+        SYF_FADA_Get_EDI4_information();
+                alert(document.MAINFORM.FA_TEMP3.value);
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_GET_FA_CUST_TYPE2 = function() {
+    try {
+
+        SYS_GetTableDataByRule_S('SYF_FADA_EFPricing_SYF_FADA_GET_FA_CUST_TYPE2_1', '1', 'Y');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Get_FA_CNTR_DOC_NO = function() {
+    try {
+
+        SYS_GetTableDataByRule_S('SYF_FADA_EFPricing_SYF_FADA_Get_FA_CNTR_DOC_NO_2', '1', 'Y');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_Get_EDI4_information = function() {
+    try {
+
+        //var FieldList = "FA_MSG_DT;FA_MSG_TEXT;FA_IF_COMM_RT;FA_IF_HAN_CHG_CCY;FA_IF_HAN_CHG_AMT;FA_IF_OTH_CHG_CCY;FA_IF_OTH_CHG_AMT";
+        //var MappingList = "FA_MSG_DT;FA_MSG_TEXT;FA_IF_COMM_RT;FA_REMI_CCY1;FA_TEMP1;FA_REMI_CCY2;FA_TEMP5";
+        SYS_GetTableDataByRule_S('SYF_FADA_EFPricing_SYF_FADA_Get_EDI4_information_3', '1', 'Y');
+        SYF_FADA_Cal_FA_TTL_COMM_RT();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_IF_Handle_Charge = function() {
+    try {
+
+        if (document.MAINFORM.FA_REMI_CCY1.value != '' && document.MAINFORM.FA_APPL_LMT_CCY.value != '') {
+            SYS_GetExchangeRate_S(document.MAINFORM.FA_REMI_CCY1.value, document.MAINFORM.FA_APPL_LMT_CCY.value, 'Booking Rate', 'EXCH_RT5');
+        }
+        var temp1 = SYS_BeFloat(document.MAINFORM.FA_TEMP1.value) * SYS_BeFloat(document.MAINFORM.EXCH_RT5.value);
+        document.MAINFORM.FA_IF_HAN_CHG_AMT.value = SYT_AmtFormat(document.MAINFORM.FA_IF_HAN_CHG_CCY.value, temp1);
+        SYF_FADA_Cal_FA_TTL_HAN_CHG();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_IF_Other_Charge = function() {
+    try {
+
+        if (document.MAINFORM.FA_REMI_CCY2.value != '' && document.MAINFORM.FA_APPL_LMT_CCY.value != '') {
+            SYS_GetExchangeRate_S(document.MAINFORM.FA_REMI_CCY2.value, document.MAINFORM.FA_APPL_LMT_CCY.value, 'Booking Rate', 'EXCH_RT6');
+        }
+        var temp2 = SYS_BeFloat(document.MAINFORM.FA_TEMP5.value) * SYS_BeFloat(document.MAINFORM.EXCH_RT6.value);
+        document.MAINFORM.FA_IF_OTH_CHG_AMT.value = SYT_AmtFormat(document.MAINFORM.FA_IF_OTH_CHG_CCY.value, temp2);
+        SYF_FADA_Cal_FA_TTL_OTH_CHG();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.SYF_FADA_FA_SERVICE_REQ = function() {
+    try {
+
+        var servReq = document.MAINFORM.FA_SERVICE_REQ.value;
+        if (servReq == '1' || servReq == '2') {
+            SYF_FADA_MPO_LOAN_RT();
+            SYT_ChangeFldClass(document.MAINFORM.FA_MAX_LOAN_PERC, 'M');
+            SYT_ChangeFldClass(document.MAINFORM.FA_IRT_SPREAD, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.FA_OVD_IRT_SPREAD, 'O');
+        } else if (servReq == '3') {
+            document.MAINFORM.FA_MAX_LOAN_PERC.value = 0;
+            document.MAINFORM.FA_IRT_SPREAD.value = 0;
+            document.MAINFORM.FA_OVD_IRT_SPREAD.value = 0;
+            SYT_ChangeFldClass(document.MAINFORM.FA_MAX_LOAN_PERC, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.FA_IRT_SPREAD, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.FA_OVD_IRT_SPREAD, 'P');
+        }
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.ConfirmBusinessCheckSave = function() {
+    try {
+
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.CancelCheck = function() {
+    try {
+
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.addRecordCheck = function() {
+    try {
+
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.editRecordCheck = function() {
+    try {
+
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.deleteRecordCheck = function() {
+    try {
+
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_DIARY_NARRATIVE_onchange = function(event) {
+    try {
+        onChangeDiary();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_EF_COMM_RT_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_TTL_COMM_RT();
+        EEHtml.fireEvent(document.MAINFORM.FA_TTL_COMM_RT, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_EF_HAN_CHG_AMT_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_TTL_HAN_CHG();
+        EEHtml.fireEvent(document.MAINFORM.FA_TTL_HAN_CHG, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_EF_HAN_CHG_CCY_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_HAN_CHG_CCY();
+        EEHtml.fireEvent(document.MAINFORM.FA_HAN_CHG_CCY, 'onchange');
+
+        SYF_FADA_Cal_FA_TTL_HAN_CHG();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_EF_OTH_CHG_AMT_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_TTL_OTH_CHG();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_EF_OTH_CHG_CCY_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_OTH_CHG_CCY();
+        EEHtml.fireEvent(document.MAINFORM.FA_OTH_CHG_CCY, 'onchange');
+        SYF_FADA_Cal_FA_TTL_OTH_CHG();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_IF_COMM_RT_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_TTL_COMM_RT();
+        EEHtml.fireEvent(document.MAINFORM.FA_TTL_COMM_RT, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_IF_HAN_CHG_AMT_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_TTL_HAN_CHG();
+        EEHtml.fireEvent(document.MAINFORM.FA_TTL_HAN_CHG, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_IF_HAN_CHG_CCY_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_TTL_HAN_CHG();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_IF_OTH_CHG_AMT_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_TTL_OTH_CHG();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_IF_OTH_CHG_CCY_onchange = function(event) {
+    try {
+        SYF_FADA_Cal_FA_TTL_OTH_CHG();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_MAX_LOAN_PERC_onchange = function(event) {
+    try {
+        SYF_FADA_Chk_MAX_LOAN_PERC();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_TEMP3_onchange = function(event) {
+    try {
+        SYS_GetCUBK('FA_BUYER_ID', 'FA_TEMP3', 'SYF_FADA_Get_Buyer_Back');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_TEMP4_onchange = function(event) {
+    try {
+        SYS_GetCUBK('FA_BUYER_NAME', 'FA_TEMP4', 'SYF_FADA_Get_Buyer_Back');
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_FA_TTL_COMM_RT_onchange = function(event) {
+    try {
+        SYF_FADA_Chk_TTL_Rate();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}
+
+csFuncLevelProto.FLD_FADA_view_1_onclick = function(event) {
+    try {
+        viewDiaryHistory();
+    } catch (e) {
+        DisExcpt("SYF_FADA_EFPricing.js", e);
+    }
+}

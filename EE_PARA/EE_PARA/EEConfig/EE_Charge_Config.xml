@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<charge-config>
+	<ee>
+		<log level="all"/>
+		<vat flag="false"/>
+		<lost flag="false"/>
+		<!-- @ref:EE-5925 @author monroe @date 2012-07-05 _S -->
+		<DoName trxChgDoNm="ChgDoTrx" defChgDoNm="ChgDoDef"/>
+		<!-- @ref:EE-5925 @author monroe @date 2012-07-05 _E -->
+		<GetRateIndirection flag="false" description="use local CCY to calculation rate when has no rate between from CCY and to CCY"/>
+		<Collect2LocalRate type="Booking Rate" description="Rate type From bank collect CCY to user pay amount CCY"/>
+		<GL_GetCond_FldList flag="product,commission,ccy" description="the field use as get GL account condition [product,commission,ccy]"/>
+		<CustAct_GetCond flag="" description="get local customer account condition"/>
+		<screen>
+			<comment flag="true"/>
+			<fld_PayAmt_Protect_Flag flag="false" description="protect the pay amount field in screen"/>
+			<fld_UnpaidCCY_Protect_Flag flag="true" description="protect the unpaid CCY field in screen"/>
+			<fld_CustPayCCY_Show_Flag flag="true" description="Show the Customer pay Ccy In the screen."/>
+			<!-- EE-9031 -->
+			<fld_UnPayVat_Show_Flag flag="false" description="Show the bal unpaid vat amount In the screen."/>
+			<!-- EE-9031 -->
+			<fld_Vat_Type_Show_Flag flag="false" description="Show vat type In the screen."/>
+			<fld_ChargeAt_Desc TRANSACTION="Transaction" DEFERRED="Deferred" WAIVED="Free" description="Description for the charge at"/>
+			<fld_Bank_Collect label="Collect CCY/Amount" description="Charge entry Label for the bank collect."/>
+			<fld_Cust_Pay label="Pay CCY/Amount" description="Charge entry Label for the customer pay."/>
+			<fld_Chg_Amt_OverWrite flag="true" description="User can edit the charge result."/>
+		</screen>
+		<!--	      
+  <chargeform-encode class = "com.cs.charge.ee.model2xml.ChgFormXMLEnCodeCaixa" description="the class for generate chargeform XML."/>
+-->
+		<chargeform-fieldname flag="STAND" description="the field name for node chargeform in transaction Dom. value 'STAND' , 'OLD'"/>
+		<parameter-list>
+			<keywords name="WRITE_CHGTRX_DATELOG" value="false" description="if value is [true] system will write transtion date to EElog for debug."/>
+			<!-- EE-4041_B -->
+			<keywords name="OPEN_COUNTRY_TO_PCOPERATE" value="true" description="[true] or [false] means PC user can operater country level."/>
+			<!-- EE-4041_B -->
+			<!-- EE-4048_B -->
+			<keywords name="SHARE_CHGGL_FROM_UNITCODE" value="" description="the value is charge GL AC share from Unit code."/>
+			<!-- EE-4048_E -->
+			<!-- EE-4413B -->
+			<!-- EE-9380B -->
+			<keywords name="CHK_GET_VAT_GL_MANUAL" value="N" description="Get VAT GL by manual. default value is N"/>
+			<!-- EE-9380E -->
+			<keywords name="POST_FROM_CONTRY_LIST" value="" description="the value is [JKT,ID,OC]"/>
+			<keywords name="POST_TO_CONTRY_LIST" value="" description="the value is [JKT,ID,OC]"/>
+			<!-- EE-4413E -->
+			<!-- EE-4725B -->
+			<keywords name="SHOW_CHG_DETAIL" value="false" description="Show charge commission start date. value 'true' , 'false'"/>
+			<!-- EE-4725E -->
+			<!-- EE-4356B -->
+			<keywords name="CHG_MAINTAIN_RELEASE" value="false" description="Whether need to release charge standing data. value 'true' , 'false'"/>
+			<!-- EE-4356E -->
+			<!-- EE-5715 Start -->
+			<keywords name="CONVERTIBLE_CCY_LIST" value="USD,AUD,CNY,DKK,SEK,CHF,JPY,CAD,KWD,NOK,GBP,SAR,EUR,TRY,RUB" description="Convertible Currency List"/>
+			<keywords name="TERM_RATE_MAP" value="Buying Teller Rate,Selling Teller Rate,Effective NC Buying Rate" description="Mapping of Buying Teller Rate, Selling Teller Rate and Effective NC Buying Rate"/>
+			<!-- EE-5715 End -->
+			<!-- EE-4823B -->
+			<keywords name="ROUND" value="false" description="Whether need to round the MIN and MAX amouot value. value 'true' , 'false'"/>
+			<keywords name="ROUND_TYPE" value="ROUND_UP" description="which round type. value 'ROUND_UP' , 'ROUND_DOWN'"/>
+			<keywords name="ROUND_DECIMAL" value="0" description="rounded to the specified length or precision. value '0' , '1', '2'"/>
+			<!-- EE-4823E -->
+			<!-- EE-4845B -->
+			<keywords name="CHG_RULE_OVERRIDE" value="false" description="Whether need to override charge agreement during transaction.  default value is 'false' "/>
+			<keywords name="CHG_OVERRIDE_TAGNAME" value="Override" description="User could customize the override tag name himself(View, Check ...).  default value is 'Override' "/>
+			<!-- EE-4845E -->
+			<keywords name="CHK_DEF_LOCK" value="true" description="default true"/>
+			<!-- EE-5547_B -->
+			<keywords name="UNPAYCCY_PREFER_TO_ALLBALCCY" value="false" description="the unpay ccy prefer to the transaction ccy or the set all balance ccy when charge for foreign customer. The value true, unpay ccy is default by all bal ccy option"/>
+			<!-- EE-5547_E -->
+			<!-- EE-5649_B -->
+			<keywords name="RATE_TYPE_LOCALTRX2UNPAY" value="" description="the rate type for local or trx to unpay. value like 'Selling Rate'etc."/>
+			<!-- EE-5649_E -->
+			<!-- EE-4337_B -->
+			<keywords name="EXCHAGERATE_WITH_PRICE_DATE" value="" description=" value like '1900-01-01' "/>
+			<!-- EE-4337_E -->
+			<!-- EE-5672_B -->
+			<keywords name="HIDE_SCN_STATUS" value="false" description="Hide Status field in Charge screen. Default value is 'false'"/>
+			<!-- EE-5672_E -->
+			<!-- EE-5777_B -->
+			<keywords name="SKIP_REFRESH_SAME_RESULT" value="false" description="Whether to refresh chg entry when get same calu result.value 'true','false'"/>
+			<keywords name="KEEP_OVERWRITE_INFO_FOR_L_F" value="false" description="Keep the overwrite info for local and foreign.value 'true','false'"/>
+			<!-- EE-5777_E -->
+			<!-- EE-4641_B -->
+			<keywords name="CHG_DEF_VOUCHER_FLAG" value="false" description="When the value is 'true', the Charge component will generate voucher to be paid at DEFERRED. Default value is 'false'. value 'true','false'"/>
+			<!-- EE-4641_E -->
+			<!-- EE-7630_1 S -->
+			<keywords name="CHG_AUTO_CLEAR_AC" value="true"
+				description="when change ac ccy ,auto clear acno Default value is 'true'" />
+			<!-- EE-7630_1 E -->
+			<!-- EE-7543_1 _S -->
+			<keywords name="MULTI_PAY_CCY" value="false" description="default value 'false', 'true' for multi local pay ccy"/>
+			<!-- EE-7543_1 _E -->
+			<!-- EE-7749 _S -->
+			<keywords name="MIN_MAX_CHG_RATETYPE" value="" description="charge agreement rule min/max CCY to charge rule CCY rate type, default value by client API Chg.init() trx2RuleType"/>
+			<keywords name="AGREE_PRE_CCY_TO" value="0" description=" used for searching agreement. Default value is 0 (get agreement by bank collect CCY). Value 1 (get agreement by transaction CCY)"/>
+			<!-- EE-7749 _E -->
+			<!-- EE-7750 _S -->
+			<keywords name="DEBIT_ACCOUNT_BY_ENTRY" value="false" description="multi debit account for each charge fee entry. default value is false"/>
+			<!-- EE-7750 _E -->
+			<!-- EE-8490_B -->
+			<keywords name="Buying Rate_RevertType" value = "" description = "If Buying Rate is not set system will use this revert rate"/>
+			<keywords name="Selling Rate_RevertType" value = "" description = "If Selling Rate is not set system will use this revert rate"/>
+			<!-- EE-8490_E -->
+			<!-- EE-9885 _S -->
+			<keywords name="override_by_commission" value = "N" description = "If Y , override by commission, if N, override by cust , N is default value"/>
+			<!-- EE-9885 _E -->
+			<!-- EE-9373 _S -->
+			<keywords name="CAN_OVERRIDE_VAT" value="false" description="default value 'false', 'true' for edit vat"/>
+			<!-- EE-9373 _E -->
+			<!-- EE-8952 _S -->
+			<keywords name="IS_MULTI_ENTITY" value="N" description="Multi Entity for Add/Edit/Assign Agreement.default value is N"/>
+			<!-- EE-8952 _E -->
+			<!-- EE-10295_S --> 
+			<keywords name="CAN_CHANGE_GL" value="true" description="default value 'false', 'true' for allow user change gl account during transaction processing"/>
+			<!-- EE-10295_E -->
+			<!--  EE-10355 20220727 _S  -->
+			<keywords name="USE_LOCAL_RULE" value="Y" description="value: Y/N, default N. check use local rule for foreign"/>
+			<!--  EE-10355 _E  -->
+		</parameter-list>
+		<calculator-type>
+			<!--@ref EE-5715 @date 2013-03-04 @author salk add_s-->
+			<calculator name="TERM_PERCENTAGE_PERIOD" description="Terms:Percentage(fix)" tierUnit="0" isShownInOverride="Y" class="com.cs.charge.calculate.base.TermPercentageWithPeriodCalculator" screen="../screen/STD/chgAgremtPage/TERM_PERCENTAGE_PERIOD.jsp"/>
+			<!--@ref EE-5715 @date 2013-03-04 @author salk add_e-->
+			<calculator name="FLAT_AMOUNT" description="Flat Amount" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.FlatAmountCalculator" screen="../screen/STD/chgAgremtPage/FLAT_AMOUNT.jsp"/>
+			<calculator name="FLAT_AMOUNT_BELOW_ABOVE" description="Tiered Flat Below/Above" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.FlatAmountLowAboveCalculator" screen="../screen/STD/chgAgremtPage/FLAT_AMOUNT_BELOWABOVE.jsp"/>
+			<calculator name="FLAT_PERIOD" description="Flat with Period" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.FlatWithPeriodCalculator" screen="../screen/STD/chgAgremtPage/FLAT_PERIOD.jsp"/>
+			<calculator name="FLAT_PERCENTAGE" description="Flat+Percentage" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.FlatPercentageCalculator" screen="../screen/STD/chgAgremtPage/FLAT_PERCENTAGE.jsp"/>
+			<!--		    			
+		    <calculator name="FLAT_TIER_AMOUNT_PRORATED" 
+					    description="Flat+Tiered by Amount" tierUnit="3" 
+					    class="com.cs.charge.calculate.base.FlatTierAmtProratedCalculator" 
+					    screen="../screen/STD/chgAgremtPage/FLAT_TIER_AMOUNT_PRORATED.jsp"/>
+		    <calculator name="FLAT_TIER_AMOUNT_AGGREGATE" 
+		    			description="Flat+Tiered by Amount (Single %)" 
+		    			tierUnit="3" class="com.cs.charge.calculate.base.FlatTierAmtAggregateCalculator" 
+		    			screen="../screen/STD/chgAgremtPage/FLAT_TIER_AMOUNT_AGGREGATE.jsp"/>
+		    <calculator name="FLAT_TIER_AMOUNT_GROWING"
+				        description="Flat+Tiered by Amount Growing" 
+				        tierUnit="0"
+				        class="com.cs.charge.calculate.base.FlatTierAmtGrowCalculator" 
+				        screen="../screen/STD/chgAgremtPage/FLAT_TIER_AMOUNT_GROWING.jsp"/>
+		    <calculator name="FLAT_TIER_PERIOD_PRORATED"
+				        description="Flat+Tiered by Period" 
+			    	    tierUnit="2"
+			        	class="com.cs.charge.calculate.base.FlatTierPeriodPropatedCalculator" 
+				        screen="../screen/STD/chgAgremtPage/FLAT_TIER_PERIOD_PRORATED.jsp"/>
+		    <calculator name="FLAT_TIER_PERIOD_AGGREGATE"
+				        description="Flat+Tiered by Period (Single %)" 
+				        tierUnit="2"
+				        class="com.cs.charge.calculate.base.FlatTierPeriodAggregateCalculator" 
+				        screen="../screen/STD/chgAgremtPage/FLAT_TIER_PERIOD_AGGREGATE.jsp"/>
+		    <calculator name="FLAT_TIER_PERIOD_GROWING"
+				        description="Flat+Tiered by Period Growing" 
+				        tierUnit="0"
+				        class="com.cs.charge.calculate.base.FlatTierPeriodGrowCalculator" 
+			    	    screen="../screen/STD/chgAgremtPage/FLAT_TIER_PERIOD_GROWING.jsp"/>
+		    <calculator name="FLAT_PERCENTAGE_PERIOD"
+				        description="Flat+fix % with Period" 
+				        tierUnit="0"
+				        class="com.cs.charge.calculate.base.FlatPercentageWithPeriodCalculator" 
+				        screen="../screen/STD/chgAgremtPage/FLAT_PERCENTAGE_PERIOD.jsp"/>
+		    <calculator name="FLAT_PERCENTAGE_PERIOD_VARY"
+				        description="Flat+vary % with Period" 
+				        tierUnit="0"
+				        class="com.cs.charge.calculate.base.FlatPercentageWithPeriodVaryCalculator" 
+				        screen="../screen/STD/chgAgremtPage/FLAT_PERCENTAGE_PERIOD_VARY.jsp"/>
+  -->
+			<calculator name="PERCENTAGE" description="Percentage (Min/Max)" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.PercentageCalculator" screen="../screen/STD/chgAgremtPage/PERCENTAGE.jsp"/>
+			<calculator name="PERCENTAGE_PM" description="Percentage p.m(Min/Max)" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.PercentagePMCalculator" screen="../screen/STD/chgAgremtPage/PERCENTAGE_PM.jsp"/>
+			<calculator name="PERCENTAGE_PA" description="Percentage p.a.(Min/Max)" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.PercentagePACalculator" screen="../screen/STD/chgAgremtPage/PERCENTAGE_PA.jsp"/>
+			<calculator name="PERCENTAGE_PERIOD" description="Percentage(fix) with Period" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.PercentageWithPeriodCalculator" screen="../screen/STD/chgAgremtPage/PERCENTAGE_PERIOD.jsp"/>
+			<calculator name="PERCENTAGE_PERIOD_VARY" description="Percentage(vary) with Period" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.PercentageWithPeriodVaryCalculator" screen="../screen/STD/chgAgremtPage/PERCENTAGE_PERIOD_VARY.jsp"/>
+			<calculator name="PECTGE_PERIOD_PECTGE_PRORATE" description="% with Period + % with Period on prorate" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.PerctagePeriodPerctageProrateCalculator" screen="../screen/STD/chgAgremtPage/PERCENTAGE_PERIOD_PERCENTAGE_PRORATE.jsp"/>
+			<calculator name="POSTCOURIEAREA" description="Post and Courie fee different by area" tierUnit="1" isShownInOverride="N" class="com.cs.charge.calculate.base.ExpressCalculator" screen="../screen/STD/chgAgremtPage/POSTCOURIEAREA.jsp"/>
+			<calculator name="TIER_AMOUNT_PRORATED" description="Tiered by Amount" tierUnit="3" isShownInOverride="N" class="com.cs.charge.calculate.base.TierAmtProratedCalculator" screen="../screen/STD/chgAgremtPage/TIER_AMOUNT_PRORATED.jsp"/>
+			<calculator name="TIER_AMOUNT_PRORATED_PERIOD" description="Tiered by Amount with Period" tierUnit="3" isShownInOverride="N" class="com.cs.charge.calculate.base.TierAmtProratedPeriodCalculator" screen="../screen/STD/chgAgremtPage/TIER_AMOUNT_PRORATED_PERIOD.jsp"/>
+			<calculator name="TIER_AMOUNT_AGGREGATE" description="Tiered by Amount (Single %)" tierUnit="3" isShownInOverride="N" class="com.cs.charge.calculate.base.TierAmtAggregateCalculator" screen="../screen/STD/chgAgremtPage/TIER_AMOUNT_AGGREGATE.jsp"/>
+			<calculator name="TIER_AMOUNT_AGGREGATE_PERIOD" description="Tiered by Amount (Single %) with Period" tierUnit="3" isShownInOverride="N" class="com.cs.charge.calculate.base.TierAmtAggregatePeriodCalculator" screen="../screen/STD/chgAgremtPage/TIER_AMOUNT_AGGREGATE_PERIOD.jsp"/>
+			<!-- EE-9626 _S -->
+			<calculator name="TIER_AMOUNT_AGG_PERIOD_MIN" description="Tiered by Amount (tier min/max) with Period" tierUnit="3" isShownInOverride="N" class="com.cs.charge.calculate.base.TierAmtAggregatePeriodWithMinCalculator" screen="../screen/STD/chgAgremtPage/TIER_AMOUNT_AGG_PERIOD_MIN.jsp"/>
+			<!-- EE-9626 _E -->
+			<calculator name="TIER_AMOUNT_GROWING" description="Tiered by Amount Growing" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.TierAmtGrowCalculator" screen="../screen/STD/chgAgremtPage/TIER_AMOUNT_GROWING.jsp"/>
+			<!-- EE-7749 churchill 20150930 _S -->
+			<!--        
+		    <calculator name="TIER_AMOUNT_PERIOD"
+				        description="Tiered by Amount+Period"
+				        tierUnit="4"
+				        isShownInOverride="N" 
+				        class="com.cs.charge.calculate.base.TierAmtPeriodCalculator" 
+				        screen="../screen/STD/chgAgremtPage/TIER_AMOUNT_PERIOD.jsp"/>
+			  -->
+			<!-- EE-7749 churchill 20150930 _E -->
+			<calculator name="TIER_PERIOD_PRORATED" description="Tiered by Period" tierUnit="2" isShownInOverride="N" class="com.cs.charge.calculate.base.TierPeriodPropatedCalculator" screen="../screen/STD/chgAgremtPage/TIER_PERIOD_PRORATED.jsp"/>
+			<calculator name="TIER_PERIOD_AGGREGATE" description="Tiered by Period (Single %)" tierUnit="2" isShownInOverride="N" class="com.cs.charge.calculate.base.TierPeriodAggregateCalculator" screen="../screen/STD/chgAgremtPage/TIER_PERIOD_AGGREGATE.jsp"/>
+			<calculator name="TIER_PERIOD_GROWING" description="Tiered by Period Growing" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.TierPeriodGrowCalculator" screen="../screen/STD/chgAgremtPage/TIER_PERIOD_GROWING.jsp"/>
+			<calculator name="PT_TIERAMT_PERIOD_PA_PRORATE" description="BII_TierAmt+%Period+p.a prorate" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.TirerAmtPerPeriodPACalculator" screen="../screen/STD/chgAgremtPage/PT_PER_TIERAMT_PA.jsp"/>
+			<calculator name="CAIXA_CONTRAL" description="Caixa Contral Calculator" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.CaixaContralCalculator" screen="../screen/STD/chgAgremtPage/CAIXA_CONTRAL.jsp"/>
+			<!--/Add author Danecai @ref:EE-4714 @date:2010-04-09 bundled by sily 2019-05-31 S-->
+<!--			<calculator description="Percentage(fix) with Period and Min Max by Period Number" class="com.cs.charge.calculate.base.PercentageWithPeriodAndMinMaxVaryCalculator" name="PERCENTAGE_PERIOD_MIN_MAX" screen="../screen/STD/chgAgremtPage/PERCENTAGE_PERIOD.jsp" tierUnit="0"/>-->
+			<!--/Add author Danecai @ref:EE-4714 @date:2010-04-09 bundled by sily 2019-05-31 E-->
+			<calculator name="SSS_Calculator" description="server side js Calculator" tierUnit="0" isShownInOverride="N" class="com.cs.charge.calculate.base.ServerSideJSCalculator" screen="../screen/STD/chgAgremtPage/SSS_Calculator_Sample.jsp"/>
+			<!--This JSP should be defined by project level-->
+		</calculator-type>
+		<ajax-actions>
+			<!-- EE-3972_B -->
+			<action name="Service" class="com.cs.charge.ee.ui.ajax.action.ServiceAction"/>
+			<!-- EE-3972_E -->
+			<action name="Calculate" class="com.cs.charge.ee.ui.ajax.action.CalculateAction"/>
+			<action name="CombiCalculate" class="com.cs.charge.ee.ui.ajax.action.CombiCalculateAction"/>
+			<action name="Recalculate" class="com.cs.charge.ee.ui.ajax.action.RecalculateAction"/>
+			<action name="TremCalculate" class="com.cs.charge.ee.ui.ajax.action.TremCalculateAction"/>
+			<action name="GetComm" class="com.cs.charge.ee.ui.ajax.action.GetCommissionAction"/>
+			<action name="GetRule" class="com.cs.charge.ee.ui.ajax.action.GetChargeRuleAction"/>
+			<action name="GetSelectedRule" class="com.cs.charge.ee.ui.ajax.action.GetSelectedRuleAction"/>
+			<action name="GetVAT" class="com.cs.charge.ee.ui.ajax.action.GetVatAction"/>
+			<action name="GetAssignInfo" class="com.cs.charge.ee.ui.ajax.action.GetAssignInfoAction"/>
+			<action name="GetGroupDetail" class="com.cs.charge.ee.ui.ajax.action.GetCustGroupDetailAction"/>
+			<action name="GetCORG" class="com.cs.charge.ee.ui.ajax.action.GetCommRangeAction"/>
+			<action name="GetCustAsgnedToCORG" class="com.cs.charge.ee.ui.ajax.action.GetCustListByRangeAction"/>
+			<action name="GetCalcuSrn" class="com.cs.charge.ee.ui.ajax.action.GetCalcuSrnAction"/>
+			<action name="CheckRuleAssign" class="com.cs.charge.ee.ui.ajax.action.CheckRuleAssignAction"/>
+			<action name="Calculate" class="com.cs.charge.ee.ui.ajax.action.CalculateAction"/>
+			<action name="CombiCalculate" class="com.cs.charge.ee.ui.ajax.action.CombiCalculateAction"/>
+			<action name="Recalculate" class="com.cs.charge.ee.ui.ajax.action.RecalculateAction"/>
+			<action name="TremCalculate" class="com.cs.charge.ee.ui.ajax.action.TremCalculateAction"/>
+			<action name="GetComm" class="com.cs.charge.ee.ui.ajax.action.GetCommissionAction"/>
+			<action name="GetRule" class="com.cs.charge.ee.ui.ajax.action.GetChargeRuleAction"/>
+			<action name="GetSelectedRule" class="com.cs.charge.ee.ui.ajax.action.GetSelectedRuleAction"/>
+			<action name="GetVAT" class="com.cs.charge.ee.ui.ajax.action.GetVatAction"/>
+			<action name="GetAssignInfo" class="com.cs.charge.ee.ui.ajax.action.GetAssignInfoAction"/>
+			<action name="GetGroupDetail" class="com.cs.charge.ee.ui.ajax.action.GetCustGroupDetailAction"/>
+			<action name="GetCORG" class="com.cs.charge.ee.ui.ajax.action.GetCommRangeAction"/>
+			<action name="GetCustAsgnedToCORG" class="com.cs.charge.ee.ui.ajax.action.GetCustListByRangeAction"/>
+			<action name="GetCalcuSrn" class="com.cs.charge.ee.ui.ajax.action.GetCalcuSrnAction"/>
+			<action name="CheckRuleAssign" class="com.cs.charge.ee.ui.ajax.action.CheckRuleAssignAction"/>
+			<!-- EE-4356B -->
+			<action name="GetRuleAssignInfo" class="com.cs.charge.ee.ui.ajax.action.GetAssignRuleInfoAction"/>
+			<action name="GetCustToRangeList" class="com.cs.charge.ee.ui.ajax.action.GetCustToRangeListaAction"/>
+			<action name="GetCustBankIdByFlag" class="com.cs.charge.ee.ui.ajax.action.GetCustBankIdByFlagAction"/>
+			<!-- EE-4356E -->
+			<!-- EE-4492B -->
+			<action name="GetAssignedCustID" class="com.cs.charge.ee.ui.ajax.action.GetAssignedCustIDAction"/>
+			<!-- EE-4492E -->
+			<!-- EE-4854E -->
+			<action name="GetAgreementInfoByID" class="com.cs.charge.ee.ui.ajax.action.GetAgreementInfoByIDAction"/>
+			<action name="ApplyAgreement" class="com.cs.charge.ee.ui.ajax.action.ApplyModifiedAgreementAction"/>
+			<!-- EE-4854E -->
+			<!-- @ref:EE-5925 @author monroe @date 2012-07-05 _S -->
+			<action name="LoadData" class="com.cs.charge.ee.ui.ajax.action.LoadDataAction"/>
+			<action name="ChgDOHander" class="com.cs.charge.ee.ui.ajax.action.ChgDOHanderAction"/>
+			<!-- @ref:EE-5925 @author monroe @date 2012-07-05 _E -->
+			<!-- EE-5715 -->
+			<action name="ChkAgreementInPage" class="com.cs.charge.ee.ui.ajax.action.CheckAgreementInPageAction"/>
+			<!-- EE-5715 -->
+			<!-- EE-10295_S -->
+			<action name="GetGlAc" class="com.cs.charge.ee.ui.ajax.action.GetGlAcAction"/>
+			<!-- EE-10295_E -->
+		</ajax-actions>
+		<!-- EE-5715 S -->
+		<TERM_CHG_FACOTRY>com.cs.charge.term.DefaultTerm</TERM_CHG_FACOTRY>
+		<TERM_FILE_CLOSE_FLAG_SQL>
+			<MODULE NAME="GTEE">SELECT CLS_FLG FROM %TRX_SCHEMA%.GTEE_MASTER WHERE C_MAIN_REF = '-%FLD-C_MAIN_REF%-' AND 1=1</MODULE>
+			<MODULE NAME="IWGT">SELECT CLS_FLG FROM %TRX_SCHEMA%.IWGT_MASTER WHERE C_MAIN_REF = '-%FLD-C_MAIN_REF%-' AND 1=1</MODULE>
+		</TERM_FILE_CLOSE_FLAG_SQL>
+		<!-- EE-5715 E -->
+		<!-- @ref EE-6247 @date 2013-05-17 @author yaoyao _S -->
+		<dynamic-calculator-paras>
+			<para>C_CHAN_TYPE</para>
+			<para>C_BUSI_TYPE</para>
+			<para>C_CUST_TYPE</para>
+		</dynamic-calculator-paras>
+		<!-- @ref EE-6247 @date 2013-05-17 @author yaoyao _E -->
+		
+<!-- EE-8406 EE-8406 20170223 _S -->
+<!-- It is added for changing the calculation order and if the project wants to use it, please choose one from the following types configuration
+	<calculateRate byModule="true">
+		<calculateRateType module="IMLC">
+			<chgToPayBuyingRate>TT Buying</chgToPayBuyingRate>
+			<chgToPaySellingRate>TT Selling</chgToPaySellingRate>
+			<payToCollectBuyingRate>TT Buying</payToCollectBuyingRate>
+			<payToCollectSellingRate>TT Selling</payToCollectSellingRate>
+			<collectToPayBuyingRate>TT Buying</collectToPayBuyingRate>
+			<collectToPaySellingRate>TT Selling</collectToPaySellingRate>
+			<payToUnpayBuyingRate>TT Buying</payToUnpayBuyingRate>
+			<payToUnpaySellingRate>TT Selling</payToUnpaySellingRate>
+		</calculateRateType>
+		<calculateRateType module="GTEE,IMCO">
+			<chgToPayBuyingRate>TT Buying</chgToPayBuyingRate>
+			<chgToPaySellingRate>TT Selling</chgToPaySellingRate>
+			<payToCollectBuyingRate>TT Buying</payToCollectBuyingRate>
+			<payToCollectSellingRate>TT Selling</payToCollectSellingRate>
+			<collectToPayBuyingRate>TT Buying</collectToPayBuyingRate>
+			<collectToPaySellingRate>TT Selling</collectToPaySellingRate>
+			<payToUnpayBuyingRate>TT Buying</payToUnpayBuyingRate>
+			<payToUnpaySellingRate>TT Selling</payToUnpaySellingRate>
+		</calculateRateType>
+</calculateRate>
+
+<calculateRate byModule="false">
+		<calculateRateType >
+			<chgToPayBuyingRate>TT Buying</chgToPayBuyingRate>
+			<chgToPaySellingRate>TT Selling</chgToPaySellingRate>
+			<payToCollectBuyingRate>TT Buying</payToCollectBuyingRate>
+			<payToCollectSellingRate>TT Selling</payToCollectSellingRate>
+			<collectToPayBuyingRate>TT Buying</collectToPayBuyingRate>
+			<collectToPaySellingRate>TT Selling</collectToPaySellingRate>
+			<payToUnpayBuyingRate>TT Buying</payToUnpayBuyingRate>
+			<payToUnpaySellingRate>TT Selling</payToUnpaySellingRate>
+		</calculateRateType>
+</calculateRate>
+-->
+<!-- EE-8406 _E -->		
+	</ee>
+</charge-config>

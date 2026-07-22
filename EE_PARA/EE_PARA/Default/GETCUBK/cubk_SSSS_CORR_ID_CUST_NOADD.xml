@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>CORR_ID_CUST_NOADD</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>Y</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="J">T1.ORDER_NO</ORDER_NO>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">CORR_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">CORR_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T1" DBFUNC="" DESC="Address Line1" DT="12" HIDDEN="F" TYPE="F">CORR_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T1" DBFUNC="" DESC="Address Line2" DT="12" HIDDEN="F" TYPE="F">CORR_ADD2</SWIFT_FMT_ADD2>
+        <MAIL_ADD ALIAS="T0" DBFUNC="" DESC="Mail Address" DT="12" HIDDEN="F" TYPE="F">CORR_MAIL_ADD</MAIL_ADD>
+        <FAX_NO ALIAS="T0" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="T" TYPE="F">CORR_FAX_NO</FAX_NO>
+        <EMAIL_ADD ALIAS="T0" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="T" TYPE="F">CORR_EMAIL_ADD</EMAIL_ADD>
+        <TEL_NO ALIAS="T0" DBFUNC="" DESC="Telephone No" DT="12" HIDDEN="F" TYPE="F">CORR_TLX_NO</TEL_NO>
+        <SWIFT_FMT_ADD3 ALIAS="T1" DBFUNC="" DESC="Address Line3" DT="12" HIDDEN="F" TYPE="F">CORR_ADD3</SWIFT_FMT_ADD3>
+        <NOTES ALIAS="T0" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="T" TYPE="F">CORR_NOTES</NOTES>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

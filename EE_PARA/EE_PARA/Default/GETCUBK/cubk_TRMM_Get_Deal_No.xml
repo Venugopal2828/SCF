@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRMM_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>TRMM</module-name>
+        <cubk-mapping-name>Get_Deal_No</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <DEAL_NO ALIAS="T0" DBFUNC="" DESC="Deal Number" DT="12" HIDDEN="F" TYPE="F">DEAL_NO</DEAL_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">DEAL_NO='</SQL>
+            <SQL TYPE="FLD">DEAL_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

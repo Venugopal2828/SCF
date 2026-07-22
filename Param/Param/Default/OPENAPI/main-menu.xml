@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<secu_menu>
+		<menu_group name="Tasks" type="system" icon="tasks" target="SECUWaitingAuth"></menu_group>
+		<!--menu_group name="Units" type="folder" icon="units">
+			<menu name="Unit Maintenance" type="action" target="UnitMaintain"/>
+			<menu name="Release Company FAP" type="action" target="AuthorizeCompanyFAP"/>
+			<menu name="Release Company Structure" type="action" target="AuthoriseCompanyStructure"/>
+			<menu name="Release Authorization Rule" type="action" target="AuthoriseAuthRules"/>
+		</menu_group>
+		<menu_group name="Users" type="folder" icon="users">
+			<menu name="User Maintenance" type="action" target="UserMaintain"/>
+			<menu name="Release Admin/Role FAP" type="action" target="AuthoriseAdminFAP"/>
+			<menu name="Release Operator/Role FAP" type="action" target="AuthoriseOperatorFAP"/>
+			<menu name="Release Operator Class" type="action" target="AuthoriseOperatorClass"/>
+		</menu_group-->
+		<menu_group name="Units" type="action" icon="units" target="UnitMaintain"></menu_group>
+		<menu_group name="Users" type="action" icon="users" target="UserMaintain"></menu_group>
+		<menu_group name="Global Template" icon="global-template" type="product" target="GlobalTemplate"></menu_group>
+		<menu_group name="Batch Manager" icon="batch-manager" type="product" target="BatchManager"></menu_group>
+		<menu_group name="Interface Messages" icon="interface-messages" type="product" target="InterfaceTrx"></menu_group>
+		<menu_group name="Standing Data" type="folder" icon="standing">
+			<menu name="Banks" type="action" target="BankMaintain"/>
+			<menu name="Holiday" type="action" target="HolidayMaintain"/>
+			<menu name="Weekend and Work Time" type="action" target="WeekendMaintain"/>
+		</menu_group>
+		<menu_group name="Widget Manager" type="action" icon="widget-manager" target="WidgetManager"></menu_group>
+		<menu_group name="Consolidated Report" type="action" icon="report" target="Report"></menu_group>
+		<menu_group name="Activity Log" type="action" icon="activity" target="ActivityLog"></menu_group>
+	</secu_menu>
+	<trx_menu>
+		<!--menu_group name="Import Letter of Credit" type="action" icon="imlc" target="ImportLC"></menu_group-->
+		<menu_group name="Import Letter of Credit" type="product" icon="" target="IMLC"></menu_group>
+		<menu_group name="Export Letters of Credit" type="product" icon="" target="EXLC"></menu_group>
+		<menu_group name="Import Collections" type="product" icon="" target="IMCO"></menu_group>
+		<menu_group name="Export Collections" type="product" icon="" target="EXCO"></menu_group>
+		<menu_group name="Outward Guarantees" type="product" icon="" target="OWGT"></menu_group>
+		<menu_group name="Inward Guarantees" type="product" icon="" target="IWGT"></menu_group>
+		<menu_group name="General Correspondence" type="product" icon="" target="MESG"></menu_group>
+		<menu_group name="Purchase Order" type="product" icon="" target="PO"></menu_group>
+		<menu_group name="Invoice" type="product" icon="" target="INVC"></menu_group>
+		<menu_group name="Pre Finance" type="product" icon="" target="FADA_Pre-Finance"></menu_group>
+		<menu_group name="Finance" type="product" icon="" target="FAEF_Finance"></menu_group>
+		<menu_group name="Invoice Maintenance" type="product" icon="" target="FAEF_Invoice"></menu_group>
+		<menu_group name="SCF Program Maintenance" type="product" icon="" target="FADA_SCFPro"></menu_group>
+		<menu_group name="Supplier Documentation" type="product" icon="" target="DOCM"></menu_group>
+		<menu_group name="PO Maintenance" type="product" icon="" target="TSUM"></menu_group>
+		<menu_group name="International Money Transfers" type="product" icon="" target="REMM"></menu_group>
+		<menu_group name="ABL Financing" type="product" icon="" target="ABLF"></menu_group>
+		<menu_group name="Finance Request Maintenance" type="product" icon="" target="FAEF_FinReq"></menu_group>
+		<menu_group name="Upload File" type="folder" icon="">
+			<menu_group name="Upload Maintenance" type="product" icon="" target="UPLD"></menu_group>
+			<menu name="View Transactions" type="action" target="TrxFromUpload"></menu>
+		</menu_group>
+		<menu_group name="Purchase Order Maintenance" type="product" icon="" target="FAEF_PO"></menu_group>
+		<menu_group name="Factoring Program Maintenance" type="product" icon="" target="FADA_FactoringPro"></menu_group>
+		<menu_group name="Factoring Data Maintenance" type="product" icon="" target="FADA_Factoring"></menu_group>
+		<menu_group name="Dispute Maintenance" type="product" icon="" target="FAEF_Dispute"></menu_group>
+		<menu_group name="Settlement Request Maintenance" type="product" icon="" target="FAEF_Settlement"></menu_group>
+		<menu_group name="Standing Data" type="folder" icon="standing">
+			<menu name="Parties" type="action" target="Parties"></menu>
+			<menu name="Clause" type="action" target="Clause"></menu>
+			<menu name="Account Numbers" type="action" target="AccountMaintain"></menu>
+			<menu name="Email Group" type="action" target="EmailGroup"></menu>
+			<menu_group name="Email Notification" type="product" target="EmailNotify"></menu_group>
+			<menu_group name="Notice" type="folder" icon="">
+				<menu name="Notice" type="action" target="ViewNotice"></menu>
+				<menu name="Notice Label" type="action" target="Label"></menu>
+			</menu_group>
+			<menu_group name="Template" type="product" target="TrxTemplate"></menu_group>
+		</menu_group>
+		<menu_group name="Template" type="product" icon="" target="Template"></menu_group>
+	</trx_menu>
+</root>

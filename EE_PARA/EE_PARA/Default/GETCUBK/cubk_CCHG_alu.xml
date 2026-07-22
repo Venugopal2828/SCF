@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">CFNC_MAIN</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>CCHG</module-name>
+        <cubk-mapping-name>alu</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <CFNC_C_AC_NO ALIAS="T0" DBFUNC="SUM" DESC="Finance Account Number" DT="1" HIDDEN="F" TYPE="F">CHG_FOREIGN_CCY</CFNC_C_AC_NO>
+        <CFNC_C_AC_NO ALIAS="T0" DBFUNC="COUNT" DESC="Finance Account Number" DT="1" HIDDEN="F" TYPE="F">C_MAIN_REF</CFNC_C_AC_NO>
+        <CFNC_C_AC_NO ALIAS="T0" DBFUNC="Distinct" DESC="Finance Account Number" DT="1" HIDDEN="F" TYPE="V">alu</CFNC_C_AC_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="ACNO" TYPE="TBL_FLD">T0.CFNC_C_AC_NO</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

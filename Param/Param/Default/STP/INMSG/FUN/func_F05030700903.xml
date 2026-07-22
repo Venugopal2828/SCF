@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: EXLC Amendment function");
+stp.setAutoProcess(true);
+
+stp.setCmpId(stp.getMsgTagVal("CustId"));
+stp.setUserId("CSBANK");
+
+var sAdvNb = stp.getMsgTagVal("AdvNb");
+var sNoOfAmdmnt = stp.getMsgTagVal("NoOfAmdmnt");
+var sMainRef = sAdvNb + "-A" + sNoOfAmdmnt;
+stp.setMainRef(sMainRef);
+
+var arrKeys = [["ADV_NO",sAdvNb]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetParentRef",arrKeys);
+var sParentRef = arrGetDataResult[0];
+stp.updateFieldValue("PARENT_MAIN_REF",sParentRef);
+stp.updateFieldValue("CURRNT_STATUS","Amendment");
+stp.updateFieldValue("ADV_AMD_FLG", "YES");
+
+stp.updateFieldValue("C2A_STATUS","Amendment received");
+
+var BK_CONF = stp.getFieldValue("BK_CONF");
+var NEW_CONF_INSTR = stp.getMsgTagVal("NEW_CONF_INSTR");
+  if(!NEW_CONF_INSTR){
+  stp.updateFieldValue("TEMP_CONF_INSTR",BK_CONF);
+  } else {
+  stp.updateFieldValue("TEMP_CONF_INSTR",NEW_CONF_INSTR);
+  }
+
+var ADDIT_CONDITION = stp.getFieldValue("ADDIT_CONDITION");
+var NEW_ADDIT_CONDITION = stp.getMsgTagVal("NEW_ADDIT_CONDITION");
+  if(!NEW_ADDIT_CONDITION){
+  stp.updateFieldValue("TEMP_ADDIT_CONDITION",ADDIT_CONDITION);
+  } else {
+  stp.updateFieldValue("TEMP_ADDIT_CONDITION",NEW_ADDIT_CONDITION);
+  }
+
+var FORM_OF_LC = stp.getFieldValue("FORM_OF_LC");
+var NEW_FORM_OF_LC = stp.getMsgTagVal("NEW_FORM_OF_LC");
+  if(!NEW_FORM_OF_LC){
+  stp.updateFieldValue("TEMP_FORM_OF_LC",FORM_OF_LC);
+  } else {
+  stp.updateFieldValue("TEMP_FORM_OF_LC",NEW_FORM_OF_LC);
+  }
+
+var AMT_SPEC = stp.getFieldValue("AMT_SPEC");
+var NEW_AMT_SPEC = stp.getMsgTagVal("NEW_AMT_SPEC");
+  if(!NEW_AMT_SPEC){
+  stp.updateFieldValue("TEMP_AMT_SPEC",AMT_SPEC);
+  } else {
+  stp.updateFieldValue("TEMP_AMT_SPEC",NEW_AMT_SPEC);
+  }
+
+var POS_TOL = stp.getFieldValue("POS_TOL");
+var NEW_POS_TOL = stp.getMsgTagVal("NEW_POS_TOL");
+  if(!NEW_POS_TOL){
+  stp.updateFieldValue("TEMP_POS_TOL",POS_TOL);
+  } else {
+  stp.updateFieldValue("TEMP_POS_TOL",NEW_POS_TOL);
+  }
+
+var NEG_TOL = stp.getFieldValue("NEG_TOL");
+var NEW_NEG_TOL = stp.getMsgTagVal("NEW_NEG_TOL");
+  if(!NEW_NEG_TOL){
+  stp.updateFieldValue("TEMP_NEG_TOL",NEG_TOL);
+  } else {
+  stp.updateFieldValue("TEMP_NEG_TOL",NEW_NEG_TOL);
+  }
+
+var EXPIRY_DT = stp.getMsgTagVal("DtOfExp");
+var NEW_EXPIRY_DT = stp.getMsgTagVal("NewDtOfExp");
+  if(NEW_EXPIRY_DT == '' || NEW_EXPIRY_DT == null){
+  stp.updateFieldValue("TEMP_EXPIRY_DT",EXPIRY_DT);
+  } else {
+  stp.updateFieldValue("TEMP_EXPIRY_DT",NEW_EXPIRY_DT);
+  }
+
+var EXPIRY_PLC = stp.getMsgTagVal("PlcOfExp");
+var NEW_EXPIRY_PLC = stp.getMsgTagVal("NewPlcOfExp");
+  if(NEW_EXPIRY_PLC == '' || NEW_EXPIRY_PLC == null){
+  stp.updateFieldValue("TEMP_EXPIRY_PLC",EXPIRY_PLC);
+  } else {
+  stp.updateFieldValue("TEMP_EXPIRY_PLC",NEW_EXPIRY_PLC);
+  }
+
+var LC_AMT = stp.getFieldValue("LC_AMT");
+var NEW_LC_AMT = stp.getMsgTagVal("NewLcAmt");
+  if(!NEW_LC_AMT){
+  stp.updateFieldValue("TEMP_LC_AMT",LC_AMT);
+  } else {
+  stp.updateFieldValue("TEMP_LC_AMT",NEW_LC_AMT);
+  }
+
+var LC_BAL = stp.getFieldValue("LC_BAL");
+var NEW_LC_BAL = stp.getMsgTagVal("NewLcBala");
+  if(!NEW_LC_BAL){
+  stp.updateFieldValue("TEMP_LC_BAL",LC_BAL);
+  } else {
+  stp.updateFieldValue("TEMP_LC_BAL",NEW_LC_BAL);
+  }
+
+var APPL_ADD1 = stp.getFieldValue("APPL_ADD1");
+var NEW_APPL_ADD1 = stp.getMsgTagVal("NEW_APPL_ADD1");
+  if(!NEW_APPL_ADD1){
+  stp.updateFieldValue("TEMP_APPL_ADD1",APPL_ADD1);
+  } else {
+  stp.updateFieldValue("TEMP_APPL_ADD1",NEW_APPL_ADD1);
+  }
+
+var APPL_ADD2 = stp.getFieldValue("APPL_ADD2");
+var NEW_APPL_ADD2 = stp.getMsgTagVal("NEW_APPL_ADD2");
+  if(!NEW_APPL_ADD2){
+  stp.updateFieldValue("TEMP_APPL_ADD2",APPL_ADD2);
+  } else {
+  stp.updateFieldValue("TEMP_APPL_ADD2",NEW_APPL_ADD2);
+  }
+
+var APPL_ADD3 = stp.getFieldValue("APPL_ADD3");
+var NEW_APPL_ADD3 = stp.getMsgTagVal("NEW_APPL_ADD3");
+  if(!NEW_APPL_ADD3){
+  stp.updateFieldValue("TEMP_APPL_ADD3",APPL_ADD3);
+  } else {
+  stp.updateFieldValue("TEMP_APPL_ADD3",NEW_APPL_ADD3);
+  }
+
+var APPL_NM = stp.getFieldValue("APPL_NM");
+var NEW_APPL_NM = stp.getMsgTagVal("NEW_APPL_NM");
+  if(!NEW_APPL_NM){
+  stp.updateFieldValue("TEMP_APPL_NM",APPL_NM);
+  } else {
+  stp.updateFieldValue("TEMP_APPL_NM",NEW_APPL_NM);
+  }
+
+var AVAL_WT_BK_ADD1 = stp.getFieldValue("AVAL_WT_BK_ADD1");
+var NEW_AVAL_WT_BK_ADD1 = stp.getMsgTagVal("NEW_AVAL_WT_BK_ADD1");
+  if(!NEW_AVAL_WT_BK_ADD1){
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_ADD1",AVAL_WT_BK_ADD1);
+  } else {
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_ADD1",NEW_AVAL_WT_BK_ADD1);
+  }
+
+var AVAL_WT_BK_ADD2 = stp.getFieldValue("AVAL_WT_BK_ADD2");
+var NEW_AVAL_WT_BK_ADD2 = stp.getMsgTagVal("NEW_AVAL_WT_BK_ADD2");
+  if(!NEW_AVAL_WT_BK_ADD2){
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_ADD2",AVAL_WT_BK_ADD2);
+  } else {
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_ADD2",NEW_AVAL_WT_BK_ADD2);
+  }
+
+var AVAL_WT_BK_ADD3 = stp.getFieldValue("AVAL_WT_BK_ADD3");
+var NEW_AVAL_WT_BK_ADD3 = stp.getMsgTagVal("NEW_AVAL_WT_BK_ADD3");
+  if(!NEW_AVAL_WT_BK_ADD3){
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_ADD3",AVAL_WT_BK_ADD3);
+  } else {
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_ADD3",NEW_AVAL_WT_BK_ADD3);
+  }
+
+var AVAL_WT_BK_NM = stp.getFieldValue("AVAL_WT_BK_NM");
+var NEW_AVAL_WT_BK_NM = stp.getMsgTagVal("NEW_AVAL_WT_BK_NM");
+  if(!NEW_AVAL_WT_BK_NM){
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_NM",AVAL_WT_BK_NM);
+  } else {
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_NM",NEW_AVAL_WT_BK_NM);
+  }
+
+var AVAL_WT_BK_SW_ADD = stp.getFieldValue("AVAL_WT_BK_SW_ADD");
+var NEW_AVAL_WT_BK_SW_ADD = stp.getMsgTagVal("NEW_AVAL_WT_BK_SW_ADD");
+  if(!NEW_AVAL_WT_BK_SW_ADD){
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_SW_ADD",AVAL_WT_BK_SW_ADD);
+  } else {
+  stp.updateFieldValue("TEMP_AVAL_WT_BK_SW_ADD",NEW_AVAL_WT_BK_SW_ADD);
+  }
+
+var CONF_BK_ADD1 = stp.getFieldValue("CONF_BK_ADD1");
+var NEW_CONF_BK_ADD1 = stp.getMsgTagVal("NEW_CONF_BK_ADD1");
+  if(!NEW_CONF_BK_ADD1){
+  stp.updateFieldValue("TEMP_CONF_BK_ADD1",CONF_BK_ADD1);
+  } else {
+  stp.updateFieldValue("TEMP_CONF_BK_ADD1",NEW_CONF_BK_ADD1);
+  }
+
+var CONF_BK_ADD2 = stp.getFieldValue("CONF_BK_ADD2");
+var NEW_CONF_BK_ADD2 = stp.getMsgTagVal("NEW_CONF_BK_ADD2");
+  if(!NEW_CONF_BK_ADD2){
+  stp.updateFieldValue("TEMP_CONF_BK_ADD2",CONF_BK_ADD2);
+  } else {
+  stp.updateFieldValue("TEMP_CONF_BK_ADD2",NEW_CONF_BK_ADD2);
+  }
+
+var CONF_BK_ADD3 = stp.getFieldValue("CONF_BK_ADD3");
+var NEW_CONF_BK_ADD3 = stp.getMsgTagVal("NEW_CONF_BK_ADD3");
+  if(!NEW_CONF_BK_ADD3){
+  stp.updateFieldValue("TEMP_CONF_BK_ADD3",CONF_BK_ADD3);
+  } else {
+  stp.updateFieldValue("TEMP_CONF_BK_ADD3",NEW_CONF_BK_ADD3);
+  }
+
+var CONF_BK_NM = stp.getFieldValue("CONF_BK_NM");
+var NEW_CONF_BK_NM = stp.getMsgTagVal("NEW_CONF_BK_NM");
+  if(!NEW_CONF_BK_NM){
+  stp.updateFieldValue("TEMP_CONF_BK_NM",CONF_BK_NM);
+  } else {
+  stp.updateFieldValue("TEMP_CONF_BK_NM",NEW_CONF_BK_NM);
+  }
+
+var CONF_BK_SW_ADD = stp.getFieldValue("CONF_BK_SW_ADD");
+var NEW_CONF_BK_SW_ADD = stp.getMsgTagVal("NEW_CONF_BK_SW_ADD");
+  if(!NEW_CONF_BK_SW_ADD){
+  stp.updateFieldValue("TEMP_CONF_BK_SW_ADD",CONF_BK_SW_ADD);
+  } else {
+  stp.updateFieldValue("TEMP_CONF_BK_SW_ADD",NEW_CONF_BK_SW_ADD);
+  }
+
+var REIM_BK_ADD1 = stp.getFieldValue("REIM_BK_ADD1");
+var NEW_REIM_BK_ADD1 = stp.getMsgTagVal("NEW_REIM_BK_ADD1");
+  if(!NEW_REIM_BK_ADD1){
+  stp.updateFieldValue("TEMP_REIM_BK_ADD1",REIM_BK_ADD1);
+  } else {
+  stp.updateFieldValue("TEMP_REIM_BK_ADD1",NEW_REIM_BK_ADD1);
+  }
+
+var REIM_BK_ADD2 = stp.getFieldValue("REIM_BK_ADD2");
+var NEW_REIM_BK_ADD2 = stp.getMsgTagVal("NEW_REIM_BK_ADD2");
+  if(!NEW_REIM_BK_ADD2){
+  stp.updateFieldValue("TEMP_REIM_BK_ADD2",REIM_BK_ADD2);
+  } else {
+  stp.updateFieldValue("TEMP_REIM_BK_ADD2",NEW_REIM_BK_ADD2);
+  }
+
+var REIM_BK_ADD3 = stp.getFieldValue("REIM_BK_ADD3");
+var NEW_REIM_BK_ADD3 = stp.getMsgTagVal("NEW_REIM_BK_ADD3");
+  if(!NEW_REIM_BK_ADD3){
+  stp.updateFieldValue("TEMP_REIM_BK_ADD3",REIM_BK_ADD3);
+  } else {
+  stp.updateFieldValue("TEMP_REIM_BK_ADD3",NEW_REIM_BK_ADD3);
+  }
+
+var REIM_BK_NM = stp.getFieldValue("REIM_BK_NM");
+var NEW_REIM_BK_NM = stp.getMsgTagVal("NEW_REIM_BK_NM");
+  if(!NEW_REIM_BK_NM){
+  stp.updateFieldValue("TEMP_REIM_BK_NM",REIM_BK_NM);
+  } else {
+  stp.updateFieldValue("TEMP_REIM_BK_NM",NEW_REIM_BK_NM);
+  }
+
+var REIM_BK_SW_ADD = stp.getFieldValue("REIM_BK_SW_ADD");
+var NEW_REIM_BK_SW_ADD = stp.getMsgTagVal("NEW_REIM_BK_SW_ADD");
+  if(!NEW_REIM_BK_SW_ADD){
+  stp.updateFieldValue("TEMP_REIM_BK_SW_ADD",REIM_BK_SW_ADD);
+  } else {
+  stp.updateFieldValue("TEMP_REIM_BK_SW_ADD",NEW_REIM_BK_SW_ADD);
+  }
+
+var CHG_DETL = stp.getFieldValue("CHG_DETL");
+var NEW_CHG_DETL = stp.getMsgTagVal("NEW_CHG_DETL");
+  if(!NEW_CHG_DETL){
+  stp.updateFieldValue("TEMP_CHG_DETL",CHG_DETL);
+  } else {
+  stp.updateFieldValue("TEMP_CHG_DETL",NEW_CHG_DETL);
+  }
+
+var AVAL_BY = stp.getFieldValue("AVAL_BY");
+var NEW_AVAL_BY = stp.getMsgTagVal("NEW_AVAL_BY");
+  if(!NEW_AVAL_BY){
+  stp.updateFieldValue("TEMP_AVAL_BY",AVAL_BY);
+  } else {
+  stp.updateFieldValue("TEMP_AVAL_BY",NEW_AVAL_BY);
+  }
+
+var TENOR_DAYS = stp.getFieldValue("TENOR_DAYS");
+var NEW_TENOR_DAYS = stp.getMsgTagVal("NEW_TENOR_DAYS");
+  if(!NEW_TENOR_DAYS){
+  stp.updateFieldValue("TEMP_TENOR_DAYS",TENOR_DAYS);
+  } else {
+  stp.updateFieldValue("TEMP_TENOR_DAYS",NEW_TENOR_DAYS);
+  }
+
+var DRWE_ADD1 = stp.getFieldValue("DRWE_ADD1");
+var NEW_DRWE_ADD1 = stp.getMsgTagVal("NEW_DRWE_ADD1");
+  if(!NEW_DRWE_ADD1){
+  stp.updateFieldValue("TEMP_DRWE_ADD1",DRWE_ADD1);
+  } else {
+  stp.updateFieldValue("TEMP_DRWE_ADD1",NEW_DRWE_ADD1);
+  }
+
+var DRWE_ADD2 = stp.getFieldValue("DRWE_ADD2");
+var NEW_DRWE_ADD2 = stp.getMsgTagVal("NEW_DRWE_ADD2");
+  if(!NEW_DRWE_ADD2){
+  stp.updateFieldValue("TEMP_DRWE_ADD2",DRWE_ADD2);
+  } else {
+  stp.updateFieldValue("TEMP_DRWE_ADD2",NEW_DRWE_ADD2);
+  }
+
+var DRWE_ADD3 = stp.getFieldValue("DRWE_ADD3");
+var NEW_DRWE_ADD3 = stp.getMsgTagVal("NEW_DRWE_ADD3");
+  if(!NEW_DRWE_ADD3){
+  stp.updateFieldValue("TEMP_DRWE_ADD3",DRWE_ADD3);
+  } else {
+  stp.updateFieldValue("TEMP_DRWE_ADD3",NEW_DRWE_ADD3);
+  }
+
+var DRWE_NM = stp.getFieldValue("DRWE_NM");
+var NEW_DRWE_NM = stp.getMsgTagVal("NEW_DRWE_NM");
+  if(!NEW_DRWE_NM){
+  stp.updateFieldValue("TEMP_DRWE_NM",DRWE_NM);
+  } else {
+  stp.updateFieldValue("TEMP_DRWE_NM",NEW_DRWE_NM);
+  }
+
+var DRAFTS_AT = stp.getFieldValue("DRAFTS_AT");
+var NEW_DRAFTS_AT = stp.getMsgTagVal("NEW_DRAFTS_AT");
+  if(!NEW_DRAFTS_AT){
+  stp.updateFieldValue("TEMP_DRAFTS_AT",DRAFTS_AT);
+  } else {
+  stp.updateFieldValue("TEMP_DRAFTS_AT",NEW_DRAFTS_AT);
+  }
+
+var DEF_PMT_DET = stp.getFieldValue("DEF_PMT_DET");
+var NEW_DEF_PMT_DET = stp.getMsgTagVal("NEW_DEF_PMT_DET");
+  if(!NEW_DEF_PMT_DET){
+  stp.updateFieldValue("TEMP_DEF_PMT_DET",DEF_PMT_DET);
+  } else {
+  stp.updateFieldValue("TEMP_DEF_PMT_DET",NEW_DEF_PMT_DET);
+  }
+
+var MIX_PMT_DETL = stp.getFieldValue("MIX_PMT_DETL");
+var NEW_MIX_PMT_DETL = stp.getMsgTagVal("NEW_MIX_PMT_DETL");
+  if(!NEW_MIX_PMT_DETL){
+  stp.updateFieldValue("TEMP_MIX_PMT_DETL",MIX_PMT_DETL);
+  } else {
+  stp.updateFieldValue("TEMP_MIX_PMT_DETL",NEW_MIX_PMT_DETL);
+  }
+
+var LTST_SHIP_DT = stp.getFieldValue("LTST_SHIP_DT");
+var NEW_LTST_SHIP_DT = stp.getMsgTagVal("NEW_LTST_SHIP_DT");
+  if(!NEW_LTST_SHIP_DT){
+  stp.updateFieldValue("TEMP_LTST_SHIP_DT",LTST_SHIP_DT);
+  } else {
+  stp.updateFieldValue("TEMP_LTST_SHIP_DT",NEW_LTST_SHIP_DT);
+  }
+
+var PARTIAL_SHIP = stp.getMsgTagVal("PrtlShipmnt");
+var NEW_PARTIAL_SHIP = stp.getMsgTagVal("NEW_PARTIAL_SHIP");
+  if(NEW_PARTIAL_SHIP == '' || NEW_PARTIAL_SHIP == null){
+  stp.updateFieldValue("TEMP_PARTIAL_SHIP",PARTIAL_SHIP);
+  } else {
+  stp.updateFieldValue("TEMP_PARTIAL_SHIP",NEW_PARTIAL_SHIP);
+  }
+
+var TNSHIP = stp.getMsgTagVal("Transhipment");
+var NEW_TNSHIP = stp.getMsgTagVal("NEW_TNSHIP");
+  if(NEW_TNSHIP == '' || NEW_TNSHIP == null){
+  stp.updateFieldValue("TEMP_TNSHIP",TNSHIP);
+  } else {
+  stp.updateFieldValue("TEMP_TNSHIP",NEW_TNSHIP);
+  }
+
+var LOAD_PLACE = stp.getFieldValue("LOAD_PLACE");
+var NEW_LOAD_PLACE = stp.getMsgTagVal("NEW_LOAD_PLACE");
+  if(!NEW_LOAD_PLACE){
+  stp.updateFieldValue("TEMP_LOAD_PLACE",LOAD_PLACE);
+  } else {
+  stp.updateFieldValue("TEMP_LOAD_PLACE",NEW_LOAD_PLACE);
+  }
+
+var DEST_PORT = stp.getFieldValue("DEST_PORT");
+var NEW_DEST_PORT = stp.getMsgTagVal("NEW_DEST_PORT");
+  if(!NEW_DEST_PORT){
+  stp.updateFieldValue("TEMP_DEST_PORT",DEST_PORT);
+  } else {
+  stp.updateFieldValue("TEMP_DEST_PORT",NEW_DEST_PORT);
+  }
+
+var LOAD_PORT = stp.getFieldValue("LOAD_PORT");
+var NEW_LOAD_PORT = stp.getMsgTagVal("NEW_LOAD_PORT");
+  if(!NEW_LOAD_PORT){
+  stp.updateFieldValue("TEMP_LOAD_PORT",LOAD_PORT);
+  } else {
+  stp.updateFieldValue("TEMP_LOAD_PORT",NEW_LOAD_PORT);
+  }
+
+var DEST_PLACE = stp.getFieldValue("DEST_PLACE");
+var NEW_DEST_PLACE = stp.getMsgTagVal("NEW_DEST_PLACE");
+  if(!NEW_DEST_PLACE){
+  stp.updateFieldValue("TEMP_DEST_PLACE",DEST_PLACE);
+  } else {
+  stp.updateFieldValue("TEMP_DEST_PLACE",NEW_DEST_PLACE);
+  }
+
+var SHIP_PRD = stp.getFieldValue("SHIP_PRD");
+var NEW_SHIP_PRD = stp.getMsgTagVal("NEW_SHIP_PRD");
+  if(!NEW_SHIP_PRD){
+  stp.updateFieldValue("TEMP_SHIP_PRD",SHIP_PRD);
+  } else {
+  stp.updateFieldValue("TEMP_SHIP_PRD",NEW_SHIP_PRD);
+  }
+
+var GOODS_DESC = stp.getFieldValue("GOODS_DESC");
+var NEW_GOODS_DESC = stp.getMsgTagVal("NEW_GOODS_DESC");
+  if(!NEW_GOODS_DESC){
+  stp.updateFieldValue("TEMP_GOODS_DESC",GOODS_DESC);
+  } else {
+  stp.updateFieldValue("TEMP_GOODS_DESC",NEW_GOODS_DESC);
+  }
+
+var DOC_PRES = stp.getFieldValue("DOC_PRES");
+var NEW_DOC_PRES = stp.getMsgTagVal("NEW_DOC_REQ");
+  if(!NEW_DOC_PRES){
+  stp.updateFieldValue("TEMP_DOC_PRES",DOC_PRES);
+  } else {
+  stp.updateFieldValue("TEMP_DOC_PRES",NEW_DOC_PRES);
+  }
+
+var PRES_PRD_TXT = stp.getFieldValue("PRES_PRD_TXT");
+var NEW_PRES_PRD_TXT = stp.getMsgTagVal("AMD_PRES_PRD_TXT");
+  if(!NEW_PRES_PRD_TXT){
+  stp.updateFieldValue("TEMP_PRES_PRD_TXT",PRES_PRD_TXT);
+  } else {
+  stp.updateFieldValue("TEMP_PRES_PRD_TXT",NEW_PRES_PRD_TXT);
+  }
+
+var PAY_COND_TO_BENE = stp.getFieldValue("PAY_COND_TO_BENE");
+var NEW_PAY_COND_TO_BENE = stp.getMsgTagVal("AMD_PAY_COND_TO_BENE");
+  if(!NEW_PAY_COND_TO_BENE){
+  stp.updateFieldValue("TEMP_PAY_COND_TO_BENE",PAY_COND_TO_BENE);
+  } else {
+  stp.updateFieldValue("TEMP_PAY_COND_TO_BENE",NEW_PAY_COND_TO_BENE);
+  }
+
+var PAY_COND_TO_REV_BK = stp.getFieldValue("PAY_COND_TO_REV_BK");
+var NEW_PAY_COND_TO_REV_BK = stp.getMsgTagVal("AMD_PAY_COND_TO_REV_BK");
+  if(!NEW_PAY_COND_TO_REV_BK){
+  stp.updateFieldValue("TEMP_PAY_COND_TO_REV_BK",PAY_COND_TO_REV_BK);
+  } else {
+  stp.updateFieldValue("TEMP_PAY_COND_TO_REV_BK",NEW_PAY_COND_TO_REV_BK);
+  }
+
+stp.setEventTimes(0);
+stp.execInqAttribute();
+stp.writeLog("End: EXLC Amendment function");
+
+stp.writeLog("Start: Get Email Senders List");
+var sEmailTrxType = "N";
+var sFuncId = "F05030700903";
+var arrKeys = [["EMAILTRX_TYPE",sEmailTrxType]];
+var arrGetDataResult = stp.SYS_getCUBKVal("InqEmailGrpArray",arrKeys);
+if (arrGetDataResult){
+    var sEmailArray = arrGetDataResult[0];
+    var sEmailGrpNm = "";
+    var eList = sEmailArray.split("/");
+    for (k=0;k<eList.length;k++) {
+	var fList = eList[k].split("-");
+         if (fList[0]==sFuncId) {
+	    sEmailGrpNm = fList[1];
+         }
+    }  	      
+    if (sEmailGrpNm.length() > 0){
+        var arrKeysforEmailList = [["EMAILGRP_NM",sEmailGrpNm]];
+        var arrGetDataResultforEmailList = stp.SYS_getCUBKVal("InqEmailList",arrKeysforEmailList);
+        var sEmailListArray = arrGetDataResultforEmailList[0]; 	    
+        stp.updateFieldValue("EMAIL_TO",sEmailListArray);
+        stp.updateFieldValue("EMAIL_SUBJECT","CSBank Email Notification"); 
+    }
+}
+stp.writeLog("End: Get Email Senders List");]]></js-content>
+</root>

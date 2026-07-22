@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>GTEE</module-name>
+        <cubk-mapping-name>CLM_BK_ID_BANK</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">CLM_BK_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">CLM_BK_NM</PARTY_NM>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">CLM_BK_ADD1</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address2" DT="12" HIDDEN="F" TYPE="F">CLM_BK_ADD2</ADD2>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="Address3" DT="12" HIDDEN="F" TYPE="F">CLM_BK_ADD3</ADD3>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="F" TYPE="F">CLM_BK_SW_ADD</SW_ADD>
+        <MAIL_ADD ALIAS="T0" DBFUNC="" DESC="Mail Address" DT="12" HIDDEN="T" TYPE="F">CLM_BK_MAIL_ADD</MAIL_ADD>
+        <SW_TAG_VAR ALIAS="T0" DBFUNC="" DESC="Swfit Tag Variable" DT="12" HIDDEN="T" TYPE="F">CLM_BK_SW_TAG</SW_TAG_VAR>
+        <EMAIL_ADD ALIAS="T0" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="T" TYPE="F">CLM_BK_EMAIL</EMAIL_ADD>
+        <NOTES ALIAS="T0" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="T" TYPE="F">CLM_BK_NOTES</NOTES>
+        <FAX_NO ALIAS="T0" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="T" TYPE="F">CLM_BK_FAX</FAX_NO>
+        <BK_CORR_MEDIUM ALIAS="T0" DBFUNC="" DESC="Bank Correspondent Medium" DT="1" HIDDEN="T" TYPE="F">CLM_BK_CORE_MED</BK_CORR_MEDIUM>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="County Code" DT="1" HIDDEN="T" TYPE="F">CLM_BK_CNTY</CNTY_CODE>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

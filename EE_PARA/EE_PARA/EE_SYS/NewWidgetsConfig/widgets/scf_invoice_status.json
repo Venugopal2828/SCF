@@ -1,0 +1,16 @@
+{
+	"id": "scf_invoice_status",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_invoice_status",
+			"display": "pie",
+			"title": "SCF Status of Invoice",
+			"desc": "Invoice volume and values grouped by status."
+		},
+		"data": {
+			"sql": "SELECT CASE C_TRX_STATUS WHEN 'M' THEN 'Active' WHEN 'P' THEN 'Pending' WHEN 'S' THEN 'Settled' ELSE C_TRX_STATUS END as \"Status\", COUNT(*) as \"Total_Invoices\" FROM %EXIMTRX%.FAEF_MASTER GROUP BY C_TRX_STATUS"
+		}
+	}
+}

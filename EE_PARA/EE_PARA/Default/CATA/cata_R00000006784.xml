@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="INQMASTER_CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082301667</ID>
+    <MODULE>TSUM</MODULE>
+    <JSPFILE>screen/CATA/Inquire_Master_Catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Inquire TSU Report Transaction</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.TSUM_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Our Ref. No." EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Unit" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="TSU TID" EEType="Max35Text" HIDDEN="">TSU_TID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer Name" EEType="Max70Text" HIDDEN="">TSU_BUYER_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller Name" EEType="Max70Text" HIDDEN="">TSU_SEL_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer Bank" EEType="Max70Text" HIDDEN="">TSU_BUYER_BK_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller Bank" EEType="Max70Text" HIDDEN="">TSU_SEL_BK_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="FUNCTION SHORT NAME" EEType="" HIDDEN="H">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="EVENT NAME" EEType="" HIDDEN="H">C_EVENT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="TRANSACTION REF. NO." EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Our Ref. No." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND
+</SQL>
+        <SQL DESC="Business Unit" DT="12" EEType="" TYPE="FLD">C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL"> = '</SQL>
+        <SQL DT="var" DV="SYS_BUSI_UNIT" TYPE="FldValue">FldValue2</SQL>
+        <SQL TYPE="SQL">'
+</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Our Ref. No." EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Business Unit" EEType="">C_UNIT_CODE</FIELD>
+    </CLAUSEFIELD>
+</CATA>

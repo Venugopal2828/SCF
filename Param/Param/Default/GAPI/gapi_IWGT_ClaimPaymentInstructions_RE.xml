@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>IWGT.005.ClmPmtInstr</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>IWGT</module>
+        <interface-mapping-name>ClaimPaymentInstructions</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <CEMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">C_MAIN_REF</CEMainRef>
+        <BkMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">BK_MAIN_REF</BkMainRef>
+        <CustId descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">C_UNIT_CODE</CustId>
+        <AdvNb descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">ADV_NO</AdvNb>
+        <NoOfClm descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">NO_OF_CLM</NoOfClm>
+        <PmtTpClm descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">PMT_TYPE_CLM</PmtTpClm>
+        <ClmDtls descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">CLM_DETL</ClmDtls>
+        <GteeRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">GTEE_NO</GteeRef>
+        <ClmCcy descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="9">CLM_CCY</ClmCcy>
+        <ClmAmt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="10">CLM_AMT</ClmAmt>
+        <NatureOfClm descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="11">NATURE_OF_CLM</NatureOfClm>
+        <AcctCcy descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="12">CUST_AC_CCY</AcctCcy>
+        <Acct descr="Customer Account" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="13">CUST_AC</Acct>
+        <CustInstr descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="14">CUST_INSTR</CustInstr>
+        <CurSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="15">CURRNT_STATUS</CurSts>
+        <NxtSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="16">NXT_STATUS</NxtSts>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="17">IWGT.005.ClmPmtInstr</MSG_TYPE>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item/>
+</gapi>

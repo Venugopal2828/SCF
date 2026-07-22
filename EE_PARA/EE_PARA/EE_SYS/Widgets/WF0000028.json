@@ -1,0 +1,29 @@
+{
+	"id": "WF0000028",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF0000028",
+			"display": "chart.bar",
+			"title": "EE Revenue Currency Analytics Widget",
+			"desc": "EE Revenue Currency Analytics Widget",	
+            "tooltip": "{\"text\":\"{a}<br/>{c} transaction(s) with status [{b}] comes in.{d}\",\"confine\":true,\"trigger\":\"item\"}",
+				
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Currency\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+					"line": "{\"xAxis\":{\"name\":\"Currency\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Currency\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Currency\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"sql": "SELECT C_UNIT_CODE, FA_PMT_CCY AS CURRENCY, ROUND(SUM(FA_PAID_INT_SUM)) AS VL FROM EXIMTRX.FAEF_PMT WHERE (FA_PAID_INT_SUM = FA_PAID_INT_SUM AND FA_PMT_CCY = FA_PMT_CCY) AND (C_TRX_STATUS = 'M' AND FA_PAID_INT_SUM IS NOT NULL)  GROUP BY C_UNIT_CODE, FA_PMT_CCY  ORDER BY SUM(FA_PAID_INT_SUM) DESC fetch first 20 rows only",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "CURRENCY",
+			"valueField": "VL"
+		}
+	}
+}

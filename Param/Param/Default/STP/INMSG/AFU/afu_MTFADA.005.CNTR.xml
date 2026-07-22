@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: assing msg to Issue Agreement");
+stp.setFunc("Issue Agreement", "Pre-Finance");
+var sType = stp.getMsgTagVal("FA_BUSI_TYPE");
+var iLen= sType.toString().length();
+if(iLen == 0){
+    sType = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUSI_TYPE");
+}
+if(sType == "DF" || sType == "POF" ){
+  stp.setCustomXSLName("stp.fada.005.df");
+  stp.setIsUseXSLMapping(true);
+} else if(sType == "RF"){
+  stp.setCustomXSLName("stp.fada.005.rf");
+  stp.setIsUseXSLMapping(true);
+}
+stp.writeLog("sType****************"+sType);
+stp.writeLog("End: assing msg to Issue Agreement");]]></js-content>
+</root>

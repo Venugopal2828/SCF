@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire Favourite Banks" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>IMLC</module-name>
+        <cubk-mapping-name>InqFavBank</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_PARTY</table-name>
+        <table-desc>STD_PARTY</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <PARTY_ID DESC="Party Id" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqDataId</PARTY_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PARTY_ID DESC="Party Id" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkId</PARTY_ID>
+        <PARTY_NM DESC="Name" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkNm</PARTY_NM>
+        <PARTY_ADD1 DESC="Location" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkAdd1</PARTY_ADD1>
+        <PARTY_ADD2 DESC="City" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkAdd2</PARTY_ADD2>
+        <PARTY_ADD3 DESC="Country" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkAdd3</PARTY_ADD3>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

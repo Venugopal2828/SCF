@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="TeamPortfolioDetails" Max="n" Min="0" Name="TeamPortfolioDetails" PendingStore="N" Screen="SCRN/DO/TeamPortfolioDetails.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="TEAM_PORTFL_DO"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>DO_INDEX_NO</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TRTD_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Data Object Index No." DispInGrid="N" EDIT="N" EEType="CHAR_40" FldType="" Value="">DO_INDEX_NO</Element>
+        <Element DATATYPE="1" Desc="Team ID" DispInGrid="N" EDIT="N" EEType="CID" FldType="" Value="">TEAM_ID</Element>
+        <Element DATATYPE="12" Desc="Team Name" DispInGrid="N" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">TEAM_NM</Element>
+        <Element DATATYPE="12" Desc="Business Unit" DispInGrid="Y" EDIT="N" EEType="AutoGen_Ext_VARCHAR_12" FldType="" Value="">BUSI_UNIT</Element>
+        <Element DATATYPE="12" Desc="Product Code" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">PROD_CD</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Portfolio Code" DispInGrid="Y" EDIT="N" EEType="FLAG_10" FldType="" Value="">PORTFL_CD</Element>
+        <Element DATATYPE="12" Desc="Portfolio Description" DispInGrid="Y" EDIT="N" EEType="CHAR_35" FldType="" Value="">PORTFL_DESC</Element>
+    </Elements>
+</DO>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>C02052700003</ID>
+    <MODULE>STAN</MODULE>
+    <EVENT>Exchange Rate</EVENT>
+    <CRTJSP POS=""/>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_SecuCatalog.jsp</JSPFILE>
+    <ADAPT/>
+    <TABLENAME>CETRX.STT_EXCHAN_RATE</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Bank Group ID" EEType="" HIDDEN="" NOEVENT="Y">C_BK_GROUP_ID</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Country Code" EEType="" HIDDEN="" NOEVENT="Y">C_CNTY_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="From CCY" EEType="" HIDDEN="" NOEVENT="Y">C_FROM_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="To CCY" EEType="" HIDDEN="" NOEVENT="Y">C_TO_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Exchange/Interest Rate Type" EEType="" HIDDEN="" NOEVENT="Y">C_EXCH_INT_TYPE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP1</VAR>
+        <VAR>OP2</VAR>
+        <VAR>LOG1</VAR>
+        <VAR>OP3</VAR>
+        <VAR>VAL2</VAR>
+        <VAR>LOG2</VAR>
+        <VAR>OP4</VAR>
+        <VAR>VAL3</VAR>
+        <VAR>LOG3</VAR>
+        <VAR>OP5</VAR>
+        <VAR>VAL4</VAR>
+        <VAR>LOG4</VAR>
+        <VAR>OP6</VAR>
+        <VAR>VAL5</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC/>
+    <CLAUSE>
+        <SQL DESC="From CCY" DT="12" TYPE="FLD" WTYPE="CASE">C_FROM_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP10</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP21</SQL>
+        <SQL TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG12</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="To CCY" DT="12" TYPE="FLD" WTYPE="CASE">C_TO_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP33</SQL>
+        <SQL TYPE="SQL">  &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VAL24</SQL>
+        <SQL TYPE="SQL">&apos; AND </SQL>
+        <SQL DESC="Exchange/Interest Rate Type" DT="12" TYPE="FLD" WTYPE="CASE">C_EXCH_INT_TYPE</SQL>
+        <SQL TYPE="SQL"> =&apos;E&apos;</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="" DESC="From CCY" EEType="">C_FROM_CCY</FIELD>
+        <FIELD DATATYPE="" DESC="To CCY" EEType="">C_TO_CCY</FIELD>
+        <FIELD DATATYPE="1" DESC="Exchange/Interest Rate Type" EEType="">C_EXCH_INT_TYPE</FIELD>
+    </CLAUSEFIELD>
+    <CLAUSEVAR/>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

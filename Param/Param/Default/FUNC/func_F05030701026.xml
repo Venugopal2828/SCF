@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">INVC</MODULE>
+        <MODULE_DESC>Invoice</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701026</ID>
+        <NAME>Time Out Notification</NAME>
+        <DESC>Time Out Notification</DESC>
+        <FUNSHORTNAME>TimerOutNotif</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">INVC_TimerOutNotif.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701019</ID>
+        <NAME>Time Out Notification_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701019</ID>
+        <NAME>Time Out Notification_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000303</ID>
+        <NAME>Time Out Notification_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

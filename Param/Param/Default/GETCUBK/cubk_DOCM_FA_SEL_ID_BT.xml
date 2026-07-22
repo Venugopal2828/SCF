@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="FA_SEL_ID_BT" type="normal">
+    <CRTJSP POS="C">CUBKCriteria_Party.jsp</CRTJSP>
+    <key-mapping>
+        <module-name>DOCM</module-name>
+        <cubk-mapping-name>FA_SEL_ID_BT</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_PARTY</table-name>
+        <table-desc>STD_PARTY</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <PARTY_ID DESC="Party Id" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">FA_SEL_ID</PARTY_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PARTY_ADD1 DESC="Location" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">PMIN_BENE_ADD</PARTY_ADD1>
+        <PARTY_BK_ID DESC="Party Bank ID" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">PMIN_BENE_BK_ID</PARTY_BK_ID>
+        <PARTY_BK_NM DESC="PARTY_BK_NM" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">PMIN_BENE_BK_NM</PARTY_BK_NM>
+        <PARTY_SW_ADD DESC="SWIFT Address" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">PMIN_BENE_BIC</PARTY_SW_ADD>
+        <PARTY_ID DESC="Party Id" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">FA_SEL_ID</PARTY_ID>
+        <PARTY_NM DESC="Name" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">FA_SEL_NM</PARTY_NM>
+        <PARTY_BK_SW_ADD DESC="PARTY_BK_SW_ADD" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">ADV_BKADD</PARTY_BK_SW_ADD>
+    </field-mapping>
+    <CLAUSE>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="Party Id" DT="1" TYPE="FLD" WTYPE="NOCASE">PARTY_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">&apos; AND </SQL>
+        <SQL DESC="Party Name" DT="1" TYPE="FLD" WTYPE="NOCASE">PARTY_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP2</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE3</SQL>
+        <SQL TYPE="SQL">&apos;)ORDER BY </SQL>
+        <SQL DESC="Party Id" DT="1" TYPE="FLD" WTYPE="NOCASE">PARTY_ID</SQL>
+    </CLAUSE>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

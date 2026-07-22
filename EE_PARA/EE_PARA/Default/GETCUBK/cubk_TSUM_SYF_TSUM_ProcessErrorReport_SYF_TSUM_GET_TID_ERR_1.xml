@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TSUM_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>TSUM</module-name>
+        <cubk-mapping-name>SYF_TSUM_ProcessErrorReport_SYF_TSUM_GET_TID_ERR_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <TSU_TID ALIAS="T0" DBFUNC="" DESC="Transaction TID" DT="12" HIDDEN="F" TYPE="F">TSU_ERR_TID2</TSU_TID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">TSU_BASELN_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL DT="var" DV="SYS_BUSI_UNIT" TYPE="FldValue">FldValue0</SQL>
+            <SQL TYPE="SQL">' </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

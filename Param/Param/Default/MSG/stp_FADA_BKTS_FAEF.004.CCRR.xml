@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>FAEF.004.CCRR</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>FADA</module>
+        <map-name>CAAResponse</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <C_MAIN_REF descr="CE system reference number" fv-type="F" intfconv="N">FA_CE_MAIN_REF</C_MAIN_REF>
+        <FA_LMT_AMT descr="Response Limit Amount" fv-type="F" intfconv="N">FA_LMT_AMT</FA_LMT_AMT>
+        <FA_LMT_CCY descr="Response Limit Currency" fv-type="F" intfconv="N">FA_LMT_CCY</FA_LMT_CCY>
+        <FA_LMT_DUE_DT descr="New Limit Due Date" fv-type="F" intfconv="N">FA_LMT_DUE_DT</FA_LMT_DUE_DT>
+        <FA_LMT_VAL_DT descr="Limit Start Date" fv-type="F" intfconv="N">FA_LMT_VAL_DT</FA_LMT_VAL_DT>
+        <FA_MSG_DT descr="Message Date" fv-type="F" intfconv="N">FA_MSG_DT</FA_MSG_DT>
+        <FA_REASON descr="Reason" fv-type="F" intfconv="N">FA_REASON</FA_REASON>
+        <FA_REPL_CODE descr="Reply Code" fv-type="F" intfconv="N">FA_REPL_CODE</FA_REPL_CODE>
+        <FA_SEL_ID descr="Seller ID" fv-type="F" intfconv="N">FA_SEL_ID</FA_SEL_ID>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="BENE_BKID" type="normal">
+    <CRTJSP POS="C">CUBKCriteria_Party.jsp</CRTJSP>
+    <key-mapping>
+        <module-name>REMM</module-name>
+        <cubk-mapping-name>BENE_BKID</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_PARTY</table-name>
+        <table-desc>STD_PARTY</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <PARTY_ID DESC="Party Id" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_ID</PARTY_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PARTY_ID DESC="Party Id" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_ID</PARTY_ID>
+        <PARTY_NM DESC="Party Name" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_NAME</PARTY_NM>
+        <PARTY_BK_SW_ADD DESC="PARTY_BK_SW_ADD" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_BKID</PARTY_BK_SW_ADD>
+        <PARTY_BK_NM DESC="PARTY_BK_NM" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_BKNAME</PARTY_BK_NM>
+        <PARTY_ADD1 DESC="Party Address - 1" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_ADD1</PARTY_ADD1>
+        <PARTY_ADD2 DESC="Party Address - 2" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_ADD2</PARTY_ADD2>
+        <PARTY_ADD3 DESC="Party Address - 3" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">BENE_ADD3</PARTY_ADD3>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

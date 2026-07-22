@@ -1,0 +1,156 @@
+{
+	"keys":[
+		{"key":"version", "value":"v0.1"}
+		,
+		{"key":"BasicAuthorize", "value":"N"}
+		,
+		{"key":"msg76Template", "value":"SCF76_SBR,SCF76_SignAgreementEE2CE,SCF76_AmendSBREE2CE,SCF76_Enq_SBR,SCF76_Enq_AGM_DTL,SCF76_Enq_SBR_LIST,SCF76_Enq_AGM_DTLABLF"}
+		,
+		{"key":"msg79Template", "value":"SCF79_Enq_INV_Detail,SCF79_Enq_INV"}
+		,
+		{"key":"msg59Template", "value":"SCF59_Enq_PO_Detail,SCF59_Enq_PO"}
+		,
+		{"key":"msg15Template", "value":"SCF15_Enq_Dispute_Detail"}
+		,
+		{"key":"msg91Template", "value":"SCF91_Enq_Loan,SCF91_Enq_Loan_Detail,SCF91_Enq_Loan_ABLF,SCF91_Enq_Loan_Detail_ABLF"}
+		,
+		{"key":"msg94Template", "value":"SCF94_Enq_Reg,SCF94_Enq_Reg_Detail"}
+		,
+		{"key":"SCF75_EEMAPPING_EXCEL", "value":"SCF75_EEMAPPING.xml"}
+		,
+		{"key":"SCF79_EEMAPPING_EXCEL", "value":"SCF79_EEMAPPING.xml"}
+		,
+		{"key":"SCF59_EEMAPPING_EXCEL", "value":"SCF59_EEMAPPING.xml"}
+		,
+		{"key":"ACC_BK_INT_RCV", "value":"BK_INT_RCV"}
+		,
+		{"key":"recordNum", "value":"50"}
+		,
+		{"key":"INV_SIZE_PER_THREAD", "value":"10001"}
+		,
+		{"key":"INV_THREAD_THRESHOLD", "value":"10"}
+		,
+		{"key":"FUNCID_Onboarding", "value":"F05030704094"}
+		,
+		{"key":"FUNCID_Customer", "value":"F05030701497"}
+		,
+		{"key":"DisputeReg_taskId", "value":"57NLKD3SEKFE"}
+		,
+		{"key":"AmendAgreementFields", "value":"FA_EF_COMM_RT,FA_LOAN_IRATE_TYPE,FA_IRT_SPREAD,XBOR_RT,FA_OVD_IRT_SPREAD,FA_FIN_INFO,FA_EF_HAN_CHG_AMT,FA_MAX_LOAN_PERC,FA_REBATE_RATE,FA_REBATE_ACCOUNT,CHG_FREQ_CD,CHG_PAID_BY,POOL_INV_MAX_PERIOD,POOL_INV_MIN_PERIOD,POOL_INV_MAX_AMT,POOL_INV_MIN_AMT,FA_MAX_FIN_AMT,FA_MIN_FIN_AMT,FA_CUT_OFF_DAYS,FA_AUTO_FIN,FA_AUTO_DEBIT,FA_ACK_FLG,FA_REQ_BUYER_APR_FLG,FA_DD_CHG_TP,FA_DD_CHG_FIX,FA_DD_CHG_SHA,FA_ROLLOVER_FLAG,MAX_ROLLOVER_DAYS"}
+		,
+		{"key":"AmendSBRDOFields","value":"FA_COUNTER_STR,FA_COUNTER_CT,FA_COUNTER_PROV,FA_COUNTER_ADD_ML,FA_COUNTER_CONT_EM,FA_COUNTER_CONT_TEL,FA_COUNTER_CONT_NM"}
+	],
+    "clients":[
+		{
+			"name":"CE",
+			"communicate":"REST",
+			"services":[
+				{"name":"SCF76_SignAgreementEE2CE", "value":"/message-api-receiver/stp/agreement"}
+				,
+				{"name":"SCF76_AmendSBREE2CE", "value":"/message-api-receiver/stp/sbr"}
+				,
+				{"name":"SCF76_SBR", "value":"/message-api-receiver/stp/sbr"}
+				,
+				{"name":"SCF79_INVOICE", "value":"/message-api-receiver/stp/invoice"}
+				,
+				{"name":"SCF59_PO", "value":"/message-api-receiver/stp/PO"}
+			],
+			"items":[
+				{"name":"clientUrl", "value":"http://dev-scfnew:9081/BL6CEWeb/v1"}
+				,
+				{"name":"sendToClientUser", "value":"eeConnUserName"}
+				,
+				{"name":"sendToClientPwd", "value":"eeConnUserPwd"}
+				,
+				{"name":"SCFTOKEN", "value":"EE"}
+			]
+		}
+		,{
+			"name":"EE",
+			"communicate":"REST",
+			"services":[
+				{"name":"SCF_FileUpload", "value":"/scfservice/scfapi/upload"}
+			],
+			"items":[
+				{"name":"clientUrl", "value":"http://dev-scfnew:9080/EximBillWeb"}
+				,
+				{"name":"sendToClientUser", "value":""}
+				,
+				{"name":"sendToClientPwd", "value":""}
+				,
+				{"name":"SCFTOKEN", "value":"eepwd"}
+			]
+		}
+	],
+	"copyFields":[
+		{
+			"name":"SELLER",
+			"fields":[
+				{"s":"FA_ANCHOR_ID", "t":"FA_BUYER_ID"}
+				,
+				{"s":"FA_ANCHOR_NM", "t":"FA_BUYER_NM"}
+				,
+				{"s":"FA_ANCHOR_NM2", "t":"FA_BUYER_NM2"}
+				,
+				{"s":"FA_ANCHOR_ACC", "t":"FA_BUYER_AC_NO"}
+				,
+				{"s":"FA_ANCHOR_ADD_ML", "t":"FA_BUYER_ADD_ML"}
+				,
+				{"s":"FA_COUNTER_ID", "t":"FA_SEL_ID"}
+				,
+				{"s":"FA_COUNTER_NM", "t":"FA_SEL_NM"}
+				,
+				{"s":"FA_COUNTER_ACC", "t":"FA_SEL_AC_NO"}
+				,
+				{"s":"FA_COUNTER_PROV", "t":"FA_SEL_PROV"}
+				,
+				{"s":"FA_COUNTER_CNTY", "t":"FA_SEL_CNTY"}
+				,
+				{"s":"FA_COUNTER_ADD_ML", "t":"FA_SEL_ADD_ML"}
+				,
+				{"s":"FA_COUNTER_CT", "t":"FA_SEL_CITY"}
+				,
+				{"s":"FA_COUNTER_CONT_NM", "t":"FA_SEL_CONT_NM"}
+				,
+				{"s":"FA_COUNTER_CONT_TEL", "t":"FA_SEL_CONT_TEL"}
+				,
+				{"s":"FA_COUNTER_CONT_EM", "t":"FA_SEL_CONT_MAIL"}
+			]
+		}
+		,
+		{
+			"name":"BUYER",
+			"fields":[
+				{"s":"FA_ANCHOR_ID", "t":"FA_SEL_ID"}
+				,
+				{"s":"FA_ANCHOR_NM", "t":"FA_SEL_NM"}
+				,
+				{"s":"FA_ANCHOR_NM2", "t":"FA_SEL_NM2"}
+				,
+				{"s":"FA_ANCHOR_ACC", "t":"FA_SEL_AC_NO"}
+				,
+				{"s":"FA_ANCHOR_ADD_ML", "t":"FA_SEL_ADD_ML"}
+				,
+				{"s":"FA_COUNTER_ID", "t":"FA_BUYER_ID"}
+				,
+				{"s":"FA_COUNTER_NM", "t":"FA_BUYER_NM"}
+				,
+				{"s":"FA_COUNTER_ACC", "t":"FA_BUYER_AC_NO"}
+				,
+				{"s":"FA_COUNTER_PROV", "t":"FA_BUYER_PROV"}
+				,
+				{"s":"FA_COUNTER_CNTY", "t":"FA_BUYER_CNTY"}
+				,
+				{"s":"FA_COUNTER_ADD_ML", "t":"FA_BUYER_ADD_ML"}
+				,
+				{"s":"FA_COUNTER_CT", "t":"FA_BUYER_CITY"}
+				,
+				{"s":"FA_COUNTER_CONT_NM", "t":"FA_BUYER_CONT_NM"}
+				,
+				{"s":"FA_COUNTER_CONT_TEL", "t":"FA_BUYER_CONT_TEL"}
+				,
+				{"s":"FA_COUNTER_CONT_EM", "t":"FA_BUYER_CONT_MAIL"}
+			]
+		}
+	]
+}

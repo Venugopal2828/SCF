@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Postal Format Address" Max="n" Min="1" Name="PostAddress" PendingStore="N" Screen="SCRN/DO/PostAddress.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="POST_ADD_DO"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>ORDER_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="BANK_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="CFNC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="STAT_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="4" Desc="Order Number" DispInGrid="Y" EDIT="N" EEType="INTEGER" FldType="" Value="">ORDER_NO</Element>
+        <Element DATATYPE="12" Desc="Postal Format Address" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">POSTAL_FMT_ADD</Element>
+    </Elements>
+</DO>

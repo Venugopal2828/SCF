@@ -1,0 +1,44 @@
+{
+  "name": "ShortcutMenu",
+  "props": {
+    "description": "Display the recently used functions & Main Menu.",
+    "icon": "",
+    "component": "c-shortcut-menu",
+    "removable": true,
+    "resizable": true,
+    "movable": true,
+    "minWidth": 6,
+    "maxWidth": 8,
+    "minHeight": 50,
+    "maxHeight": 100,
+    "header": false,
+    "headerButtons": "none"
+  },
+  "input": {
+    "version":1,
+    "components": [
+      {
+        "component": "c-main-menu",
+        "label": "Main Menu"
+      },
+      {
+        "component": "c-favorite-func",
+        "label": "Favorites",
+        "input": {
+          "functionCount": 5
+        }
+      },
+      {
+        "component": "c-recent-func",
+        "label": "Recent Functions",
+        "input": {
+          "functionCount": 5,
+          "funcItemTypeList": "New",
+          "funcIds":"",
+          "funcTypes":"PM",
+          "periodDays": 30
+        }
+      }
+    ]
+  }
+}

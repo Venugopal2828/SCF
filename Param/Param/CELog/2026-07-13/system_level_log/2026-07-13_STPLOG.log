@@ -1,0 +1,131 @@
+
+[start] [INFO] [2026-07-13 15:41:24.226] [SYSTEMS] 
+Initializing RunMsgBrk with basic parameters [end]
+
+[start] [INFO] [2026-07-13 15:41:24.227] [SYSTEMS] 
+Initializing RunMsgBrk with type=InSwiftForm [end]
+
+[start] [DEBUG] [2026-07-13 15:41:24.231] [SYSTEMS] 
+Initializing RunMsgBrk with basic parameters [end]
+
+[start] [ERROR] [2026-07-13 15:41:24.236] [SYSTEMS] 
+java.lang.Exception: No MQ parameter
+	at com.cs.eximap.ejb.business.gapi.MessageSender.getFilterName(MessageSender.java:491)
+	at com.cs.ceap.utilstp.MessageMQListener.generateMessage(MessageMQListener.java:89)
+	at com.cs.ceap.utilstp.STPMessageListenerAdapt.getMessageListener(STPMessageListenerAdapt.java:58)
+	at com.cs.eximap.batchmgr.task.RunMsgBrk.start(RunMsgBrk.java:78)
+	at com.cs.eximap.batchmgr.task.InSwiftForm.initMsgListener(InSwiftForm.java:180)
+	at com.cs.eximap.batchmgr.task.InSwiftForm.startTask(InSwiftForm.java:66)
+	at com.cs.eximap.batchmgr.taskmgr.MessageBroker.start(MessageBroker.java:249)
+	at com.cs.eximap.batchmgr.taskmgr.MessageBroker.startTask(MessageBroker.java:208)
+	at com.cs.eximap.batchmgr.taskmgr.MessageBrokerDecorateBean.startTask(MessageBrokerDecorateBean.java:95)
+	at com.cs.eximap.batchmgr.CallEJBAdapter.callMessageBroker(CallEJBAdapter.java:297)
+	at com.cs.eximap.batchmgr.CallEJBAdapter.callEJB(CallEJBAdapter.java:231)
+	at com.cs.eximap.batchmgr.BatchManager.bOrEData(BatchManager.java:222)
+	at com.cs.eximap.batchmgr.BatchManager.startData(BatchManager.java:227)
+	at com.cs.eximap.batchmgr.BatchManager.getData(BatchManager.java:61)
+	at com.cs.eximap.batchmgr.BatchManagerDecorateBean.getData(BatchManagerDecorateBean.java:59)
+	at com.cs.eximap.batchmgr.CallEJBAdapter.callbatchmanager(CallEJBAdapter.java:257)
+	at com.cs.eximap.batchmgr.CallEJBAdapter.callEJB(CallEJBAdapter.java:229)
+	at com.cs.eximap.ejb.comm.RMICommunicatorProcess.getData(RMICommunicatorProcess.java:105)
+	at com.cs.eximap.ejb.ctrl.ASECommunicatorBean.getData(ASECommunicatorBean.java:80)
+	at com.cs.comm.RMICommunicator.callAppEjb(RMICommunicator.java:79)
+	at com.cs.comm.WSCommunication.callAppEjb(WSCommunication.java:102)
+	at com.cs.ceweb.servlets.ClassModeRunBatchManager.callAppEJB(ClassModeRunBatchManager.java:221)
+	at com.cs.ceweb.servlets.ClassModeRunBatchManager.doPost(ClassModeRunBatchManager.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1235)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:779)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:478)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapperImpl.handleRequest(ServletWrapperImpl.java:179)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:143)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:96)
+	at com.cs.ceweb.servlets.CEResourceAccessFilter.doFilter(CEResourceAccessFilter.java:60)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.cs.ceweb.secu.utility.CECommonSecurityWebFilter.doFilter(CECommonSecurityWebFilter.java:134)
+	at com.cs.ceweb.servlets.CEPenTestFilter.doFilter(CEPenTestFilter.java:43)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.cs.ceweb.secu.utility.CECommonSecurityWebFilter.doFilter(CECommonSecurityWebFilter.java:134)
+	at com.cs.ceweb.servlets.CEPreventRefreshFilter.doFilter(CEPreventRefreshFilter.java:45)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.cs.ceweb.secu.utility.CECommonSecurityWebFilter.doFilter(CECommonSecurityWebFilter.java:134)
+	at com.cs.ceweb.servlets.CERequestFilter.doFilter(CERequestFilter.java:71)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.cs.eximweb.servlets.CEDencrptURLFilter.doFilter(CEDencrptURLFilter.java:45)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.cs.eximweb.servlets.CECharsetFilter.doFilter(CECharsetFilter.java:43)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:82)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:966)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpICLReadCallback.complete(HttpICLReadCallback.java:88)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:204)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:775)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:905)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+ [end]
+
+[start] [INFO] [2026-07-13 15:41:24.238] [SYSTEMS] 
+Message Broker starting................ [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.500] [SYSTEMS] 
+Entering into STP Manager... [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.502] [SYSTEMS] 
+STP Type is:InGapiForm [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.503] [SYSTEMS] 
+Initing adpater class:InGapiForm ... [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.507] [SYSTEMS] 
+Inited adpater class--OK! [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.507] [SYSTEMS] 
+Starting to convert STP message to STP XML Dom... [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.656] [SYSTEMS] 
+Start: set system name to BKTS [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.657] [SYSTEMS] 
+should set system name to BKTS [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.659] [SYSTEMS] 
+userId= [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.676] [SYSTEMS] 
+recDate:2026-07-13 [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.677] [SYSTEMS] 
+End: set system name to BKTS [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.683] [SYSTEMS] 
+Start: assing msg to Send Message to EE [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.751] [SYSTEMS] 
+End: assing msg to Send Message to EE [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.780] [CSBANK_CSBANK] 
+Converted STP message to STP XML Dom -- OK! [end]
+
+[start] [DEBUG] [2026-07-13 15:43:09.786] [CSBANK_CSBANK] 
+Starting to call Control Manager:TrxManagerMaster... [end]
+
+[start] [DEBUG] [2026-07-13 15:43:10.235] [CSBANK_CSBANK] 
+Called Control Manager:TrxManagerMaster --OK! [end]

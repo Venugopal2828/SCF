@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="STD">STAN</MODULE>
+        <MODULE_DESC>Standing Module</MODULE_DESC>
+        <EVENT>Customer Account</EVENT>
+        <CATALOGID>C03010200001</CATALOGID>
+        <ID>F03010200002</ID>
+        <NAME>Delete Customer Account</NAME>
+        <DESC>Delete Account Number</DESC>
+        <FUNSHORTNAME>DelCustAc</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>GE</FUNCTYPE>
+        <MAINCOMP name="STD Manager">STDManager</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="STD_Template.jsp">STAN_CustAc.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F03010200002</ID>
+        <NAME>Delete Customer Account_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A03010200002</ID>
+        <NAME>Delete Customer Account_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000082</ID>
+        <NAME>Delete Customer Account_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

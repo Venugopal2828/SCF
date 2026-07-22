@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_CLEARING</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_Proc_Inc_103_SYF_PYMT_Set_DB_AcctNo_5</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_ACCT_NR ALIAS="T0" DBFUNC="" DESC="C_ACCT_NR" DT="12" HIDDEN="F" TYPE="F">CPYT_DR_AC</C_ACCT_NR>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_CNTY_CODE='</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">' AND C_CLEAR_VALID='T' AND C_CLEAR_TYPE='</SQL>
+            <SQL TYPE="FLD">C_CLEAR_TYPE</SQL>
+            <SQL TYPE="SQL">' AND C_ACCT_CCY='</SQL>
+            <SQL TYPE="FLD">INW_X103_SETT_CCY_32A</SQL>
+            <SQL TYPE="SQL">' AND C_ACCT_WITH_ID='</SQL>
+            <SQL TYPE="FLD">INW_SNDBK_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

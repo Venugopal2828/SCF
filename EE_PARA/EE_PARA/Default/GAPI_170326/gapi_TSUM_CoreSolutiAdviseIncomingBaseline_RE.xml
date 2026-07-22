@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>F</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>Message Queue</gapi-type>
+        <gapi-type-value/>
+        <reformat-class>GenerateTSUGapi</reformat-class>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>EE_CE</other-system-id>
+        <other-system-interface>Advise Incoming Baseline</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>EE2CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>TSUM</module>
+        <interface-mapping-name>CoreSolutiAdviseIncomingBaseline</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>R</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="DO" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <TSU_GOODS_DESC descr="" ec-tag="N" fv-type="F" op-tag="N" order="1">TSU_GOODS_DESC</TSU_GOODS_DESC>
+        <TSU_PO_DT descr="" ec-tag="N" fv-type="F" op-tag="N" order="2">TSU_PO_DT</TSU_PO_DT>
+        <TSU_PO_ID descr="" ec-tag="N" fv-type="F" op-tag="N" order="3">TSU_PO_ID</TSU_PO_ID>
+        <TSU_LINE_TTL_AMT descr="" ec-tag="N" fv-type="F" op-tag="N" order="4">TSU_LINE_TTL_AMT</TSU_LINE_TTL_AMT>
+        <C_MAIN_REF descr="" ec-tag="N" fv-type="F" op-tag="N" order="6">C_MAIN_REF</C_MAIN_REF>
+        <C_UNIT_CODE descr="" ec-tag="N" fv-type="F" op-tag="N" order="7">C_UNIT_CODE</C_UNIT_CODE>
+        <TSU_TRX_STATUS descr="" ec-tag="N" fv-type="F" op-tag="N" order="8">TSUR2_TRX_STATUS</TSU_TRX_STATUS>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" op-tag="N" order="9">TSU_RecIncomingPO</MSG_TYPE>
+        <TSU_CCY descr="" ec-tag="N" fv-type="F" op-tag="N" order="10">TSU_CCY</TSU_CCY>
+        <TSU_PO_INITIATOR descr="" ec-tag="N" fv-type="F" op-tag="N" order="11">TSU_PO_INITIATOR</TSU_PO_INITIATOR>
+        <TSU_LATST_SHIP_DT descr="" ec-tag="N" fv-type="F" op-tag="N" order="12">TSU_LATST_SHIP_DT</TSU_LATST_SHIP_DT>
+        <TSU_SEL_NM descr="" ec-tag="N" fv-type="F" op-tag="N" order="13">TSU_SEL_NM</TSU_SEL_NM>
+        <TSU_BUYER_NM descr="" ec-tag="N" fv-type="F" op-tag="N" order="14">TSU_BUYER_NM</TSU_BUYER_NM>
+        <TSU_CUST_ID descr="" ec-tag="N" fv-type="F" op-tag="N" order="15">TSU_CUST_ID</TSU_CUST_ID>
+    </send-msg-map>
+    <recv-msg-map/>
+    <send-item>
+        <item name="form"/>
+        <item name="tsu"/>
+    </send-item>
+</gapi>

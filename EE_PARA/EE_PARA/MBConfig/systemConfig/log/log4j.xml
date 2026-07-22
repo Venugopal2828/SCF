@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" [<!ENTITY XCategory "org.log4j.xml.examples.XCategory">]>
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<!--<param name="File" value="System.out"/>	-->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p - %m%n%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="esb.logger" class="com.cs.soa.log.SoaDailyRollingFileAppender">
+		<param name="SOAFile" value="rt_esb.log"/>
+		<param name="File" value="rt_esb.log"/>	
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="Append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p - %m%n%n"/>
+		</layout>
+	</appender>
+
+	<appender name="mb.logger" class="com.cs.soa.log.SoaDailyRollingFileAppender">
+		<param name="SOAFile" value="rt_mb.log"/>
+		<param name="File" value="rt_mb.log"/>
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="Append" value="true"/>	
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p - %m%n%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="listener.logger" class="com.cs.soa.log.SoaDailyRollingFileAppender">
+		<param name="SOAFile" value="rt_listener.log"/>
+		<param name="File" value="rt_listener.log"/>
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="Append" value="true"/>	
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p - %m%n%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="sender.logger" class="com.cs.soa.log.SoaDailyRollingFileAppender">
+		<param name="SOAFile" value="rt_sender.log"/>
+		<param name="File" value="rt_sender.log"/>
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="Append" value="true"/>	
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p - %m%n%n"/>
+		</layout>
+	</appender>
+	<appender name="receiver.logger" class="com.cs.soa.log.SoaDailyRollingFileAppender">
+		<param name="SOAFile" value="rt_receiver.log"/>
+		<param name="File" value="rt_receiver.log"/>
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="Append" value="true"/>	
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p - %m%n%n"/>
+		</layout>
+	</appender>
+	<appender name="sql.logger" class="com.cs.soa.log.SoaDailyRollingFileAppender">
+		<param name="SOAFile" value="rt_sql.log"/>
+		<param name="File" value="rt_sql.log"/>
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="Append" value="true"/>	
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p - %m%n%n"/>
+		</layout>
+	</appender>
+	
+	<category name="cs.soa.esb.logger">
+		<level value="ALL" />
+		<appender-ref ref="esb.logger"/>
+	</category>
+	<category name="cs.soa.mb.logger">
+		<priority value="ALL"/>
+		<appender-ref ref="mb.logger"/>
+		<!--appender-ref ref="STDOUT"/-->
+	</category>
+	
+	<category name="cs.soa.listener.logger">
+		<priority value="INFO"/>
+		<appender-ref ref="listener.logger"/>
+	</category>
+
+	<category name="cs.soa.sender.logger">
+		<priority value="ALL"/>
+		<appender-ref ref="sender.logger"/>
+		<!--appender-ref ref="STDOUT"/-->
+	</category>
+	
+	<category name="cs.soa.receiver.logger">
+		<priority value="ALL"/>
+		<appender-ref ref="receiver.logger"/>
+		<!--appender-ref ref="STDOUT"/-->
+	</category>
+	
+	<category name="cs.soa.sql.logger">
+		<priority value="ALL"/>
+		<appender-ref ref="sql.logger"/>
+		<!--appender-ref ref="STDOUT"/-->
+	</category>
+</log4j:configuration>

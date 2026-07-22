@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Action Reminder");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMsgReqrngActn = stp.getXslMsgTagVal("message/Document/ActnRmndr/MsgReqrngActn","Id");
+stp.writeLog("sMsgReqrngActn===================="+sMsgReqrngActn);
+var arrKeys = [["TSU_MESSAGE_ID",sMsgReqrngActn]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetModuleNmByMsgId",arrKeys);
+var sModuleNm = arrGetDataResult[0];
+stp.writeLog("sModuleNm==============="+sModuleNm);
+if(sModuleNm == "INVC"){
+stp.reAssignFunc("Received Action Reminder","Invoice");
+stp.setCustomXSLName("stp.tsmt.024");
+stp.setIsUseXSLMapping(true);
+}else{
+var arrKeys1 = [["TSU_MESSAGE_ID",sMsgReqrngActn]];
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetRefUnitforErrRpt",arrKeys1);
+var sMainRef = arrGetDataResult1[1];
+var sUnitCode = arrGetDataResult1[0];
+var sParentMainRef = arrGetDataResult1[2];
+stp.setCmpId(sUnitCode);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sParentMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Received Action Reminder");
+}
+stp.writeLog("End: Received Action Reminder");]]></js-content>
+</root>

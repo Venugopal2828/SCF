@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Invoice Tracer List" Max="n" Min="0" Name="InvoiceTracerInvoice" PendingStore="N" Screen="SCRN/o2m/PMAT_InvoiceTracerINVLIST.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>InvoiceTracer</Component>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>EPP_SUPLR_ID</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Approved invoice ID" DispInGrid="N" EDIT="N" EEType="Varchar_18" FldType="" Value="">AI_ID</Element>
+        <Element DATATYPE="12" Desc="Early Payment Program Supplier Relationship Identification Number" DispInGrid="Y" EDIT="N" EEType="Varchar_40" FldType="" Value="">SUPLR_ID</Element>
+        <Element DATATYPE="12" Desc="Supplier Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_60" FldType="" Value="">SUPLR_NM</Element>
+        <Element DATATYPE="12" Desc="Number that identifies the invoice created by the buyer" DispInGrid="Y" EDIT="N" EEType="varchar_50_1" FldType="" Value="">AI_NUM</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="3" Desc="AI approved amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">AI_ACT_AMT</Element>
+        <Element DATATYPE="3" Desc="Invoice balance" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">AI_BALANCE</Element>
+        <Element DATATYPE="91" Desc="Invoice Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">AI_DT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Due Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">AI_DUE_DT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Settlement Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">AI_SET_DT</Element>
+        <Element DATATYPE="12" Desc="Status shown to the staff" DispInGrid="Y" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_STAFF_CD</Element>
+        <Element DATATYPE="12" Desc="Whether this invoice is funded" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IS_FUNDED</Element>
+        <Element DATATYPE="12" Desc="Related EPP ID" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">EPP_ID</Element>
+        <Element DATATYPE="12" Desc="EPP Supplier Id" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">EPP_SUPLR_ID</Element>
+        <Element DATATYPE="12" Desc="Active funding report ID" DispInGrid="N" EDIT="N" EEType="Varchar_16" FldType="" Value="">FUND_RPT_ID</Element>
+        <Element DATATYPE="91" Desc="Overdue date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">OVD_DT</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Pass Funding Cutoff Days Flag" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">AI_PASS_FCD_FLG</Element>
+    </Elements>
+</DO>

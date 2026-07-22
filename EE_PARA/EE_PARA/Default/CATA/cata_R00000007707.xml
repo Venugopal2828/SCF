@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False" MULTI="YES">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="AUTHORIZATION_CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082301804</ID>
+    <MODULE>PYMT</MODULE>
+    <JSPFILE>screen/CATA/AuthCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Release_OTT_ZA</DESC>
+    <TABLELIST>
+        <TABLENAME ALIAS="T1">%EXIMSYS%.TRX_AUTH_AUDIT_HEADER</TABLENAME>
+        <TABLENAME ALIAS="T2">%EXIMTRX%.PYMT_MASTER</TABLENAME>
+        <TABLENAME ALIAS="T3" MASTER="YES">%EXIMTRX%.PYMT_LEDGER</TABLENAME>
+        <TABLENAME ALIAS="T4">%EXIMTRX%.PYMT_EVENT</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="C_MAIN_REF" DATATYPE="12" DESC="Our Reference"
+            EEType="SYS_VARCHAR_40" HIDDEN="">T3.C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" COL="EXTERNAL_REF" DATATYPE="12"
+            DESC="Workflow Reference" EEType="VARCHAR20" HIDDEN="">T2.EXTERNAL_REF</FIELD>
+        <FIELD ALIAS="" COL="C_AUTH_FLAG" DATATYPE="12" DESC="Auth Flag"
+            EEType="Varchar_1" HIDDEN="H">T1.C_AUTH_FLAG</FIELD>
+        <FIELD ALIAS="" COL="C_TRX_STATUS" DATATYPE="1" DESC="C_TRX_STATUS"
+            EEType="SYS_CHAR_1" HIDDEN="H">T1.C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" COL="C_FUNC_ID" DATATYPE="1" DESC="Function ID"
+            EEType="SYS_CHAR_12" HIDDEN="H">T3.C_FUNC_ID</FIELD>
+        <FIELD ALIAS="" COL="C_FUNC_SHORT_NAME" DATATYPE="12"
+            DESC="Function Short Name" EEType="SYS_VARCHAR_16" HIDDEN="H">T3.C_FUNC_SHORT_NAME</FIELD>
+        <FIELD ALIAS="" COL="I_EVENT_TIMES" DATATYPE="4" DESC="Event Times"
+            EEType="SYS_INTEGER_0" HIDDEN="H">T3.I_EVENT_TIMES</FIELD>
+        <FIELD ALIAS="" COL="C_UNIT_CODE" DATATYPE="12" DESC="UNIT CODE"
+            EEType="SYS_VARCHAR_12" HIDDEN="H">T3.C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" COL="C_BK_GROUP_ID" DATATYPE="12" DESC="BANK GROUP ID"
+            EEType="SYS_VARCHAR_12" HIDDEN="H">T1.C_BK_GROUP_ID</FIELD>
+        <FIELD ALIAS="" COL="C_CNTY_CODE" DATATYPE="1" DESC="Country Code"
+            EEType="CNTY" HIDDEN="H">T1.C_CNTY_CODE</FIELD>
+        <FIELD ALIAS="C_MAIN_REF_T1" COL="C_MAIN_REF" DATATYPE="12"
+            DESC="Our Reference" EEType="SYS_VARCHAR_40" HIDDEN="H">T1.C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" COL="C_MODULE" DATATYPE="1" DESC="Module"
+            EEType="SYS_CHAR_4" HIDDEN="H">T1.C_MODULE</FIELD>
+        <FIELD ALIAS="I_EVENT_TIMES_T1" COL="I_EVENT_TIMES" DATATYPE="4"
+            DESC="EVENT TIMES" EEType="SYS_INTEGER_0" HIDDEN="H">T1.I_EVENT_TIMES</FIELD>
+        <FIELD ALIAS="" COL="C_NEXT_CLASS" DATATYPE="12" DESC="C_NEXT_CLASS"
+            EEType="Varchar_10" HIDDEN="H">T1.C_NEXT_CLASS</FIELD>
+        <FIELD ALIAS="" COL="X103_ORDCU_NM_50A" DATATYPE="12"
+            DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="">T4.X103_ORDCU_NM_50A</FIELD>
+        <FIELD ALIAS="" COL="X103_ORDCUACNO_50A" DATATYPE="1"
+            DESC="Applicant Account" EEType="ACNO" HIDDEN="">T4.X103_ORDCUACNO_50A</FIELD>
+        <FIELD ALIAS="" COL="CR_CCY" DATATYPE="1" DESC="Credit Currency"
+            EEType="CCY" HIDDEN="">T4.CR_CCY</FIELD>
+        <FIELD ALIAS="" COL="CR_CALC_AMT" DATATYPE="3" DESC="Credit Amount"
+            EEType="AMT" HIDDEN="">T4.CR_CALC_AMT</FIELD>
+        <FIELD ALIAS="" COL="DB_CCY" DATATYPE="1" DESC="Debit Currency"
+            EEType="CCY" HIDDEN="">T4.DB_CCY</FIELD>
+        <FIELD ALIAS="" COL="DB_CALC_AMT" DATATYPE="3" DESC="Debit Amount"
+            EEType="AMT" HIDDEN="">T4.DB_CALC_AMT</FIELD>
+        <FIELD ALIAS="" COL="PRIORITY" DATATYPE="12" DESC="Priority"
+            EEType="SYS_VARCHAR_8" HIDDEN="">T4.PRIORITY</FIELD>
+        <FIELD ALIAS="" COL="X103_VALUE_DT_32A" DATATYPE="91" DESC="Value Date"
+            EEType="DATE" HIDDEN="">T4.X103_VALUE_DT_32A</FIELD>
+        <FIELD ALIAS="" COL="C_EVENT_STATUS" DATATYPE="1" DESC="Event Status"
+            EEType="SYS_CHAR_1" HIDDEN="">T3.C_EVENT_STATUS</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">T3.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Workflow Reference" DT="12" EEType="VARCHAR20" POS="SELFLD" TYPE="FLD">T2.EXTERNAL_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Auth Flag" DT="12" EEType="Varchar_1" POS="SELFLD" TYPE="FLD">T1.C_AUTH_FLAG</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="SYS_CHAR_1" POS="SELFLD" TYPE="FLD">T1.C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Function ID" DT="1" EEType="SYS_CHAR_12" POS="SELFLD" TYPE="FLD">T3.C_FUNC_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Function Short Name" DT="12" EEType="SYS_VARCHAR_16"
+            POS="SELFLD" TYPE="FLD">T3.C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Event Times" DT="4" EEType="SYS_INTEGER_0" POS="SELFLD" TYPE="FLD">T3.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="UNIT CODE" DT="12" EEType="SYS_VARCHAR_12" POS="SELFLD" TYPE="FLD">T3.C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="BANK GROUP ID" DT="12" EEType="SYS_VARCHAR_12" POS="SELFLD" TYPE="FLD">T1.C_BK_GROUP_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Country Code" DT="1" EEType="CNTY" POS="SELFLD" TYPE="FLD">T1.C_CNTY_CODE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Module" DT="1" EEType="SYS_CHAR_4" POS="SELFLD" TYPE="FLD">T1.C_MODULE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="EVENT TIMES" DT="4" EEType="SYS_INTEGER_0" POS="SELFLD" TYPE="FLD">T1.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_NEXT_CLASS" DT="12" EEType="Varchar_10" POS="SELFLD" TYPE="FLD">T1.C_NEXT_CLASS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Applicant Name" DT="12" EEType="NM_CHAR35" POS="SELFLD" TYPE="FLD">T4.X103_ORDCU_NM_50A</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Applicant Account" DT="1" EEType="ACNO" POS="SELFLD" TYPE="FLD">T4.X103_ORDCUACNO_50A</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Credit Currency" DT="1" EEType="CCY" POS="SELFLD" TYPE="FLD">T4.CR_CCY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Credit Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T4.CR_CALC_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Debit Currency" DT="1" EEType="CCY" POS="SELFLD" TYPE="FLD">T4.DB_CCY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Debit Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T4.DB_CALC_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Priority" DT="12" EEType="SYS_VARCHAR_8" POS="SELFLD" TYPE="FLD">T4.PRIORITY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Value Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T4.X103_VALUE_DT_32A</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Event Status" DT="1" EEType="SYS_CHAR_1" POS="SELFLD" TYPE="FLD">T3.C_EVENT_STATUS</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.PYMT_EVENT T4</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.PYMT_LEDGER T3</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.PYMT_MASTER T2</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMSYS%.TRX_AUTH_AUDIT_HEADER T1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL TYPE="SQL">(
+</SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Workflow Reference" DT="12" EEType="VARCHAR20" POS="WHEFLD" TYPE="FLD">T2.EXTERNAL_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Applicant Name" DT="12" EEType="NM_CHAR35" POS="WHEFLD" TYPE="FLD">T4.X103_ORDCU_NM_50A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Applicant Account" DT="1" EEType="ACNO" POS="WHEFLD" TYPE="FLD">T4.X103_ORDCUACNO_50A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG11</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Credit Currency" DT="1" EEType="CCY" POS="WHEFLD" TYPE="FLD">T4.CR_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP12</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE13</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG14</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Credit Amount" DT="3" EEType="AMT" POS="WHEFLD" TYPE="FLD">T4.CR_CALC_AMT</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP15</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE16</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG17</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Debit Currency" DT="1" EEType="CCY" POS="WHEFLD" TYPE="FLD">T4.DB_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP18</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE19</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG20</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Debit Amount" DT="3" EEType="AMT" POS="WHEFLD" TYPE="FLD">T4.DB_CALC_AMT</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP21</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE22</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG23</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Priority" DT="12" EEType="SYS_VARCHAR_8" POS="WHEFLD" TYPE="FLD">T4.PRIORITY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP24</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE25</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG26</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Value Date" DT="91" EEType="DATE" POS="WHEFLD" TYPE="FLD">T4.X103_VALUE_DT_32A</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP27</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE28</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG29</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Event Status" DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">T3.C_EVENT_STATUS</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP30</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE31</SQL>
+        <SQL TYPE="SQL">'
+) AND 
+</SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T3.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> AND  
+</SQL>
+        <SQL DESC="Event Times" DT="4" EEType="SYS_INTEGER_0" POS="WHEFLD" TYPE="FLD">T3.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="EVENT TIMES" DT="4" EEType="SYS_INTEGER_0" POS="WHEFLD" TYPE="FLD">T1.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL">  AND 
+</SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T3.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> LIKE 'OT%' AND 
+</SQL>
+        <SQL DESC="Event Status" DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">T3.C_EVENT_STATUS</SQL>
+        <SQL TYPE="SQL"> &lt;&gt; 'S' AND 
+</SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T3.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> AND 
+</SQL>
+        <SQL DESC="Event Times" DT="4" EEType="SYS_INTEGER_0" POS="WHEFLD" TYPE="FLD">T3.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="EVENT TIMES" DT="4" EEType="SYS_INTEGER_0" POS="WHEFLD" TYPE="FLD">T2.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL"> AND 
+</SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T3.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T4.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> AND
+</SQL>
+        <SQL DESC="Event Times" DT="4" EEType="SYS_INTEGER_0" POS="WHEFLD" TYPE="FLD">T3.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="EVENT TIMES" DT="4" EEType="SYS_INTEGER_0" POS="WHEFLD" TYPE="FLD">T4.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL"> AND 
+ (((SELECT COUNT (*) FROM pymt_master pm1 JOIN pymt_ledger pl2
+                                ON pm1.c_main_ref = pl2.c_main_ref
+                          WHERE pm1.related_ref_no = </SQL>
+        <SQL DESC="Related Reference Number" DT="1" EEType="RELATED_REF"
+            POS="WHEFLD" TYPE="FLD">T2.RELATED_REF_NO</SQL>
+        <SQL TYPE="SQL"> 
+                            AND pm1.c_main_ref &lt;&gt; </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> 
+                            AND pm1.channel = 'NBOL MULTI'
+                            AND pm1.cr_cash_ind = 'Yes'
+                            AND pl2.c_event_status = 'M'
+                            AND pm1.c_main_ref LIKE 'AT%'
+                            AND pm1.currnt_status &lt;&gt; 'AT_CANCEL') = 1
+                     OR  </SQL>
+        <SQL DESC="Channel Indicator" DT="1" EEType="INTERPRETER" POS="WHEFLD" TYPE="FLD">T2.CHANNEL</SQL>
+        <SQL TYPE="SQL"> &lt;&gt; 'NBOL MULTI'
+                    )
+                 OR (SELECT COUNT (*)
+                       FROM pymt_master pm1 JOIN pymt_ledger pl2
+                            ON pm1.c_main_ref = pl2.c_main_ref
+                      WHERE pm1.related_ref_no =  </SQL>
+        <SQL DESC="Related Reference Number" DT="1" EEType="RELATED_REF"
+            POS="WHEFLD" TYPE="FLD">T2.RELATED_REF_NO</SQL>
+        <SQL TYPE="SQL">
+                        AND pm1.c_main_ref =  </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">
+                        AND pm1.channel = 'NBOL MULTI'
+                        AND pm1.cr_cash_ind = 'Yes'
+                        AND pl2.c_event_status = 'P'
+                        AND pm1.c_main_ref LIKE 'AT%'
+                        AND pm1.currnt_status &lt;&gt; 'AT_CANCEL') = 1
+                )
+
+
+
+</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EETYPE="SYS_VARCHAR_40">T1.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Workflow Reference" EETYPE="VARCHAR20">T2.EXTERNAL_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Applicant Name" EETYPE="NM_CHAR35">T4.X103_ORDCU_NM_50A</FIELD>
+        <FIELD DATATYPE="1" DESC="Applicant Account" EETYPE="ACNO">T4.X103_ORDCUACNO_50A</FIELD>
+        <FIELD DATATYPE="1" DESC="Credit Currency" EETYPE="CCY">T4.CR_CCY</FIELD>
+        <FIELD DATATYPE="3" DESC="Credit Amount" EETYPE="AMT">T4.CR_CALC_AMT</FIELD>
+        <FIELD DATATYPE="1" DESC="Debit Currency" EETYPE="CCY">T4.DB_CCY</FIELD>
+        <FIELD DATATYPE="3" DESC="Debit Amount" EETYPE="AMT">T4.DB_CALC_AMT</FIELD>
+        <FIELD DATATYPE="12" DESC="Priority" EETYPE="SYS_VARCHAR_8">T4.PRIORITY</FIELD>
+        <FIELD DATATYPE="91" DESC="Value Date" EETYPE="DATE">T4.X103_VALUE_DT_32A</FIELD>
+        <FIELD DATATYPE="1" DESC="Event Status" EETYPE="SYS_CHAR_1">T3.C_EVENT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EETYPE="SYS_VARCHAR_40">T1.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EETYPE="SYS_VARCHAR_40">T3.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="4" DESC="Event Times" EETYPE="SYS_INTEGER_0">T3.I_EVENT_TIMES</FIELD>
+        <FIELD DATATYPE="4" DESC="EVENT TIMES" EETYPE="SYS_INTEGER_0">T1.I_EVENT_TIMES</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EETYPE="SYS_VARCHAR_40">T3.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="Event Status" EETYPE="SYS_CHAR_1">T3.C_EVENT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EETYPE="SYS_VARCHAR_40">T3.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T2.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="4" DESC="Event Times" EETYPE="SYS_INTEGER_0">T3.I_EVENT_TIMES</FIELD>
+        <FIELD DATATYPE="4" DESC="EVENT TIMES" EETYPE="SYS_INTEGER_0">T2.I_EVENT_TIMES</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EETYPE="SYS_VARCHAR_40">T3.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T4.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="4" DESC="Event Times" EETYPE="SYS_INTEGER_0">T3.I_EVENT_TIMES</FIELD>
+        <FIELD DATATYPE="4" DESC="EVENT TIMES" EETYPE="SYS_INTEGER_0">T4.I_EVENT_TIMES</FIELD>
+        <FIELD DATATYPE="1" DESC="Related Reference Number" EETYPE="RELATED_REF">T2.RELATED_REF_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T2.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="Channel Indicator" EETYPE="INTERPRETER">T2.CHANNEL</FIELD>
+        <FIELD DATATYPE="1" DESC="Related Reference Number" EETYPE="RELATED_REF">T2.RELATED_REF_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T2.C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

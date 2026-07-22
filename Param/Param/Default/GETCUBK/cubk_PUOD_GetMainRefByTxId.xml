@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Get MainRef By TxId" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>PUOD</module-name>
+        <cubk-mapping-name>GetMainRefByTxId</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.PUOD_EM_BASELINE</table-name>
+        <table-desc>Baseline Data</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <TSU_TID DESC="Transaction TID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_TID</TSU_TID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_MAIN_REF</C_MAIN_REF>
+        <TSU_TRX_ROLE DESC="Transaction Role" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_TRX_ROLE</TSU_TRX_ROLE>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

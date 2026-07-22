@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="ee_batch_clust" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EE_Cache_Config.xsd">
+    <diskStore path="java.io.tmpdir/ee_batch_clust"/>
+    <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_S -->
+    <!--  <cacheManagerPeerProviderFactory
+        class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory" properties="peerDiscovery=automatic, multicastGroupAddress=238.12.13.14, multicastGroupPort=4746,timeToLive=12"/>-->
+    <cacheManagerPeerProviderFactory
+        class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory" properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1,multicastGroupPort=4446, timeToLive=1"/>
+    <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_E -->
+	<!-- @ref EE-6187 @date 2012-08-16 @author salk add_s-->
+    <cacheManagerPeerListenerFactory
+        class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory" properties="port=47001,socketTimeoutMillis=120000"/>
+    <defaultCache diskExpiryThreadIntervalSeconds="120" diskPersistent="false"
+        eternal="false" maxElementsInMemory="100"
+        memoryStoreEvictionPolicy="LRU" overflowToDisk="false"
+        timeToIdleSeconds="600" timeToLiveSeconds="600"/>
+        <!-- @ref EE-6187 @date 2012-08-16 @author salk add_e-->
+
+    <!--
+       Cache configuration of task.
+    -->
+    <cache eternal="true" maxElementsInMemory="300" name="BATCH_TASK_INFO"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600"/>
+    <cache eternal="true" maxElementsInMemory="100" name="JOB_STATUS"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+         <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_S -->
+         <!-- @ref EE-6187 @date 2012-08-16 @author salk add_s-->
+         <!--
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+		-->
+		<!-- @ref EE-6187 @date 2012-08-16 @author salk add_e-->
+        <!--<cacheEventListenerFactory class="com.cs.cache.CacheClusteringEventFactory"/>
+        -->
+         <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_E -->
+     </cache>
+    <cache eternal="true" maxElementsInMemory="300" name="TEMPORARY_JOB"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+        <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_S -->
+        <!-- @ref EE-6187 @date 2012-08-16 @author salk add_s-->
+        <!--
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+		-->
+		<!-- @ref EE-6187 @date 2012-08-16 @author salk add_e-->
+        <!--<cacheEventListenerFactory class="com.cs.cache.CacheClusteringEventFactory"/>
+        -->
+         <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_E -->
+     </cache>
+    <cache eternal="true" maxElementsInMemory="300" name="EE_BATCH_CACHE"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+         <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_S -->
+         <!--@author salk @date 2012-08-09 @date 2012-08-09 @ref EE-6187 add_S-->
+         <!--
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+        -->
+         <!--@author salk  @date 2012-08-09 @ref EE-6187 add_E -->
+        <!--<cacheEventListenerFactory class="com.cs.cache.CacheClusteringEventFactory"/>
+        -->
+         <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_E -->
+    </cache>
+    <!--@author monroe @date 2011-07-15 @ref ISC-EE-0096 add_S -->
+    <cache eternal="true" maxElementsInMemory="300" name="CACHE_WEB_AP_HOLIDAY"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+        <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_S -->
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+        <!--@author salk bundle by dennis @date 2012-05-14 @ref ISC-EE-0294 add_E -->
+    </cache>
+	<!--@author monroe @date 2011-07-15 @ref ISC-EE-0096 add_E -->
+    <cache name="CACHE_SODEOD_COMMON_DATA"
+           maxElementsInMemory="100"
+           eternal="true"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">
+           <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+         properties="replicateAsynchronously=true,
+         replicatePuts=true,
+         replicateUpdates=true,
+         replicateUpdatesViaCopy=true,
+         replicateRemovals=true "/>
+
+    </cache>
+    <!--@author inman @date 2012-08-20 @ref EE-6257 _S -->
+	<cache name="CACHE_BUSINESSUNIT_TIMEZONE"
+			maxElementsInMemory="100"
+			eternal="true"
+			timeToIdleSeconds="600"
+			timeToLiveSeconds="600"
+			overflowToDisk="false">Common Global Simple Data(Cluster Support)
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,
+			replicatePuts=true,
+			replicateUpdates=true,
+			replicateUpdatesViaCopy=true,
+			replicateRemovals=true "/>
+	</cache>
+	<!--@author inman @date 2012-08-20 @ref EE-6257 _E -->
+</ehcache>

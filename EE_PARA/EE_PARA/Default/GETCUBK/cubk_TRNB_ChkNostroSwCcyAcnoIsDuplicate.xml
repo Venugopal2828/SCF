@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey" AutoGen-Parameter-Version="1.0">
+    <key-mapping>
+        <module-name>TRNB</module-name>
+        <cubk-mapping-name>ChkNostroSwCcyAcnoIsDuplicate</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRNB_ACNO_DO</table-name>
+        </tables>
+        <key-fields>
+            <NS_BK_SWADD ALIAS="T0" DESC="Nostro Bank SWIFT Address" DT="1" TYPE="F">NS_BK_SWADD</NS_BK_SWADD>
+            <NOSTRO_CCY ALIAS="T0" DESC="Nostro CCY" DT="1" TYPE="F">NOSTRO_CCY</NOSTRO_CCY>
+            <NOSTRO_AC_NO ALIAS="T0" DESC="Nostro Account No" DT="1" TYPE="F">NOSTRO_AC_NO</NOSTRO_AC_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">C_MAIN_REF</C_MAIN_REF>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRCO_BR_DATA</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>TRCO</module-name>
+        <cubk-mapping-name>GetBranchDataByAll</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <C_TRX_STATUS ALIAS="T0" DESC="C_TRX_STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <BR_ID ALIAS="T0" DBFUNC="" DESC="Branch ID" DT="12" HIDDEN="F" TYPE="F">BR_ID</BR_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="SYS_CHAR_1" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL">='M'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

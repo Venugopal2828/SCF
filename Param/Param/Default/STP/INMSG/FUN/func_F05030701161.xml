@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start do stp JS");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var mainRef = stp.SYS_getRefNo("P16062000000");
+stp.setMainRef(mainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",mainRef);
+stp.updateFieldValue("CURRNT_STATUS","Uploaded PO");
+stp.setEventTimes(0);
+stp.writeLog("End do stp JS");]]></js-content>
+</root>

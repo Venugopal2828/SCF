@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
+		<property name="cookieSerializer" ref="defaultCookieSerializer" />
+	</bean>
+	<bean id="defaultCookieSerializer" class="org.springframework.session.web.http.DefaultCookieSerializer">
+		<property name="domainName" value="127.0.0.1" />
+		<property name="cookieName" value="JESSIONID" />
+		<property name="cookiePath" value="/" />
+	</bean>
+	<!--EE-10887 Defect #101144Change the plaintext password in related configurations. two plans: 1:system-properties-mode="ENVIRONMENT",2:id="propertyPlaceholderConfigurer" - begin-->
+	<!--
+	<context:property-placeholder ignore-unresolvable="true" system-properties-mode="ENVIRONMENT" />
+	-->
+	<context:property-placeholder location="file:${ee.input.dir}/EEConfig/redis.properties" />
+	<!--
+	<bean id="propertyPlaceholderConfigurer" class="com.cs.config.redis.PropertiesUtil">
+    	<property name="locations">
+        	<list>
+            	<value>file:${ee.input.dir}/EEConfig/redis.properties</value>
+        	</list>
+    	</property>
+    	<property name="decryptProperties">
+        	<array>
+            	<value>PASS_WORD</value>
+        	</array>
+    	</property>
+	</bean>
+	-->
+	<!--EE-10887 Defect #101144Change the plaintext password in related configurations. - end-->
+	<context:component-scan base-package="org.springframework.web.filter"></context:component-scan>
+	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="${MAX_IDLE}" />
+		<!--
+		<property name="maxActive" value="${MAX_ACTIVE}"/>
+		<property name="maxWait" value="${MAX_WAIT}" />
+		-->
+		<property name="testOnBorrow" value="${TEST_ON_BORROW}" />
+	</bean>
+	<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" destroy-method="destroy">
+		<property name="hostName" value="${REDIS_IP}" />
+		<property name="port" value="${REDIS_PORT}" />
+		<!--EE-10887-->
+		<!--
+		<property name="password" value="${PASS_WORD}"/>
+		-->
+		<!--EE-10887-->
+		<property name="poolConfig" ref="poolConfig" />
+	</bean>
+	<bean class="org.springframework.session.web.http.SessionEventHttpSessionListenerAdapter">
+		<constructor-arg name="listeners">
+			<list>
+				<bean class="com.cs.eximweb.servlets.WSSessionListener" />
+			</list>
+		</constructor-arg>
+	</bean>
+	<!--EE-10773 Defect #99685 - begin -->
+	<bean id="noConfigRedisAction" class="com.cs.config.redis.NoOpConfigRedisAction"></bean>
+	<!--EE-10773 Defect #99685 - end -->
+</beans>

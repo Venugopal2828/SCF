@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire PO Data" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>InqPOMajor</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.PUOD_EM_BASELINE</table-name>
+        <table-desc>Baseline Data</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <TSU_PO_ID DESC="PO Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</TSU_PO_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <TSU_PO_ID DESC="PO Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_PO_ID</TSU_PO_ID>
+        <TSU_CCY DESC="CCY" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_CCY</TSU_CCY>
+        <TSU_TTL_NET_AMT DESC="PO Total Net Amount" DT="3" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_TTL_NET_AMT</TSU_TTL_NET_AMT>
+        <TSU_BUYER_BK_BIC DESC="Buyer Bank BIC" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_BUYER_BK_BIC</TSU_BUYER_BK_BIC>
+        <TSU_SEL_BK_BIC DESC="Seller Bank BIC" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_SEL_BK_BIC</TSU_SEL_BK_BIC>
+        <TSU_PCBK_BIC DESC="Process Bank BIC" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_PCBK_BIC</TSU_PCBK_BIC>
+        <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</C_MAIN_REF>
+        <PARENT_MAIN_REF DESC="Parent Main Reference" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">PARENT_MAIN_REF</PARENT_MAIN_REF>
+        <TSU_TID DESC="Transaction TID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_TID</TSU_TID>
+        <TSU_PO_DT DESC="PO Date" DT="91" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_TRX_DTTM</TSU_PO_DT>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

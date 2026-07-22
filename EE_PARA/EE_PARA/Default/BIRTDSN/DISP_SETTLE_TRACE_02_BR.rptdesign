@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.20" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.5.1.v20090903 Build &lt;2.5.1.v20090917-1447></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <property name="layoutPreference">auto layout</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="Data Source" id="199">
+            <property name="FILELIST">O:\CSBANK\US\AP\FORM\form_schema_FAEF_EFDisputeSettle.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set" id="182">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TRX_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">C_BU_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_CNTR_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_SEL_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">FA_BUYER_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">CLERK_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">FA_INDR_PMT_FLG</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">FA_IF_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TRX_DT</property>
+                    <property name="nativeName">TRX_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">C_BU_ID</property>
+                    <property name="nativeName">C_BU_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <property name="nativeName">FA_CNTR_DOC_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_SEL_NM</property>
+                    <property name="nativeName">FA_SEL_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">FA_BUYER_NM</property>
+                    <property name="nativeName">FA_BUYER_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">CLERK_ID</property>
+                    <property name="nativeName">CLERK_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">FA_INDR_PMT_FLG</property>
+                    <property name="nativeName">FA_INDR_PMT_FLG</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">FA_IF_NM</property>
+                    <property name="nativeName">FA_IF_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData]#:#{TRX_DT;String;/TRX_DT},{C_BU_ID;String;/C_BU_ID},{C_MAIN_REF;String;/C_MAIN_REF},{FA_CNTR_DOC_NO;String;/FA_CNTR_DOC_NO},{FA_SEL_NM;String;/FA_SEL_NM},{FA_BUYER_NM;String;/FA_BUYER_NM},{CLERK_ID;String;/CLERK_ID},{FA_INDR_PMT_FLG;String;/FA_INDR_PMT_FLG},{FA_IF_NM;String;/FA_IF_NM}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>C_MAIN_REF</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>C_MAIN_REF</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_NO</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_AMT</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_CCY</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_CCY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_DT</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>TRX_DT</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TRX_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DSP_AMT</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DSP_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_MSG_TEXT</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_MSG_TEXT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                    <value>O:\CSBANK\US\AP\FORM\form_schema_FAEF_EFDisputeSettle.xml</value>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="disputesettl" id="207">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FA_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FA_DOC_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FA_DOC_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_DOC_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_DOC_DUE_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">FA_DSP_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">FA_INV_LOAN_BAL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">FA_MSG_TEXT02</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FA_DOC_NO</property>
+                    <property name="nativeName">FA_DOC_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FA_DOC_AMT</property>
+                    <property name="nativeName">FA_DOC_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FA_DOC_CCY</property>
+                    <property name="nativeName">FA_DOC_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_DOC_DT</property>
+                    <property name="nativeName">FA_DOC_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_DOC_DUE_DT</property>
+                    <property name="nativeName">FA_DOC_DUE_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">FA_DSP_AMT</property>
+                    <property name="nativeName">FA_DSP_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">FA_INV_LOAN_BAL</property>
+                    <property name="nativeName">FA_INV_LOAN_BAL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">FA_MSG_TEXT02</property>
+                    <property name="nativeName">FA_MSG_TEXT02</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData/DisputeSettl]#:#{FA_DOC_NO;String;/FA_DOC_NO},{FA_DOC_AMT;String;/FA_DOC_AMT},{FA_DOC_CCY;String;/FA_DOC_CCY},{FA_DOC_DT;String;/FA_DOC_DT},{FA_DOC_DUE_DT;String;/FA_DOC_DUE_DT},{FA_DSP_AMT;String;/FA_DSP_AMT},{FA_INV_LOAN_BAL;String;/FA_INV_LOAN_BAL},{FA_MSG_TEXT02;String;/FA_MSG_TEXT02}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_NO</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_AMT</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_CCY</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_CCY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_DT</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_DUE_DT</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_DUE_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DSP_AMT</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DSP_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_INV_LOAN_BAL</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_INV_LOAN_BAL</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_MSG_TEXT02</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_MSG_TEXT02</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                    <value>O:\CSBANK\US\AP\FORM\form_schema_FAEF_EFDisputeSettle.xml</value>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">1in</property>
+            <property name="leftMargin">1.25in</property>
+            <property name="bottomMargin">1in</property>
+            <property name="rightMargin">1.25in</property>
+            <page-header>
+                <grid id="216">
+                    <property name="width">100%</property>
+                    <column id="217">
+                        <property name="width">2.5625in</property>
+                    </column>
+                    <column id="218">
+                        <property name="width">2.417in</property>
+                    </column>
+                    <row id="219">
+                        <cell id="220"/>
+                        <cell id="221"/>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4">
+            <property name="width">100%</property>
+            <column id="5">
+                <property name="width">0.8541666667in</property>
+            </column>
+            <column id="6">
+                <property name="width">5.1354166667in</property>
+            </column>
+            <row id="7">
+                <cell id="8">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="22"/>
+                </cell>
+            </row>
+            <row id="10">
+                <cell id="11">
+                    <label id="37">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">FTFD No.</text-property>
+                    </label>
+                </cell>
+                <cell id="12">
+                    <data id="205">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">C_MAIN_REF</property>
+                                <expression name="expression">this.value=dataSetRow["C_MAIN_REF"] + '/'+dataSetRow["TRX_DT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">C_MAIN_REF</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="13">
+                <cell id="14">
+                    <label id="39">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">From:</text-property>
+                    </label>
+                </cell>
+                <cell id="15">
+                    <label id="40">
+                        <text-property name="text">Directia Operatiuni Bancare (DOB)
+Centrul de Coordonare Factoring si Finantarea Comertului
+Departamentul Factoring </text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="16">
+                <cell id="17">
+                    <label id="41">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">To:</text-property>
+                    </label>
+                </cell>
+                <cell id="18">
+                    <data id="234">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FA_IF_NM</property>
+                                <expression name="expression">dataSetRow["FA_IF_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">FA_IF_NM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="19">
+                <cell id="20">
+                    <label id="43">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Subject:</text-property>
+                    </label>
+                </cell>
+                <cell id="21">
+                    <grid id="44">
+                        <property name="width">100%</property>
+                        <column id="45"/>
+                        <column id="46"/>
+                        <column id="47"/>
+                        <column id="48"/>
+                        <row id="49">
+                            <cell id="50">
+                                <property name="colSpan">4</property>
+                                <property name="rowSpan">1</property>
+                                <data id="206">
+                                    <property name="dataSet">Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Acord Cadru de Factoring nr</property>
+                                            <expression name="expression">this.value='Acord Cadru de Factoring nr '+dataSetRow["FA_CNTR_DOC_NO"] +' incheiat cu '+dataSetRow["FA_SEL_NM"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Acord Cadru de Factoring nr</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="55">
+                <cell id="56">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+        </grid>
+        <grid id="59">
+            <property name="width">100%</property>
+            <column id="60"/>
+            <row id="61">
+                <cell id="62">
+                    <label id="63">
+                        <text-property name="text">We hereby inform you that these invoices are disputed:</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <table id="64">
+            <property name="width">100%</property>
+            <property name="dataSet">disputesettl</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FA_DOC_NO</property>
+                    <expression name="expression">dataSetRow["FA_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_AMT</property>
+                    <expression name="expression">dataSetRow["FA_DOC_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_CCY</property>
+                    <expression name="expression">dataSetRow["FA_DOC_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_DT</property>
+                    <expression name="expression">dataSetRow["FA_DOC_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_DUE_DT</property>
+                    <expression name="expression">dataSetRow["FA_DOC_DUE_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DSP_AMT</property>
+                    <expression name="expression">dataSetRow["FA_DSP_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_INV_LOAN_BAL</property>
+                    <expression name="expression">dataSetRow["FA_INV_LOAN_BAL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_MSG_TEXT02</property>
+                    <expression name="expression">dataSetRow["FA_MSG_TEXT02"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="119">
+                <property name="width">0.8333333333in</property>
+            </column>
+            <column id="120">
+                <property name="width">0.75in</property>
+            </column>
+            <column id="121">
+                <property name="width">0.8333333333in</property>
+            </column>
+            <column id="122">
+                <property name="width">0.8125in</property>
+            </column>
+            <column id="123">
+                <property name="width">0.7395833333in</property>
+            </column>
+            <column id="124">
+                <property name="width">0.7291666667in</property>
+            </column>
+            <column id="125">
+                <property name="width">0.65625in</property>
+            </column>
+            <column id="126">
+                <property name="width">0.6354166667in</property>
+            </column>
+            <header>
+                <row id="65">
+                    <property name="fontWeight">bold</property>
+                    <property name="fontStyle">italic</property>
+                    <property name="textAlign">center</property>
+                    <cell id="66">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="128">
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Invoice no.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="67">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="129">
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Invoice amount</text-property>
+                        </label>
+                    </cell>
+                    <cell id="68">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="130">
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Currency</text-property>
+                        </label>
+                    </cell>
+                    <cell id="69">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="131">
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Issue date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="70">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="132">
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Due date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="71">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="133">
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Disputed amount </text-property>
+                        </label>
+                    </cell>
+                    <cell id="72">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="134">
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Financed amount</text-property>
+                        </label>
+                    </cell>
+                    <cell id="73">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="135">
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Dispute Reason</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="74">
+                    <cell id="75">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="208">
+                            <property name="resultSetColumn">FA_DOC_NO</property>
+                        </data>
+                    </cell>
+                    <cell id="76">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="209">
+                            <property name="resultSetColumn">FA_DOC_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="77">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="210">
+                            <property name="resultSetColumn">FA_DOC_CCY</property>
+                        </data>
+                    </cell>
+                    <cell id="78">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="211">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">yyyy-MM-dd</property>
+                            </structure>
+                            <property name="resultSetColumn">FA_DOC_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="79">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="212">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">yyyy-MM-dd</property>
+                            </structure>
+                            <property name="resultSetColumn">FA_DOC_DUE_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="80">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="213">
+                            <property name="resultSetColumn">FA_DSP_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="81">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="214">
+                            <property name="resultSetColumn">FA_INV_LOAN_BAL</property>
+                        </data>
+                    </cell>
+                    <cell id="82">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="215">
+                            <property name="resultSetColumn">FA_MSG_TEXT02</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <grid id="144">
+            <property name="width">100%</property>
+            <column id="145"/>
+            <row id="146">
+                <cell id="147">
+                    <label id="152"/>
+                </cell>
+            </row>
+            <row id="148">
+                <cell id="149">
+                    <label id="153">
+                        <text-property name="text">Given the above, please:</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="150">
+                <cell id="151">
+                    <label id="154">
+                        <text-property name="text">&#13;
+□ Ask your client emergency settlement agreement with the debtor to the dispute and submit its decision in order to properly inform the factoring company.</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="158">
+                <cell id="159">
+                    <table id="224">
+                        <property name="width">100%</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FA_INDR_PMT_FLG</property>
+                                <expression name="expression">dataSetRow["FA_INDR_PMT_FLG"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">50</property>
+                        <column id="231"/>
+                        <header>
+                            <row id="225">
+                                <cell id="226">
+                                    <label id="232">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">row["FA_INDR_PMT_FLG"]!='1'</expression>
+                                            </structure>
+                                        </list-property>
+                                        <text-property name="text">□ to request and track the repayment of amounts funded disputed invoices. Please transfer the amount earned in the current account in the collateral account to be able to operate reimbursement funding.</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="227">
+                                <cell id="228">
+                                    <data id="233">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">true</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">FA_INDR_PMT_FLG</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="229">
+                                <cell id="230"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+        <grid id="161">
+            <property name="width">100%</property>
+            <column id="162"/>
+            <row id="163">
+                <cell id="164">
+                    <label id="169">
+                        <text-property name="text">By solving this issue invoices to the debtor financing mentioned above will be stopped</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="165">
+                <cell id="166">
+                    <label id="170"/>
+                </cell>
+            </row>
+            <row id="167">
+                <cell id="168">
+                    <label id="171">
+                        <text-property name="text">Please keep in mind the application of the factoring agreement, or right of recourse to the client by debiting the current account of it. in order to recover financing if the range of 10 days to the present, it does not reimburse the bank the amount due.&#13;
+Sincerely,</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="172">
+                <cell id="173"/>
+            </row>
+            <row id="174">
+                <cell id="175">
+                    <label id="176">
+                        <text-property name="text">Head of Department / Supervisor, Economist,</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">untitled.JPG</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/4QAWRXhpZgAASUkqAAgAAAAAAAAAAAD/2wBDAAgGBgcGBQgHBwcJ
+                CQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJ
+                CQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy
+                MjL/wAARCAAyAHQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAA
+                AgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRol
+                JicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZ
+                mqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QA
+                HwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+                BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RV
+                VldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPE
+                xcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD36ivCP+F76t/0BrP/
+                AL+NUkHx5v8AzB5+iW7JnkRzMD+oNdbwNddDnWJp9z3OjtXM+D/GeneMtPkntA8M8JCz28mN0ZPQ+4OD
+                g+1YHjP4sWHhm7fTrK3N9qCcSjdtjiPoT3PsPzrCNGpKfIlqaOrBR5m9D0WivBI/jvrQkBk0nT2Tuqs6
+                k/jk/wAq9N8GePtM8ZQSLAr295CA0tvIckD1B7irqYarCPNJaExrwk7JnXUV4XN8dNVimkjGjWZCMVz5
+                jdjTV+PGplxu0W0Zc8hZmBxWn1GtbYn6zT7nu1JxzXM+DfGWn+M9Oee0VoZ4SFnt5Dloyehz3BwcH2qD
+                xv43t/CFtCfJNxdXGfKhDY4HVifTpXJU/d359LHXQpTxE1Cmrt7HRX8ksOnXM0Kb5ljYovqwBIH518tN
+                rOpyal/aRvp/tm7d5287gfY9h7dK9EPxs1E9dItv+/rVzjeMdKk1U6k3hKwNyW3E+e+wt67Pu5/CvPxF
+                WE7cstj67KcDiMGpqrSvzdmvu32PfdBuri+0GwubyPy7iWBGlXGMMVBNaVeJj426gCB/Y9tj2lNej+EP
+                F1p4u01riFDFPEQk8DHOxiOx7g84Psa6qdeE9E9T5/GZZicOnUqQtG/R3sdPRRRWx5x8d6VPFbazYXE5
+                xDFcxySHGflDAnjvxXqXxE8Z+Ctc8Ny2umRLcaizKYpUtjGYsEZJYgHGMjHvXlmmW6XurWNpIWEc9xHE
+                xU8gMwBx7817Jr/wX0Sz0a7vbK/vYpbeBpQJWV0O0E4PAPP1r6DGOlGtFzbueVSUnGSijB+G9vqXh7w9
+                4i8TyQvFALEi23jHmOOQwGOQDjn3rkPB2j/8JV40srG8dnW4laW5bdhnABZufU4/WrnhLVdUurPVPDsc
+                ks9rd2ExSAsTtdF3gqO33cY96T4Z6nBpXj7S7i5dUhctCXY4Cl1IGfxIpNOPtZfa6egJp8q6H0BqPgvw
+                /qOkPpzaTZxxeWUjaOFVaM4wCpAyCK4Dwj8Ktf8ADPie01U6nYPFESJUTfudCMEcrXrN3dw2NlPd3Dqk
+                MKGR2Y4AUDJryvQPjHda94istKj0JEW6lCeYLgkqvdsbew5ryqUqzhLl1XU7akaaavv0PIdLmgtvF1lc
+                XRUW0WoI8pYZAQSZOR34r0r4leJ/BereGTa6V9nn1DzFaF4YCmzB+Yk4HGMjFeZWdmNR8SW9gZDGLq8W
+                EuBnbufGcfjWr438ITeDNaSyac3EE0QlimKbc9iCM9Qf5ivYnCnOpC8mnY4YykoystDs/gVbXB1vVrkK
+                32ZbdY2bsXLZA/IH86tfG/8A5Cmk/wDXKT+a12vwun0268B2LadbJblcrcIvUyjhmJ754P0OKwPivpFr
+                qV/prXGsWtgyxuFWfPz8jkYBr57M5upKbtY+m4dlGliYNvo/yPK9Js9FuYXOqatNZuGwqpbGQMMdc5GK
+                0hpHg/8A6Gi6/wDBcf8AGk/4RXS/+ht0v/x//Cj/AIRXTB/zNul/+P8A+FeOk0tl/XzPt51IyldTkvRf
+                5xF/snwf38UXX/guP+NekfCa00e0OrnSdUlvi3k+ZvtzFsxvxjk5zz+VeS6vpFppkUbW+tWl+zMQUgBy
+                o9TkCvR/gZ9/Xcelv/7UrXDv94lZHn5tBvAynzya00dl1Xkmex0UUV6R8QfLkXw68awTRzRaJcpLGwdH
+                WRMqRyCOa2bvw98VNah+x3seoSQP1SS5RUP+9zz+NfRNFd0sfUk7ySfyOVYWK6s8v+G3w0n8M3R1bV3i
+                a+ZCkUUZ3CIHqSe7duOMZrnfG3whvv7Rmv8Aw4iSwSkyPaM4Vo2PJ2Z4I9s8V7lRWUcXVVR1L6st4eDj
+                ynzTJ4a+JN9ajTp7bV5bYceVNP8AJ+rYxXpHw4+Gcnhm5OrarIjag0ZRIo+VhB6nPdscccdetem0tOpj
+                Jzi4pJJ9hQw8Yu71PnDRvh/4rt/GGn3c2jTJbx38cryF0wFEgJPX0r1P4p+FLjxP4aj+wRebf2kokiQE
+                Aup4ZefwP4V3lFKeKqSnGfVDjQjGLj3PHPhPovinw1q9za6lpU8OnXaZLllISReh4OeRkflW98T/AAZf
+                +JYbS700LJcWoYNCzbd6nB4J4yCO/rXotJnmsMRL27bn1OrBVZ4SoqlN6rufM5+HfisEj+xZ+PRl/wAa
+                T/hXniv/AKAlx+a/419NUVw/U4d2fQ/6zYj+SP4/5nzKfh74r/6Ak4/4Ev8AjXrvwy8H3PhjTbia+IF5
+                ebS8anIjVQdo+vzHP4V3mOaMda1p4eNOXMjixudV8XT9lJJJ72HUUUVueQFFFFABRRRQAUUUUAFFFFAB
+                RRRQAUUUUAFFFFABRRRQB//Z
+            </property>
+        </structure>
+        <structure>
+            <property name="name">1111.JPG</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwg
+                JC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIy
+                MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAyAHUDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+ivCP+F86t/0BbL/AL+NUkHx7v8AzB5+h2zJnkRzMD+oNdjw
+                FddDmWKp9z3Oiub8HeNdO8Z6fJcWYeGeEhZ7eTG6Mnoc9wcHB9q5/wAa/FnT/C94+m2Vv9v1CPiUbtsc
+                R9Ce59h+dYRoVJT9mlqaurBR5m9D0SivBI/jxrQkBk0nT2Tuqs6k/jk/yr0/wX4/0zxpDItur297CA0t
+                tIckD1U9xV1MLVpx5pLQmFeE3ZM6yivC5vjtqsU0kY0ayIRiufMbsaanx61PeN2iWbLnkLMwJFafUK9t
+                iPrVPue7UVzXg3xrp3jTTpLi0VoZ4SFnt5Dloyehz3BwcH2qHxx44tvBtnCTAbm7uM+VCG2jA6sT6dK4
+                6v7q/PpY7cPSniZqFJXb2OjvpZYNPuZYF3ypEzIvqwBIH518qPreqSar/ajX9wb7du8/zDuB9j2Ht0r0
+                f/heOo/9Aa1/7+tXOP410mTVzqjeDtON0W3k+c+wt67Pu5/CvOxFWFS3LLY+xyjA4jBKaq0r83Zr7tXs
+                fQGh3Nze6Dp91eJsuZrdHlXGMMVBNX68THxx1AY/4ktrj2lavSvB3i+z8YaU11BG0M8RCTwMc7GI7HuD
+                zg+xrrp14T91PU+dxuV4rDp1akLRv0d7HRUUUVseYfHWlTxW2s2FxOcQxXMckhxn5QwJ478V6r8RvGng
+                jXPDMtppcK3Gos6mKVLYxmLBGSWIBxjIx715Tplsl7q9jaSFhHPcRxMVPIDMAce/Nez+IPgrolnot5e2
+                OoXsUtvA0oErK6HaCcHgHn619DjHRjWi5t3PKoqbjJRRg/DS31Pw54c8R+KZIXitxYlbYuMeY45DAY5A
+                OOfeuO8G6MPFfjaysb12dLiVpblt2GcAFm59Tj9au+ENW1W6stV8ORSyz2t5YTFYCxO10XeCo7fdxj3p
+                vwx1ODSviBpdxcuscLloS7HAUupAz+JFDUo+1l9rp6CTi+RdD6D1HwV4e1HR3019Js44vLKRtHCqtGcY
+                BUgZBFef+D/hRr/hfxTZ6qdTsHiiJEqJv3OhGCOVr1q8u4bGynu7h1jhhQyOzHACgZNeVeHvjLda/wCJ
+                LHSk0JEW6mCeYLgkqvdsbew5ryaMq7hLk1XU7qkaSkubfoeP6XNBbeLrK4uiototQR5SwyAgkycjvxXp
+                nxM8UeCdX8MG10n7PPqPmK0Lw25TZg/MScDjGRivL7OyGpeJbewMhjF1eLCXAzt3PjOPxrW8deDpvBet
+                pYtcG4gmiEsUxTbnsQRnqD/MV7E6dOdSF5NOxwRlNQlZaHafAe2uDrerXQVvsq26xs3YuWyB+QP51b+O
+                X/IT0f8A64yf+hCu2+Fdxptz4CsW062S3K5S4ReplHDMT3zwfocVg/FjRrPVL/TGudbs9OZInCrcBvn5
+                HIwDXzuazdSU3ax9Rw240sTBt9H+R5Ro1loN1BI2r6xPYyBsIsdqZQwx1zkYrT/sjwX/ANDVef8AgtP/
+                AMVR/wAIjpP/AEOWkflJ/wDE0f8ACI6T/wBDlpH5Sf8AxNeKk0tl/XzPupzjKV1OS9F/nEP7I8F/9DVe
+                f+C0/wDxVel/CSz0W0/tj+x9Vmv93k+b5lsYdmN+McnOefyryHWtFs9Lhie21yy1FnYgpbhsoPU5Ar0j
+                4Ff8x/8A7d//AGrW2Hf71KyPOzeDeAnPnk1po7LqvJM9hooor0z4U+XIvhz43gmjmi0O5SWNg6OsiZUj
+                kEc1tXnh/wCK2tw/Y75NRlgc/Mklyiof97nn8a+iaK75ZhVk7ySfyORYSK6s8x+Gnwyn8MXTavrDxNfl
+                CkUMZ3CIHqSe7duOMZrnPHHwdvv7Rn1Dw0iTW8pMj2jOFaNjydmeCPbPFe40VlHGVVUdS+rNHh6bjynz
+                TJ4a+Jd/aLps9trEtqOBDNP8n6tjFelfDX4ZSeF7k6vq0kb6i0ZSOGM5WEHqc92xxxx1616ZRTqYyc4u
+                CSSfYUMNGL5nqfOGjfD3xZb+MNPu5tFmS3jv45XkLpgKJASevpXqnxU8J3HijwyhsIvN1C0lEkSAgF1P
+                DLz+B/Cu7opTxdSU4z6occPGMXHueO/CXRvFXhnWLm11PSZ4dNu0yXLKQki9Dwc8jI/Kt/4o+Cr/AMUW
+                1nd6YFkurQOrQs23epweCeMgjv616HRXPiZfWG3PqdeBrTwVRVKb1Xc+ZT8OfFwJH9h3HHoy/wCNJ/wr
+                rxd/0A7j81/xr6borh+pQ7s+h/1nxH8kfx/zPmT/AIV14u/6Adx+a/417D8MfB1z4V0i4lvyBe3pRniU
+                5EaqDtGfX5jn8K7qitKeGjTlzI48bndfF0vZSSSe9goooroPGCiiigAooooAKKKKACiiigAooooAKKKK
+                ACiiigAooooA/9k=
+            </property>
+        </structure>
+    </list-property>
+</report>

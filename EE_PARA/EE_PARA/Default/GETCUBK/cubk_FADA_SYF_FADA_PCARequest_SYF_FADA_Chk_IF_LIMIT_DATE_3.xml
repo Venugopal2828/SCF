@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_FACTOR</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>SYF_FADA_PCARequest_SYF_FADA_Chk_IF_LIMIT_DATE_3</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_LMT_VAL_DT ALIAS="T0" DBFUNC="" DESC="Limit Start Date" DT="91" HIDDEN="F" TYPE="F">FA_TEMP_IF_LMT_VAL_DT</FA_LMT_VAL_DT>
+        <FA_LMT_DUE_DT ALIAS="T0" DBFUNC="" DESC="Limit Due Date" DT="91" HIDDEN="F" TYPE="F">FA_TEMP_IF_LMT_DUE_DT</FA_LMT_DUE_DT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_FACTOR_ID='</SQL>
+            <SQL TYPE="FLD">FA_IF_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id>Q_BANK</recv-queue-id>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>TSU.001.ProPO</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>TSUM</module>
+        <interface-mapping-name>UPLOAD_PO</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>T</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id comm="MQ" type="sync">Q_CE</atth-queue-id>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <TSU_CUST_BPO descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">TSU_CUST_BPO</TSU_CUST_BPO>
+        <TSU_GOODS_DESC descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">TSU_GOODS_DESC</TSU_GOODS_DESC>
+        <TSU_LINE_TTL_AMT descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="9">TSU_LINE_TTL_AMT</TSU_LINE_TTL_AMT>
+        <TSU_SEL_NM descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="12">TSU_SEL_NM</TSU_SEL_NM>
+        <TSU_CUST_REF descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="13">C_MAIN_REF</TSU_CUST_REF>
+        <TSU_CUST_ID descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="14">C_UNIT_CODE</TSU_CUST_ID>
+        <TSU_TRX_STATUS descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="15">SUBM</TSU_TRX_STATUS>
+        <TSU_CCY descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="16">TSU_CCY</TSU_CCY>
+        <TSU_PO_ID descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="17">TSU_PO_ID</TSU_PO_ID>
+        <CUST_NOTES descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="18">CUST_NOTES</CUST_NOTES>
+        <TSU_BUYER_NM descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="19">TSU_BUYER_NM</TSU_BUYER_NM>
+        <TSU_UNIT_CODE descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="20"/>
+        <C_UNIT_CODE descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="21">TSU_UNIT_CODE</C_UNIT_CODE>
+        <TSU_PO_DT descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="22">TSU_PO_DT</TSU_PO_DT>
+        <C_XML_DATA descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="23">C_XML_DATA_018</C_XML_DATA>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="25">TSU.001.ProPO</MSG_TYPE>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item>
+        <item name="form"/>
+        <item name="image"/>
+    </send-item>
+</gapi>

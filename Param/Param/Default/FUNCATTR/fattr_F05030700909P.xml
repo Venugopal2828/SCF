@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR DATABASE="BLDB" SCHEMA="CEMETA" TABLENAME="ECD_SYSFUNC_ATTR">
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Master Edit Rec">TrxMasterEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>EXLC</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.EXLC_MASTER</TABLE_NAME>
+        <TABLE_DESC>EXLC_MASTER</TABLE_DESC>
+        <MAINREF>PARENT_MAIN_REF</MAINREF>
+        <TRXREF>PARENT_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Edit Master</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Event Edit Rec">TrxEventEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>EXLC</MODULE>
+        <EVENT>STP</EVENT>
+        <TABLE_NAME>CETRX.EXLC_EM_PAYMENT</TABLE_NAME>
+        <TABLE_DESC>Export Letters of Credit Payment</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Edit Event</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Generate Notification">TrxGenerateNotification</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>EXLC</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.EXLC_MASTER</TABLE_NAME>
+        <TABLE_DESC>Export Letters of Credit Master</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE/>
+        <O2MRULE/>
+    </COMPONENT>
+</FUNCATTR>

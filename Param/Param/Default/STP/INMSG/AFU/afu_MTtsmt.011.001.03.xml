@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: assing msg for Receive Baseline Report");
+var sType = stp.getXslMsgTagVal("message/Document/BaselnRpt/RptTp","Tp");
+stp.writeLog("sType======================="+sType);
+if(sType == "PREC") {
+stp.setFunc("Receive Baseline Report","PO Maintenance");
+} else {
+stp.setFunc("Received Baseline Report","Invoice");
+}
+    stp.setCustomXSLName("stp.tsmt.011");
+    stp.setIsUseXSLMapping(true);
+stp.writeLog("End: assing msg for Receive Baseline Report");]]></js-content>
+</root>

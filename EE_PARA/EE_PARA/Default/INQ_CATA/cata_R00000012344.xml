@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False" MULTI="YES">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302419</ID>
+    <MODULE>SSSS</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLELIST>
+        <TABLENAME ALIAS="T1" MASTER="YES">%EXIMTRX%.POMM_MASTER</TABLENAME>
+        <TABLENAME ALIAS="T2">%EXIMTRX%.FADA_MASTER</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="FA_SBR_REF" DATATYPE="12" DESC="SBR REF"
+            EEType="Varchar_35" HIDDEN="">T1.FA_SBR_REF</FIELD>
+        <FIELD ALIAS="" COL="PO_NO" DATATYPE="12" DESC="PO NO"
+            EEType="Varchar_35" HIDDEN="">T1.PO_NO</FIELD>
+        <FIELD ALIAS="" COL="PO_CCY" DATATYPE="1" DESC="PO Currency"
+            EEType="CCY" HIDDEN="">T1.PO_CCY</FIELD>
+        <FIELD ALIAS="" COL="PO_AMT" DATATYPE="3" DESC="PO Amount" EEType="AMT" HIDDEN="">T1.PO_AMT</FIELD>
+        <FIELD ALIAS="" COL="PO_DUE_DT" DATATYPE="91" DESC="PO Due Date"
+            EEType="DATE" HIDDEN="">T1.PO_DUE_DT</FIELD>
+        <FIELD ALIAS="" COL="PO_STATUS" DATATYPE="12" DESC="PO STATUS"
+            EEType="VARCHAR32" HIDDEN="">T1.PO_STATUS</FIELD>
+        <FIELD ALIAS="" COL="PO_VAL_DT" DATATYPE="91" DESC="PO Value Date"
+            EEType="DATE" HIDDEN="">T1.PO_VAL_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_BUYER_ID" DATATYPE="12" DESC="Buyer ID"
+            EEType="Varchar_35" HIDDEN="H">T1.FA_BUYER_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_SEL_ID" DATATYPE="12" DESC="Seller ID"
+            EEType="Varchar_35" HIDDEN="H">T1.FA_SEL_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_SEL_NM" DATATYPE="12" DESC="Seller Name"
+            EEType="Varchar_35" HIDDEN="">T1.FA_SEL_NM</FIELD>
+        <FIELD ALIAS="" COL="FA_BUYER_NM" DATATYPE="12" DESC="Buyer Name"
+            EEType="Varchar_35" HIDDEN="">T1.FA_BUYER_NM</FIELD>
+        <FIELD ALIAS="" COL="PO_DT" DATATYPE="91" DESC="PO Date" EEType="DATE" HIDDEN="">T1.PO_DT</FIELD>
+        <FIELD ALIAS="" COL="PO_REF" DATATYPE="12" DESC="PO Ref"
+            EEType="Varchar_35" HIDDEN="">T1.PO_REF</FIELD>
+        <FIELD ALIAS="" COL="FA_FIN_LOAN_AMT" DATATYPE="3"
+            DESC="Invoice Total Loan Amount" EEType="AMT" HIDDEN="">T1.FA_FIN_LOAN_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_PAID_PRIN_AMT" DATATYPE="3"
+            DESC="Paid Principal Amount" EEType="AMT" HIDDEN="">T1.FA_PAID_PRIN_AMT</FIELD>
+        <FIELD ALIAS="FA_SEL_ID_T2" COL="FA_SEL_ID" DATATYPE="12"
+            DESC="Seller ID" EEType="Varchar_35" HIDDEN="">T2.FA_SEL_ID</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="SBR REF" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T1.FA_SBR_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="PO NO" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T1.PO_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="PO Currency" DT="1" EEType="CCY" POS="SELFLD" TYPE="FLD">T1.PO_CCY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="PO Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.PO_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="PO Due Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T1.PO_DUE_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="PO STATUS" DT="12" EEType="VARCHAR32" POS="SELFLD" TYPE="FLD">T1.PO_STATUS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="PO Value Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T1.PO_VAL_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Buyer ID" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T1.FA_BUYER_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Seller ID" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T1.FA_SEL_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Seller Name" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T1.FA_SEL_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T1.FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="PO Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T1.PO_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="PO Ref" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T1.PO_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Invoice Total Loan Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.FA_FIN_LOAN_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Paid Principal Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T1.FA_PAID_PRIN_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Seller ID" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T2.FA_SEL_ID</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.FADA_MASTER T2</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.POMM_MASTER T1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="PO NO" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">T1.PO_NO</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="PO Currency" DT="1" EEType="CCY" POS="WHEFLD" TYPE="FLD">T1.PO_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP2</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE3</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">T1.FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP4</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE5</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="PO Date" DT="91" EEType="DATE" POS="WHEFLD" TYPE="FLD">T1.PO_DT</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">) AND </SQL>
+        <SQL DESC="SBR REF" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">T1.FA_SBR_REF</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> AND (</SQL>
+        <SQL DESC="Seller ID" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">T2.FA_SEL_ID</SQL>
+        <SQL DT="var" DV="SYS_CE_BUSI_UNIT" OPTYPE="OPERATE" TYPE="OP">OP8</SQL>
+        <SQL TYPE="SQL">) ORDER BY </SQL>
+        <SQL DESC="PO NO" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">T1.PO_NO</SQL>
+        <SQL TYPE="SQL"> DESC</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="PO NO" EETYPE="Varchar_35">T1.PO_NO</FIELD>
+        <FIELD DATATYPE="1" DESC="PO Currency" EETYPE="CCY">T1.PO_CCY</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Name" EETYPE="Varchar_35">T1.FA_BUYER_NM</FIELD>
+        <FIELD DATATYPE="91" DESC="PO Date" EETYPE="DATE">T1.PO_DT</FIELD>
+        <FIELD DATATYPE="12" DESC="SBR REF" EETYPE="Varchar_35">T1.FA_SBR_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T2.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller ID" EETYPE="Varchar_35">T2.FA_SEL_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="PO NO" EETYPE="Varchar_35">T1.PO_NO</FIELD>
+    </CLAUSEFIELD>
+</CATA>

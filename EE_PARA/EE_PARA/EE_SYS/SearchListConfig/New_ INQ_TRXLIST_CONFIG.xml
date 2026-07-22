@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+		<GROP NAME="Correspondence Inbox" DIV_ID="div_inbox">
+		<COLS>
+			<COL ID="1" NAME="Reference Number"/>
+			<COL ID="2" NAME="Type"/>
+		</COLS>
+		<FUNCTION ID="F05030702004">
+			<MAP_TBL>
+				<TABLES>
+					<TABLE ALIAS="COMM_LEDGER" schema="%EXIMTRX%">COMM_LEDGER</TABLE>
+				</TABLES>
+				<FIELDS>
+					<COL ID="1">
+						<FIELD>C_MAIN_REF</FIELD>
+					</COL>
+					<COL ID="2">
+						<FIELD>C_FUNC_SHORT_NAME</FIELD>
+					</COL>
+				</FIELDS>
+			</MAP_TBL>
+			<CLAUSE BYGLOBAL="True" BYUNITCODE="True">
+				<SQL EETYPE="" TYPE="TBL_FLD">C_EVENT_STATUS</SQL>
+				<SQL TYPE="SQL"> = 'P' ORDER BY </SQL>
+				<SQL EETYPE="" TYPE="TBL_FLD">C_MAIN_REF</SQL>
+			</CLAUSE>
+		</FUNCTION>
+	</GROP>
+</CONFIG>

@@ -1,0 +1,30 @@
+<root>
+	<main Name="InvTRF" splitType="byRow" sheetName="InvTRF" row="4">
+		<cell col="A" EEType="VARCHAR" allowEmpty="F" desc="Relationship Reference">FSBC_REF</cell>
+		<cell col="B" EEType="VARCHAR" allowEmpty="F" desc="Buyer ID">FA_BUYER_ID</cell>
+		<cell col="C" EEType="VARCHAR" allowEmpty="F" desc="Buyer Name">FA_BUYER_NM</cell>
+		<cell col="D" EEType="VARCHAR" allowEmpty="F" desc="Seller ID">FA_SEL_ID</cell>
+		<cell col="E" EEType="VARCHAR" allowEmpty="F" desc="Seller Name">FA_SEL_NM</cell>
+		<cell col="F" EEType="VARCHAR" allowEmpty="F" desc="UNIT CODE">C_UNIT_CODE</cell>
+		<cell col="G" EEType="VARCHAR" allowEmpty="F" desc="BK MAIN REF">BK_MAIN_REF</cell>
+	</main>
+	<child Name="Invoice" splitType="byRow" sheetName="InvTRF" row="7">
+		<cell col="A" EEType="VARCHAR" allowEmpty="F" desc="Relationship Reference">FSBC_REF</cell>
+		<cell col="B" EEType="VARCHAR" allowEmpty="F" desc="Buyer ID">FA_BUYER_ID</cell>
+		<cell col="C" EEType="VARCHAR" allowEmpty="F" desc="Buyer Name">FA_BUYER_NM</cell>
+		<cell col="D" EEType="VARCHAR" allowEmpty="F" desc="Seller ID">FA_SEL_ID</cell>
+		<cell col="E" EEType="VARCHAR" allowEmpty="F" desc="Seller Name">FA_SEL_NM</cell>
+		<cell col="F" EEType="VARCHAR" allowEmpty="F" desc="Invoice Number">FA_DOC_NO</cell>
+		<cell col="G" EEType="VARCHAR" allowEmpty="F" desc="Invoice CCY">FA_DOC_CCY</cell>
+		<cell col="H" EEType="VARCHAR" allowEmpty="F" desc="Invoice Amount">FA_DOC_AMT</cell>
+		<cell col="I" EEType="VARCHAR" allowEmpty="F" desc="Invoice Balance">FA_DOC_BAL</cell>
+		<cell col="J" EEType="VARCHAR" allowEmpty="F" desc="Invoice Date">FA_DOC_DT</cell>
+		<cell col="K" EEType="VARCHAR" allowEmpty="F" desc="Invoice Value Date">FA_DOC_VAL_DT</cell>
+		<cell col="L" EEType="VARCHAR" allowEmpty="F" desc="Invoice Maturity Date">FA_DOC_DUE_DT</cell>
+		<cell col="M" EEType="VARCHAR" allowEmpty="F" desc="UNIT CODE">C_UNIT_CODE</cell>
+	</child>
+	<keys>
+		<field>BK_MAIN_REF</field>
+	</keys>
+	<unit>C_UNIT_CODE</unit>
+</root>

@@ -1,0 +1,23 @@
+var busitype = DV.getFieldValue("FA_BUSI_TYPE");
+var prinamt = DV.getFieldValue("FA_PAID_PRIN_SUM");
+var flag = DV.getFieldValue("FA_SETTLE_FLG");
+var FA_SERVICE_REQ = DV.getFieldValue("FA_SERVICE_REQ");
+DV.writeLog("***********" + busitype);
+if (prinamt > 0 && (flag=='Loan' || flag=='All')) {
+	if(busitype == 'RD' && FA_SERVICE_REQ == '1' )
+	{
+		DV.appendField("FAEF_Settlement_CounterLimit");
+	}
+	else
+	{
+		DV.appendField("FAEF_Settlement_AnchorLimit");
+	}
+}
+DV.writeLog("INVOICE PAY LOAN STATR********************");
+
+DV.appendField("FAEF_Acc_Payment_8036_SCF","Settle_New.Settle_loan","FA_INT_CHG_TYPE='2'");
+DV.appendField("FAEF_Amz_Payment_8063_SCF","Settle_New.Settle_loan","FA_INT_CHG_TYPE='1'");
+
+
+
+DV.writeLog("INVOICE PAY LOAN END###############");

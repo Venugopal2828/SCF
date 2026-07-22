@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>SSSS</module>
+    <name>SYND_ACTION</name>
+    <desc>SYND_ACTION</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.SYND_MASTER</table-name>
+        <table-desc>SYND_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">SYND_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <SYND_ACTION_REF fv_type="F" mf="F" oper="=">SYND_ACTION_REF</SYND_ACTION_REF>
+        <SYND_ACTION_TRADE_REF fv_type="F" mf="F" oper="=">SYND_ACTION_TRADE_REF</SYND_ACTION_TRADE_REF>
+        <SYND_ACT_AMD_DT fv_type="F" mf="F" oper="=">SYND_ACT_AMD_DT</SYND_ACT_AMD_DT>
+        <SYND_ACT_AMD_EVENT_TYPE fv_type="F" mf="F" oper="=">SYND_ACT_AMD_EVENT_TYPE</SYND_ACT_AMD_EVENT_TYPE>
+        <SYND_ACT_CREDIT_DT fv_type="F" mf="F" oper="=">SYND_ACT_CREDIT_DT</SYND_ACT_CREDIT_DT>
+        <SYND_ACT_NEW_CONF_BAL fv_type="F" mf="F" oper="=">SYND_ACT_NEW_CONF_BAL</SYND_ACT_NEW_CONF_BAL>
+        <SYND_ACT_NEW_CONF_CCY fv_type="F" mf="F" oper="=">SYND_ACT_NEW_CONF_CCY</SYND_ACT_NEW_CONF_CCY>
+        <SYND_ACT_NOTES fv_type="F" mf="F" oper="=">SYND_ACT_NOTES</SYND_ACT_NOTES>
+        <SYND_ACT_OLD_CONF_BAL fv_type="F" mf="F" oper="=">SYND_ACT_OLD_CONF_BAL</SYND_ACT_OLD_CONF_BAL>
+        <SYND_ACT_OLD_CONF_CCY fv_type="F" mf="F" oper="=">SYND_ACT_OLD_CONF_CCY</SYND_ACT_OLD_CONF_CCY>
+        <SYND_ACT_PAY_EVENT_TYPE fv_type="F" mf="F" oper="=">SYND_ACT_PAY_EVENT_TYPE</SYND_ACT_PAY_EVENT_TYPE>
+        <SYND_REF fv_type="F" mf="F" oper="=">SYND_REF</SYND_REF>
+    </mapping>
+</root>

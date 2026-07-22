@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">DOCM</MODULE>
+        <MODULE_DESC>Supplier Documentation</MODULE_DESC>
+        <EVENT>Transaction Function</EVENT>
+        <CATALOGID/>
+        <ID>F05030701165</ID>
+        <NAME>Payment Instruction TSU</NAME>
+        <DESC>Payment Instruction</DESC>
+        <FUNSHORTNAME>PayInstr</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">DOCM_Payment.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701159</ID>
+        <NAME>Payment Instruction TSU_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701159</ID>
+        <NAME>Payment Instruction TSU_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000462</ID>
+        <NAME>Payment Instruction TSU_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>CalculatorIntfFuncJS</JS_CLASS>
+    </CAL>
+</FUNC>

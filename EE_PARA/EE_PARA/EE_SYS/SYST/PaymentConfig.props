@@ -1,0 +1,83 @@
+PaymentTermsDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.PaymentTermsDataAdapter
+PaymentScheduleDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.PaymentScheduleDataAdapter
+PaymentInstructionDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.PaymentInstructionDataAdapter
+PaymentDealerDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.PaymentDealerDataAdapter
+PaymentInstructionDealerDataAdapter=PaymentDeferredDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.PaymentDeferredDataAdapter
+CleanPaymentDealerDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.CleanPaymentDealerDataAdapter
+CleanPaymentRegDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.CleanPaymentRegDataAdapter
+PaymentForInternalDataAdapter = com.cs.eximap.ejb.business.payment.dataAdapter.PaymentForInternalDataAdapter
+PaymentInSwiftDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.PaymentInSwiftDataAdapter
+PaymentInstrDealerDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.PaymentInstrDealerDataAdapter
+PaymentChargeDataAdapter=com.cs.eximap.ejb.business.payment.dataAdapter.PaymentChargeDataAdapter
+#the builder for building the response data of payment
+PaymentResponseBuilder=com.cs.eximap.ejb.business.payment.dataWrap.PayDataBuilder
+PaymentForChargeBuilder=com.cs.eximap.ejb.business.payment.dataWrap.PaymentForChargeBuilder
+
+#swift template names
+SwiftMT202=CPYTMT202
+SwiftMT103=CPYTMT103
+SwiftMT200=CPYTMT200
+#EE-5373 churchill 20110315 bound begin
+SwiftMT200COV=CPYTMT200COV
+#EE-5373 churchill 20110315 bound end
+SwiftMT205=CPYTMT205
+SwiftMT400=CPYTMT400
+SwiftMT756=CPYTMT756
+#EE-5987 churchill 20120222 bound start
+SwiftMT999=CPYTMT999
+#EE-5987 churchill 20120222 bound end
+MT202ForClean = CPYTMT202
+MT103ForClean = CPYTMT103
+
+MT202=SSSS_CPYTMT202
+#EE-5373 churchill 20110315 bound begin
+MT202COV=SSSS_CPYTMT202COV
+PACS009COV=SYST_pacs.009.001.08_COV
+#EE-5373 churchill 20110315 bound end
+MT103=SSSS_CPYTMT103
+PACS008=SYST_pacs.008.001.08
+MT200=SSSS_CPYTMT200
+#MT205=SSSS_CPYTMT205
+#EE-5987 churchill 20120222 bound start
+MT999=SSSS_CPYTMT999
+#EE-5987 churchill 20120222 bound end
+MT400=SSSS_CPYTMT400
+MT756=SSSS_CPYTMT756
+advMT202=SSSS_CPYT_ADVMT202
+#EE-8381 churchill 20160617 _S
+MT103EBA=SSSS_CPYTMT103EBA
+MT202SEC=SSSS_CPYTMT202SEC
+#EE-8381 churchill 20160617 _E
+CPYT_PAY_ADV_MSG=CPYT_PAY_ADV_MSG
+CPYT_PAY_COV_MSG=CPYT_PAY_COV_MSG
+
+#voucher template names
+PaymentVchTempDr=SSSS_CPYT_PaymentDr
+PaymentVchTempCr=SSSS_CPYT_PaymentCr
+ChargeVchTempDr=SSSS_Charge_Debit
+SwiftMT103VchTemp=
+SwiftMT200VchTemp=
+SwiftMT202VchTemp=
+#this proprity for doc register Schedule display column list,use ',' to split
+#EE-5984_B Modified by Titan Wu 2012-02-20
+CPYT_SCHE_FIELD=CPYT_C_PAY_PER,CPYT_C_SDA_FLAG,CPYT_C_TENOR_DESC,CPYT_C_TENOR_TYPE,CPYT_D_TENOR_START_DATE,CPYT_D_MAT_DATE,CPYT_I_TENOR_DAYS,CPYT_N_PAY_AMT,CPYT_CSID
+#EE-5984 Modified by Titan Wu 2012-02-20
+#Field to mark doc register Schedule sequence,default value is INDIVID_DRAW_FLG
+CPYT_DOC_REG_FALG=INDIVID_DRAW_FLG
+
+
+#Defined inq mode :EE_SYS AND PAY_SYS start
+#EE_SYS :for EE DoFrame ,
+#PAY_SYS:only for Payment component to access
+CALL_PAYMENT_MODE=PAY_SYS
+# end
+
+#Defined Dealer Flag Fleld Name ,value:Y,N 
+#if it't value is "Y" means this shcdule is end ,system will update the un pay flag to "F"
+#Default value Y start
+CPYT_C_SETTLE_END_FLAG=CPYT_C_SETTLE_END_FLAG
+# end
+
+#��Finance��������Schedule���м�����һ���ֶ�,���ڼ�¼Finance��REF����������Ŀ����Ϊ�˼���Catalog�漰��?
+#�����漰ĳ��Function��PaymentҲ��Financeʱ������ϵͳҪ������DO�ı���ȡ���������ͬʱ���뽻�׵ı?���ű���һ��
+#Utility��֧��

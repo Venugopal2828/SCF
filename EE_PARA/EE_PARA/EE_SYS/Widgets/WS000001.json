@@ -1,0 +1,32 @@
+{
+	"id": "WS000001",
+	"type": "sql",
+	"configuration": {
+		"ui": {
+			"id": "WS000001",
+			"display": "chart.bar",
+			"title": "Supervisor Release",
+			"desc": "Show all transactions waiting to be released.",
+			"tooltip": "{\"text\":\"{a}<br/>{b}: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"action": {
+				"type": "drillDown",
+				"cfg": "{\"EXCO\":\"WF000003\",\"IMCO\":\"WF000004\",\"EPLC\":\"WF000006\",\"IPLC\":\"WF000007\",\"GTEE\":\"WF000008\",\"EE_ACTION\":\"WF_EE_ACTION\"}"
+
+			},
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of transactions\"},\"hideMaxCols\":true}",
+					"line": "{\"xAxis\":{\"name\":\"Number of transactions\"},\"hideMaxCols\":true}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of transactions\"},\"hideMaxCols\":true}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of transactions\"},\"hideMaxCols\":true}"
+				}
+			}
+		},
+		"data": {
+			"sql": "SELECT C_UNIT_CODE, MODULE, COUNT(TRX) AS TRX FROM (SELECT C_UNIT_CODE, 'IPLC' AS MODULE ,C_MAIN_REF AS TRX FROM EXIMTRX.IPLC_MASTER T1 WHERE C_TRX_STATUS = 'P' UNION ALL SELECT C_UNIT_CODE,'EPLC' AS MODULE,  C_MAIN_REF AS TRX FROM EXIMTRX.EPLC_MASTER T2 WHERE C_TRX_STATUS = 'P' UNION ALL SELECT C_UNIT_CODE,'EXCO' AS MODULE,  C_MAIN_REF AS TRX FROM EXIMTRX.EXCO_MASTER T3 WHERE C_TRX_STATUS = 'P' UNION ALL SELECT C_UNIT_CODE, 'IMCO' AS MODULE, C_MAIN_REF AS TRX FROM EXIMTRX.IMCO_MASTER T4 WHERE C_TRX_STATUS = 'P' UNION ALL SELECT C_UNIT_CODE, 'GTEE' AS MODULE, C_MAIN_REF AS TRX FROM EXIMTRX.GTEE_MASTER T5 WHERE C_TRX_STATUS = 'P') GROUP BY C_UNIT_CODE, MODULE HAVING C_UNIT_CODE = '{{SYS_BUSI_UNIT}}'",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "MODULE",
+			"valueField": "TRX"
+		}
+	}
+}

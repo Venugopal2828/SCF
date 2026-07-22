@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>T</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>FINDNA.SEND.GTSCOM.QUEUE</send-queue-id>
+            <recv-queue-id>FINDNA.SEND.GTSCOM.QUEUE</recv-queue-id>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>80000</other-system-id>
+        <other-system-interface>80002</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FAEF</module>
+        <interface-mapping-name>Payment</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>T</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="DO" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <ACCT_BGL_AC_NO descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <ACCT_EXCH_RPTNO descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <ACC_APPLY_CR_AMT descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <ACC_APPLY_DR_AMT descr="Payment  Amount" ec-tag="" fv-type="F"
+            op-tag="" order="">FA_PMT_AMT</ACC_APPLY_DR_AMT>
+        <ACC_BOOK_DESC descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <ACC_BOOK_NAME descr="Book Name" ec-tag="" fv-type="V" op-tag="" order="">2</ACC_BOOK_NAME>
+        <ACC_BUSI_TYPE descr="Business Type" ec-tag="" fv-type="F" op-tag="" order="">FA_BUSI_TYPE</ACC_BUSI_TYPE>
+        <ACC_CCY descr="Payment CCY" ec-tag="" fv-type="F" op-tag="" order="">FA_PMT_CCY</ACC_CCY>
+        <ACC_CUST descr="Seller ID" ec-tag="" fv-type="F" op-tag="" order="">FA_SEL_ID</ACC_CUST>
+        <ACC_DOC_NO descr="Document Number" ec-tag="" fv-type="F" op-tag="" order="">FA_DOC_NO</ACC_DOC_NO>
+        <ACC_DUE_DATE descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <ACC_EXCH_RATE descr="" ec-tag="" fv-type="V" op-tag="" order="">1</ACC_EXCH_RATE>
+        <ACC_FEE_TYPE descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <ACC_POST_DATE descr="Transcation Date" ec-tag="" fv-type="F" op-tag="" order="">FA_TRX_DT</ACC_POST_DATE>
+        <ACC_RECUST descr="Buyer ID" ec-tag="" fv-type="F" op-tag="" order="">FA_BUYER_ID</ACC_RECUST>
+        <ACC_TRAN_ID descr="" ec-tag="" fv-type="" op-tag="" order=""/>
+        <ACC_TRX_CCY descr="Payment CCY" ec-tag="" fv-type="F" op-tag="" order="">FA_PMT_CCY</ACC_TRX_CCY>
+        <ACC_UNIT_CODE descr="Unit Code" ec-tag="" fv-type="F" op-tag="" order="">BA_UNIT_CODE</ACC_UNIT_CODE>
+        <ACC_VALUE_DATE descr="Payment Value Date" ec-tag="" fv-type="F"
+            op-tag="" order="">FA_PMT_VAL_DT</ACC_VALUE_DATE>
+    </send-msg-map>
+    <recv-msg-map/>
+    <send-item/>
+</gapi>

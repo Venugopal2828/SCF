@@ -1,0 +1,246 @@
+<root>
+	<regexp-lib>
+		<!-- invalid-->
+		<item name="invalid.char" ignorecase="false"><![CDATA[[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]]]></item>
+		<!-- xss-->
+		<!--@ref EE-8424 @author season @date 2016-08-03 add_s  -->
+		<!-- item name="xss.script"><![CDATA[<\s*[/]?\s*script.*]]></item-->
+		<!-- @ref  EE-9404 @date 2019-01-17 @author yaoyao _S -->
+		<!-- item name="xss.script"><![CDATA[<\s*[/]?\s*script.*|(alert\(\w*)]]></item>-->
+		<!-- item name="xss.script"><![CDATA[<\s*[/]?\s*script.*|(alert\(\w*)|<\w*\s*[/]?\s* on.*=.*>.*]]></item-->
+		<item name="xss.script"><![CDATA[<\s*[/]?\s*script.*|(alert\(\w*)|(prompt\(\w*)|<\w*\s*[/]?\s* on.*=.*>.*]]></item>
+		<!-- @ref  EE-9404 @date 2019-01-17 @author yaoyao _E -->
+		<item name="xss.html.script"><![CDATA[/((\%3C) <)((\%2F) \/)*[a-z0-9\%]+((\%3E) >)/ix]]></item>
+		<!--@ref EE-8424 @author season @date 2016-08-03 add_e  -->
+		<item name="xss.html"><![CDATA[<\s*(image |img |iframe |a |!--).*]]></item>
+		<!-- sys-->
+		<item name="sys.valid.char"><![CDATA[^[a-z 0-9,_/')(=+-.]*$]]></item>
+		<!--@ref EE-8424 @author season @date 2016-08-03 add_s  -->
+		<!-- item name="sys.field.valid.char"><![CDATA[ ^[a-z0-9_.]*$]]></item-->
+		<item name="sys.field.valid.char"><![CDATA[ ^[a-z A-Z0-9_.]*$]]></item>
+		<!--@ref EE-10845 @author lance @date 2023-12-04 add_s  -->
+		<item name="sys.field.valid.char.uid"><![CDATA[ ^[a-z A-Z0-9_.@]*$]]></item>
+		<!--@ref EE-10845 @author lance @date 2023-12-04 add_e  -->
+		<!--@ref EE-8424 @author season @date 2016-08-03 add_E  -->
+		<!--@ref EE-8424_1 @author amelia @date 2016-12-12 add_s  -->
+		<item name="sys.swift.valid.char"><![CDATA[ ^[a-z A-Z0-9,/')(+-.:?]*$]]></item>
+		<!--@ref EE-8424_1 @author amelia @date 2016-12-12 add_e  -->
+		<item name="sys.chg.valid.char"><![CDATA[ ^[a-z A-Z0-9_.%/]*$]]></item>
+		<item name="sys.strict.valid.char"><![CDATA[^\s*[a-z0-9_,%]{1,64}\s*$]]></item>
+		<item name="sys.verystrict.valid.char"><![CDATA[^[a-z0-9A-Z_-]*$]]></item>
+		<item name="sys.cata.relation.valid.char"><![CDATA[^\s*[a-z]*\s*$]]></item>
+		<!--catalog And / Or-->
+		<item name="sys.cata.operand.valid.char"><![CDATA[^\s*[a-z0-9=<>]*$]]></item>
+		<item name="sys.cata.input.valid.char"><![CDATA[^\s*[%a-z0-9_ )(-/]*$]]></item>
+		<!-- valid-->
+		<item name="valid.number" ignorecase="false"><![CDATA[^[0-9]*[.]?[0-9]*$]]></item>
+		<item name="valid.integer" ignorecase="false"><![CDATA[^[0-9-]*$]]></item>
+		<item name="valid.char"><![CDATA[^[a-z0-9_]*$]]></item>
+		<item name="valid.char.fundesc"><![CDATA[^[a-z0-9)(\xC4\xD6\xDC\xE4\xF6\xFC/\s-/\s&]*$]]></item>
+		<!-- EE-8960 add_s-->
+		<item name="valid.char.CJK.check"><![CDATA[^\s*[a-z0-9_, )(-/%\u4E00-\u9FFF]{1,64}\s*$]]></item>
+		<!-- EE-8960 add_e-->
+		<item name="valid.alpha.numeric.check" ignorecase="false"><![CDATA[ ^[0-9a-zA-Z]*$]]></item>
+		<!--	<item name="none-field"><![CDATA[ "]]></item>-->
+		
+		<!-- EE-11223 add_s-->
+		<!--
+		<item name="xss.dangerous.tags"><![CDATA[<\s*/?\s*(html|head|title|base|link|meta|style|script|noscript|body|section|nav|article|aside|h1|h2|h3|h4|h5|h6|header|footer|address|main|p|hr|pre|blockquote|ol|ul|li|dl|dt|dd|figure|figcaption|div|a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|picture|source|img|iframe|embed|object|param|video|audio|track|map|area|table|caption|colgroup|col|tbody|thead|tfoot|tr|td|th|form|label|input|button|select|datalist|optgroup|option|textarea|output|progress|meter|fieldset|legend|details|summary|dialog|template|canvas|svg|math|slot)\b[^>]*>]]></item>
+		<item name="xss.event.handlers"><![CDATA[\s(onload|onerror|onmouseover|onmouseout|onmousedown|onmouseup|onkeydown|onkeyup|onfocus|onblur|onchange|onclick|ondblclick)\s*=]]></item>
+		<item name="xss.css.expression"><![CDATA[expression\s*\(\s*javascript]]></item>
+		-->
+		<!-- EE-11223 add_e-->
+		
+	</regexp-lib>
+	<fieldcheck>
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.valid.char"/>
+			</whitelist>
+			<blacklist/>
+			<fields>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.chg.valid.char"/>
+			</whitelist>
+			<blacklist/>
+			<fields>
+				<fld>CHG_NAME</fld>
+				<fld>C_MSG_ID</fld>
+			</fields>
+		</known-check>
+		<!--@ref EE-10845 @author lance @date 2023-12-04 add_s  -->
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.field.valid.char.uid"/>
+			</whitelist>
+			<blacklist/>
+			<fields>
+				<fld>C_USER_ID</fld>
+				<fld>_USER_ID</fld>
+			</fields>
+		</known-check>
+		<!--@ref EE-10845 @author lance @date 2023-12-04 add_e  -->
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.field.valid.char"/>
+			</whitelist>
+			<blacklist/>
+			<fields>
+				<fld>C_BUSINESS_UNIT</fld>
+				<fld>Clause_InsertClauseFieldName</fld>
+				<fld>RESIDENT_TYPE</fld>
+				<fld>C_TMPL_CUST_ID</fld>
+				<fld>CHG_BUSI_TYPE</fld>
+				<fld>C_UNIT_CODE</fld>
+				<fld>C_BK_GROUP_ID</fld>
+				<fld>C_CNTY_CODE</fld>
+				<fld>CUST_BANK_ID</fld>
+				<fld>OVER_ID</fld>
+				<fld>_N1_C_BK_GROUP_ID</fld>
+				<fld>_N1_C_CNTY_CODE</fld>
+				<fld>C_USER_ID</fld>
+				<fld>C_FUSER_ID</fld>
+				<fld>_USER_ID</fld>
+				<fld>_F_C_BK_GROUP_ID</fld>
+				<fld>_F_C_CNTY_CODE</fld>
+				<fld>_F_C_UNIT_CODE</fld>
+				<fld>_GOP_UNIT_CODE</fld>
+				<fld>C_TRX_STATUS</fld>
+				<fld>C_EVENT_STATUS</fld>
+				<fld>C_STP_CODE</fld>
+				<fld>INQ_CUBK_EVENT_ID</fld>
+				<fld>_VIEW_MODE</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.swift.valid.char"/>
+			</whitelist>
+			<blacklist/>
+			<fields>
+				<fld>C_MAIN_REF</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+			    <!--@ref EE-8371 @author season @date 2016-06-06 add_s  -->
+				<!--regexp-item name="sys.strict.valid.char"/-->
+				<regexp-item name="sys.cata.input.valid.char"/>
+				<!--@ref EE-8371 @author season @date 2016-06-06 add_e  -->
+			</whitelist>
+			<blacklist/>
+			<fields>
+				<!--Template -->
+				<fld>Clause_Name</fld>
+				<fld>CTRL_TYPE</fld>
+				<fld>SEARCH_VALUE</fld>
+				<fld>SEARCH_FLD_TYPE</fld>
+				<!--<fld>SEARCH_FLD</fld>-->
+				<fld>SEACH_LFD_TYPE</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.verystrict.valid.char"/>
+			</whitelist>
+			<blacklist/>
+			<fields>
+				<fld>_UNIT_CODE</fld>
+				<fld>TRX_CCY</fld>
+				<fld>SYS_INQ_CUBK_SEARCH_DEFAULTFLD</fld>
+				<fld>IGNORE_CASE</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.cata.relation.valid.char"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>OP3</fld>
+				<fld>OP6</fld>
+				<fld>OP9</fld>
+				<fld>OP12</fld>
+				<fld>OP15</fld>
+				<fld>OP18</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="sys.cata.operand.valid.char"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>OP1</fld>
+				<fld>OP4</fld>
+				<fld>OP7</fld>
+				<fld>OP10</fld>
+				<fld>OP13</fld>
+				<fld>OP16</fld>
+				<fld>OP19</fld>
+				<fld>SEARCH_OP</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="valid.integer"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>_TOTAL_TRXL</fld>
+				<fld>PageSize</fld>
+				<fld>pages</fld>
+				<fld>page</fld>
+				<fld>_F_I_EVENT_TIMES</fld>
+				<fld>I_EVENT_TIMES</fld>
+			</fields>
+		</known-check>
+		<known-check>
+			<whitelist>
+				<regexp-item name="valid.char"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<fld>SEARCH_FLD</fld>
+			</fields>
+		</known-check>
+		<!-- EE-8960 add_s-->
+		<known-check>
+			<whitelist>
+				<regexp-item name="valid.char.CJK.check"/>
+			</whitelist>
+			<blacklist>
+			</blacklist>
+			<fields>
+				<!-- <fld>SEARCH_VALUE</fld> -->
+			</fields>
+		</known-check>
+		<!-- EE-8960 add_e-->
+		<known-check>
+			<whitelist/>
+			<blacklist/>
+		</known-check>
+		<unknown-check>
+			<whitelist/>
+			<blacklist>
+			  <regexp-item name="xss.script"/>
+			  <regexp-item name="xss.html"/>
+			  <regexp-item name="invalid.char"/>
+			  <!-- EE-11223 add_s-->
+			  <!--
+			  <regexp-item name="xss.event.handlers"/>
+			  <regexp-item name="xss.css.expression"/>
+			  <regexp-item name="xss.dangerous.tags"/>
+			  -->
+			  <!-- EE-11223 add_e-->
+			</blacklist>
+		</unknown-check>      
+	</fieldcheck>
+</root>

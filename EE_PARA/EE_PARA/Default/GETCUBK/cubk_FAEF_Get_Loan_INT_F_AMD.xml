@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_LOAN</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>Get_Loan_INT_F_AMD</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_LOAN_INT_AMT ALIAS="T0" DBFUNC="" DESC="Loan Interest Amount" DT="3" HIDDEN="F" TYPE="F">FA_LOAN_INT_AMT</FA_LOAN_INT_AMT>
+        <FA_LOAN_INT_SM_AMT ALIAS="T0" DBFUNC="" DESC="Interest Summary Amount" DT="3" HIDDEN="F" TYPE="F">FA_LOAN_INT_SM_AMT</FA_LOAN_INT_SM_AMT>
+        <FA_INV_LOAN_ID ALIAS="T0" DBFUNC="" DESC="Invoice Loan ID" DT="12" HIDDEN="F" TYPE="F">FA_INV_LOAN_ID</FA_INV_LOAN_ID>
+        <FA_PMT_GRC_DAY ALIAS="T0" DBFUNC="" DESC="Payment Grace Day" DT="2" HIDDEN="F" TYPE="F">FA_PMT_GRC_DAY</FA_PMT_GRC_DAY>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">= '</SQL>
+            <SQL TYPE="FLD">FA_DOC_REF</SQL>
+            <SQL TYPE="SQL">' </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,102 @@
+[
+  {
+    "ctype": "a",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[A-Z]",
+    "raw": true
+  },
+  {
+    "ctype": "c",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[0-9A-Z]",
+    "raw": true
+  },
+  {
+    "ctype": "n",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[0-9]",
+    "raw": true
+  },
+  {
+    "ctype": "d",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[0-9]+,[0-9]*",
+    "raw": false,
+    "length-checking": true
+  },
+  {
+    "ctype": "x",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[0-9a-zA-Z/\\-\\?:\\(\\)\\.,'\\+ ]",
+    "raw": true
+  },
+  {
+    "ctype": "y",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[0-9A-Z/\\-\\?:\\(\\)\\.,'\\+=!\"%&*<>; ]",
+    "raw": true
+  },
+  {
+    "ctype": "z",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[0-9a-zA-Z/\\-\\?:\\(\\)\\.,'\\+=!\"%&*<>\\;\\{_\\@\\# ]",
+    "raw": true
+  },
+  {
+    "ctype": "X",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[0-9a-zA-Z/\\-\\?:\\(\\)\\.,'\\+ !#$%&amp;\\*=^_`\\{\\|\\}~&quot;;&lt;&gt;@\\[\\\\\\]]",
+    "raw": true
+  },
+
+  {
+    "ctype": "N",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "N",
+    "raw": false
+  },
+  {
+    "ctype": "RateSource",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "[A-Z]{3}[0-9]{1,2}",
+    "raw": false,
+    "description": "Format example: 3!a2n"
+  },
+  {
+    "ctype": "F50FPI",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "/[0-9a-zA-Z/\\-\\?:\\(\\)\\.,'\\+ ]{1,34}|[A-Z]{4}/[A-Z]{2}/[0-9a-zA-Z/\\-\\?:\\(\\)\\.,'\\+ ]{1,27}",
+    "raw": false,
+    "description": "F50F, Party Identifier format: /34x or 4!a/2!a/27x"
+  },
+  {
+    "ctype": "BIC",
+    "validator": "com.cs.esp.swift.convert.field.validator.BicValidator"
+  },
+  {
+    "ctype": "BICT",
+    "validator": "com.cs.esp.swift.convert.field.validator.BicValidator"
+  },
+  {
+    "ctype": "uuid",
+    "validator": "com.cs.esp.swift.convert.field.validator.RegExpValidator",
+    "regExp": "^[0-9a-f]{8}\\-[0-9a-f]{4}\\-[4][0-9a-f]{3}\\-[89ab][0-9a-f]{3}\\-[0-9a-f]{12}$",
+    "raw": true
+  },
+  {
+    "ctype": "PTYID",
+    "validator": "com.cs.esp.swift.convert.field.validator.PartyIdValidator"
+  },
+  {
+    "ctype": "YYMMDD|YYYYMMDD|YYYY|YYMM|MMDD|YYYYMMDDHHMM",
+    "validator": "com.cs.esp.swift.convert.field.validator.DateValidator"
+  },
+  {
+    "ctype": "HHMMSS|HHMM|MMSS|hhMM",
+    "validator": "com.cs.esp.swift.convert.field.validator.TimeValidator"
+  },
+  {
+    "ctype": "UTCTS",
+    "validator": "com.cs.esp.swift.convert.field.validator.UTCIndicatorValidator"
+  }
+]

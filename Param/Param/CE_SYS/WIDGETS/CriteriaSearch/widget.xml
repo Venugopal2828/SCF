@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="CriteriaSearch"
+			allowInstanceContent="false"
+			supportedModes="view edit config help"
+			supportedWindowStates="maximize minimize"
+			iScope="com.cs.widgets.CriteriaSearch" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.CriSearchJs" src="CriteriaSearch/search.js"/>
+	<iw:resource globalid="com.cs.resources.CriSearchCss" src="CriteriaSearch/search.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Criteria Search">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="view.labels">
+		<iw:item id="searchLabel" alias="searchLabel" lang=""
+				 readOnly="true" value="Search for:">
+		</iw:item>
+		<iw:item id="searchButton" alias="searchButton" lang=""
+				 readOnly="true" value="Search">
+		</iw:item>		
+	</iw:itemSet>
+	<iw:itemSet id="edit.labels">
+		<iw:item id="selectLabel" alias="selectLabel" lang=""
+				 readOnly="true" value="Add searching item">
+		</iw:item>
+		<iw:item id="listNoData" alias="listNoData" lang=""
+				 readOnly="true" value="No selected items">
+		</iw:item>
+		<iw:item id="btn.cancel" alias="cancel" lang=""
+				 readOnly="true" value="Cancel">
+		</iw:item>
+		<iw:item id="btn.save" alias="save" lang=""
+				 readOnly="true" value="Save">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-CriSearch">
+			<div class="criSearch-options-container">
+				<div class="selector-label label"></div>
+				<div class="selector-content"></div>
+			</div> 
+			<div class="criSearch-body-container"></div>
+			<div class="criSearch-more-container">
+				<a href="javascript:;" class="open-button"></a>
+			</div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="edit"><![CDATA[
+		<div class="com-cs-widget-CriSearch">
+			<div class="criSearch-options-container">
+				<div class="selector-label label"></div>
+				<div class="selector-content"></div>
+			</div> 	
+			<div class="edit-content"></div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-CriSearch">
+			Catalog Criteria Search.
+		</div>
+	]]></iw:content>
+</iw:iwidget>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+remoteServers : 
+if some of the clustered servers in a same machine, the rmiport numbers must be different
+
+JVMRemoteServersPropertyName: 
+this attribute is to inidicate that the remote servers will be specified in 
+application by setting the system property and the property name is same as the value of this attribute, default 
+name is EE_CLUSTER_REMOTE_SERVERS
+Basically, we should set up a JVM property named EE_CLUSTER_REMOTE_SERVERS and its value is a list of ip and port pair,such as
+ip1:rmiport1:dataport1,ip2:rmiport1:dataport1, if some of the cluster servers are in the same machine, since the ip is same, 
+so the rmiport must be different, like ip1:port1:dataport1,ip1:port2:dataport2
+furthermore, we also should specify the each application server's local address 
+in the JVM property named EE_LOCAL_REMOTE_SERVER 
+and its value is the local ip and rmi port, like ip:rmiport 
+-->
+<remote-service RemoteServers="ip1:rmiport1:dataport1,ip2:rmiport1:dataport1,..." JVMRemoteServersPropertyName="EE_CLUSTER_REMOTE_SERVERS">
+	<!-- the listener of remote server used to retrieve the performance of each remote server 
+the alternate class is com.cs.core.remoting.server.RMIRemoteServerListener
+	<RMIRemoteServerListener class="com.cs.core.remoting.server.MulticastRemoteServerListener" properties="multicastGroupPort=4597,multicastGroupAddress=228.19.18.17,timeToLive=32"/>
+-->
+	<RMIRemoteServerListener class="com.cs.core.remoting.server.RMIRemoteServerListener" properties=""/>
+	
+	<!-- to define that the system how to discover the remote service on the remote server, by manually specify
+the remote server address or automatically with multicast
+<RMIRemoteServiceDiscoveryFactory class="com.cs.core.remoting.service.RMIAutoServiceDiscoveryFactory" properties="multicastGroupPort=4597,multicastGroupAddress=228.19.18.17,timeToLive=32,listenerPortRange=34211;34212;34213;34214;34215;34216"/>
+	
+-->
+	<RMIRemoteServiceDiscoveryFactory class="com.cs.core.remoting.service.RMIDirectServiceDiscoveryFactory" properties=""/>
+	<!--
+serviceName:
+the name that will be used to register the corresponding java object and it must be unique
+
+class:
+the full name of a class which will be instantiated and registered in a rmi registry server
+
+isClustered:
+to indicate whether this registered service will be considered as a cluster service and load balance
+if true, one of the remote server failed to process the service, then system will be going to check the other servers
+and continue the process if possible.
+-->
+	<!-- following is a smple of how to configure a remote service and specify if it should be clustered or not-->
+	<service serviceName="Communicate" class="com.cs.schedule.Communicate" isClustered="false"/>
+	<service serviceName="DispatchJob" class="com.cs.schedule.DispatchJob" isClustered="true"/>
+	<service serviceName="Session/BatchManagerDecorate" class="com.cs.eximap.batchmgr.BatchManagerDecorateBean" isClustered="false"/>
+</remote-service>

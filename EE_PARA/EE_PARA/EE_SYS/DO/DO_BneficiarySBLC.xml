@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="BneficiarySBLC" Max="n" Min="0" Name="BneficiarySBLC" PendingStore="N" Screen="SCRN/DO/BneficiarySBLC.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="SBLC_BENE_ADD_DO"></TABLE_NAME>
+    <PK>
+        <PKNAME>BENE_ORDER_NO</PKNAME>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="SBLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="4" Desc="Beneficiary Order No" DispInGrid="Y" EDIT="N" EEType="INTEGER" FldType="" Value="">BENE_ORDER_NO</Element>
+        <Element DATATYPE="12" Desc="Beneficiary ID" DispInGrid="N" EDIT="N" EEType="BEIIdentifier" FldType="" Value="">BENE_ID</Element>
+        <Element DATATYPE="12" Desc="Beneficiary Name" DispInGrid="Y" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">BENE_NM</Element>
+        <Element DATATYPE="12" Desc="Beneficiary Address1" DispInGrid="Y" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">BENE_ADD1</Element>
+        <Element DATATYPE="12" Desc="Beneficiary Address2" DispInGrid="Y" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">BENE_ADD2</Element>
+        <Element DATATYPE="12" Desc="Beneficiary Address3" DispInGrid="Y" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">BENE_ADD3</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

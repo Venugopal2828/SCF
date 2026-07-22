@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>GET_BUYER_INFO</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="Customer ID" DT="12" TYPE="F">FA_BUYER_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">FA_BUYER_ID</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Customer Name" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_NM</PARTY_NM>
+        <FA_CUST_NM2 ALIAS="T0" DBFUNC="" DESC="Customer Name 2" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_NM2</FA_CUST_NM2>
+        <CUST_CITY ALIAS="T0" DBFUNC="" DESC="Customer City" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CITY</CUST_CITY>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Custormer Country Code" DT="1" HIDDEN="F" TYPE="F">FA_BUYER_CNTY</CNTY_CODE>
+        <FA_CUST_PROV ALIAS="T0" DBFUNC="" DESC="Customer Province" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_PROV</FA_CUST_PROV>
+        <POST_CODE ALIAS="T0" DBFUNC="" DESC="Post Code" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_POSTCODE</POST_CODE>
+        <CUST_STREET_NM ALIAS="T0" DBFUNC="" DESC="Customer Street Name" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_POSTBOX</CUST_STREET_NM>
+        <BK_BR_CODE ALIAS="T0" DBFUNC="" DESC="Belong to Bank Branch Code" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_BK_BRCH</BK_BR_CODE>
+        <FA_CUST_CNTC_FLG ALIAS="T0" DBFUNC="" DESC="Customer Contact Flag" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_CNTC_FLG</FA_CUST_CNTC_FLG>
+        <FST_CNTC_FAX ALIAS="T0" DBFUNC="" DESC="Contact Fax No" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_CONT_FAX</FST_CNTC_FAX>
+        <FA_CONTACT_NM ALIAS="T0" DBFUNC="" DESC="Contactor Name" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_CONT_NM</FA_CONTACT_NM>
+        <FST_CNTC_EMAIL ALIAS="T0" DBFUNC="" DESC="First Contact Email Address" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_CONT_MAIL</FST_CNTC_EMAIL>
+        <FA_CUST_ACC_NO ALIAS="T0" DBFUNC="" DESC="Customer Account No." DT="12" HIDDEN="T" TYPE="F">FA_BUYER_AC_NO</FA_CUST_ACC_NO>
+        <FA_CONTACT_TEL2 ALIAS="T0" DBFUNC="" DESC="Contactor Tel No. 2" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_CONT_TEL</FA_CONTACT_TEL2>
+        <FA_CUST_BK_NM ALIAS="T0" DBFUNC="" DESC="Customer Bank Name" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_BK_NM</FA_CUST_BK_NM>
+        <FA_CUST_REG_NO ALIAS="T0" DBFUNC="" DESC="Customer Register No." DT="12" HIDDEN="T" TYPE="F">FA_BUYER_COMP_REG</FA_CUST_REG_NO>
+        <FA_CUST_RESP_AGNT ALIAS="T0" DBFUNC="" DESC="Responsible Agency" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_RESP_AGNT</FA_CUST_RESP_AGNT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

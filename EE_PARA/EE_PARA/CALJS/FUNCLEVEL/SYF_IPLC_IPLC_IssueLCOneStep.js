@@ -1,0 +1,2488 @@
+var csFuncLevelProto = Object.create(csFuncLevelBaseProto || {});
+
+csFuncLevelProto.CancelCheck = function() {
+    try {
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*CancelCheck", e);
+    }
+}
+
+csFuncLevelProto.ConfirmBusinessCall = function() {
+    try {
+        SYT_CHG_VOUCHER();
+        SYF_IPLC_CAL_Temp_Tolerance();
+        SYF_IPLC_Cal_TEMP_EXPIRY_PLC_NARR();
+        SYM_IPLC_CAL_APLB_RULE_SWF();
+        SYF_IPLC_Group_IDonchange();
+        document.MAINFORM.TEMP_N90_REF_21.value = document.MAINFORM.ADV_BK_REF.value;
+        document.MAINFORM.CURRNT_STATUS.value = 'IPLC_ISS_LC_1STEP';
+        document.MAINFORM.NXT_STATUS.value = 'AmdLC';
+        SYT_Cal_C_TRANS_CODE();
+        SYT_LIAB_VOUCHER();
+        if (SYS_FUNCTION_NAME == "IPLC_IssueLCOneStep" && document.MAINFORM.REV_LC.value == "Yes" && document.MAINFORM.REV_EVENT.value == "Year" && document.MAINFORM.CUMULATIVE.value == "Cumulative") {
+            document.MAINFORM.TEMP_AC_AMT1.value = SYS_BeFloat(document.MAINFORM.LC_AMT.value) * document.MAINFORM.NO_PRD.value;
+            document.MAINFORM.TEMP_AC_AMT2.value = SYS_BeFloat(document.MAINFORM.LC_AMT.value) * document.MAINFORM.NO_PRD.value;
+        }
+        document.MAINFORM.LC_NO.value = document.MAINFORM.C_MAIN_REF.value;
+        SYF_IPLC_SENT_MT740();
+        document.MAINFORM.ORIGINAL_LC_BAL.value = document.MAINFORM.LC_BAL.value;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*ConfirmBusinessCall", e);
+    }
+}
+
+csFuncLevelProto.ConfirmBusinessCheck = function() {
+    try {
+        return Cal_eloan_fields_IPLC();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*ConfirmBusinessCheck", e);
+    }
+}
+
+csFuncLevelProto.ConfirmBusinessCheckSave = function() {
+    try {
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*ConfirmBusinessCheckSave", e);
+    }
+}
+
+csFuncLevelProto.InitValues = function() {
+    try {
+        SYS_GetRefNo('IPLC', 'SYM_IPLC_setRef');
+
+        document.MAINFORM.SYND_FLG.value = 'NO';
+        document.MAINFORM.EVERGREEN.value = "";
+        document.MAINFORM.ADV_BK_REF.value = "NONREF";
+        document.MAINFORM.ADV_THU_BK_CORR_MED.value = "None";
+        document.MAINFORM.ADV_THU_BK_REF.value = "NONREF";
+        document.MAINFORM.CLS_FLG.value = 'No';
+        document.MAINFORM.ISSUE_DT.value = SYS_BUSI_DATE;
+        document.MAINFORM.TRANS_DOCS_APPL.value = 'NOTIFY APPLICANT';
+        document.MAINFORM.INS_DOCS_TYPE.value = 'CERTIFICATE OR POLICY';
+        document.MAINFORM.INS_DOCS_COV.value = 'All RISKS AND WAR RISKS';
+        SYM_IPLC_ShowInsuranceDocument_CB();
+        SYM_IPLC_ShowTransportDocument_CB();
+        SYM_IPLC_DocumentPresentation();
+
+
+        // modified at 20090202 by jane bug 903
+        document.MAINFORM.PRES_DAYS.value = 21;
+        SYF_IPLC_Cal_PRES_PRD_TXT();
+
+        //modified at 20090203 by jane bug 911
+        document.MAINFORM.APLB_RULE_40F.value = 'URR LATEST VERSION';
+
+        SYM_IPLC_INIT_FOR_DT();
+
+        //Add by jane for bug 1327
+        SYM_IPLC_CHK_AVAL_WT_BK_OPT();
+
+        SYT_ChangeFldClass(document.MAINFORM.GOODS_DESC, 'O');
+
+        SYT_ChangeFldClass(document.MAINFORM.CHG_FLD_LOCAL_CUST_AC_NO, 'M');
+        SYT_ChangeFldClass(document.MAINFORM.CHG_GETAC_BTN, 'O');
+
+        document.MAINFORM.PRES_TYPE.value = "Days from shipment date";
+
+        document.MAINFORM.INS_DOCS_CB.checked = false;
+        document.MAINFORM.TRANS_DOCS_CB.checked = false;
+        document.MAINFORM.INS_DOCS_TYPE.style.visibility = "hidden";
+        document.MAINFORM.INS_DOCS_COV.style.visibility = "hidden";
+        document.MAINFORM.TRANS_DOCS_ORIG.style.visibility = "hidden";
+        document.MAINFORM.TRANS_DOCS_TYPE.style.visibility = "hidden";
+        document.MAINFORM.TRANS_DOCS_CONS.style.visibility = "hidden";
+        document.MAINFORM.TRANS_DOCS_FREI.style.visibility = "hidden";
+        document.MAINFORM.TRANS_DOCS_APPL.style.visibility = "hidden";
+        EEHtml.getElementById("insurance document").style.display = "none";
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*InitValues", e);
+    }
+}
+
+csFuncLevelProto.OnLoadTemplate = function() {
+    try {
+        EEHtml.fireEvent(document.MAINFORM.EXPIRY_DT, 'onchange');
+        SYT_ChangeFldClass(document.MAINFORM.CHG_FLD_LOCAL_CUST_AC_NO, 'M');
+        SYT_ChangeFldClass(document.MAINFORM.CHG_GETAC_BTN, 'O');
+        SYM_IPLC_showMixPayment();
+        //MAIN_MIX_PMT_DETL();
+        FLD_IPLC_LC_AMT_onchange();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*OnLoadTemplate", e);
+    }
+}
+
+csFuncLevelProto.PostconditionOnInit = function() {
+    try {
+        SYM_IPLC_Change_INCOTERMS_INSTR();
+        if (SYS_FUNCTION_TYPE == 'RE' || SYS_FUNCTION_TYPE == 'EC') {
+            SYF_IPLC_MPO_GRP_ID();
+        }
+        SYT_Init_Notes(document.MAINFORM.APPL_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.BENE_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.ADV_BK_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.ADV_THU_BK_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.REIM_BK_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.APPL_BK_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.DRWE_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.AVAL_WT_BK_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.CONF_BK_NOTES.name);
+        SYT_Init_Notes(document.MAINFORM.FORACOF_NOTES.name);
+        SYM_IPLC_CAL_ADV_BK_ID_back();
+        SYM_IPLC_CAL_ADV_THU_BK_ID_back();
+        SYM_IPLC_CAL_APPL_BK_ID_back();
+        SYM_IPLC_CAL_AVAL_WT_BK_ID_back();
+        SYM_IPLC_CAL_APPL_ID_NOCHG_back();
+        SYM_IPLC_CAL_BENE_ID_NOCHG_back();
+        SYM_IPLC_CAL_DRWE_ID_back();
+        SYM_IPLC_CAL_REIM_BK_ID_back();
+        onChangeDiary();
+        FLD_IPLC_REV_LC_onchange();
+        SYM_IPLC_CAL_FORACOF_ID_NOCHG_back();
+        SYM_IPLC_CHG_map_Cust_SMBC();
+        Chg.init('Booking Rate', 'Booking Rate', 'Booking Rate', 'Booking Rate');
+        if (SYS_FUNCTION_TYPE != 'RE' && SYS_FUNCTION_TYPE != 'IQ' && SYS_FUNCTION_TYPE != 'EC') {
+            SYF_IPLC_Charges();
+        }
+        SYM_IPLC_Chg_Init_FOR_Charge();
+        SYM_IPLC_ShowCertificateofOrigin_CB();
+        SYM_IPLC_ShowCertificateofQuality_CB();
+        SYM_IPLC_ShowExportLicence_CB();
+        SYM_IPLC_ShowInsuranceDocument_CB();
+        SYM_IPLC_ShowPackingList_CB();
+        SYM_IPLC_ShowTransportDocument_CB_notInit();
+        SYM_IPLC_ShowWeightCertificate_CB();
+        SYM_IPLC_ShowAnalysisCertificate_CB();
+        SYM_IPLC_ShowBeneficiaryCertificate_CB();
+        SYM_IPLC_showMixPayment();
+        SYF_IPLC_Change_APLB_RULE();
+        SYF_IPLC_Change_EXPIRY_PLC();
+        SYF_IPLC_Change_PARTIAL_SHIP();
+        SYF_IPLC_Change_SHP_PRD();
+        SYF_IPLC_Change_TNSHIP();
+        SYF_IPLC_Chk_AVAL_BY();
+        SYM_IPLC_CHK_TRANS_DOCS_TYPE();
+        SYM_IPLC_Chk_TRANS_DOC_APL();
+        SYM_IPLC_Chk_CONF_INSTR();
+        SYT_ChangeFldClass(document.MAINFORM.BENE_NM, 'M');
+        SYT_ChangeFldClass_New('ADV_BK_NM', 'M');
+        SYT_ChangeFldClass(document.MAINFORM.GOODS_DESC, 'O');
+        if (document.MAINFORM.AVAL_BY.value != 'BY MIXED PYMT') {
+            //SYT_ChangeFldClass_New('TENOR_TYPE', 'M');
+        } else {
+            SYT_ChangeFldClass_New('TENOR_TYPE', 'O');
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*PostconditionOnInit", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_APPL_CHG_back = function() {
+    try {
+        //Modified by Jack on 20120905 for SMBC workshop
+        //SYS_GetCUBK('APPL_ID', document.MAINFORM.APPL_ID.name,'SYF_IPLC_Charges()');
+        SYS_GetCUBK('APPL_ID', document.MAINFORM.APPL_ID.name);
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_APPL_CHG_back", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_APPL_ID_back = function() {
+    try {
+        SYT_Show_Notes(document.MAINFORM.APPL_NOTES.name);
+        SYM_IPLC_APPL_MAIL_ADD();
+        SYF_IPLC_APPL_CHG_back();
+        SYM_IPLC_CAL_APPL_ADD_back();
+        SYF_IPLC_Cal_SameAsApplicant();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_APPL_ID_back", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_CAL_APPL_ID_inFUNC = function() {
+    try {
+        if (document.MAINFORM.APPL_ID.value == '') {
+            document.MAINFORM.APPL_NM.value = '';
+            document.MAINFORM.APPL_ADD1.value = '';
+            document.MAINFORM.APPL_ADD2.value = '';
+            document.MAINFORM.APPL_ADD3.value = '';
+            document.MAINFORM.APPL_EMAIL.value = '';
+            document.MAINFORM.APPL_FAX.value = '';
+            document.MAINFORM.APPL_MAIL_ADD.value = '';
+            document.MAINFORM.APPL_CORR_MED.value = 'None';
+            document.MAINFORM.APPL_TLX.value = '';
+            document.MAINFORM.APPL_REF.value = '';
+            document.MAINFORM.APPL_NOTES.value = '';
+            document.MAINFORM.APPL_LANG.value = 'English';
+            document.MAINFORM.AC_OFFICER_CODE.value = '';
+            SYT_Show_Notes(document.MAINFORM.APPL_NOTES.name);
+            SYM_IPLC_CAL_APPL_ADD_back();
+        } else {
+            SYS_GetCUBK('APPL_ID', 'APPL_ID', 'SYF_IPLC_APPL_ID_back');
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_CAL_APPL_ID_inFUNC", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_CAL_FORACOF_ID_inFUNC = function() {
+    try {
+        //Add by Jack on 20120905 for SMBC workshop
+        if (document.MAINFORM.FORACOF_ID.value == '') {
+            document.MAINFORM.FORACOF_NM.value = '';
+            document.MAINFORM.FORACOF_ADD1.value = '';
+            document.MAINFORM.FORACOF_ADD2.value = '';
+            document.MAINFORM.FORACOF_ADD3.value = '';
+            document.MAINFORM.FORACOF_EMAIL.value = '';
+            document.MAINFORM.FORACOF_FAX.value = '';
+            document.MAINFORM.FORACOF_MAIL_ADD.value = '';
+            document.MAINFORM.FORACOF_CORR_MED.value = 'None';
+            document.MAINFORM.FORACOF_TLX.value = '';
+            document.MAINFORM.FORACOF_REF.value = '';
+            document.MAINFORM.FORACOF_NOTES.value = '';
+            document.MAINFORM.FORACOF_LANG.value = 'English';
+            document.MAINFORM.FORACOF_AC_OFF_CODE.value = '';
+            SYT_Show_Notes(document.MAINFORM.FORACOF_NOTES.name);
+            SYM_IPLC_CAL_FORACOF_ADD_back();
+        } else {
+            SYS_GetCUBK('FORACOF_ID', 'FORACOF_ID', 'SYF_IPLC_FORACOF_ID_back');
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_CAL_FORACOF_ID_inFUNC", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_CAL_MAIN_REF = function() {
+    try {
+        var MainRef; // Utility Auto Fix Comments
+        var ref; // Utility Auto Fix Comments
+        MainRef = document.MAINFORM.C_MAIN_REF.value;
+        ref = MainRef.substr(0, 10);
+        document.MAINFORM.C_MAIN_REF.value = ref;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_CAL_MAIN_REF", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_CAL_Temp_Tolerance = function() {
+    try {
+        var NEG_TOL; // Utility Auto Fix Comments
+        var POS_TOL; // Utility Auto Fix Comments
+        var TOL; // Utility Auto Fix Comments
+        var nNEG_TOL; // Utility Auto Fix Comments
+        var nPOS_TOL; // Utility Auto Fix Comments
+        POS_TOL = document.MAINFORM.POS_TOL.value;
+        NEG_TOL = document.MAINFORM.NEG_TOL.value;
+
+
+
+        if ((POS_TOL != '' || POS_TOL != 0) || (NEG_TOL != '' || NEG_TOL != 0)) {
+            if (POS_TOL < 10) {
+                nPOS_TOL = '0' + POS_TOL;
+            } else {
+                nPOS_TOL = POS_TOL;
+            }
+            if (NEG_TOL < 10) {
+                nNEG_TOL = '0' + NEG_TOL;
+            } else {
+                nNEG_TOL = NEG_TOL;
+            }
+            TOL = nPOS_TOL + '/' + nNEG_TOL;
+        }
+        if ((POS_TOL == '' || POS_TOL == 0) && (NEG_TOL == '' || NEG_TOL == 0)) {
+            TOL = '';
+        }
+        document.MAINFORM.TEMP_TAG_39A.value = TOL;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_CAL_Temp_Tolerance", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_CHK_PRES_DAYS = function() {
+    try {
+        var PRES_DAYS; // Utility Auto Fix Comments
+        var days; // Utility Auto Fix Comments
+        PRES_DAYS = document.MAINFORM.PRES_DAYS.value;
+        days = SYS_GetSubDays(document.MAINFORM.LTST_SHIP_DT.name, document.MAINFORM.EXPIRY_DT.name);
+        if (document.MAINFORM.LTST_SHIP_DT.value != '') {
+            if (PRES_DAYS != days) {
+                SYS_CheckError(document.MAINFORM.PRES_DAYS, 'The presentation days is not equal to the difference between L/C expiry and latest date of shipment');
+            }
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_CHK_PRES_DAYS", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Cal_PRES_PRD_TXT = function() {
+    try {
+        var PRES_DAYS; // Utility Auto Fix Comments
+        var PRES_TYPE; // Utility Auto Fix Comments
+        PRES_DAYS = SYS_BeInt(document.MAINFORM.PRES_DAYS.value);
+        PRES_TYPE = document.MAINFORM.PRES_TYPE.value;
+        if (PRES_TYPE != '') {
+            document.MAINFORM.PRES_PRD_TXT.value = PRES_DAYS + '/' + PRES_TYPE;
+        } else {
+            document.MAINFORM.PRES_PRD_TXT.value = '';
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Cal_PRES_PRD_TXT", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Cal_SameAsApplicant = function() {
+    try {
+        //Add by Jack on 20120904 for SMBC Workshop
+        if (document.MAINFORM.SAME_AS_APPL_FLG.value == 'Yes') {
+            document.MAINFORM.FORACOF_ID.value = document.MAINFORM.APPL_ID.value;
+            document.MAINFORM.FORACOF_NM.value = document.MAINFORM.APPL_NM.value;
+            document.MAINFORM.FORACOF_ADD1.value = document.MAINFORM.APPL_ADD1.value;
+            document.MAINFORM.FORACOF_ADD2.value = document.MAINFORM.APPL_ADD2.value;
+            document.MAINFORM.FORACOF_ADD3.value = document.MAINFORM.APPL_ADD3.value;
+            document.MAINFORM.FORACOF_MAIL_ADD.value = document.MAINFORM.APPL_MAIL_ADD.value;
+            document.MAINFORM.FORACOF_REF.value = document.MAINFORM.APPL_REF.value;
+            document.MAINFORM.FORACOF_LANG.value = document.MAINFORM.APPL_LANG.value;
+            document.MAINFORM.FORACOF_CORR_MED.value = document.MAINFORM.APPL_CORR_MED.value;
+            document.MAINFORM.FORACOF_EMAIL.value = document.MAINFORM.APPL_EMAIL.value;
+            document.MAINFORM.FORACOF_FAX.value = document.MAINFORM.APPL_FAX.value;
+            document.MAINFORM.FORACOF_AC_OFF_CODE.value = document.MAINFORM.AC_OFFICER_CODE.value;
+        }
+        //
+        //             else {
+        //            document.MAINFORM.FORACOF_ID.value = '';
+        //            document.MAINFORM.FORACOF_NM.value = '';
+        //            document.MAINFORM.FORACOF_ADD1.value = '';
+        //            document.MAINFORM.FORACOF_ADD2.value = '';
+        //            document.MAINFORM.FORACOF_ADD3.value = '';
+        //            document.MAINFORM.FORACOF_MAIL_ADD.value = '';
+        //            document.MAINFORM.FORACOF_REF.value = '';
+        //            document.MAINFORM.FORACOF_LANG.value = '';
+        //            document.MAINFORM.FORACOF_CORR_MED.value = '';
+        //            document.MAINFORM.FORACOF_EMAIL.value = '';
+        //            document.MAINFORM.FORACOF_FAX.value = '';
+        //            document.MAINFORM.FORACOF_AC_OFF_CODE.value = '';
+        //            }
+        //            
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Cal_SameAsApplicant", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Cal_SameAsApplicant_2 = function() {
+    try {
+        if (document.MAINFORM.SAME_AS_APPL_FLG.value == 'Yes') {
+            document.MAINFORM.FORACOF_ID.value = document.MAINFORM.APPL_ID.value;
+            document.MAINFORM.FORACOF_NM.value = document.MAINFORM.APPL_NM.value;
+            document.MAINFORM.FORACOF_ADD1.value = document.MAINFORM.APPL_ADD1.value;
+            document.MAINFORM.FORACOF_ADD2.value = document.MAINFORM.APPL_ADD2.value;
+            document.MAINFORM.FORACOF_ADD3.value = document.MAINFORM.APPL_ADD3.value;
+            document.MAINFORM.FORACOF_MAIL_ADD.value = document.MAINFORM.APPL_MAIL_ADD.value;
+            document.MAINFORM.FORACOF_REF.value = document.MAINFORM.APPL_REF.value;
+            document.MAINFORM.FORACOF_LANG.value = document.MAINFORM.APPL_LANG.value;
+            document.MAINFORM.FORACOF_CORR_MED.value = document.MAINFORM.APPL_CORR_MED.value;
+            document.MAINFORM.FORACOF_EMAIL.value = document.MAINFORM.APPL_EMAIL.value;
+            document.MAINFORM.FORACOF_FAX.value = document.MAINFORM.APPL_FAX.value;
+            document.MAINFORM.FORACOF_AC_OFF_CODE.value = document.MAINFORM.AC_OFFICER_CODE.value;
+        } else {
+            document.MAINFORM.FORACOF_ID.value = '';
+            document.MAINFORM.FORACOF_NM.value = '';
+            document.MAINFORM.FORACOF_ADD1.value = '';
+            document.MAINFORM.FORACOF_ADD2.value = '';
+            document.MAINFORM.FORACOF_ADD3.value = '';
+            document.MAINFORM.FORACOF_MAIL_ADD.value = '';
+            document.MAINFORM.FORACOF_REF.value = '';
+            document.MAINFORM.FORACOF_LANG.value = '';
+            document.MAINFORM.FORACOF_CORR_MED.value = '';
+            document.MAINFORM.FORACOF_EMAIL.value = '';
+            document.MAINFORM.FORACOF_FAX.value = '';
+            document.MAINFORM.FORACOF_AC_OFF_CODE.value = '';
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Cal_SameAsApplicant_2", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Cal_TEMP_EXPIRY_PLC_NARR = function() {
+    try {
+        var temp_expiry_plc; // Utility Auto Fix Comments
+        if (document.MAINFORM.EXPIRY_PLC.value != 'Other') {
+            temp_expiry_plc = document.MAINFORM.EXPIRY_PLC.value;
+        } else {
+            temp_expiry_plc = document.MAINFORM.EXPIRY_PLC_NARR.value;
+        }
+
+        document.MAINFORM.TEMP_EXPIRY_PLC_NARR.value = temp_expiry_plc;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Cal_TEMP_EXPIRY_PLC_NARR", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Cal_good_desc = function() {
+    try {
+        var GOODS; // Utility Auto Fix Comments
+        var NEW_INCOTERMS; // Utility Auto Fix Comments
+        var OLD_INCOTERMS; // Utility Auto Fix Comments
+        OLD_INCOTERMS = document.MAINFORM.TEMP_DEST_PORT.value;
+        NEW_INCOTERMS = document.MAINFORM.INCOTERM_INST.value;
+        GOODS = document.MAINFORM.GOODS_DESC.value;
+
+        if (OLD_INCOTERMS.length > 0 && GOODS.indexOf(OLD_INCOTERMS) > -1) {
+            document.MAINFORM.GOODS_DESC.value = GOODS.replace(OLD_INCOTERMS, NEW_INCOTERMS);
+        } else {
+            document.MAINFORM.GOODS_DESC.value = GOODS + "\r\n" + NEW_INCOTERMS;
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Cal_good_desc", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Change_APLB_RULE = function() {
+    try {
+        if (document.MAINFORM.APLB_RULE.value == 'OTHR') {
+            document.MAINFORM.APLB_RULE_NARR.style.visibility = "visible";
+            SYT_ChangeFldClass(document.MAINFORM.APLB_RULE_NARR, "M");
+        } else {
+            document.MAINFORM.APLB_RULE_NARR.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.APLB_RULE_NARR, "O"); // Utility Auto Fix Comments
+            document.MAINFORM.APLB_RULE_NARR.style.visibility = "hidden";
+            document.MAINFORM.TEMP_APLB_RULE.value = document.MAINFORM.APLB_RULE.value;
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Change_APLB_RULE", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Change_EXPIRY_PLC = function() {
+    try {
+        if (document.MAINFORM.EXPIRY_PLC.value == 'Other') {
+            document.MAINFORM.EXPIRY_PLC_NARR.style.visibility = "visible";
+            SYT_ChangeFldClass(document.MAINFORM.EXPIRY_PLC_NARR, "M");
+        } else {
+            document.MAINFORM.EXPIRY_PLC_NARR.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.EXPIRY_PLC_NARR, "O"); // Utility Auto Fix Comments
+            document.MAINFORM.EXPIRY_PLC_NARR.style.visibility = "hidden";
+
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Change_EXPIRY_PLC", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Change_PARTIAL_SHIP = function() {
+    try {
+        if (document.MAINFORM.PARTIAL_SHIP.value == 'CONDITIONAL') {
+            document.MAINFORM.PARTIAL_SHIP_NARR.style.visibility = "visible";
+        } else {
+            document.MAINFORM.PARTIAL_SHIP_NARR.style.visibility = "hidden";
+            document.MAINFORM.PARTIAL_SHIP_NARR.value = '';
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Change_PARTIAL_SHIP", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Change_SHP_PRD = function() {
+    try {
+        if (document.MAINFORM.LTST_SHIP_DT.value == '') {
+            SYT_ChangeFldClass(document.MAINFORM.SHIP_PRD, "O"); // Utility Auto Fix Comments
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.SHIP_PRD, "P"); // Utility Auto Fix Comments
+            document.MAINFORM.SHIP_PRD.value = ""; // Utility Auto Fix Comments
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Change_SHP_PRD", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Change_SameAsApplicant = function() {
+    try {
+        //Add by Jack on 20120904 for SMBC Worjshop
+        if (document.MAINFORM.SAME_AS_APPL_FLG.value == 'Yes') {
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_ID, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_NM, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_ADD1, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_ADD2, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_ADD3, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_MAIL_ADD, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_REF, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_LANG, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_CORR_MED, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_EMAIL, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_FAX, "P");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_AC_OFF_CODE, "P");
+            SYT_DisableField(document.MAINFORM.FORACOF_ID_BTN);
+            SYT_DisableField(document.MAINFORM.FORACOF_ADD_BTN);
+            SYT_DisableField(document.MAINFORM.FORACOF_POST_ADD_BTN);
+            SYF_IPLC_Charges();
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_ID, "M");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_NM, "M");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_ADD1, "O");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_ADD2, "O");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_ADD3, "O");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_MAIL_ADD, "O");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_REF, "O");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_LANG, "M");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_CORR_MED, "M");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_EMAIL, "O");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_FAX, "O");
+            SYT_ChangeFldClass(document.MAINFORM.FORACOF_AC_OFF_CODE, "O");
+            SYT_EnableFields(document.MAINFORM.FORACOF_ID_BTN);
+            SYT_EnableFields(document.MAINFORM.FORACOF_ADD_BTN);
+            SYT_EnableFields(document.MAINFORM.FORACOF_POST_ADD_BTN);
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Change_SameAsApplicant", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Change_TNSHIP = function() {
+    try {
+        if (document.MAINFORM.TNSHIP.value == 'CONDITIONAL') {
+            document.MAINFORM.TNSHIP_NARR.style.visibility = "visible";
+        } else {
+            document.MAINFORM.TNSHIP_NARR.style.visibility = "hidden";
+            document.MAINFORM.TNSHIP_NARR.value = '';
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Change_TNSHIP", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Charges = function() {
+    try {
+        SYM_IPLC_Chg_OpeningComm();
+        SYM_IPLC_Chg_SWIFT_CHG();
+        SYM_IPLC_Chg_Postageand();
+        SYM_IPLC_Chg_SpecialCourier();
+        SYM_IPLC_Chg_SpecialHandlingFee();
+        SYM_IPLC_Chg_Calculation_Other();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Charges", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Chk_AUTH_REG_CORR_MED = function() {
+    try {
+        if (document.MAINFORM.REIM_BK_AUTH_REQ.value == 'Yes' && document.MAINFORM.REIM_BK_CORR_MED.value == 'None') {
+            alert("The value cannot be set to None because Reimbursement Authority Required is Yes"); // Utility Auto Fix Comments
+            document.MAINFORM.REIM_BK_CORR_MED.value = "SWIFT"; // Utility Auto Fix Comments
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Chk_AUTH_REG_CORR_MED", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Chk_AVAL_BY = function() {
+    try {
+        if (document.MAINFORM.AVAL_BY.value != 'BY MIXED PYMT') {
+            SYS_DeleteDoRecord("PaymentTerms");
+            document.MAINFORM.CPYT_C_MIX_PAY_DETAIL.value = '';
+        }
+
+        if (document.MAINFORM.AVAL_BY.value == 'BY PAYMENT') {
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ID, "O");
+            SYT_ChangeFldClass(document.MAINFORM.DRAFTS_AT, "O");
+            SYT_ChangeFldClass(document.MAINFORM.DEF_PMT_DET, "P");
+            SYT_ChangeFldClass(document.MAINFORM.MIX_PMT_DETL, "P");
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, "M");
+            SYT_EnableFields(document.MAINFORM.DRW_ID_BTN);
+            //Delete by tracery on 11-28
+            document.MAINFORM.MIX_PMT_DETL.value = '';
+            document.MAINFORM.DEF_PMT_DET.value = '';
+            document.MAINFORM.DRAFTS_AT.value = 'Payment at Sight';
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD1, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD2, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD3, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_SW_ADD, 'O');
+            document.MAINFORM.TENOR_DAYS.value = 0;
+            document.MAINFORM.TENOR_TYPE.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_DAYS, "P");
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_TYPE, "P");
+        }
+
+        if (document.MAINFORM.AVAL_BY.value == 'BY ACCEPTANCE') {
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ID, "M");
+            SYT_ChangeFldClass(document.MAINFORM.DRAFTS_AT, "M");
+            SYM_IPLC_Pay_By_Acceptance();
+            SYT_ChangeFldClass(document.MAINFORM.DEF_PMT_DET, "P");
+            SYT_ChangeFldClass(document.MAINFORM.MIX_PMT_DETL, "P");
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, "O");
+            SYT_EnableFields(document.MAINFORM.DRW_ID_BTN);
+            //Delete by tracery on 11-28
+            //document.MAINFORM.INDIVID_DRAW_FLG.value = "No";
+            document.MAINFORM.DEF_PMT_DET.value = '';
+            document.MAINFORM.MIX_PMT_DETL.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD1, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD2, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD3, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_SW_ADD, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_DAYS, "O");
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_TYPE, "M");
+        }
+
+        if (document.MAINFORM.AVAL_BY.value == 'BY NEGOTIATION') {
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ID, "O");
+            SYT_ChangeFldClass(document.MAINFORM.DRAFTS_AT, "O");
+            SYT_ChangeFldClass(document.MAINFORM.DEF_PMT_DET, "M");
+            SYT_ChangeFldClass(document.MAINFORM.MIX_PMT_DETL, "P");
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, "O");
+            SYT_EnableFields(document.MAINFORM.DRW_ID_BTN);
+            //Delete by tracery on 11-28
+            document.MAINFORM.DEF_PMT_DET.value = '';
+            document.MAINFORM.MIX_PMT_DETL.value = '';
+            document.MAINFORM.DRAFTS_AT.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD1, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD2, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD3, 'O');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_SW_ADD, 'O');
+            // document.MAINFORM.TENOR_DAYS.value = 0;
+            // document.MAINFORM.TENOR_TYPE.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_DAYS, "O");
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_TYPE, "M");
+            SYM_IPLC_Pay_By_Acceptance();
+            SYM_IPLC_CAL_CLEAR_DRWE_ID();
+        }
+
+        if (document.MAINFORM.AVAL_BY.value == 'BY DEF PAYMENT') {
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ID, "P");
+            SYT_ChangeFldClass(document.MAINFORM.DRAFTS_AT, "P");
+            SYT_ChangeFldClass(document.MAINFORM.DEF_PMT_DET, "M");
+            SYT_ChangeFldClass(document.MAINFORM.MIX_PMT_DETL, "P");
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, "P");
+            SYT_DisableField(document.MAINFORM.DRW_ID_BTN);
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD1, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD2, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD3, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_SW_ADD, 'P');
+            SYM_IPLC_Pay_By_Acceptance();
+            //Delete by tracery on 11-28
+            document.MAINFORM.DRAFTS_AT.value = '';
+            document.MAINFORM.MIX_PMT_DETL.value = '';
+            document.MAINFORM.DRWE_ID.value = '';
+            SYM_IPLC_CAL_CLEAR_DRWE_ID();
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_DAYS, "O");
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_TYPE, "M");
+        }
+
+        if (document.MAINFORM.AVAL_BY.value == 'BY MIXED PYMT') {
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ID, "P");
+            SYT_ChangeFldClass(document.MAINFORM.DRAFTS_AT, "P");
+            SYT_ChangeFldClass(document.MAINFORM.DEF_PMT_DET, "P");
+            SYT_ChangeFldClass(document.MAINFORM.MIX_PMT_DETL, "M");
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, "P");
+            SYT_DisableField(document.MAINFORM.DRW_ID_BTN);
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_NM, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD1, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD2, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_ADD3, 'P');
+            SYT_ChangeFldClass(document.MAINFORM.DRWE_SW_ADD, 'P');
+            //Delete by tracery on 11-28
+            document.MAINFORM.DRAFTS_AT.value = '';
+            document.MAINFORM.DEF_PMT_DET.value = '';
+            document.MAINFORM.DRWE_ID.value = '';
+            SYM_IPLC_CAL_CLEAR_DRWE_ID();
+            document.MAINFORM.TENOR_DAYS.value = 0;
+            document.MAINFORM.TENOR_TYPE.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_DAYS, "P");
+            SYT_ChangeFldClass(document.MAINFORM.TENOR_TYPE, "P");
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Chk_AVAL_BY", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Chk_LTST_SHIP_DT = function() {
+    try {
+        var nDays1; // Utility Auto Fix Comments
+        var nDays2; // Utility Auto Fix Comments
+        var nDays3; // Utility Auto Fix Comments
+        nDays1 = SYS_GetSubDays(document.MAINFORM.ISSUE_DT.name, document.MAINFORM.EXPIRY_DT.name);
+        nDays2 = SYS_GetSubDays(document.MAINFORM.ISSUE_DT.name, document.MAINFORM.LTST_SHIP_DT.name);
+        nDays3 = SYS_GetSubDays(document.MAINFORM.LTST_SHIP_DT.name, document.MAINFORM.EXPIRY_DT.name);
+
+        if (nDays1 < 0) {
+            SYS_CheckError(document.MAINFORM.EXPIRY_DT, 'Expiry Date should be later than LC Issue date!');
+            document.MAINFORM.EXPIRY_DT.value = '';
+        }
+        if (nDays2 < 0) {
+            alert('The Latest shipment date should be later than Issue Date!');
+            document.MAINFORM.LTST_SHIP_DT.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.SHIP_PRD, 'O');
+        }
+        if (nDays3 < 0) {
+            SYS_CheckError(document.MAINFORM.LTST_SHIP_DT, 'The Latest shipment date should not be later than LC Expiry Date!');
+            document.MAINFORM.LTST_SHIP_DT.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.SHIP_PRD, 'O');
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Chk_LTST_SHIP_DT", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_FORACOF_CHG_back = function() {
+    try {
+        //Add by Jack on 20120904 for SMBC workshop
+        SYS_GetCUBK('FORACOF_ID', document.MAINFORM.FORACOF_ID.name, 'SYF_IPLC_Charges');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_FORACOF_CHG_back", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_FORACOF_ID_back = function() {
+    try {
+        //Add by Jack on 20120904 for SMBC workshop
+        SYT_Show_Notes(document.MAINFORM.FORACOF_NOTES.name);
+        SYM_IPLC_FORACOF_MAIL_ADD();
+        SYF_IPLC_FORACOF_CHG_back();
+        SYM_IPLC_CAL_FORACOF_ADD_back();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_FORACOF_ID_back", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Group_IDonchange = function(event) {
+    try {
+        var arrayvalue; // Utility Auto Fix Comments
+        var i; // Utility Auto Fix Comments
+        var mData; // Utility Auto Fix Comments
+        var node; // Utility Auto Fix Comments
+        var record; // Utility Auto Fix Comments
+        document.MAINFORM.TEMP_N90_REF_20.value = document.MAINFORM.C_MAIN_REF.value;
+        node = SYS_getDoByXpath("AdviceForBankCust");
+        arrayvalue = SYS_getRecords(node);
+        mData = [];
+        for (i = 0, len = arrayvalue.length; i < len; i++) { // Utility Auto Fix Comments
+            record = arrayvalue[i];
+            record = SYS_setValToRec(record, 'BANK_N90_REF_20', document.MAINFORM.C_MAIN_REF.value);
+            mData[i] = record;
+        }
+        SYS_reLoadGrid(node, mData);
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Group_IDonchange", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_LoadDoComplete = function() {
+    try {
+        var xDO; // Utility Auto Fix Comments
+        xDO = SYS_getDoByXpath("PaymentTermsHeader");
+        if (xDO) {
+            SYM_IPLC_addPaymentRecord();
+        }
+       SYM_IPLC_CAL_AMEND_PAYMENT_AMT();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_LoadDoComplete", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_MPO_GRP_ID = function() {
+    try {
+        SYT_ChangeFldClass(document.MAINFORM.GRP_ID, 'P');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_MPO_GRP_ID", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_SENT_MT740 = function() {
+    try {
+        if (document.MAINFORM.REIM_BK_AUTH_REQ.value == 'Yes' && document.MAINFORM.REIM_BK_CORR_MED.value == 'SWIFT') {
+            document.MAINFORM.SENT_FLG.value = 'YES';
+        } else {
+            document.MAINFORM.SENT_FLG.value = 'NO';
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_SENT_MT740", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_Set_CPYT_N_PAY_TTL_AMT_TXCCY = function() {
+    try {
+        var obj; // Utility Auto Fix Comments
+        //modified for PUI
+        return;
+        //
+        //            obj = SYS_getScreenObjByxpath('PaymentTermsHeader','CPYT_N_PAY_TTL_AMT_TXCCY');
+        //            obj.value = SYT_AmtFormat(document.MAINFORM.LC_CCY.value,document.MAINFORM.LC_AMT.value);
+        //            
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_Set_CPYT_N_PAY_TTL_AMT_TXCCY", e);
+    }
+}
+
+csFuncLevelProto.SYF_IPLC_getDOdata_AdviceForBankCust = function() {
+    try {
+        if (SYS_FUNCTION_TYPE != 'RE' && SYS_FUNCTION_TYPE != 'IQ' && SYS_FUNCTION_TYPE != 'EC') {
+            SYS_GetDataForDO_S("AdviceForBankCust", 'N', false);
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*SYF_IPLC_getDOdata_AdviceForBankCust", e);
+    }
+}
+
+csFuncLevelProto.addRecordCheck = function() {
+    try {
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*addRecordCheck", e);
+    }
+}
+
+csFuncLevelProto.deleteRecordCheck = function() {
+    try {
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*deleteRecordCheck", e);
+    }
+}
+
+csFuncLevelProto.editRecordCheck = function() {
+    try {
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*editRecordCheck", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AC_OFFICER_CODE_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_AC_OFF_CODE, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AC_OFFICER_CODE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BENE_FLG_onchange = function(event) {
+    try {
+        if (document.MAINFORM.ADV_BENE_FLG.value == 'Yes') {
+            SYT_ChangeFldClass(document.MAINFORM.BENE_CORR_MED, "M"); // Utility Auto Fix Comments
+            SYT_ChangeFldClass(document.MAINFORM.CONF_INSTR, "O"); // Utility Auto Fix Comments
+            SYT_ChangeFldClass(document.MAINFORM.ADV_BK_NM, "O"); // Utility Auto Fix Comments
+            SYT_ChangeFldClass(document.MAINFORM.ADV_BK_SW_ADD, "O"); // Utility Auto Fix Comments
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.CONF_INSTR, "M"); // Utility Auto Fix Comments
+            SYT_ChangeFldClass(document.MAINFORM.ADV_BK_NM, "M"); // Utility Auto Fix Comments
+            SYT_ChangeFldClass(document.MAINFORM.ADV_BK_SW_ADD, "M"); // Utility Auto Fix Comments
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BENE_FLG_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_ADD1_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_ADD1_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_ADD2_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_ADD2_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_ADD3_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_ADD3_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_CORR_MED_onchange = function(event) {
+    try {
+        SYM_IPLC_ADV_BK_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_CORR_MED_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_ID_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_BK_ID();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_NM_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_ORDER_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_BK_ID_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_ORDER_POST_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_BK_ID_MAIL_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_ORDER_POST_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_SW_ADD_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_BK_SW_TAG();
+        SYM_IPLC_SQL_ADV_BK_SW_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_SW_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_ADD1_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_THU_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_ADD1_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_ADD2_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_THU_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_ADD2_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_ADD3_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_THU_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_ADD3_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_CORR_MED_onchange = function(event) {
+    try {
+        SYM_IPLC_ADV_THU_BK_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_CORR_MED_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_ID_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_THU_BK_ID();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_NM_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_THU_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_ORDER_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_THU_BK_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_ORDER_POST_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_THU_BK_MAIL_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_ORDER_POST_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_SW_ADD_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_ADV_THU_SW_TAG();
+        SYM_IPLC_SQL_ADV_THU_BK_SW_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_SW_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AMT_SPEC_onchange = function(event) {
+    try {
+        if (document.MAINFORM.AMT_SPEC.value == 'NOT EXCEEDING') {
+            SYT_ChangeFldClass(document.MAINFORM.POS_TOL, "P");
+            SYT_ChangeFldClass(document.MAINFORM.NEG_TOL, "P");
+            document.MAINFORM.POS_TOL.value = 0;
+            document.MAINFORM.NEG_TOL.value = 0;
+            SYT_LC_BAL();
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.POS_TOL, "O");
+            SYT_ChangeFldClass(document.MAINFORM.NEG_TOL, "O");
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AMT_SPEC_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APLB_RULE_onchange = function(event) {
+    try {
+        SYF_IPLC_Change_APLB_RULE();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APLB_RULE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APLB_RULE_NARR_onchange = function(event) {
+    try {
+        if (document.MAINFORM.APLB_RULE.value == 'OTHR' && document.MAINFORM.APLB_RULE_NARR.value != '') {
+            document.MAINFORM.TEMP_APLB_RULE.value = document.MAINFORM.APLB_RULE.value + '/' + document.MAINFORM.APLB_RULE_NARR.value;
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APLB_RULE_NARR_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_ADD1_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_ADD1, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_ADD1_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_ADD2_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_ADD2, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_ADD2_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_ADD3_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_ADD3, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_ADD3_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_ADD1_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_APPL_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_ADD1_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_ADD2_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_APPL_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_ADD2_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_ADD3_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_APPL_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_ADD3_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_CORR_MED_onchange = function(event) {
+    try {
+        SYM_IPLC_APPL_BK_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_CORR_MED_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_ID_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_BK_ID();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_NM_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_APPL_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_ORDER_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_BK_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_ORDER_POST_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_BK_MAIL_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_ORDER_POST_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_SW_ADD_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_APPL_BK_SW_TAG();
+        SYM_IPLC_SQL_APPL_BK_SW_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_SW_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_CORR_MED_onchange = function(event) {
+    try {
+        SYM_IPLC_APPL_MAIL_ADD();
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_CORR_MED, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_CORR_MED_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_EMAIL_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_EMAIL, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_EMAIL_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_FAX_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_FAX, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_FAX_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_ID_onchange = function(event) {
+    try {
+        SYF_IPLC_CAL_APPL_ID_inFUNC();
+        EEHtml.fireEvent(document.MAINFORM.APPL_CORR_MED, 'onchange');
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_ID, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_LANG_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_LANG, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_LANG_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_MAIL_ADD_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_MAIL_ADD, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_MAIL_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_NM_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_NM, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_NOTES_onchange = function(event) {
+    try {} catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_NOTES_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_ORDER_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_CUST_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_ORDER_POST_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_CUST_MAIL_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_ORDER_POST_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_REF_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_SameAsApplicant();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_REF, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_REF_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_BY_onchange = function(event) {
+    try {
+        document.MAINFORM.ADDIT_CONDITION.value = '';
+        SYF_IPLC_Chk_AVAL_BY();
+        //modified for PUI
+
+        SYM_IPLC_showMixPayment();
+        //Susie delete this SYM function 20211108
+        //SYM_IPLC_addPaymentRecord();
+        //SYM_IPLC_PaymentAvailableByChange();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_BY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_ADD1_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_AVAL_WT_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_ADD1_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_ADD2_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_AVAL_WT_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_ADD2_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_ADD3_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_AVAL_WT_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_ADD3_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_ID_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_AVAL_WT_BK_ID();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_NM_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_AVAL_WT_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_OPT_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_AVAL_WT_BK_OPT();
+        EEHtml.fireEvent(document.MAINFORM.AVAL_WT_BK_SW_ADD, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_OPT_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_ORDER_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_AVAL_WT_BK_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_SW_ADD_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_AVAL_WT_BK_SW_TAG();
+        SYM_IPLC_SQL_AVAL_WT_BK_SW_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_SW_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BENE_AC_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_BENE_ACNO_Back();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BENE_AC_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BENE_CORR_MED_onchange = function(event) {
+    try {
+        SYM_IPLC_BENE_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BENE_CORR_MED_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BENE_ID_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_BENE_ID();
+        EEHtml.fireEvent(document.MAINFORM.BENE_CORR_MED, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BENE_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BENE_ORDER_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_BENE_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BENE_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BENE_ORDER_POST_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_BENE_MAIL_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BENE_ORDER_POST_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BEN_CERT_COPY_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BEN_CERT_COPY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BEN_CERT_TEXT_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BEN_CERT_TEXT_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BROKER_ADD_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BROKER_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BROKER_NM_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BROKER_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_ANALY_COPY_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_ANALY_COPY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_EXPORT_COPY_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_EXPORT_COPY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_EXPORT_TYPE_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_EXPORT_TYPE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_ORIG_COPY_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_ORIG_COPY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_ORIG_TYPE_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_ORIG_TYPE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_QTY_COPY_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_QTY_COPY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_WEIG_COPY_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_WEIG_COPY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CHG_FLD_ALL_BAL_CCY_onchange = function(event) {
+    try {
+        CHG_allBalCcy_onchange();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CHG_FLD_ALL_BAL_CCY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CHG_FLD_ALL_CHARGE_AT_onchange = function(event) {
+    try {
+        CHG_allTrxChargeAt_onchange();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CHG_FLD_ALL_CHARGE_AT_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CHG_FLD_ALL_CHARGE_FOR_onchange = function(event) {
+    try {
+        CHG_allChargeFor_onchange();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CHG_FLD_ALL_CHARGE_FOR_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CHG_FLD_COLLECT_CCY_onchange = function(event) {
+    try {
+        Chg.Screen.collectCcyOnchange();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CHG_FLD_COLLECT_CCY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CHG_FLD_LOCAL_CUST_AC_NO_onchange = function(event) {
+    try {
+        CHG_FLD_LOCAL_CUST_AC_NO_onchange();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CHG_FLD_LOCAL_CUST_AC_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_COMM_INV_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_COMM_INV_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CONF_BK_ADD1_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_CONF_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CONF_BK_ADD1_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CONF_BK_ADD2_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_CONF_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CONF_BK_ADD2_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CONF_BK_ADD3_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_CONF_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CONF_BK_ADD3_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CONF_BK_ID_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_CONF_BK_ID();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CONF_BK_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CONF_BK_NM_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_CONF_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CONF_BK_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CONF_BK_SW_ADD_onchange = function(event) {
+    try {
+        if (document.MAINFORM.CONF_BK_SW_ADD.value == '') {
+            document.MAINFORM.CONF_BK_SW_TAG.value = 'D';
+        } else {
+            document.MAINFORM.CONF_BK_SW_TAG.value = 'A';
+        }
+        SYM_IPLC_CAL_CONF_BK_ID_back();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CONF_BK_SW_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CONF_INSTR_onchange = function(event) {
+    try {
+        SYM_IPLC_Chk_CONF_INSTR();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CONF_INSTR_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_C_MAIN_REF_onchange = function(event) {
+    try {
+        SYF_IPLC_Group_IDonchange();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_C_MAIN_REF_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DIARY_NARRATIVE_onchange = function(event) {
+    try {
+        onChangeDiary();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DIARY_NARRATIVE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRWE_ADD1_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_DRWE_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRWE_ADD1_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRWE_ADD2_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_DRWE_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRWE_ADD2_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRWE_ADD3_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_DRWE_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRWE_ADD3_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRWE_ID_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_DRWE_ID();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRWE_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRWE_NM_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_DRWE_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRWE_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRWE_ORDER_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_DRWE_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRWE_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRWE_SW_ADD_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_DRWE_SW_TAG();
+        SYM_IPLC_SQL_DRWE_BK_SW_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRWE_SW_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_EXPIRY_DT_onchange = function(event) {
+    try {
+        SYF_IPLC_Chk_LTST_SHIP_DT();
+        SYM_IPLC_Chg_OpeningComm();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_EXPIRY_DT_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_EXPIRY_PLC_onchange = function(event) {
+    try {
+        SYF_IPLC_Change_EXPIRY_PLC();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_EXPIRY_PLC_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_FORACOF_CORR_MED_onchange = function(event) {
+    try {
+        //Add by Jack on 20120904 for SMBC workshop
+        SYM_IPLC_FORACOF_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_FORACOF_CORR_MED_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_FORACOF_ID_onchange = function(event) {
+    try {
+        SYF_IPLC_CAL_FORACOF_ID_inFUNC();
+        EEHtml.fireEvent(document.MAINFORM.FORACOF_CORR_MED, 'onchange');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_FORACOF_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_FORACOF_ORDER_NO_onchange = function(event) {
+    try {
+        //Add by Jack on 20120905 for SMBC workshop
+        SYM_IPLC_CAL_FORACOF_CUST_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_FORACOF_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_FORACOF_ORDER_POST_onchange = function(event) {
+    try {
+        //Add by Jack on 20120905 for SMBC workshop
+        SYM_IPLC_CAL_FORACOF_CUST_MAIL_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_FORACOF_ORDER_POST_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_INCOTERMS_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_INCOTERMS_INST();
+        SYM_IPLC_Cal_GOODS_DESC_ADD_INCO();
+        document.MAINFORM.TEMP_DEST_PORT.value = document.MAINFORM.INCOTERM_INST.value;
+        SYM_IPLC_CHK_TRANS_DOCS_FREI();
+        SYM_IPLC_CHK_INCOTERMS_INSU();
+        SYM_IPLC_CHK_INCOTERMS_FREI();
+        SYM_IPLC_Change_INCOTERMS_INSTR();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_INCOTERMS_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_INS_DOCS_COV_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_INS_DOCS_COV_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_INS_DOCS_PERC_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_INS_DOCS_PERC_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_INS_DOCS_TYPE_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_INS_DOCS_TYPE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ISSUE_DT_onchange = function(event) {
+    try {
+        document.MAINFORM.TRX_DT.value = SYS_BUSI_DATE;
+        if (SYS_GetSubDays(document.MAINFORM.ISSUE_DT.name, document.MAINFORM.TRX_DT.name) > 0) {
+            alert("issue date should be later than today");
+            document.MAINFORM.ISSUE_DT.value = "";
+        }
+        SYF_IPLC_Chk_LTST_SHIP_DT();
+        SYM_IPLC_Chg_OpeningComm();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ISSUE_DT_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_LC_AMT_onchange = function(event) {
+    try {
+        if (document.MAINFORM.LC_AMT.value < 0) {
+            document.MAINFORM.LC_AMT.value = 0;
+        }
+        SYT_LC_BAL();
+       // SYF_IPLC_Charges(); Marked on 20241028 for change charge base amount to bal;
+
+        //modified for PUI
+        //*
+        //            SYF_IPLC_Set_CPYT_N_PAY_TTL_AMT_TXCCY();
+        //            SYM_IPLC_addPaymentRecord();
+        //            SYM_IPLC_LC_AmountOnchange();
+        //            *
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_LC_AMT_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_LC_BAL_onchange = function(event) {
+    try {
+        EEHtml.fireEvent(document.MAINFORM.CPYT_N_PAY_TTL_AMT_TXCCY, "onchange");
+        SYT_Cal_LOCAL_AMT('LC_CCY', 'LC_BAL', 'LOCAL_CCY', 'LOCAL_AMT', 'LOCAL_RATE');
+        SYF_IPLC_Charges(); // Add on 20241028 for change charge base amount to bal;
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_LC_BAL_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_LC_CCY_onchange = function(event) {
+    try {
+        document.MAINFORM.ASSET_ACNO.value = '';
+        document.MAINFORM.LIAB_ACNO.value = '';
+        SYT_Cal_CHG_FLD_LOCAL_CUST_CCY();
+        SYT_calLocalColl2PayRate();
+        SYF_IPLC_Charges();
+        SYT_Cal_LOCAL_AMT('LC_CCY', 'LC_BAL', 'LOCAL_CCY', 'LOCAL_AMT', 'LOCAL_RATE');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_LC_CCY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_LTST_SHIP_DT_onchange = function(event) {
+    try {
+        SYF_IPLC_Chk_LTST_SHIP_DT();
+        SYF_IPLC_Change_SHP_PRD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_LTST_SHIP_DT_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_PACK_LIST_COPY_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_PACK_LIST_COPY_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_PARTIAL_SHIP_onchange = function(event) {
+    try {
+        SYF_IPLC_Change_PARTIAL_SHIP();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_PARTIAL_SHIP_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_POS_TOL_onchange = function(event) {
+    try {
+        SYT_LC_BAL();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_POS_TOL_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_PRES_DAYS_onchange = function(event) {
+    try {
+        SYF_IPLC_CHK_PRES_DAYS();
+        SYF_IPLC_Cal_PRES_PRD_TXT();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_PRES_DAYS_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_PRES_TYPE_onchange = function(event) {
+    try {
+        SYF_IPLC_Cal_PRES_PRD_TXT();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_PRES_TYPE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_ADD1_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_REIM_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_ADD1_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_ADD2_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_REIM_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_ADD2_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_ADD3_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_REIM_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_ADD3_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_AUTH_REQ_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_REIM_BK_AUTH_REQ();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_AUTH_REQ_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_CORR_MED_onchange = function(event) {
+    try {
+        SYF_IPLC_Chk_AUTH_REG_CORR_MED();
+        SYM_IPLC_REIM_BK_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_CORR_MED_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_ID_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_REIM_BK_ID();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_ID_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_NM_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_REIM_BK_SW_TAG();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_NM_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_ORDER_NO_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_REIM_BK_MULT_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_ORDER_NO_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_ORDER_POST_onchange = function(event) {
+    try {
+        SYM_IPLC_CAL_REIM_BK_MAIL_ORDER_NO();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_ORDER_POST_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_SW_ADD_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_REIM_BK_SW_TAG();
+        SYM_IPLC_SQL_REIM_BK_SW_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_SW_ADD_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REV_LC_onchange = function(event) {
+    try {
+        if (document.MAINFORM.REV_LC.value == "Yes") {
+            SYT_ChangeFldClass(document.MAINFORM.CUMULATIVE, 'M');
+            SYT_ChangeFldClass(document.MAINFORM.REV_EVENT, 'M');
+            SYT_ChangeFldClass(document.MAINFORM.EVERGREEN, 'M');
+            SYT_ChangeFldClass(document.MAINFORM.NO_PRD, 'M');
+        } else {
+            SYT_ChangeFldClass(document.MAINFORM.CUMULATIVE, 'O');
+            document.MAINFORM.CUMULATIVE.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.EVERGREEN, 'O');
+            document.MAINFORM.EVERGREEN.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.REV_EVENT, 'O');
+            document.MAINFORM.REV_EVENT.value = '';
+            SYT_ChangeFldClass(document.MAINFORM.NO_PRD, 'O');
+            document.MAINFORM.NO_PRD.value = 0;
+            //Edit by jane at 20090303 for bug 818
+            document.MAINFORM.NXT_REV_DT.value = '';
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REV_LC_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_SAME_AS_APPL_FLG_onchange = function(event) {
+    try {
+        //Add by Jack on 20120904 for SMBC Worjshop
+        SYF_IPLC_Change_SameAsApplicant();
+        SYF_IPLC_Cal_SameAsApplicant_2();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_SAME_AS_APPL_FLG_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TENOR_DAYS_onchange = function(event) {
+    try {
+        SYM_IPLC_Pay_By_Acceptance();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TENOR_DAYS_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TENOR_TYPE_onchange = function(event) {
+    try {
+        //modified for PUI
+        //*
+        //            if('BY MIXED PYMT' != document.MAINFORM.AVAL_BY.value){
+        //            SYM_IPLC_addPaymentRecord();}
+        //            *
+        SYM_IPLC_Pay_By_Acceptance();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TENOR_TYPE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TNSHIP_onchange = function(event) {
+    try {
+        SYF_IPLC_Change_TNSHIP();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TNSHIP_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TRACER_DATE_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TRACER_DATE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TRANS_DOCS_APPL_onchange = function(event) {
+    try {
+        SYM_IPLC_Chk_TRANS_DOC_APL();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TRANS_DOCS_APPL_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TRANS_DOCS_CONS_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TRANS_DOCS_CONS_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TRANS_DOCS_FREI_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+        SYM_IPLC_CHK_INCOTERMS_FREI();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TRANS_DOCS_FREI_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TRANS_DOCS_ORIG_onchange = function(event) {
+    try {
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TRANS_DOCS_ORIG_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TRANS_DOCS_TYPE_onchange = function(event) {
+    try {
+        SYM_IPLC_CHK_TRANS_DOCS_TYPE();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TRANS_DOCS_TYPE_onchange", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADDIT_CONDITION_CLAUSE_BTN_onclick = function(event) {
+    try {
+        SYS_InsertClause('ADDIT_CONDITION');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADDIT_CONDITION_CLAUSE_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_BK_ID_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_ADV_BANK();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_BK_POST_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_BK_ID_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_BK_POST_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THRU_BK_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_ADV_THU_BANK();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THRU_BK_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_THU_BK_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ADV_THU_BK_POST_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_ADV_THU_BK_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ADV_THU_BK_POST_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_AC_MRGN_BTN_onclick = function(event) {
+    try {
+        //var SQL; // Utility Auto Fix Comments
+        //                            SQL = "C_CUST_ID='liability' AND C_CURRENCY = '" + SYS_LOCAL_CCY + "' AND C_AC_IDENTIFIER='C'";
+        //                            SYS_InqCUBK_Sql('LIAB_ACNO', SQL);
+        SYS_InqCUBK_byCondition('LIAB_ACNO', '1');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_AC_MRGN_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_CUST_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_BK_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_APPL_BANK();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_BK_POST_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_BK_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_BK_POST_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_APPL_CUST();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_APPL_POST_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_APPL_CUST_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_APPL_POST_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_ASSET_ACNO_BTN_onclick = function(event) {
+    try {
+        //var SQL; // Utility Auto Fix Comments
+        //                            SQL = "C_CUST_ID='liability' AND C_CURRENCY = '" + SYS_LOCAL_CCY + "' AND C_AC_IDENTIFIER<>'C'";
+        //                            SYS_InqCUBK_Sql('ASSET_ACNO', SQL);
+        SYS_InqCUBK_byCondition('ASSET_ACNO', '1');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_ASSET_ACNO_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVAL_WT_BK_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_AVAL_WT_BK_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVAL_WT_BK_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_AVLBL_BK_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_AVAL_WT_BANK();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_AVLBL_BK_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BENE_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_BENE_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BENE_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BENE_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_BENE_CUST();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BENE_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BENE_POST_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_BENE_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BENE_POST_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_BEN_CERT_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowBeneficiaryCertificate();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_BEN_CERT_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_ANALY_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowAnalysisCertificate();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_ANALY_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_EXPORT_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowExportLicence();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_EXPORT_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_ORIG_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowCertificateofOrigin();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_ORIG_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_QTY_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowCertificateofQuality();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_QTY_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CERT_WEIG_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowWeightCertificate();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CERT_WEIG_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CHARGES_CLAUSE_BTN_onclick = function(event) {
+    try {
+        SYS_InsertClause('CHARGES');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CHARGES_CLAUSE_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CHG_GETAC_BTN_onclick = function(event) {
+    try {
+        CHG_Get_AC();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CHG_GETAC_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CHG_VALUE_DATE_onclick = function(event) {
+    try {
+        SYT_doCalendar(event.currentTarget);
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CHG_VALUE_DATE_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_COMM_INV_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowComm_Inv();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_COMM_INV_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_CONF_BK_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_CONF_BANK();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_CONF_BK_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DOC_REQ_BTN_onclick = function(event) {
+    try {
+        SYS_InsertClause('DOC_REQ');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DOC_REQ_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRWE_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_DRWE_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRWE_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_DRW_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_DRWE_BANK();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_DRW_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_FORACOF_ADD_BTN_onclick = function(event) {
+    try {
+        //Add by Jack on 20120904 for SMBC workshop
+        SYM_IPLC_CAL_FORACOF_CUST_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_FORACOF_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_FORACOF_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_FORACOF_CUST();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_FORACOF_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_FORACOF_POST_ADD_BTN_onclick = function(event) {
+    try {
+        //Add by Jack on 20120905 for SMBC workshop
+        SYM_IPLC_CAL_FORACOF_CUST_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_FORACOF_POST_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_GOODS_DESC_BTN_onclick = function(event) {
+    try {
+        SYS_InsertClause('GOODS_DESC');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_GOODS_DESC_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_INSTR_TO_PAY_BK_BTN_onclick = function(event) {
+    try {
+        SYS_InsertClause('INSTR_TO_PAY_BK');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_INSTR_TO_PAY_BK_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_INS_DOCS_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_CHK_INCOTERMS_INSU();
+        SYM_IPLC_ShowInsuranceDocument();
+        SYM_IPLC_DocumentPresentation();
+
+        if (document.MAINFORM.INS_DOCS_CB.checked == true) {
+            EEHtml.getElementById("insurance document").style.display = "block";
+        } else {
+            EEHtml.getElementById("insurance document").style.display = "none";
+        }
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_INS_DOCS_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_PACK_LIST_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowPackingList();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_PACK_LIST_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_REIM_BK_MULT_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_ID_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_SQL_REIM_BANK();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_ID_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_REIM_BK_POST_ADD_BTN_onclick = function(event) {
+    try {
+        SYM_IPLC_CAL_REIM_BK_MAIL_ADD();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_REIM_BK_POST_ADD_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_SEND_TO_RCV_INFO_CLAUSE_BTN_onclick = function(event) {
+    try {
+        SYS_InsertClause('SEND_TO_RCV_INFO');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_SEND_TO_RCV_INFO_CLAUSE_BTN_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_TRANS_DOCS_CB_onclick = function(event) {
+    try {
+        SYM_IPLC_ShowTransportDocument_notInit();
+        SYM_IPLC_DocumentPresentation();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_TRANS_DOCS_CB_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_button1_onclick = function(event) {
+    try {
+        SYS_InsertClause('TEMP_CUST_INSTR');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_button1_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_button2_onclick = function(event) {
+    try {
+        SYS_InsertClause('TEMP_CORR_INSTR');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_button2_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_button3_onclick = function(event) {
+    try {
+        SYS_InsertClause('TEMP_CUST_CRSPD');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_button3_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_button4_onclick = function(event) {
+    try {
+        SYS_InsertClause('TEMP_CORR_CRSPD');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_button4_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_button5_onclick = function(event) {
+    try {
+        SYS_InsertClause('TEMP_CUST_ATTCH');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_button5_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_button6_onclick = function(event) {
+    try {
+        SYS_InsertClause('TEMP_CORR_ATTCH');
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_button6_onclick", e);
+    }
+}
+
+csFuncLevelProto.FLD_IPLC_view_1_onclick = function(event) {
+    try {
+        viewDiaryHistory();
+    } catch (e) {
+        DisExcpt("SYF_IPLC_IPLC_IssueLCOneStep.js*FLD_IPLC_view_1_onclick", e);
+    }
+}

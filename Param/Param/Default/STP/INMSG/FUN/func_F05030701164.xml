@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Matched Report");
+stp.setAutoProcess(true);
+
+stp.setCmpId(stp.getMsgTagVal("TSU_CUST_ID"));
+stp.setUserId("CSBANK");
+stp.setMainRef(stp.getMsgTagVal("TSU_CUST_REF"));
+
+
+stp.updateFieldValue("CURRNT_STATUS","Received Matched Purchase Order");
+stp.updateFieldValue("NXT_STATUS","Decision");
+
+stp.writeLog("End: Received Matched Report");]]></js-content>
+</root>

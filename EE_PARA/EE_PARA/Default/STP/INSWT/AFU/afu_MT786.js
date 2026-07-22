@@ -1,0 +1,1 @@
+stp.setFunc("IWGT_ReceiveMT798");

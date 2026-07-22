@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Invoice List" Max="n" Min="1" Name="EPRInvoiceList" PendingStore="N" Screen="SCRN/o2m/EPPM_EPRInvoiceList.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>InvoiceEPR</Component>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="EPR ID" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">EPR_ID</Element>
+        <Element DATATYPE="12" Desc="Number that identifies the invoice created by the buyer" DispInGrid="Y" EDIT="N" EEType="varchar_50_1" FldType="" Value="">AI_NUM</Element>
+        <Element DATATYPE="3" Desc="AI approved amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">AI_ACT_AMT</Element>
+        <Element DATATYPE="3" Desc="AI original amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">AI_ORG_AMT</Element>
+        <Element DATATYPE="91" Desc="Invoice Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">AI_DT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Due Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">AI_DUE_DT</Element>
+        <Element DATATYPE="91" Desc="AI Approved Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">AI_APRVD_DT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Settlement Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">AI_SET_DT</Element>
+        <Element DATATYPE="12" Desc="Response Code" DispInGrid="Y" EDIT="N" EEType="FLAG_4" FldType="" Value="">WOLF_CHK_RESP_CD</Element>
+        <Element DATATYPE="12" Desc="Reason Code" DispInGrid="N" EDIT="N" EEType="FLAG_5" FldType="" Value="">WOLF_CHK_RESN_CD</Element>
+        <Element DATATYPE="12" Desc="Status shown to the staff" DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_STAFF_CD</Element>
+        <Element DATATYPE="12" Desc="Status shown to the supplier" DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_SUPLR_CD</Element>
+        <Element DATATYPE="2" Desc="Days to scheduled settlement date" DispInGrid="Y" EDIT="N" EEType="Numeric_3" FldType="" Value="">DAYS_TO_SETT_DATE</Element>
+        <Element DATATYPE="8" Desc="All in rate" DispInGrid="Y" EDIT="N" EEType="RATE" FldType="" Value="">ALL_IN_RATE</Element>
+        <Element DATATYPE="2" Desc="Overdue interest Rate" DispInGrid="N" EDIT="N" EEType="Numeric_9_5" FldType="" Value="">OVD_INT_RATE</Element>
+        <Element DATATYPE="3" Desc="Interest Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">INT_AMT</Element>
+        <Element DATATYPE="4" Desc="Temporary Interest9" DispInGrid="Y" EDIT="N" EEType="AutoGen_Ext_INTEGER_0" FldType="" Value="">TEMP_INT9</Element>
+        <Element DATATYPE="12" Desc="Whether this invoice is funded" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IS_FUNDED</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="91" Desc="AI Early Paid date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">AI_EP_DT</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="12" Desc="Temporary field 3" DispInGrid="N" EDIT="N" EEType="Varchar_65" FldType="" Value="">FA_TEMP3</Element>
+        <Element DATATYPE="12" Desc="Temporary field 4" DispInGrid="N" EDIT="N" EEType="AutoGen_Ext_VARCHAR_60" FldType="" Value="">FA_TEMP4</Element>
+        <Element DATATYPE="4" Desc="Base Day" DispInGrid="N" EDIT="N" EEType="INTEGER" FldType="" Value="">I_BASE_DAY</Element>
+        <Element DATATYPE="12" Desc="temp main ref" DispInGrid="N" EDIT="N" EEType="AutoGen_Ext_VARCHAR_40" FldType="" Value="">TEMP_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Approved invoice ID" DispInGrid="N" EDIT="N" EEType="Varchar_18" FldType="" Value="">AI_ID</Element>
+        <Element DATATYPE="12" Desc="Payment Reference" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">PMT_REF</Element>
+        <Element DATATYPE="4" Desc="Number of Working Days to Settlement Date" DispInGrid="N" EDIT="N" EEType="INTEGER" FldType="" Value="">WDAYS_TO_SETT_DT</Element>
+        <Element DATATYPE="12" Desc="Buyer Address line 1" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">BUYR_ADD1</Element>
+        <Element DATATYPE="12" Desc="Buyer Address line 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">BUYR_ADD2</Element>
+        <Element DATATYPE="12" Desc="Buyer Address line 3" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">BUYR_ADD3</Element>
+        <Element DATATYPE="12" Desc="Supplier / Vendor Address 1" DispInGrid="N" EDIT="N" EEType="Varchar_60" FldType="" Value="">SUPLR_ADD1</Element>
+        <Element DATATYPE="12" Desc="Supplier / Vendor Address 2" DispInGrid="N" EDIT="N" EEType="Varchar_60" FldType="" Value="">SUPLR_ADD2</Element>
+        <Element DATATYPE="12" Desc="Port/Place of Loading" DispInGrid="N" EDIT="N" EEType="TEXTAREA_66" FldType="" Value="">PLC_LOADNG</Element>
+        <Element DATATYPE="12" Desc="Port/Place of Destination/Discharge/ Place of Receipt" DispInGrid="N" EDIT="N" EEType="TEXTAREA_66" FldType="" Value="">PLC_DSTN</Element>
+        <Element DATATYPE="12" Desc="Pre-carriage Vessel's Name" DispInGrid="N" EDIT="N" EEType="Varchar_30" FldType="" Value="">VSSL_PRE_NM</Element>
+        <Element DATATYPE="12" Desc="Vessel's Name" DispInGrid="N" EDIT="N" EEType="Varchar_30" FldType="" Value="">VSSL_NM</Element>
+        <Element DATATYPE="12" Desc="Freight Forwarder Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FRGHT_FWD_NM</Element>
+        <Element DATATYPE="12" Desc="Freight Forwarder Address line 1" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FRGHT_FWD_ADD1</Element>
+        <Element DATATYPE="12" Desc="Freight Forwarder Address line 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FRGHT_FWD_ADD2</Element>
+        <Element DATATYPE="12" Desc="Country of Origin" DispInGrid="N" EDIT="N" EEType="Varchar_30" FldType="" Value="">CNTRY_ORGN</Element>
+        <Element DATATYPE="12" Desc="Consignee Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">CONSGN_NM</Element>
+        <Element DATATYPE="12" Desc="Consignee Address line 1" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">CONSGN_ADD1</Element>
+        <Element DATATYPE="12" Desc="Consignee Address line 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">CONSGN_ADD2</Element>
+        <Element DATATYPE="12" Desc="Shipping Company Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SHPPG_CPNY_NM</Element>
+        <Element DATATYPE="12" Desc="Shipping Company Address line 1" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SHPPG_CPNY_ADD1</Element>
+        <Element DATATYPE="12" Desc="Shipping Company Address line 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SHPPG_CPNY_ADD2</Element>
+        <Element DATATYPE="12" Desc="Shipping Agent Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SHPPG_AGT_NM</Element>
+        <Element DATATYPE="12" Desc="Shipping Agent Address line 1" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SHPPG_AGT_ADD1</Element>
+        <Element DATATYPE="12" Desc="Shipping Agent Address line 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SHPPG_AGT_ADD2</Element>
+        <Element DATATYPE="12" Desc="Insurance Company Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">INSRNC_CPNY_NM</Element>
+        <Element DATATYPE="12" Desc="Insurance Company Address line 1" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">INSRNC_CPNY_ADD1</Element>
+        <Element DATATYPE="12" Desc="Insurance Company Address line 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">INSRNC_CPNY_ADD2</Element>
+        <Element DATATYPE="12" Desc="Transhipment Port/Place" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TRNSSHIPMNT_PLC</Element>
+        <Element DATATYPE="12" Desc="Supplier Bank Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SUPLR_BK_NMW</Element>
+        <Element DATATYPE="12" Desc="Supplier Bank Address line 1" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SUPLR_BK_ADD1</Element>
+        <Element DATATYPE="12" Desc="Supplier Bank Address line 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SUPLR_BK_ADD2</Element>
+        <Element DATATYPE="-1" Desc="Goods Description (Tag45A)" DispInGrid="N" EDIT="N" EEType="TEXTAREA_6500" FldType="" Value="">GOODS_DESC</Element>
+        <Element DATATYPE="12" Desc="WOLF Details" DispInGrid="N" EDIT="N" EEType="TEXTAREA_2000" FldType="" Value="">WOLF_DTL</Element>
+        <Element DATATYPE="12" Desc="Supplier Account No" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SUPLR_ACC_NO</Element>
+        <Element DATATYPE="3" Desc="Today's net value" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TODAY_NET_VALUE</Element>
+        <Element DATATYPE="91" Desc="last WOLF check date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">LAST_WOLF_CHK_DT</Element>
+        <Element DATATYPE="12" Desc="Pass Funding Cutoff Days Flag" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">AI_PASS_FCD_FLG</Element>
+    </Elements>
+</DO>

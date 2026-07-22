@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POMM_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>GET_APPR_PO</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <FA_SBR_REF ALIAS="T0" DESC="SBR REF" DT="12" TYPE="F">FA_SBR_REF</FA_SBR_REF>
+            <FA_REQ_BUYER_APR_FLG ALIAS="T0" DESC="Need Buyer Approve" DT="1" TYPE="V">1</FA_REQ_BUYER_APR_FLG>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">FA_TEMP6</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.FA_SBR_REF</SQL>
+            <SQL TYPE="SQL">= '</SQL>
+            <SQL TYPE="FLD">FA_SBR_REF</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.FA_REQ_BUYER_APR_FLG</SQL>
+            <SQL TYPE="SQL">= '1' AND </SQL>
+            <SQL DT="1" EEType="SYS_CHAR_1" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL">='M'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

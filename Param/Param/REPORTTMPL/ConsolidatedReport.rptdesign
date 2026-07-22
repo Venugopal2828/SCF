@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <html-property name="description">Creates a blank report with no predefined content.</html-property>
+    <property name="units">in</property>
+    <text-property name="displayName">Blank Report</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="CompanyCode" id="643">
+            <text-property name="promptText">Enter Company Code</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="CEBaseLine" id="41">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.39.101.211:1521:CEDB</property>
+            <property name="odaUser">system</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">c3lz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="IMLC" id="42">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">C_UNIT_CODE</property>
+                    <property name="paramName">CompanyCode</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">LC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CUST_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">APPL_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">BENE_BK_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">LC_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ISSUE_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">EXPIRY_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">LC_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">LC_BALA</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CEBaseLine</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">LC_NO</property>
+                    <property name="nativeName">LC_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CUST_NO</property>
+                    <property name="nativeName">CUST_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">APPL_NM</property>
+                    <property name="nativeName">APPL_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">BENE_BK_NM</property>
+                    <property name="nativeName">BENE_BK_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">LC_AMT</property>
+                    <property name="nativeName">LC_AMT</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ISSUE_DT</property>
+                    <property name="nativeName">ISSUE_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">EXPIRY_DT</property>
+                    <property name="nativeName">EXPIRY_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">LC_CCY</property>
+                    <property name="nativeName">LC_CCY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">LC_BALA</property>
+                    <property name="nativeName">LC_BALA</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select LC_NO,CUST_NO, C_MAIN_REF,APPL_NM,BENE_BK_NM,LC_AMT,ISSUE_DT,EXPIRY_DT,LC_CCY,LC_BALA
+from CETRX.IMLC_EM_ISSUE
+where C_UNIT_CODE=?]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="EXLC" id="43">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">C_UNIT_CODE</property>
+                    <property name="paramName">CompanyCode</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ADV_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">BENE_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ISSUE_BK_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">LC_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ISSUE_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">EXPIRY_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">LC_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">LC_BALA</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CEBaseLine</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ADV_NO</property>
+                    <property name="nativeName">ADV_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">BENE_NM</property>
+                    <property name="nativeName">BENE_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ISSUE_BK_NM</property>
+                    <property name="nativeName">ISSUE_BK_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">LC_AMT</property>
+                    <property name="nativeName">LC_AMT</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ISSUE_DT</property>
+                    <property name="nativeName">ISSUE_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">EXPIRY_DT</property>
+                    <property name="nativeName">EXPIRY_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">LC_CCY</property>
+                    <property name="nativeName">LC_CCY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">LC_BALA</property>
+                    <property name="nativeName">LC_BALA</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select ADV_NO,C_MAIN_REF,BENE_NM,ISSUE_BK_NM,LC_AMT,ISSUE_DT,EXPIRY_DT,LC_CCY,LC_BALA
+from CETRX.EXLC_EM_ADV
+where C_UNIT_CODE=?]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="IMCO" id="44">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">C_UNIT_CODE</property>
+                    <property name="paramName">CompanyCode</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">COLL_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">DRWE_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">REMIT_BK_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">COLL_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">COLL_CRET_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">DUE_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">COLL_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CEBaseLine</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">COLL_NO</property>
+                    <property name="nativeName">COLL_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">DRWE_NM</property>
+                    <property name="nativeName">DRWE_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">REMIT_BK_NM</property>
+                    <property name="nativeName">REMIT_BK_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">COLL_AMT</property>
+                    <property name="nativeName">COLL_AMT</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">COLL_CRET_DT</property>
+                    <property name="nativeName">COLL_CRET_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">DUE_DT</property>
+                    <property name="nativeName">DUE_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">COLL_CCY</property>
+                    <property name="nativeName">COLL_CCY</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select COLL_NO,C_MAIN_REF,DRWE_NM,REMIT_BK_NM,COLL_AMT,COLL_CRET_DT,DUE_DT,COLL_CCY
+from CETRX.IMCO_EM_TRXN
+where C_UNIT_CODE=?]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="EXCO" id="45">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">C_UNIT_CODE</property>
+                    <property name="paramName">CompanyCode</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">COLL_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">DUE_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">DRWE_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">COLL_BK_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">COLL_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">COLL_CRET_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">COLL_CRET_DT_8</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">COLL_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CEBaseLine</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">COLL_NO</property>
+                    <property name="nativeName">COLL_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">DUE_DT</property>
+                    <property name="nativeName">DUE_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">DRWE_NM</property>
+                    <property name="nativeName">DRWE_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">COLL_BK_NM</property>
+                    <property name="nativeName">COLL_BK_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">COLL_AMT</property>
+                    <property name="nativeName">COLL_AMT</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">COLL_CRET_DT</property>
+                    <property name="nativeName">COLL_CRET_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">COLL_CRET_DT_8</property>
+                    <property name="nativeName">COLL_CRET_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">COLL_CCY</property>
+                    <property name="nativeName">COLL_CCY</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select C_MAIN_REF,COLL_NO,DUE_DT,DRWE_NM,COLL_BK_NM,COLL_AMT,COLL_CRET_DT,COLL_CRET_DT,COLL_CCY
+from CETRX.EXCO_EM_CREATE
+where C_UNIT_CODE=?]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="DATE" id="665">
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">12px</property>
+            <structure name="dateTimeFormat">
+                <property name="category">Medium Date</property>
+                <property name="pattern">Medium Date</property>
+            </structure>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="AMT" id="666">
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">12px</property>
+            <structure name="numberFormat">
+                <property name="category">Currency</property>
+                <property name="pattern">#,##0.00</property>
+            </structure>
+            <property name="textAlign">right</property>
+        </style>
+        <style name="String" id="667">
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="Title" id="668">
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">20px</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#F7941D</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="Column" id="669">
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.5in</property>
+            <property name="leftMargin">0.5in</property>
+            <property name="bottomMargin">0.5in</property>
+            <property name="rightMargin">0.5in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="IMLC" id="124">
+            <property name="marginTop">0pt</property>
+            <property name="height">1.1916666667in</property>
+            <property name="width">9.9583333333in</property>
+            <property name="dataSet">IMLC</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">LC_NO</property>
+                    <expression name="expression">dataSetRow["LC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUST_REF</property>
+                    <expression name="expression">dataSetRow["CUST_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">APPL_NM</property>
+                    <expression name="expression">dataSetRow["APPL_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BENE_BK_NM</property>
+                    <expression name="expression">dataSetRow["BENE_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LC_AMT</property>
+                    <expression name="expression">dataSetRow["LC_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_DT</property>
+                    <expression name="expression">dataSetRow["ISSUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">EXPIRY_DT</property>
+                    <expression name="expression">dataSetRow["EXPIRY_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">LC_CCY</property>
+                    <expression name="expression">dataSetRow["LC_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LC_BALA</property>
+                    <expression name="expression">dataSetRow["LC_BALA"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CUST_NO</property>
+                    <expression name="expression">dataSetRow["CUST_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LC_NO</property>
+                    <expression name="expression">dataSetRow["LC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">APPL_NM</property>
+                    <expression name="expression">dataSetRow["APPL_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BENE_BK_NM</property>
+                    <expression name="expression">dataSetRow["BENE_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_DT</property>
+                    <expression name="expression">dataSetRow["ISSUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">EXPIRY_DT</property>
+                    <expression name="expression">dataSetRow["EXPIRY_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="158">
+                <property name="width">0.7291666667in</property>
+            </column>
+            <column id="159">
+                <property name="width">0.6875in</property>
+            </column>
+            <column id="160">
+                <property name="width">0.9791666667in</property>
+            </column>
+            <column id="161">
+                <property name="width">0.8958333333in</property>
+            </column>
+            <column id="162">
+                <property name="width">0.6145833333in</property>
+            </column>
+            <column id="163">
+                <property name="width">0.7604166667in</property>
+            </column>
+            <column id="164">
+                <property name="width">0.9479166667in</property>
+            </column>
+            <column id="165">
+                <property name="width">0.4479166667in</property>
+            </column>
+            <column id="166">
+                <property name="width">0.8854166667in</property>
+            </column>
+            <header>
+                <row id="396">
+                    <cell id="397">
+                        <text id="407">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Our Reference]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="398">
+                        <text id="408">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[LC Number]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="399">
+                        <text id="416">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Applicant Name]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="400">
+                        <text id="415">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Beneficiary Bank Name]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="401">
+                        <text id="414">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[LC Amount]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="402">
+                        <text id="413">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Issue Date]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="403">
+                        <text id="412">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Expiry Date]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="404">
+                        <text id="411">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[LC Currency]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="405">
+                        <text id="410">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="textAlign">center</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[LC Balance]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+                <row id="125">
+                    <cell id="126">
+                        <property name="colSpan">9</property>
+                        <property name="rowSpan">1</property>
+                        <property name="style">AMT</property>
+                        <label id="350">
+                            <property name="style">Title</property>
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundColor">#000080</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="color">#FFFFFF</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text">LETTER OF CREDIT (IMPORT)</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="136">
+                    <cell id="137">
+                        <data id="644">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">CUST_NO</property>
+                        </data>
+                    </cell>
+                    <cell id="138">
+                        <data id="645">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">LC_NO</property>
+                        </data>
+                    </cell>
+                    <cell id="139">
+                        <data id="646">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">APPL_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="140">
+                        <data id="647">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">BENE_BK_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="141">
+                        <data id="600">
+                            <property name="style">AMT</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">LC_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="142">
+                        <data id="648">
+                            <property name="style">DATE</property>
+                            <property name="resultSetColumn">ISSUE_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="143">
+                        <data id="649">
+                            <property name="style">DATE</property>
+                            <property name="resultSetColumn">EXPIRY_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="144">
+                        <data id="603">
+                            <property name="style">String</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">LC_CCY</property>
+                        </data>
+                    </cell>
+                    <cell id="145">
+                        <property name="textAlign">right</property>
+                        <data id="604">
+                            <property name="style">AMT</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">LC_BALA</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="147">
+                    <property name="height">0.3958333333in</property>
+                    <cell id="148">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <property name="backgroundColor">#C0C0C0</property>
+                    </cell>
+                    <cell id="437">
+                        <property name="backgroundColor">#C0C0C0</property>
+                    </cell>
+                    <cell id="438">
+                        <property name="backgroundColor">#C0C0C0</property>
+                    </cell>
+                    <cell id="439">
+                        <property name="backgroundColor">#C0C0C0</property>
+                    </cell>
+                    <cell id="440">
+                        <property name="backgroundColor">#C0C0C0</property>
+                    </cell>
+                    <cell id="441">
+                        <property name="backgroundColor">#C0C0C0</property>
+                    </cell>
+                    <cell id="442">
+                        <property name="backgroundColor">#C0C0C0</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+        <table name="EXLC" id="168">
+            <property name="height">1.1916666667in</property>
+            <property name="width">9.9666666667in</property>
+            <property name="dataSet">EXLC</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BENE_NM</property>
+                    <expression name="expression">dataSetRow["BENE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_BK_NM</property>
+                    <expression name="expression">dataSetRow["ISSUE_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LC_AMT</property>
+                    <expression name="expression">dataSetRow["LC_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_DT</property>
+                    <expression name="expression">dataSetRow["ISSUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">EXPIRY_DT</property>
+                    <expression name="expression">dataSetRow["EXPIRY_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">LC_CCY</property>
+                    <expression name="expression">dataSetRow["LC_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LC_BALA</property>
+                    <expression name="expression">dataSetRow["LC_BALA"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">BENE_NM</property>
+                    <expression name="expression">dataSetRow["BENE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_BK_NM</property>
+                    <expression name="expression">dataSetRow["ISSUE_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ISSUE_DT</property>
+                    <expression name="expression">dataSetRow["ISSUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">EXPIRY_DT</property>
+                    <expression name="expression">dataSetRow["EXPIRY_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">ADV_NO</property>
+                    <expression name="expression">dataSetRow["ADV_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="202">
+                <property name="width">0.8020833333in</property>
+            </column>
+            <column id="203">
+                <property name="width">0.8333333333in</property>
+            </column>
+            <column id="204">
+                <property name="width">1.0625in</property>
+            </column>
+            <column id="205">
+                <property name="width">1.6458333333in</property>
+            </column>
+            <column id="206">
+                <property name="width">0.59375in</property>
+            </column>
+            <column id="207">
+                <property name="width">0.71875in</property>
+            </column>
+            <column id="208">
+                <property name="width">0.8229166667in</property>
+            </column>
+            <column id="209">
+                <property name="width">0.4375in</property>
+            </column>
+            <column id="210">
+                <property name="width">0.9166666667in</property>
+            </column>
+            <header>
+                <row id="459">
+                    <cell id="460">
+                        <text id="470">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Advise Number]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="461">
+                        <text id="471">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Main Ref.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="462">
+                        <text id="472">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Beneficiary Name]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="463">
+                        <text id="473">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Issuing Bank Name]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="464">
+                        <text id="474">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[LC Amount]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="465">
+                        <text id="475">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Issue Date]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="466">
+                        <text id="476">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Expiry Date]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="467">
+                        <text id="477">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[LC Currency]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="468">
+                        <text id="478">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="textAlign">center</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[LC Balance]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+                <row id="169">
+                    <cell id="170">
+                        <property name="colSpan">9</property>
+                        <property name="rowSpan">1</property>
+                        <text id="457">
+                            <property name="style">Title</property>
+                            <property name="backgroundColor">#000080</property>
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="color">#FFFFFF</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[LETTER OF CREDIT (EXPORT)]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="180">
+                    <cell id="181">
+                        <data id="670">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">ADV_NO</property>
+                        </data>
+                    </cell>
+                    <cell id="182">
+                        <data id="611">
+                            <property name="style">String</property>
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">C_MAIN_REF</property>
+                        </data>
+                    </cell>
+                    <cell id="183">
+                        <data id="651">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">BENE_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="184">
+                        <data id="652">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">ISSUE_BK_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="185">
+                        <data id="614">
+                            <property name="style">AMT</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">LC_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="186">
+                        <data id="653">
+                            <property name="style">DATE</property>
+                            <property name="resultSetColumn">ISSUE_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="187">
+                        <data id="654">
+                            <property name="style">DATE</property>
+                            <property name="resultSetColumn">EXPIRY_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="188">
+                        <data id="617">
+                            <property name="style">String</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">LC_CCY</property>
+                        </data>
+                    </cell>
+                    <cell id="189">
+                        <data id="618">
+                            <property name="style">AMT</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">LC_BALA</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="191">
+                    <property name="height">0.3958333333in</property>
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <cell id="192">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="195"/>
+                    <cell id="196"/>
+                    <cell id="197"/>
+                    <cell id="198"/>
+                    <cell id="199"/>
+                    <cell id="200">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+        <table name="IMCO" id="212">
+            <property name="height">1.1916666667in</property>
+            <property name="width">10in</property>
+            <property name="dataSet">IMCO</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWE_NM</property>
+                    <expression name="expression">dataSetRow["DRWE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REMIT_BK_NM</property>
+                    <expression name="expression">dataSetRow["REMIT_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_AMT</property>
+                    <expression name="expression">dataSetRow["COLL_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CRET_DT</property>
+                    <expression name="expression">dataSetRow["COLL_CRET_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CRET_DT</property>
+                    <expression name="expression">dataSetRow["COLL_CRET_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CCY</property>
+                    <expression name="expression">dataSetRow["COLL_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWE_NM</property>
+                    <expression name="expression">dataSetRow["DRWE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REMIT_BK_NM</property>
+                    <expression name="expression">dataSetRow["REMIT_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DUE_DT</property>
+                    <expression name="expression">dataSetRow["DUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CRET_DT</property>
+                    <expression name="expression">dataSetRow["COLL_CRET_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_NO</property>
+                    <expression name="expression">dataSetRow["COLL_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="246">
+                <property name="width">0.84375in</property>
+            </column>
+            <column id="247">
+                <property name="width">0.78125in</property>
+            </column>
+            <column id="248">
+                <property name="width">1.4479166667in</property>
+            </column>
+            <column id="249">
+                <property name="width">1.6875in</property>
+            </column>
+            <column id="250">
+                <property name="width">0.5729166667in</property>
+            </column>
+            <column id="251">
+                <property name="width">0.75in</property>
+            </column>
+            <column id="252">
+                <property name="width">0.8541666667in</property>
+            </column>
+            <column id="253">
+                <property name="width">0.5416666667in</property>
+            </column>
+            <header>
+                <row id="213">
+                    <cell id="214">
+                        <text id="521">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collection Ref Number]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="215">
+                        <text id="522">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Main Ref.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="216">
+                        <text id="523">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Drawee Name]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="217">
+                        <text id="660">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Remitting Bank Name]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="218">
+                        <text id="525">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collection Amount]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="219">
+                        <text id="526">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collection Creation Date]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="220">
+                        <text id="527">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Due Date]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="221">
+                        <text id="528">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collection CCY]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+                <row id="493">
+                    <cell id="494">
+                        <property name="colSpan">8</property>
+                        <property name="rowSpan">1</property>
+                        <text id="504">
+                            <property name="style">Title</property>
+                            <property name="backgroundColor">#000080</property>
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="color">#FFFFFF</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[COLLECTION (IMPORT)]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="224">
+                    <cell id="225">
+                        <data id="671">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">COLL_NO</property>
+                        </data>
+                    </cell>
+                    <cell id="226">
+                        <data id="622">
+                            <property name="style">String</property>
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">C_MAIN_REF</property>
+                        </data>
+                    </cell>
+                    <cell id="227">
+                        <data id="655">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">DRWE_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="228">
+                        <data id="657">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">REMIT_BK_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="229">
+                        <data id="625">
+                            <property name="style">AMT</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">COLL_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="230">
+                        <data id="659">
+                            <property name="style">DATE</property>
+                            <property name="resultSetColumn">COLL_CRET_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="231">
+                        <data id="658">
+                            <property name="style">DATE</property>
+                            <property name="resultSetColumn">DUE_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="232">
+                        <data id="628">
+                            <property name="style">String</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">COLL_CCY</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="235">
+                    <property name="height">0.3958333333in</property>
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <cell id="236">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="240"/>
+                    <cell id="241"/>
+                    <cell id="242"/>
+                    <cell id="243"/>
+                </row>
+            </footer>
+        </table>
+        <text id="524">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#FF0000</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[Counterparty]]></text-property>
+        </text>
+        <table name="EXCO" id="256">
+            <property name="marginTop">0pt</property>
+            <property name="height">1.1833333333in</property>
+            <property name="width">10in</property>
+            <property name="dataSet">EXCO</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWE_NM</property>
+                    <expression name="expression">dataSetRow["DRWE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_BK_NM</property>
+                    <expression name="expression">dataSetRow["COLL_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_AMT</property>
+                    <expression name="expression">dataSetRow["COLL_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CRET_DT</property>
+                    <expression name="expression">dataSetRow["COLL_CRET_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CRET_DT</property>
+                    <expression name="expression">dataSetRow["COLL_CRET_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CCY</property>
+                    <expression name="expression">dataSetRow["COLL_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DRWE_NM</property>
+                    <expression name="expression">dataSetRow["DRWE_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_BK_NM</property>
+                    <expression name="expression">dataSetRow["COLL_BK_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CRET_DT</property>
+                    <expression name="expression">dataSetRow["COLL_CRET_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_CRET_DT</property>
+                    <expression name="expression">dataSetRow["COLL_CRET_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">COLL_NO</property>
+                    <expression name="expression">dataSetRow["COLL_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DUE_DT</property>
+                    <expression name="expression">dataSetRow["DUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="290">
+                <property name="width">0.7604166667in</property>
+            </column>
+            <column id="291">
+                <property name="width">0.8333333333in</property>
+            </column>
+            <column id="292">
+                <property name="width">1.46875in</property>
+            </column>
+            <column id="293">
+                <property name="width">1.6770833333in</property>
+            </column>
+            <column id="294">
+                <property name="width">0.5833333333in</property>
+            </column>
+            <column id="295">
+                <property name="width">0.7395833333in</property>
+            </column>
+            <column id="296">
+                <property name="width">0.84375in</property>
+            </column>
+            <column id="297">
+                <property name="width">0.5625in</property>
+            </column>
+            <header>
+                <row id="257">
+                    <cell id="258">
+                        <text id="571">
+                            <property name="style">Title</property>
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collection Ref Number]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="259">
+                        <text id="539">
+                            <property name="style">Column</property>
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Main Ref.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="260">
+                        <text id="538">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Drawee Name]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="261">
+                        <text id="537">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collecting Bank Name]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="262">
+                        <text id="536">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collection Amount]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="263">
+                        <text id="535">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collection Creation Date]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="264">
+                        <text id="534">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Due Date]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="265">
+                        <text id="533">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">small</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="color">#FF0000</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Collection CCY]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+                <row id="505">
+                    <cell id="506">
+                        <property name="colSpan">8</property>
+                        <property name="rowSpan">1</property>
+                        <text id="516">
+                            <property name="style">Title</property>
+                            <property name="backgroundColor">#000080</property>
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="color">#FFFFFF</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[COLLECTION (EXPORT)]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="268">
+                    <cell id="269">
+                        <data id="672">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">COLL_NO</property>
+                        </data>
+                    </cell>
+                    <cell id="270">
+                        <data id="674">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">C_MAIN_REF</property>
+                        </data>
+                    </cell>
+                    <cell id="271">
+                        <data id="661">
+                            <property name="style">String</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="resultSetColumn">DRWE_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="272">
+                        <data id="662">
+                            <property name="style">String</property>
+                            <property name="resultSetColumn">COLL_BK_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="273">
+                        <data id="636">
+                            <property name="style">AMT</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">COLL_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="274">
+                        <data id="664">
+                            <property name="style">DATE</property>
+                            <property name="resultSetColumn">COLL_CRET_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="275">
+                        <data id="673">
+                            <property name="style">DATE</property>
+                            <property name="resultSetColumn">DUE_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="276">
+                        <data id="639">
+                            <property name="style">String</property>
+                            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+                            <property name="fontSize">small</property>
+                            <property name="resultSetColumn">COLL_CCY</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="279">
+                    <property name="height">0.3854166667in</property>
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <cell id="280">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="284"/>
+                    <cell id="285"/>
+                    <cell id="286"/>
+                    <cell id="287"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

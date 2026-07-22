@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id>Q_BANK</recv-queue-id>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>FAEF.001.CCA</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FADA</module>
+        <interface-mapping-name>CCARequest</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id comm="MQ" type="sync">Q_CE</atth-queue-id>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <FA_CE_MAIN_REF descr="CE system reference number" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">C_MAIN_REF</FA_CE_MAIN_REF>
+        <FA_REQ_DT descr="Request Date" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">FA_REQ_DT</FA_REQ_DT>
+        <FA_SEL_ID descr="Seller ID" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">FA_SEL_ID</FA_SEL_ID>
+        <FA_APPL_LMT_CCY descr="Request Limit Currency" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">FA_APPL_LMT_CCY</FA_APPL_LMT_CCY>
+        <FA_APPL_LMT_AMT descr="Request Limit Amount" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">FA_APPL_LMT_AMT</FA_APPL_LMT_AMT>
+        <FA_BUYER_ID descr="Buyer ID" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">FA_BUYER_ID</FA_BUYER_ID>
+        <FA_BUYER_NM descr="Buyer Name" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">FA_BUYER_NM</FA_BUYER_NM>
+        <FA_BUYER_POSTBOX descr="Buyer Post Box No." ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">FA_BUYER_POSTBOX</FA_BUYER_POSTBOX>
+        <FA_BUYER_CITY descr="Buyer City" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="9">FA_BUYER_CITY</FA_BUYER_CITY>
+        <FA_BUYER_CNTY descr="Buyer Country" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="10">FA_BUYER_CNTY</FA_BUYER_CNTY>
+        <FA_BUYER_POSTCODE descr="Buyer Post Code" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="11">FA_BUYER_POSTCODE</FA_BUYER_POSTCODE>
+        <FA_BUYER_CNTC_FLG descr="Direct Contact Allowed Flag" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="12">FA_BUYER_CNTC_FLG</FA_BUYER_CNTC_FLG>
+        <FA_PMT_TERMS descr="Payment Terms" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="13">FA_PMT_TERMS</FA_PMT_TERMS>
+        <FA_PMT_TERMS_FLG descr="Payment Terms Flag" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="14">FA_PMT_TERMS_FLG</FA_PMT_TERMS_FLG>
+        <FA_CUST_INSTR descr="Customer Instructions from CE" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="15">FA_CUST_INSTR</FA_CUST_INSTR>
+        <MSG_TYPE descr="message type" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="16">MSG_TYPE</MSG_TYPE>
+        <FA_CONTRACT_REF descr="Sign Agreement Ref" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="17">FA_CONTRACT_REF</FA_CONTRACT_REF>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item>
+        <item name="form"/>
+        <item name="image"/>
+    </send-item>
+</gapi>

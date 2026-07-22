@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>IMLC.012.DiscrpcsNtfctn</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>IMLC</module>
+        <map-name>DiscrepancyNotification</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <ADDIT_PRES_BK_CHG descr="" fv-type="F" intfconv="N">AdditnlPrestinBkChrgs</ADDIT_PRES_BK_CHG>
+        <APPL_ID descr="" fv-type="F" intfconv="N">ApplId</APPL_ID>
+        <BK_MAIN_REF descr="" fv-type="F" intfconv="N">BkMainRef</BK_MAIN_REF>
+        <C_MAIN_REF descr="" fv-type="F" intfconv="N">CEMainRef</C_MAIN_REF>
+        <DISC_DET descr="" fv-type="F" intfconv="N">DiscrpcsNote</DISC_DET>
+        <DOC_CHK_DT descr="" fv-type="F" intfconv="N">DtChkd</DOC_CHK_DT>
+        <DOC_DECISION descr="" fv-type="F" intfconv="N">DocDecsin</DOC_DECISION>
+        <DOC_PRES descr="" fv-type="F" intfconv="N">DocPres</DOC_PRES>
+        <DRAW_NO descr="" fv-type="F" intfconv="N">DrawgRefNb</DRAW_NO>
+        <DUE_DT descr="" fv-type="F" intfconv="N">DueDt</DUE_DT>
+        <LC_NO descr="" fv-type="F" intfconv="N">LcNb</LC_NO>
+        <NO_OF_DRAW descr="" fv-type="F" intfconv="N">NoOfDrawg</NO_OF_DRAW>
+        <PRES_AMT descr="" fv-type="F" intfconv="N">PrestinAmt</PRES_AMT>
+        <PRES_BK_CHG descr="" fv-type="F" intfconv="N">PrestinBkChrgs</PRES_BK_CHG>
+        <PRES_CCY descr="" fv-type="F" intfconv="N">PrestinCcy</PRES_CCY>
+        <TTL_PAYABLE_AMT descr="" fv-type="F" intfconv="N">TtlAmtPayab</TTL_PAYABLE_AMT>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

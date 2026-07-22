@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EPLC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_FinancRegister1_SYF_FFIT_EXPT_ID_11</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <BENE_ID ALIAS="T0" DBFUNC="" DESC="Beneficiary ID" DT="12" HIDDEN="F" TYPE="F">EXPT_ID</BENE_ID>
+        <BENE_NM ALIAS="T0" DBFUNC="" DESC="Beneficiary Name" DT="12" HIDDEN="F" TYPE="F">EXPT_NM</BENE_NM>
+        <BENE_BK_NM ALIAS="T0" DBFUNC="" DESC="Beneficiary Bank Name" DT="12" HIDDEN="F" TYPE="F">EXPT_NM_C</BENE_BK_NM>
+        <ISSUE_BK_ID ALIAS="T0" DBFUNC="" DESC="Issuing Bank ID" DT="12" HIDDEN="F" TYPE="F">ISSUE_BK_ID</ISSUE_BK_ID>
+        <ISSUE_BK_NM ALIAS="T0" DBFUNC="" DESC="Issuing Bank Name of Original LC" DT="12" HIDDEN="F" TYPE="F">ISSUE_BK_NM</ISSUE_BK_NM>
+        <ISSUE_BK_ADD1 ALIAS="T0" DBFUNC="" DESC="Issuing Bank Address1" DT="12" HIDDEN="F" TYPE="F">ISSUE_BK_ADD</ISSUE_BK_ADD1>
+        <LC_CCY ALIAS="T0" DBFUNC="" DESC="LC Currency" DT="1" HIDDEN="F" TYPE="F">TEMP_CHAR1</LC_CCY>
+        <LC_BAL ALIAS="T0" DBFUNC="" DESC="LC Balance" DT="3" HIDDEN="F" TYPE="F">ACPT_AMT</LC_BAL>
+        <LC_NO ALIAS="T0" DBFUNC="" DESC="LC Number" DT="12" HIDDEN="F" TYPE="F">LC_NO</LC_NO>
+        <APPL_NM ALIAS="T0" DBFUNC="" DESC="Applicant Name" DT="12" HIDDEN="F" TYPE="F">IMPT_NM</APPL_NM>
+        <TENOR_DAYS ALIAS="T0" DBFUNC="" DESC="Tenor Days" DT="4" HIDDEN="F" TYPE="F">TENOR_DAYS</TENOR_DAYS>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">TRX_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

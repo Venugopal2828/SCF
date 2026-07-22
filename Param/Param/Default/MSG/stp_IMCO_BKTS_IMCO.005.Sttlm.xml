@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>IMCO.005.Sttlm</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>IMCO</module>
+        <map-name>ReceivedSettlement</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <BK_MAIN_REF descr="" fv-type="F" intfconv="N">BK_MAIN_REF</BK_MAIN_REF>
+        <COLL_AMT descr="" fv-type="F" intfconv="N">CollAmt</COLL_AMT>
+        <COLL_CCY descr="" fv-type="F" intfconv="N">COLL_CCY</COLL_CCY>
+        <COLL_NO descr="" fv-type="F" intfconv="N">COLL_NO</COLL_NO>
+        <CUST_AC descr="" fv-type="F" intfconv="N">CUST_AC</CUST_AC>
+        <CUST_AC_CCY descr="" fv-type="F" intfconv="N">CUST_AC_CCY</CUST_AC_CCY>
+        <C_UNIT_CODE descr="" fv-type="F" intfconv="N">C_UNIT_CODE</C_UNIT_CODE>
+        <NXT_STATUS descr="" fv-type="F" intfconv="N">NXT_STATUS</NXT_STATUS>
+        <PMT_TYPE descr="" fv-type="F" intfconv="N">PMT_TYPE</PMT_TYPE>
+        <REMIT_BK_CHG_AMT descr="" fv-type="F" intfconv="N">REMIT_BK_CHG_AMT</REMIT_BK_CHG_AMT>
+        <TRX_DT descr="" fv-type="F" intfconv="N">TRX_DT</TRX_DT>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>VerifyInvoice</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>FAEF</module>
+        <map-name>ReceiveUploadStates</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <C_BATCH_ID descr="" fv-type="F" intfconv="N">INDEX</C_BATCH_ID>
+        <C_MSG_STATUS descr="" fv-type="F" intfconv="N">VERIFY_STATUS</C_MSG_STATUS>
+        <C_VERIFY_RESULT descr="C_MSG_STATUS" fv-type="F" intfconv="N">RESULT</C_VERIFY_RESULT>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

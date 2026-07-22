@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire Bank" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>OWGT</module-name>
+        <cubk-mapping-name>InqBank</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_BANK</table-name>
+        <table-desc>STD_BANK</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <BK_ID DESC="Bank ID" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqDataId</BK_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <BK_ID DESC="Bank ID" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkId</BK_ID>
+        <BK_NM DESC="Name" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkNm</BK_NM>
+        <BK_SW_ADD DESC="SWIFT Address" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkSwAdd</BK_SW_ADD>
+        <BK_ADD1 DESC="Location" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkAdd3</BK_ADD1>
+        <BK_ADD2 DESC="City" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkAdd2</BK_ADD2>
+        <BK_ADD3 DESC="Country" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqBkAdd1</BK_ADD3>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

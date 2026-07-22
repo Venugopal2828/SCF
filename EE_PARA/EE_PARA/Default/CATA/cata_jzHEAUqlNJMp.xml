@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="COMMISSION_CODE" VALUE=""/>
+        <FIELD NAME="C_CHARGE_RULE_ID_T" VALUE=""/>
+        <FIELD NAME="C_CUST_FLAG_T" VALUE=""/>
+        <FIELD NAME="C_LEVEL_VALUE_T" VALUE=""/>
+        <FIELD NAME="C_PRODUCT_CODE" VALUE=""/>
+        <FIELD NAME="I_ASSIGN_LEVEL_T" VALUE=""/>
+        <FIELD NAME="REL_TYPE" VALUE="STD_RELEASE"/>
+        <FIELD NAME="SYS_BANK_GROUP" VALUE=""/>
+        <FIELD NAME="TRXL_TYPE" VALUE="S"/>
+        <FIELD NAME="TRX_FUN_TYPE" VALUE="RELEASE"/>
+        <FIELD NAME="_TOTAL_TRXL" VALUE="0"/>
+        <FIELD NAME="_TRX_STATUS" VALUE="FORWARD_SCREEN"/>
+        <FIELD NAME="listFrom" VALUE=""/>
+        <FIELD NAME="listTo" VALUE=""/>
+    </CATA_HIDDEN_FLD>
+    <ID>jzHEAUqlNJMp</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/CHG_Rule_Assign_Release.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>AgreementAssignCata_Rel_ChgV3</DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_CHG_RATE</TABLENAME>
+    <FIELDLIST>
+        <FIELD DATATYPE="12" DESC="Customer Flag" EEType="Character_1" HIDDEN="">C_CUST_FLAG</FIELD>
+        <FIELD DATATYPE="2" DESC="Assign Level" EEType="Numeric_22" HIDDEN="">I_ASSIGN_LEVEL</FIELD>
+        <FIELD DATATYPE="12" DESC="Level Value" EEType="Varchar_50" HIDDEN="">C_LEVEL_VALUE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Level Value" DT="12" EEType="Varchar_50" TYPE="FLD">C_LEVEL_VALUE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="Assign Level" DT="2" EEType="Numeric_22" TYPE="FLD">I_ASSIGN_LEVEL</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="SYS_CHAR_1" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> NOT IN ('M','R')</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Level Value" EETYPE="Varchar_50">C_LEVEL_VALUE</FIELD>
+        <FIELD DATATYPE="2" DESC="Assign Level" EETYPE="Numeric_22">I_ASSIGN_LEVEL</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EETYPE="SYS_CHAR_1">C_TRX_STATUS</FIELD>
+    </CLAUSEFIELD>
+</CATA>

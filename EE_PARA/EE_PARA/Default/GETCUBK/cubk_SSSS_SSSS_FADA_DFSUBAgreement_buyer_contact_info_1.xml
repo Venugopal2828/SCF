@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_FADA_DFSUBAgreement_buyer_contact_info_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_CONTACT_NM ALIAS="T0" DBFUNC="" DESC="Contactor Name" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_NM</FA_CONTACT_NM>
+        <FA_CONTACT_TEL2 ALIAS="T0" DBFUNC="" DESC="Contactor Tel No. 2" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_TEL</FA_CONTACT_TEL2>
+        <FST_CNTC_EMAIL ALIAS="T0" DBFUNC="" DESC="First Contact Email Address" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_MAIL</FST_CNTC_EMAIL>
+        <FST_CNTC_FAX ALIAS="T0" DBFUNC="" DESC="First Contact Fax No" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_FAX</FST_CNTC_FAX>
+        <FA_CONTACT_EMAIL2 ALIAS="T0" DBFUNC="" DESC="Factor Contactor Email 2" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_CONT_ADDR</FA_CONTACT_EMAIL2>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+	<GROP NAME="Supervisor Queue" DIV_ID="trx_list_LCRelease" ROWSPAGE="1000">
+		<COLS>
+		<COL ID="1" NAME="Module"/>
+		<COL ID="2" NAME="Reference Number"/>
+		<COL ID="3" NAME="Currency"/>
+		<COL ID="4" NAME="Amount"/>
+		<COL ID="5" NAME="Appl/Drawer"/>
+		<COL ID="6" NAME="Expiry Date"/>
+		<COL ID="7" NAME="Function Name"/>
+		</COLS>
+		<FUNCTION ID="F05030702041">
+			<MAP_TBL>
+				<TABLES>
+					<TABLE ALIAS="IPLC_LEDGER" schema="%EXIMTRX%">IPLC_LEDGER</TABLE>
+				</TABLES>
+				<FIELDS>
+					<COL ID="1">
+						<TEXT>IPLC</TEXT>
+					</COL>
+					<COL ID="2">
+						<FIELD>C_MAIN_REF</FIELD>
+					</COL>
+					<COL ID="3">
+						<FIELD>LC_CCY</FIELD>
+					</COL>
+					<COL ID="4">
+						<FIELD TYPE="AMT" >LC_AMT</FIELD>
+					</COL>
+					<COL ID="5">
+						<FIELD>APPL_NM</FIELD>
+					</COL>
+					<COL ID="6">
+						<FIELD TYPE="DATE">EXPIRY_DT</FIELD>
+					</COL>
+					<COL ID="7">
+						<FIELD>C_FUNC_SHORT_NAME</FIELD>
+					</COL>
+				</FIELDS>
+			</MAP_TBL>
+			<CLAUSE BYGLOBAL="False" BYUNITCODE="False">
+				<SQL EETYPE="" TYPE="TBL_FLD">C_EVENT_STATUS</SQL>
+				<SQL TYPE="SQL"> = 'P' ORDER BY </SQL>
+				<SQL EETYPE="" TYPE="TBL_FLD">C_MAIN_REF</SQL>
+			</CLAUSE>
+		</FUNCTION>
+		<FUNCTION ID="F05030701684">
+			<MAP_TBL>
+				<TABLES>
+					<TABLE ALIAS="EXCO_LEDGER" schema="%EXIMTRX%">EXCO_LEDGER</TABLE>
+				</TABLES>
+				<FIELDS>
+					<COL ID="1">
+						<TEXT>EXCO</TEXT>
+					</COL>
+					<COL ID="2">
+						<FIELD>C_MAIN_REF</FIELD>
+					</COL>
+					<COL ID="3">
+						<FIELD>COLL_CCY</FIELD>
+					</COL>
+					<COL ID="4">
+						<FIELD TYPE="AMT">COLL_TRX_CCY_AMT</FIELD>
+					</COL>
+					<COL ID="5">
+						<FIELD>DRWR_NM</FIELD>
+					</COL>
+					<COL ID="6">
+						<TEXT> </TEXT>
+					</COL>
+					<COL ID="7">
+						<FIELD>C_FUNC_SHORT_NAME</FIELD>
+					</COL>
+				</FIELDS>
+			</MAP_TBL>
+			<CLAUSE BYGLOBAL="False" BYUNITCODE="False">
+				<SQL EETYPE="" TYPE="TBL_FLD">C_EVENT_STATUS</SQL>
+				<SQL TYPE="SQL"> = 'P' ORDER BY </SQL>
+				<SQL EETYPE="" TYPE="TBL_FLD">C_MAIN_REF</SQL>
+			</CLAUSE>
+		</FUNCTION>
+	</GROP>
+	<GROP NAME="Fix Pending" DIV_ID="trx_list_FixPending">
+		<COLS>
+		<COL ID="1" NAME="Reference Number"/>
+		<COL ID="2" NAME="Expiry Date"/>
+		<COL ID="3" NAME="Function Name"/>
+		</COLS>
+		<FUNCTION ID="F05030702040">
+			<MAP_TBL>
+				<TABLES>
+					<TABLE ALIAS="IPLC_LEDGER" schema="%EXIMTRX%">IPLC_LEDGER</TABLE>
+				</TABLES>
+				<FIELDS>
+					<COL ID="1">
+						<FIELD>C_MAIN_REF</FIELD>
+					</COL>
+					<COL ID="2">
+						<TEXT> The expiry date is : </TEXT>
+						<FIELD TYPE="DATE">EXPIRY_DT</FIELD>
+					</COL>
+					<COL ID="3">
+						<FIELD TYPE="DATE">C_FUNC_SHORT_NAME</FIELD>
+					</COL>
+				</FIELDS>
+			</MAP_TBL>
+			<CLAUSE BYGLOBAL="False" BYUNITCODE="True">
+				<SQL EETYPE="" TYPE="TBL_FLD">C_EVENT_STATUS</SQL>
+				<SQL TYPE="SQL"> = 'P' ORDER BY </SQL>
+				<SQL EETYPE="" TYPE="TBL_FLD">C_MAIN_REF</SQL>
+			</CLAUSE>
+		</FUNCTION>
+	</GROP>
+	<GROP NAME="Incoming SWIFTS" DIV_ID="swift_list">
+		<COLS>
+		<COL ID="1" NAME="Message Type"/>
+		<COL ID="2" NAME="STP Code"/>
+		<COL ID="3" NAME="Status"/>
+		<COL ID="4" NAME="Reference Number"/>
+		<COL ID="5" NAME="Function - Business Unit - Country"/>
+		</COLS>
+		<FUNCTION ID="F05030702230">
+			<MAP_TBL>
+				<TABLES>
+					<TABLE ALIAS="STP_IN_MSG_STO" schema="%EXIMSYS%">STP_IN_MSG_STO</TABLE>
+				</TABLES>
+				<FIELDS>
+					<COL ID="1">
+						<FIELD>C_MESSAGE_TYPE</FIELD>
+					</COL>
+					<COL ID="2">
+						<FIELD>C_STP_CODE</FIELD>
+					</COL>
+					<COL ID="3">
+						<FIELD>C_PROC_STATUS</FIELD>
+					</COL>
+					<COL ID="4">
+						<FIELD>C_MAIN_REF</FIELD>
+					</COL>
+					<COL ID="5">
+						<TEXT>(</TEXT>
+						<FIELD>C_FUNC_NAME</FIELD>
+						<TEXT> - </TEXT>
+						<FIELD>C_UNIT_CODE</FIELD>
+						<TEXT> - </TEXT>
+						<FIELD>C_CNTY_CODE</FIELD>
+						<TEXT>)</TEXT>
+					</COL>
+				</FIELDS>
+			</MAP_TBL>
+			<CLAUSE BYGLOBAL="True" BYUNITCODE="False" >
+				<SQL EETYPE="" TYPE="TBL_FLD">C_MESSAGE_TYPE</SQL>
+				<SQL TYPE="SQL"> != 'MT701' AND </SQL>
+				<SQL EETYPE="" TYPE="TBL_FLD">C_CNTY_CODE</SQL>
+				<SQL TYPE="SQL"> = 'US' AND </SQL>
+				<SQL EETYPE="" TYPE="TBL_FLD">C_UNIT_CODE</SQL>
+				<SQL TYPE="SQL"> = 'CSBANK' </SQL>
+				<SQL TYPE="SQL"> ORDER BY </SQL>
+				<SQL EETYPE="" TYPE="TBL_FLD">T_PROC_TIME</SQL>
+			</CLAUSE>
+		</FUNCTION>
+	</GROP>
+	<GROP NAME="Correspondence Inbox" DIV_ID="div_inbox">
+		<COLS>
+			<COL ID="1" NAME="Reference Number"/>
+			<COL ID="2" NAME="Type"/>
+		</COLS>
+		<FUNCTION ID="F05030702004">
+			<MAP_TBL>
+				<TABLES>
+					<TABLE ALIAS="COMM_LEDGER" schema="%EXIMTRX%">COMM_LEDGER</TABLE>
+				</TABLES>
+				<FIELDS>
+					<COL ID="1">
+						<FIELD>C_MAIN_REF</FIELD>
+					</COL>
+					<COL ID="2">
+						<FIELD>C_FUNC_SHORT_NAME</FIELD>
+					</COL>
+				</FIELDS>
+			</MAP_TBL>
+			<CLAUSE BYGLOBAL="True" BYUNITCODE="True">
+				<SQL EETYPE="" TYPE="TBL_FLD">C_EVENT_STATUS</SQL>
+				<SQL TYPE="SQL"> = 'P' ORDER BY </SQL>
+				<SQL EETYPE="" TYPE="TBL_FLD">C_MAIN_REF</SQL>
+			</CLAUSE>
+		</FUNCTION>
+	</GROP>
+</CONFIG>

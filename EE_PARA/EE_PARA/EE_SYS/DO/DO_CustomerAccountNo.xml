@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="CustomerAccountNo" Max="n" Min="0" Name="CustomerAccountNo" PendingStore="N" Screen="SCRN/DO/CustomerAccountNo.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="CUST_ACNO_DO"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>DO_INDEX_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TRCP_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Data Object Index No." DispInGrid="N" EDIT="N" EEType="CHAR_40" FldType="" Value="">DO_INDEX_NO</Element>
+        <Element DATATYPE="1" Desc="Counterparty Account Code" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_10" FldType="" Value="">CNPT_AC_CD</Element>
+        <Element DATATYPE="12" Desc="Serial Number" DispInGrid="Y" EDIT="N" EEType="Varchar_20" FldType="" Value="">SERIAL_NO</Element>
+        <Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CNPT_SHORT_NM</Element>
+        <Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_14" FldType="" Value="">CNPT_ID</Element>
+        <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        <Element DATATYPE="12" Desc="Customer Account Type" DispInGrid="Y" EDIT="N" EEType="Varchar_15" FldType="" Value="">CUST_AC_TYPE</Element>
+        <Element DATATYPE="1" Desc="Customer AC NO" DispInGrid="Y" EDIT="N" EEType="ACNO" FldType="" Value="">CUST_AC_NO</Element>
+        <Element DATATYPE="12" Desc="Product Code" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">PROD_CD</Element>
+        <Element DATATYPE="12" Desc="Cross Account Flag" DispInGrid="Y" EDIT="N" EEType="FLAG_3" FldType="" Value="">CROS_AC_FLG</Element>
+        <Element DATATYPE="12" Desc="Authority Flag" DispInGrid="Y" EDIT="N" EEType="FLAG_3" FldType="" Value="">AUTH_FLG</Element>
+        <Element DATATYPE="91" Desc="Effective Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">EFFCV_DT</Element>
+        <Element DATATYPE="91" Desc="Stop Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">STOP_DT</Element>
+        <Element DATATYPE="12" Desc="Default Flag" DispInGrid="N" EDIT="N" EEType="FLAG_3" FldType="" Value="">DEFLT_FLG</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

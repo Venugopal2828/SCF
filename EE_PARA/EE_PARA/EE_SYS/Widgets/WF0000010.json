@@ -1,0 +1,42 @@
+{
+	"id": "WF000010",
+	"type": "function",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF000010",
+			"display": "chart.bar",
+			"title": "IPLC Applications",
+			"desc": "Show Received Applications that have not yet been issued with Credit Line approval.",
+			"tooltip": "{\"text\":\"{a}<br/>{b} day ago: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"action": {
+				"type": "catalog",
+				"cfg": "_TRX_STATUS=CATA&_TRX_LIST_FILTER_AJAX_REQUEST=true&IC_CHECK=C_MAIN_REF&OP1=LIKE&OP2=%25&OP3=AND&IC_CHECK=TRX_DT&OP4=%3D&OP5=&OP6=AND&IC_CHECK=LOCAL_CUST_NM&OP7=LIKE&OP8=%25&OP9=AND&IC_CHECK=LOCAL_CUST_REF&OP10=LIKE&OP11=%25&OP12=AND&OP13=LIKE&OP14=%25&OP15=AND&IC_CHECK=FOREIGN_CUST_NM&OP16=LIKE&OP17=%25&OP18=AND&IC_CHECK=LC_CCY&OP19=LIKE&OP20=%25&OP21=AND&IC_CHECK=LC_AMT&OP22=%3D&OP23=&OP24=AND&OP25=LIKE&OP26=%25&like_flag=FALSE"
+			},
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"pie": "{\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "F05030702015",
+				"extraSelect": "TRX_DT,C_UNIT_CODE, (TO_DATE(sysdate ) - TO_DATE(TRX_DT)) NM, COUNT(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(TRX_DT)),'d' )) as VL",
+				"extraWhere": "",
+				"extraGroupBy": "TRX_DT,C_UNIT_CODE,(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(TRX_DT)),'d' ))",
+				"extraOrderBy": "C_UNIT_CODE, NM asc",
+				"overwrite": ["extraSelect", "extraOrderBy"],
+				"catalog": ["TRX_DT"],
+				"catalogOp": ["OP5"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "NM",
+			"valueField": "VL"
+		}
+	}
+}

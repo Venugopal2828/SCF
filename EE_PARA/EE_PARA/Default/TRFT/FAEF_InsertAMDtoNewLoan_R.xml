@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FAEF</module>
+    <name>InsertAMDtoNewLoan</name>
+    <desc>Insert New Loan record for Upfront</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.INVC_LOAN</table-name>
+        <table-desc>INVC_LOAN</table-desc>
+        <ledger-op/>
+        <op-type>I</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False">
+        </condition>
+    </head-info>
+    <mapping>
+        <C_FUNC_SHORT_NAME fv_type="V" oper="=">Roll_Over_Loans</C_FUNC_SHORT_NAME>
+        <C_MAIN_REF fv_type="F" mf="F" oper="=">FA_DOC_REF</C_MAIN_REF>
+        <C_TRX_REF fv_type="F" mf="F" oper="=">FA_INV_LOAN_ID</C_TRX_REF>
+        <C_TRX_STATUS fv_type="V" oper="=">M</C_TRX_STATUS>
+        <C_UNIT_CODE fv_type="F" mf="F" oper="=">FA_TEMP3</C_UNIT_CODE>
+        <FA_BUSI_TYPE fv_type="F" mf="F" oper="=">FA_BUSI_TYPE</FA_BUSI_TYPE>
+        <FA_BUYER_NM fv_type="F" mf="F" oper="=">FA_BUYER_NM</FA_BUYER_NM>
+        <FA_DOC_REF fv_type="F" mf="F" oper="=">FA_DOC_REF</FA_DOC_REF>
+        <FA_INT_CHG_TYPE fv_type="F" mf="F" oper="=">FA_INT_CHG_TYPE</FA_INT_CHG_TYPE>
+        <FA_INV_LOAN_AMT fv_type="F" mf="F" oper="=">EXTEN_PRCPL</FA_INV_LOAN_AMT>
+        <FA_INV_LOAN_ID fv_type="F" mf="F" oper="=">FA_INV_LOAN_ID</FA_INV_LOAN_ID>
+        <FA_INV_LOAN_TIMES fv_type="V" oper="=">1</FA_INV_LOAN_TIMES>
+        <FA_LOAN_CCY fv_type="F" mf="F" oper="=">FA_LOAN_CCY</FA_LOAN_CCY>
+        <FA_LOAN_DUE_DT fv_type="F" mf="F" oper="=">FA_LOAN_DUE_DT</FA_LOAN_DUE_DT>
+        <FA_LOAN_INT_AMT fv_type="F" mf="F" oper="=">FA_LOAN_INT_AMT</FA_LOAN_INT_AMT>
+        <FA_LOAN_INT_RT fv_type="F" mf="F" oper="=">FA_LOAN_INT_RT</FA_LOAN_INT_RT>
+        <FA_LOAN_VAL_DT fv_type="F" mf="F" oper="=">FA_AMD_FIN_EFF_DT</FA_LOAN_VAL_DT>
+        <FA_SEL_NM fv_type="F" mf="F" oper="=">FA_SEL_NM</FA_SEL_NM>
+        <FA_LOAN_ID fv_type="F" mf="F" oper="=">FA_INV_LOAN_ID</FA_LOAN_ID>
+        <I_EVENT_TIMES fv_type="V" oper="=">1</I_EVENT_TIMES>
+        <FA_INV_LOAN_EBAL fv_type="F" mf="F" oper="=">EXTEN_PRCPL</FA_INV_LOAN_EBAL>
+        <FA_DOC_NO fv_type="F" mf="F" oper="=">FA_DOC_NO</FA_DOC_NO>
+        <FA_PMT_GRC_DAY fv_type="V" oper="=">0</FA_PMT_GRC_DAY>
+    </mapping>
+</root>

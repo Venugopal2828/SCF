@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>X103_ADV_BKID_B2</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X103_ADV_BKID_B2</C_MAIN_REF>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKID_B2</C_MAIN_REF>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="SWIFT Format Name" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKNM_B2</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T1" DBFUNC="" DESC="SWIFT Format Address1" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD1_B2</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T1" DBFUNC="" DESC="SWIFT Format Address2" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD2_B2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T1" DBFUNC="" DESC="SWIFT Format Address3" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD3_B2</SWIFT_FMT_ADD3>
+        <SW_TAG_VAR ALIAS="T0" DBFUNC="" DESC="SWIFT Tag Variable" DT="12" HIDDEN="F" TYPE="F">X103_TAG_B2</SW_TAG_VAR>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="F" TYPE="F">X103_ADV_BKSW_B2</SW_ADD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T0.PARTY_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ADV_BKNM_B2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD1</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ADV_BKADD1_B2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD2</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ADV_BKADD2_B2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T0.ADD3</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ADV_BKADD3_B2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X103_ADV_BKID_B2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T1.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">  </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

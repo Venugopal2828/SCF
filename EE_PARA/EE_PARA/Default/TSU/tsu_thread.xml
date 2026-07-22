@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <msg UID="Ack" type="tsmt.001.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var bu = tsu.getBusiUnit();
+	tsu.writeLog("001 buthread: ="+bu);
+	var AckdMsgRef = tsu.getValue("Document/Ack/AckdMsgRef","Id"); 
+	var fld_list  = tsu.addFieldList(null,"C_TRX_REF");
+	var sql_condition = tsu.addSQLCondition(null,"C_MSG_ID",AckdMsgRef[0]);
+	sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);	
+	var result   = tsu.executeQuery("EXIMSYS.TSU_MSGS",fld_list,sql_condition);
+	var TrxRef= tsu.getDBFieldValue(result,"C_TRX_REF");
+	tsu.setHashMap("C_MAIN_REF",TrxRef);
+]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="AmdmntRjctnNtfctn" type="tsmt.008.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var bu = tsu.getBusiUnit();
+	var TID = tsu.getValue("Document/AmdmntRjctnNtfctn/TxId","Id"); 
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",TID[0]);
+            sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var TrxRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",TrxRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="FwdDataSetSubmissnRpt" type="tsmt.017.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[ tsu.setHashMap("C_MAIN_REF","NEW");
+]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="FullPushThrghRpt" type="tsmt.018.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var RptPurp = tsu.getValue("/Document/FullPushThrghRpt/RptPurp","Tp");
+	tsu.writeLog("RptPurp: ="+RptPurp[0]);
+	if(RptPurp[0] == "FWRE" || RptPurp[0] == "FWAM")
+        {   
+		var GetTxId = tsu.getValue("/Document/FullPushThrghRpt/TxId","Id");
+		var bu = tsu.getBusiUnit();
+		var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+		var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+			sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+		var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+		var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+		tsu.setHashMap("C_MAIN_REF",mainRef);
+        }]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="MisMtchAccptncNtfctn" type="tsmt.021.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/MisMtchAccptncNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="InttToPayRpt" type="tsmt.046.001.01">
+        <Field name="JS">
+            <js-content><![CDATA[	var bu = tsu.getBusiUnit();
+	tsu.writeLog("046 buthread: ="+bu);
+	var GetTxId = tsu.getValue("/Document/InttToPayRpt/RptdItms","TxId");
+	tsu.writeLog("GetTxId"+GetTxId);
+	var nlength = GetTxId.length;
+	tsu.writeLog("nlength"+nlength);
+	for(var k=0;k<nlength;k++)
+            {
+             var TSU_TID = GetTxId[k];
+             tsu.writeLog("TSU_TID"+TSU_TID);
+		var bu = tsu.getBusiUnit();
+		var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+		var sql_condition = tsu.addSQLCondition(null,"TSU_TID",TSU_TID);
+			sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+		var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+		var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+		tsu.writeLog("mainRef"+mainRef);
+		tsu.setHashMap("C_MAIN_REF",mainRef);
+          }]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="RoleAndBaselnAccptncNtfctn" type="tsmt.051.001.01">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/RoleAndBaselnAccptncNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="RoleAndBaselnRjctnNtfctn" type="tsmt.052.001.01">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/RoleAndBaselnRjctnNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="ActvtyRpt" type="tsmt.002.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var TMSGID=tsu.getValue("/Document/ActvtyRpt/RptId","Id");
+	var RltdMsgRef = tsu.getValue("/Document/ActvtyRpt/RltdMsgRef","Id");
+	if(RltdMsgRef.length != 0) 
+          {
+            var bu = tsu.getBusiUnit();
+            var MsgID = tsu.getValue("/Document/ActvtyRpt/RltdMsgRef","Id");
+            var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+            var sql_condition = tsu.addSQLCondition(null,"TSU_MESSAGE_ID",MsgID[0]);
+            sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+            var result   = tsu.executeQuery("TSUM_EM_ACTIVITYRP",fld_list,sql_condition);
+            var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+            tsu.setHashMap("C_MAIN_REF",mainRef);
+          }
+	if(RltdMsgRef.length == 0)
+          {
+           tsu.writeLog("C_MSG_ID ="+TMSGID[0]);
+           tsu.setHashMap("C_MAIN_REF",TMSGID[0]);	
+        
+          } ]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="AmdmntAccptncNtfctn" type="tsmt.006.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/AmdmntAccptncNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="ErrRpt" type="tsmt.016.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var TMSGID=tsu.getValue("/Document/ErrRpt/RptId","Id");
+	var bu = tsu.getBusiUnit();
+	var TxId = tsu.getValue("/Document/ErrRpt/TxId","Id"); 
+	var MSGID = tsu.getValue("/Document/ErrRpt/RjctdMsgRef","Id");
+	var RjctdMsgRef = tsu.getValue("/Document/ErrRpt/RjctdMsgRef","Id");
+	if(RjctdMsgRef.length != 0)
+          {
+          var DS = tsu.getPartValue(RjctdMsgRef[0],9,2);
+          var fld_list  = tsu.addFieldList(null,"C_TRX_REF");
+          var sql_condition = tsu.addSQLCondition(null,"C_MSG_ID",MSGID[0]);
+          sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+          var result   = tsu.executeQuery("EXIMSYS.TSU_MSGS",fld_list,sql_condition);
+          var TrxRef= tsu.getDBFieldValue(result,"C_TRX_REF");
+          tsu.setHashMap("C_MAIN_REF",TrxRef);
+          }    
+          
+	if(RjctdMsgRef.length == 0)
+          {
+          tsu.writeLog("C_MSG_ID ="+TMSGID[0]);
+          tsu.setHashMap("C_MAIN_REF","NEW");	
+          } ]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="StsXtnsnNtfctn" type="tsmt.032.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/StsXtnsnNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="StsXtnsnRjctnNtfctn" type="tsmt.034.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/StsXtnsnRjctnNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="StsXtnsnReqNtfctn" type="tsmt.036.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/StsXtnsnReqNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="StsRpt" type="tsmt.037.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var bu = tsu.getBusiUnit();
+	var MsgID = tsu.getValue("/Document/StsRpt/RltdMsgRef","Id");
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_MESSAGE_ID",MsgID[0]);
+          sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_EM_STSRPTREQ",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="TmOutNtfctn" type="tsmt.040.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/TmOutNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="TxRpt" type="tsmt.041.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var bu = tsu.getBusiUnit();
+	var MsgID = tsu.getValue("/Document/TxRpt/RltdMsgRef","Id");
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_MESSAGE_ID",MsgID[0]);
+          sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_EM_TRXRTPREQ",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="BaselnMtchRpt" type="tsmt.010.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/BaselnMtchRpt/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="DltaRpt" type="tsmt.015.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/DltaRpt/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="ActnRmndr" type="tsmt.024.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/ActnRmndr/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="FwdInttToPayNtfctn" type="tsmt.045.001.01">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByComrclInvc/BrkdwnByPurchsOrdr","TxId");
+	var GetPOID = tsu.getValue("/Document/FwdInttToPayNtfctn/InttToPay/ByPurchsOrdr/PurchsOrdrRef","Id");
+	tsu.writeLog("GetPOID"+GetPOID);
+	var mainRef = new Array();
+	var nlength = GetTxId.length;
+	tsu.writeLog("nlength"+nlength);
+	for(var k=0;k<nlength;k++)
+	{
+		var TSU_TID = GetTxId[k];
+		tsu.writeLog("TSU_TID"+TSU_TID);
+		if (TSU_TID!=undefined)
+		{
+			var bu = tsu.getBusiUnit();
+			var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+			var sql_condition = tsu.addSQLCondition(null,"TSU_TID",TSU_TID);
+			sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+			var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+			mainRef[k]= tsu.getDBFieldValue(result,"C_MAIN_REF");
+			tsu.writeLog("mainRef"+mainRef[k]);
+		}
+		tsu.setHashMap("C_MAIN_REF",mainRef);
+	}
+	var mlength = GetPOID.length;
+	tsu.writeLog("mlength"+mlength);
+	for(var j=0;j<mlength;j++)
+	{
+             var PO_ID = GetPOID[j];
+             if  (PO_ID!=undefined)
+              {
+          	var bu = tsu.getBusiUnit();
+		var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+		var GetTxId = tsu.getValue("/Document/FwdInttToPayNtfctn/TxId","Id");
+		tsu.writeLog("GetTxId"+GetTxId[j]);
+		var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[j]);
+			sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+		var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+		var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+		tsu.writeLog("mainRef"+mainRef);
+		}          
+            tsu.setHashMap("C_MAIN_REF",mainRef);
+	}]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="SpclNtfctn" type="tsmt.048.001.01">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/SpclNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="BaselnRpt" type="tsmt.011.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/BaselnRpt/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_EM_BASELINE",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="DataSetMtchRpt" type="tsmt.013.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/DataSetMtchRpt/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="MisMtchRjctnNtfctn" type="tsmt.023.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/MisMtchRjctnNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);2w
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="StsChngNtfctn" type="tsmt.025.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/StsChngNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="StsChngReqNtfctn" type="tsmt.028.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/StsChngReqNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="StsChngReqRjctnNtfctn" type="tsmt.030.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/StsChngReqRjctnNtfctn/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="FullPushThrghRpt" type="tsmt.018.001.03_SIBOS">
+        <Field name="JS">
+            <js-content><![CDATA[	var GetTxId = tsu.getValue("/Document/FullPushThrghRpt/TxId","Id");
+	var bu = tsu.getBusiUnit();
+	var fld_list  = tsu.addFieldList(null,"C_MAIN_REF");
+	var sql_condition = tsu.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+		sql_condition = tsu.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+	var result   = tsu.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+	var mainRef= tsu.getDBFieldValue(result,"C_MAIN_REF");
+	tsu.setHashMap("C_MAIN_REF",mainRef);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="InitlBaselnSubmissn" type="tsmt.019.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var  MainRef = tsu.getValue("Document/InitlBaselnSubmissn/SubmitrTxRef","Id");
+	tsu.setHashMap("C_MAIN_REF",MainRef[0]);]]></js-content>
+        </Field>
+    </msg>
+    <msg UID="BaselnReSubmissn" type="tsmt.012.001.03">
+        <Field name="JS">
+            <js-content><![CDATA[	var  MainRef = tsu.getValue("Document/BaselnReSubmissn/SubmitrTxRef","Id");
+	tsu.setHashMap("C_MAIN_REF",MainRef[0]);]]></js-content>
+        </Field>
+    </msg>
+</root>

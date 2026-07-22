@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="True" MULTI="YES" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="LOG_CATA"/>
+        <FIELD NAME="_TRX_TYPE" VALUE="LISTLOG"/>
+    </CATA_HIDDEN_FLD>
+    <ID>kcT9YtHMkxBl</ID>
+    <MODULE>SYST</MODULE>
+    <JSPFILE>screen/CATA/ExportLogCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC></DESC>
+    <TABLELIST>
+        <TABLENAME ALIAS="t1" MASTER="YES">%EXIMSYS%.TRX_SYS_LMTS_LOG</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="C_CLIENT_ADDR" DATATYPE="12" DESC="Client Address" EEType="Varchar_48" HIDDEN="">t1.C_CLIENT_ADDR</FIELD>
+        <FIELD ALIAS="" COL="C_FUNC_NAME" DATATYPE="12" DESC="Function Name of Current Function" EEType="Varchar_35" HIDDEN="">t1.C_FUNC_NAME</FIELD>
+        <FIELD ALIAS="" COL="C_KEY_FIELDS" DATATYPE="12" DESC="C_KEY_FIELDS" EEType="AutoGen_Trx_VARCHAR_255" HIDDEN="">t1.C_KEY_FIELDS</FIELD>
+        <FIELD ALIAS="" COL="C_LOG_ID" DATATYPE="12" DESC="Log ID" EEType="Varchar_42" HIDDEN="">t1.C_LOG_ID</FIELD>
+        <FIELD ALIAS="" COL="C_STAN_TYPE" DATATYPE="12" DESC="C_STAN_TYPE" EEType="AutoGen_Trx_VARCHAR_255" HIDDEN="">t1.C_STAN_TYPE</FIELD>
+        <FIELD ALIAS="" COL="C_UNIT_CODE" DATATYPE="12" DESC="UNIT CODE" EEType="SYS_VARCHAR_12" HIDDEN="">t1.C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" COL="C_USER_ID" DATATYPE="12" DESC="C_USER_ID" EEType="SYS_VARCHAR_32" HIDDEN="">t1.C_USER_ID</FIELD>
+        <FIELD ALIAS="" COL="D_DATE_TIME" DATATYPE="91" DESC="Date Time" EEType="DATE" HIDDEN="">t1.D_DATE_TIME</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="Client Address" DT="12" EEType="Varchar_48" POS="SELFLD" TYPE="FLD">t1.C_CLIENT_ADDR</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Function Name of Current Function" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.C_FUNC_NAME</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_KEY_FIELDS" DT="12" EEType="AutoGen_Trx_VARCHAR_255" POS="SELFLD" TYPE="FLD">t1.C_KEY_FIELDS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Log ID" DT="12" EEType="Varchar_42" POS="SELFLD" TYPE="FLD">t1.C_LOG_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_STAN_TYPE" DT="12" EEType="AutoGen_Trx_VARCHAR_255" POS="SELFLD" TYPE="FLD">t1.C_STAN_TYPE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="UNIT CODE" DT="12" EEType="SYS_VARCHAR_12" POS="SELFLD" TYPE="FLD">t1.C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_USER_ID" DT="12" EEType="SYS_VARCHAR_32" POS="SELFLD" TYPE="FLD">t1.C_USER_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Date Time" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t1.D_DATE_TIME</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMSYS%.TRX_SYS_LMTS_LOG t1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="Log ID" DT="12" EEType="Varchar_42" POS="WHEFLD" TYPE="FLD">t1.C_LOG_ID</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="Function Name of Current Function" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">t1.C_FUNC_NAME</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' ORDER BY </SQL>
+        <SQL DESC="Date Time" DT="91" EEType="DATE" POS="WHEFLD" TYPE="FLD">t1.D_DATE_TIME</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Log ID" EETYPE="Varchar_42">t1.C_LOG_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Function Name of Current Function" EETYPE="Varchar_35">t1.C_FUNC_NAME</FIELD>
+        <FIELD DATATYPE="91" DESC="Date Time" EETYPE="DATE">t1.D_DATE_TIME</FIELD>
+    </CLAUSEFIELD>
+</CATA>

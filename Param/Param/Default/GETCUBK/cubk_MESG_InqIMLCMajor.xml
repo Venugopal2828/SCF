@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire IMLC Major Table" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>InqIMLCMajor</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.IMLC_EM_ISSUE</table-name>
+        <table-desc>LC Details</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <LC_NO DESC="LC Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</LC_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <LC_NO DESC="LC Number" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sInqDataId</LC_NO>
+        <APPL_NM DESC="Applicant Name" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sApplNm</APPL_NM>
+        <LC_CCY DESC="LC Currency" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sLcCcy</LC_CCY>
+        <LC_AMT DESC="LC Amount" DT="3" HIDDEN="" TYPE="V" WTYPE="CASE">sLcAmt</LC_AMT>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

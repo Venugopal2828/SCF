@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FAEF</module>
+    <name>CRN_BAL_inp</name>
+    <desc>CRN_BAL_inp</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.INVC_MASTER</table-name>
+        <table-desc>INVC_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>FA_INV_LINK_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_INV_LINK_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <D_RELE_DATE fv_type="F" mf="F" oper="=">TRX_DT</D_RELE_DATE>
+        <FA_CRN_BAL fv_type="F" mf="F" oper="-=">FA_PMT_AMT</FA_CRN_BAL>
+    </mapping>
+</root>

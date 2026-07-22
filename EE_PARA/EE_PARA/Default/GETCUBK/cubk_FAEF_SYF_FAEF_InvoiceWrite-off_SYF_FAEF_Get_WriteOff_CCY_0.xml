@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>SYF_FAEF_InvoiceWrite-off_SYF_FAEF_Get_WriteOff_CCY_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_INV_CCY1 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 1" DT="1" HIDDEN="F" TYPE="V">CUBK1</FA_INV_CCY1>
+        <FA_INV_CCY2 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 2" DT="1" HIDDEN="F" TYPE="V">CUBK2</FA_INV_CCY2>
+        <FA_INV_CCY3 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 3" DT="1" HIDDEN="F" TYPE="V">CUBK3</FA_INV_CCY3>
+        <FA_INV_CCY4 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 4" DT="1" HIDDEN="F" TYPE="V">CUBK4</FA_INV_CCY4>
+        <FA_INV_CCY5 ALIAS="T0" DBFUNC="" DESC="Invoice Currency 5" DT="1" HIDDEN="F" TYPE="V">CUBK5</FA_INV_CCY5>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">FA_SBR_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

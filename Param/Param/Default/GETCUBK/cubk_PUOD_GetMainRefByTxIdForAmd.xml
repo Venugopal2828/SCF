@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Get MainRef By TxId For Amendment" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>PUOD</module-name>
+        <cubk-mapping-name>GetMainRefByTxIdForAmd</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.PUOD_EM_AMD</table-name>
+        <table-desc>PUOD_EM_AMD</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <TSU_AMD_SEQNO DESC="Amendment Sequence No." DT="4" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_AMD_SEQNO</TSU_AMD_SEQNO>
+            <TSU_TID DESC="Transaction TID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_TID</TSU_TID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_MAIN_REF</C_MAIN_REF>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

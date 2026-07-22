@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<element name="domData">
+<complexType>
+<sequence>
+<element name="AdditionalInformation">
+<complexType>
+<sequence>
+<element name="FIN_INF_CD"/>
+<element name="FIN_INF_PRTRY"/>
+<element name="FIN_INF_VAL"/>
+</sequence>
+</complexType>
+</element>
+<element name="AgreementClauses">
+<complexType>
+<sequence>
+<element name="FIN_DESC"/>
+<element name="FIN_DOC_URL"/>
+</sequence>
+</complexType>
+</element>
+<element name="InvoiceRequestInformation">
+<complexType>
+<sequence>
+<element name="C_MAIN_REF"/>
+<element name="C_UNIT_CODE"/>
+<element name="FIN_DOC_TP"/>
+<element name="FIN_DOC_REF"/>
+<element name="FIN_SR_SEQ_ID"/>
+<element name="FIN_DOC_ISS_DT"/>
+<element name="FIN_DOC_URL"/>
+<element name="FIN_TTL_TAXBL_AMT"/>
+<element name="FIN_TTL_TAXBL_CCY"/>
+<element name="FIN_TTL_TAX_AMT"/>
+<element name="FIN_TTL_TAX_CCY"/>
+<element name="FIN_ADJ_DRCTN"/>
+<element name="FIN_ADJ_AMT"/>
+<element name="FIN_ADJ_CCY"/>
+<element name="FIN_TTL_INV_CCY"/>
+<element name="FIN_TTL_INV_AMT"/>
+<element name="FIN_PMT_DUE_DT"/>
+<element name="FIN_CRDR_NT_CCY"/>
+<element name="FIN_CRDR_NT_AMT"/>
+<element name="FIN_REQD_CCY"/>
+<element name="FIN_REQD_AMT"/>
+<element name="FIN_REQD_RT"/>
+<element name="FIN_INVC_PMT_MTD"/>
+<element name="FIN_PMT_IBAN"/>
+<element name="FIN_PMT_BBAN"/>
+<element name="FIN_PMT_UPIC"/>
+<element name="FIN_PMT_ACCOUNT"/>
+<element name="FIN_PMT_TPCD"/>
+<element name="FIN_PMT_TPID"/>
+<element name="FIN_PMT_CCY"/>
+<element name="FIN_PMT_NM"/>
+<element name="InstalmentInformation">
+<complexType>
+<sequence>
+<element name="C_MAIN_REF"/>
+<element name="C_UNIT_CODE"/>
+<element name="FIN_INSTLMT_SEQ"/>
+<element name="FIN_INSTLMT_DUEDT"/>
+<element name="FIN_INSTLMT_CCY"/>
+<element name="FIN_INSTLMT_AMT"/>
+<element name="FIN_IDX"/>
+<element name="FIN_DO_FLAG"/>
+</sequence>
+</complexType>
+</element>
+<element name="Supplier">
+<complexType>
+<sequence>
+<element name="C_MAIN_REF"/>
+<element name="C_UNIT_CODE"/>
+<element name="FIN_IDX"/>
+<element name="FIN_PARTY_IDX"/>
+<element name="PartyIdentification8">
+<complexType>
+<sequence>
+<element name="C_MAIN_REF"/>
+<element name="C_UNIT_CODE"/>
+<element name="FIN_IDX"/>
+<element name="FIN_PARTY_IDX"/>
+<element name="FIN_PARTY_NAME"/>
+<element name="FIN_ADR_TP"/>
+<element name="FIN_STREET_NAME"/>
+<element name="FIN_BLDG_NB"/>
+<element name="FIN_POST_CODE_ID"/>
+<element name="FIN_TOWN_NAME"/>
+<element name="FIN_CNTY_SUB_DIVI"/>
+<element name="FIN_CNTY"/>
+<element name="FIN_ADR_LINE1"/>
+<element name="FIN_ADR_LINE2"/>
+<element name="FIN_ADR_LINE3"/>
+<element name="FIN_ADR_LINE4"/>
+<element name="FIN_ADR_LINE5"/>
+<element name="FIN_RES_CNTY"/>
+<element name="FIN_DO_FLAG"/>
+<element name="OrganisationIdentification">
+<complexType>
+<sequence>
+<element name="FIN_ORG_BIC"/>
+<element name="FIN_IBEI"/>
+<element name="FIN_BEI"/>
+<element name="FIN_EANGLN"/>
+<element name="FIN_USCHU"/>
+<element name="FIN_DUNS"/>
+<element name="FIN_BK_PTY_ID"/>
+<element name="FIN_TAX_ID_NB"/>
+<element name="FIN_PRTRY_ID"/>
+<element name="FIN_ORG_ISSR"/>
+</sequence>
+</complexType>
+</element>
+<element name="PrivateIdentification">
+<complexType>
+<sequence>
+<element name="C_MAIN_REF"/>
+<element name="C_UNIT_CODE"/>
+<element name="FIN_IDX"/>
+<element name="FIN_DO_FLAG"/>
+<element name="FIN_PARTY_IDX"/>
+<element name="FIN_DRVRS_LIC_NB"/>
+<element name="FIN_CSTMR_NB"/>
+<element name="FIN_SCLSCTY_NB"/>
+<element name="FIN_ALNREGN_NB"/>
+<element name="FIN_PSPT_NB"/>
+<element name="FIN_PRV_TAX_ID"/>
+<element name="FIN_ID_CARD_NB"/>
+<element name="FIN_MPLYRID_NB"/>
+<element name="FIN_BIRTH_DT"/>
+<element name="FIN_BIRTH_PRVC"/>
+<element name="FIN_BIRTH_CITY"/>
+<element name="FIN_BIRTH_CNTY"/>
+<element name="FIN_OTHR_ID"/>
+<element name="FIN_OTHR_ID_TP"/>
+<element name="FIN_PRVT_ISSR"/>
+</sequence>
+</complexType>
+</element>
+</sequence>
+</complexType>
+</element>
+<element name="AccountIdentification">
+<complexType>
+<sequence>
+<element name="FIN_IBAN"/>
+<element name="FIN_BBAN"/>
+<element name="FIN_UPIC"/>
+<element name="FIN_ACCOUNT"/>
+<element name="FIN_AC_TPID"/>
+<element name="FIN_AC_TPCD"/>
+<element name="FIN_AC_CCY"/>
+<element name="FIN_AC_NM"/>
+</sequence>
+</complexType>
+</element>
+<element name="ContactInformation">
+<complexType>
+<sequence>
+<element name="FIN_CONT_NAME"/>
+<element name="FIN_CONT_NMPRFX"/>
+<element name="FIN_CONT_EMAILADR"/>
+<element name="FIN_CONT_FAXNB"/>
+<element name="FIN_CONT_GVNNM"/>
+<element name="FIN_CONT_PHNENB"/>
+<element name="FIN_CONT_ROLE"/>
+</sequence>
+</complexType>
+</element>
+</sequence>
+</complexType>
+</element>
+<element name="Buyer">
+<complexType>
+<sequence>
+<element name="C_MAIN_REF"/>
+<element name="C_UNIT_CODE"/>
+<element name="FIN_IDX"/>
+<element name="FIN_PARTY_IDX"/>
+<element name="PartyIdentification8">
+<complexType>
+<sequence>
+<element name="C_MAIN_REF"/>
+<element name="C_UNIT_CODE"/>
+<element name="FIN_IDX"/>
+<element name="FIN_PARTY_IDX"/>
+<element name="FIN_PARTY_NAME"/>
+<element name="FIN_ADR_TP"/>
+<element name="FIN_STREET_NAME"/>
+<element name="FIN_BLDG_NB"/>
+<element name="FIN_POST_CODE_ID"/>
+<element name="FIN_TOWN_NAME"/>
+<element name="FIN_CNTY_SUB_DIVI"/>
+<element name="FIN_CNTY"/>
+<element name="FIN_ADR_LINE1"/>
+<element name="FIN_ADR_LINE2"/>
+<element name="FIN_ADR_LINE3"/>
+<element name="FIN_ADR_LINE4"/>
+<element name="FIN_ADR_LINE5"/>
+<element name="FIN_RES_CNTY"/>
+<element name="FIN_DO_FLAG"/>
+<element name="OrganisationIdentification">
+<complexType>
+<sequence>
+<element name="FIN_ORG_BIC"/>
+<element name="FIN_IBEI"/>
+<element name="FIN_BEI"/>
+<element name="FIN_EANGLN"/>
+<element name="FIN_USCHU"/>
+<element name="FIN_DUNS"/>
+<element name="FIN_BK_PTY_ID"/>
+<element name="FIN_TAX_ID_NB"/>
+<element name="FIN_PRTRY_ID"/>
+<element name="FIN_ORG_ISSR"/>
+</sequence>
+</complexType>
+</element>
+<element name="PrivateIdentification">
+<complexType>
+<sequence>
+<element name="C_MAIN_REF"/>
+<element name="C_UNIT_CODE"/>
+<element name="FIN_IDX"/>
+<element name="FIN_DO_FLAG"/>
+<element name="FIN_PARTY_IDX"/>
+<element name="FIN_DRVRS_LIC_NB"/>
+<element name="FIN_CSTMR_NB"/>
+<element name="FIN_SCLSCTY_NB"/>
+<element name="FIN_ALNREGN_NB"/>
+<element name="FIN_PSPT_NB"/>
+<element name="FIN_PRV_TAX_ID"/>
+<element name="FIN_ID_CARD_NB"/>
+<element name="FIN_MPLYRID_NB"/>
+<element name="FIN_BIRTH_DT"/>
+<element name="FIN_BIRTH_PRVC"/>
+<element name="FIN_BIRTH_CITY"/>
+<element name="FIN_BIRTH_CNTY"/>
+<element name="FIN_OTHR_ID"/>
+<element name="FIN_OTHR_ID_TP"/>
+<element name="FIN_PRVT_ISSR"/>
+</sequence>
+</complexType>
+</element>
+</sequence>
+</complexType>
+</element>
+<element name="AccountIdentification">
+<complexType>
+<sequence>
+<element name="FIN_IBAN"/>
+<element name="FIN_BBAN"/>
+<element name="FIN_UPIC"/>
+<element name="FIN_ACCOUNT"/>
+<element name="FIN_AC_TPID"/>
+<element name="FIN_AC_TPCD"/>
+<element name="FIN_AC_CCY"/>
+<element name="FIN_AC_NM"/>
+</sequence>
+</complexType>
+</element>
+<element name="ContactInformation">
+<complexType>
+<sequence>
+<element name="FIN_CONT_NAME"/>
+<element name="FIN_CONT_NMPRFX"/>
+<element name="FIN_CONT_EMAILADR"/>
+<element name="FIN_CONT_FAXNB"/>
+<element name="FIN_CONT_GVNNM"/>
+<element name="FIN_CONT_PHNENB"/>
+<element name="FIN_CONT_ROLE"/>
+</sequence>
+</complexType>
+</element>
+</sequence>
+</complexType>
+</element>
+<element name="ReferredDocument">
+<complexType>
+<sequence>
+<element name="FIN_REF_DOC_CD"/>
+<element name="FIN_REF_DOC_PRTRY"/>
+<element name="FIN_REF_ISSR"/>
+<element name="FIN_REF_DOC_NB"/>
+<element name="FIN_REF_DOC_DT"/>
+<element name="FIN_REF_DOC_AMT"/>
+<element name="FIN_REF_DOC_CCY"/>
+</sequence>
+</complexType>
+</element>
+</sequence>
+</complexType>
+</element>
+<element name="C_MAIN_REF"/>
+<element name="FIN_AUTHSTN1"/>
+<element name="FIN_AUTHSTN2"/>
+<element name="FIN_CCY"/>
+<element name="FIN_CDT_ACCOUNT"/>
+<element name="FIN_CDT_BBAN"/>
+<element name="FIN_CDT_CCY"/>
+<element name="FIN_CDT_IBAN"/>
+<element name="FIN_CDT_NM"/>
+<element name="FIN_CDT_TPCD"/>
+<element name="FIN_CDT_TPID"/>
+<element name="FIN_CDT_UPIC"/>
+<element name="FIN_FINCG_ACCOUNT"/>
+<element name="FIN_FINCG_AGRMT"/>
+<element name="FIN_FINCG_BBAN"/>
+<element name="FIN_FINCG_CCY"/>
+<element name="FIN_FINCG_IBAN"/>
+<element name="FIN_FINCG_NM"/>
+<element name="FIN_FINCG_TPCD"/>
+<element name="FIN_FINCG_TPID"/>
+<element name="FIN_FINCG_UPIC"/>
+<element name="FIN_FSTAGT_AGT_BIC"/>
+<element name="FIN_FSTAGT_AGT_ID"/>
+<element name="FIN_FSTAGT_AGT_TP"/>
+<element name="FIN_FSTAGT_CSM_ID"/>
+<element name="FIN_FSTAGT_CSM_VAL"/>
+<element name="FIN_GRP_ID"/>
+<element name="FIN_INTRMY_AGT_BIC"/>
+<element name="FIN_INTRMY_AGT_ID"/>
+<element name="FIN_INTRMY_AGT_TP"/>
+<element name="FIN_INTRMY_CSM_ID"/>
+<element name="FIN_INTRMY_CSM_VAL"/>
+<element name="FIN_INVC_REQS_NB"/>
+<element name="FIN_RQSTR_BEI"/>
+<element name="FIN_RQSTR_ID"/>
+<element name="FIN_RQSTR_ID_TP"/>
+<element name="FIN_RQSTR_NAME"/>
+<element name="FIN_TRX_DT"/>
+<element name="FIN_TTL_BLKINV_AMT"/>
+</sequence>
+</complexType>
+</element>
+</schema>

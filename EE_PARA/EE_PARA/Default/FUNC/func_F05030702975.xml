@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/R2TSUM_BaselineReport_Pre_EE.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="F">
+        <SCREEN DO="BuyerBank">TSUM_BuyerBanksInfomation</SCREEN>
+        <SCREEN DO="SellerBank">TSUM_SellerBankInformation</SCREEN>
+    </DOSCREEN>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>Open Account Module</MODULE_DESC>
+        <EVENT>TSUR2RelatedFunction</EVENT>
+        <ID>F05030702975</ID>
+        <NAME>R2BaselineReportPrecale</NAME>
+        <DESC>Baseline Report (Precale)</DESC>
+        <FUNSHORTNAME>tsmt.011.001.03B</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <UIStyle>S</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="BaseLineReport_Pre">R00000006698</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID/>
+    </FUNCTION>
+</FUNC>

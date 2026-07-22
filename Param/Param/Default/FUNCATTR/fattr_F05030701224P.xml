@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Generate GAPI">TrxGenerateGAPI</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>UPLD</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>CETRX.TRX_FILE_UPLOAD</TABLE_NAME>
+        <TABLE_DESC>TRX_FILE_UPLOAD</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF></TRXREF>
+        <MAPPINGRULE></MAPPINGRULE>
+        <POST>YES</POST>
+        <BCTYPE>GAPIs</BCTYPE>
+        <O2MRULE></O2MRULE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME compName="Trx Update File Status">UpdateFileStatus</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>UPLD</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>CETRX.TRX_SUB_FILES</TABLE_NAME>
+        <TABLE_DESC>TRX_SUB_FILES</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE></MAPPINGRULE>
+        <POST>YES</POST>
+        <BCTYPE></BCTYPE>
+        <O2MRULE></O2MRULE>
+    </COMPONENT>
+</FUNCATTR>

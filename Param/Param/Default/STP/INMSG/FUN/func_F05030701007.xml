@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Mismatch Decision");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var msgType = stp.getXslMsgTagVal("message/out-msg-content","MessageType");
+var sDatSetMtchRptRef = "";
+if(msgType == "stp_tsmt.021.001.03"){
+  sDatSetMtchRptRef = stp.getXslMsgTagVal("message/Document/MisMtchAccptncNtfctn/DataSetMtchRptRef","Id");
+  var sTxId = stp.getXslMsgTagVal("message/Document/MisMtchAccptncNtfctn/TxId","Id");
+  stp.updateFieldValue("CURRNT_STATUS","Acceptance Notification");
+}
+else if(msgType == "stp_tsmt.023.001.03"){
+  sDatSetMtchRptRef = stp.getXslMsgTagVal("message/Document/MisMtchRjctnNtfctn/DataSetMtchRptRef","Id");
+  var sTxId = stp.getXslMsgTagVal("message/Document/MisMtchRjctnNtfctn/TxId","Id");
+  stp.updateFieldValue("CURRNT_STATUS","Rejection Notification");
+}
+var arrKeys = [["TSU_MESSAGE_ID",sDatSetMtchRptRef]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetRefUnitforRecMisDec",arrKeys);
+var sMainRef = arrGetDataResult[1];
+var sUnitCode = arrGetDataResult[0];
+stp.setCmpId(sUnitCode);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+stp.writeLog("End: Received Mismatch Decision");]]></js-content>
+</root>

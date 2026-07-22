@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="SCF_CounterParty" Min="0" Name="SCF_CounterParty" PendingStore="Y" Screen="SCRN/DO/FADA_SCFCounters.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="FADA_COUNTER"></TABLE_NAME>
+    <PK>
+        <PKNAME>CPYT_C_RELA_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FADA_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="1" Desc="Counterparty Account No." DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">FA_COUNTER_ACC</Element>
+        <Element DATATYPE="12" Desc="Counterparty Address Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">FA_COUNTER_ADD_ML</Element>
+        <Element DATATYPE="1" Desc="Counterparty Is CE Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_COUNTER_CE_FLG</Element>
+        <Element DATATYPE="1" Desc="Counterparty Country Name" DispInGrid="N" EDIT="N" EEType="CNTY" FldType="" Value="">FA_COUNTER_CNTY</Element>
+        <Element DATATYPE="12" Desc="Counterparty Contact E-mail" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">FA_COUNTER_CONT_EM</Element>
+        <Element DATATYPE="12" Desc="Counterparty Contact Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_COUNTER_CONT_NM</Element>
+        <Element DATATYPE="12" Desc="Counterparty Contact Tel No." DispInGrid="N" EDIT="N" EEType="Varchar_25" FldType="" Value="">FA_COUNTER_CONT_TEL</Element>
+        <Element DATATYPE="12" Desc="Counterparty City" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_COUNTER_CT</Element>
+        <Element DATATYPE="12" Desc="Counterparty ID" DispInGrid="Y" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_COUNTER_ID</Element>
+        <Element DATATYPE="12" Desc="Counterparty Name" DispInGrid="Y" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_COUNTER_NM</Element>
+        <Element DATATYPE="12" Desc="Counterparty Province" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_COUNTER_PROV</Element>
+        <Element DATATYPE="12" Desc="Counterparty Register No" DispInGrid="Y" EDIT="N" EEType="CHAR_16" FldType="" Value="">FA_COUNTER_REG_NO</Element>
+        <Element DATATYPE="12" Desc="FA_COUNTER_ROLE" DispInGrid="N" EDIT="N" EEType="CHAR_10" FldType="" Value="">FA_COUNTER_ROLE</Element>
+        <Element DATATYPE="12" Desc="Counterparty Street Name" DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">FA_COUNTER_STR</Element>
+        <Element DATATYPE="1" Desc="Counterparty Customer Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_COUNTER_TYPE</Element>
+        <Element DATATYPE="1" Desc="Original counterparty type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">ORIG_FA_COUNTER_TYPE</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Relation Reference" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">CPYT_C_RELA_REF</Element>
+        <Element DATATYPE="1" Desc="Customer Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_CUST_FLAG</Element>
+        <Element DATATYPE="3" Desc="Limit Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_LMT_AMT</Element>
+        <Element DATATYPE="1" Desc="Limit Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">FA_LMT_CCY</Element>
+        <Element DATATYPE="3" Desc="Limit Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_LMT_BAL</Element>
+        <Element DATATYPE="1" Desc="Customer Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">CUST_TYPE</Element>
+        <Element DATATYPE="12" Desc="Customer Register No." DispInGrid="N" EDIT="N" EEType="Varchar_15" FldType="" Value="">FA_CUST_REG_NO</Element>
+        <Element DATATYPE="91" Desc="Limit Start Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_LMT_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="Limit Due Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_LMT_DUE_DT</Element>
+        <Element DATATYPE="1" Desc="Relationship status" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_RELATION_STATUS</Element>
+        <Element DATATYPE="12" Desc="Anchor ID" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">FA_ANCHOR_ID</Element>
+        <Element DATATYPE="12" Desc="Anchor Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_ANCHOR_NM</Element>
+        <Element DATATYPE="1" Desc="Business Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_BUSI_TYPE</Element>
+        <Element DATATYPE="1" Desc="Service Request" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_SERVICE_REQ</Element>
+        <Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_COUNTER_AGM_NO</Element>
+		<Element DATATYPE="1" Desc="Counterparty self enroll" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">SELF_ENROL</Element>
+    </Elements>
+</DO>

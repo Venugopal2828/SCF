@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="INQMASTER_CATA"/>
+        <FIELD NAME="_TRX_TYPE" VALUE="INV_CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082301625</ID>
+    <MODULE>INVC</MODULE>
+    <JSPFILE>screen/CATA/Inquire_INV_Catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.INVC_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Main Ref. No." EEType="" HIDDEN="H">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Invoice Reference No."
+            EEType="Varchar_35" HIDDEN="">FA_DOC_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Invoice Number"
+            EEType="Varchar_35" HIDDEN="">FA_DOC_NO</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="" HIDDEN="H">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35" HIDDEN="">FA_BUYER_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller Name" EEType="Varchar_35" HIDDEN="">FA_SEL_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Invoice Due Date" EEType="DATE" HIDDEN="">FA_DOC_DUE_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Document Status"
+            EEType="Varchar_35" HIDDEN="">FA_DOC_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Credit Note Link Invoice No."
+            EEType="Varchar_35" HIDDEN="">FA_CRN_INV_LINK_NO</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Business Type" EEType="INTERPRETER"
+            HIDDEN="" ISFC="Y">FA_BUSI_TYPE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Main Ref. No." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Invoice Number" DT="12" EEType="Varchar_35" TYPE="FLD">FA_DOC_NO</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" TYPE="FLD">FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Seller Name" DT="12" EEType="Varchar_35" TYPE="FLD">FA_SEL_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' ORDER BY </SQL>
+        <SQL DESC="EVENT TIMES" DT="4" EEType="" TYPE="FLD">I_EVENT_TIMES</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Main Ref. No." EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Invoice Number" EEType="Varchar_35">FA_DOC_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35">FA_BUYER_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller Name" EEType="Varchar_35">FA_SEL_NM</FIELD>
+        <FIELD DATATYPE="4" DESC="EVENT TIMES" EEType="">I_EVENT_TIMES</FIELD>
+    </CLAUSEFIELD>
+</CATA>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="SCF94" type="SCF94Type"/>
+	<xs:complexType name="SCF94Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="Customer" type="CustType"/>
+			<xs:element name="RegDetails" type="RegDetailsType" maxOccurs="10000"/>
+			<xs:element name="MsgText" type="AMax1400TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="ReceiverCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10TypeC" minOccurs="0"/>
+			<xs:element name="MsgType" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="FileIndex" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SubFileIndex" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="DateTime" type="DateTimeC"/>
+			<xs:element name="Status" type="NMax2TypeC" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustType">
+		<xs:sequence>
+			<xs:element name="CustomerCompanyRegNr" type="AMax35Type"/>
+			<xs:element name="CustomerNr" type="AMax35Type"/>
+			<xs:element name="CustomerName" type="AMax35Type"/>
+			<xs:element name="UnitCode" type="AMax35Type"/>
+			<xs:element name="BusiType" type="BIType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RegDetailsType">
+		<xs:sequence>
+			<xs:element name="CollMain" type="CollMainType"/>
+			<xs:element name="CollDetails" type="CollDetailsType" maxOccurs="10000"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CollMainType">
+		<xs:sequence>
+			<xs:element name="CtrcRef" type="AMax35Type"/>
+			<xs:element name="CtrcDoc" type="AMax35Type"/>
+			<xs:element name="TrxDate" type="xs:date" minOccurs="0"/>
+			<xs:element name="RegNo" type="AMax35Type"/>
+			<xs:element name="LimitCcy" type="A3Type"/>
+			<xs:element name="LimitAmt" type="NMax14.2Type"/>
+			<xs:element name="LimitType" type="NMax1Type"/>
+			<xs:element name="LimitValDate" type="xs:date"/>
+			<xs:element name="LimitDueDate" type="xs:date"/>
+			<xs:element name="LimitBal" type="NMax14.2Type" minOccurs="0"/>
+			<xs:element name="MaxLoanPerc" type="NDef3.4Type"/>
+			<xs:element name="ValRelFlag" type="NMax1Type"/>
+			<xs:element name="MaxIncPerc" type="NDef3.4TypeC"/>
+			<xs:element name="MaxDecPerc" type="NDef3.4TypeC"/>
+			<xs:element name="TtlLoanBal" type="NMax14.2Type" minOccurs="0"/>
+			<xs:element name="InspInstID" type="AMax35Type"/>
+			<xs:element name="InspInstName" type="AMax35Type"/>
+			<xs:element name="InspAgrType" type="NMax1Type"/>
+			<xs:element name="InspInstDeLimit" type="YNType"/>
+			<xs:element name="InspAgrNo" type="AMax35Type"/>
+			<xs:element name="WareHID" type="AMax35Type"/>
+			<xs:element name="WareHName" type="AMax35Type"/>
+			<xs:element name="WareHAddr" type="AMax35Type"/>
+			<xs:element name="WareHCntc" type="AMax35Type"/>
+			<xs:element name="CollCcy" type="A3Type"/>
+			<xs:element name="CollExRate" type="NDef3.4TypeC"/>
+			<xs:element name="TtlCollVal" type="NMax14.2Type"/>
+			<xs:element name="MinCollVal" type="NMax14.2TypeC"/>
+			<xs:element name="LoanBal" type="NMax14.2TypeC"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CollDetailsType">
+		<xs:sequence>
+			<xs:element name="CollID" type="AMax35Type"/>
+			<xs:element name="CollName" type="AMax35Type"/>
+			<xs:element name="CollType" type="NMax15Type"/>
+			<xs:element name="ArivDate" type="xs:date"/>
+			<xs:element name="CollMPric" type="NMax14.2Type"/>
+			<xs:element name="CollFPric" type="NMax14.2Type"/>
+			<xs:element name="ChgUnit" type="NMax10Type"/>
+			<xs:element name="CollQt" type="NMax10Type"/>
+			<xs:element name="CollVal" type="NMax14.2Type"/>
+			<xs:element name="CollSpec" type="AMax35TypeC"/>
+			<xs:element name="Manufac" type="AMax35TypeC"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

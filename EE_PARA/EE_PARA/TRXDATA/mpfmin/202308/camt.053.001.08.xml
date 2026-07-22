@@ -1,0 +1,44 @@
+0025091i2BtvNKzpNu492ufgodDw==<?xml version="1.0" encoding="utf-8"?>
+<Saa:DataPDU xmlns:Saa="urn:swift:saa:xsd:saa.2.0" xmlns:Sw="urn:swift:snl:ns.Sw"
+  xmlns:SwGbl="urn:swift:snl:ns.SwGbl" xmlns:SwInt="urn:swift:snl:ns.SwInt" xmlns:SwSec="urn:swift:snl:ns.SwSec">
+  <Saa:Revision>2.0.10</Saa:Revision>
+  <Saa:Header>
+  <Saa:Message>
+    <Saa:SenderReference>OT2315904104BEDV</Saa:SenderReference>
+    <Saa:MessageIdentifier>camt.053.001.08</Saa:MessageIdentifier>
+    <Saa:Format>MX</Saa:Format>
+    <Saa:Sender><Saa:DN>ou=xxx,o=ptsabmaa,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMAAXXX</Saa:X1></Saa:FullName></Saa:Sender>
+    <Saa:Receiver><Saa:DN>ou=xxx,o=ptsabmab,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMABXXX</Saa:X1></Saa:FullName></Saa:Receiver>
+    <Saa:InterfaceInfo><Saa:UserReference>OT2315904104BEDV</Saa:UserReference></Saa:InterfaceInfo>
+    <Saa:NetworkInfo>
+      <Saa:Service>swift.finplus!xpf</Saa:Service>
+      <Saa:SWIFTNetNetworkInfo>
+        <Saa:RequestType>camt.053.001.08</Saa:RequestType>
+        <Saa:RequestSubtype>swift.cbprplus.02</Saa:RequestSubtype>
+      </Saa:SWIFTNetNetworkInfo>
+    </Saa:NetworkInfo>
+  </Saa:Message></Saa:Header>
+  <Saa:Body>
+  
+  <AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">
+    <Fr>
+      <FIId>
+        <FinInstnId>
+          <BICFI>CITIUS33XXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </Fr>
+    <To>
+      <FIId>
+        <FinInstnId>
+          <BICFI>PTSABMAAXXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </To>
+    <BizMsgIdr>OT2315904104BEDV</BizMsgIdr>
+    <MsgDefIdr>camt.053.001.08</MsgDefIdr>
+    <BizSvc>swift.cbprplus.02</BizSvc>
+    <CreDt>2023-08-16T05:39:24+00:00</CreDt>
+  </AppHdr>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.08"><BkToCstmrStmt><GrpHdr><MsgId>BKAU20200907-82</MsgId><CreDtTm>2023-08-16T00:00:00+08:00</CreDtTm><MsgRcpt><Id><OrgId><AnyBIC>FEXMIE2D</AnyBIC></OrgId></Id></MsgRcpt><AddtlInf>/EODY/</AddtlInf></GrpHdr><Stmt><Id>StatementId</Id><StmtPgntn><PgNb>1</PgNb><LastPgInd>true</LastPgInd></StmtPgntn><LglSeqNb>1001</LglSeqNb><CreDtTm>2023-08-15T00:00:00+08:00</CreDtTm><Acct><Id><Othr><Id>48751258</Id></Othr></Id><Ccy>GBP</Ccy></Acct><Bal><Tp><CdOrPrtry><Cd>OPBD</Cd></CdOrPrtry></Tp><Amt Ccy="USD">1000</Amt><CdtDbtInd>CRDT</CdtDbtInd><Dt><Dt>2023-08-15</Dt></Dt></Bal><Bal><Tp><CdOrPrtry><Cd>CLBD</Cd></CdOrPrtry></Tp><Amt Ccy="USD">2000</Amt><CdtDbtInd>CRDT</CdtDbtInd><Dt><Dt>2023-08-15</Dt></Dt></Bal></Stmt></BkToCstmrStmt></Document>
+</Saa:Body></Saa:DataPDU>

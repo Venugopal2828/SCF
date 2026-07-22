@@ -1,0 +1,38 @@
+{
+	"id": "WF0000018",
+	"type": "function",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF0000018",
+			"display": "chart.bar",
+			"title": "SCF Agreements Summary",
+			"desc": "Show total data of different business type agrrement has been created.",
+			"tooltip": "{\"text\":\"{a}<br/>{b}:{c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of Agreements\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+					"pie": "{\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"line": "{\"xAxis\":{\"name\":\"Number of Agreements\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of Agreements\"}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of Agreements\"}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "yrbuONJ9d6ei",
+				"extraSelect": "FA_BUSI_TYPE,COUNT (C_MAIN_REF) AS VL,C_UNIT_CODE",
+				"extraWhere": "",
+				"extraGroupBy": "FA_BUSI_TYPE,C_UNIT_CODE",
+				"extraOrderBy": "VL asc",
+				"overwrite": ["extraSelect","extraOrderBy"],
+                "catalog": ["FA_BUSI_TYPE"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "FA_BUSI_TYPE",
+			"valueField": "VL"
+		}
+	}
+}

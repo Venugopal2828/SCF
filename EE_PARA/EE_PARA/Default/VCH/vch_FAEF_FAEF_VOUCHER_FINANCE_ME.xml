@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>FAEF</MODULE>
+        <DESC>FAEF Voucher Finance_ME</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>4</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>R</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_SCCL_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SCCL_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SCCL_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SCCL_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">SC.AUTH</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_LIABILITY_1</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_SCBL_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SCBL_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SCBL_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SCBL_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+   DV.appendField(FA_BUYER_ID); 
+}else{ 
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+   DV.appendField(FA_SEL_ID); 
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_LIABILITY_2</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_SCF_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SCF_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SCF_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SCF_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">SC.AUTH</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_1</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_SCS_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SCS_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SCS_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SCS_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="F">FA_VCH_SCS_CR_SYSTEM</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_SUSCOL</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_SCS_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SCS_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SCS_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SCS_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="F">FA_VCH_SCS_DR_SYSTEM</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_SUSCOL</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_CUST_ID</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SUPPLIER_CA_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SUPPLIER_CA_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SUPPLIER_CA_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">SCFP/CREDIT</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">SIB2000</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="V">CENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE="V">BRANCH</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE="V">LCY</C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_ACCOL</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_FEE_CHG_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_FEE_CHG_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_FEE_CHG_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_FEE_CHG_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_4</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_SCDR_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SCDR_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SCDR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SCDR_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_2</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_INTER_BK_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_INTER_BK_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_INTER_BK_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_INTER_BK_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_IBCOL</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_NOSTRO_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_NOSTRO_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_NOSTRO_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_NOSTRO_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_NACCOL</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_MEMO_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_MEMO_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_MEMO_CR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_MEMO_CR_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_MEMO</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_MEMO_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_MEMO_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_MEMO_DR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_MEMO_DR_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_MEMO</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_CUST_ID</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_NADEC_CA_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_NADEC_CA_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_NADEC_CA_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">SCFP/DEBIT</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">SIB2000</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="V">CENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE="V">BRANCH</C_CUST_BS_TYPE>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE="V">LCY</C_CU_REL_CODE>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_ACTF</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_DPR_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_DPR_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_DPR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_DPR_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_3</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_SCS_DPF_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SCS_DPF_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SCS_DPF_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SCS_DPF_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="F">FA_VCH_SCS_DPF_CR_SYSTEM</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE");  
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE);  
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID");  
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID");  
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){  
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID);  
+
+   DV.appendField(FA_BUYER_ID);  
+
+}else{  
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID);  
+
+   DV.appendField(FA_SEL_ID);  
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="V">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_SUSTF</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_SCS_DPF_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_SCS_DPF_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_SCS_DPF_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_SCS_DPF_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="F">FA_VCH_SCS_DPF_DR_SYSTEM</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE");  
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE);  
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID");  
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID");  
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){  
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID);  
+
+   DV.appendField(FA_BUYER_ID);  
+
+}else{  
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID);  
+
+   DV.appendField(FA_SEL_ID);  
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="V">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_SUSTF</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_MEMO_DPF_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_MEMO_DPF_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_MEMO_DPF_CR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_MEMO_DPF_CR_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_MEMO</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F">FA_VCH_MEMO_DPF_ACC</C_CUST_ID>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">D</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">FA_VCH_MEMO_DPF_ACC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">FA_VCH_MEMO_DPF_DR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">FA_VCH_MEMO_DPF_DR_CCY_AMT</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">TRX_DT</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">CS</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE="S">var FA_BUSI_TYPE = DV.getFieldValue("FA_BUSI_TYPE"); 
+
+DV.writeLog("FA_BUSI_TYPE ======" + FA_BUSI_TYPE); 
+
+var FA_BUYER_ID = DV.getFieldValue("FA_BUYER_ID"); 
+
+var FA_SEL_ID = DV.getFieldValue("FA_SEL_ID"); 
+
+if(FA_BUSI_TYPE == "SFP" || FA_BUSI_TYPE == "ICD" ){ 
+
+DV.writeLog("FA_BUYER_ID ======" + FA_BUYER_ID); 
+
+   DV.appendField(FA_BUYER_ID); 
+
+}else{ 
+
+DV.writeLog("FA_SEL_ID ======" + FA_SEL_ID); 
+
+   DV.appendField(FA_SEL_ID); 
+
+}</C_CUST_CODE>
+            <C_CUST_BS_GROUP FV_TYPE="F">TFCENTER</C_CUST_BS_GROUP>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE="F">CHG_TITLE_MEMO</C_CUST_CNTY_CODE>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

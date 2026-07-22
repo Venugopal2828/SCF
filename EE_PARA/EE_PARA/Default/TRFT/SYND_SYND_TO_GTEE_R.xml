@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>SYND</module>
+    <name>SYND_TO_GTEE</name>
+    <desc>SYND_TO_GTEE</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.GTEE_MASTER</table-name>
+        <table-desc>GTEE_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">SOURCE_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <R_SYND_FLG fv_type="V" oper="=">YES</R_SYND_FLG>
+        <R_SYND_REF fv_type="F" mf="F" oper="=">C_MAIN_REF</R_SYND_REF>
+        <SYND_FLG fv_type="V" oper="=">YES</SYND_FLG>
+    </mapping>
+</root>

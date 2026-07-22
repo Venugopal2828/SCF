@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>Y</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>POF_INVLOAN_PEND_chk</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="V">INVLOAN</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="SYS_CHAR_1" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> ='P' AND </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_16" TYPE="TBL_FLD">T0.C_FUNC_SHORT_NAME</SQL>
+            <SQL TYPE="SQL"> ='Financing' AND </SQL>
+            <SQL DT="12" EEType="CHAR_40" TYPE="TBL_FLD">T0.FSBC_REF</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">FA_SBR_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

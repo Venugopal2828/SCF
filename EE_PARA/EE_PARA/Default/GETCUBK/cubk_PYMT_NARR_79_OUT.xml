@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">TRX_SWIFT_TRT_LOG</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>NARR_79_OUT</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_TRT_LOG_ID ALIAS="T0" DESC="SYSFLD:C_TRT_LOG_ID" DT="12" TYPE="F">C_TRT_LOG_ID_TEMP</C_TRT_LOG_ID>
+            <C_MODULE ALIAS="T0" DESC="Module" DT="1" TYPE="V">PYMT</C_MODULE>
+            <C_MT ALIAS="T0" DESC="SWIFT Message Type" DT="12" TYPE="F">C_MT_TEMP</C_MT>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_SWIFT_CONTENT ALIAS="T0" DBFUNC="" DESC="SYSFLD:C_SWIFT_CONTENT" DT="2005" HIDDEN="F" TYPE="F">XN99_NARRATIVE_79</C_SWIFT_CONTENT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">%' AND  </SQL>
+            <SQL DT="12" EEType="Varchar_64" TYPE="TBL_FLD">T0.C_TRT_LOG_ID</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">C_TRT_LOG_ID_TEMP</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_MODULE</SQL>
+            <SQL TYPE="SQL"> = 'PYMT' AND </SQL>
+            <SQL DT="12" EEType="Varchar_3" TYPE="TBL_FLD">T0.C_MT</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">C_MT_TEMP</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

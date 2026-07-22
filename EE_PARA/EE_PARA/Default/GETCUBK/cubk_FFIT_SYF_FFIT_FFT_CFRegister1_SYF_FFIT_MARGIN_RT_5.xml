@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">FFIT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_CFRegister1_SYF_FFIT_MARGIN_RT_5</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <MARGIN_RT ALIAS="T0" DBFUNC="" DESC="MARGIN_RT" DT="6" HIDDEN="F" TYPE="F">MARGIN_RT</MARGIN_RT>
+        <COMMIT_FEE_RT ALIAS="T0" DBFUNC="" DESC="COMMIT_FEE_RT" DT="6" HIDDEN="F" TYPE="F">COMMIT_FEE_RT</COMMIT_FEE_RT>
+        <CLOSE_COMMIT_DT ALIAS="T0" DBFUNC="" DESC="CLOSE_COMMIT_DT" DT="91" HIDDEN="F" TYPE="F">CLOSE_COMMIT_DT</CLOSE_COMMIT_DT>
+        <COMMIT_START_DT ALIAS="T0" DBFUNC="" DESC="COMMIT_START_DT" DT="91" HIDDEN="F" TYPE="F">COMMIT_START_DT</COMMIT_START_DT>
+        <COMMIT_DAYS ALIAS="T0" DBFUNC="" DESC="COMMIT_DAYS" DT="2" HIDDEN="F" TYPE="F">COMMIT_DAYS</COMMIT_DAYS>
+        <GOODS_NM ALIAS="T0" DBFUNC="" DESC="GOODS_NM" DT="12" HIDDEN="F" TYPE="F">GOODS_NM</GOODS_NM>
+        <DRAFTS_FLG ALIAS="T0" DBFUNC="" DESC="DRAFTS_FLG" DT="12" HIDDEN="F" TYPE="F">DRAFTS_FLG</DRAFTS_FLG>
+        <TIME_FEE_FLG ALIAS="T0" DBFUNC="" DESC="TIME_FEE_FLG" DT="12" HIDDEN="F" TYPE="F">TIME_FEE_FLG</TIME_FEE_FLG>
+        <MATURITY ALIAS="T0" DBFUNC="" DESC="MATURITY" DT="91" HIDDEN="F" TYPE="F">MATURITY</MATURITY>
+        <IMPT_NM ALIAS="T0" DBFUNC="" DESC="IMPT_NM" DT="12" HIDDEN="F" TYPE="F">IMPT_NM</IMPT_NM>
+        <GTS_BR_ID ALIAS="T0" DBFUNC="" DESC="GTS Branch ID" DT="12" HIDDEN="F" TYPE="F">GTS_BR_ID</GTS_BR_ID>
+        <GTS_PRVN_ID ALIAS="T0" DBFUNC="" DESC="GTS Province ID" DT="12" HIDDEN="F" TYPE="F">GTS_PRVN_ID</GTS_PRVN_ID>
+        <GTS_DISTRICT_CODE ALIAS="T0" DBFUNC="" DESC="GTS District Code" DT="12" HIDDEN="F" TYPE="F">GTS_DISTRICT_CODE</GTS_DISTRICT_CODE>
+        <LC_NO ALIAS="T0" DBFUNC="" DESC="LC Number" DT="12" HIDDEN="F" TYPE="F">LC_NO</LC_NO>
+        <VIP_LEVEL ALIAS="T0" DBFUNC="" DESC="VIP Level" DT="12" HIDDEN="F" TYPE="F">VIP_LEVEL</VIP_LEVEL>
+        <TENOR_DAYS ALIAS="T0" DBFUNC="" DESC="Tenor Days" DT="4" HIDDEN="F" TYPE="F">TENOR_DAYS</TENOR_DAYS>
+        <FFT_TRF_FLG ALIAS="T0" DBFUNC="" DESC="FFT_TRF_FLG" DT="12" HIDDEN="F" TYPE="F">FFT_TRF_FLG</FFT_TRF_FLG>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">COMMIT_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

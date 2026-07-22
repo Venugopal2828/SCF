@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>zUFalu6tHCV2</ID>
+        <NAME>Manual PO</NAME>
+        <DESC>Manual Capture Purchase Order</DESC>
+        <FUNSHORTNAME>ManualCaptPO</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+    	<COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+        <CONFIRMID/>
+        <RIGHTID/>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">FAEF_ManualPO.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID></ID>
+        <NAME>Manual PO_FORM</NAME>
+    </FORM>
+    <NOTIFY>
+        <ID></ID>
+        <NAME>Manual PO_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>FunctionSSJS</JS_CLASS>
+    </CAL>
+</FUNC>

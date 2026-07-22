@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STP_IN_MSG_STO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>NARR_79_IN</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_STP_CODE ALIAS="T0" DESC="STP Code" DT="12" TYPE="F">C_TRT_LOG_ID_TEMP</C_STP_CODE>
+            <C_MESSAGE_TYPE ALIAS="T0" DESC="Message Type" DT="12" TYPE="F">C_MT_TEMP</C_MESSAGE_TYPE>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MSG_CONTENT ALIAS="T0" DBFUNC="" DESC="Message Content" DT="2005" HIDDEN="F" TYPE="F">XN99_NARRATIVE_79</C_MSG_CONTENT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_25" TYPE="TBL_FLD">T0.C_MSG_TYPE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">C_MT_TEMP</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_32" TYPE="TBL_FLD">T0.C_STP_CODE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">C_TRT_LOG_ID_TEMP</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

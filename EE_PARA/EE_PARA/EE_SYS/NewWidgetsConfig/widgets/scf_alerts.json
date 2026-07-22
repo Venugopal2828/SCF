@@ -1,0 +1,16 @@
+{
+	"id": "scf_alerts",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_alerts",
+			"display": "custom_sql_table",
+			"title": "SCF Alert and Notification",
+			"desc": "Warning list for overdue financing or pending approvals."
+		},
+		"data": {
+			"sql": "SELECT * FROM (SELECT 'Pending Approval' as \"Alert\", C_MAIN_REF as \"Details\", 'High' as \"Priority\" FROM %EXIMTRX%.FAEF_MASTER WHERE C_TRX_STATUS = 'P' AND C_UNIT_CODE = '%USER_BU%' UNION ALL SELECT 'Overdue Financing', C_MAIN_REF, 'Critical' FROM %EXIMTRX%.FAEF_MASTER WHERE C_TRX_STATUS = 'M' AND D_CREA_DATE < SYSDATE - 90 AND C_UNIT_CODE = '%USER_BU%') WHERE ROWNUM <= 10"
+		}
+	}
+}

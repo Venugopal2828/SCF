@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swift AutoGen-Parameter-Version="1.0">
+    <head-info>
+        <form-id>PYMT198</form-id>
+        <form-name>PYMT198</form-name>
+        <mt-desc>Proprietary Message</mt-desc>
+        <telexhead>
+            <TO_NAME type="V"/>
+            <TO_ADD type="V"/>
+            <FM type="V"/>
+            <TELEX_NO type="V"/>
+            <TEST_NO type="V"/>
+            <ON_CCY type="V"/>
+            <ON_AMT type="V"/>
+            <DATED type="V"/>
+            <TEST_WITH type="V"/>
+        </telexhead>
+        <module-name>PYMT</module-name>
+        <mt>198</mt>
+        <combined-flag/>
+        <mt-limit-length>2000</mt-limit-length>
+        <io>O</io>
+        <COPYNUMS>1</COPYNUMS>
+        <to-telex>F</to-telex>
+        <PRINTERNAME>hp LaserJet 1320 PCL 6</PRINTERNAME>
+        <check-js/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>R</PRINTSTATE>
+        <PT/>
+        <MAILID/>
+        <non-regular>FALSE</non-regular>
+    </head-info>
+    <tags>
+        <tag>
+            <order>00</order>
+            <tag-code>B1</tag-code>
+            <tag-desc>Outgoing SWIFT Header 1</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase/>
+            <tag-form>7</tag-form>
+            <tag-group/>
+            <sequence/>
+            <segment-1 cols="25" illegal-char="" rows="1" segment-no="0"/>
+            <segment-1-fbs/>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>B2</tag-code>
+            <tag-desc>Receiver's BIC Code</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase/>
+            <tag-form>7</tag-form>
+            <tag-group/>
+            <sequence/>
+            <segment-1 cols="21" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>V</fv-type>
+                    <fv-value>I198</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix/>
+                    <element-desc/>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>4</element-len>
+                    <rows>1</rows>
+                </element>
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>X103_ADV_BKSW_B2</fv-value>
+                    <value-type>B</value-type>
+                    <element-prefix/>
+                    <element-desc/>
+                    <row-no>1</row-no>
+                    <start-position>5</start-position>
+                    <element-len>11</element-len>
+                    <rows>1</rows>
+                </element>
+                <element>
+                    <fv-type>V</fv-type>
+                    <fv-value>N2</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix/>
+                    <element-desc/>
+                    <row-no>1</row-no>
+                    <start-position>16</start-position>
+                    <element-len>2</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>5</scol>
+                    <len>11</len>
+                    <vtype>B</vtype>
+                    <prefix/>
+                    <descr/>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>20</tag-code>
+            <tag-desc>Transaction Reference Number</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group/>
+            <sequence/>
+            <segment-1 cols="16" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>C_MAIN_REF</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix/>
+                    <element-desc/>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>16</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>16</len>
+                    <vtype>C</vtype>
+                    <prefix/>
+                    <descr/>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>12</tag-code>
+            <tag-desc>Sub-Message Type</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-form>7</tag-form>
+            <tag-group/>
+            <sequence/>
+            <segment-1 cols="3" illegal-char="" rows="1" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>MT_NO</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix/>
+                    <element-desc/>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>3</element-len>
+                    <rows>1</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>3</len>
+                    <vtype>C</vtype>
+                    <prefix/>
+                    <descr/>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+        <tag>
+            <order>00</order>
+            <tag-code>77E</tag-code>
+            <tag-desc>Proprietary Message</tag-desc>
+            <tag-type>N</tag-type>
+            <is-start>N</is-start>
+            <is-end>N</is-end>
+            <tag-mo>M</tag-mo>
+            <char-sets-type>Z</char-sets-type>
+            <Allow-Lowercase/>
+            <tag-form>7</tag-form>
+            <tag-group/>
+            <sequence/>
+            <segment-1 cols="78" illegal-char="" rows="122" segment-no="0">
+                <element>
+                    <fv-type>F</fv-type>
+                    <fv-value>FOR198_77E</fv-value>
+                    <value-type>C</value-type>
+                    <element-prefix/>
+                    <element-desc/>
+                    <row-no>1</row-no>
+                    <start-position>1</start-position>
+                    <element-len>78</element-len>
+                    <rows>122</rows>
+                </element>
+            </segment-1>
+            <segment-1-fbs>
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>9516</len>
+                    <vtype>C</vtype>
+                    <prefix/>
+                    <descr/>
+                </fb>
+            </segment-1-fbs>
+        </tag>
+    </tags>
+</swift>

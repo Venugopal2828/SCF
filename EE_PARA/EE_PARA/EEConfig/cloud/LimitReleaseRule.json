@@ -1,0 +1,44 @@
+{
+    "req_data": {
+        "type": "object",
+        "source": {
+            "type": "xpath",
+            "value": "/message/out-msg-content/trx"
+        },
+        "items": [
+            {
+                "type": "object",
+                "fields": {
+                    "organizationId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/bank-grp"
+                        }
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/country"
+                        }
+                    },
+                    "entityId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/unit-code"
+                        }
+                    },
+                    "resverseLink": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_RSV_LINK"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

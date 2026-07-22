@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">DATA_BRANCH</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_CommitmentRegister2_SYF_FFIT_GTS_PRVN_ID_8</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <GTS_BR_NM ALIAS="T0" DBFUNC="" DESC="GTS Branch Name" DT="12" HIDDEN="F" TYPE="F">GTS_BR_NM</GTS_BR_NM>
+        <GTS_PRVN_ID ALIAS="T0" DBFUNC="" DESC="GTS Province ID" DT="12" HIDDEN="F" TYPE="F">GTS_PRVN_ID</GTS_PRVN_ID>
+        <DISTRICT_CODE ALIAS="T0" DBFUNC="" DESC="District Code" DT="12" HIDDEN="F" TYPE="F">GTS_DISTRICT_CODE</DISTRICT_CODE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">GTS_BR_ID='</SQL>
+            <SQL TYPE="FLD">GTS_BR_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

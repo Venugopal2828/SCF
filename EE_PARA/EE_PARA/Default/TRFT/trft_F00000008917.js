@@ -1,0 +1,1 @@
+DV.appendField("FAEF_CRN_BAL_settlement_ME", "Settle_New", "FA_DOC_TYPE='2'");

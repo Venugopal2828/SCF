@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="SCF15" type="SCF15Type"/>
+	<xs:complexType name="SCF15Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="EF" type="FType"/>
+			<xs:element name="IF" type="FType"/>
+			<xs:element name="MsgDate" type="DateC" minOccurs="0"/>
+			<xs:element name="DisputeNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="DateOriginDispute" type="DateC" minOccurs="0"/>
+			<xs:element name="DisputeCurrency" type="A3TypeC" minOccurs="0"/>
+			<xs:element name="DisputeStatus" type="NMax1Type"/>
+			<xs:element name="DateSettlementDispute" type="DateC"/>
+			<xs:element name="Seller" type="SellerType" minOccurs="0"/>
+			<xs:element name="Buyer" type="BuyerType" minOccurs="0"/>
+			<xs:element name="DisputeDetails" type="DisputeDetailsType" maxOccurs="999"/>
+			<xs:element name="DisputeReasonText" type="AMax3500TypeC" minOccurs="0"/>
+			<xs:element name="ActionText" type="AMax3500TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="ReceiverCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10TypeC" minOccurs="0"/>
+			<xs:element name="DateTime" type="xs:dateTime"/>
+			<xs:element name="Status" type="NMax2TypeC" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FType">
+		<xs:sequence>
+			<xs:element name="FactorCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="FactorName" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SellerType">
+		<xs:sequence>
+			<xs:element name="SellerNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SellerName" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BuyerType">
+		<xs:sequence>
+			<xs:element name="BuyerNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="BuyerName" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DisputeDetailsType">
+		<xs:sequence>
+			<xs:element name="DocType" type="NMax1Type"/>
+			<xs:element name="DocNr" type="AMax35Type"/>
+			<xs:element name="DocDate" type="xs:date"/>
+			<xs:element name="DocAmt" type="NMax14.2Type"/>
+			<xs:element name="DisputeAmt" type="NMax14.2Type"/>
+			<xs:element name="DisputeReason" type="NMax2Type"/>
+			<xs:element name="InstructionStatus" type="NMax1Type"/>
+			<xs:element name="NotifyingParty" type="AMax35TypeC"/>
+			<xs:element name="Action" type="NMax1Type"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

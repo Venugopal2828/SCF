@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>IMCO</module>
+    <name>IMCO_SHGT</name>
+    <desc>IMCO_SHGT</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.SHGT_MASTER</table-name>
+        <table-desc>SHGT_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql>='</sql>
+            <field mf="F">SG_NO</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <DOC_FLG fv_type="V" oper="=">YES</DOC_FLG>
+        <DRAWING_REF fv_type="F" mf="F" oper="=">C_MAIN_REF</DRAWING_REF>
+    </mapping>
+</root>

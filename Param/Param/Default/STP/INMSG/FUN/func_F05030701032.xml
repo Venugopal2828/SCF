@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Amendment Decision Notification");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMsgType = stp.getXslMsgTagVal("message/out-msg-content","MessageType");
+var sRptId = "";
+var sTxId = "";
+var sAmdSeqNo = "";
+stp.writeLog("sMsgType============="+sMsgType);
+if (sMsgType == "stp_tsmt.006.001.03"){
+sRptId = stp.getXslMsgTagVal("message/Document/AmdmntAccptncNtfctn/NtfctnId","Id");
+sTxId = stp.getXslMsgTagVal("message/Document/AmdmntAccptncNtfctn/TxId","Id");
+sAmdSeqNo = stp.getXslMsgTagVal("message/Document/AmdmntAccptncNtfctn/AccptdAmdmntNb","Nb");
+stp.updateFieldValue("CURRNT_STATUS","Amendment Accepted Notification");
+}else if (sMsgType == "stp_tsmt.008.001.03"){
+sRptId = stp.getXslMsgTagVal("message/Document/AmdmntRjctnNtfctn/NtfctnId","Id");
+sTxId = stp.getXslMsgTagVal("message/Document/AmdmntRjctnNtfctn/TxId","Id");
+sAmdSeqNo = stp.getXslMsgTagVal("message/Document/AmdmntRjctnNtfctn/RjctdAmdmntNb","Nb");
+stp.updateFieldValue("CURRNT_STATUS","Amendment Rejected Notification");
+}
+stp.writeLog("sRptId=========="+sRptId);
+stp.writeLog("sTxId=========="+sTxId);
+var arrKeys = [["TSU_TID",sTxId],["TSU_AMD_SEQNO",sAmdSeqNo]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetBksInforByTxId",arrKeys);
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC=========="+sBIC);
+var sBuyrBkBIC = arrGetDataResult[0];
+var sSellrBkBIC = arrGetDataResult[1];
+var sBuyrNm = arrGetDataResult[2];
+var sSellrNm = arrGetDataResult[3];
+var sUnitNm = "";
+if (sBIC == sBuyrBkBIC){
+sUnitNm = sBuyrNm;
+} else{
+sUnitNm = sSellrNm;
+}
+var arrKeys1 = [["C_UNIT_NAME",sUnitNm]];
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetUnitCodeByNm",arrKeys1);
+var sUnitCode = arrGetDataResult1[0];
+stp.writeLog("sUnitCode=========="+sUnitCode);
+stp.setCmpId(sUnitCode);
+
+var arrGetDataResult2 = stp.SYS_getCUBKVal("GetMainRefByTxIdForAmd",arrKeys);
+var sMainRef = arrGetDataResult2[0];
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+
+stp.writeLog("End: Amendment Decision Notification");]]></js-content>
+</root>

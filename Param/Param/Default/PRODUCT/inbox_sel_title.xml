@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INBOX>
+    <TABL>TRX_INBOX</TABL>
+    <TITLE DESC="Import Letters of Credit" NAME="Import Letters of Credit">
+        <FLDS>
+            <FLD DESC="Applicant Address - 3" EEType="ADD_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_ADD3</FLD>
+            <FLD DESC="Authorise Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">AUTH_AMT</FLD>
+            <FLD DESC="Authorise CCY" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">AUTH_CCY</FLD>
+            <FLD DESC="Beneficiary  Name" EEType="NAME" HIDDEN="" SELECTED="N" TYPE="12">BENE_NAME</FLD>
+        </FLDS>
+        <CRTJSP>ABLF_ViewFinance.jsp</CRTJSP>
+        <SHOWFLDS/>
+        <CLAUSE>
+            <SQL DESC="Authorise Amount" DT="3" TYPE="FLD" WTYPE="CASE">AUTH_AMT</SQL>
+            <SQL TYPE="SQL"> LIKE</SQL>
+        </CLAUSE>
+    </TITLE>
+</INBOX>

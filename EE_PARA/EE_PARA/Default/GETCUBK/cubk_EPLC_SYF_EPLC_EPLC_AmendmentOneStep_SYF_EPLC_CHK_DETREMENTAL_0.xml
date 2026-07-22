@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">EPLC_EM_AMD</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>EPLC</module-name>
+        <cubk-mapping-name>SYF_EPLC_EPLC_AmendmentOneStep_SYF_EPLC_CHK_DETREMENTAL_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <BENE_CONS_FLG ALIAS="T0" DBFUNC="" DESC="Beneficiary Consent Flag" DT="1" HIDDEN="F" TYPE="F">TEMP_CHAR1</BENE_CONS_FLG>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">AMD_REF = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">-</SQL>
+            <SQL TYPE="FLD">TEMP_NO_OF_AMD</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

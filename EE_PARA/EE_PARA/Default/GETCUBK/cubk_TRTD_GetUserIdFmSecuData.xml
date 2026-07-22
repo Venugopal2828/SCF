@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>TRTD</module-name>
+        <cubk-mapping-name>GetUserIdFmSecuData</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="EXIMUSER" TYPE="U">SEC_USER_INFO</table-name>
+      	</tables>
+        <key-fields>
+            <C_USER_ID ALIAS="T0" DESC="C_USER_ID" DT="12" TYPE="F">TADR_ID</C_USER_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_USER_DESC ALIAS="T0" DBFUNC="" DESC="User Description" DT="12" HIDDEN="F" TYPE="F">TADR_EN_NM</C_USER_DESC>
+        <C_UNIT_CODE ALIAS="T0" DBFUNC="" DESC="Branch Code" DT="12" HIDDEN="F" TYPE="F">TADR_BR_CD</C_UNIT_CODE>
+        <C_DEPT_NAME ALIAS="T0" DBFUNC="" DESC="Department Name" DT="12" HIDDEN="F" TYPE="F">TADR_DEPTMT</C_DEPT_NAME>
+        <C_PHONE_NUMBER ALIAS="T0" DBFUNC="" DESC="Telephone No." DT="12" HIDDEN="F" TYPE="F">TADR_TEL_NO</C_PHONE_NUMBER>
+        <C_FAX_NUMBER ALIAS="T0" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="F" TYPE="F">TADR_FAX_NO</C_FAX_NUMBER>
+        <C_EMAIL_ADDR ALIAS="T0" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="F" TYPE="F">TADR_EMAIL_ADD</C_EMAIL_ADDR>
+        <C_CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country Code" DT="1" HIDDEN="F" TYPE="F">TADR_CNTY_CD</C_CNTY_CODE>
+        <I_USER_LEVEL ALIAS="T0" DBFUNC="" DESC="User Level" DT="4" HIDDEN="T" TYPE="F">TADR_MAX_LVL</I_USER_LEVEL>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

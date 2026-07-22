@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>CPYT_ASSGN_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POST_ADD_DO</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T2" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <ORDER_NO ALIAS="T2" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <ORDER_NO ALIAS="T0" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="F">CPYT_ASSGN_ID</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="J">T0.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="J">T2.C_MAIN_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <POSTAL_FMT_ADD ALIAS="T0" DBFUNC="" DESC="Bank Postal Format Address" DT="12" HIDDEN="T" TYPE="F">CPYT_ASSGN_MAIL_ADD</POSTAL_FMT_ADD>
+        <FAX_NO ALIAS="T1" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="T" TYPE="F">CPYT_ASSGN_FAX_NO</FAX_NO>
+        <EMAIL_ADD ALIAS="T1" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="T" TYPE="F">CPYT_ASSGN_EMAIL_ADD</EMAIL_ADD>
+        <NOTES ALIAS="T1" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="T" TYPE="F">CPYT_ASSGN_NOTES</NOTES>
+        <CUST_CORR_MED ALIAS="T1" DBFUNC="" DESC="Customer Correspondent Medium" DT="1" HIDDEN="T" TYPE="F">CPYT_ASSGN_COR_MED</CUST_CORR_MED>
+        <AC1_NO ALIAS="T1" DBFUNC="" DESC="Account No1" DT="1" HIDDEN="T" TYPE="F">CPYT_ASSGN_AC</AC1_NO>
+        <VAT_REG_NO ALIAS="T1" DBFUNC="" DESC="Vat registration number" DT="12" HIDDEN="T" TYPE="F">CPYT_ANNGN_VAT_NO</VAT_REG_NO>
+        <SWF_FMT_NM ALIAS="T2" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T2" DBFUNC="" DESC="Address Line1" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T2" DBFUNC="" DESC="Address Line2" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_ADD2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T2" DBFUNC="" DESC="Address Line3" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_ADD3</SWIFT_FMT_ADD3>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

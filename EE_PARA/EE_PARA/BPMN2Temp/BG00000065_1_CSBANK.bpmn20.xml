@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EE-7692 add bill huang 2014-11-12 -->
+<definitions expressionLanguage="http://www.w3.org/1999/XPath"
+    targetNamespace="http://localhost/flow"
+    typeLanguage="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:funcflow="http://localhost/bpmn"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <process id="BG00000065_1_CSBANK" isExecutable="true" name="SLABG1">
+        <sequenceFlow id="idbaf241f343eb43bfa9d42e985ae21dee"
+            sourceRef="idd5c6ff2dc53648759d8a341bfda732bc" targetRef="id1505134162f54ba9ad927293f3a4533c">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P' && APPL_NM == 'ASD'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="idf4218adbb6b34245855754676d28bab1"
+            sourceRef="id14de05e5c1fe4765947a9c6703bef977" targetRef="ide1b05e0ddc6443fdbb5872ef62f84beb"/>
+        <startEvent id="id14de05e5c1fe4765947a9c6703bef977" name="startEvent_SLABG1"/>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="idd5c6ff2dc53648759d8a341bfda732bc" name="Fix_Pending">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Fix Pending</C_FUNC_DESC>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000065</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702040</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="idcb4778c3a9e643ff9898de3efa4e8b3a"
+            sourceRef="id1505134162f54ba9ad927293f3a4533c" targetRef="id01a4ede3079a4738a35cac3d96aa38bb">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="ide1b05e0ddc6443fdbb5872ef62f84beb" name="Issue_Transfer_LC_One_Step">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Issue Transfer LC One Step</C_FUNC_DESC>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300272</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000065</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030703057</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="id1505134162f54ba9ad927293f3a4533c" name="Supervisor_Release">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                    <C_STEP_NAME>Release Trx</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000065</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702041</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <endEvent id="id01a4ede3079a4738a35cac3d96aa38bb" name="endEvent_SLABG1"/>
+        <sequenceFlow id="idc439b83b2f79459f9e0b2edd2509d74e"
+            sourceRef="ide1b05e0ddc6443fdbb5872ef62f84beb" targetRef="idd5c6ff2dc53648759d8a341bfda732bc">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+    </process>
+</definitions>

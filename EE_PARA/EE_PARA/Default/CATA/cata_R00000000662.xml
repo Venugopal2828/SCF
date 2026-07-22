@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_IS_USER_AUTH_LEVEL" VALUE="TRUE"/>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+        <FIELD NAME="_USER_AUTH_LEVEL_TYPE" VALUE="RELEASE"/>
+    </CATA_HIDDEN_FLD>
+    <ID>C49082300313</ID>
+    <MODULE>SECU</MODULE>
+    <JSPFILE>screen/CATA/SecuUserAuthRCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Release User Auth</DESC>
+    <TABLENAME SCHEMA="EXIMUSER">EXIMUSER.SEC_USER_INFO</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="User Id" EEType="" HIDDEN="">C_USER_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="User Description"
+            EEType="Varchar_60" HIDDEN="">C_USER_DESC</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Bank Group Id" EEType="" HIDDEN="">C_BK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Unit" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="Event State" EEType="INTEGER" HIDDEN="H">I_EVENT_STATE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="User Id" DT="12" EEType="" TYPE="FLD">C_USER_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Event State" DT="4" EEType="INTEGER" TYPE="FLD">I_EVENT_STATE</SQL>
+        <SQL TYPE="SQL"> = 16</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="User Id" EEType="">C_USER_ID</FIELD>
+        <FIELD DATATYPE="4" DESC="Event State" EEType="INTEGER">I_EVENT_STATE</FIELD>
+    </CLAUSEFIELD>
+</CATA>

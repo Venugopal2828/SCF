@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FADA</MODULE>
+        <MODULE_DESC>Finance Data</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701184</ID>
+        <NAME>UploadLedgerExcel</NAME>
+        <DESC>Upload Ledger Excel</DESC>
+        <FUNSHORTNAME>UpLedgerXls</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FADA_UploadLedgerExcel.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701188</ID>
+        <NAME>UploadLedgerExcel_FORM</NAME>
+    </FORM>
+    <FORM>
+        <ID>F05030701176</ID>
+        <NAME>EXCO Received Acceptance_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701188</ID>
+        <NAME>UploadLedgerExcel_ACCOUT</NAME>
+    </VOUCHER>
+    <VOUCHER>
+        <ID>A05030701176</ID>
+        <NAME>EXCO Received Acceptance_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000478</ID>
+        <NAME>EXCO Received Acceptance_NOTIFY</NAME>
+    </NOTIFY>
+    <NOTIFY>
+        <ID>N00000000482</ID>
+        <NAME>UploadLedgerExcel_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>FunctionSSJS</JS_CLASS>
+    </CAL>
+</FUNC>

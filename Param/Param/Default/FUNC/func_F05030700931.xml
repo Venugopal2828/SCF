@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">EXLC</MODULE>
+        <MODULE_DESC>Export Letters of Credit</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030700931</ID>
+        <NAME>Received Export LC Advise</NAME>
+        <DESC>Received Export LC Advise</DESC>
+        <FUNSHORTNAME>RecvdExptLcAdv</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">EXLC_RecvdExptLcAdv.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700930</ID>
+        <NAME>Received Export LC Advise_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700930</ID>
+        <NAME>Received Export LC Advise_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000142</ID>
+        <NAME>Received Export LC Advise_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

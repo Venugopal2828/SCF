@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="WelcomeBox"
+			allowInstanceContent="false"
+			supportedModes="view edit help config"
+			supportedWindowStates="maximize minimize"
+			iScope="com.cs.widgets.WelcomeBox" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.WelcomeJs" src="WelcomeBox/welcome.js"/>
+	<iw:resource globalid="com.cs.resources.WelcomeCss" src="WelcomeBox/welcome.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="format" alias="format" lang=""
+				 readOnly="true" value="${SYS_BU_DATE_FORMAT} hh:mm">
+		</iw:item>
+		<iw:item id="custmsg" alias="custmsg" lang=""
+				 readOnly="false" value="Logon date and time: ">
+		</iw:item>
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Welcome">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="labels">
+		<iw:item id="welcome" alias="" lang=""
+				 readOnly="true" value="Welcome">
+				 <iw:alt lang="CNS" value="欢迎"/>
+		</iw:item>
+		<iw:item id="timesucc" alias="" lang=""
+				 readOnly="true" value="Your last success logon time was: ">
+		</iw:item>
+		<iw:item id="timefail" alias="" lang=""
+				readOnly="true" value="Your last failure logon time was: ">
+		</iw:item>
+		<iw:item id="timecurr" alias="" lang=""
+				 readOnly="true" value="Your current logon time is: ">
+		</iw:item>
+		<iw:item id="cust.msg" alias="" lang=""
+				 readOnly="true" value="Customize your welcome message: ">
+		</iw:item>
+		<iw:item id="cust.tip" alias="" lang=""
+				 readOnly="true" value="You can customize your welcome message in edit-mode.">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-WelcomeBox">
+			<div class="username">
+				<div class="welc"></div>
+				<div class="user"></div>
+			</div>
+			<div class="custmsg"></div>
+			<div class="timelist"></div>
+			<div class="pwdexpire" style="display:none">
+				<div class="cs-icon cs-icon-warning"></div>
+				<div class="message"></div>
+			</div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="edit"><![CDATA[
+		<div class="com-cs-widget-WelcomeBox">
+			<div class="custwelc">
+				<div class="title"></div>
+				<div class="msg"><input name="custmsg"/></div>
+			</div>
+			<div class="timelist"></div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-WelcomeBox">
+			Welcome box.
+		</div>
+	]]></iw:content>
+</iw:iwidget>

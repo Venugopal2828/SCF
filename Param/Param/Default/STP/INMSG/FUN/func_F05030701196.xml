@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive Amend SBR for Buyer");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMainRef = stp.getMsgTagVal("FA_SBR_REF");
+stp.writeLog("sMainRef======================"+sMainRef);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+var sUnitCode = stp.getMsgTagVal("FA_BUYER_ID");
+stp.setCmpId(sUnitCode);
+stp.updateFieldValue("CURRNT_STATUS","Received Amended SBR");
+stp.writeLog("End: Receive Amend SBR for Buyer");]]></js-content>
+</root>

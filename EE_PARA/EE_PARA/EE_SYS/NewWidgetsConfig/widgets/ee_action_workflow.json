@@ -1,0 +1,16 @@
+{
+	"id": "ee_action_workflow",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "ee_action_workflow",
+			"display": "custom_sql_table",
+			"title": "EE Action / Workflow Widget",
+			"desc": "Simplify pending tasks filterable by module type (financing, doc review) with workflow action items."
+		},
+		"data": {
+			"sql": "SELECT C_MAIN_REF as \"Reference\", C_USER_ID as \"Assignee\", 'LC Document Review' as \"Task_Type\", TO_CHAR(D_CREA_DATE, 'YYYY-MM-DD') as \"Created\" FROM %EXIMTRX%.IPLC_MASTER WHERE C_TRX_STATUS = 'P' UNION ALL SELECT C_MAIN_REF, C_USER_ID, 'Financing Approval', TO_CHAR(D_CREA_DATE, 'YYYY-MM-DD') FROM %EXIMTRX%.FADA_MASTER WHERE C_TRX_STATUS = 'P' AND ROWNUM <= 5"
+		}
+	}
+}

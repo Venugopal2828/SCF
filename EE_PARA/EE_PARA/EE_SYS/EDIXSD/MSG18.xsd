@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- ____ XMLSpy v2006 U (http://www.altova.com) _ any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-edifactoring-com:MSG18" targetNamespace="urn:schemas-edifactoring-com:MSG18" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="MSG18" type="MSG18Type"/>
+	<xs:complexType name="MSG18Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="EF" type="FType"/>
+			<xs:element name="IF" type="FType"/>
+			<xs:element name="MsgDate" type="xs:date"/>
+			<xs:element name="RemitNr" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="RemitCurrency" type="A3Type"/>
+			<xs:element name="RemitDate" type="xs:date"/>
+			<xs:element name="ValueDate" type="xs:date" minOccurs="0"/>
+			<xs:element name="PmtMethod" type="NMax3Type" minOccurs="0"/>
+			<xs:element name="PmtChannel" type="NMax3Type" minOccurs="0"/>
+			<xs:element name="Seller" type="SellerType" minOccurs="0"/>
+			<xs:element name="Beneficiary" type="BeneficiaryType" minOccurs="0"/>
+			<xs:element name="RemitDetails" type="RemitDetailsType" maxOccurs="999"/>
+			<xs:element name="ControlTot" type="ControlTotType"/>
+			<xs:element name="MsgText" type="AMax3500Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7Type"/>
+			<xs:element name="ReceiverCode" type="A7Type"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10Type" minOccurs="0"/>
+			<xs:element name="DateTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Status" type="NMax2Type" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FType">
+		<xs:sequence>
+			<xs:element name="FactorCode" type="A7Type"/>
+			<xs:element name="FactorName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SellerType">
+		<xs:sequence>
+			<xs:element name="SellerNr" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="SellerName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BeneficiaryType">
+		<xs:sequence>
+			<xs:element name="BeneficiaryNr" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="BeneficiaryName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RemitDetailsType">
+		<xs:sequence>
+			<xs:element name="MsgNrRef" type="AMax35Type"/>
+			<xs:element name="MsgDateRef" type="xs:date"/>
+			<xs:element name="PmtAmt" type="NMax14.2Type"/>
+			<xs:element name="BankChargeAmt" type="NMax14.2Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControlTotType">
+		<xs:sequence>
+			<xs:element name="TotAmtRemitted" type="NMax14.2Type"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

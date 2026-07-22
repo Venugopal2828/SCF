@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Party Contact Person" Max="1" Min="0"
+    Name="PartyContactPerson" PendingStore="Y">
+    <Elements/>
+    <DO Desc="Buyer Contact Person" Max="n" Min="0" Name="BuyerContactPerson"
+        PendingStore="N" Screen="SCRN/DO/ContactIdentification1.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_CONT_ID</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS/>
+        <Elements>
+            <Element DATATYPE="12" Desc="Contactor Name" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+            <Element DATATYPE="12" Desc="Contactor Name Prefix" DispInGrid="Y"
+                EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+            <Element DATATYPE="12" Desc="Contactor Email Address" DispInGrid="N"
+                EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+            <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N" EDIT="N"
+                EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+            <Element DATATYPE="12" Desc="Contactor Given Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+            <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+            <Element DATATYPE="12" Desc="Contactor Role" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Seller Contact Person" Max="n" Min="0" Name="SellerContactPerson"
+        PendingStore="N" Screen="SCRN/DO/ContactIdentification1.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_CONT_ID</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS/>
+        <Elements>
+            <Element DATATYPE="12" Desc="Contactor Name" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+            <Element DATATYPE="12" Desc="Contactor Name Prefix" DispInGrid="Y"
+                EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+            <Element DATATYPE="12" Desc="Contactor Email Address" DispInGrid="N"
+                EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+            <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N" EDIT="N"
+                EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+            <Element DATATYPE="12" Desc="Contactor Given Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+            <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+            <Element DATATYPE="12" Desc="Contactor Role" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Buyer Bank" Max="n" Min="0" Name="BuyerBankContactPerson"
+        PendingStore="N" Screen="SCRN/DO/ContactIdentification1.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_CONT_ID</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS/>
+        <Elements>
+            <Element DATATYPE="12" Desc="Contactor Name" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+            <Element DATATYPE="12" Desc="Contactor Name Prefix" DispInGrid="Y"
+                EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+            <Element DATATYPE="12" Desc="Contactor Email Address" DispInGrid="N"
+                EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+            <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N" EDIT="N"
+                EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+            <Element DATATYPE="12" Desc="Contactor Given Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+            <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+            <Element DATATYPE="12" Desc="Contactor Role" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Seller Bank" Max="n" Min="0" Name="SellerBankContactPerson"
+        PendingStore="N" Screen="SCRN/DO/ContactIdentification1.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_CONT_ID</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS/>
+        <Elements>
+            <Element DATATYPE="12" Desc="Contactor Name" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+            <Element DATATYPE="12" Desc="Contactor Name Prefix" DispInGrid="Y"
+                EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+            <Element DATATYPE="12" Desc="Contactor Email Address" DispInGrid="N"
+                EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+            <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N" EDIT="N"
+                EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+            <Element DATATYPE="12" Desc="Contactor Given Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+            <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+            <Element DATATYPE="12" Desc="Contactor Role" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Bill To Contact Person" Max="n" Min="0" Name="BillToContactPerson"
+        PendingStore="N" Screen="SCRN/DO/ContactIdentification1.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_CONT_ID</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS/>
+        <Elements>
+            <Element DATATYPE="12" Desc="Contactor Name" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+            <Element DATATYPE="12" Desc="Contactor Name Prefix" DispInGrid="Y"
+                EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+            <Element DATATYPE="12" Desc="Contactor Email Address" DispInGrid="N"
+                EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+            <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N" EDIT="N"
+                EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+            <Element DATATYPE="12" Desc="Contactor Given Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+            <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+            <Element DATATYPE="12" Desc="Contactor Role" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Ship To Contact Person" Max="n" Min="0" Name="ShipToContactPerson"
+        PendingStore="N" Screen="SCRN/DO/ContactIdentification1.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_CONT_ID</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS/>
+        <Elements>
+            <Element DATATYPE="12" Desc="Contactor Name" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+            <Element DATATYPE="12" Desc="Contactor Name Prefix" DispInGrid="Y"
+                EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+            <Element DATATYPE="12" Desc="Contactor Email Address" DispInGrid="N"
+                EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+            <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N" EDIT="N"
+                EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+            <Element DATATYPE="12" Desc="Contactor Given Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+            <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+            <Element DATATYPE="12" Desc="Contactor Role" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Consignee Contact Person" Max="n" Min="0"
+        Name="ConsigneeContactPerson" PendingStore="N"
+        Screen="SCRN/DO/ContactIdentification1.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_CONT_ID</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS/>
+        <Elements>
+            <Element DATATYPE="12" Desc="Contactor Name" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+            <Element DATATYPE="12" Desc="Contactor Name Prefix" DispInGrid="Y"
+                EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+            <Element DATATYPE="12" Desc="Contactor Email Address" DispInGrid="N"
+                EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+            <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N" EDIT="N"
+                EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+            <Element DATATYPE="12" Desc="Contactor Given Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+            <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+            <Element DATATYPE="12" Desc="Contactor Role" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        </Elements>
+    </DO>
+</DO>

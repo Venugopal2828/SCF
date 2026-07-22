@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>System</EVENT>
+        <CATALOGID/>
+        <ID>F05030701130</ID>
+        <NAME>Enquire Limit</NAME>
+        <DESC>Enquire Limit</DESC>
+        <FUNSHORTNAME>EnqLimit</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_EnqLimit.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701123</ID>
+        <NAME>Enquire Limit_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701123</ID>
+        <NAME>Enquire Limit_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000408</ID>
+        <NAME>Enquire Limit_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>CalculatorIntfFuncJS</JS_CLASS>
+    </CAL>
+</FUNC>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>REIM</module>
+    <name>REIM_Amendment_event_register</name>
+    <desc>REIM_Amendment_event_register</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.REIM_EM_INST</table-name>
+        <table-desc>REIM_EM_INST</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>' AND </sql>
+            <sql>C_TRX_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <AVAL_BY fv_type="F" mf="F" oper="=">AVAL_BY</AVAL_BY>
+        <AVAL_WT_BK_ADD1 fv_type="F" mf="F" oper="=">AVAL_WT_BK_ADD1</AVAL_WT_BK_ADD1>
+        <AVAL_WT_BK_ADD2 fv_type="F" mf="F" oper="=">AVAL_WT_BK_ADD2</AVAL_WT_BK_ADD2>
+        <AVAL_WT_BK_ADD3 fv_type="F" mf="F" oper="=">AVAL_WT_BK_ADD3</AVAL_WT_BK_ADD3>
+        <AVAL_WT_BK_ID fv_type="F" mf="F" oper="=">AVAL_WT_BK_ID</AVAL_WT_BK_ID>
+        <AVAL_WT_BK_NM fv_type="F" mf="F" oper="=">AVAL_WT_BK_NM</AVAL_WT_BK_NM>
+        <AVAL_WT_BK_NOTES fv_type="F" mf="F" oper="=">AVAL_WT_BK_NOTES</AVAL_WT_BK_NOTES>
+        <AVAL_WT_BK_SW_ADD fv_type="F" mf="F" oper="=">AVAL_WT_BK_SW_ADD</AVAL_WT_BK_SW_ADD>
+        <AVAL_WT_BK_SW_TAG fv_type="F" mf="F" oper="=">AVAL_WT_BK_SW_TAG</AVAL_WT_BK_SW_TAG>
+        <BENE_ACNO fv_type="F" mf="F" oper="=">BENE_ACNO</BENE_ACNO>
+        <BENE_ADD1 fv_type="F" mf="F" oper="=">BENE_ADD1</BENE_ADD1>
+        <BENE_ADD2 fv_type="F" mf="F" oper="=">BENE_ADD2</BENE_ADD2>
+        <BENE_ADD3 fv_type="F" mf="F" oper="=">BENE_ADD3</BENE_ADD3>
+        <BENE_ID fv_type="F" mf="F" oper="=">BENE_ID</BENE_ID>
+        <BENE_NM fv_type="F" mf="F" oper="=">BENE_NM</BENE_NM>
+        <BENE_NOTES fv_type="F" mf="F" oper="=">BENE_NOTES</BENE_NOTES>
+        <CLOSE_DT fv_type="F" mf="F" oper="=">CLOSE_DT</CLOSE_DT>
+        <CONF_INSTR fv_type="F" mf="F" oper="=">CONF_INSTR</CONF_INSTR>
+        <DRWE_ADD1 fv_type="F" mf="F" oper="=">DRWE_ADD1</DRWE_ADD1>
+        <DRWE_ADD2 fv_type="F" mf="F" oper="=">DRWE_ADD2</DRWE_ADD2>
+        <DRWE_ADD3 fv_type="F" mf="F" oper="=">DRWE_ADD3</DRWE_ADD3>
+        <DRWE_ID fv_type="F" mf="F" oper="=">DRWE_ID</DRWE_ID>
+        <DRWE_NM fv_type="F" mf="F" oper="=">DRWE_NM</DRWE_NM>
+        <DRWE_NOTES fv_type="F" mf="F" oper="=">DRWE_NOTES</DRWE_NOTES>
+        <DRWE_SW_ADD fv_type="F" mf="F" oper="=">DRWE_SW_ADD</DRWE_SW_ADD>
+        <DRWE_SW_TAG fv_type="F" mf="F" oper="=">DRWE_SW_TAG</DRWE_SW_TAG>
+        <GRACE_DAYS fv_type="F" mf="F" oper="=">GRACE_DAYS</GRACE_DAYS>
+        <NEG_TOL fv_type="F" mf="F" oper="=">NEW_NEG_TOL</NEG_TOL>
+        <POS_TOL fv_type="F" mf="F" oper="=">NEW_POS_TOL</POS_TOL>
+        <PRES_BK_ADD1 fv_type="F" mf="F" oper="=">PRES_BK_ADD1</PRES_BK_ADD1>
+        <PRES_BK_ADD2 fv_type="F" mf="F" oper="=">PRES_BK_ADD2</PRES_BK_ADD2>
+        <PRES_BK_ADD3 fv_type="F" mf="F" oper="=">PRES_BK_ADD3</PRES_BK_ADD3>
+        <PRES_BK_ID fv_type="F" mf="F" oper="=">PRES_BK_ID</PRES_BK_ID>
+        <PRES_BK_NM fv_type="F" mf="F" oper="=">PRES_BK_NM</PRES_BK_NM>
+        <PRES_BK_NOTES fv_type="F" mf="F" oper="=">PRES_BK_NOTES</PRES_BK_NOTES>
+        <PRES_BK_SW_ADD fv_type="F" mf="F" oper="=">PRES_BK_SW_ADD</PRES_BK_SW_ADD>
+        <PRES_BK_SW_TAG fv_type="F" mf="F" oper="=">PRES_BK_SW_TAG</PRES_BK_SW_TAG>
+    </mapping>
+</root>

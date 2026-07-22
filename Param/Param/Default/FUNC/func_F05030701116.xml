@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C14070400000</CATALOGID>
+        <ID>F05030701116</ID>
+        <NAME>Invoice Acceptance By Buyer</NAME>
+        <DESC>Invoice Acceptance</DESC>
+        <FUNSHORTNAME>InvAccept</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>IQ</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Get Data">TrxManagerGetData</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_InvAccept.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701109</ID>
+        <NAME>Invoice Acceptance By Buyer_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701109</ID>
+        <NAME>Invoice Acceptance By Buyer_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000394</ID>
+        <NAME>Invoice Acceptance By Buyer_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

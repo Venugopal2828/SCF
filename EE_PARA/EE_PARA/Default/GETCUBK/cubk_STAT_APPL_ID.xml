@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>STAT</module-name>
+        <cubk-mapping-name>APPL_ID</cubk-mapping-name>
+        <select-type>U</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <RECORDER_TYPE ALIAS="T0" DESC="Record Type" DT="1" TYPE="V">Customer</RECORDER_TYPE>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">APPL_ID</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="J">T0.C_MAIN_REF</C_MAIN_REF>
+            <SWF_FMT_NM ALIAS="T1" DESC="SWIFT Format Name" DT="12" TYPE="F">APPL_NM</SWF_FMT_NM>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">APPL_ID</C_MAIN_REF>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

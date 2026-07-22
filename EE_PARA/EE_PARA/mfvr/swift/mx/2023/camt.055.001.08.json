@@ -1,0 +1,895 @@
+{
+  "code":"Document",
+  "key":"100",
+  "uri":"urn:iso:std:iso:20022:tech:xsd:camt.055.001.08",
+  "children":[{
+    "code":"CstmrPmtCxlReq",
+    "key":"101",
+    "children":[
+
+      {
+        "code":"Assgnmt",
+        "key":"102",
+        "children":[
+
+          {
+            "code":"Id",
+            "key":"103"
+          },
+          {
+            "code":"Assgnr",
+            "key":"104",
+            "choice":" Agt",
+            "children":[{
+              "code":"Agt",
+              "key":"105",
+              "children":[{
+                "code":"FinInstnId",
+                "key":"106",
+                "children":[
+
+                  {
+                    "code":"BICFI",
+                    "key":"107",
+                    "val":"BICFIDec2014Identifier"
+                  },
+                  {
+                    "code":"ClrSysMmbId",
+                    "key":"108",
+                    "min":0,
+                    "children":[
+
+                      {
+                        "code":"ClrSysId",
+                        "key":"109",
+                        "choice":" Cd",
+                        "children":[{
+                          "code":"Cd",
+                          "key":"110",
+                          "val":"ExternalClearingSystemIdentification1Code"
+                        }]
+                      },
+                      {
+                        "code":"MmbId",
+                        "key":"111"
+                      }
+                    ]
+                  },
+                  {
+                    "code":"LEI",
+                    "key":"112",
+                    "min":0
+                  }
+
+                ]
+              }]
+            }]
+          }
+,
+          {
+            "code":"Assgne",
+            "key":"113",
+            "choice":" Agt",
+            "children":[{
+              "code":"Agt",
+              "key":"114",
+              "children":[{
+                "code":"FinInstnId",
+                "key":"115",
+                "children":[
+
+                  {
+                    "code":"BICFI",
+                    "key":"116",
+                    "min":0,
+                    "val":"BICFIDec2014Identifier"
+                  },
+                  {
+                    "code":"ClrSysMmbId",
+                    "key":"117",
+                    "min":0,
+                    "children":[
+
+                      {
+                        "code":"ClrSysId",
+                        "key":"119",
+                        "choice":" Cd",
+                        "children":[{
+                          "code":"Cd",
+                          "key":"120",
+                          "val":"ExternalClearingSystemIdentification1Code"
+                        }]
+                      },
+                      {
+                        "code":"MmbId",
+                        "key":"121"
+                      }
+                    ]
+                  },
+                  {
+                    "code":"LEI",
+                    "key":"122",
+                    "min":0
+                  }
+
+                ]
+              }]
+            }]
+          }
+,
+          {
+            "code":"CreDtTm",
+            "key":"123",
+            "val":"ISODateTime"
+          }
+        ]
+      }
+,
+      {
+        "code":"Undrlyg",
+        "key":"124",
+        "children":[{
+          "code":"OrgnlPmtInfAndCxl",
+          "key":"125",
+          "children":[
+
+            {
+              "code":"OrgnlPmtInfId",
+              "key":"126"
+            },
+            {
+              "code":"OrgnlGrpInf",
+              "key":"127",
+              "children":[
+
+                {
+                  "code":"OrgnlMsgId",
+                  "key":"128"
+                },
+                {
+                  "code":"OrgnlMsgNmId",
+                  "key":"129"
+                },
+                {
+                  "code":"OrgnlCreDtTm",
+                  "key":"130",
+                  "min":0,
+                  "val":"ISODateTime"
+                }
+              ]
+            },
+            {
+              "code":"TxInf",
+              "key":"131",
+              "children":[
+
+                {
+                  "code":"CxlId",
+                  "key":"132",
+                  "min":0
+                },
+                {
+                  "code":"Case",
+                  "key":"133",
+                  "children":[
+
+                    {
+                      "code":"Id",
+                      "key":"134"
+                    },
+                    {
+                      "code":"Cretr",
+                      "key":"135",
+                      "choice":" Pty Agt",
+                      "children":[
+
+                        {
+                          "code":"Pty",
+                          "key":"136",
+                          "children":[
+
+                            {
+                              "code":"Nm",
+                              "key":"137",
+                              "min":0
+                            },
+                            {
+                              "code":"PstlAdr",
+                              "key":"138",
+                              "min":0,
+                              "children":[
+
+                                {
+                                  "code":"Dept",
+                                  "key":"139",
+                                  "min":0
+                                },
+                                {
+                                  "code":"SubDept",
+                                  "key":"140",
+                                  "min":0
+                                },
+                                {
+                                  "code":"StrtNm",
+                                  "key":"141",
+                                  "min":0
+                                },
+                                {
+                                  "code":"BldgNb",
+                                  "key":"142",
+                                  "min":0
+                                },
+                                {
+                                  "code":"BldgNm",
+                                  "key":"143",
+                                  "min":0
+                                }
+,
+                                {
+                                  "code":"Flr",
+                                  "key":"144",
+                                  "min":0
+                                },
+                                {
+                                  "code":"PstBx",
+                                  "key":"145",
+                                  "min":0
+                                },
+                                {
+                                  "code":"Room",
+                                  "key":"146",
+                                  "min":0
+                                },
+                                {
+                                  "code":"PstCd",
+                                  "key":"147",
+                                  "min":0
+                                },
+                                {
+                                  "code":"TwnNm",
+                                  "key":"148",
+                                  "min":0
+                                }
+,
+                                {
+                                  "code":"TwnLctnNm",
+                                  "key":"149",
+                                  "min":0
+                                },
+                                {
+                                  "code":"DstrctNm",
+                                  "key":"150",
+                                  "min":0
+                                },
+                                {
+                                  "code":"CtrySubDvsn",
+                                  "key":"151",
+                                  "min":0
+                                },
+                                {
+                                  "code":"Ctry",
+                                  "key":"152"
+                                },
+                                {
+                                  "code":"AdrLine",
+                                  "key":"153",
+                                  "min":0,
+                                  "max":3
+                                }
+
+                              ]
+                            }
+,
+                            {
+                              "code":"Id",
+                              "key":"154",
+                              "min":0,
+                              "choice":" OrgId PrvtId",
+                              "children":[
+
+                                {
+                                  "code":"OrgId",
+                                  "key":"155",
+                                  "children":[
+
+                                    {
+                                      "code":"AnyBIC",
+                                      "key":"156",
+                                      "min":0,
+                                      "val":"AnyBICDec2014Identifier"
+                                    },
+                                    {
+                                      "code":"LEI",
+                                      "key":"157",
+                                      "min":0
+                                    },
+                                    {
+                                      "code":"Othr",
+                                      "key":"158",
+                                      "min":0,
+                                      "max":2,
+                                      "children":[
+
+                                        {
+                                          "code":"Id",
+                                          "key":"159"
+                                        },
+                                        {
+                                          "code":"SchmeNm",
+                                          "key":"160",
+                                          "min":0,
+                                          "choice":" Cd Prtry",
+                                          "children":[
+
+                                            {
+                                              "code":"Cd",
+                                              "key":"161",
+                                              "val":"ExternalOrganisationIdentification1Code"
+                                            },
+                                            {
+                                              "code":"Prtry",
+                                              "key":"162"
+                                            }
+                                          ]
+                                        }
+,
+                                        {
+                                          "code":"Issr",
+                                          "key":"163",
+                                          "min":0
+                                        }
+                                      ]
+                                    }
+
+                                  ]
+                                }
+,
+                                {
+                                  "code":"PrvtId",
+                                  "key":"164",
+                                  "children":[
+
+                                    {
+                                      "code":"DtAndPlcOfBirth",
+                                      "key":"165",
+                                      "min":0,
+                                      "children":[
+
+                                        {
+                                          "code":"BirthDt",
+                                          "key":"166",
+                                          "val":"ISODate"
+                                        },
+                                        {
+                                          "code":"PrvcOfBirth",
+                                          "key":"167",
+                                          "min":0
+                                        },
+                                        {
+                                          "code":"CityOfBirth",
+                                          "key":"168"
+                                        },
+                                        {
+                                          "code":"CtryOfBirth",
+                                          "key":"169"
+                                        }
+                                      ]
+                                    }
+,
+                                    {
+                                      "code":"Othr",
+                                      "key":"170",
+                                      "min":0,
+                                      "max":2,
+                                      "children":[
+
+                                        {
+                                          "code":"Id",
+                                          "key":"171"
+                                        },
+                                        {
+                                          "code":"SchmeNm",
+                                          "key":"172",
+                                          "min":0,
+                                          "choice":" Cd Prtry",
+                                          "children":[
+
+                                            {
+                                              "code":"Cd",
+                                              "key":"173",
+                                              "val":"ExternalPersonIdentification1Code"
+                                            },
+                                            {
+                                              "code":"Prtry",
+                                              "key":"174"
+                                            }
+                                          ]
+                                        }
+,
+                                        {
+                                          "code":"Issr",
+                                          "key":"175",
+                                          "min":0
+                                        }
+                                      ]
+                                    }
+
+                                  ]
+                                }
+
+                              ]
+                            }
+,
+                            {
+                              "code":"CtryOfRes",
+                              "key":"176",
+                              "min":0
+                            }
+
+                          ]
+                        }
+,
+                        {
+                          "code":"Agt",
+                          "key":"177",
+                          "children":[{
+                            "code":"FinInstnId",
+                            "key":"178",
+                            "children":[
+
+                              {
+                                "code":"BICFI",
+                                "key":"179",
+                                "min":0,
+                                "val":"BICFIDec2014Identifier"
+                              },
+                              {
+                                "code":"ClrSysMmbId",
+                                "key":"180",
+                                "min":0,
+                                "children":[
+
+                                  {
+                                    "code":"ClrSysId",
+                                    "key":"182",
+                                    "choice":" Cd",
+                                    "children":[{
+                                      "code":"Cd",
+                                      "key":"183",
+                                      "val":"ExternalClearingSystemIdentification1Code"
+                                    }]
+                                  },
+                                  {
+                                    "code":"MmbId",
+                                    "key":"184"
+                                  }
+                                ]
+                              }
+,
+                              {
+                                "code":"LEI",
+                                "key":"185",
+                                "min":0
+                              },
+                              {
+                                "code":"Nm",
+                                "key":"186",
+                                "min":0
+                              },
+                              {
+                                "code":"PstlAdr",
+                                "key":"187",
+                                "min":0,
+                                "children":[
+
+                                  {
+                                    "code":"Dept",
+                                    "key":"188",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"SubDept",
+                                    "key":"189",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"StrtNm",
+                                    "key":"190",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"BldgNb",
+                                    "key":"191",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"BldgNm",
+                                    "key":"192",
+                                    "min":0
+                                  }
+,
+                                  {
+                                    "code":"Flr",
+                                    "key":"193",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"PstBx",
+                                    "key":"194",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"Room",
+                                    "key":"195",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"PstCd",
+                                    "key":"196",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"TwnNm",
+                                    "key":"197",
+                                    "min":0
+                                  }
+,
+                                  {
+                                    "code":"TwnLctnNm",
+                                    "key":"198",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"DstrctNm",
+                                    "key":"199",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"CtrySubDvsn",
+                                    "key":"200",
+                                    "min":0
+                                  },
+                                  {
+                                    "code":"Ctry",
+                                    "key":"201",
+                                    "min":0
+                                  }
+,
+                                  {
+                                    "code":"AdrLine",
+                                    "key":"202",
+                                    "min":0,
+                                    "max":3
+                                  }
+                                ]
+                              }
+
+                            ]
+                          }]
+                        }
+
+                      ]
+                    }
+
+                  ]
+                }
+,
+                {
+                  "code":"OrgnlInstrId",
+                  "key":"203",
+                  "min":0
+                }
+,
+                {
+                  "code":"OrgnlEndToEndId",
+                  "key":"204"
+                }
+,
+                {
+                  "code":"OrgnlUETR",
+                  "key":"205"
+                }
+,
+                {
+                  "code":"OrgnlInstdAmt",
+                  "key":"206",
+                  "children":[{
+                    "code":"Ccy",
+                    "key":"207",
+                    "type":"attr"
+                  }],
+                  "val":"ActiveOrHistoricCurrencyAndAmount_SimpleType"
+                }
+,
+                {
+                  "code":"OrgnlReqdExctnDt",
+                  "key":"208",
+                  "min":0,
+                  "choice":" Dt DtTm",
+                  "children":[
+
+                    {
+                      "code":"Dt",
+                      "key":"209",
+                      "val":"ISODate"
+                    },
+                    {
+                      "code":"DtTm",
+                      "key":"210",
+                      "val":"ISODateTime"
+                    }
+                  ]
+                }
+,
+                {
+                  "code":"OrgnlReqdColltnDt",
+                  "key":"211",
+                  "min":0,
+                  "val":"ISODate"
+                }
+,
+                {
+                  "code":"CxlRsnInf",
+                  "key":"212",
+                  "children":[
+
+                    {
+                      "code":"Orgtr",
+                      "key":"213",
+                      "min":0,
+                      "children":[
+
+                        {
+                          "code":"Nm",
+                          "key":"214",
+                          "min":0
+                        },
+                        {
+                          "code":"PstlAdr",
+                          "key":"215",
+                          "min":0,
+                          "children":[
+
+                            {
+                              "code":"Dept",
+                              "key":"217",
+                              "min":0
+                            },
+                            {
+                              "code":"SubDept",
+                              "key":"218",
+                              "min":0
+                            },
+                            {
+                              "code":"StrtNm",
+                              "key":"219",
+                              "min":0
+                            },
+                            {
+                              "code":"BldgNb",
+                              "key":"220",
+                              "min":0
+                            },
+                            {
+                              "code":"BldgNm",
+                              "key":"221",
+                              "min":0
+                            },
+                            {
+                              "code":"Flr",
+                              "key":"222",
+                              "min":0
+                            }
+,
+                            {
+                              "code":"PstBx",
+                              "key":"223",
+                              "min":0
+                            },
+                            {
+                              "code":"Room",
+                              "key":"224",
+                              "min":0
+                            },
+                            {
+                              "code":"PstCd",
+                              "key":"225",
+                              "min":0
+                            },
+                            {
+                              "code":"TwnNm",
+                              "key":"226",
+                              "min":0
+                            },
+                            {
+                              "code":"TwnLctnNm",
+                              "key":"227",
+                              "min":0
+                            }
+,
+                            {
+                              "code":"DstrctNm",
+                              "key":"228",
+                              "min":0
+                            },
+                            {
+                              "code":"CtrySubDvsn",
+                              "key":"229",
+                              "min":0
+                            },
+                            {
+                              "code":"Ctry",
+                              "key":"230"
+                            },
+                            {
+                              "code":"AdrLine",
+                              "key":"231",
+                              "min":0,
+                              "max":3
+                            }
+                          ]
+                        }
+,
+                        {
+                          "code":"Id",
+                          "key":"232",
+                          "min":0,
+                          "choice":" OrgId PrvtId",
+                          "children":[
+
+                            {
+                              "code":"OrgId",
+                              "key":"233",
+                              "children":[
+
+                                {
+                                  "code":"AnyBIC",
+                                  "key":"234",
+                                  "min":0,
+                                  "val":"AnyBICDec2014Identifier"
+                                },
+                                {
+                                  "code":"LEI",
+                                  "key":"235",
+                                  "min":0
+                                },
+                                {
+                                  "code":"Othr",
+                                  "key":"236",
+                                  "min":0,
+                                  "max":2,
+                                  "children":[
+
+                                    {
+                                      "code":"Id",
+                                      "key":"237"
+                                    },
+                                    {
+                                      "code":"SchmeNm",
+                                      "key":"238",
+                                      "min":0,
+                                      "choice":" Cd",
+                                      "children":[{
+                                        "code":"Cd",
+                                        "key":"239",
+                                        "val":"ExternalOrganisationIdentification1Code"
+                                      }]
+                                    },
+                                    {
+                                      "code":"Issr",
+                                      "key":"240",
+                                      "min":0
+                                    }
+                                  ]
+                                }
+
+                              ]
+                            }
+,
+                            {
+                              "code":"PrvtId",
+                              "key":"241",
+                              "children":[
+
+                                {
+                                  "code":"DtAndPlcOfBirth",
+                                  "key":"242",
+                                  "min":0,
+                                  "children":[
+
+                                    {
+                                      "code":"BirthDt",
+                                      "key":"244",
+                                      "val":"ISODate"
+                                    },
+                                    {
+                                      "code":"PrvcOfBirth",
+                                      "key":"245",
+                                      "min":0
+                                    },
+                                    {
+                                      "code":"CityOfBirth",
+                                      "key":"246"
+                                    },
+                                    {
+                                      "code":"CtryOfBirth",
+                                      "key":"247"
+                                    }
+                                  ]
+                                }
+,
+                                {
+                                  "code":"Othr",
+                                  "key":"248",
+                                  "min":0,
+                                  "max":2,
+                                  "children":[
+
+                                    {
+                                      "code":"Id",
+                                      "key":"249"
+                                    },
+                                    {
+                                      "code":"SchmeNm",
+                                      "key":"250",
+                                      "choice":" Cd",
+                                      "children":[{
+                                        "code":"Cd",
+                                        "key":"251",
+                                        "val":"ExternalPersonIdentification1Code"
+                                      }]
+                                    },
+                                    {
+                                      "code":"Issr",
+                                      "key":"252",
+                                      "min":0
+                                    }
+                                  ]
+                                }
+
+                              ]
+                            }
+
+                          ]
+                        }
+,
+                        {
+                          "code":"CtryOfRes",
+                          "key":"253",
+                          "min":0
+                        }
+
+                      ]
+                    }
+,
+                    {
+                      "code":"Rsn",
+                      "key":"254",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "key":"255",
+                        "val":"DUPL|CUTA|UPAY|CUST|CURR|AGNT|TECH|FRAD|AM09|NARR|"
+                      }]
+                    }
+,
+                    {
+                      "code":"AddtlInf",
+                      "key":"256",
+                      "min":0,
+                      "max":2
+                    }
+
+                  ]
+                }
+
+              ]
+            }
+
+          ]
+        }]
+      }
+
+    ]
+  }]
+}

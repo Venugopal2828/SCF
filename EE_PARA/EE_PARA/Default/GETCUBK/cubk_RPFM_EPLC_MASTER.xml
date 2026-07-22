@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EPLC_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>RPFM</module-name>
+        <cubk-mapping-name>EPLC_MASTER</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        <LC_CCY ALIAS="T0" DBFUNC="" DESC="LC Currency" DT="1" HIDDEN="F" TYPE="F">MAST_LC_CCY</LC_CCY>
+        <LC_AMT ALIAS="T0" DBFUNC="" DESC="LC Amount" DT="3" HIDDEN="F" TYPE="F">MAST_LC_AMT</LC_AMT>
+        <LC_BAL ALIAS="T0" DBFUNC="" DESC="LC Balance" DT="3" HIDDEN="F" TYPE="F">MAST_LC_BAL</LC_BAL>
+        <ISSUE_DT ALIAS="T0" DBFUNC="" DESC="Issuing Date" DT="91" HIDDEN="F" TYPE="F">MAST_START_DT</ISSUE_DT>
+        <EXPIRY_DT ALIAS="T0" DBFUNC="" DESC="Expiry Date" DT="91" HIDDEN="F" TYPE="F">MAST_END_DT</EXPIRY_DT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="3" EEType="AMT" TYPE="TBL_FLD">T0.LC_BAL</SQL>
+            <SQL TYPE="SQL">&gt;0 AND </SQL>
+            <SQL DT="1" EEType="SYS_CHAR_1" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL">= 'M' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.CONF_INSTR</SQL>
+            <SQL TYPE="SQL">='CONFIRM'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

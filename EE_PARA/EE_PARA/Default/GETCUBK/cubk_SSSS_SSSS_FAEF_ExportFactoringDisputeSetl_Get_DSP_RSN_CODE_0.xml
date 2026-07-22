@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">INVC_DSP</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_FAEF_ExportFactoringDisputeSetl_Get_DSP_RSN_CODE_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_DSP_RSN_CODE ALIAS="T0" DBFUNC="" DESC="Dispute Reason Code" DT="1" HIDDEN="F" TYPE="F">FA_DSP_RSN_CODE</FA_DSP_RSN_CODE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_DOC_NO='</SQL>
+            <SQL TYPE="FLD">FA_DOC_NO</SQL>
+            <SQL TYPE="SQL">' AND FA_DSP_REF='</SQL>
+            <SQL TYPE="FLD">FA_DSP_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

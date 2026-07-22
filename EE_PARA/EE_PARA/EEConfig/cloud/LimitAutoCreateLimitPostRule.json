@@ -1,0 +1,262 @@
+{
+    "req_data": {
+        "type": "array",
+        "source": {
+            "type": "xpath",
+            "value": "/message/out-msg-content"
+        },
+        "items": [
+            {
+                "type": "object",
+                "fields": {
+                    "organizationId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/bank-grp"
+                        }
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/country"
+                        }
+                    },
+                    "entityId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/unit-code"
+                        }
+                    },                   
+					"custId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_CUST_ID"
+                        }
+                    },
+					"custName": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_CUST_NAME"
+                        }
+                    },
+                    "rcustId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_RCUST_ID"
+                        }
+                    },
+					"rcustName": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_RCUST_ID"
+                        }
+                    },
+					"currName": {
+                        "type": "arrayString",
+						"arraySource":[
+							{
+								"xType":"G",
+								"source": {
+									"type": "xpath",
+									"value": "LM_GRUP_DES"
+								}
+							},
+							{
+								"xType":"S",
+								"source": {
+									"type": "xpath",
+									"value": "LM_CSL_DESC"
+								}
+							},
+							{
+								"xType":"M",
+								"source": {
+									"type": "xpath",
+									"value": "LM_FACI_TP"
+								}
+							},
+							{
+								"xType":"T",
+								"source": {
+									"type": "xpath",
+									"value": "LM_FACI_TP"
+								}
+							},
+							{
+								"xType":"B",
+								"source": {
+									"type": "xpath",
+									"value": "LM_FACI_TP"
+								}
+							}
+						]
+                    },
+					"grupName": {
+                        "type": "arrayString",
+						"arraySource":[
+							{
+								"xType":"G",
+								"source": {
+									"type": "xpath",
+									"value": "LM_PARENT_NAME"
+								}
+							},
+							{
+								"xType":"C",
+								"source": {
+									"type": "xpath",
+									"value": "LM_GRUP_DES"
+								}
+							},
+							{
+								"xType":"S",
+								"source": {
+									"type": "xpath",
+									"value": "LM_PARENT_NAME"
+								}
+							},
+							{
+								"xType":"M",
+								"source": {
+									"type": "xpath",
+									"value": "LM_CSL_DESC"
+								}
+							},
+							{
+								"xType":"T",
+								"source": {
+									"type": "xpath",
+									"value": "LM_CSL_DESC"
+								}
+							},
+							{
+								"xType":"B",
+								"source": {
+									"type": "xpath",
+									"value": "LM_CSL_DESC"
+								}
+							}
+						]
+                    },
+					"parentName": {
+                        "type": "arrayString",
+						"arraySource":[
+							{
+								"xType":"T",
+								"source": {
+									"type": "xpath",
+									"value": "LM_PARENT_NAME"
+								}
+							},
+							{
+								"xType":"B",
+								"source": {
+									"type": "xpath",
+									"value": "LM_GRUP_DES"
+								}
+							}
+						]
+                    },
+					"startDay": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_STR_DAY"
+                        }
+                    },
+                    "dueDay": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_DUE_DAY"
+                        }
+                    },
+					"createAmt": {
+                        "type": "number",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_CRED_LMT"
+                        }
+                    },
+					"createAmt_s": {
+                        "type": "number",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_CRED_LMT_S"
+                        }
+                    },
+					"createAmt_m": {
+                        "type": "number",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_CRED_LMT_M"
+                        }
+                    },
+					"baseCcy": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_BASE_CCY"
+                        }
+                    },
+					"subCcy": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_SUB_CCY"
+                        }
+                    },
+					"status": {
+                        "type": "string",
+                        "source": {
+                            "type": "defaultValue",
+                            "value": "A"
+                        }
+                    },
+					"revvFlag": {
+                        "type": "string",
+                        "source": {
+                            "type": "defaultValue",
+                            "value": "Y"
+                        }
+                    },
+					"allwAmt": {
+                        "type": "number",
+                        "source": {
+                            "type": "defaultValue",
+                            "value": "0"
+                        }
+                    },
+					"hasSub": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_SUBLIMIT"
+                        }
+                    },
+					"hasFaci": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_HAS_FACI"
+                        }
+                    },
+					"opType": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_OP_TYPE"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

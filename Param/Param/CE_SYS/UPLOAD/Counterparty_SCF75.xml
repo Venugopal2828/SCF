@@ -1,0 +1,36 @@
+<root>
+	<main Name="Agreement" splitType="byRow" sheetName="Counterparty" row="3">
+		<cell col="A" EEType="VARCHAR" allowEmpty="T" desc="Reference">REF</cell>
+		<cell col="B" EEType="VARCHAR" allowEmpty="F" desc="Unit Code">C_UNIT_CODE</cell>
+		<cell col="C" EEType="VARCHAR" allowEmpty="F" desc="Register ID">FA_ANCHOR_REG_NO</cell>
+		<cell col="D" EEType="VARCHAR" allowEmpty="F" desc="Main Customer Id">FA_ANCHOR_ID</cell>
+		<cell col="E" EEType="VARCHAR" allowEmpty="F" desc="Main Customer Name">FA_ANCHOR_NM</cell>
+		<cell col="F" EEType="VARCHAR" allowEmpty="F" desc="Contract No.">FA_CNTR_DOC_NO</cell>
+		<cell col="G" EEType="VARCHAR" allowEmpty="F" desc="Agreement Currency">FA_AGM_CCY</cell>
+		<cell col="H" EEType="VARCHAR" allowEmpty="F" desc="Business Type">FA_BUSI_TYPE</cell>
+		<cell col="I" EEType="Date" allowEmpty="F" desc="Valid Date">FA_AGM_VAL_DT</cell>
+		<cell col="J" EEType="Date" allowEmpty="F" desc="Expiry Date">FA_AGM_DUE_DT</cell>
+	</main>
+	<child Name="Counterparty" splitType="byRow" sheetName="Counterparty" row="7">
+		<cell col="A" EEType="VARCHAR" allowEmpty="F" desc="Register ID">FA_COUNTER_REG_NO</cell>
+		<cell col="B" EEType="VARCHAR" allowEmpty="F" desc="Counterparty Name">FA_COUNTER_NM</cell>
+		<cell col="C" EEType="VARCHAR" allowEmpty="F" desc="Bank Customer?">FA_CUST_FLAG</cell>
+		<cell col="D" EEType="VARCHAR" allowEmpty="F" desc="Front End Customer?">CE_CUSTOMER</cell>
+		<cell col="E" EEType="VARCHAR" allowEmpty="F" desc="Street Name">FA_COUNTER_STR</cell>
+		<cell col="F" EEType="VARCHAR" allowEmpty="F" desc="City">FA_COUNTER_CT</cell>
+		<cell col="G" EEType="VARCHAR" allowEmpty="F" desc="Province">FA_COUNTER_PROV</cell>
+		<cell col="H" EEType="VARCHAR" allowEmpty="F" desc="Country Code">FA_COUNTER_CNTY</cell>
+		<cell col="I" EEType="VARCHAR" allowEmpty="F" desc="Mail address">FA_COUNTER_ADD_ML</cell>
+		<cell col="J" EEType="VARCHAR" allowEmpty="F" desc="Contact Name">FA_COUNTER_CONT_NM</cell>
+		<cell col="K" EEType="VARCHAR" allowEmpty="F" desc="Contact Email address">FA_COUNTER_CONT_EM</cell>
+		<cell col="L" EEType="VARCHAR" allowEmpty="F" desc="Contact Telephone">FA_COUNTER_CONT_TEL</cell>
+		<cell col="M" EEType="VARCHAR" allowEmpty="F" desc="Applied Limit CCY">FA_APPL_LMT_CCY</cell>
+		<cell col="N" EEType="AMT" allowEmpty="T" desc="Applied Limit Amount">FA_APPL_LMT_AMT</cell>
+		<cell col="O" EEType="Date" allowEmpty="F" desc="Due Date">FA_LMT_DUE_DT</cell>
+		<cell col="P" EEType="VARCHAR" allowEmpty="F" desc="Account No.">FA_COUNTER_ACC</cell>
+	</child>
+	<keys>
+		<field>REF</field>
+	</keys>
+	<unit>FA_ANCHOR_ID</unit>
+</root>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Credit Note Applied Details" Max="n"
+    Min="0" Name="CNAppliedDetails" PendingStore="N"
+    Screen="SCRN/o2m/CRED_CNAppliedDetails.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="CN_APPLIED_DETAIL"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>APLD_ID</PKNAME>
+        <PKNAME>CN_DTL_ID</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="System generated sequence no. Details Id"
+            DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">CN_DTL_ID</Element>
+        <Element DATATYPE="12" Desc="Approved invoice ID" DispInGrid="Y"
+            EDIT="N" EEType="Varchar_18" FldType="" Value="">AI_ID</Element>
+        <Element DATATYPE="91"
+            Desc="Credit Note Applied Invoice Approved  Date Time"
+            DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">APPL_DATE</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="3" Desc="Deduct amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">CN_DEDUC_AMT</Element>
+        <Element DATATYPE="12" Desc="Buyer Identification Number" DispInGrid="N"
+            EDIT="N" EEType="Varchar_40" FldType="" Value="">BUYR_ID</Element>
+        <Element DATATYPE="12" Desc="System generated unique key" DispInGrid="N"
+            EDIT="N" EEType="Varchar_35" FldType="" Value="">APLD_ID</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType=""
+            FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12"
+            Desc="Credit notes reference number - mentioned by Buyer in cn upload file"
+            DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">REF_NUMBER</Element>
+        <Element DATATYPE="2" Desc="Reference Purchase Order Number"
+            DispInGrid="N" EDIT="N" EEType="Numeric_18" FldType="" Value="">REF_PO</Element>
+        <Element DATATYPE="12"
+            Desc="Record the status of the TCN-INVOICE relation" DispInGrid="N"
+            EDIT="N" EEType="FLAG_1" FldType="" Value="">RELA_STATE</Element>
+        <Element DATATYPE="12"
+            Desc="Early Payment Program Supplier Relationship Identification Number"
+            DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">SUPLR_ID</Element>
+        <Element DATATYPE="3"
+            Desc="Total of the 'Amount to apply' for all invoice line items specified"
+            DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TCN_AMT</Element>
+        <Element DATATYPE="12" Desc="Related EPP ID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_40" FldType="" Value="">EPP_ID</Element>
+        <Element DATATYPE="3"
+            Desc="Credit Note Applied Invoice Approved Remaining Amount"
+            DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">CN_APV_RMN_AMT</Element>
+    </Elements>
+</DO>

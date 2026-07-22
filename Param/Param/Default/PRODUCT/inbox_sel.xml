@@ -1,0 +1,1462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INBOX>
+    <TABL>TRX_INBOX</TABL>
+    <TITLE DESC="Import Letters of Credit" NAME="Import Letters of Credit">
+        <ITEM DESC="Saved" NAME="Saved Records">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Status" EEType="" HIDDEN="" SELECTED="N" TYPE="12">C_STATUS_NAME</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+            </FLDS>
+            <CRTJSP>IMLC_GeneralCriteria.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos;) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IMLC&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;Z&apos;)  ORDER BY </SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Rejected by Supervisor" NAME="Rejected">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Status" EEType="" HIDDEN="" SELECTED="N" TYPE="12">C_STATUS_NAME</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+            </FLDS>
+            <CRTJSP>IMLC_GeneralCriteria.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos;) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IMLC&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;R&apos;) ORDER BY </SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Awaiting Corporate Approval" NAME="Awaiting Authorisation">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_STATUS_NAME</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>IMLC_Release.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Current Status" DT="12" TYPE="FLD" WTYPE="CASE">CURRNT_STATUS</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos;) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IMLC&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> IN (&apos;P&apos;,&apos;T&apos;)) ORDER BY </SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Bank Message" NAME="Bank Message">
+            <FLDS>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="C_TRX_REF" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="LC Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">LC_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+                <FLD DESC="C_MODULE" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="C_NOW_EVENT" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_NOW_EVENT</FLD>
+                <FLD DESC="Parent Main Reference" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">PARENT_MAIN_REF</FLD>
+            </FLDS>
+            <CRTJSP>IMLC_GeneralCriteria.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos;) AND </SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL"> = &apos;IMLC&apos; AND </SQL>
+                <SQL DESC="C_NOW_EVENT" DT="12" TYPE="FLD" WTYPE="CASE">C_NOW_EVENT</SQL>
+                <SQL TYPE="SQL"> = &apos;STP&apos; ORDER BY </SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+            </CLAUSE>
+        </ITEM>
+    </TITLE>
+    <TITLE DESC="Export Letters of Credit" NAME="Export Letters of Credit">
+        <ITEM DESC="Saved" NAME="Saved Records">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">ADV_NO</FLD>
+                <FLD DESC="LC Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">LC_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+            </FLDS>
+            <CRTJSP>EXLC_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="LC Number" DT="12" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos;) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;EXLC&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;Z&apos;) ORDER BY </SQL>
+                <SQL DESC="LC Number" DT="12" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Rejected by Supervisor" NAME="Rejected">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">ADV_NO</FLD>
+                <FLD DESC="LC Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">LC_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+            </FLDS>
+            <CRTJSP>EXLC_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="LC Number" DT="12" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos;) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;EXLC&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;R&apos;) ORDER BY </SQL>
+                <SQL DESC="LC Number" DT="12" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Awaiting Corporate Approval" NAME="Awaiting Authorisation">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">ADV_NO</FLD>
+                <FLD DESC="LC Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">LC_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+            </FLDS>
+            <CRTJSP>EXLC_AuthTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="LC Number" DT="12" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos;) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;EXLC&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> IN (&apos;P&apos;,&apos;T&apos;)) ORDER BY </SQL>
+                <SQL DESC="LC Number" DT="12" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Bank Message" NAME="Bank Message">
+            <FLDS>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="C_MODULE" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="C_NOW_EVENT" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_NOW_EVENT</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="C_TRX_REF" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_REF</FLD>
+                <FLD DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">ADV_NO</FLD>
+                <FLD DESC="LC Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">LC_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Parent Main Reference" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">PARENT_MAIN_REF</FLD>
+            </FLDS>
+            <CRTJSP>EXLC_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="LC Number" DT="12" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos;) AND </SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL"> = &apos;EXLC&apos; AND </SQL>
+                <SQL DESC="C_NOW_EVENT" DT="12" TYPE="FLD" WTYPE="CASE">C_NOW_EVENT</SQL>
+                <SQL TYPE="SQL"> = &apos;STP&apos; ORDER BY </SQL>
+                <SQL DESC="LC Number" DT="12" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+    </TITLE>
+    <TITLE DESC="Import Collections" NAME="Import Collections">
+        <ITEM DESC="Saved" NAME="Saved Records">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Collection Ref Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">COLL_NO</FLD>
+                <FLD DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWE_NM</FLD>
+                <FLD DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWR_NM</FLD>
+                <FLD DESC="Collection Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">COLL_CCY</FLD>
+                <FLD DESC="Due Date" EEType="DATE" HIDDEN="" SELECTED="N" TYPE="93">DUE_DT</FLD>
+            </FLDS>
+            <CRTJSP>IMCO_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Collection Ref Number" DT="12" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawee Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawer Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Currency" DT="12" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Due Date" DT="93" TYPE="FLD" WTYPE="CASE">DUE_DT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IMCO&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;Z&apos;) ORDER BY </SQL>
+                <SQL DESC="Collection Ref Number" DT="12" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Rejected by Supervisor" NAME="Rejected">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Collection Ref Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">COLL_NO</FLD>
+                <FLD DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWE_NM</FLD>
+                <FLD DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWR_NM</FLD>
+                <FLD DESC="Collection Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">COLL_CCY</FLD>
+                <FLD DESC="Due Date" EEType="DATE" HIDDEN="" SELECTED="N" TYPE="93">DUE_DT</FLD>
+            </FLDS>
+            <CRTJSP>IMCO_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Collection Ref Number" DT="12" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawee Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawer Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Currency" DT="12" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Due Date" DT="93" TYPE="FLD" WTYPE="CASE">DUE_DT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IMCO&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;R&apos;) ORDER BY </SQL>
+                <SQL DESC="Collection Ref Number" DT="12" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Awaiting Corporate Approval" NAME="Awaiting Authorisation">
+            <FLDS>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="C_MODULE" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Trx Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Collection Ref Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">COLL_NO</FLD>
+                <FLD DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWE_NM</FLD>
+                <FLD DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWR_NM</FLD>
+                <FLD DESC="Collection Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">COLL_CCY</FLD>
+                <FLD DESC="Due Date" EEType="DATE" HIDDEN="" SELECTED="N" TYPE="93">DUE_DT</FLD>
+            </FLDS>
+            <CRTJSP>IMCO_AuthTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Collection Ref Number" DT="12" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawee Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawer Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Currency" DT="12" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Due Date" DT="93" TYPE="FLD" WTYPE="CASE">DUE_DT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IMCO&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> IN (&apos;P&apos;,&apos;T&apos;)) ORDER BY </SQL>
+                <SQL DESC="Collection Ref Number" DT="12" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Bank Message" NAME="Bank Message">
+            <FLDS>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Trx Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Collection Ref Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">COLL_NO</FLD>
+                <FLD DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWE_NM</FLD>
+                <FLD DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWR_NM</FLD>
+                <FLD DESC="Collection Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">COLL_CCY</FLD>
+                <FLD DESC="Due Date" EEType="DATE" HIDDEN="" SELECTED="N" TYPE="93">DUE_DT</FLD>
+                <FLD DESC="C_MODULE" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="C_NOW_EVENT" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_NOW_EVENT</FLD>
+                <FLD DESC="Parent Main Reference" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">PARENT_MAIN_REF</FLD>
+            </FLDS>
+            <CRTJSP>IMCO_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Collection Ref Number" DT="12" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawee Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawer Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Currency" DT="12" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Due Date" DT="93" TYPE="FLD" WTYPE="CASE">DUE_DT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND </SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL"> = &apos;IMCO&apos; AND </SQL>
+                <SQL DESC="C_NOW_EVENT" DT="12" TYPE="FLD" WTYPE="CASE">C_NOW_EVENT</SQL>
+                <SQL TYPE="SQL">= &apos;STP&apos; ORDER BY </SQL>
+                <SQL DESC="Collection Ref Number" DT="12" TYPE="FLD" WTYPE="CASE">COLL_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+    </TITLE>
+    <TITLE DESC="Export Collections" NAME="Export Collections">
+        <ITEM DESC="Saved" NAME="Saved Records">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Collection Ref Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">COLL_NO</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWR_NM</FLD>
+                <FLD DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWE_NM</FLD>
+                <FLD DESC="Collection Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">COLL_CCY</FLD>
+                <FLD DESC="Collection Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">COLL_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>EXCO_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawer Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawee Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Currency" DT="12" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Amount" DT="3" TYPE="FLD" WTYPE="CASE">COLL_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;EXCO&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;Z&apos;)  ORDER BY </SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Rejected by Supervisor" NAME="Rejected">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Collection Ref Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">COLL_NO</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWR_NM</FLD>
+                <FLD DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWE_NM</FLD>
+                <FLD DESC="Collection Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">COLL_CCY</FLD>
+                <FLD DESC="Collection Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">COLL_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>EXCO_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawer Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawee Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Currency" DT="12" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Amount" DT="3" TYPE="FLD" WTYPE="CASE">COLL_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;EXCO&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;R&apos;) ORDER BY </SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Awaiting Corporate Approval" NAME="Awaiting Authorisation">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWR_NM</FLD>
+                <FLD DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWE_NM</FLD>
+                <FLD DESC="Collection Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">COLL_CCY</FLD>
+                <FLD DESC="Collection Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">COLL_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="H" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>EXCO_AuthTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawer Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawee Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Currency" DT="12" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Amount" DT="3" TYPE="FLD" WTYPE="CASE">COLL_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;EXCO&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> IN (&apos;P&apos;,&apos;T&apos;)) ORDER BY </SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Bank Message" NAME="Bank Message">
+            <FLDS>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Trx Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="C_MODULE" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="C_NOW_EVENT" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_NOW_EVENT</FLD>
+                <FLD DESC="Collection Ref Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">COLL_NO</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Drawer Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWR_NM</FLD>
+                <FLD DESC="Drawee Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">DRWE_NM</FLD>
+                <FLD DESC="Collection Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">COLL_CCY</FLD>
+                <FLD DESC="Collection Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">COLL_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+                <FLD DESC="Parent Main Reference" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">PARENT_MAIN_REF</FLD>
+            </FLDS>
+            <CRTJSP>EXCO_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawer Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWR_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Drawee Name" DT="12" TYPE="FLD" WTYPE="CASE">DRWE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Currency" DT="12" TYPE="FLD" WTYPE="CASE">COLL_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Collection Amount" DT="3" TYPE="FLD" WTYPE="CASE">COLL_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL"> ) AND </SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL"> = &apos;EXCO&apos; AND </SQL>
+                <SQL DESC="C_NOW_EVENT" DT="12" TYPE="FLD" WTYPE="CASE">C_NOW_EVENT</SQL>
+                <SQL TYPE="SQL"> = &apos;STP&apos; ORDER BY </SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+    </TITLE>
+    <TITLE DESC="Outward Guarantees" NAME="Outward Guarantees">
+        <ITEM DESC="Saved" NAME="Saved Records">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>OWGT_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Currency" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="CASE">GTEE_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;OWGT&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;Z&apos;) ORDER BY </SQL>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Rejected by Supervisor" NAME="Rejected">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>OWGT_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Currency" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="CASE">GTEE_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;OWGT&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;R&apos;) ORDER BY </SQL>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Awaiting Corporate Approval" NAME="Awaiting Authorisation">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>OWGT_AuthTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Currency" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="CASE">GTEE_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;OWGT&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> IN (&apos;P&apos;,&apos;T&apos;))  ORDER BY </SQL>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Bank Message" NAME="Bank Message">
+            <FLDS>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Trx Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+                <FLD DESC="C_MODULE" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="C_NOW_EVENT" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_NOW_EVENT</FLD>
+                <FLD DESC="Parent Main Reference" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">PARENT_MAIN_REF</FLD>
+            </FLDS>
+            <CRTJSP>OWGT_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Currency" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="CASE">GTEE_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND </SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL"> = &apos;OWGT&apos; AND </SQL>
+                <SQL DESC="C_NOW_EVENT" DT="12" TYPE="FLD" WTYPE="CASE">C_NOW_EVENT</SQL>
+                <SQL TYPE="SQL"> = &apos;STP&apos; ORDER BY </SQL>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+    </TITLE>
+    <TITLE DESC="Inward Guarantees" NAME="Inward Guarantees">
+        <ITEM DESC="Saved" NAME="Saved Records">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">ADV_NO</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>IWGT_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Currency" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="CASE">GTEE_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IWGT&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;Z&apos;) ORDER BY </SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Rejected by Supervisor" NAME="Rejected">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">ADV_NO</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>IWGT_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Currency" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="CASE">GTEE_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IWGT&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> = &apos;R&apos;) ORDER BY </SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Awaiting Corporate Approval" NAME="Awaiting Authorisation">
+            <FLDS>
+                <FLD DESC="Module" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">ADV_NO</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+            </FLDS>
+            <CRTJSP>IWGT_AuthTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Currency" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="CASE">GTEE_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL">) AND  (</SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">=&apos;IWGT&apos; AND </SQL>
+                <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+                <SQL TYPE="SQL"> IN (&apos;P&apos;,&apos;T&apos;)) ORDER BY </SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+        <ITEM DESC="Bank Message" NAME="Bank Message">
+            <FLDS>
+                <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Trx Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="C_MODULE" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="C_NOW_EVENT" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_NOW_EVENT</FLD>
+                <FLD DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">ADV_NO</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="12">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" ISAMT="Y" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+                <FLD DESC="Current Status" EEType="NARR(1*35)" HIDDEN="" SELECTED="N" TYPE="12">CURRNT_STATUS</FLD>
+                <FLD DESC="Parent Main Reference" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">PARENT_MAIN_REF</FLD>
+            </FLDS>
+            <CRTJSP>IWGT_ModifyTrx.jsp</CRTJSP>
+            <SHOWFLDS/>
+            <CLAUSE>
+                <SQL TYPE="SQL">(</SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG2</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Number" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_NO</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP3</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG5</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP6</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG8</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Currency" DT="12" TYPE="FLD" WTYPE="CASE">GTEE_CCY</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP9</SQL>
+                <SQL TYPE="SQL"> &apos;</SQL>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE10</SQL>
+                <SQL TYPE="SQL">&apos; </SQL>
+                <SQL DT="val" TYPE="OP">LOG11</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DESC="Guarantee Amount" DT="3" TYPE="FLD" WTYPE="CASE">GTEE_AMT</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" TYPE="OP">OP12</SQL>
+                <SQL TYPE="SQL"/>
+                <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE13</SQL>
+                <SQL TYPE="SQL"> ) AND </SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL"> = &apos;IWGT&apos; AND </SQL>
+                <SQL DESC="C_NOW_EVENT" DT="12" TYPE="FLD" WTYPE="CASE">C_NOW_EVENT</SQL>
+                <SQL TYPE="SQL"> = &apos;STP&apos; ORDER BY </SQL>
+                <SQL DESC="Advise Number" DT="12" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+            </CLAUSE>
+        </ITEM>
+    </TITLE>
+	<TITLE DESC="Param for Global Search Widget" NAME="GlobalSearch" NOCOUNT="T">
+        <ITEM DESC="Param for Global Search Widget" NAME="ByMainRef">
+            <FLDS>
+                <FLD DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+                <FLD DESC="Main Ref." EEType="SYS_VARCHAR_20" HIDDEN="" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+                <FLD DESC="Company Code" EEType="SYS_VARCHAR_12" HIDDEN="" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+                <FLD DESC="Current Status" EEType="INTERPRETER" HIDDEN="" SELECTED="N" TYPE="1">CURRNT_STATUS</FLD>
+                <FLD DESC="C_TRX_REF" EEType="SYS_VARCHAR_24" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_REF</FLD>
+                <FLD DESC="Transaction Date" EEType="DATE" HIDDEN="" SELECTED="N" TYPE="91">TRX_DT</FLD>
+                <FLD DESC="Status" EEType="SYS_VARCHAR_4" HIDDEN="" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+                <FLD DESC="Parent Main Reference" EEType="AutoGen_Trx_VARCHAR_20" HIDDEN="H" SELECTED="N" TYPE="12">PARENT_MAIN_REF</FLD>
+                <FLD DESC="Product ID" EEType="SYS_VARCHAR_16" HIDDEN="H" SELECTED="N" TYPE="12">C_PRODUCT_ID</FLD>
+                <FLD DESC="C_MODULE" EEType="AutoGen_Trx_VARCHAR_4" HIDDEN="H" SELECTED="N" TYPE="12">C_MODULE</FLD>
+                <FLD DESC="LC Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">LC_NO</FLD>
+                <FLD DESC="LC Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="1">LC_CCY</FLD>
+                <FLD DESC="LC Amount" EEType="AMT" HIDDEN="" SELECTED="N" TYPE="3">LC_AMT</FLD>
+                <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="1">APPL_NM</FLD>
+                <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="1">BENE_NM</FLD>
+                <FLD DESC="Expiry Date" EEType="DATE" HIDDEN="" SELECTED="N" TYPE="91">EXPIRY_DT</FLD>
+                <FLD DESC="Guarantee Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">GTEE_NO</FLD>
+                <FLD DESC="Guarantee Currency" EEType="CCY" HIDDEN="" SELECTED="N" TYPE="1">GTEE_CCY</FLD>
+                <FLD DESC="Guarantee Amount" EEType="AMT" HIDDEN="" SELECTED="N" TYPE="3">GTEE_AMT</FLD>
+            </FLDS>
+            <CRTJSP>Criteria_GlobalSearch.jsp</CRTJSP>
+            <SHOWFLDS></SHOWFLDS>
+            <CLAUSE>
+                <SQL DESC="Main Ref." DT="12" TYPE="FLD" WTYPE="NOCASE">C_MAIN_REF</SQL>
+                <SQL TYPE="SQL"> </SQL>
+                <SQL DT="val" ISEnable="T" TYPE="OP">OP0</SQL>
+                <SQL TYPE="SQL"> '</SQL>
+                <SQL DT="val" ISEnable="T" TYPE="OP">VALUE1</SQL>
+                <SQL TYPE="SQL">' AND </SQL>
+                <SQL DESC="Product ID" DT="12" TYPE="FLD" WTYPE="CASE">C_PRODUCT_ID</SQL>
+                <SQL TYPE="SQL"> </SQL>
+                <SQL DT="val" ISEnable="T" TYPE="OP">OP2</SQL>
+                <SQL TYPE="SQL"> '</SQL>
+                <SQL DT="val" ISEnable="T" TYPE="OP">VALUE3</SQL>
+                <SQL TYPE="SQL">' AND </SQL>
+                <SQL DESC="Main Ref." DT="12" TYPE="FLD" WTYPE="CASE">C_MAIN_REF</SQL>
+                <SQL TYPE="SQL">=</SQL>
+                <SQL DESC="Parent Main Reference" DT="12" TYPE="FLD" WTYPE="CASE">PARENT_MAIN_REF</SQL>
+                <SQL TYPE="SQL"> ORDER BY </SQL>
+                <SQL DESC="C_MODULE" DT="12" TYPE="FLD" WTYPE="CASE">C_MODULE</SQL>
+                <SQL TYPE="SQL">,</SQL>
+                <SQL DESC="Main Ref." DT="12" TYPE="FLD" WTYPE="CASE">C_MAIN_REF</SQL>
+            </CLAUSE>
+        </ITEM>
+    </TITLE>
+</INBOX>

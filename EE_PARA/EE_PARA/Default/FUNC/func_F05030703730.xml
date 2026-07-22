@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/FAEF_IFPayment.jsp</JSPFILE>
+    </SCREEN>
+    <EDI>
+        <ID>F05030703730</ID>
+        <NAME/>
+    </EDI>
+    <DOSCREEN ISDEF="F">
+    	<SCREEN DO="PaymentReg">SCRN/o2m/FAEF_IFSUBPayment.jsp</SCREEN>
+    </DOSCREEN>
+    <VOUCHER>
+        <ID>F05030703730</ID>
+        <NAME/>
+    </VOUCHER>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>SCF Transaction</MODULE_DESC>
+        <EVENT>EFTransaction</EVENT>
+        <ID>F05030703730</ID>
+        <NAME>IFPayment</NAME>
+        <DESC>IF Payment</DESC>
+        <FUNSHORTNAME>IFPayment</FUNSHORTNAME>
+        <FUNCPROCEVENT></FUNCPROCEVENT>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP>TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>Y</ADDMASTER>
+        <ATTR_ID name="IFPayment">R00000010166</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000010167</CATALOGID>
+        <InSWIFT></InSWIFT>
+        <GAPI>F05030703730</GAPI>
+        <TransferTo>F05030703730</TransferTo>
+        <OutSWIFT>F05030703730</OutSWIFT>
+        <InXML></InXML>
+        <AUTO_RE_ID></AUTO_RE_ID>
+    </FUNCTION>
+</FUNC>

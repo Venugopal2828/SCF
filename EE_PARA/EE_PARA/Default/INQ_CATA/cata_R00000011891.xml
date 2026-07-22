@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" MULTI="YES" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R00000011891</ID>
+    <MODULE>SSSS</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC></DESC>
+    <TABLELIST>
+        <TABLENAME ALIAS="t1" MASTER="YES">%EXIMTRX%.INVC_MASTER</TABLENAME>
+        <TABLENAME ALIAS="t2">%EXIMTRX%.FADA_MASTER</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="FSBC_REF" DATATYPE="12" DESC="FSBC Referrence" EEType="CHAR_40" HIDDEN="">t1.FSBC_REF</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_NO" DATATYPE="12" DESC="Doc No." EEType="Varchar_35" HIDDEN="">t1.FA_DOC_NO</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_CCY" DATATYPE="1" DESC="Doc CCY" EEType="CCY" HIDDEN="">t1.FA_DOC_CCY</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_AMT" DATATYPE="3" DESC="Doc Amt" EEType="AMT" HIDDEN="">t1.FA_DOC_AMT</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_DUE_DT" DATATYPE="91" DESC="Doc Due Date" EEType="DATE" HIDDEN="">t1.FA_DOC_DUE_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_STATUS" DATATYPE="12" DESC="Document Status" EEType="Varchar_35" HIDDEN="">t1.FA_DOC_STATUS</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_VAL_DT" DATATYPE="91" DESC="Doc Value Date" EEType="DATE" HIDDEN="">t1.FA_DOC_VAL_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_BUYER_ID" DATATYPE="12" DESC="Buyer ID" EEType="Varchar_35" HIDDEN="">t1.FA_BUYER_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_SEL_ID" DATATYPE="12" DESC="Seller ID" EEType="Varchar_35" HIDDEN="">t1.FA_SEL_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_SEL_NM" DATATYPE="12" DESC="Seller Name" EEType="Varchar_35" HIDDEN="">t1.FA_SEL_NM</FIELD>
+        <FIELD ALIAS="" COL="FA_BUYER_NM" DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35" HIDDEN="">t1.FA_BUYER_NM</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_DT" DATATYPE="91" DESC="Doc Date" EEType="DATE" HIDDEN="">t1.FA_DOC_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_REF" DATATYPE="12" DESC="Doc Ref" EEType="Varchar_35" HIDDEN="">t1.FA_DOC_REF</FIELD>
+        <FIELD ALIAS="" COL="C_MAIN_REF" DATATYPE="12" DESC="MAIN REF. NO." EEType="SYS_VARCHAR_40" HIDDEN="">t2.C_MAIN_REF</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="FSBC Referrence" DT="12" EEType="CHAR_40" POS="SELFLD" TYPE="FLD">t1.FSBC_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc No." DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_DOC_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc CCY" DT="1" EEType="CCY" POS="SELFLD" TYPE="FLD">t1.FA_DOC_CCY</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Amt" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">t1.FA_DOC_AMT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Due Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t1.FA_DOC_DUE_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Document Status" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_DOC_STATUS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Value Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t1.FA_DOC_VAL_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Buyer ID" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_BUYER_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Seller ID" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_SEL_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Seller Name" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_SEL_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t1.FA_DOC_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc Ref" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t1.FA_DOC_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">t2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.INVC_MASTER t1</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.FADA_MASTER t2</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="Doc No." DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">t1.FA_DOC_NO</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Doc CCY" DT="1" EEType="CCY" POS="WHEFLD" TYPE="FLD">t1.FA_DOC_CCY</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP2</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE3</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">t1.FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP4</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE5</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="FSBC Referrence" DT="12" EEType="CHAR_40" POS="WHEFLD" TYPE="FLD">t1.FSBC_REF</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">') AND </SQL>
+        <SQL DESC="Doc Due Date" DT="91" EEType="DATE" POS="WHEFLD" TYPE="FLD">t1.FA_DOC_DUE_DT</SQL>
+        <SQL TYPE="SQL"> &gt; </SQL>
+        <SQL DT="var" DV="SYS_DATE" OPTYPE="OPERATE" TYPE="OP">OP8</SQL>
+        <SQL TYPE="SQL"> AND (</SQL>
+        <SQL DESC="C_LOCKED_FLAG" DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">t1.C_LOCKED_FLAG</SQL>
+        <SQL TYPE="SQL"> &lt;&gt; 'T' OR </SQL>
+        <SQL DESC="C_LOCKED_FLAG" DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">t1.C_LOCKED_FLAG</SQL>
+        <SQL TYPE="SQL"> IS NULL) AND (((</SQL>
+        <SQL DESC="Doc Balance" DT="3" EEType="AMT" POS="WHEFLD" TYPE="FLD">t1.FA_DOC_BAL</SQL>
+        <SQL TYPE="SQL">*</SQL>
+        <SQL DESC="Maximal Loan Percentage" DT="4" EEType="INTEGER" POS="WHEFLD" TYPE="FLD">t2.FA_MAX_LOAN_PERC</SQL>
+        <SQL TYPE="SQL">)/100-</SQL>
+        <SQL DESC="Invoice Loan Amount" DT="3" EEType="AMT" POS="WHEFLD" TYPE="FLD">t1.FA_INV_LOAN_AMT</SQL>
+        <SQL TYPE="SQL">)&gt;0.01) AND (</SQL>
+        <SQL DESC="Document Status" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">t1.FA_DOC_STATUS</SQL>
+        <SQL TYPE="SQL"> NOT IN ('CANCEL','CLOSE','DSP','STL','UPLOADED','Wait for buyer approval') OR </SQL>
+        <SQL DESC="Document Status" DT="12" EEType="Varchar_35" POS="WHEFLD" TYPE="FLD">t1.FA_DOC_STATUS</SQL>
+        <SQL TYPE="SQL"> IS NULL)  AND (</SQL>
+        <SQL DESC="FSBC Referrence" DT="12" EEType="CHAR_40" POS="WHEFLD" TYPE="FLD">t1.FSBC_REF</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">t2.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">) AND </SQL>
+        <SQL DESC="Document Type" DT="1" EEType="INTERPRETER" POS="WHEFLD" TYPE="FLD">t1.FA_DOC_TYPE</SQL>
+        <SQL TYPE="SQL"> = '1' AND  (</SQL>
+        <SQL DESC="CE Request Finance Flag" DT="12" EEType="FLG" POS="WHEFLD" TYPE="FLD">t1.FA_CE_FR_PENDING</SQL>
+        <SQL TYPE="SQL"> &lt;&gt; 'Y' OR </SQL>
+        <SQL DESC="CE Request Finance Flag" DT="12" EEType="FLG" POS="WHEFLD" TYPE="FLD">t1.FA_CE_FR_PENDING</SQL>
+        <SQL TYPE="SQL"> IS NULL)</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Doc No." EETYPE="Varchar_35">t1.FA_DOC_NO</FIELD>
+        <FIELD DATATYPE="1" DESC="Doc CCY" EETYPE="CCY">t1.FA_DOC_CCY</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Name" EETYPE="Varchar_35">t1.FA_BUYER_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="FSBC Referrence" EETYPE="CHAR_40">t1.FSBC_REF</FIELD>
+        <FIELD DATATYPE="91" DESC="Doc Due Date" EETYPE="DATE">t1.FA_DOC_DUE_DT</FIELD>
+        <FIELD DATATYPE="1" DESC="C_LOCKED_FLAG" EETYPE="SYS_CHAR_1">t1.C_LOCKED_FLAG</FIELD>
+        <FIELD DATATYPE="1" DESC="C_LOCKED_FLAG" EETYPE="SYS_CHAR_1">t1.C_LOCKED_FLAG</FIELD>
+        <FIELD DATATYPE="3" DESC="Doc Balance" EETYPE="AMT">t1.FA_DOC_BAL</FIELD>
+        <FIELD DATATYPE="4" DESC="Maximal Loan Percentage" EETYPE="INTEGER">t2.FA_MAX_LOAN_PERC</FIELD>
+        <FIELD DATATYPE="3" DESC="Invoice Loan Amount" EETYPE="AMT">t1.FA_INV_LOAN_AMT</FIELD>
+        <FIELD DATATYPE="12" DESC="Document Status" EETYPE="Varchar_35">t1.FA_DOC_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Document Status" EETYPE="Varchar_35">t1.FA_DOC_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="FSBC Referrence" EETYPE="CHAR_40">t1.FSBC_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">t2.C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="Document Type" EETYPE="INTERPRETER">t1.FA_DOC_TYPE</FIELD>
+        <FIELD DATATYPE="12" DESC="CE Request Finance Flag" EETYPE="FLG">t1.FA_CE_FR_PENDING</FIELD>
+        <FIELD DATATYPE="12" DESC="CE Request Finance Flag" EETYPE="FLG">t1.FA_CE_FR_PENDING</FIELD>
+    </CLAUSEFIELD>
+</CATA>

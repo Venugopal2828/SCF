@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POST_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>EPLC</module-name>
+        <cubk-mapping-name>AVAL_WT_BK_POST_ADD</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">AVAL_WT_BK_ID</C_MAIN_REF>
+            <ORDER_NO ALIAS="T0" DESC="Order Number" DT="4" TYPE="F">AVAL_WT_BK_ORDER_POST</ORDER_NO>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <POSTAL_FMT_ADD ALIAS="T0" DBFUNC="" DESC="Bank Postal Format Address" DT="12" HIDDEN="F" TYPE="F">AVAL_WT_BK_MAIL_ADD</POSTAL_FMT_ADD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">AVAL_WT_BK_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

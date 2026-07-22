@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082300908</ID>
+    <MODULE>IPLC</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Register Discrepancies</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.IPLC_EM_NEGO</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Drawing Reference"
+            EEType="RELATED_REF" HIDDEN="">DRAWING_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="MAIN REF. NO." EEType="" HIDDEN="H">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="">APPL_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Beneficiary Name"
+            EEType="NM_CHAR35" HIDDEN="">BENE_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="LC Currency" EEType="CCY" HIDDEN="H">LC_CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="LC Amount" EEType="AMT" HIDDEN="H">LC_AMT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Expiry Date (Tag31D P1)"
+            EEType="DATE" HIDDEN="H">EXPIRY_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Individual Drawing"
+            EEType="INTERPRETER" HIDDEN="H">INDIVID_DRAW_FLG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Advising Bank Name"
+            EEType="NM_CHAR35" HIDDEN="H">ADV_BK_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Documents Status"
+            EEType="INTERPRETER" HIDDEN="H">DOC_STAT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Current Status"
+            EEType="Varchar_35" HIDDEN="">CURRNT_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Function" EEType="" HIDDEN="">C_FUNC_SHORT_NAME</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Drawing Reference" DT="12" EEType="RELATED_REF" TYPE="FLD">DRAWING_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> ='M'  AND((</SQL>
+        <SQL DESC="Current Status" DT="12" EEType="Varchar_35" TYPE="FLD">CURRNT_STATUS</SQL>
+        <SQL TYPE="SQL">='IPLC_DocumentCheck' and </SQL>
+        <SQL DESC="Documents Status" DT="1" EEType="INTERPRETER" TYPE="FLD">DOC_STAT</SQL>
+        <SQL TYPE="SQL">= 'Discrepancy Found')or(</SQL>
+        <SQL DESC="Current Status" DT="12" EEType="Varchar_35" TYPE="FLD">CURRNT_STATUS</SQL>
+        <SQL TYPE="SQL">='IPLC_RegisterWaiverRequest' or </SQL>
+        <SQL DESC="Current Status" DT="12" EEType="Varchar_35" TYPE="FLD">CURRNT_STATUS</SQL>
+        <SQL TYPE="SQL">='IPLC_ProcessMT750')) ORDER BY </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Drawing Reference" EEType="RELATED_REF">DRAWING_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Current Status" EEType="Varchar_35">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="1" DESC="Documents Status" EEType="INTERPRETER">DOC_STAT</FIELD>
+        <FIELD DATATYPE="12" DESC="Current Status" EEType="Varchar_35">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Current Status" EEType="Varchar_35">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EEType="">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

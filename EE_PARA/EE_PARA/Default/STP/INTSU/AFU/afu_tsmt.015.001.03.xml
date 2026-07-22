@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("Begin: Assign function DeltaReport");
+var GetTxId = stp.getValue("/Document/DltaRpt/TxId","Id");
+stp.setAutoProcess(true);  
+var bu=stp.getTSUUnitCode();
+var fld_list = stp.addFieldList(null,"C_MAIN_REF");    
+var sql_condition = stp.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+sql_condition     = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu); 
+sql_condition     = stp.addSQLCondition(sql_condition,"C_TRX_STATUS","M");
+var result        = stp.executeQuery("TSUM_EM_BASELINE",fld_list,sql_condition);
+var mainRef       = stp.getDBFieldValue(result,"C_MAIN_REF");
+stp.writeLog("mainRef"+mainRef);
+stp.updateFieldValue("","C_MAIN_REF",mainRef);
+stp.updateFieldValue("","C_TRX_REF",mainRef);
+
+var fld_list1  = stp.addFieldList(null,"TSU_INSTR_TP");
+var sql_condition1 = stp.addSQLCondition(null,"TSU_TID",GetTxId[0]);
+sql_condition1 = stp.addSQLCondition(sql_condition1,"C_UNIT_CODE",bu);
+var result1 = stp.executeQuery("TSUM_EM_BASELINE",fld_list1,sql_condition1);
+var TSU_INSTR_TYPE = stp.getDBFieldValue(result1,"TSU_INSTR_TP");
+stp.writeLog("TSU_INSTR_TP="+TSU_INSTR_TYPE);
+
+var OurBIC=stp.getTSUBIC();
+var FirstREF1= stp.getValue("/Document/DltaRpt/UsrTxRef","Id");
+var FirstREF = FirstREF1[0];
+var FirstBIC1 = stp.getValue("/Document/DltaRpt/UsrTxRef/IdIssr","BIC");
+var FirstBIC = FirstBIC1[0];
+var SecondREF1 =stp.getValue("/Document/DltaRpt/UsrTxRef","Id");
+var SecondREF = SecondREF1[1];
+var SecondBIC1 =stp.getValue("/Document/DltaRpt/UsrTxRef/IdIssr","BIC");
+var SecondBIC = SecondBIC1[1];
+stp.writeLog("SecondBIC"+SecondBIC);
+
+if (FirstBIC == "undefined" || FirstBIC == "null" || FirstBIC==null)
+{
+    FirstBIC = '';
+    FirstREF = '';
+}
+
+if (SecondBIC == "undefined" || SecondBIC == "null" || SecondBIC==null)
+{   
+    SecondBIC = '';
+    SecondREF = '';
+}
+
+var BIC1 = stp.compareString(FirstBIC,OurBIC);
+var BIC2= stp.compareString(SecondBIC,OurBIC);
+stp.writeLog("BIC1=" +BIC1);
+stp.writeLog("BIC2=" +BIC2);
+
+if(BIC1 == "true")
+{  
+	stp.updateFieldValue("/root/domData","TSU_OUR_BIC",FirstBIC);
+	stp.updateFieldValue("/root/domData","TSU_OUR_REF",FirstREF);
+	stp.updateFieldValue("/root/domData","TSU_THEIR_REF",SecondREF);
+	stp.updateFieldValue("/root/domData","TSU_THEIR_BIC",SecondBIC);	
+}
+if(BIC2 == "true")
+{ 
+	stp.updateFieldValue("/root/domData","TSU_OUR_BIC",SecondBIC);
+	stp.updateFieldValue("/root/domData","TSU_OUR_REF",SecondREF);
+	stp.updateFieldValue("/root/domData","TSU_THEIR_REF",FirstREF);
+	stp.updateFieldValue("/root/domData","TSU_THEIR_BIC",FirstBIC);	
+}
+
+stp.updateFieldValue("/root/domData/R2PartyInfo/BuyerBank","TSU_IDX",0);
+stp.updateFieldValue("/root/domData/R2PartyInfo/SellerBank","TSU_IDX",0);
+stp.updateFieldValue("/root/domData/R2PartyInfo/Buyer","TSU_IDX",0);
+stp.updateFieldValue("/root/domData/R2PartyInfo/Seller","TSU_IDX",0);
+stp.deleNode("/root/domData/R2PartyInfo","BillTo");
+stp.deleNode("/root/domData/R2PartyInfo","ShipTo");
+stp.deleNode("/root/domData/R2PartyInfo","Consignee");
+stp.deleNode("/root/domData/R2PartyInfo","Consignor");
+
+stp.updateFieldValue("/root/domData","DELETE_ALL_DATA","Y");
+
+var TSU_REQ_ACT_TP = stp.getValue("/Document/DltaRpt/ReqForActn","Tp");
+stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+if ( TSU_REQ_ACT_TP[0]== undefined)
+{
+	stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");	
+	stp.updateFieldValue("/root/domData","TSU_REQ_ACT_DESC","");
+	stp.setNodeAttribute("/root/domData/TSU_REQ_ACT_DESC");
+}
+
+stp.setFunc("R2ReceiveDeltaReport");
+
+//control the status of the amendment flow -S
+if(TSU_INSTR_TYPE!='LODG')
+{
+	var TxSts = stp.getValue("/Document/DltaRpt/TxSts","Sts");
+	stp.writeLog("TxSts"+TxSts[0]);
+	stp.updateFieldValue("/root/domData","TSU_TRX_STATUS",TxSts[0]);
+}
+//control the status of the amendment flow -E
+stp.writeLog("End: Assign function DeltaReport");]]></js-content>
+</root>

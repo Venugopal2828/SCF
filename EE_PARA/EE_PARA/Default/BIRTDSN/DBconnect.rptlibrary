@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.2.v20070205-1728 Build &lt;20070205-1728></property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <property name="theme">defaultTheme</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.39.106.244:1521:EXIMBL</property>
+            <property name="odaUser">eximuser</property>
+            <encrypted-property name="odaPassword">ZXhpbXVzZXI=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <themes>
+        <theme name="defaultTheme" id="2">
+            <styles>
+                <style name="title" id="6">
+                    <property name="fontFamily">"Verdana"</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="fontStyle">italic</property>
+                    <property name="color">#0000FF</property>
+                </style>
+                <style name="detail" id="7">
+                    <property name="fontFamily">"Verdana"</property>
+                    <property name="fontSize">small</property>
+                    <property name="fontStyle">normal</property>
+                </style>
+            </styles>
+        </theme>
+    </themes>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="3">
+            <page-header>
+                <image name="NewImage" id="5">
+                    <property name="source">file</property>
+                    <expression name="uri">"chinasystem.png"</expression>
+                </image>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+</library>

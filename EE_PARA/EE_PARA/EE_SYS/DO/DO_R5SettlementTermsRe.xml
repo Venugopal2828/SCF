@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Settlement Terms" Name="R5SettlementTermsRe" PendingStore="Y" Screen="SCRN/DO/R5TSU_Settlement_DO.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="TSUM_SETTLEMENT_R2"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_TRX_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>TSU_IDX</PKNAME>
+        <PKNAME>TSU_SEQ_NUM</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TSUM_EM_BASELINE">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="1" Desc="Financial Institution BIC" DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_FININST_BIC</Element>
+        <Element DATATYPE="12" Desc="Financial Institution Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_FININST_NM</Element>
+        <Element DATATYPE="12" Desc="Financial Institution Country" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_FININST_CNTY</Element>
+        <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+        <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+        <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+        <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+        <Element DATATYPE="12" Desc="Beneficiary Account BBAN" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_BBAN</Element>
+        <Element DATATYPE="12" Desc="Beneficiary Account IBAN" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_IBAN</Element>
+        <Element DATATYPE="12" Desc="Beneficiary Account UPIC" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_UPIC</Element>
+        <Element DATATYPE="12" Desc="Beneficiary Account" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_ACC</Element>
+        <Element DATATYPE="1" Desc="Creditor Account Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CDTRAC_CCY</Element>
+        <Element DATATYPE="12" Desc="Creditor Account Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_CDTRAC_NM</Element>
+        <Element DATATYPE="12" Desc="Cash Account Nature" DispInGrid="N" EDIT="N" EEType="CashAccountTpCode" FldType="" Value="">TSU_CDTRAC_TPCD</Element>
+        <Element DATATYPE="12" Desc="Creditor Account Proprietary" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_CDTRAC_TPID</Element>
+        <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+        <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+        <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        <Element DATATYPE="12" Desc="Identification ID" DispInGrid="Y" EDIT="N" EEType="Varchar_34" FldType="" Value="">TSU_IDNT_ID</Element>
+        <Element DATATYPE="12" Desc="scheme Code" DispInGrid="Y" EDIT="N" EEType="Varchar_4" FldType="" Value="">TSU_SCHM_CD</Element>
+        <Element DATATYPE="12" Desc="Proprietary name" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_PRTRY_NM</Element>
+        <Element DATATYPE="12" Desc="Issuer Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_NM</Element>
+    </Elements>
+</DO>

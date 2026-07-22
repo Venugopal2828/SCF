@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-edifactoring-com:MSG20" targetNamespace="urn:schemas-edifactoring-com:MSG20" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="MSG20" type="MSG20Type"/>
+	<xs:complexType name="MSG20Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="EF" type="FType"/>
+			<xs:element name="IF" type="FType"/>
+			<xs:element name="ChangeDate" type="xs:date"/>
+			<xs:element name="MsgFunction" type="NMax3Type"/>
+			<xs:element name="Currency" type="A3Type" minOccurs="0"/>
+			<xs:element name="Seller" type="SellerType" minOccurs="0"/>
+			<xs:element name="Buyer" type="BuyerType" minOccurs="0"/>
+			<xs:element name="MsgText" type="AMax350Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7Type"/>
+			<xs:element name="ReceiverCode" type="A7Type"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10Type" minOccurs="0"/>
+			<xs:element name="DateTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Status" type="NMax2Type" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FType">
+		<xs:sequence>
+			<xs:element name="FactorCode" type="A7Type"/>
+			<xs:element name="FactorName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SellerType">
+		<xs:sequence>
+			<xs:element name="CurrentSellerNr" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="SellerName" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="NewSellerNr" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="NewSellerName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BuyerType">
+		<xs:sequence>
+			<xs:element name="CurrentBuyerNr" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="BuyerName" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="NewBuyerNr" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POMM_PMT</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>POMM</module-name>
+        <cubk-mapping-name>Get_PO_Payment</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_PAID_INT_AMT ALIAS="T0" DBFUNC="" DESC="Paid Interest Amount" DT="3" HIDDEN="F" TYPE="F">FA_PAID_INT_AMT</FA_PAID_INT_AMT>
+        <FA_PAID_PRIN_AMT ALIAS="T0" DBFUNC="" DESC="Paid Principal Amount" DT="3" HIDDEN="F" TYPE="F">FA_PAID_PRIN_AMT</FA_PAID_PRIN_AMT>
+        <FA_PMT_TYPE ALIAS="T0" DBFUNC="" DESC="Payment Type" DT="1" HIDDEN="F" TYPE="F">FA_PMT_TYPE</FA_PMT_TYPE>
+        <FA_PMT_DT ALIAS="T0" DBFUNC="" DESC="Payment Date" DT="91" HIDDEN="F" TYPE="F">FA_PMT_DT</FA_PMT_DT>
+        <FA_PMT_AMT ALIAS="T0" DBFUNC="" DESC="Payment Amount" DT="3" HIDDEN="F" TYPE="F">FA_PMT_AMT</FA_PMT_AMT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.PO_REF</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">PO_REF</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.PO_NO</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">PO_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

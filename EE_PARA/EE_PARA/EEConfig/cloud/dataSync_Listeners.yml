@@ -1,0 +1,11 @@
+listeners:
+  - id: default-eloan-limit-sync
+    topics: ["cloud-ee-sync"]
+    receive.timeout: 2000
+    kafka.properties:
+      bootstrap.servers: kafka.kafka:9092
+      key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      enable.auto.commit: false
+      group.id: default-eloan-limit-sync
+      max.poll.records: 20

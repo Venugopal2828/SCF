@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/EPLC_ProcessBoleroEBL.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FORM>
+        <ID>F00000008764</ID>
+        <NAME/>
+    </FORM>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">EPLC</MODULE>
+        <MODULE_DESC>Export Letter of Credit</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <ID>F05030704025</ID>
+        <NAME>EPLC_ProcessBoleroEBLIn</NAME>
+        <DESC>Process Bolero EBL Incoming</DESC>
+        <FUNSHORTNAME>BlrProcessEBLIn</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="BoleroProcessEBL">R00000012686</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID/>
+        <OutSWIFT>F00000008765</OutSWIFT>
+        <InXML>F00000008763</InXML>
+    </FUNCTION>
+</FUNC>

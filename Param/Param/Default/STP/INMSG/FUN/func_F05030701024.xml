@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Purchase Order Ack");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sAckdMsgRef = stp.getXslMsgTagVal("message/Document/Ack/AckdMsgRef","Id");
+stp.writeLog("sAckdMsgRef==============="+sAckdMsgRef);
+var arrKeys = [["TSU_MESSAGE_ID",sAckdMsgRef]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetModuleNmByMsgId",arrKeys);
+var sModuleNm = arrGetDataResult[0];
+stp.writeLog("sModuleNm==============="+sModuleNm);
+if(sModuleNm == "INVC"){
+stp.reAssignFunc("Invoice Acknowledgement","Invoice");
+stp.setCustomXSLName("stp.tsmt.001");
+stp.setIsUseXSLMapping(true);
+}else{
+var arrKeys1 = [["TSU_MESSAGE_ID",sAckdMsgRef]];
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetRefUnitforAck",arrKeys1);
+var sMainRef = arrGetDataResult1[1];
+var sUnitCode = arrGetDataResult1[0];
+stp.setCmpId(sUnitCode);
+stp.setMainRef(sMainRef);
+var sTxId = stp.getXslMsgTagVal("message/Document/Ack/TxId","Id");
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);;
+stp.updateFieldValue("CURRNT_STATUS","Acknowledgement");
+}
+stp.writeLog("End: Received Purchase Order Ack");]]></js-content>
+</root>

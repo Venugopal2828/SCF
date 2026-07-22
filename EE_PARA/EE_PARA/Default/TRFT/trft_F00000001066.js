@@ -1,0 +1,1 @@
+DV.appendField("FAEF_CRN_BAL_inp", "IndirectPmt", "FA_DOC_TYPE='2'");

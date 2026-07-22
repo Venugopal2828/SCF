@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FADA</module>
+    <name>COUNTER_LMT_UP</name>
+    <desc>Update counterparty type</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FADA_COUNTER</table-name>
+        <table-desc>FADA_COUNTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql type="TBL_FLD">FA_COUNTER_REG_NO</sql>
+            <sql type="SQL">= '</sql>
+            <field mf="F">FA_COUNTER_REG_NO</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">C_MAIN_REF</sql>
+            <sql type="SQL">= '</sql>
+            <field mf="F">FA_CNTR_REF</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_LMT_AMT fv_type="F" mf="F" oper="=">FA_LMT_AMT</FA_LMT_AMT>
+        <FA_LMT_DUE_DT fv_type="F" mf="F" oper="=">FA_LMT_DUE_DT</FA_LMT_DUE_DT>
+    </mapping>
+</root>

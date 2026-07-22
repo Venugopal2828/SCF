@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>RPFM</module-name>
+        <cubk-mapping-name>STL_CHG_AC_OWNERID_BK</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">STL_CHG_AC_OWNERID</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_CUST_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">STL_CHG_AC_OWNERID</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">STL_CHG_AC_OWNERNM</PARTY_NM>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">STL_CHG_AC_OWNERID</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T1.C_AC_IDENTIFIER</SQL>
+            <SQL TYPE="SQL"> = SUBSTR('</SQL>
+            <SQL TYPE="FLD">STL_CHG_AC_TYPE</SQL>
+            <SQL TYPE="SQL">',1,1) AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T1.C_CUST_ID</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

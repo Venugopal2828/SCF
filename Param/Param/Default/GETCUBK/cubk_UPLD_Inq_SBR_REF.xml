@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="" type="normal" jspFilePath_0="" jspFilePath_1="">
+    <CRTJSP POS="C"></CRTJSP>
+    <key-mapping>
+        <module-name>UPLD</module-name>
+        <cubk-mapping-name>Inq_SBR_REF</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.FADA_EM_BSR</table-name>
+        <table-desc>FADA_EM_BSR</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <FA_SBR_REF DESC="SBR reference in EE" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">FA_SBR_REF</FA_SBR_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <FA_SBR_REF DESC="SBR reference in EE" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">FA_SBR_REF</FA_SBR_REF>
+    </field-mapping>
+    <CLAUSE>
+        <SQL DESC="Anchor Customer Id" DT="12" TYPE="FLD" WTYPE="NOCASE">FA_ANCHOR_ID</SQL>
+        <SQL TYPE="SQL"> = '</SQL>
+        <SQL DT="sys" DV="SYS_BUSI_UNIT" TYPE="OP">VALUE</SQL>
+        <SQL TYPE="SQL">'</SQL>
+    </CLAUSE>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

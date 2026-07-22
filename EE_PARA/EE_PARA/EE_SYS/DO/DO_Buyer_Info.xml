@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Buyer Information" Max="100" Min="0" Name="Buyer_Info" PendingStore="N" Screen="SCRN/o2m/FADA_BuyerInfo.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>BuyerInfo</Component>
+    <PK>
+        <PKNAME>FA_BUYER_ID</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FADA_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Buyer ID" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer Name" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_NM</Element>
+        <Element DATATYPE="12" Desc="Buyer Name 2" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_NM2</Element>
+        <Element DATATYPE="12" Desc="Buyer Post Box No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_POSTBOX</Element>
+        <Element DATATYPE="12" Desc="Buyer Province" DispInGrid="N" EDIT="N" EEType="Varchar_19" FldType="" Value="">FA_BUYER_PROV</Element>
+        <Element DATATYPE="12" Desc="Buyer City" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_CITY</Element>
+        <Element DATATYPE="12" Desc="Buyer Post Code" DispInGrid="N" EDIT="N" EEType="Varchar_9" FldType="" Value="">FA_BUYER_POSTCODE</Element>
+        <Element DATATYPE="12" Desc="Buyer Bank Branch" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">FA_BUYER_BK_BRCH</Element>
+        <Element DATATYPE="1" Desc="Direct Contact Allowed Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_BUYER_CNTC_FLG</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_CONT_NM</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Tel No." DispInGrid="N" EDIT="N" EEType="Varchar_25" FldType="" Value="">FA_BUYER_CONT_TEL</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Fax No." DispInGrid="N" EDIT="N" EEType="Varchar_25" FldType="" Value="">FA_BUYER_CONT_FAX</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Mail" DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">FA_BUYER_CONT_MAIL</Element>
+        <Element DATATYPE="12" Desc="Buyer Contactor Address" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_BUYER_CONT_ADDR</Element>
+        <Element DATATYPE="1" Desc="SBR CCY" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">FA_SBR_CCY</Element>
+        <Element DATATYPE="3" Desc="SBR_AMT" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_SBR_AMT</Element>
+        <Element DATATYPE="1" Desc="Customer Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_CUST_FLAG</Element>
+        <Element DATATYPE="1" Desc="Is Insurance?" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_INSU_COMP_FLAG</Element>
+        <Element DATATYPE="12" Desc="Insurance Agreement No." DispInGrid="N" EDIT="N" EEType="Varchar_20" FldType="" Value="">FA_INSU_AGR_NO</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Buyer No." DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_PCA_REF</Element>
+        <Element DATATYPE="12" Desc="Seller ID" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SEL_ID</Element>
+        <Element DATATYPE="12" Desc="SBR REF" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_SBR_REF</Element>
+    </Elements>
+</DO>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302296</ID>
+    <MODULE>BPOM</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.BPOM_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Main Reference." EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="" HIDDEN="H">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer Id" EEType="Varchar_40" HIDDEN="">BUYR_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer name" EEType="Varchar_70" HIDDEN="">BUYR_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller Id" EEType="Varchar_40" HIDDEN="">SUPLR_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller Name" EEType="Varchar_60" HIDDEN="">SUPLR_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="PO Reference" EEType="Max35Text" HIDDEN="">TSU_PO_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Close Flag" EEType="INTERPRETER" HIDDEN="H">CLS_FLG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="BUSI TP" EEType="VARCHAR32" HIDDEN="H">BUSI_TP</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Main Reference." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Buyer Id" DT="12" EEType="Varchar_40" TYPE="FLD">BUYR_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Buyer name" DT="12" EEType="Varchar_70" TYPE="FLD">BUYR_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Seller Id" DT="12" EEType="Varchar_40" TYPE="FLD">SUPLR_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG11</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Seller Name" DT="12" EEType="Varchar_60" TYPE="FLD">SUPLR_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP12</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE13</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG14</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="PO Reference" DT="12" EEType="Max35Text" TYPE="FLD">TSU_PO_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP15</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE16</SQL>
+        <SQL TYPE="SQL">'AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> ='M' AND </SQL>
+        <SQL DESC="Close Flag" DT="1" EEType="INTERPRETER" TYPE="FLD">CLS_FLG</SQL>
+        <SQL TYPE="SQL"> ='REQUIRE CLOSE' AND </SQL>
+        <SQL DESC="BUSI TP" DT="12" EEType="VARCHAR32" TYPE="FLD">BUSI_TP</SQL>
+        <SQL TYPE="SQL"> ='DATASET' ORDER BY </SQL>
+        <SQL DESC="Main Reference." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Main Reference." EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Id" EEType="Varchar_40">BUYR_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer name" EEType="Varchar_70">BUYR_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller Id" EEType="Varchar_40">SUPLR_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller Name" EEType="Varchar_60">SUPLR_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="PO Reference" EEType="Max35Text">TSU_PO_ID</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="1" DESC="Close Flag" EEType="INTERPRETER">CLS_FLG</FIELD>
+        <FIELD DATATYPE="12" DESC="BUSI TP" EEType="VARCHAR32">BUSI_TP</FIELD>
+        <FIELD DATATYPE="12" DESC="Main Reference." EEType="">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

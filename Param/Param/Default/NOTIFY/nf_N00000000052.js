@@ -1,0 +1,32 @@
+if(NS.isRelease()){
+
+if(!NS.isLastAuthorizer()){
+var nsTask = NS.createNotification("Apply Import LC Task");
+var authUsers = NS.getNextAuthorizerInfo();
+NS.setNotifyTo(nsTask,authUsers);
+var sSub = "Waiting for approve: " + NS.getOriginalFieldValue("C_MAIN_REF");
+NS.setNotifySubject(nsTask,sSub);
+
+var comp = NS.getCompanyInfo("C_UNIT_CODE");
+NS.setNotifyPara(nsTask,"C_MAIN_REF",NS.getOriginalFieldValue("C_MAIN_REF"));
+NS.setNotifyPara(nsTask,"C_UNIT_CODE",comp[0]);
+NS.setNotifyPara(nsTask,"I_EVENT_TIMES",NS.getEventTimes());
+NS.setNotifyPara(nsTask,"CATA_FUNC_ID",NS.getOriginalFieldValue("C_FUNC_ID"));
+}
+
+var authAlert = NS.createNotification("Authorized Apply LC");
+var nsgetRecvUsers = NS.getRecvNsUsers();
+NS.setNotifyTo(authAlert,nsgetRecvUsers);
+var sSubj = "L/C is approved: " + NS.getOriginalFieldValue("C_MAIN_REF");
+NS.setNotifySubject(authAlert,sSubj);
+}else{
+	
+var nsMarkerAlert = NS.createNotification("Apply Import LC Refuse Alert");
+var maker = NS.getMakerInfo();
+NS.setNotifyTo(nsMarkerAlert,maker);
+var allauthuser = NS.getAuthedUsers();
+NS.appendNotifyTo(nsMarkerAlert,allauthuser);
+var sSubject = "L/C is refused: " + NS.getOriginalFieldValue("C_MAIN_REF");
+NS.setNotifySubject(nsMarkerAlert,sSubject);
+
+}

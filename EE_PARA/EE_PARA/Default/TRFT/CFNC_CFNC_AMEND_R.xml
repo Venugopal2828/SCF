@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>CFNC</module>
+    <name>CFNC_AMEND</name>
+    <desc>CFNC_AMEND</desc>
+    <head-info>
+        <table-name schema="%EXIMSYS%">%EXIMSYS%.CFNC_MAIN</table-name>
+        <table-desc>CFNC_MAIN</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>CFNC_C_RELT_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">CFNC_C_RELT_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <CFNC_C_GRACE_DAYS fv_type="F" mf="F" oper="=">CFNC_C_GRACE_DAYS</CFNC_C_GRACE_DAYS>
+        <CFNC_C_GRACE_FLG fv_type="F" mf="F" oper="=">CFNC_C_GRACE_FLG</CFNC_C_GRACE_FLG>
+        <CFNC_D_DUE_DT fv_type="F" mf="F" oper="=">CFNC_D_EXTEN_DUE_DT</CFNC_D_DUE_DT>
+        <CFNC_I_DAYS fv_type="F" mf="F" oper="=">CFNC_I_DAYS</CFNC_I_DAYS>
+        <CFNC_N_AMT_LCCCY fv_type="F" mf="F" oper="=">NEW_REFI_AMT</CFNC_N_AMT_LCCCY>
+        <CFNC_N_BAL fv_type="F" mf="F" oper="=">CFNC_N_BAL</CFNC_N_BAL>
+        <CFNC_N_LIBOR_AMT fv_type="F" mf="F" oper="=">CFNC_N_LIBOR_AMT</CFNC_N_LIBOR_AMT>
+        <CFNC_N_LIBOR_RT fv_type="F" mf="F" oper="=">CFNC_N_LIBOR_RT</CFNC_N_LIBOR_RT>
+        <CFNC_N_MARGIN_AMT fv_type="F" mf="F" oper="=">CFNC_N_MARGIN_AMT</CFNC_N_MARGIN_AMT>
+        <CFNC_N_MARGIN_RT fv_type="F" mf="F" oper="=">CFNC_N_MARGIN_RT</CFNC_N_MARGIN_RT>
+        <CFNC_N_NET_AMT fv_type="F" mf="F" oper="=">CFNC_N_NET_AMT</CFNC_N_NET_AMT>
+        <CFNC_N_PCT fv_type="F" mf="F" oper="=">CFNC_N_PCT</CFNC_N_PCT>
+        <CFNC_N_PRE_INT fv_type="F" mf="F" oper="=">CFNC_N_PRE_INT</CFNC_N_PRE_INT>
+        <CFNC_N_RT fv_type="F" mf="F" oper="=">CFNC_N_RT</CFNC_N_RT>
+        <CFNC_OVERDUE_DT fv_type="F" mf="F" oper="=">CFNC_OVERDUE_DT</CFNC_OVERDUE_DT>
+    </mapping>
+</root>

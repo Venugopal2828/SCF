@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Update Correspondence From Bank function");
+stp.setAutoProcess(true);
+
+stp.setCmpId(stp.getMsgTagVal("CustId"));
+stp.setUserId("CSBANK");
+
+var sBkMainRef = stp.getMsgTagVal("BkMainRef");
+var arrKeys = [["BK_MAIN_REF",sBkMainRef]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetParentRef",arrKeys);
+var sCEMainRef = arrGetDataResult[0];
+var sParentRef = arrGetDataResult[1];
+stp.updateFieldValue("C_MAIN_REF",sCEMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sParentRef);
+
+stp.execInqAttribute();
+stp.writeLog("End: Update Correspondence From Bank function");]]></js-content>
+</root>

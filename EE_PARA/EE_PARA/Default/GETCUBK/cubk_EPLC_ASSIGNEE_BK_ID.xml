@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>EPLC</module-name>
+        <cubk-mapping-name>ASSIGNEE_BK_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">ASSIGNEE_BK_ID</C_MAIN_REF>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="SWIFT Format Name" DT="12" HIDDEN="F" TYPE="F">ASSIGNEE_BK_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T1" DBFUNC="" DESC="Bank Contact SWIFT Format Address1" DT="12" HIDDEN="F" TYPE="F">ASSIGNEE_BK_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T1" DBFUNC="" DESC="Bank Contact SWIFT Format Address2" DT="12" HIDDEN="F" TYPE="F">ASSIGNEE_BK_ADD2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T1" DBFUNC="" DESC="Bank Contact SWIFT Format Address3" DT="12" HIDDEN="F" TYPE="F">ASSIGNEE_BK_ADD3</SWIFT_FMT_ADD3>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="F" TYPE="F">ASSIGNEE_SW_ADD</SW_ADD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="BIC" TYPE="TBL_FLD">T0.SW_ADD</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">ASSIGNEE_SW_ADD</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T1.SWF_FMT_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">ASSIGNEE_NM</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD1</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">ASSIGNEE_BK_ADD1</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD2</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">ASSIGNEE_BK_ADD2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD3</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">ASSIGNEE_BK_ADD3</SQL>
+            <SQL TYPE="SQL">%' </SQL>
+        </condition>
+        <condition seq="2">
+            <SQL TYPE="SQL">T0.C_MAIN_REF = T1.C_MAIN_REF</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

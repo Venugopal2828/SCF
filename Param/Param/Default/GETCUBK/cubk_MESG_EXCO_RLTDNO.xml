@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire EXCO Major Table" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>MESG</module-name>
+        <cubk-mapping-name>EXCO_RLTDNO</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.EXCO_EM_CREATE</table-name>
+        <table-desc>Export Collections Creation</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <COLL_NO DESC="Collection Ref Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</COLL_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <COLL_NO DESC="Collection Ref Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">RLTD_NO</COLL_NO>
+        <DRWR_NM DESC="Drawer Name" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">DRWR_NM</DRWR_NM>
+        <COLL_AMT DESC="Collection Amount" DT="3" HIDDEN="" TYPE="F" WTYPE="CASE">COLL_AMT</COLL_AMT>
+        <COLL_CCY DESC="Collection Currency" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">COLL_CCY</COLL_CCY>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

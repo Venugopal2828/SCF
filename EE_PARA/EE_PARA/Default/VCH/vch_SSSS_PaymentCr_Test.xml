@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>SSSS</MODULE>
+        <DESC>Payment Creadit Voucher</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>8</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>R</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="Y" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="F">CPYT_CR_AC</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="F">CPYT_CR_CCY</C_CURRENCY>
+            <N_AMT FV_TYPE="F">CPYT_CR_AMT_CRCCY</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE="F">CPYT_CR_VAL_DATE</D_VALUE_DATE>
+            <C_TRANS_CODE FV_TYPE="V">NO</C_TRANS_CODE>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="S" USED="N">var ccy1 = DV.getCurrentDoData("CPYT_CR_CCY");
+  DV.writeLog("CPYT_CR_CCY"+ccy1);
+    var baseCCY =DV.SYS_LCY ;
+   DV.writeLog("baseCCY CR"+baseCCY);
+    var defaultRate = '1';
+  DV.writeLog("defaultRate CR"+defaultRate);
+    var cnty = DV.getCountryCode();
+  DV.writeLog("cnty CR"+cnty);
+    if(ccy1!= null){
+  DV.writeLog("1 CR");
+      if(ccy1 != baseCCY){
+  DV.writeLog("2 CR");
+    	sql = "C_FROM_CCY = '"+ ccy1 +"' AND C_TO_CCY='"+baseCCY+"' and C_BK_GROUP_ID='STBANK' and C_CNTY_CODE='"+cnty+"' and C_DESC_ID='TT Buying' ";
+    	DV.SYS_getTableData('F_VALUE','EXIMSYS.STD_EXCHAN_RATE',sql);
+      }else{
+  DV.writeLog("3 CR");
+    	DV.appendField(defaultRate);
+      }
+    }else{
+  DV.writeLog("4 CR");
+    	DV.appendField(defaultRate);
+    }</C_EXCHGE_RATE2>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE="F">CPYT_CR_AC_TYPE</C_REF_NUMBER>
+            <C_VOUCHER_DESC FV_TYPE=""/>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE=""/>
+            <C_VCH_SPECIAL1 FV_TYPE="F">CPYT_ASSGN_NM</C_VCH_SPECIAL1>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start:FAEF Add Invoice ME");
+stp.setAutoProcess(true);
+var sUnitCode = stp.getMsgTagVal("CE_UNIT_CODE");
+stp.writeLog("sUnitCode=========="+sUnitCode);
+stp.setCmpId(sUnitCode);
+var sSBRref = stp.getXslMsgTagVal("/message/out-msg-content/Document/FinInvc/TradSttlm","IssrFactrgAgrmtId");
+stp.writeLog("sSBRref=========="+sSBRref);
+var arrKeys = [["C_UNIT_CODE",sUnitCode],["FA_SBR_REF",sSBRref]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetDataBySBRref",arrKeys);
+stp.writeLog("arrGetDataResult[0]=========="+arrGetDataResult[0]);
+stp.writeLog("arrGetDataResult[1]=========="+arrGetDataResult[1]);
+stp.writeLog("arrGetDataResult[2]=========="+arrGetDataResult[2]);
+stp.writeLog("arrGetDataResult[3]=========="+arrGetDataResult[3]);
+var sBusiType = new String(arrGetDataResult[0]);
+var sBuyerId = arrGetDataResult[1];
+var sSellerId = arrGetDataResult[2];
+var sNeedBuyerAprFlg = new String(arrGetDataResult[3]);
+stp.updateFieldValue("FA_BUYER_ID",sBuyerId);
+stp.updateFieldValue("FA_SEL_ID",sSellerId);
+stp.writeLog("sUnitCode.length =========="+sUnitCode.length);
+stp.writeLog("sBuyerId.length =========="+sBuyerId.length);
+stp.writeLog("sSellerId.length =========="+sSellerId.length);
+if(sBusiType == 'SF'||sBusiType == 'DD'){
+  if(sUnitCode.equals(sBuyerId)){
+    stp.updateFieldValue("FA_DOC_STATUS","Buyer Approved");
+stp.writeLog("FA_DOC_STATUS ==========Buyer Approved");
+  }
+  if(sUnitCode.equals(sSellerId)){
+    stp.updateFieldValue("FA_DOC_STATUS","Wait for buyer approval");
+stp.writeLog("FA_DOC_STATUS ==========Wait for buyer approval");
+  }
+}else if(sBusiType == 'RD'){
+  if(sUnitCode.equals(sSellerId)){
+    if(sNeedBuyerAprFlg == '1'){
+      stp.updateFieldValue("FA_DOC_STATUS","Wait for buyer approval");
+stp.writeLog("FA_DOC_STATUS ==========Wait for buyer approval");
+    }else if(sNeedBuyerAprFlg == '2'){
+      stp.updateFieldValue("FA_DOC_STATUS","Buyer Approved");
+stp.writeLog("FA_DOC_STATUS ==========Buyer Approved");
+    }
+  }
+  if(sUnitCode.equals(sBuyerId)){
+    
+  }
+}
+var dtTm = stp.getXslMsgTagVal("/message/out-msg-content/Document/FinInvc/InvcHdr","IsseDtTm");
+stp.writeLog("dtTm========="+dtTm);
+var issDt = dtTm.substr(0,10);
+stp.writeLog("issDt========="+issDt);
+stp.updateFieldValue("FA_DOC_DT",issDt);
+stp.updateFieldValue("FA_DOC_VAL_DT",issDt);
+var sMainRef = stp.SYS_getRefNo("P19080800001");
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Uploaded Invoice");
+stp.setEventTimes(0);
+stp.writeLog("End:FAEF Add Invoice ME");]]></js-content>
+</root>

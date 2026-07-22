@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>TSUM</module-name>
+        <cubk-mapping-name>TSU_OUR_REF_TID</cubk-mapping-name>
+        <select-type>U</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TSUM_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <C_TRX_STATUS ALIAS="T0" DESC="TRANSACTION STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+            <C_UNIT_CODE ALIAS="T0" DESC="BUSINESS UNIT" DT="12" TYPE="S">SYS_BUSI_UNIT</C_UNIT_CODE>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">C_MAIN_REF</C_MAIN_REF>
+            <TSU_TID ALIAS="T0" DESC="Transaction Identification" DT="12" TYPE="F">TSU_ERR_TID</TSU_TID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">C_MAIN_REF</C_MAIN_REF>
+        <TSU_SEL_BK_NM ALIAS="T0" DBFUNC="" DESC="Seller Bank" DT="12" HIDDEN="F" TYPE="F">TSU_SEL_BK_NM</TSU_SEL_BK_NM>
+        <TSU_PO_DT ALIAS="T0" DBFUNC="" DESC="PO Date" DT="91" HIDDEN="F" TYPE="F">TSU_PO_DT</TSU_PO_DT>
+        <TSU_PO_ID ALIAS="T0" DBFUNC="" DESC="PO Ref." DT="12" HIDDEN="F" TYPE="F">TSU_PO_ID</TSU_PO_ID>
+        <TSU_BUYER_BK_NM ALIAS="T0" DBFUNC="" DESC="Buyer Name" DT="12" HIDDEN="F" TYPE="F">TSU_BUYER_BK_NM</TSU_BUYER_BK_NM>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

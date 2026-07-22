@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="VostroAccountNo" Max="n" Min="0" Name="VostroAccountNo" PendingStore="N" Screen="SCRN/DO/VostroAccountNo.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="VOS_ACNO_DO"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>DO_INDEX_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TRCP_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Data Object Index No." DispInGrid="N" EDIT="N" EEType="CHAR_40" FldType="" Value="">DO_INDEX_NO</Element>
+        <Element DATATYPE="1" Desc="Counterparty Account Code" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_10" FldType="" Value="">CNPT_AC_CD</Element>
+        <Element DATATYPE="12" Desc="Serial Number" DispInGrid="N" EDIT="N" EEType="Varchar_20" FldType="" Value="">SERIAL_NO</Element>
+        <Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_14" FldType="" Value="">CNPT_ID</Element>
+        <Element DATATYPE="1" Desc="Counterparty SWIFT" DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">CNPT_SWADD</Element>
+        <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="1" Desc="Account No" DispInGrid="Y" EDIT="N" EEType="ACNO" FldType="" Value="">ACNO</Element>
+    </Elements>
+</DO>

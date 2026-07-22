@@ -1,0 +1,53 @@
+//value starts with '$' means field name of database table, otherwise means a fixed value
+{
+  "BIC": {
+    "mode": "none",
+    "note":"if sql contain only one ?, then param is 11 char like CITIUS33XXX; if two ?, the param is 8 char CITIUS33 and 3 char XXX ",
+    "sql_not": "SELECT BK_NAME FROM EXIMSYS.DATA_MERVA WHERE C_MAIN_REF = ? AND COUNTRY_NM=? AND C_TRX_STATUS ='M'",
+    "sql":"SELECT INSTITUTION_NAME, SUBTYPE_INDICATION FROM STD_BIC_PLUS WHERE BIC_CODE=? AND BRANCH_CODE=?",
+    "mapping": [
+      {
+        "TABLE_NAME": "DATA_MERVA",
+        "INSTITUTION_NAME": "$BK_NAME",
+        "SUBTYPE_INDICATION": "BANK",
+        "BIC_CODE": "$C_MAIN_REF",
+        "BRANCH_CODE": ""
+      },
+      {
+        "TABLE_NAME": "EXIMTRX.BANK_MASTER",
+        "INSTITUTION_NAME": "$C_MAIN_REF",
+        "SUBTYPE_INDICATION": "BANK",
+        "BIC_CODE": "$SW_ADD",
+        "BRANCH_CODE": ""
+      },
+      {
+        "TABLE_NAME": "EXIMTRX.BICCODE",
+        "INSTITUTION_NAME": "$INSTITUTION",
+        "SUBTYPE_INDICATION": "$SUBTYPE",
+        "BIC_CODE": "$C_BIC_CODE",
+        "BRANCH_CODE": "$C_BRANCH_CODE"
+      },
+      {
+        "TABLE_NAME": "EXIMTRX.BICIBAN",
+        "INSTITUTION_NAME": "$INSTITUTION",
+        "SUBTYPE_INDICATION": "BANK",
+        "BIC_CODE": "$C_IBAN_BIC",
+        "BRANCH_CODE": "$C_IBAN_BRANCH"
+      }
+    ]
+  },
+  "CCY": {
+    "mode": "xml",
+    "sql_ee": "SELECT I_DECIMAL FROM EXIMSYS.STD_CURRENCY WHERE C_CURRENCY = ?",
+    "sql": "SELECT MINOR_UNIT FROM STD_CURRENCY WHERE ALPHABETIC_CODE = ?"
+  },
+  "CNTY": {
+    "mode": "xml",
+    "sql_ee": "SELECT C_CNTY_NAME AS NAME FROM EXIMSYS.STD_COUNTRY WHERE C_CNTY_CODE = ?",
+    "sql": "SELECT NAME FROM STD_COUNTRY WHERE CODE=?"
+  },
+  "NOTE": {
+    "mode": "eeds: use EE JNDI DS; xml: read xml; esp: use ESP DS",
+    "about_column_mapping": "value starts with '$' means field name of database table, otherwise means a fixed value"
+  }
+}

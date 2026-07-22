@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">IMLC</MODULE>
+        <MODULE_DESC>Import Letters of Credit</MODULE_DESC>
+        <EVENT>System</EVENT>
+        <CATALOGID/>
+        <ID>F05030700871</ID>
+        <NAME>IMLC Authorise Transaction</NAME>
+        <DESC>Authorise Transaction</DESC>
+        <FUNSHORTNAME>AuthTrx</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>RE</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Authorize">TrxManagerAuthorize</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <FORM>
+        <ID>F05030700870</ID>
+        <NAME>IMLC Authorise Transaction_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700870</ID>
+        <NAME>IMLC Authorise Transaction_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000052</ID>
+        <NAME>IMLC Authorise Transaction_NOTIFY</NAME>
+    </NOTIFY>
+	<CAL>
+	    <JS_CLASS>FunctionSSJS</JS_CLASS>
+	</CAL>
+</FUNC>

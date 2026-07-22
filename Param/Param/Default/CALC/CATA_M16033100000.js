@@ -1,0 +1,1 @@
+CAL.addGlobalProperty("serviceId", "InqRegList");

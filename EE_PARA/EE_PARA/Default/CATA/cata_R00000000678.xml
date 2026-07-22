@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>C49082300362</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_EXCHAN_RATE</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Add Flag" EEType="Varchar_1" HIDDEN="">C_ADD_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Bank Group Id" EEType="" HIDDEN="">C_BK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Exch Int Type" EEType="Varchar_1" HIDDEN="">C_EXCH_INT_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="From Currency" EEType="Varchar_3" HIDDEN="">C_FROM_CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Clocked Flag" EEType="" HIDDEN="H">C_LOCKED_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="To Currency" EEType="Varchar_3" HIDDEN="H">C_TO_CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Transaction Status" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="From Currency" DT="12" EEType="Varchar_3" TYPE="FLD">C_FROM_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">'AND </SQL>
+        <SQL DESC="Exch Int Type" DT="12" EEType="Varchar_1" TYPE="FLD">C_EXCH_INT_TYPE</SQL>
+        <SQL TYPE="SQL"> = 'I' </SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="From Currency" EEType="Varchar_3">C_FROM_CCY</FIELD>
+        <FIELD DATATYPE="12" DESC="Exch Int Type" EEType="Varchar_1">C_EXCH_INT_TYPE</FIELD>
+    </CLAUSEFIELD>
+</CATA>

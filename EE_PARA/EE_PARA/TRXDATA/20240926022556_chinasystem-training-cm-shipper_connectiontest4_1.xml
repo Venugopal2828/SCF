@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ConnectionModule:OutboundMessage version="v2" xmlns:ConnectionModule="http://www.bolero.net/CM/XSD/ConnectionModule" xmlns="http://www.bolero.net/CM/XSD/gpm" xmlns:ebl="http://www.bolero.net/CM/XSD/ebl">
+    <ConnectionModule:MessageHeader>
+        <ConnectionModule:Transaction>
+            <ConnectionModule:CompanyName>Bolero</ConnectionModule:CompanyName>
+            <ConnectionModule:TransactionId>connectiontest4</ConnectionModule:TransactionId>
+            <ConnectionModule:Service>GeneralPurposeMessagePlus</ConnectionModule:Service>
+            <ConnectionModule:SeriesTotalCount>1</ConnectionModule:SeriesTotalCount>
+            <ConnectionModule:SeriesFile>1</ConnectionModule:SeriesFile>
+            <ConnectionModule:Date>20240926 02:25:56</ConnectionModule:Date>
+        </ConnectionModule:Transaction>
+    </ConnectionModule:MessageHeader>
+    <GeneralPurposeMessageResponses>
+        <GeneralPurposeMessageResponse>
+            <InstructionId>connectiontest4</InstructionId>
+            <Instruction>GeneralPurposeMessage</Instruction>
+            <Result>Rejected</Result>
+            <Rejections>
+                <ConnectionModule:Rejection>
+                    <ConnectionModule:RejectionSource>CM</ConnectionModule:RejectionSource>
+                    <ConnectionModule:RejectionTime>20240926 02:25:56</ConnectionModule:RejectionTime>
+                    <ConnectionModule:RejectionCode>1001299</ConnectionModule:RejectionCode>
+                    <ConnectionModule:RejectionDescription>Duplicated InstructionId detected for InstructionId='connectiontest4', RegistrarRid='chinasystem-training-registrar'</ConnectionModule:RejectionDescription>
+                </ConnectionModule:Rejection>
+            </Rejections>
+            <Parties>
+                <ConnectionModule:Party>
+                    <ConnectionModule:PartyType>Sender</ConnectionModule:PartyType>
+                    <ConnectionModule:PartyRid>
+                        <ConnectionModule:Rid>chinasystem-training-cm-shipper</ConnectionModule:Rid>
+                    </ConnectionModule:PartyRid>
+                </ConnectionModule:Party>
+            </Parties>
+        </GeneralPurposeMessageResponse>
+    </GeneralPurposeMessageResponses>
+</ConnectionModule:OutboundMessage>

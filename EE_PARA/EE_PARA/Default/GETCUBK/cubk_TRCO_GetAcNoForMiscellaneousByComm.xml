@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey" AutoGen-Parameter-Version="1.0">
+    <key-mapping>
+        <module-name>TRCO</module-name>
+        <cubk-mapping-name>GetAcNoForMiscellaneousByComm</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+        </tables>
+        <key-fields>
+            <C_AC_NUMBER ALIAS="T0" DESC="Account Number" DT="12" TYPE="F">DC_ACNO</C_AC_NUMBER>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_AC_TITLE ALIAS="T0" DBFUNC="" DESC="Accounting Title" DT="12" HIDDEN="F" TYPE="V">sAcnoTitle</C_AC_TITLE>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

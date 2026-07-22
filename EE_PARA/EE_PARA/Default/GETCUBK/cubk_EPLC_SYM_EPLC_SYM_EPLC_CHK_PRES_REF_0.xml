@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EPLC_EM_NEGO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>EPLC</module-name>
+        <cubk-mapping-name>SYM_EPLC_SYM_EPLC_CHK_PRES_REF_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <PRES_BK_REF ALIAS="T0" DBFUNC="" DESC="Presenting Bank Reference" DT="12" HIDDEN="F" TYPE="F">TEMP_CHAR1</PRES_BK_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">PRES_BK_REF = '</SQL>
+            <SQL DT="12" EEType="RELATED_REF" TYPE="TBL_FLD">T0.PRES_BK_REF</SQL>
+            <SQL TYPE="SQL">' AND LC_NO = '</SQL>
+            <SQL TYPE="FLD">LC_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

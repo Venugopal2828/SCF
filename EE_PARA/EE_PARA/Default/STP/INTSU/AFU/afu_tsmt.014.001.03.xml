@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("=======Begin: ReceiveDataSetSubmission from CoE======="); 
+
+stp.updateFieldValue("/root/domData","TSU_COE_STS","C2B");
+stp.updateFieldValue("/root/domData","TSU_INV_STAT","PROP");
+stp.updateFieldValue("/root/domData","TSU_TRX_STATUS","DataSetSubmission");
+var OurBIC=stp.getTSUBIC();
+stp.writeLog("getTSUBIC="+OurBIC);
+//generate TSU_SEQ_NUM for DO--S
+stp.genDOTsuSeqNum(); 
+//generate TSU_SEQ_NUM for DO--E
+
+// Get the C_MAIN_REF from message data for add same reference record with CoE
+var mainRef=stp.getValue("/Document/DataSetSubmissn/SubmissnId","Id");
+var mainReflen;
+if(typeof mainRef[0].length == "function"){
+	mainReflen = mainRef[0].length();
+}
+else{
+	mainReflen = mainRef[0].length;
+}
+    
+stp.writeLog("mainRef="+mainRef[0]);
+stp.writeLog("mainReflen="+mainReflen);
+
+// Add for to process the resubmit 014 from COE on 2014/4/25;
+var bu=stp.getTSUUnitCode();
+var fld_list  = stp.addFieldList(null,"C_MAIN_REF"); 
+var sql_condition = stp.addSQLCondition(null,"C_MAIN_REF",mainRef); 
+sql_condition  = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);   
+var result = stp.executeQuery("TSUM_EM_COMTRNS",fld_list,sql_condition); 
+var C_MAIN_REF = stp.getDBFieldValue(result,"C_MAIN_REF");
+stp.writeLog("C_MAIN_REF="+C_MAIN_REF);
+if(C_MAIN_REF ='' || C_MAIN_REF ='null'){
+var mainRef1= stp.getPartValue(mainRef[0],1,stp.toInteger(mainReflen)-1);
+stp.setAutoProcess(true);
+stp.setFunc("InCoE014");
+stp.updateFieldValue("","C_MAIN_REF",mainRef1);
+stp.updateFieldValue("","C_TRX_REF",mainRef1);
+stp.updateFieldValue("","TSU_OUR_REF",mainRef1);
+stp.writeLog("End: Receive 014 From CoE");
+}
+else{
+stp.setAutoProcess(true);
+stp.setFunc("InCoEResubmit014");
+stp.updateFieldValue("","C_MAIN_REF",C_MAIN_REF);
+stp.updateFieldValue("","C_TRX_REF",C_MAIN_REF);
+stp.updateFieldValue("","TSU_OUR_REF",C_MAIN_REF);
+stp.writeLog("End: Receive resubmit 014 From CoE");
+}
+
+stp.updateFieldValue("","TSU_OUR_BIC",OurBIC); 
+
+stp.writeLog("Begin: Receive 014 From CoE");
+    
+//Generate TDO PK;
+//Commercial DataSet first level use the parent master table keys
+//Commercial DataSet DT_Buyer
+var Buyer = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Buyr","Nm");
+if (Buyer[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/DT_Buyer","TSU_IDX",0);
+	stp.updateFieldValue("/root/domData","TSU_BUYER_NM",Buyer[0]);
+}
+//Commercial DataSet DT_Seller
+var Seller = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Sellr","Nm");
+if (Seller[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/DT_Seller","TSU_IDX",0);
+	stp.updateFieldValue("/root/domData","TSU_SEL_NM",Seller[0]);
+}
+//Commercial DataSet DT_BillTo
+var BllTo = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/BllTo","Nm");
+if (BllTo[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/DT_BillTo","TSU_IDX",0);
+}   
+//Commercial DataSet R2DT_ComrclDocRef and children DO PK  get from mapping field   
+//Commercial DataSet/Goods/Lineitem/Freightcharge ref
+var DT_FrghtChrgs = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/ComrclLineItms/FrghtChrgs/Chrgs","Tp");
+if(DT_FrghtChrgs[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/R2DT_ComrclLineItms/DT_FrghtChrgs","TSU_TRAN_INF",0);
+}
+//Commercial DataSet/Goods/Incoterms ref
+var Incotrmscd = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/Incotrms","Cd");
+var IncotrmsOthr = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/Incotrms","Othr");
+if (Incotrmscd[0] != undefined || IncotrmsOthr[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_Incotrms","TSU_TRAN_INF",0);
+}
+//Commercial DataSet/Goods/Adjustment PK;
+var AdjstmntTp = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/Adjstmnt","Tp");
+var AdjstmntOthr = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/Adjstmnt","OthrAdjstmntTp");
+if (AdjstmntTp[0] != undefined || AdjstmntOthr[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_Adjstmnt","TSU_LNITMNB",0);
+}
+//Commercial DataSet/Goods/Adjustment  Amount calculating;
+
+var AdjstmntDrctn = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/Adjstmnt","Drctn");
+var AdjstmntAMT = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/Adjstmnt","Amt");
+var nlength = AdjstmntDrctn.length;
+if (AdjstmntAMT[0] != undefined)
+{
+	for(var k=0;k<nlength;k++)
+	{
+	    stp.writeLog("AdjstmntDrctn:"+ AdjstmntDrctn[k]);
+	    stp.writeLog("AdjstmntAMT:"+ AdjstmntAMT[k]);
+	    var xpath2="/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_Adjstmnt["+stp.toDouble(k+1)+"]";
+	    var DRCTN = AdjstmntDrctn[k];
+	    var AMOUNT = AdjstmntAMT[k];
+	    stp.writeLog("DRCTN = "+ DRCTN);
+	    stp.writeLog("AMOUNT"+AMOUNT);
+	    if (DRCTN =='ADDD')
+	    {
+	        stp.updateFieldValue(xpath2,"TSU_IAFT_AMT_CAL",AMOUNT);
+	    }    
+	    if (DRCTN =='SUBS')
+	    {
+	       var Fuzhi ='-'+AMOUNT;
+	       stp.writeLog("Fuzhi="+Fuzhi);
+	       stp.updateFieldValue(xpath2,"TSU_IAFT_AMT_CAL",Fuzhi);
+	    }  
+	}
+}
+    
+ //Commercial DataSet/Goods/linitem/Adjustment  Amount calculating;
+    
+var LineAdjstmntDrctn = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/ComrclLineItms/Adjstmnt","Drctn");
+var LineAdjstmntAMT = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/ComrclLineItms/Adjstmnt","Amt");
+var mlength = LineAdjstmntDrctn.length;
+if (LineAdjstmntAMT[0] != undefined)
+{
+	for(var j=0;j<mlength;j++)
+	{
+	    var xpath="/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/R2DT_ComrclLineItms/DT_Adjstmnt["+stp.toDouble(j+1)+"]";
+	    var LDRCTN = LineAdjstmntDrctn[j];
+	    var LAMOUNT = LineAdjstmntAMT[j];
+	    if (LDRCTN =='ADDD')
+	    {
+	        stp.updateFieldValue(xpath,"TSU_IAFT_AMT_CAL",LAMOUNT);
+	    }    
+	    if (LDRCTN =='SUBS')
+	    {
+	       var LineFuzhi ='-'+LAMOUNT;
+	       stp.updateFieldValue(xpath,"TSU_IAFT_AMT_CAL",LineFuzhi);
+	    }  
+	}
+}
+    
+ //Commercial DataSet/Goods/freightcharge PK;
+    
+var FreightChg = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/FrghtChrgs/Chrgs","Tp");
+if(FreightChg[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_FrghtChrgs","TSU_LNITMNB",0);
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_FrghtChrgs","TSU_TRAN_INF",0);
+}
+   
+ //Commercial DataSet/Goods/Tax PK ;
+var TaxTp = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/Tax","Tp");
+if(TaxTp[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_Tax","TSU_LNITMNB",0);
+}
+//Commercial DataSet/Goods/BuyrDfndInf PK;
+var BuyrDfndInf = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/BuyrDfndInf","Labl");
+if(BuyrDfndInf[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_DfndInf","TSU_TRAN_INF",0);
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_DfndInf","TSU_TRAN_DOC_REF",0);
+}
+//Commercial DataSet/Goods/SellrDfndInf PK;
+var SellrDfndInf = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/SellrDfndInf","Labl");
+if(SellrDfndInf[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_SellDfndInf","TSU_TRAN_INF",0);
+	stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods/DT_SellDfndInf","TSU_TRAN_DOC_REF",0);
+}
+    
+    
+//Commercial Dataset PK finished;
+//Transport dataset PK start;
+//Transport DataSet R2TrnsprtDataset and children DO PK  get from mapping field;
+//Transport DataSet/TrnsprtInf/TrnsprtdGoods/BuyrDfndInf PK;
+var TRBuyrDfndInf = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/TrnsprtInf/TrnsprtdGoods/BuyrDfndInf","Labl");
+if(TRBuyrDfndInf[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2TrnsprtDataset/R2DT_TrnsprtDocRef/R2DT_TrnsprtdGoods/DT_DfndInf","TSU_COMM_REF",0);
+}
+    
+//Transport DataSet/TrnsprtInf/TrnsprtdGoods/SellrDfndInf PK;
+var TRSellrDfndInf = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/TrnsprtInf/TrnsprtdGoods/SellrDfndInf","Labl");
+if(TRSellrDfndInf[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2TrnsprtDataset/R2DT_TrnsprtDocRef/R2DT_TrnsprtdGoods/DT_SellDfndInf","TSU_COMM_REF",0);
+}
+    
+//Transport DataSet/TrnsprtInf/TrnsprtdGoods/Incoterms PK;
+var TRIncotrmscd = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/TrnsprtInf/Incotrms","Cd");
+var TRIncotrmsOthr = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/TrnsprtInf/Incotrms","Othr");
+if (TRIncotrmscd[0] != undefined || TRIncotrmsOthr[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2TrnsprtDataset/DT_Incotrms","TSU_PO_ID",0);
+	stp.updateFieldValue("/root/domData/R2TrnsprtDataset/DT_Incotrms","TSU_COMM_REF",0);
+}
+    
+//Transport DataSet/TrnsprtInf/TrnsprtdGoods/freightcharge PK;
+var TRFreightChg = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/TrnsprtInf/FrghtChrgs/Chrgs","Tp");
+if(TRFreightChg[0] != undefined)
+{
+	stp.updateFieldValue("/root/domData/R2TrnsprtDataset/DT_FrghtChrgs","TSU_LNITMNB",0);
+	stp.updateFieldValue("/root/domData/R2TrnsprtDataset/DT_FrghtChrgs","TSU_PO_ID",0);
+	stp.updateFieldValue("/root/domData/R2TrnsprtDataset/DT_FrghtChrgs","TSU_COMM_REF",0);
+}
+    
+//Transport Dataset PK finished
+//Insurance/Certificate/Other  dataset XDO
+   
+//Delete optional node
+var BillTo = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/BllTo","Nm");
+var Buyer = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/Buyr","Nm");
+var Seller = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/Sellr","Nm");
+var Consignor = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/Consgnr","Nm");
+var Consignee = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/Consgn","Nm");
+var ShipTo = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/ShipTo","Nm");
+if (BillTo[0] == undefined)
+{
+	stp.deleNode("/root/domData/R2ComrclDataset","DT_BillTo");
+}
+if (Buyer[0] == undefined)
+{
+	stp.deleNode("/root/domData/R2TrnsprtDataset","DT_Buyer");
+}
+if (Seller[0] == undefined)
+{
+	stp.deleNode("/root/domData/R2TrnsprtDataset","DT_Seller");		    
+}
+if (Consignor[0] == undefined)
+{
+	stp.deleNode("/root/domData/R2TrnsprtDataset","DT_Consignor");  
+}
+if (Consignee[0] == undefined)
+{
+	stp.deleNode("/root/domData/R2TrnsprtDataset","DT_Consignee");
+}
+if (ShipTo[0] == undefined)
+{
+	stp.deleNode("/root/domData/R2TrnsprtDataset","DT_ShipTo");
+}
+
+var Incotrms = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/TrnsprtInf/Incotrms","Lctn");
+if(Incotrms[0]==undefined)
+{
+	stp.deleNode("/root/domData/R2TrnsprtDataset","DT_Incotrms");
+}
+    
+var InsrncDataSet  = stp.getValue("/Document/DataSetSubmissn/InsrncDataSet/DataSetId","Id");
+if (InsrncDataSet[0] == undefined)
+{
+	stp.deleNode("/root/domData","R2InsrncDataset");
+}
+    
+var IBAN = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/SttlmTerms/CdtrAcct/Id","IBAN");
+var BBAN = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/SttlmTerms/CdtrAcct/Id","BBAN");
+var UPIC = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/SttlmTerms/CdtrAcct/Id","UPIC");
+var PrtryAcct = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/SttlmTerms/CdtrAcct/Id/PrtryAcct","Id");
+if (IBAN[0] == undefined && BBAN[0] == undefined && UPIC[0] == undefined && PrtryAcct[0] == undefined)
+{
+	stp.deleNode("/root/domData/R2ComrclDataset","R2DT_SttlmTerms");
+}
+
+
+var CMIncotrms = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/Incotrms","Lctn");
+if(CMIncotrms[0]==undefined)
+{
+	stp.deleNode("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods","DT_Incotrms");
+}
+
+var comm_amt=stp.getSum("/Document/DataSetSubmissn/ComrclDataSet/Goods","TtlNetAmt");
+stp.updateFieldValue("/root/domData/R2ComrclDataset/R2DT_ComrclDocRef","TSU_COMM_AMT",comm_amt);
+    
+var Goods_poid = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods/PurchsOrdrRef","Id");
+var Goods_FnlSub = stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Goods","FnlSubmissn");
+var RltdTxRefs_poid = stp.getValue("/Document/DataSetSubmissn/RltdTxRefs/PurchsOrdrRef","Id");
+var RltdTxRefs_TxRef = stp.getValue("/Document/DataSetSubmissn/RltdTxRefs","SubmitrTxRef");
+var RltdTxRefs_TxId = stp.getValue("/Document/DataSetSubmissn/RltdTxRefs","TxId");
+var ForcdMtch = stp.getValue("/Document/DataSetSubmissn/RltdTxRefs","ForcdMtch");
+var Trans_poid = stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/TrnsprtInf/TrnsprtdGoods/PurchsOrdrRef","Id");
+var Glength = Goods_poid.length;
+var Rlength = RltdTxRefs_poid.length;
+var Tlength = Trans_poid.length;
+stp.writeLog("Glength="+Glength);
+stp.writeLog("Rlength="+Rlength);
+stp.writeLog("Tlength="+Tlength);
+if (Goods_poid[0] != undefined)
+{
+	stp.writeLog("Goods_poid="+Goods_poid[0]);
+	for(var j=0;j<Glength;j++)
+	{
+	    var Gxpath="/root/domData/R2ComrclDataset/R2DT_ComrclDocRef/R2DT_Goods["+stp.toDouble(j+1)+"]";
+	    var GPOID = Goods_poid[j];
+	    for(var i=0;i<Rlength;i++)
+	    {
+	       var Rxpath="/root/domData/R2RltdTxRefs["+stp.toDouble(i+1)+"]";
+	       var RPOID = RltdTxRefs_poid[i];
+	       stp.writeLog("RPOID="+RPOID);
+	       var compare = stp.compareString(GPOID,RPOID);
+	       if (compare=='true'){
+	       	stp.updateFieldValue(Gxpath,"TSU_SUBMITR_TRX_REF", RltdTxRefs_TxRef[i]);
+		stp.updateFieldValue(Gxpath,"TSU_TID", RltdTxRefs_TxId[i]);
+		stp.updateFieldValue(Gxpath,"TSU_FORCD_MTCH_FLG", ForcdMtch[i]);
+	       }
+	    }
+	    if(Trans_poid[0]!=undefined){
+	        for(var k=0; k<Tlength;k++){
+		var Txpath="/root/domData/R2TrnsprtDataset/R2DT_TrnsprtDocRef/R2DT_TrnsprtdGoods["+stp.toDouble(k+1)+"]";
+		var TPOID = Trans_poid[k];
+		var compare = stp.compareString(GPOID,TPOID);
+		if(compare=='true'){
+		stp.updateFieldValue(Txpath,"TSU_DS_FINAL_FLG", Goods_FnlSub[j]);
+		}
+	        }
+	    }
+	    
+	}
+}
+
+// ADD TO DELETE COMMERCIAL NODE
+if (Goods_poid[0] == undefined)
+{
+	stp.deleNode("/root/domData","R2ComrclDataset");
+}
+if(Trans_poid[0]!=undefined)
+{
+	stp.writeLog("Trans_poid="+Trans_poid[0]);
+	for(var j=0;j<Tlength;j++)
+	{
+	    var Txpath="/root/domData/R2TrnsprtDataset/R2DT_TrnsprtDocRef/R2DT_TrnsprtdGoods["+stp.toDouble(j+1)+"]";
+	    var TPOID =  Trans_poid[j];
+	    for(var i=0;i<Rlength;i++)
+	    {
+	       var Rxpath="/root/domData/R2RltdTxRefs["+stp.toDouble(i+1)+"]";
+	       var RPOID = RltdTxRefs_poid[i];
+	       var compare = stp.compareString(TPOID,RPOID);
+	       if (compare=='true'){
+	       	stp.updateFieldValue(Txpath,"TSU_SUBMITR_TRX_REF", RltdTxRefs_TxRef[i]);
+		stp.updateFieldValue(Txpath,"TSU_TID", RltdTxRefs_TxId[i]);
+		stp.updateFieldValue(Txpath,"TSU_FORCD_MTCH_FLG", ForcdMtch[i]);
+	       }
+	    }	    
+	}
+}
+// ADD TO DELETE TRANSPORT NODE
+if(Trans_poid[0]==undefined)
+{
+	stp.deleNode("/root/domData","R2TrnsprtDataset");
+}
+
+stp.setAutoProcess(true);
+stp.setFunc("InCoE014");
+stp.writeLog("End: Receive 014 From CoE");  
+//Get Buyer/Seller/Bill To/Ship To/Consignee Names -S
+var BYRBK_BIC =stp.getValue("/Document/DataSetSubmissn/BuyrBk","BIC");
+var TSU_BYRBK_BIC = BYRBK_BIC[0];
+stp.writeLog("TSU_BYRBK_BIC="+TSU_BYRBK_BIC);
+var SELLRBK_BIC = stp.getValue("/Document/DataSetSubmissn/SellrBk","BIC");
+var TSU_SELLRBK_BIC = SELLRBK_BIC[0];
+stp.writeLog("TSU_SELLRBK_BIC="+TSU_SELLRBK_BIC);
+//stp.updateFieldValue("/root/domData","TSU_BYRBK_BIC",TSU_BYRBK_BIC);
+//stp.SYS_getCUBK("TSU_BYRBK_BIC","TSU_BYRBK_BIC","/root/domData");        // Get Buyerbk Name and ID from the Buyer BIC
+	
+stp.writeLog("TSU_SELLRBK_BIC:"+ TSU_SELLRBK_BIC);
+//stp.updateFieldValue("/root/domData","TSU_SELLRBK_BIC",TSU_SELLRBK_BIC);
+//stp.SYS_getCUBK("TSU_SELLRBK_BIC","TSU_SELLRBK_BIC","/root/domData");   // Get Sellerbk Name and ID from the Seller BIC
+    
+var Buyer  =stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Buyr","Nm");
+var Buyer = Buyer[0];
+stp.writeLog("Buyer = "+Buyer);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Buyer);
+stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2ComrclDataset/DT_Buyer");
+    
+var Seller =stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/Sellr","Nm");
+var Seller = Seller[0];
+stp.writeLog("Seller = "+Seller);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Seller);
+stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2ComrclDataset/DT_Seller");
+    
+var BillTo =stp.getValue("/Document/DataSetSubmissn/ComrclDataSet/BllTo","Nm");
+var BillTo = BillTo[0];
+if(BillTo!= undefined)
+{ 
+	stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2ComrclDataset/DT_BillTo");  
+}
+	
+var Buyer  =stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/Buyr","Nm");
+var Buyer = Buyer[0];
+stp.writeLog("Buyer = "+Buyer);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Buyer);
+stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2TrnsprtDataset/DT_Buyer");
+    
+var Seller =stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/Sellr","Nm");
+var Seller = Seller[0];
+stp.writeLog("Seller = "+Seller);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Seller);
+stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2TrnsprtDataset/DT_Seller");
+	
+	
+var Consignor =stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/Consgnr","Nm");
+var Consignor = Consignor[0];
+stp.writeLog("Consignor = "+Consignor);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Consignor);
+stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2TrnsprtDataset/DT_Consignor");
+	
+var ShipTo =stp.getValue("/Document/DataSetSubmissn/TrnsprtDataSet/ShipTo","Nm");
+var ShipTo = ShipTo[0];
+stp.writeLog("ShipTo = "+ShipTo);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",ShipTo);
+if(ShipTo!= undefined)
+{
+	stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2TrnsprtDataset/DT_ShipTo");  
+}	
+	
+var Consignee =stp.getValue("/Document/TrnsprtDataSet/Consgn","Nm");
+var Consignee = Consignee[0];
+stp.writeLog("Consignee = "+Consignee);
+stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Consignee);
+if(Consignee!= undefined)
+{
+	stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2TrnsprtDataset/DT_Consignee");  
+}
+    
+//Get Buyer/Seller/Bill To/Ship To/Consignee Names -E
+
+	
+stp.SYS_getCUBK("TSU_BYRBK_BIC","TSU_BUYER_BK_BIC"); // Get the Buyerbk Name and ID from the Buyer BIC
+stp.SYS_getCUBK("TSU_SELLRBK_BIC","TSU_SEL_BK_BIC");      // Get the Sellerbk Name and ID from the Seller BIC
+    
+stp.writeLog("====Receive 014.001.03 assign function end====");]]></js-content>
+</root>

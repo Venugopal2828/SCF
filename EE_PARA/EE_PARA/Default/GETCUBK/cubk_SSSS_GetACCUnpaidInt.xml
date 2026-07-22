@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">IAAC_ACCMASTERLAY</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>GetACCUnpaidInt</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <IA_Y_TTL_POST_INT ALIAS="T0" DBFUNC="" DESC="Total Posted Interest" DT="3" HIDDEN="F" TYPE="F">BM_TEMP_FIN_AMT1</IA_Y_TTL_POST_INT>
+        <IA_Y_TTL_PAID_INT ALIAS="T0" DBFUNC="" DESC="Total Paid Interest" DT="3" HIDDEN="F" TYPE="F">BM_TEMP_FIN_AMT2</IA_Y_TTL_PAID_INT>
+        <IA_Y_TTL_REFUND_INT ALIAS="T0" DBFUNC="" DESC="Total Refund Interest" DT="3" HIDDEN="F" TYPE="F">BM_TEMP_FIN_AMT3</IA_Y_TTL_REFUND_INT>
+        <IA_Y_OUTSD_AMT ALIAS="T0" DBFUNC="" DESC="Outstanding Amount" DT="3" HIDDEN="F" TYPE="F">CFNC_N_UNPAID_PRIN</IA_Y_OUTSD_AMT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.IA_C_REF_NO</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">CFNC_C_RELT_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

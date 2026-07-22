@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="ComplianceHits" Max="n" Min="0" Name="ComplianceHits" PendingStore="N" Screen="SCRN/DO/ComplianceHitsDO_Detail.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="COMPLIANCE_HITS"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="IPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="SBLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Hit Field Name" DispInGrid="Y" EDIT="N" EEType="VARCHAR256" FldType="" Value="">C_HIT_FIELDNAME</Element>
+        <Element DATATYPE="2005" Desc="Hit Stop Descriptors" DispInGrid="N" EDIT="N" EEType="NOTES(3000)" FldType="" Value="">C_HIT_STOPDESC</Element>
+        <Element DATATYPE="12" Desc="Username for hits" DispInGrid="Y" EDIT="N" EEType="VARCHAR32" FldType="" Value="">C_HIT_USERNAME</Element>
+        <Element DATATYPE="12" Desc="Hit Decision" DispInGrid="Y" EDIT="N" EEType="Varchar_130" FldType="" Value="">C_HIT_DECISION</Element>
+        <Element DATATYPE="12" Desc="Hit Notes" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_1750" FldType="" Value="">C_HIT_NOTES</Element>
+    </Elements>
+</DO>

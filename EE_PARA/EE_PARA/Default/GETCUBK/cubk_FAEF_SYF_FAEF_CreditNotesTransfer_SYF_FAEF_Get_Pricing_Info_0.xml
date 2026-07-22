@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_PRICING</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>SYF_FAEF_CreditNotesTransfer_SYF_FAEF_Get_Pricing_Info_0</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_FIN_INFO ALIAS="T0" DBFUNC="" DESC="Financing Information" DT="12" HIDDEN="F" TYPE="F">FA_FIN_INFO</FA_FIN_INFO>
+        <FA_TTL_COMM_RT ALIAS="T0" DBFUNC="" DESC="Total Commission Rate" DT="2" HIDDEN="F" TYPE="F">FA_TTL_COMM_RT</FA_TTL_COMM_RT>
+        <FA_IF_COMM_RT ALIAS="T0" DBFUNC="" DESC="IF Commission Rate" DT="2" HIDDEN="F" TYPE="F">FA_IF_COMM_RT</FA_IF_COMM_RT>
+        <FA_EF_COMM_RT ALIAS="T0" DBFUNC="" DESC="EF Commission Rate" DT="8" HIDDEN="F" TYPE="F">FA_EF_COMM_RT</FA_EF_COMM_RT>
+        <FA_IF_HAN_CHG_AMT ALIAS="T0" DBFUNC="" DESC="IF Handling Charge" DT="3" HIDDEN="F" TYPE="F">FA_IF_HAN_CHG_AMT</FA_IF_HAN_CHG_AMT>
+        <FA_IF_HAN_CHG_CCY ALIAS="T0" DBFUNC="" DESC="IF Handling Charge Currency" DT="1" HIDDEN="F" TYPE="F">FA_IF_HAN_CHG_CCY</FA_IF_HAN_CHG_CCY>
+        <FA_EF_HAN_CHG_AMT ALIAS="T0" DBFUNC="" DESC="EF Handling Charge" DT="3" HIDDEN="F" TYPE="F">FA_EF_HAN_CHG_AMT</FA_EF_HAN_CHG_AMT>
+        <FA_EF_HAN_CHG_CCY ALIAS="T0" DBFUNC="" DESC="EF Handling Charge Currency" DT="1" HIDDEN="F" TYPE="F">FA_EF_HAN_CHG_CCY</FA_EF_HAN_CHG_CCY>
+        <FA_DOC_REQD ALIAS="T0" DBFUNC="" DESC="Document Requested" DT="12" HIDDEN="F" TYPE="F">FA_DOC_REQD</FA_DOC_REQD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">WHERE FA_PRICING_VAL_DT=(select max(FA_PRICING_VAL_DT) from FADA_PRICING where FA_PRICING_VAL_DT &lt; = to_date('</SQL>
+            <SQL TYPE="FLD">FA_TRF_DT</SQL>
+            <SQL TYPE="SQL">','</SQL>
+            <SQL DT="var" DV="SYS_DATE_FORMAT" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">') AND FA_SEL_ID='</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_BUYER_ID='</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_IF_ID='</SQL>
+            <SQL TYPE="FLD">FA_IF_ID</SQL>
+            <SQL TYPE="SQL">') AND FA_IF_ID = '</SQL>
+            <SQL TYPE="FLD">FA_IF_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_SEL_ID='</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_BUYER_ID = '</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">' AND C_TRX_STATUS='M'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

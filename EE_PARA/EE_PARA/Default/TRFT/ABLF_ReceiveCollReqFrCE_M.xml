@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>ABLF</module>
+    <name>ReceiveCollReqFrCE</name>
+    <desc>ReceiveCollReqFrCE</desc>
+    <head-info>
+        <DO name="CollateralAdjustment" path="CollateralAdjustment"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.ABLF_COLL</table-name>
+        <table-desc>Collateral</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>REG_NO</sql>
+            <sql> = '</sql>
+            <field mf="F">REG_NO</field>
+            <sql>' AND </sql>
+            <sql>COLLAT_ID</sql>
+            <sql> ='</sql>
+            <field mf="F">COLLAT_ID</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <COLLAT_OUT_QTY fv_type="F" mf="F" oper="=">COLLAT_OUT_QTY</COLLAT_OUT_QTY>
+        <OUT_DATE fv_type="F" mf="F" oper="=">OUT_DATE</OUT_DATE>
+    </mapping>
+</root>

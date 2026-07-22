@@ -1,0 +1,2 @@
+${record.AMOUNT}
+${record.CCY}

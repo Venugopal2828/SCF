@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO  Desc="PO LineItems XDO Entity"  Max="n" Min="0" Name="XDO_PO_LI"
+    PendingStore="N" Screen="Default/SCRN/DO/FAEF_LI.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="TSU_PO_LI"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>TSU_PO_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="INVC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <!--<FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>-->
+        </FK>
+    </FKS>
+
+
+    <Elements>
+        <Element DATATYPE="12" Desc="PO Number" DispInGrid="Y" EEType="" Value="">FA_DOC_NO</Element>
+        <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EEType="DATE" Value="">FA_DOC_DT</Element>
+        <Element DATATYPE="91" Desc="PO Due Date" DispInGrid="N" EEType="DATE" Value="">FA_DOC_DUE_DT</Element>
+        <Element DATATYPE="91" Desc="Latest Shipment Date" DispInGrid="Y" EEType="DATE" Value="">FA_LATEST_SHIP_DT</Element>
+        <Element DATATYPE="12" Desc="Main Ref." DispInGrid="N" EEType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Company Code" DispInGrid="N" EEType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="3" Desc="PO Amount" DispInGrid="Y" EEType="AMT" Value="">FA_DOC_AMT</Element>
+        <Element DATATYPE="3" Desc="PO Balance" DispInGrid="N" EEType="AMT" Value="">FA_DOC_BAL</Element>
+        <Element DATATYPE="12" Desc="Transaction TID" DispInGrid="N" EEType="" Value="">TSU_TID</Element>
+        <Element DATATYPE="12" Desc="PO CCY" DispInGrid="Y" EEType="" Value="">FA_DOC_CCY</Element>
+        <Element DATATYPE="12" Desc="C_TRX_REF" DispInGrid="N" EEType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="PO Ref" DispInGrid="N" EEType="" Value="">TSU_COMM_REF</Element>
+        <Element DATATYPE="12" Desc="PO Ref" DispInGrid="N" EEType="" Value="">TSU_PO_ID</Element>
+    </Elements>
+</DO>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>IMLC.015.PmtAdv</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>IMLC</module>
+        <map-name>PaymentAdvice</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <APPL_ID descr="" fv-type="F" intfconv="N">ApplId</APPL_ID>
+        <APPL_NM descr="" fv-type="F" intfconv="N">ApplNm</APPL_NM>
+        <BK_MAIN_REF descr="" fv-type="F" intfconv="N">BkMainRef</BK_MAIN_REF>
+        <CURRNT_STATUS descr="" fv-type="F" intfconv="N">CurSts</CURRNT_STATUS>
+        <C_MAIN_REF descr="" fv-type="F" intfconv="N">CEMainRef</C_MAIN_REF>
+        <DISC_DECISION descr="" fv-type="F" intfconv="N">DiscrpcsDecsin</DISC_DECISION>
+        <DOC_DECISION descr="" fv-type="F" intfconv="N">DocDecsin</DOC_DECISION>
+        <DRAW_NO descr="" fv-type="F" intfconv="N">DrawgRefNb</DRAW_NO>
+        <LC_NO descr="" fv-type="F" intfconv="N">LcNb</LC_NO>
+        <NO_OF_DRAW descr="" fv-type="F" intfconv="N">NoOfDrawg</NO_OF_DRAW>
+        <PAY_CCY descr="" fv-type="F" intfconv="N">PayCcy</PAY_CCY>
+        <PMT_TYPE descr="" fv-type="F" intfconv="N">PmtTp</PMT_TYPE>
+        <PRES_AMT descr="" fv-type="F" intfconv="N">PrestinAmt</PRES_AMT>
+        <PRES_BAL descr="" fv-type="F" intfconv="N">PrestinBala</PRES_BAL>
+        <PRES_CCY descr="" fv-type="F" intfconv="N">PrestinCcy</PRES_CCY>
+        <SPCL_INSTR descr="" fv-type="F" intfconv="N">SpclInstr</SPCL_INSTR>
+        <TTL_PAYABLE_AMT descr="" fv-type="F" intfconv="N">TtlAmtPayab</TTL_PAYABLE_AMT>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

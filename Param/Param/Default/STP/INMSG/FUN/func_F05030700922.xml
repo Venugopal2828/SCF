@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: IWGT Received Amendment function");
+stp.setAutoProcess(true);
+
+stp.setCmpId(stp.getMsgTagVal("CustId"));
+stp.setUserId("CSBANK");
+stp.updateFieldValue("CURRNT_STATUS","Receive Amendment");
+var sAdvNb = stp.getMsgTagVal("AdvNb");
+var sNoOfAmdmnt = stp.getMsgTagVal("NoOfAmdmnt");
+var sMainRef = sAdvNb + "-A" + sNoOfAmdmnt;
+stp.setMainRef(sMainRef);
+stp.writeLog("#########C MAIN REF="+sMainRef);
+
+var arrKeys = [["ADV_NO",sAdvNb]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetParentRef",arrKeys);
+var sParentRef = arrGetDataResult[0];
+stp.updateFieldValue("PARENT_MAIN_REF",sParentRef);
+stp.setEventTimes(0);
+stp.execInqAttribute();
+stp.writeLog("End: IWGT Received Amendment function");
+
+stp.writeLog("Start: Get Email Senders List");
+var sEmailTrxType = "N";
+var sFuncId = "F05030700922";
+var arrKeys = [["EMAILTRX_TYPE",sEmailTrxType]];
+var arrGetDataResult = stp.SYS_getCUBKVal("InqEmailGrpArray",arrKeys);
+if (arrGetDataResult){
+    var sEmailArray = arrGetDataResult[0];
+    var sEmailGrpNm = "";
+    var eList = sEmailArray.split("/");
+    for (k=0;k<eList.length;k++) {
+	var fList = eList[k].split("-");
+         if (fList[0]==sFuncId) {
+	    sEmailGrpNm = fList[1];
+         }
+    }  	      
+    if (sEmailGrpNm.length() > 0){
+        var arrKeysforEmailList = [["EMAILGRP_NM",sEmailGrpNm]];
+        var arrGetDataResultforEmailList = stp.SYS_getCUBKVal("InqEmailList",arrKeysforEmailList);
+        var sEmailListArray = arrGetDataResultforEmailList[0]; 	    
+        stp.updateFieldValue("EMAIL_TO",sEmailListArray);
+        stp.updateFieldValue("EMAIL_SUBJECT","CSBank Email Notification"); 
+    }
+}
+stp.writeLog("End: Get Email Senders List");]]></js-content>
+</root>

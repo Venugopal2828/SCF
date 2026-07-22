@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report AutoGen-Parameter-Version="1.0">
+    <name>FADA_RD Invoice Settlement</name>
+    <description>RD Invoice Settlement</description>
+    <engine format="PDF" name="BIRT">
+        <template>FADA_Invoice Settlement.rptdesign</template>
+    </engine>
+    <onlinePage></onlinePage>
+    <PARAS>
+        <name dataType="String" displayName="Seller Name" displayType="text-box" inputdefault="" isSingle="false" property="O">Anchor Customer Name</name>
+        <name dataType="String" displayName="Agreement Document No" displayType="text-box" inputdefault="" isSingle="false" property="O">Agreement Document No</name>
+        <name dataType="DateTime" displayName="From Date" displayType="text-box" inputdefault="" isSingle="false" property="M">From Date</name>
+        <name dataType="DateTime" displayName="End Date" displayType="text-box" inputdefault="" isSingle="false" property="M">End Date</name>
+        <name dataType="String" displayName="Business Type" displayType="text-box" inputdefault="RD" isSingle="false" property="H">Business Type</name>
+        <name FCModule="FADA" FCRule="FA_AUTO_DEBIT" dataType="String" displayName="Auto Settlement?" displayType="list-box" inputdefault="" property="O">Auto Settlement?</name>
+    </PARAS>
+    <MAIL_RULE></MAIL_RULE>
+</report>

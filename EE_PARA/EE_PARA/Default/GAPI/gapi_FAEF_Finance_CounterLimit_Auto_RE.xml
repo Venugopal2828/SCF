@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>T</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value>TrxGenerateLMTS</gapi-type-value>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>LMTS</other-system-id>
+        <other-system-interface>CL102</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FAEF</module>
+        <interface-mapping-name>Finance_CounterLimit_Auto</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>R</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <LM_CSL_DESC descr="" ec-tag="N" fv-type="F" op-tag="N" order="1">FA_ANCHOR_ID</LM_CSL_DESC>
+        <LM_CUST_ID descr="" ec-tag="N" fv-type="F" op-tag="N" order="4">FA_COUNTER_ID</LM_CUST_ID>
+        <LM_DRCR_MRK descr="" ec-tag="N" fv-type="V" op-tag="N" order="7">D</LM_DRCR_MRK>
+        <LM_FACI_TP descr="" ec-tag="N" fv-type="F" op-tag="N" order="10">FA_BUSI_TYPE</LM_FACI_TP>
+        <LM_RCUST_ID descr="" ec-tag="N" fv-type="F" op-tag="N" order="16">FA_CNTR_REF</LM_RCUST_ID>
+        <LM_TRX_AMT descr="" ec-tag="N" fv-type="F" op-tag="N" order="19">FA_TTL_LOAN_AMT</LM_TRX_AMT>
+        <LM_TRX_CCY descr="" ec-tag="N" fv-type="F" op-tag="N" order="22">FA_LMT_CCY</LM_TRX_CCY>
+        <LM_TRX_REF descr="" ec-tag="N" fv-type="F" op-tag="N" order="25">FA_SBR_REF</LM_TRX_REF>
+        <LM_RSV_LINK descr="" ec-tag="Y" fv-type="F" op-tag="N" order="30">LM_RSV_LINK</LM_RSV_LINK>
+    </send-msg-map>
+    <recv-msg-map>
+        <LM_RSV_LINK descr="" fv-type="F" order="1" sheet="" sheet-separator="">LM_RSV_LINK</LM_RSV_LINK>
+    </recv-msg-map>
+    <send-item/>
+</gapi>

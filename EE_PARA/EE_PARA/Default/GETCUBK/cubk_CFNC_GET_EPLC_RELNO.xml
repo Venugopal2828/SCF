@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">CPYT_SCHEDULE</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>CFNC</module-name>
+        <cubk-mapping-name>GET_EPLC_RELNO</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">RELA_MAIN_REF</C_MAIN_REF>
+        <C_TRX_REF ALIAS="T0" DBFUNC="" DESC="C_TRX_REF" DT="1" HIDDEN="F" TYPE="F">RELA_DRAW_REF</C_TRX_REF>
+        <CPYT_PAY_CCY ALIAS="T0" DBFUNC="" DESC="Pay Currency" DT="1" HIDDEN="F" TYPE="F">TRX_CCY</CPYT_PAY_CCY>
+        <CPYT_N_PAY_AMT ALIAS="T0" DBFUNC="" DESC="Pay Amount In Transaction Currency" DT="3" HIDDEN="F" TYPE="F">TRX_AMT</CPYT_N_PAY_AMT>
+        <CPYT_C_SDA_FLAG ALIAS="T0" DBFUNC="" DESC="Sight/Def/Acc Flag" DT="12" HIDDEN="F" TYPE="F">DELVR_DOC_AGST</CPYT_C_SDA_FLAG>
+        <CPYT_I_TENOR_DAYS ALIAS="T0" DBFUNC="" DESC="Tenor Days" DT="2" HIDDEN="F" TYPE="F">TENOR_DAYS</CPYT_I_TENOR_DAYS>
+        <CPYT_D_MAT_DATE ALIAS="T0" DBFUNC="" DESC="Debit Maturity Date" DT="91" HIDDEN="F" TYPE="F">TEMP_D_MAT_DATE</CPYT_D_MAT_DATE>
+        <CPYT_C_CFNC_REF ALIAS="T0" DBFUNC="" DESC="Reference" DT="12" HIDDEN="T" TYPE="F">TEMP_C_CFNC_REF</CPYT_C_CFNC_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_4" TYPE="TBL_FLD">T0.CPYT_ORIGIN_MODULE</SQL>
+            <SQL TYPE="SQL"> = 'EPLC' AND (</SQL>
+            <SQL DT="12" EEType="Varchar_40" TYPE="TBL_FLD">T0.CPYT_C_CFNC_REF</SQL>
+            <SQL TYPE="SQL"> is null) AND </SQL>
+            <SQL DT="91" EEType="DATE" TYPE="TBL_FLD">T0.CPYT_D_MAT_DATE</SQL>
+            <SQL TYPE="SQL"> &gt; TO_DATE('</SQL>
+            <SQL DT="var" DV="SYS_BUSI_DATE" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">','</SQL>
+            <SQL DT="var" DV="SYS_DATE_FORMAT" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">')</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

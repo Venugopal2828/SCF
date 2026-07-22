@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>PO Maintenance</MODULE_DESC>
+        <EVENT>IncomingDemergeFunc</EVENT>
+        <CATALOGID/>
+        <ID>F05030701164</ID>
+        <NAME>Received Matched Report</NAME>
+        <DESC>Received Matched Report</DESC>
+        <FUNSHORTNAME>RecMatchRpt</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">TSUM_RecIncomingPO.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701158</ID>
+        <NAME>Received Matched Report_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701158</ID>
+        <NAME>Received Matched Report_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000461</ID>
+        <NAME>Received Matched Report_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

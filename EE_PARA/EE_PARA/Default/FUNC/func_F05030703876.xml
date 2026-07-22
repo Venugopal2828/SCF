@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/R5TSUM_Submit BaseLine_EE.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="F">
+        <SCREEN DO="BuyerBank">TSUM_BuyerBanksInfomation</SCREEN>
+        <SCREEN DO="SellerBank">TSUM_SellerBankInformation</SCREEN>
+    </DOSCREEN>
+    <OUTTSU>
+        <ID>F00000008091</ID>
+    </OUTTSU>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>Open Account Module</MODULE_DESC>
+        <EVENT>TSUR2RelatedFunction</EVENT>
+        <ID>F05030703876</ID>
+        <NAME>R5InitialBaselineSubmission</NAME>
+        <DESC>Initial Baseline Submission R5</DESC>
+        <FUNSHORTNAME>tsmt.019.001.05A</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>S</UIStyle>
+        <ADDMASTER>Y</ADDMASTER>
+        <ATTR_ID name="InitialBaselineSubmission">R00000006709</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID/>
+    </FUNCTION>
+</FUNC>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="MarginHeader" Max="1" Min="0"
+    Name="MarginHeader" PendingStore="N" Screen="SCRN/DO/MarginHeader.jsp"
+    StoreInto="C" StoreType="C">
+    <Component>MarginBusiDealer</Component>
+    <PK>
+        <PKNAME>MRGN_DR_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="GTEE_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Margin Percentage" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_4" FldType="" Value="">MRGN_PCT</Element>
+        <Element DATATYPE="1" Desc="Margin Currency" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">MRGN_CCY</Element>
+        <Element DATATYPE="3" Desc="Margin Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">MRGN_AMT</Element>
+        <Element DATATYPE="3" Desc="MRGN_BAL" DispInGrid="Y" EDIT="N"
+            EEType="Decimai_18_3" FldType="" Value="">MRGN_BAL</Element>
+        <Element DATATYPE="3" Desc="MRGN_AMT_CHANGED" DispInGrid="Y" EDIT="N"
+            EEType="Decimai_18_3" FldType="" Value="">MRGN_AMT_CHANGED</Element>
+        <Element DATATYPE="12" Desc="Margin D/C Customer ID" DispInGrid="Y"
+            EDIT="N" EEType="Varchar_30" FldType="" Value="">MRGN_DR_ID</Element>
+        <Element DATATYPE="12" Desc="Margin Percentage Check" DispInGrid="N"
+            EDIT="N" EEType="Varchar_4" FldType="" Value="">MRGN_PCT_CHK</Element>
+    </Elements>
+    <DO DATATYPE="2005" Desc="MarginDetails" Field="MARGINDETAILS" Max="n"
+        Min="0" Name="MarginDetails" PendingStore="N"
+        Screen="SCRN/DO/MarginDetails.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="1" Desc="Margin D/C Account No" DispInGrid="Y"
+                EDIT="N" EEType="ACNO" FldType="" Value="">MRGN_DR_AC</Element>
+            <Element DATATYPE="1" Desc="Margin D/C Currency" DispInGrid="Y"
+                EDIT="N" EEType="CCY" FldType="" Value="">SUB_MRGN_CCY</Element>
+            <Element DATATYPE="3" Desc="Margin D/C Balance Amount"
+                DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">SUB_MRGN_BAL</Element>
+            <Element DATATYPE="91" Desc="Value Date" DispInGrid="Y" EDIT="N"
+                EEType="DATE" FldType="" Value="">D_VALUE_DATE</Element>
+            <Element DATATYPE="8" Desc="Exchange Rate" DispInGrid="Y" EDIT="N"
+                EEType="RATE" FldType="" Value="">C_EXCHAN_RATE</Element>
+            <Element DATATYPE="1" Desc="Margin Account No" DispInGrid="Y"
+                EDIT="N" EEType="ACNO" FldType="" Value="">MRGN_AC_NO</Element>
+            <Element DATATYPE="1" Desc="Margin Account Ccy" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">MRGN_AC_CCY</Element>
+            <Element DATATYPE="3" Desc="Margin Account Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">MRGN_AC_AMT</Element>
+            <Element DATATYPE="12" Desc="SUB_MRGN_PCT" DispInGrid="N" EDIT="N"
+                EEType="Varchar_4" FldType="" Value="">SUB_MRGN_PCT</Element>
+            <Element DATATYPE="3" Desc="Margin Hold/Release Amount"
+                DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">SUB_MRGN_AMT</Element>
+            <Element DATATYPE="12" Desc="Margin D/C Customer ID" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">MRGN_DR_ID</Element>
+            <Element DATATYPE="12" Desc="MRGN_DR_AC_TYPE" DispInGrid="N"
+                EDIT="N" EEType="Varchar_12" FldType="" Value="">MRGN_DR_AC_TYPE</Element>
+            <Element DATATYPE="3" Desc="SUB_MRGN_AMT_ForeignExchange"
+                DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">SUB_MRGN_AMT_FX</Element>
+            <Element DATATYPE="3" Desc="MRGN_AC_AMT_ForeignExchange"
+                DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">MRGN_AC_AMT_FX</Element>
+        </Elements>
+    </DO>
+</DO>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<js-content><![CDATA[stp.writeLog("Start: assing msg to Receive SBR for Counterparty");
+var busiType = stp.getMsgTagVal("FA_BUSI_TYPE");
+stp.writeLog("busiType============" + busiType);
+if(busiType == 'DF'){
+  stp.setFunc("ReceiveSBRforBuyer", "Factoring Program Maintenance");
+}else{
+  stp.setFunc("ReceiveSBRforCounterparty", "Scf Programer Maintenance");
+}
+stp.writeLog("End: assing msg to Receive SBR for Counterparty");]]></js-content>
+</root>

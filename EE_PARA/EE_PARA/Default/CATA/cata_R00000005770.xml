@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="DELETE_CATA"/>
+        <FIELD NAME="_TRX_TYPE" VALUE="DELETE_CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082301471</ID>
+    <MODULE>FADA</MODULE>
+    <JSPFILE>screen/CATA/DeleteCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.FADA_LEDGER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Main Ref. No." EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Function Short Name" EEType="" HIDDEN="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Transaction Ref." EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_FUNC_ID" EEType="" HIDDEN="H">C_FUNC_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Status" EEType="" HIDDEN="">C_EVENT_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Create By" EEType="" HIDDEN="H">C_CREA_BY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Factor ID" EEType="Varchar_24" HIDDEN="">FA_FACTOR_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Factor Name" EEType="Varchar_35" HIDDEN="">FA_FACTOR_NM</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Factor ID" DT="12" EEType="Varchar_24" TYPE="FLD">FA_FACTOR_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Factor Name" DT="12" EEType="Varchar_35" TYPE="FLD">FA_FACTOR_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' 
+ AND (</SQL>
+        <SQL DESC="Status" DT="1" EEType="" TYPE="FLD">C_EVENT_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'P' OR </SQL>
+        <SQL DESC="Status" DT="1" EEType="" TYPE="FLD">C_EVENT_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'S') AND (</SQL>
+        <SQL DESC="Function Short Name" DT="12" EEType="" TYPE="FLD">C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL"> = 'AddFactor' OR </SQL>
+        <SQL DESC="Function Short Name" DT="12" EEType="" TYPE="FLD">C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL"> = 'EditFactor') ORDER BY </SQL>
+        <SQL DESC="Factor ID" DT="12" EEType="Varchar_24" TYPE="FLD">FA_FACTOR_ID</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Factor ID" EEType="Varchar_24">FA_FACTOR_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Factor Name" EEType="Varchar_35">FA_FACTOR_NM</FIELD>
+        <FIELD DATATYPE="1" DESC="Status" EEType="">C_EVENT_STATUS</FIELD>
+        <FIELD DATATYPE="1" DESC="Status" EEType="">C_EVENT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Function Short Name" EEType="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD DATATYPE="12" DESC="Function Short Name" EEType="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD DATATYPE="12" DESC="Factor ID" EEType="Varchar_24">FA_FACTOR_ID</FIELD>
+    </CLAUSEFIELD>
+</CATA>

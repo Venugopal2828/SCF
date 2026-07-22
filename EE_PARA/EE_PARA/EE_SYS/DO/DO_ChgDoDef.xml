@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="ChgDoDef" Max="n" Min="0"
+    Name="ChgDoDef" PendingStore="N" Screen="" StoreInto="C" StoreType="C">
+    <Component>ChgBusiDealer</Component>
+    <PK>
+        <PKNAME>CHG_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Charge Entry ID" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR50" FldType="" Value="">CHG_ID</Element>
+        <Element DATATYPE="4" Desc="Charge Index" DispInGrid="N" EDIT="N"
+            EEType="INTEGER" FldType="" Value="">CHG_INDEX</Element>
+        <Element DATATYPE="12" Desc="Commission Code" DispInGrid="N" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">CHG_COMMISSION_CODE</Element>
+        <Element DATATYPE="12" Desc="Commission Descripition" DispInGrid="Y"
+            EDIT="Y" EEType="Varchar_32" FldType="TextField" Value="">CHG_COMMISSION_DESC</Element>
+        <Element DATATYPE="1" Desc="Active#0x0d#CCY" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">CHG_ACTIVE_CCY</Element>
+        <Element DATATYPE="3" Desc="Charge#0x0d#Amount" DispInGrid="Y" EDIT="Y"
+            EEType="AMT" FldType="TextField" Value="">CHG_ACTIVE_AMT</Element>
+        <Element DATATYPE="12" Desc="Paid By" DispInGrid="Y" EDIT="Y"
+            EEType="interpreter_32" FldType="Combobox" Value="">CHG_CHARGE_FOR</Element>
+        <Element DATATYPE="12" Desc="Paid At" DispInGrid="Y" EDIT="Y"
+            EEType="interpreter_32" FldType="Combobox" Value="">CHG_CHARGE_AT</Element>
+        <Element DATATYPE="1" Desc="Collect CCY" DispInGrid="Y" EDIT="Y"
+            EEType="CCY" FldType="Combobox" Value="">CHG_COLLECT_CCY</Element>
+        <Element DATATYPE="3" Desc="Collect#0x0d#Amount" DispInGrid="Y" EDIT="Y"
+            EEType="AMT" FldType="" Value="">CHG_COLLECT_AMT</Element>
+        <Element DATATYPE="3" Desc="Balance#0x0d#Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">CHG_BALANCE_AMT</Element>
+        <Element DATATYPE="1" Desc="Balance CCY" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">CHG_BALANCE_CCY</Element>
+        <Element DATATYPE="1" Desc="Charge Pay CCY" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">CHG_PAY_CCY</Element>
+        <Element DATATYPE="3" Desc="Charge Pay Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CHG_PAY_AMT</Element>
+        <Element DATATYPE="2" Desc="Discount#0x0d#Rate" DispInGrid="Y" EDIT="Y"
+            EEType="Numeric_6_2" FldType="TextField" Value="">CHG_DISCOUNT_RATE</Element>
+        <Element DATATYPE="3" Desc="Discount#0x0d#Amount" DispInGrid="Y"
+            EDIT="Y" EEType="AMT" FldType="TextField" Value="">CHG_DISCOUNT_AMT</Element>
+        <Element DATATYPE="12" Desc="Vat#0x0d#Type" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_12" FldType="" Value="">CHG_VAT_TYPE</Element>
+        <Element DATATYPE="2" Desc="Vat#0x0d#Rate(%)" DispInGrid="Y" EDIT="N"
+            EEType="Numeric_6_2" FldType="" Value="">CHG_VAT_RATE</Element>
+        <Element DATATYPE="3" Desc="Collect Vat Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">CHG_COLLECT_VAT_AMT</Element>
+        <Element DATATYPE="12" Desc="Charge Pay Entry ID" DispInGrid="N"
+            EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PAY_ENTRY_ID</Element>
+        <Element DATATYPE="12" Desc="Is Override" DispInGrid="Y" EDIT="N"
+            EEType="VARCHAR1" FldType="" Value="">CHG_IS_OVERRIDE</Element>
+        <Element DATATYPE="12" Desc="Charge Hidden Flag" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR10" FldType="" Value="">CHG_FLD_HIDDEN_FLAG</Element>
+        <Element DATATYPE="3" Desc="Rule Amt" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CHG_RULE_AMT</Element>
+        <Element DATATYPE="1" Desc="Rule CCY" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">CHG_RULE_CCY</Element>
+        <Element DATATYPE="12" Desc="Charge Rate ID" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR50" FldType="" Value="">CHG_RATE_ID</Element>
+        <Element DATATYPE="12" Desc="Charge Rule ID" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR50" FldType="" Value="">CHG_RULE_ID</Element>
+        <Element DATATYPE="91" Desc="Comm Start Date" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">CHG_COMM_START_DATE</Element>
+        <Element DATATYPE="91" Desc="Charge Comm Upto Date" DispInGrid="N"
+            EDIT="N" EEType="DATE" FldType="" Value="">CHG_COMM_UPTO_DATE</Element>
+        <Element DATATYPE="12" Desc="Charge Fld Override" DispInGrid="N"
+            EDIT="N" EEType="VARCHAR1" FldType="" Value="">CHG_FLD_OVERRIDE</Element>
+        <Element DATATYPE="3" Desc="Charge Orig Calc Amt" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CHG_FLD_ORIG_CALC_AMT</Element>
+        <Element DATATYPE="1" Desc="Charge Orig Calc Ccy" DispInGrid="N"
+            EDIT="N" EEType="CCY" FldType="" Value="">CHG_FLD_ORIG_CALC_CCY</Element>
+        <Element DATATYPE="12" Desc="Charge Reserved Field" DispInGrid="N"
+            EDIT="N" EEType="VARCHAR50" FldType="" Value="">CHG_BLANK</Element>
+    </Elements>
+</DO>

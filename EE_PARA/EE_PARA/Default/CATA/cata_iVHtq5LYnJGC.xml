@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>iVHtq5LYnJGC</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Edit CHG GL Account_CATALOG</DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_CHG_GL_AC</TABLENAME>
+    <FIELDLIST>
+        <FIELD DATATYPE="12" DESC="UNIT CODE" EEType="SYS_VARCHAR_12" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Commission Code" EEType="Varchar_32" HIDDEN="H">C_COMMISSION_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Number" EEType="Varchar_20" HIDDEN="">C_AC_NUMBER</FIELD>
+        <FIELD DATATYPE="1" DESC="C_LOCKED_FLAG" EEType="SYS_CHAR_1" HIDDEN="H">C_LOCKED_FLAG</FIELD>
+        <FIELD DATATYPE="12" DESC="C_LOCKED_OP" EEType="SYS_VARCHAR_32" HIDDEN="H">C_LOCKED_OP</FIELD>
+        <FIELD DATATYPE="12" DESC="Product Code" EEType="Varchar_32" HIDDEN="">C_PRODUCT_CODE</FIELD>
+        <FIELD DATATYPE="1" DESC="Currency" EEType="CCY" HIDDEN="H">C_CCY</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Product Code" DT="12" EEType="Varchar_32" TYPE="FLD">C_PRODUCT_CODE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="Account Number" DT="12" EEType="Varchar_20" TYPE="FLD">C_AC_NUMBER</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Product Code" EETYPE="Varchar_32">C_PRODUCT_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Number" EETYPE="Varchar_20">C_AC_NUMBER</FIELD>
+    </CLAUSEFIELD>
+</CATA>

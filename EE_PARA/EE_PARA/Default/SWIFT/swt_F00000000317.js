@@ -1,0 +1,38 @@
+if (DV.getFieldValue("R_LMT_DECISION_FLG") != "Failed") {
+    var MESG_TYPE_BANK;
+    var records = DV.getRecords("AdviceForBankCust");
+    for (var i = 0; i < records.length; i++) {
+        MESG_TYPE_BANK = DV.getDOValue(records[i], "MESG_TYPE_BANK");
+        type = DV.getNodeAttr(records[i], "Type");
+
+        var sB1 = DV.getFieldValue("LOGIN_BIC");
+        var sB2 = DV.getDOValue(records[i], "SEND_TO_BK_SW_ADD");
+        var sMT = MESG_TYPE_BANK.substr(2, 3);
+
+
+        if (MESG_TYPE_BANK.substr(0, 2) == 'MT' && type != 'D') {
+            var sResult = DV.checkRMA(sB1, sB2, sMT);
+            if (sResult == "TRUE" || sMT == "999") {
+                DV.appendDOSWIFT('SSSS_sendtobank_sw_mt' + MESG_TYPE_BANK.substr(2, 3), i, "AdviceForBankCust");
+            } else {
+                var arr_para = new Array(sB1, sB2, sMT);
+                DV.throwException('1847', arr_para);
+            }
+        }
+    }
+}
+//Add on 20181113 for pilot test bug 61889 Hattie;
+
+CPYT_PAY_ADV_MSG = DV.getFieldValue("CPYT_PAY_ADV_MSG");
+
+if (CPYT_PAY_ADV_MSG == 'MT103') {
+    DV.appendSWIFT("SSSS_CPYTMT103");
+} else if (CPYT_PAY_ADV_MSG == 'MT202') {
+    DV.appendSWIFT("SSSS_MT202");
+} else if (CPYT_PAY_ADV_MSG == 'MT202COV') {
+    DV.appendSWIFT("SSSS_CPYTMT103");
+    DV.appendSWIFT("SSSS_CPYTMT202COV");
+} else if (CPYT_PAY_ADV_MSG == 'MT400') {
+    DV.appendSWIFT("SSSS_CPYTMT400");
+}
+//End;

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR AutoGen-Parameter-Version="1.0">
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Master Add Rec">TrxMasterAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>IPLC</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.IPLC_MASTER</TABLE_NAME>
+        <TABLE_DESC>IPLC_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Add Master</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Generate Diary">TrxAddDiary</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>IPLC</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME schema="%EXIMTRX%">%EXIMTRX%.CDRY_MASTER</TABLE_NAME>
+        <TABLE_DESC>CDRY_MASTER</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF/>
+        <POST>YES</POST>
+        <BCTYPE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Generate Charge">TrxGenerateCharge</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>IPLC</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.</TABLE_NAME>
+        <TABLE_DESC/>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Generate Voucher">TrxGenerateVoucher</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>IPLC</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.</TABLE_NAME>
+        <TABLE_DESC/>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Generate Voucher</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Generate Document">TrxGenerateDocument</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>IPLC</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.</TABLE_NAME>
+        <TABLE_DESC/>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE>Generate Documents</BCTYPE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Generate Swift">TrxGenerateSwift</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>IPLC</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.</TABLE_NAME>
+        <TABLE_DESC/>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="N">
+        <NAME compName="Trx Generate Transfer to">TrxTransferTo</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <PREREQUISITE>N</PREREQUISITE>
+        <IS_ALLOWED_PRINT>N</IS_ALLOWED_PRINT>
+        <MODULE>IPLC</MODULE>
+        <EVENT/>
+        <TABLE_NAME schema="%EXIMSYS%">%EXIMSYS%.</TABLE_NAME>
+        <TABLE_DESC/>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <POST>YES</POST>
+        <BCTYPE/>
+    </COMPONENT>
+</FUNCATTR>

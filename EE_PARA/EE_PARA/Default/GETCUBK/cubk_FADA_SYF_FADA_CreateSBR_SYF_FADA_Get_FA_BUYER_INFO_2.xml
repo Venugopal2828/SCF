@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>SYF_FADA_CreateSBR_SYF_FADA_Get_FA_BUYER_INFO_2</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_CUST_NM_ADD_ML ALIAS="T0" DBFUNC="" DESC="Customer Mailing Name Address" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_ADD_ML</FA_CUST_NM_ADD_ML>
+        <FA_CUST_BK_NM ALIAS="T0" DBFUNC="" DESC="Customer Bank Name" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_BK_NM</FA_CUST_BK_NM>
+        <FA_CUST_ACC_NO ALIAS="T0" DBFUNC="" DESC="Customer Account No." DT="12" HIDDEN="F" TYPE="F">FA_BUYER_AC_NO</FA_CUST_ACC_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

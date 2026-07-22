@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="SECU">SECU</MODULE>
+        <MODULE_DESC>Security Module</MODULE_DESC>
+        <EVENT>Admin Role Assign</EVENT>
+        <CATALOGID>C10071500006</CATALOGID>
+        <ID>F05030700974</ID>
+        <NAME>Assign Admin Role</NAME>
+        <DESC>Assign Admin Role</DESC>
+        <FUNSHORTNAME>AssignAdmRole</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>GE</FUNCTYPE>
+        <MAINCOMP name="CE Secu Manager">CESecuManager</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE>SecuUserRole</COMPTYPE>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Secu_Template.jsp">SecuRoleAssign.jsp</JSPFILE>
+    </SCREEN>
+    <NOTIFY>
+        <ID>N00000000227</ID>
+        <NAME>Assign Admin Role_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

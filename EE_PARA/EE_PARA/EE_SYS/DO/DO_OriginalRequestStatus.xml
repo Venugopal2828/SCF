@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Original Request Status" Max="1"
+    Min="0" Name="OriginalRequestStatus" PendingStore="Y">
+    <Elements/>
+    <DO Desc="Validation Status Information" Max="1" Min="0"
+        Name="ValidationStatusInformation" PendingStore="N"
+        Screen="SCRN/DO/FIN_ValidationStatusInfo.jsp" StoreInto="D" StoreType="F">
+        <Elements>
+            <Element DATATYPE="12" Desc="Status" DispInGrid="Y" EDIT="N"
+                EEType="Varchar_25" FldType="" Value="">FIN_VLD_STS</Element>
+            <Element DATATYPE="12" Desc="Code" DispInGrid="Y" EDIT="N"
+                EEType="Varchar_40" FldType="" Value="">FIN_VLD_STSRSN_CD</Element>
+            <Element DATATYPE="12" Desc="Proprietary" DispInGrid="Y" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FIN_VLD_STSRSN_PTY</Element>
+        </Elements>
+        <DO DATATYPE="2005" Desc="Additional Status Reason Information"
+            Field="FIN_VLD_ADD_RSN" Max="n" Min="0"
+            Name="AdditionalStatusReasonInformation" PendingStore="N"
+            Screen="SCRN/DO/FIN_AddtlStsRsnInf.jsp" StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="12"
+                    Desc="Additional Status Reason Information" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_105" FldType="" Value="">FIN_VLD_ADDT_RSN</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Cancellation Status Information" Max="1" Min="0"
+        Name="CancellationStatusInformation" PendingStore="N" Screen=""
+        StoreInto="D" StoreType="F">
+        <Elements>
+            <Element DATATYPE="12" Desc="Status" DispInGrid="Y" EDIT="N"
+                EEType="Varchar_8" FldType="" Value="">FIN_CXL_STS</Element>
+            <Element DATATYPE="12" Desc="Code" DispInGrid="Y" EDIT="N"
+                EEType="Varchar_40" FldType="" Value="">FIN_CXL_STSRSN_CD</Element>
+            <Element DATATYPE="12" Desc="Proprietary" DispInGrid="Y" EDIT="N"
+                EEType="Varchar_35" FldType="" Value="">FIN_CXL_STSRSN_PTY</Element>
+        </Elements>
+        <DO DATATYPE="2005"
+            Desc="Cancellation Additional Status Reason Information"
+            Field="FIN_CXL_ADD_RSN" Max="n" Min="0"
+            Name="CancellationAdditionalStatusReasonInformation"
+            PendingStore="N" Screen="SCRN/DO/FIN_CancelAddtlStsRsnInf.jsp"
+            StoreInto="D" StoreType="X">
+            <Elements>
+                <Element DATATYPE="12"
+                    Desc="Additional Status Reason Information" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_105" FldType="" Value="">FIN_CXL_ADDT_RSN</Element>
+            </Elements>
+        </DO>
+    </DO>
+</DO>

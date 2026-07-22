@@ -1,0 +1,1 @@
+because little change every release, so yearly version check in each js .

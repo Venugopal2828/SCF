@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="SECU">SECU</MODULE>
+        <MODULE_DESC>Security Module</MODULE_DESC>
+        <EVENT>Customer Ref</EVENT>
+        <CATALOGID>C05122200026</CATALOGID>
+        <ID>F05030700350</ID>
+        <NAME>Edit Customer Reference</NAME>
+        <DESC>Modify Customer Ref</DESC>
+        <FUNSHORTNAME>EditCustRef</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>GE</FUNCTYPE>
+        <MAINCOMP name="CE Secu Manager">CESecuManager</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE>SecuCustRef</COMPTYPE>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Secu_Template.jsp">SecuRefNum.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700351</ID>
+        <NAME>Edit Customer Reference_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700351</ID>
+        <NAME>Edit Customer Reference_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000191</ID>
+        <NAME>Edit Customer Reference_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

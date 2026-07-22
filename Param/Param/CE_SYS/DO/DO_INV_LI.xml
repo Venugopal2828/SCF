@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Invoice TDO" Max="999" Min="0" Name="INV_LI" PendingStore="N" Screen="Default/SCRN/DO/FAEF_INV.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="SCF_INV_LI"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Main Ref." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_20" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Company Code" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Doc No." DispInGrid="Y" EDIT="N" EEType="AutoGen_Trx_VARCHAR_35" FldType="" Value="">FA_DOC_NO</Element>
+        <Element DATATYPE="1" Desc="Document Type" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_DOC_TYPE</Element>
+        <Element DATATYPE="91" Desc="Doc Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_DT</Element>
+        <Element DATATYPE="91" Desc="Doc Value Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="Doc Due Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_DUE_DT</Element>
+        <Element DATATYPE="1" Desc="Doc CCY" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">FA_DOC_CCY</Element>
+        <Element DATATYPE="3" Desc="Doc Amt" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_DOC_AMT</Element>
+    </Elements>
+</DO>

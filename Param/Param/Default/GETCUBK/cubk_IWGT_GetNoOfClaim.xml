@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Get Number Of Claim" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>IWGT</module-name>
+        <cubk-mapping-name>GetNoOfClaim</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.IWGT_EM_STLMNT</table-name>
+        <table-desc>Claim &amp; Settlement</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <ADV_NO DESC="Advise Number" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">ADV_NO</ADV_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <NO_OF_CLM DBFUNC="MAX" DESC="Number of Claim" DT="4" HIDDEN="" TYPE="F" WTYPE="CASE">NO_OF_CLM</NO_OF_CLM>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

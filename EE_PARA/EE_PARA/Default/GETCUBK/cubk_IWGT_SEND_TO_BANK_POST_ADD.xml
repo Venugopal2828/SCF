@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POST_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>IWGT</module-name>
+        <cubk-mapping-name>SEND_TO_BANK_POST_ADD</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <ORDER_NO ALIAS="T0" DESC="Order Number" DT="4" TYPE="F">SEND_TO_MAIL_ADD_ORDERNO</ORDER_NO>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SEND_TO_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <ORDER_NO ALIAS="T0" DBFUNC="" DESC="Order Number" DT="4" HIDDEN="F" TYPE="F">SEND_TO_MAIL_ADD_ORDERNO</ORDER_NO>
+        <POSTAL_FMT_ADD ALIAS="T0" DBFUNC="" DESC="Mail Address" DT="12" HIDDEN="F" TYPE="F">SEND_TO_MAIL_ADD</POSTAL_FMT_ADD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">SEND_TO_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

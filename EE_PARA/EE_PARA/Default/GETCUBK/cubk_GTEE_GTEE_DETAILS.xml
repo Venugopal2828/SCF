@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TMPL_EVENT</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>GTEE</module-name>
+        <cubk-mapping-name>GTEE_DETAILS</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <TEMP_NAME ALIAS="T0" DESC="Temporary Name" DT="12" TYPE="F">TEMP_INDEMN_NM</TEMP_NAME>
+            <FORM_OF_UNDERTAKING ALIAS="T0" DESC="Form of Undertaking" DT="12" TYPE="F">FORM_OF_UNDERTAKING</FORM_OF_UNDERTAKING>
+            <GTEE_TYPE ALIAS="T0" DESC="Guarantee Type" DT="1" TYPE="F">GTEE_TYPE</GTEE_TYPE>
+            <C_MODU_NAME ALIAS="T0" DESC="C_MODU_NAME" DT="12" TYPE="V">GTEE</C_MODU_NAME>
+            <C_TRX_STATUS ALIAS="T0" DESC="C_TRX_STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+            <ACTIVE_FLAG ALIAS="T0" DESC="Active Flag" DT="12" TYPE="V">Y</ACTIVE_FLAG>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_CONTENT ALIAS="T0" DBFUNC="" DESC="Content" DT="2005" HIDDEN="T" TYPE="F">GTEE_DETAILS</C_CONTENT>
+        <TEMP_NAME ALIAS="T0" DBFUNC="" DESC="Template Name" DT="12" HIDDEN="F" TYPE="F">TEMP_INDEMN_NM</TEMP_NAME>
+        <TEMP_TYPE ALIAS="T0" DBFUNC="" DESC="Template Type" DT="12" HIDDEN="F" TYPE="F">TEMP_TYPE</TEMP_TYPE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_4" TYPE="TBL_FLD">T0.EXPIRY_TYPE</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">EXPIRY_TYPE</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_4" TYPE="TBL_FLD">T0.FORM_OF_UNDERTAKING</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FORM_OF_UNDERTAKING</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.GTEE_TYPE</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">GTEE_TYPE</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.ACTIVE_FLAG</SQL>
+            <SQL TYPE="SQL"> = 'Y' AND </SQL>
+            <SQL DT="12" EEType="AutoGen_Trx_VARCHAR_4" TYPE="TBL_FLD">T0.C_MODU_NAME</SQL>
+            <SQL TYPE="SQL"> = 'GTEE' ORDER BY </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

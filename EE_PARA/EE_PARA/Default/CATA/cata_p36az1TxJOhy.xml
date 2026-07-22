@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="True" MULTI="YES" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_SHOW_SEL_ALL" VALUE="N"/>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+        <FIELD NAME="_TRX_TYPE" VALUE="INCOMING_XML"/>
+    </CATA_HIDDEN_FLD>
+    <ID>p36az1TxJOhy</ID>
+    <MODULE>SYST</MODULE>
+    <JSPFILE>screen/CATA/IncomingXMLCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Re-demergeIncomingXML</DESC>
+    <TABLELIST>
+        <TABLENAME ALIAS="t1" MASTER="YES">%EXIMSYS%.STP_IN_MSG_STO_LOG</TABLENAME>
+        <TABLENAME ALIAS="t2">%EXIMSYS%.STP_IN_MSG_STO</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="C_MSG_TYPE" DATATYPE="12" DESC="Message Type" EEType="Varchar_25" HIDDEN="">t1.C_MSG_TYPE</FIELD>
+        <FIELD ALIAS="" COL="C_PROC_INFO" DATATYPE="12" DESC="Proc Information" EEType="Varchar_600" HIDDEN="">t2.C_PROC_INFO</FIELD>
+        <FIELD ALIAS="" COL="C_PROC_STATUS" DATATYPE="12" DESC="Process Status" EEType="Varchar_1" HIDDEN="">t2.C_PROC_STATUS</FIELD>
+        <FIELD ALIAS="" COL="C_PRT_STATE" DATATYPE="12" DESC="Current Printing Status" EEType="Varchar_1" HIDDEN="">t2.C_PRT_STATE</FIELD>
+        <FIELD ALIAS="" COL="C_STP_CODE" DATATYPE="12" DESC="STP Code" EEType="Varchar_32" HIDDEN="">t2.C_STP_CODE</FIELD>
+        <FIELD ALIAS="" COL="T_PROC_TIME" DATATYPE="91" DESC="Process Time" EEType="DATE" HIDDEN="">t2.T_PROC_TIME</FIELD>
+        <FIELD ALIAS="" COL="I_MSG_NUMS" DATATYPE="2" DESC="Message Numbers" EEType="Numeric_22" HIDDEN="">t2.I_MSG_NUMS</FIELD>
+        <FIELD ALIAS="" COL="C_ADBIC_LC" DATATYPE="12" DESC="Advising Bank LC" EEType="Varchar_100" HIDDEN="">t2.C_ADBIC_LC</FIELD>
+        <FIELD ALIAS="" COL="C_FUNC_ID" DATATYPE="1" DESC="C_FUNC_ID" EEType="SYS_CHAR_12" HIDDEN="">t2.C_FUNC_ID</FIELD>
+        <FIELD ALIAS="" COL="C_FUNC_NAME" DATATYPE="12" DESC="Function Name of Current Function" EEType="Varchar_35" HIDDEN="">t2.C_FUNC_NAME</FIELD>
+        <FIELD ALIAS="" COL="C_REPROCESS_FLAG" DATATYPE="12" DESC="C_REPROCESS_FLAG" EEType="AutoGen_Trx_VARCHAR_1" HIDDEN="">t2.C_REPROCESS_FLAG</FIELD>
+        <FIELD ALIAS="" COL="T_RECV_TIME" DATATYPE="91" DESC="SYSFLD:T_RECV_TIME" EEType="DATE" HIDDEN="">t2.T_RECV_TIME</FIELD>
+        <FIELD ALIAS="" COL="I_ERROR_TIMES" DATATYPE="2" DESC="Error Times" EEType="Numeric_2" HIDDEN="">t2.I_ERROR_TIMES</FIELD>
+        <FIELD ALIAS="" COL="C_BK_GROUP_ID" DATATYPE="12" DESC="BANK GROUP ID" EEType="SYS_VARCHAR_12" HIDDEN="">t2.C_BK_GROUP_ID</FIELD>
+        <FIELD ALIAS="" COL="C_CNTY_CODE" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="">t2.C_CNTY_CODE</FIELD>
+        <FIELD ALIAS="" COL="C_MESSAGE_TYPE" DATATYPE="12" DESC="Message Type" EEType="Varchar_10" HIDDEN="">t2.C_MESSAGE_TYPE</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="Message Type" DT="12" EEType="Varchar_25" POS="SELFLD" TYPE="FLD">t1.C_MSG_TYPE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Proc Information" DT="12" EEType="Varchar_600" POS="SELFLD" TYPE="FLD">t2.C_PROC_INFO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Process Status" DT="12" EEType="Varchar_1" POS="SELFLD" TYPE="FLD">t2.C_PROC_STATUS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Current Printing Status" DT="12" EEType="Varchar_1" POS="SELFLD" TYPE="FLD">t2.C_PRT_STATE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="STP Code" DT="12" EEType="Varchar_32" POS="SELFLD" TYPE="FLD">t2.C_STP_CODE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Process Time" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t2.T_PROC_TIME</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Message Numbers" DT="2" EEType="Numeric_22" POS="SELFLD" TYPE="FLD">t2.I_MSG_NUMS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Advising Bank LC" DT="12" EEType="Varchar_100" POS="SELFLD" TYPE="FLD">t2.C_ADBIC_LC</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_FUNC_ID" DT="1" EEType="SYS_CHAR_12" POS="SELFLD" TYPE="FLD">t2.C_FUNC_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Function Name of Current Function" DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">t2.C_FUNC_NAME</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_REPROCESS_FLAG" DT="12" EEType="AutoGen_Trx_VARCHAR_1" POS="SELFLD" TYPE="FLD">t2.C_REPROCESS_FLAG</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="SYSFLD:T_RECV_TIME" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">t2.T_RECV_TIME</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Error Times" DT="2" EEType="Numeric_2" POS="SELFLD" TYPE="FLD">t2.I_ERROR_TIMES</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="BANK GROUP ID" DT="12" EEType="SYS_VARCHAR_12" POS="SELFLD" TYPE="FLD">t2.C_BK_GROUP_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Country Code" DT="1" EEType="CNTY" POS="SELFLD" TYPE="FLD">t2.C_CNTY_CODE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Message Type" DT="12" EEType="Varchar_10" POS="SELFLD" TYPE="FLD">t2.C_MESSAGE_TYPE</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMSYS%.STP_IN_MSG_STO_LOG t1</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMSYS%.STP_IN_MSG_STO t2</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="Message Type" DT="12" EEType="Varchar_10" POS="WHEFLD" TYPE="FLD">t1.C_MESSAGE_TYPE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="Advising Bank LC" DT="12" EEType="Varchar_100" POS="WHEFLD" TYPE="FLD">t2.C_ADBIC_LC</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="STP Code" DT="12" EEType="Varchar_32" POS="WHEFLD" TYPE="FLD">t2.C_STP_CODE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' AND (</SQL>
+        <SQL DESC="Process Status" DT="12" EEType="Varchar_1" POS="WHEFLD" TYPE="FLD">t2.C_PROC_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'F' AND </SQL>
+        <SQL DESC="Message Type" DT="12" EEType="Varchar_25" POS="WHEFLD" TYPE="FLD">t2.C_MSG_TYPE</SQL>
+        <SQL TYPE="SQL"> ='InXMLForm' AND </SQL>
+        <SQL DESC="C_REPROCESS_FLAG" DT="12" EEType="AutoGen_Trx_VARCHAR_1" POS="WHEFLD" TYPE="FLD">t2.C_REPROCESS_FLAG</SQL>
+        <SQL TYPE="SQL"> = 'T') ORDER BY </SQL>
+        <SQL DESC="STP Code" DT="12" EEType="Varchar_32" POS="WHEFLD" TYPE="FLD">t2.C_STP_CODE</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Message Type" EETYPE="Varchar_10">t1.C_MESSAGE_TYPE</FIELD>
+        <FIELD DATATYPE="12" DESC="Advising Bank LC" EETYPE="Varchar_100">t2.C_ADBIC_LC</FIELD>
+        <FIELD DATATYPE="12" DESC="STP Code" EETYPE="Varchar_32">t2.C_STP_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Process Status" EETYPE="Varchar_1">t2.C_PROC_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Message Type" EETYPE="Varchar_25">t2.C_MSG_TYPE</FIELD>
+        <FIELD DATATYPE="12" DESC="C_REPROCESS_FLAG" EETYPE="AutoGen_Trx_VARCHAR_1">t2.C_REPROCESS_FLAG</FIELD>
+        <FIELD DATATYPE="12" DESC="STP Code" EETYPE="Varchar_32">t2.C_STP_CODE</FIELD>
+    </CLAUSEFIELD>
+</CATA>

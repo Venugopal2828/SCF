@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="LOG_DEBUG_LEVEL" value="DEBUG"/>
+        <Property name="LOG_INFO_LEVEL" value="ERROR"/>
+        <Property name="LOG_PATTERN" value="%n[start] [%p] [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%X{UNITUSER}] %n%msg [end]%n"/>
+        <Property name="TIME_BASED_INTERVAL" value="1"/>
+    </Properties>
+
+    <Appenders>
+        <Routing name="CELogRoutingAppender">
+            <Routes pattern="$${ctx:UNITUSER}$${ctx:LoggerType}">
+                <Route>
+                    <RollingFile name="CELogRolling" filePattern="${sys:ce.user.dir}/CELog/%d{yyyy-MM-dd}/user_level_log/%d{yyyy-MM-dd}_[${ctx:UNITUSER}]_${ctx:LoggerType}.log" immediateFlush="true" append="true">
+                        <PatternLayout pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                        </Policies>
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="SystemRoutingAppender">
+            <Routes pattern="$${ctx:LoggerType}">
+                <Route>
+                    <RollingFile name="SystemLogRolling" filePattern="${sys:ce.user.dir}/CELog/%d{yyyy-MM-dd}/system_level_log/%d{yyyy-MM-dd}_${ctx:LoggerType}.log" immediateFlush="true" append="true">
+                        <PatternLayout pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                        </Policies>
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+    </Appenders>
+
+    <Loggers>
+        <logger name="CELOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="CELogRoutingAppender"/>
+        </logger>
+        <logger name="DAOLOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="CELogRoutingAppender"/>
+        </logger>
+        <logger name="ARCHIVELOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </logger>
+        <logger name="BATCHLOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </logger>
+        <logger name="CHARFILTERLOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </logger>
+        <logger name="GAPILOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </logger>
+        <logger name="RPTLOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </logger>
+        <logger name="STPLOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </logger>
+        <logger name="TIMELOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </logger>
+		<logger name="APISERVICELOG" level="${LOG_DEBUG_LEVEL}" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender"/>
+        </logger>
+    </Loggers>
+</Configuration>

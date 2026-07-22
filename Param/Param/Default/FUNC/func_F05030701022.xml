@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PUOD</MODULE>
+        <MODULE_DESC>Purchase Order</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701022</ID>
+        <NAME>Resubmit PO</NAME>
+        <DESC>Upload Resubmit Purchase Order</DESC>
+        <FUNSHORTNAME>ResubPO</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">PUOD_ResubPO.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701015</ID>
+        <NAME>Resubmit PO_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701015</ID>
+        <NAME>Resubmit PO_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000299</ID>
+        <NAME>Resubmit PO_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

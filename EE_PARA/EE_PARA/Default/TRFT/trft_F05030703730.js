@@ -1,0 +1,1 @@
+DV.appendField("FAEF_FOR_FA_CRN_BAL", "PaymentReg", "FA_DOC_TYPE='2'");

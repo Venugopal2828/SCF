@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082301044</ID>
+    <MODULE>EPLC</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Claim Reimbursement</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.EPLC_EM_STL</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Drawing Reference"
+            EEType="RELATED_REF" HIDDEN="H">DRAWING_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Advising Reference" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="LC Number" EEType="Varchar_16" HIDDEN="">LC_NO</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Presentation Currency" EEType="CCY" HIDDEN="">PRES_CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="Presentation Amount" EEType="AMT" HIDDEN="">PRES_AMT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="Settlement balance" EEType="AMT" HIDDEN="">STL_BAL</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Drawing Reference" EEType="" HIDDEN="">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="BANK GROUP ID" EEType="" HIDDEN="H">C_BK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="Tenor Days" EEType="INTEGER" HIDDEN="">TENOR_DAYS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="" HIDDEN="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Reimbursement Claim Date"
+            EEType="DATE" HIDDEN="H">CLM_REIM_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Payment requested date"
+            EEType="DATE" HIDDEN="H">PMT_REQUEST_DT</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Advising Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Drawing Reference" DT="12" EEType="RELATED_REF" TYPE="FLD">DRAWING_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'M' AND </SQL>
+        <SQL DESC="C_FUNC_SHORT_NAME" DT="12" EEType="" TYPE="FLD">C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL"> &lt;&gt; 'PayAtMat' AND </SQL>
+        <SQL DESC="Payment requested date" DT="91" EEType="DATE" TYPE="FLD">PMT_REQUEST_DT</SQL>
+        <SQL TYPE="SQL"> IS NOT NULL AND </SQL>
+        <SQL DESC="Reimbursement Claim Date" DT="91" EEType="DATE" TYPE="FLD">CLM_REIM_DT</SQL>
+        <SQL TYPE="SQL"> IS NULL ORDER BY </SQL>
+        <SQL DESC="Advising Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Advising Reference" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Drawing Reference" EEType="RELATED_REF">DRAWING_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD DATATYPE="91" DESC="Payment requested date" EEType="DATE">PMT_REQUEST_DT</FIELD>
+        <FIELD DATATYPE="91" DESC="Reimbursement Claim Date" EEType="DATE">CLM_REIM_DT</FIELD>
+        <FIELD DATATYPE="12" DESC="Advising Reference" EEType="">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

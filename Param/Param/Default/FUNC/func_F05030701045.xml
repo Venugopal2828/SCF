@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">MESG</MODULE>
+        <MODULE_DESC>General Correspondence</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701045</ID>
+        <NAME>Receive Intent To Pay Report</NAME>
+        <DESC>Receive Intent To Pay Report</DESC>
+        <FUNSHORTNAME>RecInttToPayRpt</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">MESG_RecInttToPayRpt.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701038</ID>
+        <NAME>Receive Intent To Pay Report_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701038</ID>
+        <NAME>Receive Intent To Pay Report_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000322</ID>
+        <NAME>Receive Intent To Pay Report_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

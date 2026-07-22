@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082300924</ID>
+    <MODULE>GTEE</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.GTEE_EM_STL</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Our Reference" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Claim Ref NO" EEType="Varchar_16" HIDDEN="">CLM_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Settle Date" EEType="DATE" HIDDEN="H">STL_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Applicant" EEType="NM_CHAR35" HIDDEN="">APPL_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Beneficiary" EEType="NM_CHAR35" HIDDEN="">BENE_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Currency" EEType="CCY" HIDDEN="">GTEE_CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="Claim Amout" EEType="AMT" HIDDEN="">CLM_TRX_CCY_AMT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Claim Date" EEType="DATE" HIDDEN="">CLM_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Function" EEType="" HIDDEN="">C_FUNC_SHORT_NAME</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Our Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'M' AND </SQL>
+        <SQL DESC="Function" DT="12" EEType="" TYPE="FLD">C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL"> = 'OutwardClaimReg' AND </SQL>
+        <SQL DESC="Settle Date" DT="91" EEType="DATE" TYPE="FLD">STL_DT</SQL>
+        <SQL TYPE="SQL"> is null ORDER BY </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Function" EEType="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD DATATYPE="91" DESC="Settle Date" EEType="DATE">STL_DT</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference" EEType="">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

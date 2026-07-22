@@ -1,0 +1,127 @@
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@5bb9168a
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:120) >---UUID-546d85ad396f49a0a1e6b1a02d204db6--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.<init>(HttpFacade.java:121) <---UUID-546d85ad396f49a0a1e6b1a02d204db6---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:130) >---UUID-027be9a6d52742868876e03670939af2--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:131)
+[MARK]>>> request = spark.servlet.SparkFilter$1@b802eeab
+[MARK]>>> response = com.ibm.ws.webcontainer.srt.SRTServletResponse@d0e211a1
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:390)
+[MARK]>>> designFilePath = /Default/REPORTTEMPLATE/EXCO_VOL_Collection.rptdesign
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:391)
+[MARK]>>> documentType = xls
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.checkNull(HttpFacade.java:392)
+[MARK]>>> dsName = EXIMT
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1179) >---UUID-27499895a7a046dc9ae72076ca9ed7d0--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1180)
+[MARK]>>> parameter = RHJhd2VyIE5hbWU%3D%7C__dataType%7CString%3BQlUgQ29kZQ%3D%3D%7C__dataType%7CString%3BU3RhcnQgRGF0ZQ%3D%3D%7CMjAyNS0xMC0zMA%3D%3D__dataType%7CDateTime%3BRW5kIERhdGU%3D%7CMjAyNS0xMC0zMA%3D%3D__dataType%7CDateTime%3B
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1184)
+[MARK]>>> Decode parameter using 'URLDecoder.decode(parameter, HttpFacade.encodingScheme)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1190)
+[MARK]>>> parameter = RHJhd2VyIE5hbWU=|__dataType|String;QlUgQ29kZQ==|__dataType|String;U3RhcnQgRGF0ZQ==|MjAyNS0xMC0zMA==__dataType|DateTime;RW5kIERhdGU=|MjAyNS0xMC0zMA==__dataType|DateTime;
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.decodeParameter(HttpFacade.java:1192) <---UUID-27499895a7a046dc9ae72076ca9ed7d0---<
+
+>---COME-IN-METHOD---> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:492) >---UUID-a7c62a3af70b43f28e6163ae7b08a0a8--->
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:493)
+[MARK]>>> designFilePath = /data/EE_PARA/Default/REPORTTEMPLATE/EXCO_VOL_Collection.rptdesign
+[MARK]>>> reportFilePath = /data/EE_PARA/TRXDATA/CSBANK/US/DOCS/9860daca3bd8471981903a592f4cb505.xls
+[MARK]>>> docType = xls
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:496)
+[MARK]>>> context = {}
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:500)
+[MARK]>>> Get database connection using 'connection = EngineFactory.getConnection()'.
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:262) >---UUID-c5bcb913c3664e15b9300103dfaa56a2--->
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:268)
+[MARK]>>> Get connection from data source using 'connection = EngineFactory.dataSource.getConnection()'.
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getConnection(EngineFactory.java:287) <---UUID-c5bcb913c3664e15b9300103dfaa56a2---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:506)
+[MARK]>>> connection = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@26a6fc3e
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:516)
+[MARK]>>> hTMLRenderOption = org.eclipse.birt.report.engine.api.HTMLRenderOption@43737690
+
+>---COME-IN-METHOD---> com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:256) >---UUID-8964f5a00d75461fa3e74afca57e6f3f--->
+
+<---GO-OUT-METHOD---< com.cs.birt.report.engine.EngineFactory.getReportEngine(EngineFactory.java:257) <---UUID-8964f5a00d75461fa3e74afca57e6f3f---<
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:519)
+[MARK]>>> reportEngine = org.eclipse.birt.report.engine.api.impl.ReportEngine@70189d
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:523)
+[MARK]>>> Open report design using 'reportRunnable = reportEngine.openReportDesign(designFilePath)'.
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:529)
+[MARK]>>> reportRunnable = org.eclipse.birt.report.engine.api.impl.ReportRunnable@82870e4d
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:532)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@eb50bd58
+
+[PONT]>>> com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:536)
+[MARK]>>> runAndRenderTask = org.eclipse.birt.report.engine.api.impl.RunAndRenderTask@eb50bd58
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:584) <---UUID-a7c62a3af70b43f28e6163ae7b08a0a8---<
+
+<---GO-OUT-METHOD---< com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:382) <---UUID-027be9a6d52742868876e03670939af2---<
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@5bb9168a
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@155b6700
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:98)
+[MARK]>>> Checking BIRT platform status...
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:99)
+[MARK]>>> Attempting to start BIRT platform using 'Platform.startup(engineConfig)'.
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:106)
+[MARK]>>> Released existing registry provider if any.
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:113)
+[MARK]>>> BIRT platform started by this factory.
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:128)
+[MARK]>>> reportEngineFactory created: org.eclipse.birt.report.engine.api.impl.ReportEngineFactory@2d560d30
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:130)
+[MARK]>>> reportEngine created: org.eclipse.birt.report.engine.api.impl.ReportEngine@dbe1709c
+
+[INFO]>>> Create a debuger: com.cs.birt.utility.Debuger@8020fcda
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:98)
+[MARK]>>> Checking BIRT platform status...
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:99)
+[MARK]>>> Attempting to start BIRT platform using 'Platform.startup(engineConfig)'.
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:106)
+[MARK]>>> Released existing registry provider if any.
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:113)
+[MARK]>>> BIRT platform started by this factory.
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:128)
+[MARK]>>> reportEngineFactory created: org.eclipse.birt.report.engine.api.impl.ReportEngineFactory@ebfc1b0c
+
+[PONT]>>> com.cs.birt.report.engine.EngineFactory.buildReportEngine(EngineFactory.java:130)
+[MARK]>>> reportEngine created: org.eclipse.birt.report.engine.api.impl.ReportEngine@9101f112
+
+[INFO]>>> Destroy a debuger:com.cs.birt.utility.Debuger@8020fcda

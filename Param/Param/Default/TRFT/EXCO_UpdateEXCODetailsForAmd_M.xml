@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <desc>Update Export Collection details when amended</desc>
+    <module>EXCO</module>
+    <name>UpdateEXCODetailsForAmd</name>
+    <head-info>
+        <table-name>CETRX.EXCO_EM_CREATE</table-name>
+        <table-desc>EXCO_EM_CREATE</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info>Update guarantee details failure when demerge BKTS.EXCO.004.Amd</err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition>
+            <sql type="SQL">(</sql>
+            <sql type="TBL_FLD">COLL_NO</sql>
+            <sql type="SQL"> = &apos;</sql>
+            <field mf="F">COLL_NO</field>
+            <sql type="SQL">&apos; AND  </sql>
+            <sql type="TBL_FLD">C_UNIT_CODE</sql>
+            <sql type="SQL"> = &apos;</sql>
+            <field mf="F">C_UNIT_CODE</field>
+            <sql type="SQL">&apos;)</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <COLL_CCY fv_type="F" mf="F" oper="=">NEW_COLL_CCY</COLL_CCY>
+        <COLL_AMT fv_type="F" mf="F" oper="=">NEW_COLL_AMT</COLL_AMT>
+        <TENOR_DAYS fv_type="F" mf="F" oper="=">NEW_TENOR_DAYS</TENOR_DAYS>
+        <TENOR_TYPE fv_type="F" mf="F" oper="=">NEW_TENOR_TYPE</TENOR_TYPE>
+        <DUE_DT fv_type="F" mf="F" oper="=">NEW_DUE_DT</DUE_DT>
+        <COLL_CRET_DT fv_type="F" mf="F" oper="=">NEW_COLL_CRET_DT</COLL_CRET_DT>
+        <TENOR_DAYS_MNTH fv_type="F" mf="F" oper="=">NEW_TENOR_DAY_MNTH</TENOR_DAYS_MNTH>
+        <TENOR_START_DT fv_type="F" mf="F" oper="=">NEW_TENOR_START_DT</TENOR_START_DT>
+    </mapping>
+</root>

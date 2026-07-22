@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="AC:CHG" type="normal">
+    <CRTJSP POS="C">CUBKCriteria_CustAc.jsp</CRTJSP>
+    <key-mapping>
+        <module-name>IMLC</module-name>
+        <cubk-mapping-name>AC_CHG</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_CUST_AC</table-name>
+        <table-desc>STD_CUST_AC</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <CUST_AC_CCY DESC="Customer Account Currency" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CHG_AC_CCY</CUST_AC_CCY>
+            <CUST_AC DESC="Customer Account" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CHG_AC</CUST_AC>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <CUST_AC_CCY DESC="Customer Account Currency" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CHG_AC_CCY</CUST_AC_CCY>
+        <CUST_AC DESC="Customer Account" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CHG_AC</CUST_AC>
+    </field-mapping>
+    <CLAUSE>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="Customer Account Currency" DT="1" TYPE="FLD" WTYPE="NOCASE">CUST_AC_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">&apos; AND </SQL>
+        <SQL DESC="Customer Account" DT="1" TYPE="FLD" WTYPE="NOCASE">CUST_AC</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP2</SQL>
+        <SQL TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE3</SQL>
+        <SQL TYPE="SQL">&apos;) ORDER BY </SQL>
+        <SQL DESC="Customer Account Currency" DT="1" TYPE="FLD" WTYPE="NOCASE">CUST_AC_CCY</SQL>
+        <SQL TYPE="SQL">, </SQL>
+        <SQL DESC="Customer Account" DT="1" TYPE="FLD" WTYPE="NOCASE">CUST_AC</SQL>
+    </CLAUSE>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

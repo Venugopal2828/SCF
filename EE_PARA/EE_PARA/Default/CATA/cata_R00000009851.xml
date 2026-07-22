@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302245</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Register Buyer Account</DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_AC_NUMBER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Account Institution"
+            EEType="Varchar_6" HIDDEN="">INST_FIN_CD</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Account Country" EEType="CNTY" HIDDEN="">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Account Number"
+            EEType="Varchar_20" HIDDEN="">C_AC_NUMBER</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Account Currency"
+            EEType="Character_3" HIDDEN="">C_CURRENCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Account Type" EEType="Varchar_2" HIDDEN="">ACC_TP_CD</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer ID" EEType="" HIDDEN="">C_CUST_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35" HIDDEN="">CUST_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Account Short Name"
+            EEType="Varchar_28" HIDDEN="H">ACC_SH_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Account Owner Type"
+            EEType="INTERPRETER" HIDDEN="H">ACC_OWN_TP_CD</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Account ID" EEType="Varchar_35" HIDDEN="H">ACC_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Account Status Code"
+            EEType="INTERPRETER" HIDDEN="H">ACC_STAT_CD</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="C_AC_STAT" EEType="INTERPRETER" HIDDEN="H">C_AC_STAT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="SCF_ACCT_INDT" EEType="" HIDDEN="H">SCF_ACCT_INDT</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="Buyer ID" DT="12" EEType="" TYPE="FLD">C_CUST_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" TYPE="FLD">CUST_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Account Number" DT="12" EEType="Varchar_20" TYPE="FLD">C_AC_NUMBER</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Account Currency" DT="12" EEType="Character_3" TYPE="FLD">C_CURRENCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">') AND ( ( </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> ='M' AND (</SQL>
+        <SQL DESC="C_AC_STAT" DT="12" EEType="INTERPRETER" TYPE="FLD">C_AC_STAT</SQL>
+        <SQL TYPE="SQL"> ='N' OR </SQL>
+        <SQL DESC="C_AC_STAT" DT="12" EEType="INTERPRETER" TYPE="FLD">C_AC_STAT</SQL>
+        <SQL TYPE="SQL"> is null )) OR( </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'R' AND </SQL>
+        <SQL DESC="C_AC_STAT" DT="12" EEType="INTERPRETER" TYPE="FLD">C_AC_STAT</SQL>
+        <SQL TYPE="SQL"> = 'Y')) AND </SQL>
+        <SQL DESC="SCF_ACCT_INDT" DT="12" EEType="" TYPE="FLD">SCF_ACCT_INDT</SQL>
+        <SQL TYPE="SQL"> ='Y' AND (</SQL>
+        <SQL DESC="Account Owner Type" DT="12" EEType="INTERPRETER" TYPE="FLD">ACC_OWN_TP_CD</SQL>
+        <SQL TYPE="SQL"> ='BY' OR  </SQL>
+        <SQL DESC="Account Owner Type" DT="12" EEType="INTERPRETER" TYPE="FLD">ACC_OWN_TP_CD</SQL>
+        <SQL TYPE="SQL"> ='BH') AND </SQL>
+        <SQL DESC="Account Status Code" DT="12" EEType="INTERPRETER" TYPE="FLD">ACC_STAT_CD</SQL>
+        <SQL TYPE="SQL"> = 'A' AND </SQL>
+        <SQL DESC="Account Type" DT="12" EEType="Varchar_2" TYPE="FLD">ACC_TP_CD</SQL>
+        <SQL TYPE="SQL"> = 'CA' ORDER BY </SQL>
+        <SQL DESC="Account Number" DT="12" EEType="Varchar_20" TYPE="FLD">C_AC_NUMBER</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Buyer ID" EEType="">C_CUST_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35">CUST_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Number" EEType="Varchar_20">C_AC_NUMBER</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Currency" EEType="Character_3">C_CURRENCY</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="C_AC_STAT" EEType="INTERPRETER">C_AC_STAT</FIELD>
+        <FIELD DATATYPE="12" DESC="C_AC_STAT" EEType="INTERPRETER">C_AC_STAT</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="C_AC_STAT" EEType="INTERPRETER">C_AC_STAT</FIELD>
+        <FIELD DATATYPE="12" DESC="SCF_ACCT_INDT" EEType="">SCF_ACCT_INDT</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Owner Type" EEType="INTERPRETER">ACC_OWN_TP_CD</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Owner Type" EEType="INTERPRETER">ACC_OWN_TP_CD</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Status Code" EEType="INTERPRETER">ACC_STAT_CD</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Type" EEType="Varchar_2">ACC_TP_CD</FIELD>
+        <FIELD DATATYPE="12" DESC="Account Number" EEType="Varchar_20">C_AC_NUMBER</FIELD>
+    </CLAUSEFIELD>
+    <SUBCATA BYGLOBAL="False" BYUNITCODE="False">
+        <ID>R49082302245</ID>
+        <MODULE>STAN</MODULE>
+        <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+        <BYPAGE>Y</BYPAGE>
+        <DESC/>
+        <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_AC_NUMBER</TABLENAME>
+        <FIELDLIST>
+            <FIELD DATATYPE="12" DESC="Account ID" EEType="Varchar_35" HIDDEN="H">ACC_ID</FIELD>
+            <FIELD DATATYPE="12" DESC="Account Short Name" EEType="Varchar_28" HIDDEN="H">ACC_SH_NM</FIELD>
+            <FIELD DATATYPE="12" DESC="Account Status Code" EEType="INTERPRETER" HIDDEN="H">ACC_STAT_CD</FIELD>
+            <FIELD DATATYPE="12" DESC="Account Type Code" EEType="Varchar_2" HIDDEN="H">ACC_TP_CD</FIELD>
+            <FIELD DATATYPE="12" DESC="Account Number" EEType="Varchar_20" HIDDEN="">C_AC_NUMBER</FIELD>
+            <FIELD DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="">C_CNTY_CODE</FIELD>
+            <FIELD DATATYPE="12" DESC="Currency Code" EEType="Character_3" HIDDEN="">C_CURRENCY</FIELD>
+        </FIELDLIST>
+        <VARLIST>
+            <VAR>OP</VAR>
+            <VAR>VALUE</VAR>
+            <VAR>LOG</VAR>
+        </VARLIST>
+        <CLAUSE/>
+        <CLAUSEFIELD/>
+    </SUBCATA>
+</CATA>

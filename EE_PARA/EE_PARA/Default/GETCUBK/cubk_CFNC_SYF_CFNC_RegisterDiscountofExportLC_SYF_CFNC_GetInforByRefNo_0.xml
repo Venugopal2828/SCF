@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">EPLC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>CFNC</module-name>
+        <cubk-mapping-name>SYF_CFNC_RegisterDiscountofExportLC_SYF_CFNC_GetInforByRefNo_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <BENE_ID ALIAS="T0" DBFUNC="" DESC="Beneficiary ID" DT="12" HIDDEN="F" TYPE="F">CUST_ID</BENE_ID>
+        <BENE_NM ALIAS="T0" DBFUNC="" DESC="Beneficiary Name" DT="12" HIDDEN="F" TYPE="F">CUST_NM</BENE_NM>
+        <BENE_ADD1 ALIAS="T0" DBFUNC="" DESC="Beneficiary Address1" DT="12" HIDDEN="F" TYPE="F">CUST_ADD1</BENE_ADD1>
+        <BENE_ADD2 ALIAS="T0" DBFUNC="" DESC="Beneficiary Address2" DT="12" HIDDEN="F" TYPE="F">CUST_ADD2</BENE_ADD2>
+        <BENE_ADD3 ALIAS="T0" DBFUNC="" DESC="Beneficiary Address3" DT="12" HIDDEN="F" TYPE="F">CUST_ADD3</BENE_ADD3>
+        <LC_CCY ALIAS="T0" DBFUNC="" DESC="LC Currency" DT="1" HIDDEN="F" TYPE="F">TRX_CCY_CCY</LC_CCY>
+        <LC_AMT ALIAS="T0" DBFUNC="" DESC="LC Amount" DT="3" HIDDEN="F" TYPE="F">TRX_AMT</LC_AMT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">RELA_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

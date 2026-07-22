@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PUOD</MODULE>
+        <MODULE_DESC>Purchase Order</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701019</ID>
+        <NAME>Manual Capture PO</NAME>
+        <DESC>Manual Capture Purchase Order</DESC>
+        <FUNSHORTNAME>ManualCaptPO</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">PUOD_ManualCaptPO.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701012</ID>
+        <NAME>Manual Capture PO_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701012</ID>
+        <NAME>Manual Capture PO_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000293</ID>
+        <NAME>Manual Capture PO_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>FunctionSSJS</JS_CLASS>
+    </CAL>
+</FUNC>

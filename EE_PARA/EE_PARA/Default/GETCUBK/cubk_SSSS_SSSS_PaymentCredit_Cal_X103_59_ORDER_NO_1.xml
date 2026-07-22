@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_PaymentCredit_Cal_X103_59_ORDER_NO_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T0" DBFUNC="" DESC="SWIFT Format Name" DT="12" HIDDEN="F" TYPE="F">X103_BENECU_NM_59A</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address1" DT="12" HIDDEN="F" TYPE="F">X103BENECUADD1_59A</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address2" DT="12" HIDDEN="F" TYPE="F">X103BENECUADD2_59A</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address3" DT="12" HIDDEN="F" TYPE="F">X103BENECUADD3_59A</SWIFT_FMT_ADD3>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">ORDER_NO = </SQL>
+            <SQL TYPE="FLD">X103_59_ORDER_NO</SQL>
+            <SQL TYPE="SQL"> AND C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">X103_BENECU_ID_59A</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

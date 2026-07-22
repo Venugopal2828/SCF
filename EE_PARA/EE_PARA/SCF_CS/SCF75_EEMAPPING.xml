@@ -1,0 +1,45 @@
+<EDIExcel name="SCF75">
+	<SheetNode SHEET="Counterparty" TABLES="T1, T2">
+		<RowNode rowName="RequestNr" ROW="3">
+			<CellNode cellName="RequestNr" COL="E" FIELD="" />
+		</RowNode>
+		<RowNode rowName="Customer" ROW="3">
+			<!-- Unique Fields Group for checking duplicate Inquiry counterparty ID<CounterpartyCompanyRegNr> 
+				from Customer master table to get C_MAIN_REF by unique field CounterpartyCompanyRegNr 
+				Inquiry Customer ID <CustomerCompanyRegNr> from Customer master table to 
+				get C_MAIN_REF by unique field CustomerCompanyRegNr Customer ID+Counterparty 
+				ID+BusiType<BusiType>+ContractCcy<ContractCcy> for unique value in SBR -->
+			<CellNode cellName="CustomerCompanyRegNr" COL="C" FIELD="FA_CUST_REG_NO" />
+			<CellNode cellName="CustomerNr" COL="D" FIELD="FA_ANCHOR_ID" />
+			<CellNode cellName="CustomerName" COL="E" FIELD="FA_ANCHOR_NM" />
+			<CellNode cellName="UnitCode" COL="B" FIELD="C_UNIT_CODE" />
+			<CellNode cellName="BusiType" COL="H" FIELD="FA_BUSI_TYPE" />
+			<CellNode cellName="ContractCcy" COL="G" FIELD="FA_AGM_CCY" />	
+			<!-- 20210507
+			<CellNode cellName="RequestNr" COL="F" FIELD="FA_CNTR_DOC_NO"/>
+			 -->
+			<CellNode cellName="ContractDocNo" COL="F" FIELD="FA_CNTR_DOC_NO"/>
+			<CellNode cellName="ValidDate" COL="I" FIELD="FA_AGM_VAL_DT" />
+			<CellNode cellName="DueDate" COL="J" FIELD="FA_AGM_DUE_DT" />
+		</RowNode>
+		<RowNode rowName="Counterparty" NUM="999" ROW="7">
+			<CellNode cellName="CounterpartyCompanyRegNr" COL="A"
+				FIELD="FA_COUNTER_REG_NO" />
+			<CellNode cellName="CounterpartyName" COL="B" FIELD="FA_COUNTER_NM" />
+			<CellNode cellName="CounterpartyAcct" COL="P" FIELD="FA_COUNTER_ACC" />
+			<CellNode cellName="Street" COL="E" FIELD="FA_COUNTER_STR" />
+			<CellNode cellName="City" COL="F" FIELD="FA_COUNTER_CT" />
+			<CellNode cellName="State" COL="G" FIELD="FA_COUNTER_PROV" />
+			<CellNode cellName="Country" COL="H" FIELD="FA_COUNTER_CNTY" />
+			<CellNode cellName="ContactName" COL="J" FIELD="FA_COUNTER_CONT_NM" />
+			<CellNode cellName="Telephone" COL="L" FIELD="FA_COUNTER_CONT_TEL" />
+			<CellNode cellName="MailAddr" COL="I" FIELD="FA_COUNTER_ADD_ML" />
+			<CellNode cellName="ApplLimit" COL="N" FIELD="FA_LMT_AMT" />
+			<CellNode cellName="DueDate" COL="O" FIELD="FA_LMT_DUE_DT" />
+			<CellNode cellName="OurCustInd" COL="C" FIELD="FA_CUST_FLAG" />
+			<CellNode cellName="FrontEndUser" COL="D" FIELD="FA_COUNTER_CE_FLG" />
+			<CellNode cellName="Email" COL="K" FIELD="FA_COUNTER_CONT_EM" />
+			<CellNode cellName="Currency" COL="M" FIELD="FA_LMT_CCY" />
+		</RowNode>
+	</SheetNode>
+</EDIExcel>

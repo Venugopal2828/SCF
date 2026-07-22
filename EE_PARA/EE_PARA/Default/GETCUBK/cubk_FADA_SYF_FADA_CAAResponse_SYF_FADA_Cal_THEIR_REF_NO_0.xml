@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_SBR_EVENT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>SYF_FADA_CAAResponse_SYF_FADA_Cal_THEIR_REF_NO_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="COUNT" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">FA_TEMP4</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_BUSI_TYPE='IF' AND FA_BUSI_STATUS='CAR' AND FA_CAA_REF='</SQL>
+            <SQL TYPE="FLD">FA_CAA_REF</SQL>
+            <SQL TYPE="SQL">' AND C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

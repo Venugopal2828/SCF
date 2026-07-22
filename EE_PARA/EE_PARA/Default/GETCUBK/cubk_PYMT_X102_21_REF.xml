@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">PYMT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>X102_21_REF</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X102_21_REF</C_MAIN_REF>
+            <MERGE_FLAG_103 ALIAS="T0" DESC="Merge Flag" DT="1" TYPE="V">YES</MERGE_FLAG_103>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">X102_21_REF</C_MAIN_REF>
+        <X103_SETT_CCY_32A ALIAS="T0" DBFUNC="" DESC="Interbank Settled Amount CCY" DT="1" HIDDEN="F" TYPE="F">X102_32B_CCY</X103_SETT_CCY_32A>
+        <X103_SETT_AMT_32A ALIAS="T0" DBFUNC="" DESC="Interbank Settled Amount" DT="3" HIDDEN="F" TYPE="F">X102_32B_AMT</X103_SETT_AMT_32A>
+        <X103_ADV_BKSW_B2 ALIAS="T0" DBFUNC="" DESC="Advising Bank SWIFT Address" DT="1" HIDDEN="F" TYPE="F">X103_ADV_BKSW_B2</X103_ADV_BKSW_B2>
+        <X103_ORDCU_ID_50A ALIAS="T0" DBFUNC="" DESC="Ordering Customer ID" DT="12" HIDDEN="T" TYPE="F">X102_50F_PARTY_ID</X103_ORDCU_ID_50A>
+        <X103_ORDCU_NM_50A ALIAS="T0" DBFUNC="" DESC="Ordering Customer Name" DT="12" HIDDEN="T" TYPE="F">X102_50F_PARTY_NAME</X103_ORDCU_NM_50A>
+        <X103_ORDCUADD1_50A ALIAS="T0" DBFUNC="" DESC="Ordering Customer Address1" DT="12" HIDDEN="T" TYPE="F">X102_50F_PARTY_ADD1</X103_ORDCUADD1_50A>
+        <X103_ORDCUADD2_50A ALIAS="T0" DBFUNC="" DESC="Ordering Customer Address2" DT="12" HIDDEN="T" TYPE="F">X102_50F_PARTY_ADD2</X103_ORDCUADD2_50A>
+        <X103_ORDCUADD3_50A ALIAS="T0" DBFUNC="" DESC="Ordering Customer Address3" DT="12" HIDDEN="T" TYPE="F">X102_50F_PARTY_ADD3</X103_ORDCUADD3_50A>
+        <X103_ORDCU_SW_50A ALIAS="T0" DBFUNC="" DESC="Ordering Customer SWIFT Address" DT="1" HIDDEN="T" TYPE="F">X102_50A_IDENTIFIER</X103_ORDCU_SW_50A>
+        <X103_TAG_50A ALIAS="T0" DBFUNC="" DESC="Tag 50A" DT="12" HIDDEN="T" TYPE="F">X102_50_TAG</X103_TAG_50A>
+        <X103_ORDCUACNO_50A ALIAS="T0" DBFUNC="" DESC="Ordering Customer Account No" DT="1" HIDDEN="T" TYPE="F">X102_50A_ACCOUNT</X103_ORDCUACNO_50A>
+        <X103_ORDBKACNO_52A ALIAS="T0" DBFUNC="" DESC="Ordering Bank Account No" DT="1" HIDDEN="T" TYPE="F">X102_52A_PARTY_IDENTIFIER</X103_ORDBKACNO_52A>
+        <X103_ORD_BKSW_52A ALIAS="T0" DBFUNC="" DESC="Ordering Bank SWIFT Address" DT="1" HIDDEN="T" TYPE="F">X102_52A_IDENTIFIER</X103_ORD_BKSW_52A>
+        <X103_TAG_52A ALIAS="T0" DBFUNC="" DESC="Tag 52A" DT="12" HIDDEN="T" TYPE="F">X102_52_TAG</X103_TAG_52A>
+        <X103_ACC_BKACNO57A ALIAS="T0" DBFUNC="" DESC="Account With Bank Account No" DT="1" HIDDEN="T" TYPE="F">X102_57A_ACC_WITH_IDENTIFIER</X103_ACC_BKACNO57A>
+        <X103_ACC_BKSW_57A ALIAS="T0" DBFUNC="" DESC="Account With Bank SWIFT Address" DT="1" HIDDEN="T" TYPE="F">X102_57A_IDENTIFIER</X103_ACC_BKSW_57A>
+        <X103_TAG_57A ALIAS="T0" DBFUNC="" DESC="Tag 57A" DT="12" HIDDEN="T" TYPE="F">X102_57_TAG</X103_TAG_57A>
+        <X103_BENECUACNO59A ALIAS="T0" DBFUNC="" DESC="Beneficiary Customer Account No" DT="1" HIDDEN="T" TYPE="F">X102_59A_ACCOUNT</X103_BENECUACNO59A>
+        <X103_BENECU_NM_59A ALIAS="T0" DBFUNC="" DESC="Beneficiary Customer Name" DT="12" HIDDEN="T" TYPE="F">X102_59_PARTY_NAME</X103_BENECU_NM_59A>
+        <X103BENECUADD1_59A ALIAS="T0" DBFUNC="" DESC="Beneficiary Customer Address1" DT="12" HIDDEN="T" TYPE="F">X102_59_PARTY_ADD1</X103BENECUADD1_59A>
+        <X103BENECUADD2_59A ALIAS="T0" DBFUNC="" DESC="Beneficiary Customer Address2" DT="12" HIDDEN="T" TYPE="F">X102_59_PARTY_ADD2</X103BENECUADD2_59A>
+        <X103BENECUADD3_59A ALIAS="T0" DBFUNC="" DESC="Beneficiary Customer Address3" DT="12" HIDDEN="T" TYPE="F">X102_59_PARTY_ADD3</X103BENECUADD3_59A>
+        <X103_BENECU_SW_59A ALIAS="T0" DBFUNC="" DESC="Beneficiary Customer SWIFT Address" DT="1" HIDDEN="T" TYPE="F">X102_59A_IDENTIFIER</X103_BENECU_SW_59A>
+        <X103_TAG_59A ALIAS="T0" DBFUNC="" DESC="Tag 59A" DT="12" HIDDEN="T" TYPE="F">X102_59_TAG</X103_TAG_59A>
+        <X103_SENDCHGCCY71F ALIAS="T0" DBFUNC="" DESC="Sender Charges CCY" DT="1" HIDDEN="T" TYPE="F">X102_71G_CCY</X103_SENDCHGCCY71F>
+        <X103_RECCHGAMT_71G ALIAS="T0" DBFUNC="" DESC="Receiver Charges" DT="3" HIDDEN="T" TYPE="F">X102_71G_AMT</X103_RECCHGAMT_71G>
+        <X103_TRX_TYPCD_26T ALIAS="T0" DBFUNC="" DESC="Transaction Type Code" DT="12" HIDDEN="T" TYPE="F">X102_26T_TRAN_TYPE_CODE</X103_TRX_TYPCD_26T>
+        <X103_DET_CHG_71A ALIAS="T0" DBFUNC="" DESC="Details of Charges" DT="12" HIDDEN="T" TYPE="F">X102_71A_CHG_DETAILS</X103_DET_CHG_71A>
+        <X103_EXCH_RT_36 ALIAS="T0" DBFUNC="" DESC="Exchange Rate" DT="8" HIDDEN="T" TYPE="F">X102_36_RATE</X103_EXCH_RT_36>
+        <X103_INSTR_CCY_33B ALIAS="T0" DBFUNC="" DESC="Instructed Amount CCY" DT="1" HIDDEN="T" TYPE="F">X102_33B_CCY</X103_INSTR_CCY_33B>
+        <X103_INSTR_AMT_33B ALIAS="T0" DBFUNC="" DESC="Instructed Amount" DT="3" HIDDEN="T" TYPE="F">X102_33B_AMT</X103_INSTR_AMT_33B>
+        <X102_77B_REGULATORY ALIAS="T0" DBFUNC="" DESC="X102_77B_REGULATORY" DT="12" HIDDEN="T" TYPE="F">X102_77B_REGULATORY</X102_77B_REGULATORY>
+        <X103_REMIT_INFO_70 ALIAS="T0" DBFUNC="" DESC="Remittance Information" DT="12" HIDDEN="T" TYPE="F">X102_REMITTANCE_INFO</X103_REMIT_INFO_70>
+        <APPL_CNTY_RES ALIAS="T0" DBFUNC="" DESC="Country of Residence" DT="1" HIDDEN="T" TYPE="F">APPL_CNTY_RES</APPL_CNTY_RES>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'M' AND (</SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.CPYT_PAY_ADV_MSG</SQL>
+            <SQL TYPE="SQL"> = 'MT103' OR </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.CPYT_PAY_ADV_MSG</SQL>
+            <SQL TYPE="SQL"> = 'MT103+') AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">X102_21_REF</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.MERGE_FLAG_103</SQL>
+            <SQL TYPE="SQL"> = 'YES'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

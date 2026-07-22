@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="True" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_SHOW_SEL_ALL" VALUE="Y"/>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+        <FIELD NAME="_TRX_TYPE" VALUE="INCOMING_MAINTENANCE"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R00000008800</ID>
+    <MODULE>SYST</MODULE>
+    <JSPFILE>screen/CATA/IncomingSwiftCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC></DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STP_IN_MSG_STO</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Message Type" EEType="Varchar_16" HIDDEN="">C_MESSAGE_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Tag 20" EEType="Varchar_16" HIDDEN="">C_TAG_20</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="STP Code" EEType="Varchar_32" HIDDEN="">C_STP_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UETR" EEType="AutoGen_Trx_VARCHAR_36" HIDDEN="">C_TAG_121</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Message ID" EEType="Varchar_64" HIDDEN="">C_MSG_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="SYSFLD:T_RECV_TIME" EEType="DATE" HIDDEN="">T_RECV_TIME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Function Name of Current Function" EEType="Varchar_35" HIDDEN="H">C_FUNC_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Process Status" EEType="Varchar_1" HIDDEN="H">C_PROC_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Advising Bank LC" EEType="Varchar_100" HIDDEN="H">C_ADBIC_LC</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="SYS_VARCHAR_12" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="MAIN REF. NO." EEType="SYS_VARCHAR_40" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="BANK GROUP ID" EEType="SYS_VARCHAR_12" HIDDEN="H">C_BK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="H">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="2" DESC="Message Numbers" EEType="Numeric_22" HIDDEN="H">I_MSG_NUMS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Process Time" EEType="DATE" HIDDEN="H">T_PROC_TIME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Proc Information" EEType="Varchar_600" HIDDEN="H">C_PROC_INFO</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Message Type" DT="12" EEType="Varchar_16" TYPE="FLD">C_MESSAGE_TYPE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="STP Code" DT="12" EEType="Varchar_32" TYPE="FLD">C_STP_CODE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL">  </SQL>
+        <SQL DESC="SYSFLD:C_TAG_20" DT="12" EEType="Varchar_16" TYPE="FLD">C_TAG_20</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG11</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="C_TAG_121" DT="12" EEType="AutoGen_Trx_VARCHAR_36" TYPE="FLD">C_TAG_121</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP12</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE13</SQL>
+        <SQL TYPE="SQL">' ORDER BY </SQL>
+        <SQL DESC="STP Code" DT="12" EEType="Varchar_32" TYPE="FLD">C_STP_CODE</SQL>
+        <SQL TYPE="SQL"></SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Message Type" EETYPE="Varchar_16">C_MESSAGE_TYPE</FIELD>
+        <FIELD DATATYPE="12" DESC="STP Code" EETYPE="Varchar_32">C_STP_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="SYSFLD:C_TAG_20" EETYPE="Varchar_16">C_TAG_20</FIELD>
+        <FIELD DATATYPE="12" DESC="C_TAG_121" EETYPE="AutoGen_Trx_VARCHAR_36">C_TAG_121</FIELD>
+        <FIELD DATATYPE="12" DESC="STP Code" EETYPE="Varchar_32">C_STP_CODE</FIELD>
+    </CLAUSEFIELD>
+</CATA>

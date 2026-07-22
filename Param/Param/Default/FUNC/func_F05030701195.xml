@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FADA</MODULE>
+        <MODULE_DESC>Finance Data</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701195</ID>
+        <NAME>Receive Amend SBR for Supplier</NAME>
+        <DESC>Receive Amend SBR for Supplier</DESC>
+        <FUNSHORTNAME>RecAmdSBRSeller</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FADA_RecAmdSBR.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701187</ID>
+        <NAME>CC_FORM</NAME>
+    </FORM>
+    <FORM>
+        <ID>F05030701203</ID>
+        <NAME>Receive Amend SBR for Supplier_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701187</ID>
+        <NAME>CC_ACCOUT</NAME>
+    </VOUCHER>
+    <VOUCHER>
+        <ID>A05030701203</ID>
+        <NAME>Receive Amend SBR for Supplier_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000493</ID>
+        <NAME>Receive Amend SBR for Supplier_NOTIFY</NAME>
+    </NOTIFY>
+    <NOTIFY>
+        <ID>N00000000481</ID>
+        <NAME>CC_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

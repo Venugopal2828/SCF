@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <element name="domData">
+        <complexType>
+            <sequence>
+                <element name="ACCT103_DUP"/>
+                <element name="BU"/>
+                <element name="CLOSE_TRX"/>
+                <element name="CNTY_CODE"/>
+                <element name="CPYT_DR_CCY"/>
+                <element name="C_EVENT_NAME"/>
+                <element name="C_MAIN_REF"/>
+                <element name="NOTES"/>
+                <element name="NUM_ACCTS"/>
+                <element name="ReversalPaymentHeader">
+                    <complexType>
+                        <sequence>
+                            <element name="CPYT_CR_BK_AC"/>
+                            <element name="CR_AMT"/>
+                            <element name="CR_CCY"/>
+                            <element name="C_MAIN_REF"/>
+                            <element name="C_MAIN_REF_FRE"/>
+                            <element name="C_UNIT_CODE"/>
+                            <element name="DB_AMT"/>
+                            <element name="DB_CCY"/>
+                            <element name="X103_VALUE_DT_32A"/>
+                            <element name="ReversalPayment">
+                                <complexType>
+                                    <sequence>
+                                        <element name="C_MAIN_REF"/>
+                                        <element name="C_UNIT_CODE"/>
+                                        <element name="I_EVENT_TIMES"/>
+                                        <element name="DB_AMT"/>
+                                        <element name="DB_CCY"/>
+                                        <element name="CR_CCY"/>
+                                        <element name="CR_AMT"/>
+                                        <element name="X103_VALUE_DT_32A"/>
+                                        <element name="CPYT_CR_BK_AC"/>
+                                        <element name="C_MAIN_REF_FRE"/>
+                                        <element name="CPYT_CR_BK_AC_BTN"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SYS_BUSI_UNIT"/>
+                <element name="TRX_HISTORY"/>
+                <element name="TWO_DAYS_BACK"/>
+                <element name="X103_BENECU_ID_59A"/>
+                <element name="X103_ORDCUACNO_50A"/>
+                <element name="X103_ORDCU_ID_50A"/>
+                <element name="X103_SETT_AMT_32A"/>
+                <element name="X103_SETT_CCY_32A"/>
+                <element name="X202_CCY_32A"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

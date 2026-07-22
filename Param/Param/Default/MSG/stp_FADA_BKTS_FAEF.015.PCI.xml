@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>FAEF.015.PCI</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>FADA</module>
+        <map-name>ReceivePricing</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <C_MAIN_REF descr="CE system reference number" fv-type="F" intfconv="N">FA_CE_MAIN_REF</C_MAIN_REF>
+        <FA_BUYER_ID descr="Buyer ID" fv-type="F" intfconv="N">FA_BUYER_ID</FA_BUYER_ID>
+        <FA_BUYER_NM descr="Buyer Name" fv-type="F" intfconv="N">FA_BUYER_NM</FA_BUYER_NM>
+        <FA_DOC_REQD descr="Document Requested" fv-type="F" intfconv="N">FA_DOC_REQD</FA_DOC_REQD>
+        <FA_EF_ID descr="EF ID" fv-type="F" intfconv="N">FA_EF_ID</FA_EF_ID>
+        <FA_EF_NM descr="EF Name" fv-type="F" intfconv="N">FA_EF_NM</FA_EF_NM>
+        <FA_FIN_INFO descr="Financing Information" fv-type="F" intfconv="N">FA_FIN_INFO</FA_FIN_INFO>
+        <FA_IF_ID descr="IF ID" fv-type="F" intfconv="N">FA_IF_ID</FA_IF_ID>
+        <FA_IF_NM descr="IF Name" fv-type="F" intfconv="N">FA_IF_NM</FA_IF_NM>
+        <FA_INV_CCY1 descr="Invoice Currency 1" fv-type="F" intfconv="N">FA_INV_CCY1</FA_INV_CCY1>
+        <FA_MAX_LOAN_PERC descr="Maximal Loan Percentage" fv-type="F" intfconv="N">FA_MAX_LOAN_PERC</FA_MAX_LOAN_PERC>
+        <FA_PRICING_VAL_DT descr="Pricing Value Date" fv-type="F" intfconv="N">FA_PRICING_VAL_DT</FA_PRICING_VAL_DT>
+        <FA_SEL_ID descr="Seller ID" fv-type="F" intfconv="N">FA_SEL_ID</FA_SEL_ID>
+        <FA_TTL_COMM_RT descr="Total Commission Rate" fv-type="F" intfconv="N">FA_TTL_COMM_RT</FA_TTL_COMM_RT>
+        <FA_TTL_HAN_CHG descr="Total Handling Charge" fv-type="F" intfconv="N">FA_TTL_HAN_CHG</FA_TTL_HAN_CHG>
+        <FA_TTL_OTH_CHG descr="Total Other Charge" fv-type="F" intfconv="N">FA_TTL_OTH_CHG</FA_TTL_OTH_CHG>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

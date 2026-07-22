@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">ABLF</MODULE>
+        <MODULE_DESC>ABL Financing</MODULE_DESC>
+        <EVENT>Collateral</EVENT>
+        <CATALOGID>C16032800000</CATALOGID>
+        <ID>F05030701143</ID>
+        <NAME>Request for Collateral Discharge</NAME>
+        <DESC>Request for Collateral Discharge</DESC>
+        <FUNSHORTNAME>ReqCollDis</FUNSHORTNAME>
+        <LOCKCHECK>N</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+    	<COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+        <CONFIRMID/>
+        <RIGHTID/>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">ABLF_CollateralDischarge.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID></ID>
+        <NAME>Request for Collateral Discharge_FORM</NAME>
+    </FORM>
+    <NOTIFY>
+        <ID></ID>
+        <NAME>Request for Collateral Discharge_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>CalculatorIntfFuncJS</JS_CLASS>
+    </CAL>
+</FUNC>

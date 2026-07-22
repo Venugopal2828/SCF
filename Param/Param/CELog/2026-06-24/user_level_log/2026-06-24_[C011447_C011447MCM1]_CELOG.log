@@ -1,0 +1,1983 @@
+
+[start] [DEBUG] [2026-06-24 11:09:12.546] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/servlets/WSSUploadFile [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.548] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/servlets/WSSUploadFile [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.549] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.552] [C011447_C011447MCM1] 
+========Start upload message ...... [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.563] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+
+{com.ibm.websphere.servlet.uri_non_decoded,/BL6CEWeb/servlets/WSSUploadFile}
+
+{CHECKED_REFRESH,T}
+
+{TrxSessionId,8A828497019EF86BCAB50180}
+
+{javax.servlet.forward.query_string, 
+CATA_CURR=
+CATA_TYPE=
+_EVENT_TITLE=
+CURR_OPER=
+TITLE_NAME=
+IMG_INQ_TYPE=
+C_MSG_SET=Invoice
+TRAN_TYPE=
+DoType=
+CATA_NUM=
+FUN_DESC=null
+_ACT_TYPE=
+ExcelType=
+T_SVR_GMT=06:57:54
+CATA_PAGE_SIZE=
+_TRX_STATUS=DOWNFILE
+OP2_VAL=
+ITEM_NAME=
+GRP_NAME=
+D_SVR_GMT=2026-06-24
+PREV_TRAN_NAME=
+CSRFTOKEN=8bGA85i2c8Eo49b7a4STe09xjEF7FFCB3XAX019YE3FG8K6DyBADNCdZtC0W1710
+INI_ITEM_ID=
+FUN_NAME=
+SAVED=
+SUB_CATA_ID=
+ID=
+TRAN_NAME=
+FUNC_ID=
+UNIT_CODE=
+CURR_DATE=
+ITEM_ID=
+FA_SBR_REF=PFCSBANK260611182SBR
+REFRESH_TOKEN=1782284274400
+PRODUCT_ID=P20030600000
+PRODUCT_NAME=
+SELECTEDFIELDS=
+TRXL_TYPE=
+TrxSessionId=8A828497019EF86BCAB50180
+C_EXTRA_CONFIG={"FA_SBR_REF":"PFCSBANK260611182SBR","C_UNIT_CODE":"C011447"}
+CE_SELECT_CATAFIELD=
+SEL_TYPE=
+LOGIN_NAME=
+EXCELTYPE=
+}
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.565] [C011447_C011447MCM1] 
+========File size validate successfully. [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.567] [C011447_C011447MCM1] 
+========File format validate successfully. [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.569] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@b114f368
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_FILE_MD5 FROM CETRX.TRX_FILE_UPLOAD WHERE C_FILE_MD5 = '96f768517f53d5cd38398dd8559320c5' AND C_CREATED_BU = 'C011447' AND C_FILE_STATUS <> 'F' AND C_FILE_INDEX <> '8A8284979EF7FFC3019EF87623EE0186' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.576] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@b114f368
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]INSERT INTO CETRX.TRX_FILE_UPLOAD (C_EXTRA_CONFIG,C_FILE_INDEX,C_MSG_SET,C_FILE_NAME,C_BK_GROUP_ID,C_FILE_MD5,C_FILE_FROM,C_FILE_STATUS,C_TRX_STATUS,C_DEAL_TYPE,C_CREATED_BU,C_CREATED_BY,I_FAIL_RECORDS,I_SUCC_RECORDS,I_TOTAL_RECORDS,D_CREA_DATE,T_CREA_TIME) VALUES ('{"FA_SBR_REF":"PFCSBANK260611182SBR","C_UNIT_CODE":"C011447"}','8A8284979EF7FFC3019EF87623EE0186','Invoice','INVTEST_PFCSBANK260611182SBR.xml','CSBANK','96f768517f53d5cd38398dd8559320c5','UPLOAD','S','M','A','C011447','C011447MCM1',0,0,0,'2026-06-24','2026-06-24 07:09:12.573')
+[02]UPDATE CETRX.TRX_FILE_UPLOAD SET C_DEAL_TYPE = 'A',C_FILE_STATUS = 'S' WHERE C_FILE_INDEX = '8A8284979EF7FFC3019EF87623EE0186' 
+[03]INSERT INTO CETRX.TRX_FILE_DETAIL (B_MSG_CONTENT,C_FILE_TYPE,C_FILE_INDEX,C_FILE_NAME,I_IMG_FILE_SIZE) VALUES (<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SCF79>
+    <MsgInfo>
+        <SenderCode></SenderCode>
+        <ReceiverCode></ReceiverCode>
+        <CreatedBy>C011447MCM1</CreatedBy>
+        <SequenceNr></SequenceNr>
+        <MsgType></MsgType>
+        <FileIndex></FileIndex>
+        <SubFileIndex></SubFileIndex>
+        <DateTime></DateTime>
+        <Status></Status>
+        <Error></Error>
+    </MsgInfo>
+    <EF/>
+    <IF/>
+    <Customer>
+        <CustomerCompanyRegNr>C011447REG</CustomerCompanyRegNr>
+        <CustomerNr>C011447</CustomerNr>
+        <CustomerName>C011447NM</CustomerName>
+        <UnitCode>CSBANK</UnitCode>
+        <BusiType>PF</BusiType>
+    </Customer>
+    <InvCreditNoteDetails>
+        <CounterpartyCompanyRegNr>C2606005393reg</CounterpartyCompanyRegNr>
+        <CounterpartyName>REDDY VENUg</CounterpartyName>
+        <DocType>1</DocType>
+        <SBRRef>PFCSBANK260611182SBR</SBRRef>
+        <DocNr>PFTEST212023111</DocNr>
+        <DocDate>2026-06-24</D ...truncated...,'xml','8A8284979EF7FFC3019EF87623EE0186','INVTEST_PFCSBANK260611182SBR.xml',1694)
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.585] [C011447_C011447MCM1] 
+========Save basic info successfully. [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.587] [C011447_C011447MCM1] 
+== go to screen: ../Templates/SYS_Template.jsp [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.612] [C011447_C011447MCM1] 
+=== Template Include JSP File:../screen/SYS_UploadSuccess.jsp [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.921] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/SYS_JS/SYS_ErrHandle.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.922] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/SYS_JS/SYS_ErrHandle.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:12.923] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.235] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@984ffd1b
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.240] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/mlg/component [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.242] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/mlg/component [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.243] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284274390 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.245] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.235] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@94016aec
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.246] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.247] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.249] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.250] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/mainmenu [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.250] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.251] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/mainmenu [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.253] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284274390 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.254] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.259] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.260] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.262] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.263] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.301] [C011447_C011447MCM1] 
+Action target is :F05030701228 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.303] [C011447_C011447MCM1] 
+Action type is :function [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.313] [C011447_C011447MCM1] 
+Action target is :Party [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.313] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.316] [C011447_C011447MCM1] 
+Action target is :Clause [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.317] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.319] [C011447_C011447MCM1] 
+Action target is :AccountMaintain [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.320] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.322] [C011447_C011447MCM1] 
+Action target is :EmailGroup [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.323] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.326] [C011447_C011447MCM1] 
+Action target is :F05030701115 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.327] [C011447_C011447MCM1] 
+Action type is :function [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.329] [C011447_C011447MCM1] 
+Action target is :Label [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.330] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.367] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@efad9214
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.370] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/user/fap/action [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.371] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/user/fap/action [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.372] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284274390 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.373] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.374] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.375] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.376] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.377] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.380] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@efad9214
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.391] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/widgets/pagebuilder [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.392] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/widgets/pagebuilder [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.393] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284274390 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.395] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.397] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.397] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.398] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.399] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.444] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@efad9214
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C011447' AND C_USER_ID = 'C011447MCM1' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.447] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@efad9214
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.549] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/widgets/framework/plugins/Plugins.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.551] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/widgets/framework/plugins/Plugins.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.553] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@3ee98a13
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.553] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.557] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/mlg/component [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.558] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/mlg/component [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.559] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284274390 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.560] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.561] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.562] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.563] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:13.564] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.647] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@e3daa269
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.655] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/cancellation/step [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.657] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/cancellation/step [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.659] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284274390 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.661] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.663] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.664] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.666] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.668] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.865] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/servlets/WSTrxManager [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.866] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/servlets/WSTrxManager [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.868] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284274390 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.870] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : T [end]
+
+[start] [DEBUG] [2026-06-24 11:09:21.871] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.267] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/servlets/WSTrxManager [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.268] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/servlets/WSTrxManager [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.269] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.270] [C011447_C011447MCM1] 
+========Web TRX manager catch an WS exception: [end]
+
+[start] [ERROR] [2026-06-24 11:09:22.273] [C011447_C011447MCM1] 
+{{0}}[000364]The session of this function was expired. Please try again. [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.275] [C011447_C011447MCM1] 
+==========Watching important CE session data [starting......]
+==========Current class name is [com.cs.eximweb.servlets.WSSTrxManager], cdoe line number is [462].
+==========CE session user information:
+userId(C_USER_ID)=C011447MCM1,
+userDesc(C_USER_DESC)=C011447MCM1,
+userType(I_USER_TYPE)=2,
+multiLogin(I_MULTI_LOGIN)=true,
+deftUnitCode(C_DFLT_UNIT_CODE)=C011447,
+authLevel(I_AUTH_LEVEL)=1,
+langVal(C_LANG_VAL)=null,
+secType(I_SEC_TYPE)=-1,
+tempProtect(C_TMPL_PROTECT)=F,
+C_TIMEZONE_ID=null
+C_UNIT_CODE=C011447
+C_CNTY_CODE=US
+C_LANG_NAME=null
+C_CHANGE_PSW=F
+C_LOGIN_RULE=null
+C_AUTH_SET=null
+C_PRIVATE_MAIL=henry.chen@chinasystems.com
+C_BK_GROUP_ID=CSBANK
+
+==========CE session business group information:
+unitCode(C_UNIT_CODE)=C011447,
+unitName(C_UNIT_NAME)=C011447nm,
+bkGrpId(C_BK_GROUP_ID)=CSBANK,
+cntyCode(C_CNTY_CODE)=US,
+subCnty(C_SUB_CNTY)=US,
+bank(C_IS_BANK)=F,
+secType(I_SEC_TYPE)=3
+tempProtect(C_TMPL_PROTECT)=F,
+C_LANG_NAME=null
+I_UNIT_TYPE=1
+C_HAVE_AUTH=T
+C_LANG_VAL=null
+C_BANK_UNIT=null
+C_BANK_CODE=null
+dualCtrl(C_DUAL_CTRL)=T,
+custFmt=decFormat(C_DEC_FORMAT)=.,
+intFormat(C_INT_FORMAT)=,,
+intFmtLen(I_INT_FMT_LEN)=3,
+dateFormat(C_DATE_FORM)=yyyy-mm-dd,
+,
+
+==========CE session system information:
+system information is a null object.
+==========Watching important CE session data [end......]
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.420] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@3e7f5a40
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.423] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/notification/bell [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.424] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/notification/bell [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.425] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.537] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@39b2365e
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.540] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/notice/item/count [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.541] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/notice/item/count [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.542] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.546] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@39b2365e
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT COUNT(*) AS RECCOUNT FROM CETRX.STD_NOTIFICATION  WHERE C_NOTI_ID IN ( SELECT C_NOTI_ID FROM CETRX.STD_NOTIFICATION_STATUS  WHERE  C_READ_STATUS = 'F'  AND  C_USER_ID = 'C011447MCM1'  AND  C_UNIT_CODE = 'C011447'  )
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.547] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@dc5f05a9
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.551] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/reports/list [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.552] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/reports/list [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.554] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.559] [C011447_C011447MCM1] 
+Access the endPoint '/reports/list'.
+The request body is :{"data":{"type":"Pinned"}} [end]
+
+[start] [DEBUG] [2026-06-24 11:09:22.560] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@dc5f05a9
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT A.C_REPORT_ID,A.C_GRP_CODE,A.C_USER_ID,A.T_PIN_DATE,B.C_SOURCE_REPORT,B.C_REPORT_NAME,B.T_UPDATE_DATE,C.C_USER_DESC FROM CETRX.TRX_USER_REPORT_PIN A LEFT JOIN CETRX.TRX_USER_REPORT B ON A.C_REPORT_ID = B.C_REPORT_ID  LEFT JOIN CEUSER.SEC_USER_INFO C ON A.C_GRP_CODE = C.C_UNIT_CODE AND A.C_USER_ID = C.C_USER_ID  WHERE  A.C_GRP_CODE = 'C011447'  AND  A.C_USER_ID = 'C011447MCM1'  ORDER BY B.T_UPDATE_DATE DESC
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.013] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@dce741b0
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.016] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/ctaction/count [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.018] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/ctaction/count [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.019] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.024] [C011447_C011447MCM1] 
+The Catalog Object SQL is :SELECT DISTINCT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, T1.C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_NEXT_FUNC T2 ON T1.C_PRODUCT_ID = T2.C_PRODUCT_ID AND T1.C2A_STATUS = T2.C2A_STATUS AND T1.C_TRX_STATUS = T2.C_TRX_STATUS LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE (T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_USER_ID = ? AND C_GRP_CODE = ? AND C_UNIT_CODE = T1.C_UNIT_CODE) OR T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_GRP_CODE = ? AND C_USER_ID IN (SELECT C_ROLE_ID FROM CEUSER.SEC_USER_ROLE WHERE C_USER_ID = ? AND C_GRP_CODE = ?) AND C_UNIT_CODE = T1.C_UNIT_CODE)) AND (T1.C_TRX_STATUS = 'R' OR T1.C2A_STATUS IN ('Rejected by bank', 'Discrepancy notification', 'Document received') AND T1.C_TRX_STATUS = 'M' OR T1.C2A_STATUS IN ('Amendment(Detrimental)_fully authorized', 'Document discrepancy_fully authorized') AND T1.C_TRX_STATUS = 'A') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = ? AND C_GRP_CODE = ?) AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'TSUM' OR T1.C_MODULE = 'ABLF' OR T1.C_MODULE = 'UPLD') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.027] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@dce741b0
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT COUNT(*) FROM (SELECT DISTINCT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, T1.C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_NEXT_FUNC T2 ON T1.C_PRODUCT_ID = T2.C_PRODUCT_ID AND T1.C2A_STATUS = T2.C2A_STATUS AND T1.C_TRX_STATUS = T2.C_TRX_STATUS LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C011447'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','P20030600000','epF3a6u4ZGAt') )) AND (T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447' AND C_UNIT_CODE = T1.C_UNIT_CODE) OR T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_GRP_CODE = 'C011447' AND C_USER_ID IN (SELECT C_ROLE_ID FROM CEUSER.SEC_USER_ROLE WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447') AND C_UNIT_CODE = T1.C_UNIT_CODE)) AND (T1.C_TRX_STATUS = 'R' OR T1.C2A_STATUS IN ('Rejected by bank', 'Discrepancy notification', 'Document received') AND T1.C_TRX_STATUS = 'M' OR T1.C2A_STATUS IN ('Amendment(Detrimental)_fully authorized', 'Document discrepancy_fully authorized') AND T1.C_TRX_STATUS = 'A') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'TSUM' OR T1.C_MODULE = 'ABLF' OR T1.C_MODULE = 'UPLD') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC)
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.033] [C011447_C011447MCM1] 
+The Catalog Object SQL is :SELECT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, (CASE WHEN T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF' THEN T1.C_TRX_STATUS ELSE T1.C2A_STATUS END) C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = ? AND C_GRP_CODE = ?) AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.035] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@dce741b0
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT COUNT(*) FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C011447'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','P20030600000','epF3a6u4ZGAt') )) AND (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF')
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.041] [C011447_C011447MCM1] 
+The Catalog Object SQL is :SELECT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, (CASE WHEN T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF' THEN T1.C_TRX_STATUS ELSE T1.C2A_STATUS END) C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE (T1.C2A_STATUS IN ('Issued', 'Amended', 'Beneficiary rejected', 'Discrepancies rejected_fully authorized', 'Settled') AND T1.C_MODULE = 'IMLC' OR T1.CURRNT_STATUS IN ('Issued', 'Amended', 'Detrimental Amendment', 'Beneficiary Consent', 'Beneficiary Rejected', 'Document Presentation', 'Document Presentation', 'Settlement', 'Settled') AND T1.C_MODULE = 'EXCO' OR T1.C2A_STATUS IN ('Settled', 'Amendment_fully authorized', '') AND T1.C_MODULE = 'EXLC' OR T1.C_FUNC_ID IN ('F05030700899', 'F05030700901', 'F05030700908') AND T1.C2A_STATUS = 'Fully authorized' AND T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF') AND T1.C_TRX_STATUS IN ('M', 'A', 'S') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = ? AND C_GRP_CODE = ?) AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC, T1.PARENT_MAIN_REF DESC [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.043] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@dce741b0
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT COUNT(*) FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C011447'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','P20030600000','epF3a6u4ZGAt') )) AND (T1.C2A_STATUS IN ('Issued', 'Amended', 'Beneficiary rejected', 'Discrepancies rejected_fully authorized', 'Settled') AND T1.C_MODULE = 'IMLC' OR T1.CURRNT_STATUS IN ('Issued', 'Amended', 'Detrimental Amendment', 'Beneficiary Consent', 'Beneficiary Rejected', 'Document Presentation', 'Document Presentation', 'Settlement', 'Settled') AND T1.C_MODULE = 'EXCO' OR T1.C2A_STATUS IN ('Settled', 'Amendment_fully authorized', '') AND T1.C_MODULE = 'EXLC' OR T1.C_FUNC_ID IN ('F05030700899', 'F05030700901', 'F05030700908') AND T1.C2A_STATUS = 'Fully authorized' AND T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF') AND T1.C_TRX_STATUS IN ('M', 'A', 'S') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF')
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.048] [C011447_C011447MCM1] 
+The Catalog Object SQL is :SELECT DISTINCT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_NEXT_FUNC T2 ON T1.C_PRODUCT_ID = T2.C_PRODUCT_ID AND T1.C_TRX_STATUS = T2.C_TRX_STATUS LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE (T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_USER_ID = ? AND C_GRP_CODE = ? AND C_UNIT_CODE = T1.C_UNIT_CODE) OR T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_GRP_CODE = ? AND C_USER_ID IN (SELECT C_ROLE_ID FROM CEUSER.SEC_USER_ROLE WHERE C_USER_ID = ? AND C_GRP_CODE = ?) AND C_UNIT_CODE = T1.C_UNIT_CODE)) AND T1.C_TRX_STATUS = 'Z' AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = ? AND C_GRP_CODE = ?) AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.050] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@dce741b0
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT COUNT(*) FROM (SELECT DISTINCT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_NEXT_FUNC T2 ON T1.C_PRODUCT_ID = T2.C_PRODUCT_ID AND T1.C_TRX_STATUS = T2.C_TRX_STATUS LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C011447'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','P20030600000','epF3a6u4ZGAt') )) AND (T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447' AND C_UNIT_CODE = T1.C_UNIT_CODE) OR T2.C_NEXT_FUNC_ID IN (SELECT C_FUNC_ID FROM CEUSER.SEC_OP_FUNC WHERE C_GRP_CODE = 'C011447' AND C_USER_ID IN (SELECT C_ROLE_ID FROM CEUSER.SEC_USER_ROLE WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447') AND C_UNIT_CODE = T1.C_UNIT_CODE)) AND T1.C_TRX_STATUS = 'Z' AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC)
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.232] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@c62ff838
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.237] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/catalog/combo/data [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.238] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/catalog/combo/data [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.240] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.244] [C011447_C011447MCM1] 
+The Catalog Object SQL is :SELECT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, (CASE WHEN T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF' THEN T1.C_TRX_STATUS ELSE T1.C2A_STATUS END) C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = ? AND C_GRP_CODE = ?) AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.246] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@c62ff838
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, (CASE WHEN T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF' THEN T1.C_TRX_STATUS ELSE T1.C2A_STATUS END) C2A_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C011447'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800000','P19080800001','P19080800002','P20030600000','epF3a6u4ZGAt') )) AND (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C011447MCM1' AND C_GRP_CODE = 'C011447') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC
+
+ [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.256] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.257] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.258] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.259] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.260] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.261] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.262] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.263] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.264] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.265] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.266] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.268] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.269] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.270] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.271] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.272] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.273] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.274] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.275] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.276] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.277] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.278] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.279] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.280] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.281] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.283] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.284] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.285] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.285] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.286] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.287] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.288] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.289] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.291] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.292] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.293] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.294] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.295] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.296] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [ERROR] [2026-06-24 11:09:23.298] [C011447_C011447MCM1] 
+Can not find product ID  in parameter products.xml [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.300] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@c62ff838
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_UNIT_CODE,C_UNIT_NAME FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:23.312] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@c62ff838
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_CRITERIA_DATA,C_TMPL_NAME,C_IS_DEFAULT FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C011447'  AND  C_USER_ID = 'C011447MCM1'  AND  C_CATA_ID = 'C2A_InProgress_Maker'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.387] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/servlets/WSSActionRouting [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.388] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/servlets/WSSActionRouting [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.390] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.393] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@2aab37f7
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.399] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@2aab37f7
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'BfbOjiwS8TF-o3UYOnnRrQ6' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.406] [C011447_C011447MCM1] 
+The request C_ACTION_ID is : F05030701225 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.410] [C011447_C011447MCM1] 
+Submit Datas are : {CSRFTOKEN=[88KA8QE228AO49I7oqnVqc94EEF7FFCE3q2J019kEuFG8s6HwBADkCAUsC0u1717, 88KA8QE228AO49I7oqnVqc94EEF7FFCE3q2J019kEuFG8s6HwBADkCAUsC0u1717], ACTION_FROM=MENU, NO_MAPPING=T, REFRESH_TOKEN=[29, 28], C_IP_ADDRESS=10.3.1.1, TrxSessionId=, C_ACTION_ID=F05030701225, IS_FUNC_START=T} [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.412] [C011447_C011447MCM1] 
+Action id : F05030701225 in the parameter system-secu-actions.xml not find [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.415] [C011447_C011447MCM1] 
+==go to servlet: /servlets/WSTrxManager [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.418] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@2995d1a6
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.421] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@2995d1a6
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'BfbOjiwS8TF-o3UYOnnRrQ6' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.425] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.427] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.429] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.430] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.432] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.433] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.434] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.435] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.437] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.438] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.439] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.440] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.441] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.444] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@2995d1a6
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.448] [C011447_C011447MCM1] 
+The currnt date find from DB is : 2026-06-24 11:09:24.445000 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.450] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+
+{com.ibm.websphere.servlet.uri_non_decoded,/BL6CEWeb/servlets/WSSActionRouting}
+
+{CHECKED_REFRESH,T}
+
+{javax.servlet.forward.context_path,/BL6CEWeb}
+
+{javax.servlet.forward.servlet_path,/servlets/WSSActionRouting}
+
+{com.ibm.servlet.engine.webapp.dispatch_type,forward}
+
+{javax.servlet.forward.request_uri,/BL6CEWeb/servlets/WSSActionRouting}
+
+{JSESSIONID,}
+
+{TrxSessionId,8A828497019EF8765240018A}
+
+{com.ibm.servlet.engine.webapp.dispatch_nested,true}
+
+{javax.servlet.forward.query_string, 
+FUNC_ID=F05030701225
+_TRX_STATUS=PARALLEL
+CSRFTOKEN=88KA8QE228AO49I7oqnVqc94EEF7FFCE3q2J019kEuFG8s6HwBADkCAUsC0u1717
+C_ACTION_ID=F05030701225
+IS_FUNC_START=T
+ACTION_FROM=MENU
+REFRESH_TOKEN=29
+TrxSessionId=
+NO_MAPPING=T
+}
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.452] [C011447_C011447MCM1] 
+=========Sub Action wrapper request===========
+TrxSessionId:8A828497019EF8765240018A
+Parameters:
+CSRFTOKEN=88KA8QE228AO49I7oqnVqc94EEF7FFCE3q2J019kEuFG8s6HwBADkCAUsC0u1717
+C_ACTION_ID=F05030701225
+ACTION_FROM=MENU
+REFRESH_TOKEN=29
+NO_MAPPING=T
+CATA_CURR=1
+CATA_TYPE=cata
+TITLE_NAME=View Upload Files
+TRAN_TYPE=CATA_ITEM
+ITEM_ID=Inquire
+CATA_NUM=1
+_ACT_TYPE=CATA_SECU
+TrxSessionId=8A828497019EF8765240018A
+PRODUCT_ID=P20030600000
+PRODUCT_NAME=Upload Files
+_TRX_STATUS=CE_CATAMANAGER
+IS_FUNC_START=T
+GRP_NAME=CSBANK
+FUN_NAME=View Upload Files
+RESERVE_PARENT=T
+TRAN_NAME=Inquire
+FUNC_ID=F05030701225
+SEL_TYPE=
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.453] [C011447_C011447MCM1] 
+== go to screen: ../servlets/WSTrxManager [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.455] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6e80565
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.458] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6e80565
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'BfbOjiwS8TF-o3UYOnnRrQ6' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.462] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.463] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.464] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.465] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.466] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.467] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.468] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.470] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.471] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.472] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.473] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.474] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.475] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.477] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6e80565
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.481] [C011447_C011447MCM1] 
+The currnt date find from DB is : 2026-06-24 11:09:24.478000 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.482] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+
+{com.ibm.websphere.servlet.uri_non_decoded,/BL6CEWeb/servlets/WSSActionRouting}
+
+{CHECKED_REFRESH,T}
+
+{javax.servlet.forward.context_path,/BL6CEWeb}
+
+{javax.servlet.forward.servlet_path,/servlets/WSSActionRouting}
+
+{com.ibm.servlet.engine.webapp.dispatch_type,forward}
+
+{javax.servlet.forward.request_uri,/BL6CEWeb/servlets/WSSActionRouting}
+
+{JSESSIONID,}
+
+{TrxSessionId,8A828497019EF8765266018B}
+
+{com.ibm.servlet.engine.webapp.dispatch_nested,true}
+
+{javax.servlet.forward.query_string, 
+CSRFTOKEN=88KA8QE228AO49I7oqnVqc94EEF7FFCE3q2J019kEuFG8s6HwBADkCAUsC0u1717
+C_ACTION_ID=F05030701225
+ACTION_FROM=MENU
+REFRESH_TOKEN=29
+NO_MAPPING=T
+CATA_CURR=1
+CATA_TYPE=cata
+TITLE_NAME=View Upload Files
+TRAN_TYPE=CATA_ITEM
+ITEM_ID=Inquire
+CATA_NUM=1
+_ACT_TYPE=CATA_SECU
+TrxSessionId=8A828497019EF8765240018A
+PRODUCT_ID=P20030600000
+PRODUCT_NAME=Upload Files
+_TRX_STATUS=CE_CATAMANAGER
+IS_FUNC_START=T
+GRP_NAME=CSBANK
+FUN_NAME=View Upload Files
+RESERVE_PARENT=T
+TRAN_NAME=Inquire
+FUNC_ID=F05030701225
+SEL_TYPE=
+}
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.487] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6e80565
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,C_MODULE,C_LOG_INFO,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,C_BUSI_KEY) VALUES ('8A8284979EF7FFC3019EF8765284018C','CSBANK','US','C011447','C011447MCM1','10.3.1.1','F05030701225','UPLD',C011447/C011447MCM1 prepares to process function F05030701225 View Upload Files,'2026-06-24','07:09:24','2026-06-24','07:09:24','C011447;C011447MCM1')
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.494] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6e80565
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C011447'  AND  C_USER_ID = 'C011447MCM1'  AND  C_CATA_ID = 'C20030500000'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.499] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6e80565
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_FILE_INDEX,C_FILE_NAME,C_FILE_STATUS,D_CREA_DATE,C_CREATED_BY FROM CETRX.TRX_FILE_UPLOAD WHERE ( 1=1   AND   1=1   AND  ( 1=1   AND   1=1 ) AND C_CREATED_BY = 'C011447MCM1')   AND   C_BK_GROUP_ID = 'CSBANK'  ORDER BY C_FILE_INDEX
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.504] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6e80565
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_TMPL_NAME,C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C011447'  AND  C_USER_ID = 'C011447MCM1'  AND  C_CATA_ID = 'C20030500000'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4  AND  C_IS_DEFAULT = 'Y' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.510] [C011447_C011447MCM1] 
+== go to screen: ../Templates/SYS_Template.jsp [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.532] [C011447_C011447MCM1] 
+=== Template Include JSP File:../Default/CATA/SYS_UPLDCatalog.jsp [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.540] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6e80565
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_CRITERIA_DATA FROM CETRX.STD_SEARCH_CRITERIA WHERE C_UNIT_CODE = 'C011447' AND C_USER_ID = 'C011447MCM1' AND C_CATA_ID = 'C20030500000' AND I_CRITERIA_TYPE = 4 AND C_IS_DEFAULT = 'Y' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.563] [C011447_C011447MCM1] 
+ (root)(Map)
+   |
+   +- Cancel = Cancel(String)
+   |
+   +- _ACT_TYPE = CATA_SECU(String)
+   |
+   +- mlgItem = VIEW(String)
+   |
+   +- itemInfo = Inquire(String)
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.834] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/JS/SYS_Upload.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.835] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/JS/SYS_Upload.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.838] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.863] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/SYS_JS/SYS_ErrHandle.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.864] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@78970360
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.864] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/SYS_JS/SYS_ErrHandle.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.866] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.870] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/notice/item/count [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.871] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/notice/item/count [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.873] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:24.879] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@78970360
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT COUNT(*) AS RECCOUNT FROM CETRX.STD_NOTIFICATION  WHERE C_NOTI_ID IN ( SELECT C_NOTI_ID FROM CETRX.STD_NOTIFICATION_STATUS  WHERE  C_READ_STATUS = 'F'  AND  C_USER_ID = 'C011447MCM1'  AND  C_UNIT_CODE = 'C011447'  )
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.139] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@547692f3
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.141] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@35b08e7f
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.145] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/mlg/component [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.146] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/mainmenu [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.147] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/mlg/component [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.148] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/mainmenu [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.150] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284964478 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.150] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284964478 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.151] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.152] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.153] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.154] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.155] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.155] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.157] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.157] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.160] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.160] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.204] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6d2825a7
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.208] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/user/fap/action [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.210] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/user/fap/action [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.211] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284964478 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.213] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.214] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.215] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.216] [C011447_C011447MCM1] 
+Action target is :F05030701228 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.217] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.218] [C011447_C011447MCM1] 
+Action type is :function [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.218] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.222] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6d2825a7
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.237] [C011447_C011447MCM1] 
+Action target is :Party [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.238] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.243] [C011447_C011447MCM1] 
+Action target is :Clause [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.244] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.263] [C011447_C011447MCM1] 
+Action target is :AccountMaintain [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.264] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.270] [C011447_C011447MCM1] 
+Action target is :EmailGroup [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.271] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.277] [C011447_C011447MCM1] 
+Action target is :F05030701115 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.279] [C011447_C011447MCM1] 
+Action type is :function [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.282] [C011447_C011447MCM1] 
+Action target is :Label [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.283] [C011447_C011447MCM1] 
+Action type is :catalog [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.318] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6d2825a7
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C011447' AND C_USER_ID = 'C011447MCM1' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.321] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@6d2825a7
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.324] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.326] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.327] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.331] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.332] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.334] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.773] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/widgets/pagebuilder [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.775] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/widgets/pagebuilder [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.777] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284964478 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.777] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.778] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.781] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.782] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.785] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.964] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/widgets/framework/plugins/Plugins.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.965] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/widgets/framework/plugins/Plugins.js [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.966] [C011447_C011447MCM1] 
+The session refresh token in session is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.970] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@1afa1c46
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.974] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/v1/openapi/mlg/component [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.975] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/v1/openapi/mlg/component [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.976] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284964478 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.978] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.979] [C011447_C011447MCM1] 
+The servlet is must check refresh :false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.980] [C011447_C011447MCM1] 
+The parameter _TRX_STATUS in request is : null [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.982] [C011447_C011447MCM1] 
+The request is special status : 1 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:25.983] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.704] [C011447_C011447MCM1] 
+The request URI is : /BL6CEWeb/servlets/WSTrxManager [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.706] [C011447_C011447MCM1] 
+The URI is :/BL6CEWeb/servlets/WSTrxManager [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.708] [C011447_C011447MCM1] 
+The session refresh token in session is : 1782284964478 [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.711] [C011447_C011447MCM1] 
+The parameter AjaxPost in request is : T [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.712] [C011447_C011447MCM1] 
+The request need to check refresh token : false [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.714] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@5a5dc527
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.717] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@5a5dc527
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'BfbOjiwS8TF-o3UYOnnRrQ6' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.721] [C011447_C011447MCM1] 
+
+------------------ Session ID : BfbOjiwS8TF-o3UYOnnRrQ6 --------------------
+
+{com.ibm.websphere.servlet.uri_non_decoded,/BL6CEWeb/servlets/WSTrxManager}
+
+{CHECKED_REFRESH,T}
+
+{JSESSIONID,}
+
+{TrxSessionId,8A828497019EF8765266018B}
+
+{javax.servlet.forward.query_string, 
+TRAN_TYPE=CATA_ITEM
+_TRX_STATUS=WS_PORTAL
+OP2=8A8284979EF7FFC3019EF87623EE0186
+AjaxPost=T
+TrxSessionId=8A828497019EF8765266018B
+isNeedConvert=true
+service_id=TRX0006
+page=1
+page_size=10
+IS_FUNC_START=F
+_ACT_TYPE=CATA_PDT_FUNC
+format=JSON
+function_id=F05030701226
+CSRFTOKEN=87EA8w92r8xe49K77DGBQ59UyEF7FFCr3MPQ0190E8Fl8a6XJBADGCQyPC0B171s
+REFRESH_TOKEN=1782284964484
+CATA_TYPE=cata
+}
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.732] [C011447_C011447MCM1] 
+The Request:<Request>
+	<Authentication>
+			<MsgId></MsgId>
+			<Time></Time>
+			<Application></Application>
+			<UserId>C011447MCM1</UserId>
+			<UserBu>C011447</UserBu>
+	</Authentication>
+	<Service>
+		<Id>TRX0006</Id>
+		<TrxBu>C011447</TrxBu>
+		<FuncId>F05030701226</FuncId>
+		<Format>JSON</Format>
+    <Data>
+        <Input>
+			<FETCH_INFO>
+				<PAGE_SIZE>10</PAGE_SIZE>
+				<PAGE_NO>1</PAGE_NO>
+			</FETCH_INFO>
+			<CRITERIA>
+					<OP2>8A8284979EF7FFC3019EF87623EE0186</OP2>
+			</CRITERIA>
+		</Input>
+     </Data>
+	</Service>
+</Request> [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.733] [C011447_C011447MCM1] 
+CE WS-Framework reciever a request message:<Request>
+	<Authentication>
+			<MsgId></MsgId>
+			<Time></Time>
+			<Application></Application>
+			<UserId>C011447MCM1</UserId>
+			<UserBu>C011447</UserBu>
+	</Authentication>
+	<Service>
+		<Id>TRX0006</Id>
+		<TrxBu>C011447</TrxBu>
+		<FuncId>F05030701226</FuncId>
+		<Format>JSON</Format>
+    <Data>
+        <Input>
+			<FETCH_INFO>
+				<PAGE_SIZE>10</PAGE_SIZE>
+				<PAGE_NO>1</PAGE_NO>
+			</FETCH_INFO>
+			<CRITERIA>
+					<OP2>8A8284979EF7FFC3019EF87623EE0186</OP2>
+			</CRITERIA>
+		</Input>
+     </Data>
+	</Service>
+</Request> [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.735] [C011447_C011447MCM1] 
+find the builder by the channel type - WS [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.737] [C011447_C011447MCM1] 
+finish initializing builder [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.740] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@5a5dc527
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C011447' 
+[02]SELECT * FROM CEUSER.SEC_USER_INFO WHERE C_UNIT_CODE = 'C011447' AND C_USER_ID = 'C011447MCM1' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.746] [C011447_C011447MCM1] 
+finish packing the WS request [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.747] [C011447_C011447MCM1] 
+-----------------------CE Service Begin------------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.748] [C011447_C011447MCM1] 
+Initialize CE Service Entry
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.750] [C011447_C011447MCM1] 
+CE service entry started that will processing 6 steps. Start time: 2026-06-24 11:09:31 749
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.751] [C011447_C011447MCM1] 
+Step 1: Loading service login configure file.
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.752] [C011447_C011447MCM1] 
+Fetch base info adpter class is: com.cs.ws.server.auth.ServiceBaseInfo
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.753] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@5a5dc527
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_BK_GROUP_ID,C_CNTY_CODE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.757] [C011447_C011447MCM1] 
+Base Info fetch complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.760] [C011447_C011447MCM1] 
+Step 1 complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.762] [C011447_C011447MCM1] 
+Step 2: Authenticate user for security. 
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.763] [C011447_C011447MCM1] 
+Initialize Authentication Compontent : com.cs.ws.server.auth.CEAuthentication
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.764] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@5a5dc527
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT I_LOGON_RETRIES,C_BK_GROUP_ID,C_CNTY_CODE,C_PASSWORD,C_USER_ID,C_UNIT_CODE,C_INACTIVE,I_EXPIRY_TYPE,EXPIRY_DATE ,EFFECTIVE_DATE ,I_USER_TYPE,C_CHANGE_PSW,D_PSW_DATE,C_CHANGE_MAIL FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+[02]SELECT C_UNIT_CODE,C_USER_ID,T_LAST_LOGIN_TIME,T_CURR_LOGIN_TIME FROM CEUSER.SEC_LOGIN_SUCCEED_INFO WHERE C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.769] [C011447_C011447MCM1] 
+Step 2 complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.770] [C011447_C011447MCM1] 
+Step 3: Authorize user and create session context. 
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.771] [C011447_C011447MCM1] 
+Initialize Authorization Compontent : com.cs.ws.server.auth.CEAuthorization
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.795] [C011447_C011447MCM1] 
+Step 3 complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.796] [C011447_C011447MCM1] 
+Step 4: Load function information. 
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.797] [C011447_C011447MCM1] 
+Initialize Function Loader Compontent : com.cs.ws.server.auth.CEFunctionLoader
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.798] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.WSSession@d06a58f4
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.802] [C011447_C011447MCM1] 
+Step 4 complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.804] [C011447_C011447MCM1] 
+Step 5: Load Ext Head information.
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.804] [C011447_C011447MCM1] 
+Step 5 complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.805] [C011447_C011447MCM1] 
+Step 5: Load service(s) and perform the service(s). 
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.806] [C011447_C011447MCM1] 
+Initialize service Loader Compontent : com.cs.ws.server.loader.CESubServiceLoader
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.808] [C011447_C011447MCM1] 
+Initialize Service Component: com.cs.ws.server.service.sys.SOATrxCataDataListPro
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.810] [C011447_C011447MCM1] 
+Initialize service data parser : com.cs.ws.server.dataparser.SOATrxCataDataListParser
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.811] [C011447_C011447MCM1] 
+Transform TRX0006 Service Data
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.813] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.WSSession@d06a58f4
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]SELECT C_MSG_SET,C_BUSINESS_KEY,C_FILE_INDEX,C_FILE_POSITION,C_MSG_STATUS,C_SUB_FILE_INDEX,C_FAIL_REASON FROM CETRX.TRX_SUB_FILES WHERE C_FILE_INDEX = '8A8284979EF7FFC3019EF87623EE0186'  AND   C_BK_GROUP_ID = 'CSBANK'  AND  C_UNIT_CODE = 'C011447' 
+
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.817] [C011447_C011447MCM1] 
+Initialize service message convertor : com.cs.ws.server.msgconvert.SOATrxSavedDraftCataDataListConvert
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.819] [C011447_C011447MCM1] 
+  Perform Service Component complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.820] [C011447_C011447MCM1] 
+Step 5 complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.821] [C011447_C011447MCM1] 
+Step 6: Combine service(s) result to normal message response. 
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.822] [C011447_C011447MCM1] 
+Single service with JSON format no need to convert: 
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.823] [C011447_C011447MCM1] 
+Step 6 complete
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.824] [C011447_C011447MCM1] 
+All steps was complete. End time: 2026-06-24 11:09:31 823
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.825] [C011447_C011447MCM1] 
+-----------------------CE Service End------------------------
+ [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.826] [C011447_C011447MCM1] 
+finish doing service [end]
+
+[start] [DEBUG] [2026-06-24 11:09:31.827] [C011447_C011447MCM1] 
+The Response:{"fieldName":["C_MSG_SET","C_BUSINESS_KEY","C_FILE_INDEX","C_FILE_POSITION","C_MSG_STATUS","C_SUB_FILE_INDEX","C_FAIL_REASON"],"field":[{"fieldName":"C_MSG_SET","hidden":"","type":"1","desc":"Bussiness Type"},{"fieldName":"C_BUSINESS_KEY","hidden":"","type":"12","desc":"Bussiness Keys"},{"fieldName":"C_FILE_INDEX","hidden":"H","type":"12","desc":"C_FILE_INDEX"},{"fieldName":"C_FILE_POSITION","hidden":"","type":"12","desc":"File Position"},{"fieldName":"C_MSG_STATUS","hidden":"","type":"1","desc":"Status"},{"fieldName":"C_SUB_FILE_INDEX","hidden":"H","type":"12","desc":"C_SUB_FILE_INDEX"},{"fieldName":"C_FAIL_REASON","hidden":"","type":"2005","desc":"Fail Reason"}],"records":[{"C_FILE_POSITION":"INVTEST_PFCSBANK260611182SBR.xml","C_MSG_SET":"Invoice","C_BUSINESS_KEY":"8A8284979EF7FFC3019EF876408F0188","C_FILE_INDEX":"8A8284979EF7FFC3019EF87623EE0186","C_SUB_FILE_INDEX":"8A8284979EF7FFC3019EF87623EE0186","C_MSG_STATUS":"Waiting for Back Office Process"}],"success":true,"meta":{"record_count":1,"total_record_count":1,"total_page_count":1,"current_page":1,"page_size":10}} [end]
+
+[start] [DEBUG] [2026-06-24 11:15:23.702] [C011447_C011447MCM1] 
+====request content is: 
+    Request Type: Temp
+Component : DBHelper
+Session Context is: 
+com.cs.core.utility.SessionContext@712a8a23
+Request Info Type : com.cs.core.dao.exec.SQLDao
+Request Info Content is: 
+[01]DELETE FROM CEUSER.SEC_LOGIN_SESSION WHERE C_BK_GROUP_ID = 'CSBANK' AND C_USER_ID = 'C011447MCM1' AND C_UNIT_CODE = 'C011447' AND C_SESSION_ID = 'BfbOjiwS8TF-o3UYOnnRrQ6' 
+
+ [end]

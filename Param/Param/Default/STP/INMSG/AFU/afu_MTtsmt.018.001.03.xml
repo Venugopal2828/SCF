@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: assing msg for Received PO");
+var purpType = stp.getXslMsgTagVal("message/Document/FullPushThrghRpt/RptPurp","Tp");
+	if("FWIS" == purpType){
+	stp.setFunc("Received PO","PO Maintenance");
+	}
+	else if("FWRE" == purpType){
+	stp.setFunc("Received Resubmitted PO","PO Maintenance");
+	}
+	else if("FWAM" == purpType){
+	stp.setFunc("Received Amendment PO","PO Maintenance");
+	}
+  stp.setCustomXSLName("stp.tsmt.018");
+  stp.setIsUseXSLMapping(true);
+stp.writeLog("End: assing msg for Received PO");]]></js-content>
+</root>

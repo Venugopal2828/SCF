@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True" MULTI="YES">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302550</ID>
+    <MODULE>INVC</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLELIST>
+        <TABLENAME ALIAS="T1" MASTER="YES">%EXIMTRX%.INVC_MASTER</TABLENAME>
+        <TABLENAME ALIAS="T2">%EXIMTRX%.INVC_LOAN</TABLENAME>
+    </TABLELIST>
+    <FIELDLIST>
+        <FIELD ALIAS="" COL="SUPLR_BK_ACC_NO" DATATYPE="12"
+            DESC="Supplier Bank Account Number" EEType="Varchar_50" HIDDEN="">T1.SUPLR_BK_ACC_NO</FIELD>
+        <FIELD ALIAS="" COL="TRX_DT" DATATYPE="91" DESC="Transaction Date"
+            EEType="DATE" HIDDEN="">T1.TRX_DT</FIELD>
+        <FIELD ALIAS="" COL="C_MAIN_REF" DATATYPE="12" DESC="MAIN REF. NO."
+            EEType="SYS_VARCHAR_40" HIDDEN="">T1.C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" COL="C_UNIT_CODE" DATATYPE="12" DESC="UNIT CODE"
+            EEType="SYS_VARCHAR_12" HIDDEN="">T1.C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" COL="I_EVENT_TIMES" DATATYPE="4" DESC="EVENT TIMES"
+            EEType="SYS_INTEGER_0" HIDDEN="">T1.I_EVENT_TIMES</FIELD>
+        <FIELD ALIAS="" COL="C_FUNC_SHORT_NAME" DATATYPE="12"
+            DESC="C_FUNC_SHORT_NAME" EEType="SYS_VARCHAR_16" HIDDEN="">T1.C_FUNC_SHORT_NAME</FIELD>
+        <FIELD ALIAS="" COL="C_TRX_REF" DATATYPE="1" DESC="C_TRX_REF"
+            EEType="SYS_CHAR_40" HIDDEN="">T1.C_TRX_REF</FIELD>
+        <FIELD ALIAS="" COL="C_TRX_STATUS" DATATYPE="1" DESC="C_TRX_STATUS"
+            EEType="SYS_CHAR_1" HIDDEN="">T1.C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_ID" DATATYPE="12" DESC="Loan Reference No."
+            EEType="Varchar_35" HIDDEN="">T2.FA_LOAN_ID</FIELD>
+        <FIELD ALIAS="" COL="FA_DOC_NO" DATATYPE="12" DESC="Doc No."
+            EEType="Varchar_35" HIDDEN="">T2.FA_DOC_NO</FIELD>
+        <FIELD ALIAS="" COL="FA_LOAN_VAL_DT" DATATYPE="91"
+            DESC="Loan Value Date" EEType="DATE" HIDDEN="">T2.FA_LOAN_VAL_DT</FIELD>
+        <FIELD ALIAS="" COL="FA_INV_LOAN_AMT" DATATYPE="3"
+            DESC="Invoice Loan Amount" EEType="AMT" HIDDEN="">T2.FA_INV_LOAN_AMT</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+        <SQL DESC="Supplier Bank Account Number" DT="12" EEType="Varchar_50"
+            POS="SELFLD" TYPE="FLD">T1.SUPLR_BK_ACC_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Transaction Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T1.TRX_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="UNIT CODE" DT="12" EEType="SYS_VARCHAR_12" POS="SELFLD" TYPE="FLD">T1.C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="EVENT TIMES" DT="4" EEType="SYS_INTEGER_0" POS="SELFLD" TYPE="FLD">T1.I_EVENT_TIMES</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_FUNC_SHORT_NAME" DT="12" EEType="SYS_VARCHAR_16"
+            POS="SELFLD" TYPE="FLD">T1.C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_TRX_REF" DT="1" EEType="SYS_CHAR_40" POS="SELFLD" TYPE="FLD">T1.C_TRX_REF</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="SYS_CHAR_1" POS="SELFLD" TYPE="FLD">T1.C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan Reference No." DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T2.FA_LOAN_ID</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Doc No." DT="12" EEType="Varchar_35" POS="SELFLD" TYPE="FLD">T2.FA_DOC_NO</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Loan Value Date" DT="91" EEType="DATE" POS="SELFLD" TYPE="FLD">T2.FA_LOAN_VAL_DT</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL DESC="Invoice Loan Amount" DT="3" EEType="AMT" POS="SELFLD" TYPE="FLD">T2.FA_INV_LOAN_AMT</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.INVC_LOAN T2</SQL>
+        <SQL TYPE="SQL">,</SQL>
+        <SQL SCHEMATYPE="SELECTED" TYPE="SQL">%EXIMTRX%.INVC_MASTER T1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="Supplier Bank Account Number" DT="12" EEType="Varchar_50"
+            POS="WHEFLD" TYPE="FLD">T1.SUPLR_BK_ACC_NO</SQL>
+        <SQL TYPE="SQL"> = '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE0</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Transaction Date" DT="91" EEType="DATE" POS="WHEFLD" TYPE="FLD">T1.TRX_DT</SQL>
+        <SQL TYPE="SQL"> &gt;= '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Transaction Date" DT="91" EEType="DATE" POS="WHEFLD" TYPE="FLD">T1.TRX_DT</SQL>
+        <SQL TYPE="SQL"> &lt;= '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE2</SQL>
+        <SQL TYPE="SQL">' ORDER BY </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">T1.C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Supplier Bank Account Number" EETYPE="Varchar_50">T1.SUPLR_BK_ACC_NO</FIELD>
+        <FIELD DATATYPE="91" DESC="Transaction Date" EETYPE="DATE">T1.TRX_DT</FIELD>
+        <FIELD DATATYPE="91" DESC="Transaction Date" EETYPE="DATE">T1.TRX_DT</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EETYPE="SYS_VARCHAR_40">T1.C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

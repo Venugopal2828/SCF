@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+    <diskStore path="java.io.tmpdir"/>
+    <cacheManagerPeerProviderFactory
+        class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory" properties="peerDiscovery=automatic, multicastGroupAddress=238.12.13.14, multicastGroupPort=4746,timeToLive=12"/>
+    <cacheManagerPeerListenerFactory
+        class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory" properties="port=47001,socketTimeoutMillis=120000"/>
+    <defaultCache diskExpiryThreadIntervalSeconds="120" diskPersistent="false"
+        eternal="false" maxElementsInMemory="100"
+        memoryStoreEvictionPolicy="LRU" overflowToDisk="false"
+        timeToIdleSeconds="600" timeToLiveSeconds="600"/>
+    <!--
+       Cache configuration of task. 
+    -->
+    <cache eternal="true" maxElementsInMemory="100" name="BATCH_TASK_INFO"
+        overflowToDisk="true" timeToIdleSeconds="600" timeToLiveSeconds="600"/>
+    <cache eternal="true" maxElementsInMemory="100" name="JOB_STATUS"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+         <bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"/>
+    </cache>
+  
+     <cache eternal="true" maxElementsInMemory="100" name="EE_BATCH_CACHE"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+         <bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"/>
+    </cache>
+</ehcache>

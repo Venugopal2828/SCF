@@ -1,0 +1,44 @@
+003599S5utE+OsW88Uq+PzwW/mbg==<?xml version="1.0" encoding="utf-8"?>
+<Saa:DataPDU xmlns:Saa="urn:swift:saa:xsd:saa.2.0" xmlns:Sw="urn:swift:snl:ns.Sw"
+  xmlns:SwGbl="urn:swift:snl:ns.SwGbl" xmlns:SwInt="urn:swift:snl:ns.SwInt" xmlns:SwSec="urn:swift:snl:ns.SwSec">
+  <Saa:Revision>2.0.10</Saa:Revision>
+  <Saa:Header>
+  <Saa:Message>
+    <Saa:SenderReference>IP003621BEDV</Saa:SenderReference>
+    <Saa:MessageIdentifier>pacs.009.001.08</Saa:MessageIdentifier>
+    <Saa:Format>MX</Saa:Format>
+    <Saa:Sender><Saa:DN>ou=xxx,o=ptsabmaa,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMAAXXX</Saa:X1></Saa:FullName></Saa:Sender>
+    <Saa:Receiver><Saa:DN>ou=xxx,o=ptsabmab,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMABXXX</Saa:X1></Saa:FullName></Saa:Receiver>
+    <Saa:InterfaceInfo><Saa:UserReference>IP003621BEDV</Saa:UserReference></Saa:InterfaceInfo>
+    <Saa:NetworkInfo>
+      <Saa:Service>swift.finplus!xpf</Saa:Service>
+      <Saa:SWIFTNetNetworkInfo>
+        <Saa:RequestType>pacs.009.001.08</Saa:RequestType>
+        <Saa:RequestSubtype>swift.cbprplus.cov.02</Saa:RequestSubtype>
+      </Saa:SWIFTNetNetworkInfo>
+    </Saa:NetworkInfo>
+  </Saa:Message></Saa:Header>
+  <Saa:Body>
+  
+  <AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">
+    <Fr>
+      <FIId>
+        <FinInstnId>
+          <BICFI>PTSABMAAXXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </Fr>
+    <To>
+      <FIId>
+        <FinInstnId>
+          <BICFI>PTSABMABXXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </To>
+    <BizMsgIdr>IP003621BEDV</BizMsgIdr>
+    <MsgDefIdr>pacs.009.001.08</MsgDefIdr>
+    <BizSvc>swift.cbprplus.cov.02</BizSvc>
+    <CreDt>2024-02-29T00:43:29+00:00</CreDt>
+  </AppHdr>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.009.001.08"><FICdtTrf><GrpHdr><MsgId>IP003621BEDV</MsgId><CreDtTm>2024-02-29T00:43:29+00:00</CreDtTm><NbOfTxs>1</NbOfTxs><SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf></GrpHdr><CdtTrfTxInf><PmtId><InstrId>IP003621BEDV</InstrId><EndToEndId>IP003621BEDV</EndToEndId><UETR>d79897f2-1e6d-4b3a-9573-5fc37295dcf6</UETR></PmtId><IntrBkSttlmAmt Ccy="USD">100000.00</IntrBkSttlmAmt><IntrBkSttlmDt>2024-02-29</IntrBkSttlmDt><InstgAgt><FinInstnId><BICFI>PTSABMAAXXX</BICFI></FinInstnId></InstgAgt><InstdAgt><FinInstnId><BICFI>PTSABMABXXX</BICFI></FinInstnId></InstdAgt><Dbtr><FinInstnId><BICFI>PTSABMAAXXX</BICFI><Nm>Xx Test Company 01</Nm><PstlAdr><AdrLine>Xx Test Company 01 Add1</AdrLine><AdrLine>Xx Test Company 01 Add2</AdrLine><AdrLine>Xx Test Company 01 Add3</AdrLine></PstlAdr></FinInstnId></Dbtr><Cdtr><FinInstnId><BICFI>PTSABMABXXX</BICFI><Nm>DD Test Company 01</Nm><PstlAdr><AdrLine>DD Test Company 01 Add1</AdrLine><AdrLine>DD Test Company 02 Add2</AdrLine><AdrLine>DD Test Company 01 Add3</AdrLine></PstlAdr></FinInstnId></Cdtr><UndrlygCstmrCdtTrf><Dbtr><Nm>ABC Corporation</Nm><PstlAdr><AdrLine>Times Square,7</AdrLine><AdrLine>NY 10036</AdrLine><AdrLine>New York</AdrLine></PstlAdr></Dbtr><DbtrAgt><FinInstnId><BICFI>PTSABMAAXXX</BICFI><Nm>Xx Test Company 01</Nm><PstlAdr><AdrLine>Xx Test Company 01 Add1</AdrLine><AdrLine>Xx Test Company 01 Add2</AdrLine><AdrLine>Xx Test Company 01 Add3</AdrLine></PstlAdr></FinInstnId></DbtrAgt><CdtrAgt><FinInstnId><BICFI>CITIUS33XXX</BICFI><Nm>CITIBANK N.A.</Nm><PstlAdr><AdrLine>CITIBANK Add1</AdrLine><AdrLine>CITIBANK Add2</AdrLine><AdrLine>CITIBANK Add3</AdrLine></PstlAdr></FinInstnId></CdtrAgt><Cdtr><Nm>A21,INC.</Nm><PstlAdr><AdrLine>CENTURION PKWY</AdrLine><AdrLine>JACKSONVILLE</AdrLine><AdrLine>FLORIDA</AdrLine></PstlAdr></Cdtr></UndrlygCstmrCdtTrf></CdtTrfTxInf></FICdtTrf></Document>
+</Saa:Body></Saa:DataPDU>

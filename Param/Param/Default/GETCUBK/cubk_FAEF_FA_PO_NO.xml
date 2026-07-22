@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="FA_Invoice_no" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>FA_Invoice_no</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.TSU_PO_LI</table-name>
+        <table-desc>TSU_PO_LI</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <FA_DOC_NO DESC="FA_DOC_NO" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">FA_DOC_NO</FA_DOC_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">DUP_CUST_NO</C_MAIN_REF>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

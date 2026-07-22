@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>TSUM</module-name>
+        <cubk-mapping-name>TSU_CUST_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="CUSTOMER ID" DT="12" TYPE="F">CUST_ID</C_MAIN_REF>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">TSU_PARTY_NM</SWF_FMT_NM>
+        <CUST_STREET_NM ALIAS="T0" DBFUNC="" DESC="Street Name" DT="12" HIDDEN="F" TYPE="F">TSU_STREET_NM</CUST_STREET_NM>
+        <POST_CODE ALIAS="T0" DBFUNC="" DESC="Post Code" DT="12" HIDDEN="F" TYPE="F">TSU_POST_CD</POST_CODE>
+        <CUST_CITY ALIAS="T0" DBFUNC="" DESC="City" DT="12" HIDDEN="F" TYPE="F">TSU_TOWN_NM</CUST_CITY>
+        <CUST_CNTY_SUB_DIVI ALIAS="T0" DBFUNC="" DESC="Subdivision" DT="12" HIDDEN="F" TYPE="F">TSU_CNTY_SUB_DIVI</CUST_CNTY_SUB_DIVI>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country" DT="1" HIDDEN="F" TYPE="F">TSU_PARTY_CNTY</CNTY_CODE>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

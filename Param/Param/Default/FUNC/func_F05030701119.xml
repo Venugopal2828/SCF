@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C14091500000</CATALOGID>
+        <ID>F05030701119</ID>
+        <NAME>Available Invoice for Acceptance</NAME>
+        <DESC>Available Invoice for Acceptance</DESC>
+        <FUNSHORTNAME>InvAcpt</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+        <CONFIRMID>C05030701119</CONFIRMID>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_InvAcpt.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701112</ID>
+        <NAME>Available Invoice for Acceptance_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701112</ID>
+        <NAME>Available Invoice for Acceptance_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000397</ID>
+        <NAME>Available Invoice for Acceptance_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>CalculatorIntfFuncJS</JS_CLASS>
+    </CAL>
+</FUNC>

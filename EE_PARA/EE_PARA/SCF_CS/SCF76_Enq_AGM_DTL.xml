@@ -1,0 +1,146 @@
+<SCF76>
+	<MsgInfo>
+		<SenderCode />
+		<ReceiverCode />
+		<CreatedBy />
+		<SequenceNr />
+		<MsgType></MsgType> <!--default value -->
+		<!--Here using for Message Type exchanging between CE and EE // -->
+		<FileIndex />
+		<SubFileIndex />
+		<DateTime />
+		<Status />
+		<Error />
+	</MsgInfo>
+	<EF>
+		<FactorCode />
+		<FactorName />
+	</EF>
+	<IF>
+		<FactorCode />
+		<FactorName />
+	</IF>
+	<FromTurnaround />
+	<OriginalRequestNr />
+	<ReplyNr />
+	<ReplyDate />
+	<Customer>
+		<!--> Additional Fields Begin -->
+		<CustomerType></CustomerType>   
+		<CustomeRole>FA_ANCHOR_ROLE</CustomeRole>   <!-- <FA_ANCHOR_ROLE> -->
+		<BusiType>FA_BUSI_TYPE</BusiType> <!-- <FA_BUSI_TYPE> -->
+		<!--> Additional Fields End -->
+		<CustomerCompanyRegNr>FA_CUST_REG_NO</CustomerCompanyRegNr>
+		<CustomerNr>FA_ANCHOR_ID</CustomerNr>  <!-- <FA_ANCHOR_ID> -->
+		<CustomerName>FA_ANCHOR_NM</CustomerName> <!-- <FA_ANCHOR_NM> -->
+		<CustomerEmail></CustomerEmail>
+		<CustomerCcy>FA_ANCHOR_CCY</CustomerCcy>
+		<ExportFactorOwnCustomerNumber />
+	</Customer>
+	<Counterparty>
+		<!--> Additional Fields Begin -->
+		<SBRMain>
+			<SBRStatus></SBRStatus>
+			<!-- 1, Success 2, Fail / -->
+			<FailReason></FailReason>
+			<!-- Reason / -->
+			<SBRRef />
+			<AgmNr>C_MAIN_REF</AgmNr>
+			<ContractDocNr>FA_CNTR_DOC_NO</ContractDocNr>
+			<AgmValDate>FA_AGM_VAL_DT</AgmValDate>
+			<AgmDueDate>FA_AGM_DUE_DT</AgmDueDate>
+			<OurCustInd></OurCustInd>  <!--FA_CUST_FLAG -->
+			<CounterpartyRole></CounterpartyRole> <!--<FA_COUNTER_ROLE></FA_COUNTER_ROLE> -->
+			<CounterpartyType></CounterpartyType> <!--FA_COUNTER_TYPE -->
+			<!--> Additional Fields end -->
+			<CounterpartyCompanyRegNr></CounterpartyCompanyRegNr> <!--<FA_COUNTER_REG_NO> -->
+			<CounterpartyNr></CounterpartyNr><!-- <FA_COUNTER_ID></FA_COUNTER_ID> -->
+			<CounterpartyName></CounterpartyName> <!-- <FA_COUNTER_NM></FA_COUNTER_NM> -->
+			<ResponseAgency />
+			<ExportFactorOwnCounterpartyNr />
+			<NameCont />
+			<Street />
+			<City />
+			<State />
+			<Postcode />
+			<Country />
+			<ContactName />
+			<Telephone />
+			<Fax />
+			<Email />
+			<CounterpartyNatureOfBusiness />
+			<Currency>FA_AGM_CCY</Currency>
+			<SBRLimitAmt>FA_ANCHOR_AMT</SBRLimitAmt>
+			<MsgFunction />
+			<ServiceOffered />
+			<EFServiceCharge />
+			<EFServiceChargeCurrency />
+			<EFDiscountingChargeToTheSupplierPerc />
+			<EFCommissionToTheSupplierPerc />
+			<FlatRate />
+			<BaseRate />
+			<InvAvalFunding />
+			<TtlInvLoanAmt />
+			<TtlInvBal />
+			<POAvalFunding />
+			<TtlPOLoanAmt />
+			<TtlPOBal />
+		</SBRMain>
+		<!-- Here To Add SBR Limit and Price and AutoProcess Information Begin 
+			with SBR Detail// -->
+		<SBRDetail>
+			<SBRControl>
+				<AckFlg>FA_ACK_FLG</AckFlg>  <!--FA_ACK_FLG -->
+				<AutoFin>FA_AUTO_FIN</AutoFin>  <!--FA_AUTO_FIN -->
+				<AutoDebit>FA_AUTO_DEBIT</AutoDebit> <!--FA_AUTO_DEBIT -->
+				<AnchorAcct>FA_ANCHOR_ACC</AnchorAcct>  <!--FA_SEL_AC_NO -->
+				<CounterPartyAcct>FA_COUNTER_ACC</CounterPartyAcct>  <!--FA_BUYER_AC_NO -->
+				<NeedbuyerAprv>FA_REQ_BUYER_APR_FLG</NeedbuyerAprv> <!--FA_REQ_BUYER_APR_FLG -->
+				<FinCutoffDays>FA_CUT_OFF_DAYS</FinCutoffDays>   <!--FA_CUT_OFF_DAYS -->
+				<MinFinAmt>FA_MIN_FIN_AMT</MinFinAmt>   <!--FA_MIN_FIN_AMT -->
+				<MaxFinAmt>FA_MAX_FIN_AMT</MaxFinAmt>  <!--FA_MAX_FIN_AMT -->
+				<GraceDays>GRACE_DAYS</GraceDays>
+				<InvFinMode>INV_FIN_MODE</InvFinMode>
+				<PoolMaxAmt>POOL_INV_MAX_AMT</PoolMaxAmt>
+				<PoolMinAmt>POOL_INV_MIN_AMT</PoolMinAmt>
+				<PoolMaxPeriod>POOL_INV_MAX_PERIOD</PoolMaxPeriod>
+				<PoolMinPeriod>POOL_INV_MIN_PERIOD</PoolMinPeriod>
+			</SBRControl>
+			<SBRPrice>
+				<CommRate>FA_EF_COMM_RT</CommRate>   <!--FA_EF_COMM_RT -->
+				<HandlChg>FA_EF_HAN_CHG_AMT</HandlChg>   <!--FA_EF_HAN_CHG_AMT -->
+				<IntRate>XBOR_RT</IntRate>  <!--XBOR_RT -->
+				<IntRateSpread>FA_IRT_SPREAD</IntRateSpread>   <!--FA_IRT_SPREAD -->
+				<PenalRateSpread>FA_OVD_IRT_SPREAD</PenalRateSpread>  <!--FA_OVD_IRT_SPREAD -->
+				<MaxLoanPerc>FA_MAX_LOAN_PERC</MaxLoanPerc>  <!--FA_MAX_LOAN_PERC -->
+				<POMaxLoanPerc>PO_MAX_LOAN_PERC</POMaxLoanPerc>  <!--PO_MAX_LOAN_PERC -->
+				<RebateRate>FA_REBATE_RATE</RebateRate>  <!--FA_REBATE_RATE -->
+				<RebateAcct>FA_REBATE_ACCOUNT</RebateAcct>  <!--FA_REBATE_ACCOUNT -->
+				<IntRateType>FA_LOAN_IRATE_TYPE</IntRateType>
+				<!-- <PmtGrceDays>FA_PMT_GRC_DAY</PmtGrceDays> --> <!--FA_PMT_GRC_DAY -->
+				<ChgPaidBy>CHG_PAID_BY</ChgPaidBy>  <!--CHG_PAID_BY -->
+				<!--<VatRate>VAT_RT</VatRate>-->  <!--VAT_RT -->
+				<ChgFreqCD>CHG_FREQ_CD</ChgFreqCD>
+				<FinInfo></FinInfo>
+                <DDChgTp>FA_DD_CHG_TP</DDChgTp>
+                <DDChgSha>FA_DD_CHG_SHA</DDChgSha>
+                <DDChgFix>FA_DD_CHG_FIX</DDChgFix>					
+			</SBRPrice>
+		</SBRDetail>
+		<!-- Here To Add SBR Limit and Price and AutoProcess Information End// -->
+	</Counterparty>
+	<DocumentsObtained>
+		<RegistrationForm />
+		<ListOfUltimateBeneficiaryOwners />
+		<ListOfKeyManagers />
+		<ListOfBoardMembers />
+		<ListOfSignatories />
+		<KYCQuestionnaire />
+		<AMLQuestionnaire />
+		<AnyRelevantAdverseInformation />
+		<ControlForPossibleActivities />
+		<SeeSeparateMail />
+		<Others />
+	</DocumentsObtained>
+	<MsgText></MsgText>
+</SCF76>

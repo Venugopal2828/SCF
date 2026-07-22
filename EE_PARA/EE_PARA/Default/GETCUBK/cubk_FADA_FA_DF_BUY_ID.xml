@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>FA_DF_BUY_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="Customer ID" DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="Customer ID" DT="12" TYPE="F">FA_BUYER_ID</C_MAIN_REF>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <FA_CUST_NM2 ALIAS="T0" DBFUNC="" DESC="FA_CUST_NM2" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_NM2</FA_CUST_NM2>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="SWF_FMT_NM" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_NM</SWF_FMT_NM>
+        <FA_LMT_CCY ALIAS="T0" DBFUNC="" DESC="FA_LMT_CCY" DT="1" HIDDEN="T" TYPE="F">FA_REMI_CCY1</FA_LMT_CCY>
+        <FA_LMT_BAL ALIAS="T0" DBFUNC="" DESC="FA_LMT_BAL" DT="3" HIDDEN="T" TYPE="F">FA_REMI_AMT1</FA_LMT_BAL>
+        <BK_BR_CODE ALIAS="T0" DBFUNC="" DESC="Belong to bank branch code" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_BK_BRCH</BK_BR_CODE>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">FA_BUYER_ID</C_MAIN_REF>
+        <FA_CUST_FLAG ALIAS="T0" DBFUNC="" DESC="FA_CUST_FLAG" DT="1" HIDDEN="T" TYPE="F">FA_CUST_FLAG</FA_CUST_FLAG>
+        <FA_CUST_PROV ALIAS="T0" DBFUNC="" DESC="FA_CUST_PROV" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_PROV</FA_CUST_PROV>
+        <INSU_POLICY_NO ALIAS="T0" DBFUNC="" DESC="Insurance Policy Number" DT="12" HIDDEN="T" TYPE="F">FA_IF_ID</INSU_POLICY_NO>
+        <INSU_CO_NM ALIAS="T0" DBFUNC="" DESC="Insurance Company Name" DT="12" HIDDEN="T" TYPE="F">FA_IF_NM</INSU_CO_NM>
+        <CUST_STREET_NM ALIAS="T0" DBFUNC="" DESC="CUST_STREET_NM" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_POSTBOX</CUST_STREET_NM>
+        <FA_CUST_ACC_NO ALIAS="T0" DBFUNC="" DESC="FA_CUST_ACC_NO" DT="12" HIDDEN="T" TYPE="F">FA_BUYER_AC_NO</FA_CUST_ACC_NO>
+        <FA_INSU_AGR_NO ALIAS="T0" DBFUNC="" DESC="FA_INSU_AGR_NO" DT="12" HIDDEN="T" TYPE="F">FA_INSU_AGR_NO</FA_INSU_AGR_NO>
+        <FA_INSU_COMP_FLAG ALIAS="T0" DBFUNC="" DESC="FA_INSU_COMP_FLAG" DT="1" HIDDEN="T" TYPE="F">FA_INSU_COMP_FLAG</FA_INSU_COMP_FLAG>
+        <POST_CODE ALIAS="T0" DBFUNC="" DESC="POST_CODE" DT="12" HIDDEN="F" TYPE="F">FA_BUYER_POSTCODE</POST_CODE>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>REIM</module-name>
+        <cubk-mapping-name>R_PARTY_ID_CUST</cubk-mapping-name>
+        <select-type>U</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">R_PARTY_ID</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">R_PARTY_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T1" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">R_PARTY_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T1" DBFUNC="" DESC="Address2" DT="12" HIDDEN="F" TYPE="F">R_PARTY_ADD2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T1" DBFUNC="" DESC="Address3" DT="12" HIDDEN="F" TYPE="F">R_PARTY_ADD3</SWIFT_FMT_ADD3>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country Code" DT="1" HIDDEN="F" TYPE="F">R_PARTY_CNTY</CNTY_CODE>
+        <CNTY_NM ALIAS="T0" DBFUNC="" DESC="Country Name" DT="12" HIDDEN="F" TYPE="F">R_PARTY_CNTY_NM</CNTY_NM>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

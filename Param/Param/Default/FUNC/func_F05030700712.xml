@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="SYSTEM">SYST</MODULE>
+        <MODULE_DESC>System Module</MODULE_DESC>
+        <EVENT>DAILY</EVENT>
+        <CATALOGID>C07013100000</CATALOGID>
+        <ID>F05030700712</ID>
+        <NAME>CSX To CE Message</NAME>
+        <DESC>Messages from Back-office</DESC>
+        <FUNSHORTNAME>CSXTOCE</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>RE</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Release">TrxManagerRelease</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>Y</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Secu_Template.jsp">SYST_CSXTOCE.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700713</ID>
+        <NAME>CSX To CE Message_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700713</ID>
+        <NAME>CSX To CE Message_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000105</ID>
+        <NAME>CSX To CE Message_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

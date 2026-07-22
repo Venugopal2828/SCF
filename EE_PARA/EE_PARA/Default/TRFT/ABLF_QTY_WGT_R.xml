@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>ABLF</module>
+    <name>QTY_WGT</name>
+    <desc>QTY_WGT</desc>
+    <head-info>
+        <DO name="CollateralAdjustment" path="CollateralAdjustment"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.ABLF_COLL</table-name>
+        <table-desc>Collateral</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>COLLAT_ID</sql>
+            <sql> ='</sql>
+            <field mf="F">COLLAT_ID</field>
+            <sql>' AND </sql>
+            <sql>REG_NO</sql>
+            <sql>='</sql>
+            <field mf="F">REG_NO</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <COLLAT_OUT_QTY fv_type="V" oper="=">0</COLLAT_OUT_QTY>
+        <COLLAT_QTY fv_type="F" mf="F" oper="-=">COLLAT_OUT_QTY</COLLAT_QTY>
+    </mapping>
+</root>

@@ -1,0 +1,2139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.2.v201410272105 Build &lt;4.4.2.v20150217-1805></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">98813</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">98813</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">98813</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[function FormatNumber(num,ccy){
+  decpoint = ".";
+  sep = ",";
+  // need a string for operations
+  if(num == null || num == '' || num == 0.00 || num == '0.00' || num == 0 || num == '0' ){
+	if(ccy != "JPY" &amp;&amp; ccy != "VND")
+		return "0.00";
+	else
+		return "0";  
+  }
+  num = num.toString();
+  // separate the whole number and the fraction if possible
+  a = num.split(decpoint);
+  x = a[0]; // decimal
+  y = a[1]; // fraction
+  z = "";
+  if (typeof(x) != "undefined") {
+    // reverse the digits. regexp works from left to right.
+    for (i=x.length-1;i>=0;i--)
+      z += x.charAt(i);
+    // add seperators. but undo the trailing one, if there
+    z = z.replace(/(\d{3})/g, "$1" + sep);
+    if (z.slice(-sep.length) == sep)
+      z = z.slice(0, -sep.length);
+    x = "";
+    // reverse again to get back the number
+    for (i=z.length-1;i>=0;i--)
+      x += z.charAt(i);
+    // add the fraction back in, if it was there
+    if (typeof(y) != "undefined" &amp;&amp; y.length > 0) {
+      if (y.length>0 &amp;&amp; y.length<2) 
+        y = y + "0";
+        y = y.substr(0,2);
+        x += "." + y;
+    }
+    else {
+      if(ccy != "JPY" &amp;&amp; ccy != "VND")
+    	x += ".00";
+    }
+  }
+  return x;
+}]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Anchor Customer Name" id="98186">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Agreement Document No" id="98187">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Business Date" id="98812">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">2021-05-26</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Business Type" id="98931">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">PF</property>
+                    <property name="label">PF</property>
+                </structure>
+                <structure>
+                    <property name="value">RD</property>
+                    <property name="label">RD</property>
+                </structure>
+				 <structure>
+                    <property name="value">DD</property>
+                    <property name="label">DD</property>
+                </structure>
+            </list-property>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">false</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.39.104.39:30002/EEPDB</property>
+            <property name="odaUser">EXIMTRX</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">RVhJTVRSWA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="98813">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FA_ANCHOR_NM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_ANCHOR_NM</text-property>
+                    <text-property name="heading">FA_ANCHOR_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_CNTR_DOC_NO</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_CNTR_DOC_NO</text-property>
+                    <text-property name="heading">FA_CNTR_DOC_NO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_ANCHOR_CCY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_ANCHOR_CCY</text-property>
+                    <text-property name="heading">FA_ANCHOR_CCY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_ANCHOR_AMT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">FA_ANCHOR_AMT</text-property>
+                    <text-property name="heading">FA_ANCHOR_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_COUNTER_NM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_COUNTER_NM</text-property>
+                    <text-property name="heading">FA_COUNTER_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_AUTO_FIN</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_AUTO_FIN</text-property>
+                    <text-property name="heading">FA_AUTO_FIN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_LOAN_INT_RT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">FA_LOAN_INT_RT</text-property>
+                    <text-property name="heading">FA_LOAN_INT_RT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_REBATE_RATE</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">FA_REBATE_RATE</text-property>
+                    <text-property name="heading">FA_REBATE_RATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">C_MAIN_REF</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <text-property name="heading">C_MAIN_REF</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_BUSI_TYPE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_BUSI_TYPE</text-property>
+                    <text-property name="heading">FA_BUSI_TYPE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_DOC_NO</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_DOC_NO</text-property>
+                    <text-property name="heading">FA_DOC_NO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_DOC_REF</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_DOC_REF</text-property>
+                    <text-property name="heading">FA_DOC_REF</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_ADJ_AMT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">FA_ADJ_AMT</text-property>
+                    <text-property name="heading">FA_ADJ_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_INV_LOAN_AMT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">FA_INV_LOAN_AMT</text-property>
+                    <text-property name="heading">FA_INV_LOAN_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_DOC_DUE_DT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_DOC_DUE_DT</text-property>
+                    <text-property name="heading">FA_DOC_DUE_DT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_REBATE_AMT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">FA_REBATE_AMT</text-property>
+                    <text-property name="heading">FA_REBATE_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_LOAN_INT_SM_AMT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">FA_LOAN_INT_SM_AMT</text-property>
+                    <text-property name="heading">FA_LOAN_INT_SM_AMT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_INT_CHG_TYPE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_INT_CHG_TYPE</text-property>
+                    <text-property name="heading">FA_INT_CHG_TYPE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_LOAN_VAL_DT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FA_LOAN_VAL_DT</text-property>
+                    <text-property name="heading">FA_LOAN_VAL_DT</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FA_ANCHOR_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FA_CNTR_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FA_ANCHOR_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_ANCHOR_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_COUNTER_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">FA_AUTO_FIN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">FA_LOAN_INT_RT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">FA_REBATE_RATE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">FA_BUSI_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">FA_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">FA_DOC_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">FA_ADJ_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">FA_INV_LOAN_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">FA_DOC_DUE_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">FA_REBATE_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">FA_LOAN_INT_SM_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">FA_INT_CHG_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">FA_LOAN_VAL_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[var sql = this.queryText;
+if(params["Anchor Customer Name"].value != ""&amp;&amp;params["Anchor Customer Name"].value != null){
+        sql=sql+ " AND LOWER(T1.FA_ANCHOR_NM) LIKE LOWER('%"+ params["Anchor Customer Name"]+"%')";   
+}
+if(params["Agreement Document No"].value != ""&amp;&amp;params["Agreement Document No"].value != null){
+        sql=sql+ " AND T1.FA_CNTR_DOC_NO = '"+ params["Agreement Document No"]+"'";  
+} 
+if (params["Business Date"].value!= null &amp;&amp; params["Business Date"].value!= ""){
+        sql=sql+" AND T3.FA_LOAN_VAL_DT = TO_DATE('" + params["Business Date"] + "','YYYY-MM-DD')";
+}    
+if (params["Business Type"].value!= null &amp;&amp; params["Business Type"].value!= ""){
+        sql=sql+" AND T1.FA_BUSI_TYPE = '"+ params["Business Type"]+"'"; 
+}    
+sql=sql+" ORDER BY T1.FA_ANCHOR_NM,T1.FA_ANCHOR_CCY,T2.FA_DOC_REF";
+this.queryText = sql;
+]]></method>
+            <method name="afterOpen"><![CDATA[importPackage(Packages.com.cs.scf.util);
+var slog = "-----FADA_Invoice Financing EOD Report-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FA_ANCHOR_NM</property>
+                    <property name="nativeName">FA_ANCHOR_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <property name="nativeName">FA_CNTR_DOC_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FA_ANCHOR_CCY</property>
+                    <property name="nativeName">FA_ANCHOR_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_ANCHOR_AMT</property>
+                    <property name="nativeName">FA_ANCHOR_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_COUNTER_NM</property>
+                    <property name="nativeName">FA_COUNTER_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">FA_AUTO_FIN</property>
+                    <property name="nativeName">FA_AUTO_FIN</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">FA_LOAN_INT_RT</property>
+                    <property name="nativeName">FA_LOAN_INT_RT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">FA_REBATE_RATE</property>
+                    <property name="nativeName">FA_REBATE_RATE</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">FA_BUSI_TYPE</property>
+                    <property name="nativeName">FA_BUSI_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">FA_DOC_NO</property>
+                    <property name="nativeName">FA_DOC_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">FA_DOC_REF</property>
+                    <property name="nativeName">FA_DOC_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">FA_ADJ_AMT</property>
+                    <property name="nativeName">FA_ADJ_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">FA_INV_LOAN_AMT</property>
+                    <property name="nativeName">FA_INV_LOAN_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">FA_DOC_DUE_DT</property>
+                    <property name="nativeName">FA_DOC_DUE_DT</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">FA_REBATE_AMT</property>
+                    <property name="nativeName">FA_REBATE_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">FA_LOAN_INT_SM_AMT</property>
+                    <property name="nativeName">FA_LOAN_INT_SM_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">FA_INT_CHG_TYPE</property>
+                    <property name="nativeName">FA_INT_CHG_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">FA_LOAN_VAL_DT</property>
+                    <property name="nativeName">FA_LOAN_VAL_DT</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT T1.FA_ANCHOR_NM,
+       T1.FA_CNTR_DOC_NO,
+       T1.FA_ANCHOR_CCY,
+       T1.FA_ANCHOR_AMT,
+       T1.FA_COUNTER_NM,
+       T1.FA_AUTO_FIN,
+       T1.XBOR_RT + T1.FA_IRT_SPREAD AS FA_LOAN_INT_RT,
+       T1.FA_REBATE_RATE,
+       T1.C_MAIN_REF,
+       T1.FA_BUSI_TYPE,
+       T2.FA_DOC_NO,
+       T2.FA_DOC_REF,
+       T2.FA_ADJ_AMT,
+       T3.FA_INV_LOAN_AMT,
+       T2.FA_DOC_DUE_DT,
+       T3.FA_REBATE_AMT,
+       T3.FA_LOAN_INT_SM_AMT,
+       T3.FA_INT_CHG_TYPE,
+       T3.FA_LOAN_VAL_DT
+  FROM EXIMTRX.FADA_MASTER T1 LEFT JOIN EXIMTRX.INVC_MASTER T2 ON T1.C_MAIN_REF=T2.FSBC_REF
+  LEFT JOIN EXIMTRX.INVC_LOAN T3 ON T2.FA_DOC_REF=T3.FA_DOC_REF
+  WHERE T1.FA_BUSI_STATUS = 'SBR' 
+        AND (T2.FA_DOC_STATUS = 'Settled' OR T2.FA_DOC_STATUS = 'Refunded' 
+        OR T2.FA_DOC_STATUS = 'Financed')
+        AND T2.FA_DOC_TYPE = '1']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_ANCHOR_NM</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>35</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_ANCHOR_NM</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_ANCHOR_NM</design:label>
+            <design:formattingHints>
+              <design:displaySize>35</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_CNTR_DOC_NO</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>105</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_CNTR_DOC_NO</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_CNTR_DOC_NO</design:label>
+            <design:formattingHints>
+              <design:displaySize>105</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_ANCHOR_CCY</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_ANCHOR_CCY</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_ANCHOR_CCY</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_ANCHOR_AMT</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_ANCHOR_AMT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_ANCHOR_AMT</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_COUNTER_NM</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>35</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_COUNTER_NM</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_COUNTER_NM</design:label>
+            <design:formattingHints>
+              <design:displaySize>35</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_AUTO_FIN</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>128</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_AUTO_FIN</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_AUTO_FIN</design:label>
+            <design:formattingHints>
+              <design:displaySize>128</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_LOAN_INT_RT</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>126</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_LOAN_INT_RT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_LOAN_INT_RT</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_REBATE_RATE</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>126</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_REBATE_RATE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_REBATE_RATE</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>C_MAIN_REF</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>40</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>C_MAIN_REF</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>C_MAIN_REF</design:label>
+            <design:formattingHints>
+              <design:displaySize>40</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_DOC_NO</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>35</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_DOC_NO</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_NO</design:label>
+            <design:formattingHints>
+              <design:displaySize>35</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_DOC_REF</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>35</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_DOC_REF</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_REF</design:label>
+            <design:formattingHints>
+              <design:displaySize>35</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_DOC_AMT</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_DOC_AMT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_AMT</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_INV_LOAN_AMT</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_INV_LOAN_AMT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_INV_LOAN_AMT</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_DOC_DUE_DT</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_DOC_DUE_DT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_DUE_DT</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_REBATE_AMT</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_REBATE_AMT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_REBATE_AMT</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_LOAN_INT_SM_AMT</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>24</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_LOAN_INT_SM_AMT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_LOAN_INT_SM_AMT</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_INT_CHG_TYPE</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>128</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FA_INT_CHG_TYPE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_INT_CHG_TYPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>128</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">us-legal</property>
+            <property name="orientation">landscape</property>
+            <property name="showHeaderOnFirst">true</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="55">
+            <property name="dataSet">Data Set</property>
+            <column id="58"/>
+            <column id="59"/>
+            <column id="60"/>
+            <column id="62"/>
+            <column id="63"/>
+            <column id="610"/>
+            <header>
+                <row id="73">
+                    <property name="backgroundColor">#FFFFFF</property>
+                    <cell id="74">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <label id="664">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">14pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Invoice Financing EOD Report</text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="89">
+                    <property name="backgroundColor">#FFFFFF</property>
+                    <cell id="90">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <grid id="97733">
+                            <property name="width">100%</property>
+                            <column id="1676">
+                                <property name="width">20%</property>
+                            </column>
+                            <column id="1677">
+                                <property name="width">60%</property>
+                            </column>
+                            <column id="1678">
+                                <property name="width">20%</property>
+                            </column>
+                            <row id="1535">
+                                <cell id="1536"/>
+                                <cell id="1537">
+                                    <text id="98928">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">14pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="contentType">html</property>
+                                        <text-property name="content"><![CDATA[<VALUE-OF format="HTML">
+    if(params["Business Type"].value == "PF"){
+        this.value = "Payables Financing";
+    }  
+    if(params["Business Type"].value == "RD"){
+        this.value = "Receivables Discounting";
+    }  
+	if(params["Business Type"].value == "DD"){
+        this.value = "Dynamic Discounting";
+    }  
+</VALUE-OF>]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1538"/>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+                <row id="172">
+                    <property name="backgroundColor">#FFFFFF</property>
+                    <property name="height">0.6166666666666667in</property>
+                    <cell id="173">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <text id="199">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">14pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="textUnderline">none</property>
+                            <property name="marginBottom">5pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[Date <VALUE-OF format="MM/dd/yyyy">params["Business Date"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+        </table>
+        <table id="97901">
+            <property name="verticalAlign">bottom</property>
+            <property name="width">13.40625in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FA_ANCHOR_NM</property>
+                    <text-property name="displayName">ANCHOR_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_ANCHOR_NM"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <text-property name="displayName">DOC_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CNTR_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <text-property name="displayName">C_MAIN_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_NO</property>
+                    <text-property name="displayName">INV_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_ANCHOR_CCY</property>
+                    <text-property name="displayName">CCY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_ANCHOR_CCY"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_ANCHOR_AMT</property>
+                    <text-property name="displayName">ANCHOR_AMT</text-property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(dataSetRow["FA_ANCHOR_AMT"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_COUNTER_NM</property>
+                    <text-property name="displayName">COUNTER_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_COUNTER_NM"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_AMT</property>
+                    <text-property name="displayName">INV_AMT</text-property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(dataSetRow["FA_ADJ_AMT"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_INV_LOAN_AMT</property>
+                    <text-property name="displayName">LOAN_AMT</text-property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(dataSetRow["FA_INV_LOAN_AMT"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_AUTO_FIN</property>
+                    <text-property name="displayName">AUTO_FIN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_AUTO_FIN"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_LOAN_INT_RT</property>
+                    <text-property name="displayName">INT_RATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_LOAN_INT_RT"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_REBATE_RATE</property>
+                    <text-property name="displayName">RB_RATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_REBATE_RATE"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_REBATE_AMT</property>
+                    <text-property name="displayName">RB_AMT</text-property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(dataSetRow["FA_REBATE_AMT"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_LOAN_INT_SM_AMT</property>
+                    <text-property name="displayName">NET_INT_AMT</text-property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(dataSetRow["FA_LOAN_INT_SM_AMT"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_INT_CHG_TYPE</property>
+                    <text-property name="displayName">INT_TYPE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_INT_CHG_TYPE"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_DUE_DT</property>
+                    <text-property name="displayName">DUE_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_DOC_DUE_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>C_MAIN_REF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_ADJ_AMT"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_1</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>C_MAIN_REF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_INV_LOAN_AMT"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_2</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>C_MAIN_REF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_REBATE_AMT"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_3</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>C_MAIN_REF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_LOAN_INT_SM_AMT"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_4</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>FA_CNTR_DOC_NO</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_ADJ_AMT"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_5</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>FA_CNTR_DOC_NO</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_INV_LOAN_AMT"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_6</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>FA_CNTR_DOC_NO</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_REBATE_AMT"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_7</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>FA_CNTR_DOC_NO</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_LOAN_INT_SM_AMT"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_8</property>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>C_MAIN_REF</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_DOC_NO"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_9</property>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>FA_CNTR_DOC_NO</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["FA_DOC_NO"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ttl_inv_amt</property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ttl_inv_amt1</property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_4"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ttl_loan_amt1</property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_5"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ttl_rb_amt</property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_2"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ttl_rb_amt1</property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_6"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ttl_int_amt</property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_3"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ttl_int_amt1</property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_7"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ttl_loan_amt</property>
+                    <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_1"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_ANCHOR_AMT_1</property>
+                    <text-property name="displayName">FA_ANCHOR_AMT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_ANCHOR_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_BUSI_TYPE</property>
+                    <text-property name="displayName">FA_BUSI_TYPE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_BUSI_TYPE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_REF</property>
+                    <text-property name="displayName">FA_DOC_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_DOC_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_INV_LOAN_AMT_1</property>
+                    <text-property name="displayName">FA_INV_LOAN_AMT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_INV_LOAN_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_REBATE_AMT_1</property>
+                    <text-property name="displayName">FA_REBATE_AMT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_REBATE_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_LOAN_INT_SM_AMT_1</property>
+                    <text-property name="displayName">FA_LOAN_INT_SM_AMT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_LOAN_INT_SM_AMT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_LOAN_VAL_DT</property>
+                    <text-property name="displayName">FA_LOAN_VAL_DT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_LOAN_VAL_DT"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <column id="97974">
+                <property name="width">1.0625in</property>
+            </column>
+            <column id="97975">
+                <property name="width">1.0520833333333333in</property>
+            </column>
+            <column id="97976">
+                <property name="width">0.5625in</property>
+            </column>
+            <column id="97977">
+                <property name="width">1.1041666666666667in</property>
+            </column>
+            <column id="97978">
+                <property name="width">0.9791666666666666in</property>
+            </column>
+            <column id="97979">
+                <property name="width">1.0625in</property>
+            </column>
+            <column id="97980">
+                <property name="width">1.0416666666666667in</property>
+            </column>
+            <column id="97981">
+                <property name="width">1.0729166666666667in</property>
+            </column>
+            <column id="97982">
+                <property name="width">0.75in</property>
+            </column>
+            <column id="97983">
+                <property name="width">0.6666666666666666in</property>
+            </column>
+            <column id="98833">
+                <property name="width">0.65625in</property>
+            </column>
+            <column id="98886">
+                <property name="width">1.0104166666666667in</property>
+            </column>
+            <column id="98845">
+                <property name="width">0.9895833333333334in</property>
+            </column>
+            <column id="98857">
+                <property name="width">0.65625in</property>
+            </column>
+            <column id="98869">
+                <property name="width">0.7395833333333334in</property>
+            </column>
+            <header>
+                <row id="97902">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="textAlign">left</property>
+                    <cell id="97903">
+                        <text id="98929">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">
+    if(params["Business Type"].value == "PF"){
+        this.value = "Buyer Name";
+    }  
+    if(params["Business Type"].value == "RD"){
+        this.value = "Seller Name";
+    }  
+	if(params["Business Type"].value == "DD"){
+        this.value = "Buyer Name";
+    } 
+</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="97904">
+                        <label id="97986">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Agreement Document No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97905">
+                        <label id="97987">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Currency</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97906">
+                        <label id="97988">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Amount</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97907">
+                        <text id="98930">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF format="HTML">
+    if(params["Business Type"].value == "PF"){
+        this.value = "Seller Name";
+    }  
+    if(params["Business Type"].value == "RD"){
+        this.value = "Buyer Name";
+    }  
+	if(params["Business Type"].value == "DD"){
+        this.value = "Seller Name";
+    } 
+</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="97908">
+                        <label id="97990">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Invoice Number</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97909">
+                        <label id="97991">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Invoice Amount</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97910">
+                        <label id="97992">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Financing Amount</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97911">
+                        <label id="97993">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Auto Financing?</text-property>
+                        </label>
+                    </cell>
+                    <cell id="97912">
+                        <label id="97994">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Interest Rate</text-property>
+                        </label>
+                    </cell>
+                    <cell id="98823">
+                        <label id="98834">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Rebate Rate</text-property>
+                        </label>
+                    </cell>
+                    <cell id="98876">
+                        <label id="98887">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Rebate Amount</text-property>
+                        </label>
+                    </cell>
+                    <cell id="98835">
+                        <label id="98846">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Net Interest Amount</text-property>
+                        </label>
+                    </cell>
+                    <cell id="98847">
+                        <label id="98858">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Interest Chg Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="98859">
+                        <label id="98870">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Invoice Due Date</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="98683">
+                <property name="groupName">FA_ANCHOR_NM</property>
+                <expression name="keyExpr" type="javascript">row["FA_ANCHOR_NM"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["FA_ANCHOR_NM"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="98684">
+                        <cell id="98685"/>
+                        <cell id="98686"/>
+                        <cell id="98687"/>
+                        <cell id="98688"/>
+                        <cell id="98689"/>
+                        <cell id="98690"/>
+                        <cell id="98691"/>
+                        <cell id="98692"/>
+                        <cell id="98693"/>
+                        <cell id="98694"/>
+                        <cell id="98824"/>
+                        <cell id="98877"/>
+                        <cell id="98836"/>
+                        <cell id="98848"/>
+                        <cell id="98860"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="98695">
+                        <cell id="98696"/>
+                        <cell id="98697"/>
+                        <cell id="98698"/>
+                        <cell id="98699"/>
+                        <cell id="98700"/>
+                        <cell id="98701"/>
+                        <cell id="98702"/>
+                        <cell id="98703"/>
+                        <cell id="98704"/>
+                        <cell id="98705"/>
+                        <cell id="98831"/>
+                        <cell id="98884"/>
+                        <cell id="98843"/>
+                        <cell id="98855"/>
+                        <cell id="98867"/>
+                    </row>
+                </footer>
+            </group>
+            <group id="98707">
+                <property name="groupName">FA_CNTR_DOC_NO</property>
+                <expression name="keyExpr" type="javascript">row["FA_CNTR_DOC_NO"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["FA_CNTR_DOC_NO"]</expression>
+                </structure>
+                <property name="repeatHeader">false</property>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="98708">
+                        <property name="repeatable">false</property>
+                        <cell id="98709">
+                            <data id="98814">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">FA_ANCHOR_NM</property>
+                            </data>
+                        </cell>
+                        <cell id="98710">
+                            <data id="98815">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">FA_CNTR_DOC_NO</property>
+                            </data>
+                        </cell>
+                        <cell id="98711">
+                            <data id="98818">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">FA_ANCHOR_CCY</property>
+                            </data>
+                        </cell>
+                        <cell id="98712">
+                            <data id="98820">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">FA_ANCHOR_AMT</property>
+                            </data>
+                        </cell>
+                        <cell id="98713"/>
+                        <cell id="98714"/>
+                        <cell id="98715"/>
+                        <cell id="98716"/>
+                        <cell id="98717"/>
+                        <cell id="98718"/>
+                        <cell id="98825"/>
+                        <cell id="98878"/>
+                        <cell id="98837"/>
+                        <cell id="98849"/>
+                        <cell id="98861"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="98719">
+                        <cell id="98720"/>
+                        <cell id="98721"/>
+                        <cell id="98722"/>
+                        <cell id="98723"/>
+                        <cell id="98724">
+                            <label id="98787">
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Total</text-property>
+                            </label>
+                        </cell>
+                        <cell id="98725">
+                            <data id="98917">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">Aggregation_9</property>
+                            </data>
+                        </cell>
+                        <cell id="98726">
+                            <data id="98921">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">ttl_inv_amt1</property>
+                            </data>
+                        </cell>
+                        <cell id="98727">
+                            <data id="98923">
+                                <property name="fontSize">8pt</property>
+                                <property name="dataSet">Data Set</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">ttl_loan_amt1</property>
+                                        <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_5"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                                        <property name="dataType">string</property>
+                                        <property name="allowExport">true</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">ttl_loan_amt1</property>
+                            </data>
+                        </cell>
+                        <cell id="98728"/>
+                        <cell id="98729"/>
+                        <cell id="98830"/>
+                        <cell id="98883">
+                            <data id="98925">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">ttl_rb_amt1</property>
+                            </data>
+                        </cell>
+                        <cell id="98842">
+                            <data id="98927">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">ttl_int_amt1</property>
+                            </data>
+                        </cell>
+                        <cell id="98854"/>
+                        <cell id="98866"/>
+                    </row>
+                </footer>
+            </group>
+            <group id="98757">
+                <property name="groupName">C_MAIN_REF</property>
+                <expression name="keyExpr" type="javascript">row["C_MAIN_REF"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["C_MAIN_REF"]</expression>
+                </structure>
+                <property name="repeatHeader">false</property>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="98758">
+                        <cell id="98759"/>
+                        <cell id="98760"/>
+                        <cell id="98761"/>
+                        <cell id="98762"/>
+                        <cell id="98763">
+                            <data id="98821">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">FA_COUNTER_NM</property>
+                            </data>
+                        </cell>
+                        <cell id="98764"/>
+                        <cell id="98765"/>
+                        <cell id="98766"/>
+                        <cell id="98767"/>
+                        <cell id="98768"/>
+                        <cell id="98826"/>
+                        <cell id="98879"/>
+                        <cell id="98838"/>
+                        <cell id="98850"/>
+                        <cell id="98862"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="98788">
+                        <cell id="98789"/>
+                        <cell id="98790"/>
+                        <cell id="98791"/>
+                        <cell id="98792"/>
+                        <cell id="98793"/>
+                        <cell id="98794"/>
+                        <cell id="98795">
+                            <data id="98892">
+                                <property name="fontSize">8pt</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Aggregation</property>
+                            </data>
+                        </cell>
+                        <cell id="98796">
+                            <data id="98893">
+                                <property name="fontSize">8pt</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Aggregation_1</property>
+                            </data>
+                        </cell>
+                        <cell id="98797"/>
+                        <cell id="98798"/>
+                        <cell id="98828"/>
+                        <cell id="98881">
+                            <data id="98894">
+                                <property name="fontSize">8pt</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Aggregation_2</property>
+                            </data>
+                        </cell>
+                        <cell id="98840">
+                            <data id="98895">
+                                <property name="fontSize">8pt</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Aggregation_3</property>
+                            </data>
+                        </cell>
+                        <cell id="98852"/>
+                        <cell id="98864"/>
+                    </row>
+                    <row id="98896">
+                        <cell id="98897"/>
+                        <cell id="98898"/>
+                        <cell id="98899"/>
+                        <cell id="98900"/>
+                        <cell id="98901"/>
+                        <cell id="98902">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                        </cell>
+                        <cell id="98903">
+                            <property name="fontSize">8pt</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <data id="98912">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Aggregation_4</property>
+                            </data>
+                        </cell>
+                        <cell id="98904">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <data id="98913">
+                                <property name="fontSize">8pt</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Aggregation_5</property>
+                            </data>
+                        </cell>
+                        <cell id="98905">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                        </cell>
+                        <cell id="98906">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                        </cell>
+                        <cell id="98907">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                        </cell>
+                        <cell id="98908">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <data id="98914">
+                                <property name="fontSize">8pt</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Aggregation_6</property>
+                            </data>
+                        </cell>
+                        <cell id="98909">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <data id="98915">
+                                <property name="fontSize">8pt</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">Aggregation_7</property>
+                            </data>
+                        </cell>
+                        <cell id="98910">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                        </cell>
+                        <cell id="98911">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                        </cell>
+                    </row>
+                    <row id="98769">
+                        <cell id="98770"/>
+                        <cell id="98771"/>
+                        <cell id="98772"/>
+                        <cell id="98773"/>
+                        <cell id="98774">
+                            <label id="98786">
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Subtotal</text-property>
+                            </label>
+                        </cell>
+                        <cell id="98775">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                            <data id="98916">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">Aggregation_8</property>
+                            </data>
+                        </cell>
+                        <cell id="98776">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                            <data id="98918">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">ttl_inv_amt</property>
+                            </data>
+                        </cell>
+                        <cell id="98777">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                            <data id="98922">
+                                <property name="fontSize">8pt</property>
+                                <property name="dataSet">Data Set</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">ttl_loan_amt</property>
+                                        <expression name="expression" type="javascript">this.value =FormatNumber(row["Aggregation_1"],dataSetRow["FA_ANCHOR_CCY"])</expression>
+                                        <property name="dataType">string</property>
+                                        <property name="allowExport">true</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">ttl_loan_amt</property>
+                            </data>
+                        </cell>
+                        <cell id="98778">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                        </cell>
+                        <cell id="98779">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                        </cell>
+                        <cell id="98829">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                        </cell>
+                        <cell id="98882">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                            <data id="98924">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">ttl_rb_amt</property>
+                            </data>
+                        </cell>
+                        <cell id="98841">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                            <data id="98926">
+                                <property name="fontSize">8pt</property>
+                                <property name="resultSetColumn">ttl_int_amt</property>
+                            </data>
+                        </cell>
+                        <cell id="98853">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                        </cell>
+                        <cell id="98865">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">medium</property>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="97914">
+                    <cell id="97915"/>
+                    <cell id="97916"/>
+                    <cell id="97917"/>
+                    <cell id="97918"/>
+                    <cell id="97919"/>
+                    <cell id="97920">
+                        <data id="98822">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_DOC_NO</property>
+                        </data>
+                    </cell>
+                    <cell id="97921">
+                        <data id="98871">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_DOC_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="97922">
+                        <data id="98872">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_INV_LOAN_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="97923">
+                        <data id="98873">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_AUTO_FIN</property>
+                        </data>
+                    </cell>
+                    <cell id="97924">
+                        <data id="98874">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_LOAN_INT_RT</property>
+                        </data>
+                    </cell>
+                    <cell id="98827">
+                        <data id="98875">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_REBATE_RATE</property>
+                        </data>
+                    </cell>
+                    <cell id="98880">
+                        <data id="98888">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_REBATE_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="98839">
+                        <data id="98889">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_LOAN_INT_SM_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="98851">
+                        <data id="98890">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">FA_INT_CHG_TYPE</property>
+                        </data>
+                    </cell>
+                    <cell id="98863">
+                        <data id="98891">
+                            <property name="fontSize">8pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">MM/dd/yyyy</property>
+                            </structure>
+                            <property name="resultSetColumn">FA_DOC_DUE_DT</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="97962">
+                    <cell id="97963"/>
+                    <cell id="97964"/>
+                    <cell id="97965"/>
+                    <cell id="97966"/>
+                    <cell id="97967"/>
+                    <cell id="97968"/>
+                    <cell id="97969"/>
+                    <cell id="97970"/>
+                    <cell id="97971"/>
+                    <cell id="97972"/>
+                    <cell id="98832"/>
+                    <cell id="98885"/>
+                    <cell id="98844"/>
+                    <cell id="98856"/>
+                    <cell id="98868"/>
+                </row>
+            </footer>
+        </table>
+        <label id="1147">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">11pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">********** END OF REPORT **********</text-property>
+        </label>
+    </body>
+</report>

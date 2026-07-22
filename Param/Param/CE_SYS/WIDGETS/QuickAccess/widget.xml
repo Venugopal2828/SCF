@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="QuickAccess"
+			allowInstanceContent="true"
+			supportedModes="view edit config help"
+			supportedWindowStates="maximize minimize"
+			iScope="com.cs.widgets.QuickAccess" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.QuickAccessJs" src="QuickAccess/quickaccess.js"/>
+	<iw:resource globalid="com.cs.resources.QuickAccessCss" src="QuickAccess/quickaccess.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="listcount" alias="listcount" lang=""
+				 readOnly="false" value="5"/>
+		<iw:item id="funcGrp" alias="funcGrp" lang=""
+				 readOnly="false" value="no"/>
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Quick Access">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="view.labels">
+		<iw:item id="norec" alias="norec" lang=""
+				 readOnly="true" value="No Record">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="edit.labels">
+		<iw:item id="selector" alias="selector" lang=""
+				 readOnly="true" value="The total count:">
+		</iw:item>
+		<iw:item id="listDesc" alias="listDesc" lang=""
+				 readOnly="true" value="Select to add:">
+		</iw:item>
+		<iw:item id="dupRecord" alias="dupRecord" lang=""
+				 readOnly="true" value="The function you chose has already exist!">
+		</iw:item>
+		<iw:item id="countLimit" alias="countLimit" lang=""
+				 readOnly="true" value="The records count must less than ">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-QuickAccess"></div>
+	]]></iw:content>
+	<iw:content mode="edit"><![CDATA[
+		<div class="com-cs-widget-QuickAccess">
+			<div class="edit-content">
+				<div class="content-row">
+					<div class="selector-label label"></div>
+					<div class="records-count"></div>
+				</div>
+				<div class="content-row">
+					<div class="list-label label"></div>
+					<div class="func-group-list"></div>
+				</div>
+			</div>
+			<div class="func-grp"></div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-QuickAccess">
+			QuickAccess
+		</div>
+	]]></iw:content>
+</iw:iwidget>

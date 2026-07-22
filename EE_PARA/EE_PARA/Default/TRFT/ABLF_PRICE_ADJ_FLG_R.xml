@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>ABLF</module>
+    <name>PRICE_ADJ_FLG</name>
+    <desc>PRICE_ADJ_FLG</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.ABLF_COLL</table-name>
+        <table-desc>Collateral</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>FA_CNTR_REF</sql>
+            <sql> ='</sql>
+            <field mf="F">FA_CNTR_REF</field>
+            <sql>' AND </sql>
+            <sql>REG_NO</sql>
+            <sql> ='</sql>
+            <field mf="F">REG_NO</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <PRICE_ADJ_FLG fv_type="V" oper="=">2</PRICE_ADJ_FLG>
+    </mapping>
+</root>

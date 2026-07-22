@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <taskId>T00000000007</taskId>
+    <taskName>SBLC_AutoRenewal</taskName>
+    <component>SQLExecuTaskMulti</component>
+    <desc>SBLC AutoRenewal</desc>
+    <cuttime_check>F</cuttime_check>
+    <single-thread>false</single-thread>
+    <function module="SBLC" name="Auto_Renewal_Batch">F05030703406</function>
+    <sql-condition><![CDATA[]]></sql-condition>
+    <before-days-fld/>
+    <view-table/>
+    <tables/>
+    <sql-task>
+        <op-type>U</op-type>
+        <mo-flag>M</mo-flag>
+        <table schema="%EXIMTRX%">%EXIMTRX%.SBLC_MASTER</table>
+        <condition>
+            <sql TYPE="COL">C_MAIN_REF</sql>
+            <sql TYPE="SQL"> = '</sql>
+            <sql TYPE="FLD">C_MAIN_REF</sql>
+            <sql TYPE="SQL">'</sql>
+        </condition>
+        <mapping>
+            <EXPIRY_DT fv-type="F" oper="=">EXPIRY_DT</EXPIRY_DT>
+        </mapping>
+    </sql-task>
+    <report-list/>
+</root>

@@ -1,0 +1,42 @@
+{
+	"id": "WF000012",
+	"type": "function",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF000012",
+			"display": "chart.bar",
+			"title": "EPLC Applications not advised",
+			"desc": "Show Export LC Applications that have not yet been advised.",
+			"tooltip": "{\"text\":\"{a}<br/>{b} day ago: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"action": {
+				"type": "catalog",
+				"cfg": "_TRX_STATUS=CATA&_TRX_LIST_FILTER_AJAX_REQUEST=true&IC_CHECK=C_MAIN_REF&OP1=LIKE&OP2=%25&OP3=AND&IC_CHECK=ISSUE_BK_SW_ADD&OP4=LIKE&OP5=%25&OP6=AND&IC_CHECK=LC_NO&OP7=LIKE&OP8=%25&OP9=AND&IC_CHECK=TRX_DT&OP10=%3D&OP11=&OP12=AND&IC_CHECK=BENE_NM&OP13=LIKE&OP14=%25&like_flag=FALSE"
+			},
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"pie": "{\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "F05030701977",
+				"extraSelect": "TRX_DT,C_UNIT_CODE, (TO_DATE(sysdate ) - TO_DATE(TRX_DT)) NM, COUNT(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(TRX_DT)),'d' )) as VL",
+				"extraWhere": "",
+				"extraGroupBy": "TRX_DT,C_UNIT_CODE,(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(TRX_DT)),'d' ))",
+				"extraOrderBy": "C_UNIT_CODE, NM asc",
+				"overwrite": ["extraSelect", "extraOrderBy"],
+				"catalog": ["TRX_DT"],
+				"catalogOp": ["OP11"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "NM",
+			"valueField": "VL"
+		}
+	}
+}

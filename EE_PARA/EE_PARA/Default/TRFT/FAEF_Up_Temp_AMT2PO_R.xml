@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FAEF</module>
+    <name>Up_Temp_AMT2PO</name>
+    <desc>Update invoice loan temporary amount to PO</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.POMM_MASTER</table-name>
+        <table-desc>PO MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql type="TBL_FLD">PO_NO</sql>
+            <sql type="SQL"> = '</sql>
+            <field mf="F">PO_NO</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">FA_SBR_REF</sql>
+            <sql type="SQL"> = '</sql>
+            <field mf="F">FA_SBR_REF</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <CPYT_STL_AMT fv_type="F" mf="F" oper="+=">TEMP_AMT18</CPYT_STL_AMT>
+    </mapping>
+</root>

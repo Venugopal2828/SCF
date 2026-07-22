@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">BICIBAN</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_BICDirectory_SYF_PYMT_CHK_X103_59A_1_IBAN_MATCH_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_PARENT_BANK ALIAS="T0" DBFUNC="" DESC="C_PARENT_BANK" DT="12" HIDDEN="F" TYPE="F">X103_56_PARENT_BANK_TEMP2</C_PARENT_BANK>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_UNIQ_BIC like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">X103_ACC_BKSW_57A</SQL>
+            <SQL TYPE="SQL">',0,8),'%')) AND C_UNIQ_BRANCH like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">X103_ACC_BKSW_57A</SQL>
+            <SQL TYPE="SQL">',8,3),'%'))</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

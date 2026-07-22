@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <desc>Update Export Collection viewed bank message</desc>
+    <module>EXCO</module>
+    <name>UpdateEXCOViewedMsg</name>
+    <head-info>
+        <table-name>CETRX.TRX_INBOX</table-name>
+        <table-desc>TRX_INBOX</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info>Error when update TRX_INBOX for viewed msg</err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition>
+            <sql type="TBL_FLD">C_MAIN_REF</sql>
+            <sql type="SQL"> = &apos;</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql type="SQL">&apos; AND </sql>
+            <sql type="TBL_FLD">C_UNIT_CODE</sql>
+            <sql type="SQL"> = &apos;</sql>
+            <field mf="F">C_UNIT_CODE</field>
+            <sql type="SQL">&apos; AND </sql>
+            <sql type="TBL_FLD">C_MODULE</sql>
+            <sql type="SQL"> = &apos;EXCO&apos;</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <C_NOW_EVENT fv_type="V" oper="=">Transaction</C_NOW_EVENT>
+    </mapping>
+</root>

@@ -1,0 +1,361 @@
+{
+  CstmrCdtTrfInitn: {
+    GrpHdr: {
+      MsgId: "35x",
+      CreDtTm: "ISODateTime",
+      Authstn: {
+        Cd: "75x(AUTH|FDET|FSUM|ILEV)",
+        Prtry: "128x",
+        "@occur": "{0,2}"
+      },
+      NbOfTxs: "[0-9]{1,15}",
+      CtrlSum: "18d{0,1}",
+      InitgPty: "PartyIdentification43",
+      FwdgAgt: "BranchAndFinancialInstitutionIdentification5{0,1}"
+    },
+    PmtInf: {
+      PmtInfId: "35x",
+      PmtMtd: "75x(CHK|TRF|TRA)",
+      BtchBookg: "x{0,1}",
+      NbOfTxs: "[0-9]{1,15}{0,1}",
+      CtrlSum: "18d{0,1}",
+      PmtTpInf: {
+        InstrPrty: "75x(HIGH|NORM){0,1}",
+        SvcLvl: {
+          Cd: "4x",
+          Prtry: "35x",
+          "@occur": "{0,1}"
+        },
+        LclInstrm: {
+          Cd: "35x",
+          Prtry: "35x",
+          "@occur": "{0,1}"
+        },
+        CtgyPurp: {
+          Cd: "4x",
+          Prtry: "35x",
+          "@occur": "{0,1}"
+        },
+        "@occur": "{0,1}"
+      },
+      ReqdExctnDt: "ISODate",
+      PoolgAdjstmntDt: "ISODate{0,1}",
+      Dbtr: "PartyIdentification43",
+      DbtrAcct: "CashAccount24",
+      DbtrAgt: "BranchAndFinancialInstitutionIdentification5",
+      DbtrAgtAcct: "CashAccount24{0,1}",
+      "InstrForDbtrAgt": "140x{0,1}",
+      UltmtDbtr: "PartyIdentification43{0,1}",
+      ChrgBr: "75x(DEBT|CRED|SHAR|SLEV){0,1}",
+      ChrgsAcct: "CashAccount24{0,1}",
+      ChrgsAcctAgt: "BranchAndFinancialInstitutionIdentification5{0,1}",
+      CdtTrfTxInf: {
+        PmtId: {
+          InstrId: "35x{0,1}",
+          EndToEndId: "35x"
+        },
+        PmtTpInf: {
+          InstrPrty: "75x(HIGH|NORM){0,1}",
+          SvcLvl: {
+            Cd: "4x",
+            Prtry: "35x",
+            "@occur": "{0,1}"
+          },
+          LclInstrm: {
+            Cd: "35x",
+            Prtry: "35x",
+            "@occur": "{0,1}"
+          },
+          CtgyPurp: {
+            Cd: "4x",
+            Prtry: "35x",
+            "@occur": "{0,1}"
+          },
+          "@occur": "{0,1}"
+        },
+        Amt: {
+          InstdAmt: {
+            Ccy: "_val_Ccy",
+            "@occur": "{0,1}"
+          },
+          EqvtAmt: {
+            Amt: {
+              Ccy: "_val_Ccy",
+              "@occur": "{0,1}"
+            },
+            CcyOfTrf: "[A-Z]{3,3}"
+          }
+        },
+        XchgRateInf: {
+          UnitCcy: "[A-Z]{3,3}{0,1}",
+          XchgRate: "11d{0,1}",
+          RateTp: "75x(SPOT|SALE|AGRD){0,1}",
+          CtrctId: "35x{0,1}",
+          "@occur": "{0,1}"
+        },
+        ChrgBr: "75x(DEBT|CRED|SHAR|SLEV){0,1}",
+        ChqInstr: {
+          ChqTp: "75x(CCHQ|CCCH|BCHQ|DRFT|ELDR){0,1}",
+          ChqNb: "35x{0,1}",
+          ChqFr: {
+            Nm: "140x",
+            Adr: "PostalAddress6",
+            "@occur": "{0,1}"
+          },
+          DlvryMtd: {
+            Cd: "75x(MLDB|MLCD|MLFA|CRDB|CRCD|CRFA|PUDB|PUCD|PUFA|RGDB|RGCD|RGFA)",
+            Prtry: "35x",
+            "@occur": "{0,1}"
+          },
+          DlvrTo: {
+            Nm: "140x",
+            Adr: "PostalAddress6",
+            "@occur": "{0,1}"
+          },
+          InstrPrty: "75x(HIGH|NORM){0,1}",
+          ChqMtrtyDt: "ISODate{0,1}",
+          FrmsCd: "35x{0,1}",
+          MemoFld: "35x{0,2}",
+          RgnlClrZone: "35x{0,1}",
+          PrtLctn: "35x{0,1}",
+          Sgntr: "70x{0,5}",
+          "@occur": "{0,1}"
+        },
+        UltmtDbtr: "PartyIdentification43{0,1}",
+        IntrmyAgt1: "BranchAndFinancialInstitutionIdentification5{0,1}",
+        IntrmyAgt1Acct: "CashAccount24{0,1}",
+        IntrmyAgt2: "BranchAndFinancialInstitutionIdentification5{0,1}",
+        IntrmyAgt2Acct: "CashAccount24{0,1}",
+        IntrmyAgt3: "BranchAndFinancialInstitutionIdentification5{0,1}",
+        IntrmyAgt3Acct: "CashAccount24{0,1}",
+        CdtrAgt: "BranchAndFinancialInstitutionIdentification5{0,1}",
+        CdtrAgtAcct: "CashAccount24{0,1}",
+        Cdtr: "PartyIdentification43{0,1}",
+        CdtrAcct: "CashAccount24{0,1}",
+        UltmtCdtr: "PartyIdentification43{0,1}",
+        "InstrForCdtrAgt": {
+          Cd: "75x(CHQB|HOLD|PHOB|TELB){0,1}",
+          InstrInf: "140x{0,1}",
+          "@occur": "{0,999}"
+        },
+        InstrForDbtrAgt: "140x{0,1}",
+        Purp: {
+          Cd: "4x",
+          Prtry: "35x",
+          "@occur": "{0,1}"
+        },
+        RgltryRptg: {
+          DbtCdtRptgInd: "75x(CRED|DEBT|BOTH){0,1}",
+          Authrty: {
+            Nm: "140x{0,1}",
+            Ctry: "[A-Z]{2,2}{0,1}",
+            "@occur": "{0,1}"
+          },
+          Dtls: {
+            Tp: "35x{0,1}",
+            Dt: "ISODate{0,1}",
+            Ctry: "[A-Z]{2,2}{0,1}",
+            Cd: "10x{0,1}",
+            Amt: {
+              Ccy: "_val_Ccy",
+              "@occur": "{0,1}"
+            },
+            Inf: "35x{0,999}",
+            "@occur": "{0,999}"
+          },
+          "@occur": "{0,10}"
+        },
+        Tax: {
+          Cdtr: {
+            TaxId: "35x{0,1}",
+            RegnId: "35x{0,1}",
+            TaxTp: "35x{0,1}",
+            "@occur": "{0,1}"
+          },
+          Dbtr: {
+            TaxId: "35x{0,1}",
+            RegnId: "35x{0,1}",
+            TaxTp: "35x{0,1}",
+            Authstn: {
+              Titl: "35x{0,1}",
+              Nm: "140x{0,1}",
+              "@occur": "{0,1}"
+            },
+            "@occur": "{0,1}"
+          },
+          AdmstnZn: "35x{0,1}",
+          RefNb: "140x{0,1}",
+          Mtd: "35x{0,1}",
+          TtlTaxblBaseAmt: {
+            Ccy: "_val_Ccy",
+            "@occur": "{0,1}"
+          },
+          TtlTaxAmt: {
+            Ccy: "_val_Ccy",
+            "@occur": "{0,1}"
+          },
+          Dt: "ISODate{0,1}",
+          SeqNb: "18d{0,1}",
+          Rcrd: {
+            Tp: "35x{0,1}",
+            Ctgy: "35x{0,1}",
+            CtgyDtls: "35x{0,1}",
+            DbtrSts: "35x{0,1}",
+            CertId: "35x{0,1}",
+            FrmsCd: "35x{0,1}",
+            Prd: {
+              Yr: "ISODate{0,1}",
+              Tp: "75x(MM01|MM02|MM03|MM04|MM05|MM06|MM07|MM08|MM09|MM10|MM11|MM12|QTR1|QTR2|QTR3|QTR4|HLF1|HLF2){0,1}",
+              FrToDt: {
+                FrDt: "ISODate",
+                ToDt: "ISODate",
+                "@occur": "{0,1}"
+              },
+              "@occur": "{0,1}"
+            },
+            TaxAmt: {
+              Rate: "11d{0,1}",
+              TaxblBaseAmt: {
+                Ccy: "_val_Ccy",
+                "@occur": "{0,1}"
+              },
+              TtlAmt: {
+                Ccy: "_val_Ccy",
+                "@occur": "{0,1}"
+              },
+              Dtls: {
+                Prd: {
+                  Yr: "ISODate{0,1}",
+                  Tp: "75x(MM01|MM02|MM03|MM04|MM05|MM06|MM07|MM08|MM09|MM10|MM11|MM12|QTR1|QTR2|QTR3|QTR4|HLF1|HLF2){0,1}",
+                  FrToDt: {
+                    FrDt: "ISODate",
+                    ToDt: "ISODate",
+                    "@occur": "{0,1}"
+                  },
+                  "@occur": "{0,1}"
+                },
+                Amt: {
+                  Ccy: "_val_Ccy",
+                  "@occur": "{0,1}"
+                },
+                @
+                occur: "{0,999}"
+              },
+              "@occur": "{0,1}"
+            },
+            AddtlInf: "140x{0,1}",
+            "@occur": "{0,999}"
+          },
+          "@occur": "{0,1}"
+        },
+        RltdRmtInf: {
+          RmtId: "35x{0,1}",
+          RmtLctnMtd: "75x(FAXI|EDIC|URID|EMAL|POST|SMSM){0,1}",
+          RmtLctnElctrncAdr: "2048x{0,1}",
+          RmtLctnPstlAdr: {
+            Nm: "140x",
+            Adr: "PostalAddress6",
+            "@occur": "{0,1}"
+          },
+          "@occur": "{0,10}"
+        },
+        RmtInf: {
+          Ustrd: "140x{0,999}",
+          Strd: {
+            RfrdDocInf: {
+              Tp: {
+                CdOrPrtry: {
+                  Cd: "75x(MSIN|CNFA|DNFA|CINV|CREN|DEBN|HIRI|SBIN|CMCN|SOAC|DISP|BOLD|VCHR|AROI|TSUT)",
+                  Prtry: "35x"
+                },
+                Issr: "35x{0,1}",
+                "@occur": "{0,1}"
+              },
+              Nb: "35x{0,1}",
+              RltdDt: "ISODate{0,1}",
+              "@occur": "{0,999}"
+            },
+            RfrdDocAmt: {
+              DuePyblAmt: {
+                Ccy: "_val_Ccy",
+                "@occur": "{0,1}"
+              },
+              DscntApldAmt: {
+                Tp: {
+                  Cd: "4x",
+                  Prtry: "35x",
+                  "@occur": "{0,1}"
+                },
+                Amt: {
+                  Ccy: "_val_Ccy",
+                  "@occur": "{0,1}"
+                },
+                "@occur": "{0,999}"
+              },
+              CdtNoteAmt: {
+                Ccy: "_val_Ccy",
+                "@occur": "{0,1}"
+              },
+              TaxAmt: {
+                Tp: {
+                  Cd: "4x",
+                  Prtry: "35x",
+                  "@occur": "{0,1}"
+                },
+                Amt: {
+                  Ccy: "_val_Ccy",
+                  "@occur": "{0,1}"
+                },
+                "@occur": "{0,999}"
+              },
+              AdjstmntAmtAndRsn: {
+                Amt: {
+                  Ccy: "_val_Ccy",
+                  "@occur": "{0,1}"
+                },
+                CdtDbtInd: "75x(CRDT|DBIT){0,1}",
+                Rsn: "4x{0,1}",
+                AddtlInf: "140x{0,1}",
+                "@occur": "{0,999}"
+              },
+              RmtdAmt: {
+                Ccy: "_val_Ccy",
+                "@occur": "{0,1}"
+              },
+              "@occur": "{0,1}"
+            },
+            CdtrRefInf: {
+              Tp: {
+                CdOrPrtry: {
+                  Cd: "75x(RADM|RPIN|FXDR|DISP|PUOR|SCOR)",
+                  Prtry: "35x"
+                },
+                Issr: "35x{0,1}",
+                "@occur": "{0,1}"
+              },
+              Ref: "35x{0,1}",
+              "@occur": "{0,1}"
+            },
+            Invcr: "PartyIdentification43{0,1}",
+            Invcee: "PartyIdentification43{0,1}",
+            AddtlRmtInf: "140x{0,3}",
+            "@occur": "{0,999}"
+          },
+          "@occur": "{0,1}"
+        },
+        SplmtryData: {
+          PlcAndNm: "350x{0,1}",
+          Envlp: {},
+          "@occur": "{0,999}"
+        },
+        "@occur": "{1,999}"
+      },
+      "@occur": "{1,999}"
+    },
+    SplmtryData: {
+      PlcAndNm: "350x{0,1}",
+      Envlp: {},
+      "@occur": "{0,999}"
+    }
+  }
+}

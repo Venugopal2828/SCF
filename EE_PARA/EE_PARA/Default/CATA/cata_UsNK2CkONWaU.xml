@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>UsNK2CkONWaU</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>CHG rule_CATALOG</DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STD_CHG_RATE_RULE</TABLENAME>
+    <FIELDLIST>
+        <FIELD DATATYPE="12" DESC="CSID" EEType="Varchar_32" HIDDEN="H">CSID</FIELD>
+        <FIELD DATATYPE="12" DESC="Charge Rate Description" EEType="Varchar_128" HIDDEN="">C_CHARGE_RATE_DESC</FIELD>
+        <FIELD DATATYPE="12" DESC="Product Code" EEType="Varchar_32" HIDDEN="">C_PRODUCT_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Commission Code" EEType="Varchar_32" HIDDEN="">C_COMMISSION_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Calculate Type" EEType="Varchar_30" HIDDEN="">C_CALCULATE_TYPE</FIELD>
+        <FIELD DATATYPE="6" DESC="Base Percentage" EEType="FLOAT" HIDDEN="">F_BASE_PERCENTAGE</FIELD>
+        <FIELD DATATYPE="1" DESC="Currency" EEType="CCY" HIDDEN="">C_CCY</FIELD>
+        <FIELD DATATYPE="3" DESC="Flat Amount" EEType="AMT" HIDDEN="">Y_FLAT_AMT</FIELD>
+        <FIELD DATATYPE="3" DESC="Minimal Amount" EEType="AMT" HIDDEN="">Y_MIN_AMT</FIELD>
+        <FIELD DATATYPE="3" DESC="Maximal Amount" EEType="AMT" HIDDEN="">Y_MAX_AMT</FIELD>
+        <FIELD DATATYPE="6" DESC="Extend Percentage" EEType="FLOAT" HIDDEN="">F_EXTEND_PERCENTAGE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Commission Code" DT="12" EEType="Varchar_32" TYPE="FLD">C_COMMISSION_CODE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="Charge Rate Description" DT="12" EEType="Varchar_128" TYPE="FLD">C_CHARGE_RATE_DESC</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Commission Code" EETYPE="Varchar_32">C_COMMISSION_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Charge Rate Description" EETYPE="Varchar_128">C_CHARGE_RATE_DESC</FIELD>
+    </CLAUSEFIELD>
+</CATA>

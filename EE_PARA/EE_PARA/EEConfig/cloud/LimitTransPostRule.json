@@ -1,0 +1,114 @@
+{
+    "req_data": {
+        "type": "array",
+        "source": {
+            "type": "xpath",
+            "value": "/message/out-msg-content/trx"
+        },
+        "items": [
+            {
+                "type": "object",
+                "fields": {
+                    "organizationId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/bank-grp"
+                        }
+                    },
+                    "countryCode": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/country"
+                        }
+                    },
+                    "entityId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/unit-code"
+                        }
+                    },
+                    "custId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_CUST_ID"
+                        }
+                    },
+                    "rcustId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_RCUST_ID"
+                        }
+                    },
+					"grupName": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_CSL_DESC"
+                        }
+                    },
+					"currName": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_FACI_TP"
+                        }
+                    },
+					"trxRef": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_TRX_REF"
+                        }
+                    },
+					"processCode": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_DRCR_MRK"
+                        }
+                    },
+					"trxCcy": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_TRX_CCY"
+                        }
+                    },
+                    "trxAmt": {
+                        "type": "number",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_TRX_AMT"
+                        }
+                    },
+                    "valueDay": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_VALU_DAY"
+                        }
+                    },
+                    "dueDay": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_DUE_DAY"
+                        }
+                    },
+					"eventTimes": {
+                        "type": "number",
+                        "source": {
+                            "type": "xpath",
+                            "value": "/message/header/event-times"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

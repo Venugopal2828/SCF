@@ -1,0 +1,10 @@
+stp.writeLog("===================START===============");
+stp.setAutoProcess(true);
+stp.setGapiRule("IMLC_014_PmtInstr");
+var C_MAIN_REF = stp.getXMLNodeValue("BkMainRef");
+stp.updateFieldValue("C_MAIN_REF", C_MAIN_REF);
+var DrawgRefNb = stp.getXMLNodeValue("DrawgRefNb");
+stp.updateFieldValue("DRAWING_REF", DrawgRefNb);
+stp.updateFieldValue("CURRNT_STATUS", "IPLC_ReceiveDiscrepancies_STP");
+stp.updateFieldValue("NXT_STATUS", "Pay/Accepted");
+stp.writeLog("===================END===============");

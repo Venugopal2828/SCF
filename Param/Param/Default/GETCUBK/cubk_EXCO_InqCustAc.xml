@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire Customer Account" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>EXCO</module-name>
+        <cubk-mapping-name>InqCustAc</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_CUST_AC</table-name>
+        <table-desc>STD_CUST_AC</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <CUST_AC DESC="Customer Account" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqDataId</CUST_AC>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <CUST_AC_CCY DESC="Customer Account Currency" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqAccCcy</CUST_AC_CCY>
+        <CUST_AC DESC="Customer Account" DT="1" HIDDEN="" TYPE="V" WTYPE="CASE">sInqAcc</CUST_AC>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

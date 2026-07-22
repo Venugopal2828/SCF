@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCH AutoGen-Parameter-Version="1.0">
+    <HEADINFO>
+        <MODULE>CFNC</MODULE>
+        <DESC>establishment</DESC>
+        <OP_TYPE>S</OP_TYPE>
+        <DC_VALID_TYPE>0</DC_VALID_TYPE>
+        <STPCODE/>
+        <COPYNUMS>1</COPYNUMS>
+        <PRINTERNAME/>
+        <PCOPYNUMS>0</PCOPYNUMS>
+        <PPRINTERNAME/>
+        <PRINTSTATE>R</PRINTSTATE>
+        <MAILID/>
+        <PT/>
+        <FAXID/>
+        <GAPITYPE/>
+        <GAPIRULE/>
+        <FLDLIST/>
+    </HEADINFO>
+    <VCH_MAPPING>
+        <ENTRY NO_CHECK="N" OFF_BALANCE="N">
+            <C_CUST_ID FV_TYPE="F"/>
+            <DO name="FinanceEstablishment" path="FinanceEstablishment"/>
+            <C_TRX_DESC FV_TYPE="F"/>
+            <C_DBT_CRDT FV_TYPE="V">C</C_DBT_CRDT>
+            <C_GL FV_TYPE="V">98526656</C_GL>
+            <C_SL FV_TYPE=""/>
+            <C_CURRENCY FV_TYPE="S">var cfnc_c_ccy;
+
+var records = DV.getRecords("FinanceEstablishment");
+
+for(var i = 0; i &lt; records.length; i++){
+
+  cfnc_c_ccy = DV.getDOValue(records[i],"CFNC_C_CCY");
+
+}
+
+DV.appendField(cfnc_c_ccy);
+
+DV.writeLog("CFNC_C_CCY"+cfnc_c_ccy);</C_CURRENCY>
+            <N_AMT FV_TYPE="S">var CFNC_C_INT_PAYABLE = "";
+var records = DV.getRecords("FinanceEstablishment");
+var amt = "";
+for(var i = 0; i&lt;records.length; i++){
+  CFNC_C_INT_PAYABLE = DV.getDOValue(records[i],"CFNC_C_INT_PAYABLE");
+  amt = DV.getDOValue(records[i],"CFNC_N_PRE_INT");
+}
+DV.writeLog("FinanceEstablishment.CFNC_N_PRE_INT"+amt);
+if(CFNC_C_INT_PAYABLE == 'In Arrears'){ 
+   amt = '0'; 
+}
+DV.appendField(amt);</N_AMT>
+            <D_BOOKING_DATE FV_TYPE=""/>
+            <D_VALUE_DATE FV_TYPE=""/>
+            <C_TRANS_CODE FV_TYPE=""/>
+            <C_EXCHGE_RATE1 FV_TYPE="" USED="N"/>
+            <C_EXCHGE_RATE2 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE1 FV_TYPE="" USED="N"/>
+            <C_INTEREST_RATE2 FV_TYPE="" USED="N"/>
+            <C_REF_NUMBER FV_TYPE=""/>
+            <C_VOUCHER_DESC FV_TYPE="V">InterestAmt</C_VOUCHER_DESC>
+            <C_CUST_CODE FV_TYPE=""/>
+            <C_CUST_BS_GROUP FV_TYPE=""/>
+            <C_CUST_BS_TYPE FV_TYPE=""/>
+            <C_AO_CODE FV_TYPE=""/>
+            <C_CU_REL_CODE FV_TYPE=""/>
+            <C_CUST_CNTY_CODE FV_TYPE=""/>
+            <C_VCH_SPECIAL1 FV_TYPE=""/>
+            <C_VCH_SPECIAL2 FV_TYPE=""/>
+            <C_VCH_SPECIAL3 FV_TYPE=""/>
+        </ENTRY>
+    </VCH_MAPPING>
+</VCH>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/IPLC_CloseLC.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <VOUCHER>
+        <ID>F00000002694</ID>
+        <NAME/>
+    </VOUCHER>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">IPLC</MODULE>
+        <MODULE_DESC>Import Letter of Credit</MODULE_DESC>
+        <EVENT>Issue</EVENT>
+        <ID>F05030702025</ID>
+        <NAME>IPLC_CloseLC</NAME>
+        <DESC>Close LC</DESC>
+        <FUNSHORTNAME>IPLC_CLS_LC</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="Close LC">R00000002755</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000002756</CATALOGID>
+        <TransferTo>F00000005736</TransferTo>
+    </FUNCTION>
+</FUNC>

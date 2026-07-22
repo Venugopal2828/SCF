@@ -1,0 +1,73 @@
+{
+  "code":"Document",
+  "uri":"urn:iso:std:iso:20022:tech:xsd:camt.025.001.08",
+  "children":[{
+    "code":"Rct",
+    "children":[
+
+      {
+        "code":"MsgHdr",
+        "children":[
+
+          {"code":"MsgId"},
+          {
+            "code":"CreDtTm",
+            "val":"ISODateTime"
+          }
+        ]
+      },
+      {
+        "code":"RctDtls",
+        "max":9999,
+        "children":[
+
+          {
+            "code":"OrgnlMsgId",
+            "children":[
+
+              {"code":"MsgId"},
+              {"code":"MsgNmId"}
+            ]
+          },
+          {
+            "code":"ReqHdlg",
+            "children":[
+
+              {
+                "code":"Sts",
+                "choice":" Cd",
+                "children":[{
+                  "code":"Cd",
+                  "val":"ExternalRequestStatus1Code"
+                }]
+              },
+              {
+                "code":"StsRsn",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Rsn",
+                    "min":0,
+                    "choice":" Cd",
+                    "children":[{
+                      "code":"Cd",
+                      "val":"ExternalStatusReason1Code"
+                    }]
+                  },
+                  {
+                    "code":"AddtlInf",
+                    "min":0,
+                    "max":2
+                  }
+                ]
+              }
+            ]
+          }
+
+        ]
+      }
+
+    ]
+  }]
+}

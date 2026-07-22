@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>TRAN.001.ReceUpldMsg</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>TRAN</module>
+        <map-name>Receive Upload Message</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <C_UNIT_CODE descr="" fv-type="F" intfconv="N">C_UNIT_CODE</C_UNIT_CODE>
+        <FA_DOC_NO descr="" fv-type="F" intfconv="N">FA_DOC_NO</FA_DOC_NO>
+        <FA_DOC_DT descr="" fv-type="F" intfconv="N">FA_DOC_DT</FA_DOC_DT>
+        <FA_DOC_CCY descr="" fv-type="F" intfconv="N">FA_DOC_CCY</FA_DOC_CCY>
+        <FA_DOC_AMT descr="" fv-type="F" intfconv="N">FA_DOC_AMT</FA_DOC_AMT>
+        <FA_BUYER_NM descr="" fv-type="F" intfconv="N">FA_BUYER_NM</FA_BUYER_NM>
+        <FA_SEL_NM descr="" fv-type="F" intfconv="N">FA_SEL_NM</FA_SEL_NM>
+        <FA_SEL_ID descr="" fv-type="F" intfconv="N">FA_SEL_ID</FA_SEL_ID>
+        <FA_BUYER_ID descr="" fv-type="F" intfconv="N">FA_BUYER_ID</FA_BUYER_ID>
+        <FA_DOC_DUE_DT descr="" fv-type="F" intfconv="N">FA_DOC_DUE_DT</FA_DOC_DUE_DT>
+        <FA_DOC_VAL_DT descr="" fv-type="F" intfconv="N">FA_DOC_VAL_DT</FA_DOC_VAL_DT>
+        <FA_DOC_BAL descr="" fv-type="F" intfconv="N">FA_DOC_BAL</FA_DOC_BAL>
+        <FSBC_REF descr="" fv-type="F" intfconv="N">FSBC_REF</FSBC_REF>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

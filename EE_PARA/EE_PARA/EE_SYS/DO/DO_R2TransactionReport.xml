@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" DATATYPE="2005" Desc="Transaction Report"
+    Field="TSUR2_RPTD_ITMS41" Max="n" Min="0" Name="R2TransactionReport"
+    PendingStore="Y" Screen="SCRN/DO/R2TSU_RPTD_ITMS41.jsp" StoreInto="D" StoreType="X">
+    <Elements>
+        <Element DATATYPE="12" Desc="Transaction Ref." DispInGrid="N" EDIT="N"
+            EEType="Max35Text" FldType="" Value="">TSU_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="Established Baseline Identification"
+            DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BASELN_ID</Element>
+        <Element DATATYPE="12" Desc="Baseline Version" DispInGrid="N" EDIT="N"
+            EEType="MICIdentifier" FldType="" Value="">TSU_BASELN_VRSN</Element>
+        <Element DATATYPE="12" Desc="Transaction Status 2" DispInGrid="N"
+            EDIT="N" EEType="Action1Code" FldType="" Value="">TSUR2_TRX_STATUS</Element>
+        <Element DATATYPE="91" Desc="PO Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">TSU_PO_DT</Element>
+        <Element DATATYPE="12" Desc="PO ID" DispInGrid="Y" EDIT="N"
+            EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+        <Element DATATYPE="12" Desc="Submitter Baseline ID" DispInGrid="Y"
+            EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_SUBMIT_BASELN_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="Y" EDIT="N"
+            EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+        <Element DATATYPE="12" Desc="Buyer Bank Country" DispInGrid="Y" EDIT="N"
+            EEType="CountryCode" FldType="" Value="">TSU_BUYER_BK_CNTY</Element>
+        <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="Y" EDIT="N"
+            EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+        <Element DATATYPE="12" Desc="Seller Bank Country" DispInGrid="Y"
+            EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_SEL_BK_CNTY</Element>
+        <Element DATATYPE="3" Desc="Outstanding Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">TSU_OUTSDNG_AMT</Element>
+        <Element DATATYPE="3" Desc="PO Total Net Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">TSU_TTL_NET_AMT</Element>
+        <Element DATATYPE="2" Desc="Submitter Baseline Version" DispInGrid="N"
+            EDIT="N" EEType="Number" FldType="" Value="">TSU_SUBMIT_BASELN_VRSN</Element>
+        <Element DATATYPE="12" Desc="Message ID" DispInGrid="N" EDIT="N"
+            EEType="Max35Text" FldType="" Value="">TSU_MESSAGE_ID</Element>
+    </Elements>
+    <DO DATATYPE="2005" Desc="Buyer Information" Field="TSUR2_BUYER_INFO017"
+        Max="1" Min="0" Name="R2BuyrInfo" PendingStore="N"
+        Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Seller Information" Field="TSUR2_SELLR_INFO017"
+        Max="1" Min="0" Name="R2SellrInfo" PendingStore="N"
+        Screen="SCRN/DO/R2TSU_PartyIdentification017.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Submitting BIC" Field="TSUR2_SUBMIT_B_BIC" Max="n"
+        Min="0" Name="TSU_SUB_B_BIC" PendingStore="N"
+        Screen="SCRN/DO/R2TSU_Submitting_BIC.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="1" Desc="Submitter Bank BIC" DispInGrid="Y"
+                EDIT="N" EEType="BIC" FldType="" Value="">TSU_SUB_B_BIC</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Obligor BIC" Field="TSU_OBR_BK" Max="n" Min="0"
+        Name="TSU_OBLGR_BK" PendingStore="N"
+        Screen="SCRN/DO/R2TSU_OBLGR_BIC.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Obligor Bank BIC" DispInGrid="Y"
+                EDIT="N" EEType="BIC" FldType="" Value="">TSU_OBLGR_BK</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Pending Activity" Field="TSUR2_PDG_REQ" Max="n"
+        Min="0" Name="PendingActivity2" PendingStore="N"
+        Screen="SCRN/DO/R2TSU_PDG_REQ_FOR_ACT.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Pending Request For Action Type"
+                DispInGrid="Y" EDIT="N" EEType="Action1Code" FldType="" Value="">TSUR2_REQ_ACT_TP</Element>
+            <Element DATATYPE="12" Desc="Pending Request For Action Description"
+                DispInGrid="Y" EDIT="N" EEType="Max140Text" FldType="" Value="">TSUR2_REQ_ACT_DESC</Element>
+        </Elements>
+    </DO>
+</DO>

@@ -1,0 +1,1 @@
+DV.appendSWIFT("PYMT_camt.109.001.01");

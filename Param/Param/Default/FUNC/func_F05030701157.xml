@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>PO Maintenance</MODULE_DESC>
+        <EVENT>TransactionFunction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701157</ID>
+        <NAME>Process Purchase Order</NAME>
+        <DESC>Process Purchase Order</DESC>
+        <FUNSHORTNAME>ProcessPOTSU</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">TSUM_PO.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701150</ID>
+        <NAME>Process Purchase Order_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701150</ID>
+        <NAME>Process Purchase Order_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000453</ID>
+        <NAME>Process Purchase Order_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<batch>
+	<job id="MailSender" type="lightwight">
+		<taskMgr name="MailNotification">
+			<task>
+				<name>MailSender</name>
+			</task>
+		</taskMgr>
+	</job>
+	<job id="SplitUploadedFileManager" type="batch">
+		<taskMgr name="UploadManager">
+			<task>
+				<name>SplitUploadedFileManager</name>
+			</task>
+		</taskMgr>
+		<failover>
+			<property name="timeout" value="36000"/>
+		</failover>
+		<partition>			
+			<property name="handler" value="com.cs.batchframework.partition.CESQLPartitionHandler"/>
+			<property name="JNDI" value="CET"/>
+			<!--<property name="SQL" value="select key1,key2,key3 from ${schma}.trx_sub_files where c_file_status = 'R'"/>-->		
+			<property name="partitionSQL" value="SELECT C_FILE_INDEX FROM $schema.TRX_FILE_UPLOAD WHERE C_FILE_STATUS = 'S' AND C_TRX_STATUS = 'M' AND C_PARTITION_STATUS IS NULL"/>
+			<property name="updateStatusSQL" value="UPDATE $schema.TRX_FILE_UPLOAD SET C_PARTITION_STATUS = 'S'"/>
+			<property name="partitionSize" value="1"/>
+			<property name="QM" value="Q_PARTITION"/>
+		</partition>
+		<execute>
+			<property name="jobHandler" value="com.cs.batchframework.SplitFilesBatchHandler"/>
+			<commit_interval>1</commit_interval>
+		</execute>
+	</job>
+	<job id="SubFileProcessManager" type="batch">
+		<taskMgr name="UploadManager">
+			<task>
+				<name>SubFileProcessManager</name>
+			</task>
+		</taskMgr>
+		<failover>
+			<property name="timeout" value="300"/>
+		</failover>
+		<partition>			
+			<property name="handler" value="com.cs.batchframework.partition.CESQLPartitionHandler"/>
+			<property name="JNDI" value="CET"/>			
+			<property name="partitionSQL" value="SELECT C_SUB_FILE_INDEX FROM $schema.TRX_SUB_FILES WHERE C_MSG_STATUS = 'P' AND C_PARTITION_STATUS IS NULL ORDER BY C_FILE_INDEX" />
+			<property name="updateStatusSQL" value="UPDATE $schema.TRX_SUB_FILES SET C_PARTITION_STATUS = 'S'"/>
+			<property name="partitionSize" value="50"/>
+			<property name="QM" value="Q_SUBFILEPARTITION"/>
+		</partition>
+		<execute>
+			<property name="jobHandler" value="com.cs.batchframework.SubfileBatchHandler"/>
+			<commit_interval>1</commit_interval>			
+		</execute>
+	</job>	
+</batch>

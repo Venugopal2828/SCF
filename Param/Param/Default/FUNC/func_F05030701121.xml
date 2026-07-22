@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>System</EVENT>
+        <CATALOGID>C14091700000</CATALOGID>
+        <ID>F05030701121</ID>
+        <NAME>Buyer View Invoice</NAME>
+        <DESC>Buyer View Invoice</DESC>
+        <FUNSHORTNAME>ViewInv_B</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>IQ</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Inq">TrxManagerInq</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_ViewInv.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701114</ID>
+        <NAME>Buyer View Invoice_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701114</ID>
+        <NAME>Buyer View Invoice_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000399</ID>
+        <NAME>Buyer View Invoice_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>CalculatorIntfFuncJS</JS_CLASS>
+    </CAL>
+</FUNC>

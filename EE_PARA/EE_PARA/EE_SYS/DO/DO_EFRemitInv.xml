@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="EFRemitInv" Max="200" Min="1"
+    Name="EFRemitInv" PendingStore="N" Screen="" StoreInto="C" StoreType="C">
+    <Component>FactExportComisReitInv</Component>
+    <PK>
+        <PKNAME>FA_DOC_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FADA_REMI">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Seller ID" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_SEL_ID</Element>
+        <Element DATATYPE="12" Desc="Seller Name" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_SEL_NM</Element>
+        <Element DATATYPE="12" Desc="Buyer ID" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_BUYER_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer Name" DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_BUYER_NM</Element>
+        <Element DATATYPE="12" Desc="Doc No." DispInGrid="Y" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_DOC_NO</Element>
+        <Element DATATYPE="3" Desc="Doc Amt" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">FA_DOC_AMT</Element>
+        <Element DATATYPE="1" Desc="Doc CCY" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">FA_DOC_CCY</Element>
+        <Element DATATYPE="12" Desc="Doc Ref" DispInGrid="N" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">FA_DOC_REF</Element>
+        <Element DATATYPE="91" Desc="Doc Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">FA_DOC_DT</Element>
+        <Element DATATYPE="91" Desc="Doc Due Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">FA_DOC_DUE_DT</Element>
+        <Element DATATYPE="2" Desc="IF Commission Rate" DispInGrid="N" EDIT="N"
+            EEType="Numeric_6_4" FldType="" Value="">FA_IF_COMM_RT</Element>
+        <Element DATATYPE="3" Desc="IF Commission Amount" DispInGrid="Y"
+            EDIT="N" EEType="AMT" FldType="" Value="">FA_IF_COMM_AMT</Element>
+        <Element DATATYPE="3" Desc="IF Handling Charge Collected" DispInGrid="Y"
+            EDIT="N" EEType="AMT" FldType="" Value="">FA_IF_HAN_CHG_PAMT</Element>
+        <Element DATATYPE="12" Desc="IF Charge Paid Flag" DispInGrid="N"
+            EDIT="N" EEType="Varchar_2" FldType="" Value="">FA_IF_CHG_PAID_FLG</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="IF ID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_7" FldType="" Value="">FA_IF_ID</Element>
+        <Element DATATYPE="91" Desc="Transfer Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">FA_TRF_DT</Element>
+    </Elements>
+</DO>

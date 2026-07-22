@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="MainMenu"
+			allowInstanceContent="true"
+			supportedModes="view help config"
+			supportedWindowStates="minimize maximize"
+			iScope="com.cs.widgets.MainMenu" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.MainMenuJs" src="MainMenu/mainmenu.js"/>
+	<iw:resource globalid="com.cs.resources.MainMenuCss" src="MainMenu/mainmenu.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Main Menu">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="view.labels">
+		<iw:item id="back" alias="back" lang=""
+				 readOnly="true" value="Back to product list">
+		</iw:item>
+		<iw:item id="search" alias="search" lang=""
+				 readOnly="true" value="Search for:">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-MainMenu">
+			<div class="search-bar">
+				<div class="label"></div>
+				<div class="bar">
+					<div class="search"><input class="search_val"/></div>
+				</div>
+			</div>
+			<div class="product-list"></div>
+			<div class="function-list" style="display:none"></div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-MainMenu">
+			description for main menu widget.
+		</div>
+	]]></iw:content>
+</iw:iwidget>

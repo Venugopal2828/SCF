@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="EPR Fees" Max="n" Min="0" Name="EPRFees" PendingStore="N" Screen="SCRN/o2m/EPPM_EPRFees.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>EPRFees</Component>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Charge account" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">ACC_CHG</Element>
+        <Element DATATYPE="12" Desc="Buyer Identification Number" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">BUYR_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">BUYR_NM</Element>
+        <Element DATATYPE="12" Desc="Debitor ID" DispInGrid="N" EDIT="N" EEType="Varchar_18" FldType="" Value="">DEBIT_ID</Element>
+        <Element DATATYPE="12" Desc="The type of party to whom the fee charged" DispInGrid="N" EDIT="N" EEType="FLAG_10" FldType="" Value="">DEBIT_TP</Element>
+        <Element DATATYPE="91" Desc="Due on date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">DUE_ON</Element>
+        <Element DATATYPE="12" Desc="Related EPP ID" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">EPP_ID</Element>
+        <Element DATATYPE="12" Desc="EPP name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">EPP_NM</Element>
+        <Element DATATYPE="1" Desc="Fee Type" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FEE_TP</Element>
+        <Element DATATYPE="1" Desc="Fee Type Unit" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FEE_UNIT</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="3" Desc="Fee rate" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FEE_TP_AMT</Element>
+        <Element DATATYPE="3" Desc="Min" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">MIN_AMT</Element>
+        <Element DATATYPE="3" Desc="Max" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">MAX_AMT</Element>
+        <Element DATATYPE="12" Desc="T - Transaction base; P - Percent base" DispInGrid="Y" EDIT="N" EEType="FLAG_1" FldType="" Value="">BASE_CD</Element>
+        <Element DATATYPE="3" Desc="Fees for this invoice" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FEE_AMT</Element>
+        <Element DATATYPE="91" Desc="Paid on date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">PAID_ON</Element>
+        <Element DATATYPE="12" Desc="Payment Reference" DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">PMT_REF</Element>
+        <Element DATATYPE="12" Desc="Early Payment Program Supplier Relationship Identification Number" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">SUPLR_ID</Element>
+        <Element DATATYPE="12" Desc="Supplier Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_60" FldType="" Value="">SUPLR_NM</Element>
+        <Element DATATYPE="12" Desc="Charge status" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">CHG_STAT</Element>
+        <Element DATATYPE="12" Desc="Charge Frequency" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">CHG_FREQ_CD</Element>
+        <Element DATATYPE="12" Desc="Fee_ID" DispInGrid="N" EDIT="N" EEType="Varchar_18" FldType="" Value="">FEE_ID</Element>
+    </Elements>
+</DO>

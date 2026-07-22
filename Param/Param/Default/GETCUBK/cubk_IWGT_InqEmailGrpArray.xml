@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Inquire Email Group Array" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>IWGT</module-name>
+        <cubk-mapping-name>InqEmailGrpArray</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_EMAIL</table-name>
+        <table-desc>STD_EMAIL</table-desc>
+        <table-type>U</table-type>
+        <select-type>U</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <EMAILTRX_TYPE DESC="Email Transaction Type" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sEmailTrxType</EMAILTRX_TYPE>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <EMAIL_LIST DESC="Email List" DT="2005" HIDDEN="" TYPE="F" WTYPE="CASE">EMAIL_TO</EMAIL_LIST>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>IPLC</module>
+    <name>IssueLCAmd_toMaster</name>
+    <desc>IssueLCAmd_toMaster</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.IPLC_MASTER</table-name>
+        <table-desc>IPLC_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <ADDIT_CONDITION fv_type="F" mf="F" oper="=">TEMP_ADDIT_CONDITION</ADDIT_CONDITION>
+        <ADD_AMT_COVRD fv_type="F" mf="F" oper="=">TEMP_ADDIT_COV_AMT</ADD_AMT_COVRD>
+        <ADV_THU_BK_ADD1 fv_type="F" mf="F" oper="=">TEMP_ADV_THU_BK_ADD1</ADV_THU_BK_ADD1>
+        <ADV_THU_BK_ADD2 fv_type="F" mf="F" oper="=">TEMP_ADV_THU_BK_ADD2</ADV_THU_BK_ADD2>
+        <ADV_THU_BK_ADD3 fv_type="F" mf="F" oper="=">TEMP_ADV_THU_BK_ADD3</ADV_THU_BK_ADD3>
+        <ADV_THU_BK_ID fv_type="F" mf="F" oper="=">TEMP_ADV_THU_BK_ID</ADV_THU_BK_ID>
+        <ADV_THU_BK_NM fv_type="F" mf="F" oper="=">TEMP_ADV_THU_BK_NM</ADV_THU_BK_NM>
+        <ADV_THU_BK_SW_ADD fv_type="F" mf="F" oper="=">TEMP_ADV_THU_BK_SW_ADD</ADV_THU_BK_SW_ADD>
+        <ADV_THU_BK_SW_TAG fv_type="F" mf="F" oper="=">TEMP_ADV_THU_BK_SW_TAG</ADV_THU_BK_SW_TAG>
+        <AMT_SPEC fv_type="F" mf="F" oper="=">TEMP_AMT_SPEC</AMT_SPEC>
+        <APLB_RULE fv_type="F" mf="F" oper="=">TEMP_APLB_RULE_TRANSFOR</APLB_RULE>
+        <APLB_RULE_40F fv_type="F" mf="F" oper="=">TEMP_APLB_RULE_40F</APLB_RULE_40F>
+        <APLB_RULE_NARR fv_type="F" mf="F" oper="=">TEMP_APLB_RULE_NARR_TRANSFOR</APLB_RULE_NARR>
+        <AVAL_BY fv_type="F" mf="F" oper="=">TEMP_AVAL_BY</AVAL_BY>
+        <AVAL_WT_BK_ADD1 fv_type="F" mf="F" oper="=">TEMP_AVAL_WT_BK_ADD1</AVAL_WT_BK_ADD1>
+        <AVAL_WT_BK_ADD2 fv_type="F" mf="F" oper="=">TEMP_AVAL_WT_BK_ADD2</AVAL_WT_BK_ADD2>
+        <AVAL_WT_BK_ADD3 fv_type="F" mf="F" oper="=">TEMP_AVAL_WT_BK_ADD3</AVAL_WT_BK_ADD3>
+        <AVAL_WT_BK_ID fv_type="F" mf="F" oper="=">TEMP_AVAL_WT_BK_ID</AVAL_WT_BK_ID>
+        <AVAL_WT_BK_NM fv_type="F" mf="F" oper="=">TEMP_AVAL_WT_BK_NM</AVAL_WT_BK_NM>
+        <AVAL_WT_BK_OPT fv_type="F" mf="F" oper="=">TEMP_AVAL_WT_BK_OPT</AVAL_WT_BK_OPT>
+        <AVAL_WT_BK_SW_ADD fv_type="F" mf="F" oper="=">TEMP_AVAL_WT_BK_SW_ADD</AVAL_WT_BK_SW_ADD>
+        <AVAL_WT_BK_SW_TAG fv_type="F" mf="F" oper="=">TEMP_AVAL_WT_BK_SW_TAG</AVAL_WT_BK_SW_TAG>
+        <BENE_AC_NO fv_type="F" mf="F" oper="=">TEMP_BENE_ACNO</BENE_AC_NO>
+        <BENE_AC_OFF_CODE fv_type="F" mf="F" oper="=">TEMP_BENE_AC_OFCD</BENE_AC_OFF_CODE>
+        <BENE_ADD1 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD1</BENE_ADD1>
+        <BENE_ADD2 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD2</BENE_ADD2>
+        <BENE_ADD3 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD3</BENE_ADD3>
+        <BENE_CORR_MED fv_type="F" mf="F" oper="=">TEMP_BENE_CORR_MED</BENE_CORR_MED>
+        <BENE_EMAIL fv_type="F" mf="F" oper="=">TEMP_BENE_EMAIL</BENE_EMAIL>
+        <BENE_FAX fv_type="F" mf="F" oper="=">TEMP_BENE_FAX</BENE_FAX>
+        <BENE_ID fv_type="F" mf="F" oper="=">TEMP_BENE_ID</BENE_ID>
+        <BENE_LANG fv_type="F" mf="F" oper="=">TEMP_BENE_LANG</BENE_LANG>
+        <BENE_MAIL_ADD fv_type="F" mf="F" oper="=">TEMP_BENE_MAIL_ADD</BENE_MAIL_ADD>
+        <BENE_NM fv_type="F" mf="F" oper="=">TEMP_BENE_NM</BENE_NM>
+        <BENE_NOTES fv_type="F" mf="F" oper="=">TEMP_BENE_NOTES</BENE_NOTES>
+        <BENE_REF fv_type="F" mf="F" oper="=">TEMP_BENE_REF</BENE_REF>
+        <BENE_TLX fv_type="F" mf="F" oper="=">TEMP_BENE_TLX</BENE_TLX>
+        <BK_TO_BK_INFO fv_type="F" mf="F" oper="=">TEMP_BK_TO_BK_INFO</BK_TO_BK_INFO>
+        <CHARGES fv_type="F" mf="F" oper="=">TEMP_CHARGES</CHARGES>
+        <CONF_BK_ADD1 fv_type="F" mf="F" oper="=">TEMP_CONF_BK_ADD1</CONF_BK_ADD1>
+        <CONF_BK_ADD2 fv_type="F" mf="F" oper="=">TEMP_CONF_BK_ADD2</CONF_BK_ADD2>
+        <CONF_BK_ADD3 fv_type="F" mf="F" oper="=">TEMP_CONF_BK_ADD3</CONF_BK_ADD3>
+        <CONF_BK_ID fv_type="F" mf="F" oper="=">TEMP_CONF_BK_ID</CONF_BK_ID>
+        <CONF_BK_NM fv_type="F" mf="F" oper="=">TEMP_CONF_BK_NM</CONF_BK_NM>
+        <CONF_BK_SW_ADD fv_type="F" mf="F" oper="=">TEMP_CONF_BK_SW_ADD</CONF_BK_SW_ADD>
+        <CONF_BK_SW_TAG fv_type="F" mf="F" oper="=">TEMP_CONF_BK_SW_TAG</CONF_BK_SW_TAG>
+        <CONF_INSTR fv_type="F" mf="F" oper="=">TEMP_CONF_INSTR</CONF_INSTR>
+        <DEF_PMT_DET fv_type="F" mf="F" oper="=">TEMP_DEF_PMT_DET</DEF_PMT_DET>
+        <DEST_PLACE fv_type="F" mf="F" oper="=">TEMP_DEST_PLACE</DEST_PLACE>
+        <DEST_PORT fv_type="F" mf="F" oper="=">TEMP_DEST_PORT</DEST_PORT>
+        <DOC_REQ fv_type="F" mf="F" oper="=">TEMP_DOC_REQ_TRANSFER</DOC_REQ>
+        <DRAFTS_AT fv_type="F" mf="F" oper="=">TEMP_DRAFTS_AT</DRAFTS_AT>
+        <DRWE_ADD1 fv_type="F" mf="F" oper="=">TEMP_DRWE_ADD1</DRWE_ADD1>
+        <DRWE_ADD2 fv_type="F" mf="F" oper="=">TEMP_DRWE_ADD2</DRWE_ADD2>
+        <DRWE_ADD3 fv_type="F" mf="F" oper="=">TEMP_DRWE_ADD3</DRWE_ADD3>
+        <DRWE_ID fv_type="F" mf="F" oper="=">TEMP_DRWE_ID</DRWE_ID>
+        <DRWE_NM fv_type="F" mf="F" oper="=">TEMP_DRWE_NM</DRWE_NM>
+        <DRWE_SW_ADD fv_type="F" mf="F" oper="=">TEMP_DRWE_SW_ADD</DRWE_SW_ADD>
+        <DRWE_SW_TAG fv_type="F" mf="F" oper="=">TEMP_DRWE_SW_TAG</DRWE_SW_TAG>
+        <EXPIRY_DT fv_type="F" mf="F" oper="=">TEMP_EXPIRY_DT</EXPIRY_DT>
+        <EXPIRY_PLC fv_type="F" mf="F" oper="=">TEMP_EXPIRY_PLC_NEW</EXPIRY_PLC>
+        <EXPIRY_PLC_NARR fv_type="F" mf="F" oper="=">TEMP_EXPIRY_PLC_NA</EXPIRY_PLC_NARR>
+        <FORM_OF_LC fv_type="F" mf="F" oper="=">TEMP_FORM_OF_LC</FORM_OF_LC>
+        <GOODS_DESC fv_type="F" mf="F" oper="=">TEMP_DESC_OF_GOODS</GOODS_DESC>
+        <INCOTERMS fv_type="F" mf="F" oper="=">TEMP_INCOTERMS</INCOTERMS>
+        <INSTR_TO_PAY_BK fv_type="F" mf="F" oper="=">TEMP_INSTR_TO_PAY_BK</INSTR_TO_PAY_BK>
+        <LC_AMT fv_type="F" mf="F" oper="=">TEMP_LC_AMT</LC_AMT>
+        <LC_BAL fv_type="F" mf="F" oper="=">TEMP_LC_BAL</LC_BAL>
+        <LOAD_PLACE fv_type="F" mf="F" oper="=">TEMP_LOAD_PLACE</LOAD_PLACE>
+        <LOAD_PORT fv_type="F" mf="F" oper="=">TEMP_LOAD_PORT</LOAD_PORT>
+        <LTST_SHIP_DT fv_type="F" mf="F" oper="=">TEMP_LTST_SHIP_DT</LTST_SHIP_DT>
+        <MIX_PMT_DETL fv_type="F" mf="F" oper="=">TEMP_MIX_PMT_DETL</MIX_PMT_DETL>
+        <NEG_TOL fv_type="F" mf="F" oper="=">TEMP_NEG_TOL</NEG_TOL>
+        <ORIGINAL_LC_BAL fv_type="F" mf="F" oper="=">TEMP_LC_BAL</ORIGINAL_LC_BAL>
+        <PARTIAL_SHIP fv_type="F" mf="F" oper="=">TEMP_PARTIAL_SHIP</PARTIAL_SHIP>
+        <PARTIAL_SHIP_NARR fv_type="F" mf="F" oper="=">TEMP_PART_SHIP_NA</PARTIAL_SHIP_NARR>
+        <PAY_COND_TO_BENE fv_type="F" mf="F" oper="=">TEMP_PAY_COND_TO_BENE</PAY_COND_TO_BENE>
+        <PAY_COND_TO_REV_BK fv_type="F" mf="F" oper="=">TEMP_PAY_COND_TO_REV_BK</PAY_COND_TO_REV_BK>
+        <POS_TOL fv_type="F" mf="F" oper="=">TEMP_POS_TOL</POS_TOL>
+        <PRES_DAYS fv_type="F" mf="F" oper="=">TEMP_PRES_DAYS</PRES_DAYS>
+        <PRES_PRD_TXT fv_type="F" mf="F" oper="=">TEMP_PRES_PRD_TXT</PRES_PRD_TXT>
+        <PRES_TYPE fv_type="F" mf="F" oper="=">TEMP_PRES_TYPE</PRES_TYPE>
+        <REIM_BK_AC_NO fv_type="F" mf="F" oper="=">TEMP_REIM_BK_AC_NO</REIM_BK_AC_NO>
+        <REIM_BK_ADD1 fv_type="F" mf="F" oper="=">TEMP_REIM_BK_ADD1</REIM_BK_ADD1>
+        <REIM_BK_ADD2 fv_type="F" mf="F" oper="=">TEMP_REIM_BK_ADD2</REIM_BK_ADD2>
+        <REIM_BK_ADD3 fv_type="F" mf="F" oper="=">TEMP_REIM_BK_ADD3</REIM_BK_ADD3>
+        <REIM_BK_CHG_DESC fv_type="F" mf="F" oper="=">TEMP_REIM_BK_CHG_DESC</REIM_BK_CHG_DESC>
+        <REIM_BK_CORR_MED fv_type="F" mf="F" oper="=">TEMP_REIM_BK_CORR_MED</REIM_BK_CORR_MED>
+        <REIM_BK_ID fv_type="F" mf="F" oper="=">TEMP_REIM_BK_ID</REIM_BK_ID>
+        <REIM_BK_MAIL_ADD fv_type="F" mf="F" oper="=">TEMP_REIM_BK_MAIL_ADD</REIM_BK_MAIL_ADD>
+        <REIM_BK_NM fv_type="F" mf="F" oper="=">TEMP_REIM_BK_NM</REIM_BK_NM>
+        <REIM_BK_OTH_CHG_NARR fv_type="F" mf="F" oper="=">TEMP_REIM_BK_OTH_CHG_NARR</REIM_BK_OTH_CHG_NARR>
+        <REIM_BK_REF fv_type="F" mf="F" oper="=">TEMP_REIM_BK_REF</REIM_BK_REF>
+        <REIM_BK_SW_ADD fv_type="F" mf="F" oper="=">TEMP_REIM_BK_SW_ADD</REIM_BK_SW_ADD>
+        <REIM_BK_SW_TAG fv_type="F" mf="F" oper="=">TEMP_REIM_BK_SW_TAG</REIM_BK_SW_TAG>
+        <REIM_NARR_TAG_77 fv_type="F" mf="F" oper="=">TEMP_REIM_NARR_TAG_77</REIM_NARR_TAG_77>
+        <SEND_TO_RCV_INFO fv_type="F" mf="F" oper="=">TEMP_SEND_TO_RCV_INFO_MT707</SEND_TO_RCV_INFO>
+        <SHIP_PRD fv_type="F" mf="F" oper="=">TEMP_SHIP_PRD</SHIP_PRD>
+        <TNSHIP fv_type="F" mf="F" oper="=">TEMP_TNSHIP</TNSHIP>
+        <TNSHIP_NARR fv_type="F" mf="F" oper="=">TEMP_TNSHIP_NARR</TNSHIP_NARR>
+    </mapping>
+</root>

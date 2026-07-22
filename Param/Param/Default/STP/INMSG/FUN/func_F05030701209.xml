@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive Bank Rejected Invoices -- insert");
+stp.setAutoProcess(true);
+stp.setUserId("CSBank");
+var sUnitCode = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUYER_ID");
+stp.writeLog("sUnitCode================"+sUnitCode);      
+stp.setCmpId(sUnitCode);
+var sCEMainRef = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_CE_MAIN_REF");
+stp.setMainRef(sCEMainRef);
+stp.writeLog("sCEMainRef: " + sCEMainRef);
+var sDocNo = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_NO");
+stp.updateFieldValue("FA_DOC_NO",sDocNo);
+var sDocRef = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_REF");
+stp.updateFieldValue("FA_DOC_REF",sDocRef);
+var sDocCcy = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_CCY");
+stp.updateFieldValue("FA_DOC_CCY",sDocCcy);
+var DocAmt = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_AMT");
+DocAmt = stp.toFloat(DocAmt);
+stp.updateFieldValue("FA_DOC_AMT",DocAmt);
+var DocDt = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_DT");
+stp.updateFieldValue("FA_DOC_DT",DocDt);
+var DocValDt = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_VAL_DT");
+stp.updateFieldValue("FA_DOC_VAL_DT",DocValDt);
+var DocDueDt = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_DUE_DT");
+stp.updateFieldValue("FA_DOC_DUE_DT",DocDueDt);
+var sBuyerNm = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUYER_NM");
+stp.updateFieldValue("FA_BUYER_NM",sBuyerNm);
+var sSelNm = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_SEL_NM");
+stp.updateFieldValue("FA_SEL_NM",sSelNm);
+var sBuyerId = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUYER_ID");
+stp.updateFieldValue("FA_BUYER_ID",sBuyerId);
+var sSelId = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_SEL_ID");
+stp.updateFieldValue("FA_SEL_ID",sSelId);
+var sSBRref = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_SBR_REF");
+stp.updateFieldValue("FA_SBR_REF",sSBRref);
+var sDocStatus = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_STATUS");
+stp.updateFieldValue("FA_DOC_STATUS",sDocStatus);
+stp.writeLog("End: Receive Bank Rejected Invoices -- insert");]]></js-content>
+</root>

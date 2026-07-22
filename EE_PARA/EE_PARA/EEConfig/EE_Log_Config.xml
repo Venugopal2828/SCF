@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!-- EE-10299 -->
+<Configuration status="OFF">  
+    <Properties>
+        <Property name="user_level">user_level_log</Property>
+        <Property name="sys_level">system_level_log</Property>
+        <Property name="logInfix"></Property><!--EE-8465   default is null   example: _10.39.105.163_9080 -->
+        <Property name="default_path" value="${sys:ee.input.dir}"/>
+	<!-- <Property name="default_path" value="${sys:user.dir}"/> --> <!-- default_path FOR Wildfly & Weblogic -->
+        <Property name="LOG_PATTERN" value="%n[start] [%p] [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%X{userID}] %msg [end]%n"/>
+        <!-- Log file size, beyond which it will be compressed -->
+        <Property name="LOG_MAX_SIZE" value="10 MB"/>   
+        <Property name="TIME_BASED_INTERVAL" value="1"/>
+        <Property name="CHARSET" value="UTF-8"/>
+    </Properties>
+    <Appenders>  
+        <Console name="Console" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>  
+        </Console> 
+        <Console name="SysConsole" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>  
+        </Console> 
+        <!-- LOG for DB Appenders START -->
+        <Console name="EELOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console> 
+        <Console name="SQLLOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console> 
+        <Console name="BATCHLOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console>
+        <Console name="TASKLOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console>
+        <Console name="LMTSLOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console> 
+        <Console name="ACCESSLOGINLOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console> 
+         <Console name="SECULOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console>
+         <Console name="STANLOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console>
+          <Console name="ACTLOGforDBAppender" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %%n"/>  
+        </Console>
+        
+        <!-- LOG for DB Appenders END -->
+        <Routing name="EELOGAppender">
+            <Routes pattern="$${ctx:userID}">
+                <Route>
+                <!-- filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${user_level}/%d{yyyy-MM-dd}_[${ctx:userID}]${logInfix}_EELog-%i.log"--><!-- for Logs file splited -->
+                    <RollingFile name="EELogRolling" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${user_level}/%d{yyyy-MM-dd}_[${ctx:userID}]${logInfix}_EELog.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        
+        <Routing name="ESPdbRoutingAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="ESPdbRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_ESPdbLog.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="HEARTBEATAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="HEARTBEATRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_ESP_HEARTBEAT.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="ESPAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="ESPRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_ESP.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+	<Routing name="STANLOGAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="STANLOGRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_STANLOG.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="SysAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="SysRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_SYSLog.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="CSSOABrokerAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="CSSOABrokerRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_CSSOA-BrokerLog.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="CSSOAListenerAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="CSSOAListenerRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_CSSOA-ListenerLog.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="CSSOATransportAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="CSSOATransportRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_CSSOA-TransportLog.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="SQLLOGAppender">
+            <Routes pattern="$${ctx:userID}">
+                <Route>
+                    <RollingFile name="SQLLogRolling" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${user_level}/%d{yyyy-MM-dd}_[${ctx:userID}]${logInfix}_SQL.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="scfSQLLogAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="scfSQLLogRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_scfSQLLog.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="scfMsgLogAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="scfMsgLogRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_scfMsg.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="scfREPORTAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="scfREPORTRollingFile" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_scfREPORT.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="SystemRoutingAppender">
+            <Routes pattern="$${ctx:LoggerName}">
+                <Route>
+                    <RollingFile name="SystemLogRolling" 
+                                filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_${ctx:LoggerName}.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+                        <Filters>
+                            <ContextMapFilter onMatch="ACCEPT" onMismatch="DENY" operator="or">
+                           		<KeyValuePair key="LoggerName" value="PERFORMANCELOG"/>
+                                <KeyValuePair key="LoggerName" value="A2D_NONE_PERFORMANCELOG"/>
+                                <KeyValuePair key="LoggerName" value="A2W_NONE_PERFORMANCELOG"/>
+                                <KeyValuePair key="LoggerName" value="B2W_NONE_PERFORMANCELOG"/>
+                                <KeyValuePair key="LoggerName" value="W2A_NONE_PERFORMANCELOG"/>
+                                <KeyValuePair key="LoggerName" value="EETIMELOG"/>
+                                <KeyValuePair key="LoggerName" value="A2D_NONE_EETIMELOG"/>
+                                <KeyValuePair key="LoggerName" value="A2W_NONE_EETIMELOG"/>
+                                <KeyValuePair key="LoggerName" value="B2W_NONE_EETIMELOG"/>
+                                <KeyValuePair key="LoggerName" value="W2A_NONE_EETIMELOG"/>
+                                <KeyValuePair key="LoggerName" value="ACCESSLOG"/>
+                                <KeyValuePair key="LoggerName" value="ACCESSLOGINLOG"/>
+                                <KeyValuePair key="LoggerName" value="APILOG"/>
+                                <KeyValuePair key="LoggerName" value="ARCHIVINGLOG"/>
+                                <KeyValuePair key="LoggerName" value="BA"/>
+                                <KeyValuePair key="LoggerName" value="BATCHCLUSTERLOG"/>
+                                <KeyValuePair key="LoggerName" value="BATCHLOG"/>
+                                <KeyValuePair key="LoggerName" value="TASKLOG"/>
+                                <KeyValuePair key="LoggerName" value="CE-EE-DMS-SRV"/>
+                                <KeyValuePair key="LoggerName" value="CE-EE-INQ-DATA"/>
+                                <KeyValuePair key="LoggerName" value="CE-EE-CALC-FEE"/>
+                                <KeyValuePair key="LoggerName" value="CE-EE-LOCK-INV"/>
+                                <KeyValuePair key="LoggerName" value="CE-EE-EXPORT"/>
+                                <KeyValuePair key="LoggerName" value="CE-EE-INV-SUM"/>
+                                <KeyValuePair key="LoggerName" value="COMPLIANCELOG"/>
+                                <KeyValuePair key="LoggerName" value="DMSINTFLOG"/>
+                                <KeyValuePair key="LoggerName" value="COMPONENTLOG"/>
+                                <KeyValuePair key="LoggerName" value="LIMITINTFLOG"/>
+                                <KeyValuePair key="LoggerName" value="myBatis"/>
+                                <KeyValuePair key="LoggerName" value="PAYMENTLOG"/>
+                                <KeyValuePair key="LoggerName" value="RDMLOG"/>
+                                <KeyValuePair key="LoggerName" value="SCHEDULELOG"/>
+                                <KeyValuePair key="LoggerName" value="STPLOG"/>
+                                <KeyValuePair key="LoggerName" value="BALOG"/>
+                                <KeyValuePair key="LoggerName" value="ACTLOG"/> 
+                                <KeyValuePair key="LoggerName" value="SECULOG"/> 
+                                <KeyValuePair key="LoggerName" value="LMTSLOG"/> 
+                                <KeyValuePair key="LoggerName" value="RECORDLOG"/> 
+                            </ContextMapFilter>
+                        </Filters>
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>  
+        <!-- WebServiceLog start-->
+        <Routing name="DAOLOGAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="DAOLOGRolling" 
+                                filePattern="${default_path}/WebServiceLog/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd}${logInfix}_DAOLOG_%i.log" 
+                                   immediateFlush="true" 
+                                   append="false">
+					<!--
+					<RollingFile name="SystemLogRolling" 
+                                filePattern="${default_path}/WebServiceLog/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd}_DAOLOG.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+					-->					
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <!--<TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/> -->
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="20"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>  
+        <Routing name="WebServiceEELOGAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="SystemLogRolling" 
+                                filePattern="${default_path}/WebServiceLog/$${date:yyyy-MM-dd}/%d{yyyy-MM-dd}${logInfix}_EELOG.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <!--interval  to specify how often to scroll-->
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <!-- DefaultRolloverStrategy if not set，By default, up to 7 files are saved in the same folder-->
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>  
+        <!-- WebServiceLog end-->
+        <!--@author alicia @date 2016-02-16 @Ref EE-4473 add_s-->
+        <!--<Routing name="CAIXAeLOANGLOnlineInterfaceAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="SystemLogRolling" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_CAIXAeLOANGLErrorOnlineInterface.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>
+        <Routing name="CAIXAeLOANGLErrorOnlineInterfaceAppender">
+            <Routes>
+                <Route>
+                    <RollingFile name="SystemLogRolling" 
+                                   filePattern="${default_path}/EELog/$${date:yyyy-MM-dd}/${sys_level}/%d{yyyy-MM-dd}${logInfix}_CAIXAeLOANGLErrorOnlineInterface.log" 
+                                   immediateFlush="true" 
+                                   append="true">
+                        <PatternLayout charset="${CHARSET}" pattern="${LOG_PATTERN}"/>
+                        <Policies>
+                            <TimeBasedTriggeringPolicy interval="${TIME_BASED_INTERVAL}"/>
+                            <SizeBasedTriggeringPolicy size="${LOG_MAX_SIZE}"/>
+                        </Policies>
+                        <DirectWriteRolloverStrategy maxFiles="10"/>
+                    </RollingFile>
+                </Route>
+            </Routes>
+        </Routing>-->
+        <!--@author alicia @date 2016-02-16 @Ref EE-4473 add_e-->  
+    </Appenders>  
+    <Loggers>
+    	<!--@author alicia @date 2016-02-16 @Ref EE-4473 add_s-->
+        <!--<Logger name="CAIXAeLOANGLOnlineINTERFACE" level="ALL" additivity="false">  
+            <AppenderRef ref="CAIXAeLOANGLOnlineInterfaceAppender" level="ALL"/>  
+        </Logger>
+        <Logger name="CAIXAeLOANGLErrorOnlineINTERFACE" level="ALL" additivity="false">  
+            <AppenderRef ref="CAIXAeLOANGLErrorOnlineInterfaceAppender" level="ALL"/>  
+        </Logger>-->
+    	<!--@author alicia @date 2016-02-16 @Ref EE-4473 add_e-->
+        <Logger name="SYS_LOG" level="info"  additivity="false">  
+            <AppenderRef ref="SysAppender" level="ALL"/>  
+        </Logger>  
+        <Logger name="EELOG" level="ALL" additivity="false">  
+            <AppenderRef ref="EELOGAppender"/>  
+            <!-- <AppenderRef ref="EELOGforDBAppender" level="OFF"/> -->   <!-- LOG FOR DB -->
+        </Logger>  
+        <Logger name="SQLLOG" level="ALL" additivity="false">  
+            <AppenderRef ref="SQLLOGAppender" level="ALL"/>  
+            <!-- <AppenderRef ref="SQLLOGforDBAppender" level="OFF"/> -->   <!-- LOG FOR DB -->
+        </Logger>
+	<Root level="INFO" includeLocation="false">
+            <AppenderRef ref="SysConsole"/>
+        </Root>
+
+<!-- change test start-->
+	<!-- WebServiceLog start-->
+ 		<Logger name="WEBSERVICELOG" level="DEBUG"  additivity="false">  
+            <AppenderRef ref="WebServiceEELOGAppender" level="DEBUG"/>  
+        </Logger>  
+        <Logger name="DAOLOG" level="DEBUG"  additivity="false">  
+            <AppenderRef ref="DAOLOGAppender" level="DEBUG"/> 
+            <!--  <AppenderRef ref="Console" level="DEBUG"/>   --> 
+        </Logger>  	
+    <!-- WebServiceLog end-->
+	<!-- scflog -s -->
+        <Logger name="scfSQLLog" level="DEBUG" additivity="false">  
+            <AppenderRef ref="scfSQLLogAppender" level="DEBUG"/>  
+        </Logger> 
+        <Logger name="scfMsgLog" level="DEBUG" additivity="false">  
+            <AppenderRef ref="scfMsgLogAppender" level="DEBUG"/>  
+        </Logger> 
+          <Logger name="REPORT" level="DEBUG" additivity="false">
+            <AppenderRef ref="scfREPORTAppender" level="DEBUG"/>  
+        </Logger>
+    <!--scflog -e -->        
+        <Logger name="myBatis" level="OFF" additivity="false">  
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger> 
+        <Logger name="cs.soa.esb.logger" level="DEBUG" additivity="false">  
+            <AppenderRef ref="CSSOABrokerAppender" level="DEBUG"/>  
+        </Logger> 
+        <Logger name="cs.soa.mb.logger" level="DEBUG" additivity="false">  
+            <AppenderRef ref="CSSOABrokerAppender" level="DEBUG"/>  
+        </Logger> 
+        <Logger name="ESPLOG" level="DEBUG" additivity="false">  
+            <AppenderRef ref="ESPAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="HEARTBEAT" level="OFF" additivity="false">  
+            <AppenderRef ref="HEARTBEATAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="BALOG" level="OFF" additivity="false">  
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="cs.soa.listener.logger" level="DEBUG" additivity="false">  
+            <AppenderRef ref="CSSOAListenerAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="cs.soa.sender.logger" level="DEBUG" additivity="false">  
+            <AppenderRef ref="CSSOATransportAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="cs.soa.receiver.logger" level="DEBUG" additivity="false">  
+            <AppenderRef ref="CSSOATransportAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="cs.soa.receiver.logger" level="DEBUG" additivity="false">  
+            <AppenderRef ref="CSSOATransportAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="CE-EE-INQ-DATA" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="CE-EE-CALC-FEE" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="CE-EE-LOCK-INV" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="CE-EE-DMS-SRV" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="CE-EE-EXPORT" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="CE-EE-INV-SUM" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="TASKLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+            <AppenderRef ref="TASKLOGforDBAppender" level="OFF"/>	<!-- LOG FOR DB -->
+        </Logger>
+        <Logger name="DMSINTFLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="LIMITINTFLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>      
+        <Logger name="BATCHLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>
+            <AppenderRef ref="BATCHLOGforDBAppender" level="OFF"/>	<!-- LOG FOR DB --> 
+        </Logger>
+        <Logger name="PERFORMANCELOG" level="OFF" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="EETIMELOG" level="OFF" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="A2D_NONE_PERFORMANCELOG" level="OFF" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="A2W_NONE_PERFORMANCELOG" level="OFF" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="B2W_NONE_PERFORMANCELOG" level="OFF" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="W2A_NONE_PERFORMANCELOG" level="OFF" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="COMPONENTLOG" level="OFF" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>
+        </Logger>
+        <Logger name="STPLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="SCHEDULELOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="ACCESSLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="ACCESSLOGINLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+            <AppenderRef ref="ACCESSLOGINLOGforDBAppender" level="OFF"/>	<!-- LOG FOR DB -->
+        </Logger>        
+        <Logger name="PAYMENTLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="RDMLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="COMPLIANCELOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="BATCHCLUSTERLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="ARCHIVINGLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="APILOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="ACTLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+            <AppenderRef ref="ACTLOGforDBAppender" level="OFF"/>	<!-- LOG FOR DB -->
+        </Logger>
+        <Logger name="SECULOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+            <AppenderRef ref="SECULOGforDBAppender" level="OFF"/>	<!-- LOG FOR DB -->
+        </Logger>
+        <Logger name="LMTSLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+            <AppenderRef ref="LMTSLOGforDBAppender" level="OFF"/>	<!-- LOG FOR DB -->
+        </Logger>
+        <Logger name="STANLOG" level="DEBUG" additivity="false">
+            <AppenderRef ref="STANLOGAppender" level="DEBUG"/> 
+            <AppenderRef ref="STANLOGforDBAppender" level="OFF"/>   <!-- LOG FOR DB -->
+        </Logger>
+        <Logger name="RECORDLOG" level="OFF" additivity="false">
+            <AppenderRef ref="SystemRoutingAppender" level="DEBUG"/>  
+        </Logger>
+        <Logger name="com.cs.esp.db" level="DEBUG" additivity="false">
+            <AppenderRef ref="ESPdbRoutingAppender" level="DEBUG"/>  
+        </Logger>         
+    </Loggers>  
+</Configuration>

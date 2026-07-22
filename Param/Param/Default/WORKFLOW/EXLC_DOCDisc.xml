@@ -1,0 +1,89 @@
+<WORKFLOW>
+	<STEPS>
+		<STEP>
+			<LABEL>Document Received</LABEL>
+			<INITIALINFO>Document received</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700905" DESC="Received Document Presentation"/>
+				<FUNC ID="F05030700919" DESC="Document Presentation"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS>Document discrepancy_pending</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">Z</STATUS>
+					<STATUS DESC="">P</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Document discrepancy_pending</ENDSTATUS>
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<EVENTINFO><![CDATA[by bank on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Authorize</LABEL>
+			<INITIALINFO>Pending authorization</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700919" DESC="Document Presentation"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS>Document discrepancy partially authorized</STATUS>
+					<STATUS>Document discrepancy_fully authorized</STATUS>
+					<STATUS>Document discrepancy rejected by authorizer</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">T</STATUS>
+					<STATUS DESC="">A</STATUS>
+					<STATUS DESC="">R</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Document discrepancy_fully authorized</ENDSTATUS>
+			<ABNORMALSTATUS>Document discrepancy rejected by authorizer</ABNORMALSTATUS>
+			<ABINFO><![CDATA[by ${user} on ${date} at ${time}]]></ABINFO>
+			<EVENTINFO><![CDATA[next authorizers]]></EVENTINFO>
+			<ENDINFO><![CDATA[authorized by ${count} users]]></ENDINFO>
+		</STEP>
+		<STEP>
+			<LABEL>Disposal Instructions</LABEL>
+			<INITIALINFO>Disposal Instructions</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700907" DESC="Disposal Instructions"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<STATUS DESC="">Z</STATUS>
+					<STATUS DESC="">P</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Pending Approval</ENDSTATUS>
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<EVENTINFO><![CDATA[by ${user} on ${date} at ${time}]]></EVENTINFO>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Authorize</LABEL>
+			<INITIALINFO>Pending authorization</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700907" DESC="Disposal Instructions"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<STATUS DESC="">T</STATUS>
+					<STATUS DESC="">S</STATUS>
+					<STATUS DESC="">R</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<ENDSTATUS>Fully authorized</ENDSTATUS>
+			<ABNORMALSTATUS>Rejected by authorizer</ABNORMALSTATUS>
+			<ABINFO><![CDATA[by ${user} on ${date} at ${time}]]></ABINFO>
+			<EVENTINFO><![CDATA[next authorizers]]></EVENTINFO>
+			<ENDINFO><![CDATA[authorized by ${count} users]]></ENDINFO>
+		</STEP>
+	</STEPS>
+</WORKFLOW>

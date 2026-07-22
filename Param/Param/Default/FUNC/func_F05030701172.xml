@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">REMM</MODULE>
+        <MODULE_DESC>International Money Transfers</MODULE_DESC>
+        <EVENT>Outward Remittance</EVENT>
+        <CATALOGID/>
+        <ID>F05030701172</ID>
+        <NAME>REMM Report</NAME>
+        <DESC>Report</DESC>
+        <FUNSHORTNAME>REMMReport</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">Reports.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701165</ID>
+        <NAME>REMM Report_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701165</ID>
+        <NAME>REMM Report_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000468</ID>
+        <NAME>REMM Report_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

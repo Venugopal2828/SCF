@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[var nsTask = NS.createNotification("Authorize Finanicng Request Task");
+var authUsers = NS.getNextAuthorizerInfo();
+NS.setNotifyTo(nsTask,authUsers);
+var sSubject = "Waiting for Approve "+NS.getFieldValue("C_MAIN_REF");
+NS.setNotifySubject(nsTask,sSubject);
+var comp = NS.getCompanyInfo("C_UNIT_CODE");
+NS.setNotifyPara(nsTask,"C_MAIN_REF",NS.getFieldValue("C_MAIN_REF"));
+NS.setNotifyPara(nsTask,"C_UNIT_CODE",comp[0]);
+NS.setNotifyPara(nsTask,"I_EVENT_TIMES",NS.getEventTimes());
+NS.setNotifyPara(nsTask,"CATA_FUNC_ID",NS.getFuncId());]]></js-content>
+</root>

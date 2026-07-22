@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Beneficiary Decision function");
+stp.setAutoProcess(true);
+
+stp.setCmpId(stp.getMsgTagVal("CustId"));
+stp.setUserId("CSBANK");
+
+var sGteeRef = stp.getMsgTagVal("GteeRef");
+var arrKeys = [["GTEE_NO",sGteeRef]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetParentRef",arrKeys);
+var sParentRef = arrGetDataResult[0];
+stp.updateFieldValue("PARENT_MAIN_REF",sParentRef);
+
+stp.execInqAttribute();
+stp.writeLog("End: Beneficiary Decision function");
+
+stp.writeLog("Start: Get Email Senders List");
+var sEmailTrxType = "N";
+var sFuncId = "F05030700893";
+var arrKeys = [["EMAILTRX_TYPE",sEmailTrxType]];
+var arrGetDataResult = stp.SYS_getCUBKVal("InqEmailGrpArray",arrKeys);
+if (arrGetDataResult){
+    var sEmailArray = arrGetDataResult[0];
+    var sEmailGrpNm = "";
+    var eList = sEmailArray.split("/");
+    for (k=0;k<eList.length;k++) {
+	var fList = eList[k].split("-");
+         if (fList[0]==sFuncId) {
+	    sEmailGrpNm = fList[1];
+         }
+    }  	      
+    if (sEmailGrpNm.length() > 0){
+        var arrKeysforEmailList = [["EMAILGRP_NM",sEmailGrpNm]];
+        var arrGetDataResultforEmailList = stp.SYS_getCUBKVal("InqEmailList",arrKeysforEmailList);
+        var sEmailListArray = arrGetDataResultforEmailList[0]; 	    
+        stp.updateFieldValue("EMAIL_TO",sEmailListArray);
+        stp.updateFieldValue("EMAIL_SUBJECT","CSBank Email Notification"); 
+    }
+}
+stp.writeLog("End: Get Email Senders List");]]></js-content>
+</root>

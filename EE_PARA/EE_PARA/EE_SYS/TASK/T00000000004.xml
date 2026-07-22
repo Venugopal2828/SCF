@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <taskId>T00000000004</taskId>
+    <taskName>EXCO_Auto_Settle_Charge</taskName>
+    <component>SQLExecuTaskMulti</component>
+    <desc>EXCO_Auto_Settle_Charge</desc>
+    <cuttime_check>F</cuttime_check>
+    <single-thread>false</single-thread>
+    <function/>
+    <MULTI>YES</MULTI>
+    <sql-condition><![CDATA[C_TRX_STATUS = 'M' AND CHARGE_DT is not null AND C_MAIN_REF IN (SELECT C_MAIN_REF FROM EXIMSYS.TRX_CHG_DEFERRED)]]></sql-condition>
+    <TABLELIST>
+        <TABLENAME ALIAS="t1" MASTER="YES">%EXIMTRX%.EXCO_MASTER</TABLENAME>
+    </TABLELIST>
+        <FIELDLIST>
+		<FIELD ALIAS="" COL="C_MAIN_REF" DATATYPE="12" DESC="MAIN REF. NO." EEType="SYS_VARCHAR_40">t1.C_MAIN_REF</FIELD>
+		<FIELD ALIAS="" COL="C_UNIT_CODE" DATATYPE="12" DESC="UNIT CODE" EEType="SYS_VARCHAR_12">t1.C_UNIT_CODE</FIELD>
+    </FIELDLIST>
+    <CLAUSE>
+        <SQL TYPE="SQL"> SELECT </SQL>
+    	<SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="SELFLD" TYPE="FLD">t1.C_MAIN_REF</SQL>
+		<SQL TYPE="SQL">,</SQL>
+		<SQL DESC="UNIT CODE" DT="12" EEType="SYS_VARCHAR_12" POS="SELFLD" TYPE="FLD">t1.C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL"> FROM </SQL>
+        <SQL SCHEMATYPE="OWN" TYPE="SQL">%EXIMTRX%.EXCO_MASTER t1</SQL>
+        <SQL TYPE="SQL"> WHERE </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="SYS_CHAR_1" POS="WHEFLD" TYPE="FLD">t1.C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'M' AND </SQL>
+        <SQL DESC="Charge Date" DT="91" EEType="DATE" POS="WHEFLD" TYPE="FLD">t1.CHARGE_DT</SQL>
+        <SQL TYPE="SQL"> is not null AND </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="SYS_VARCHAR_40" POS="WHEFLD" TYPE="FLD">t1.C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"> IN (SELECT C_MAIN_REF FROM EXIMSYS.TRX_CHG_DEFERRED)    </SQL>
+    </CLAUSE>
+    <CLAUSEFIELD/>
+    <before-days-fld/>
+    <view-table/>
+    <tables/>
+    <sql-task/>
+    <report-list/>
+</root>

@@ -1,0 +1,16 @@
+{
+	"id": "ee_ops_summary",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "ee_ops_summary",
+			"display": "custom_sql_table",
+			"title": "EE Operational Summary Widget",
+			"desc": "Offer a snapshot of SCF platform activity including active financing, invoice values, and pending onboarding requests."
+		},
+		"data": {
+			"sql": "SELECT 'Active Financing' as \"Metric\", 4200000 as \"Value\" FROM DUAL UNION ALL SELECT 'Invoices Processed', 1250000 FROM DUAL UNION ALL SELECT 'Pending Approvals', 14 FROM DUAL"
+		}
+	}
+}

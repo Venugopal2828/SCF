@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRDP_EM_WAREHOUSE</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>ABLF</module-name>
+        <cubk-mapping-name>WAREHS_ID_REG</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <PARTY_ID ALIAS="T0" DESC="Party ID" DT="12" TYPE="F">WAREHOUSE</PARTY_ID>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <PARTY_ID ALIAS="T0" DBFUNC="" DESC="Party ID" DT="12" HIDDEN="F" TYPE="F">WAREHOUSE</PARTY_ID>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">WAREHOUSE_NM</PARTY_NM>
+        <ADDRESS ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">WAREHOUSE_ADDRESS</ADDRESS>
+        <CONTACT_NM ALIAS="T0" DBFUNC="" DESC="Contact Person Name" DT="12" HIDDEN="F" TYPE="F">WAREHOUSE_MAN</CONTACT_NM>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">INSPEC_ID ='</SQL>
+            <SQL TYPE="FLD">REG_INSPEC_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.PARTY_ID</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">WAREHOUSE</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

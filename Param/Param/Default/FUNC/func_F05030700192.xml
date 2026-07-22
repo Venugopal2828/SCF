@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="SECU">SECU</MODULE>
+        <MODULE_DESC>Security Module</MODULE_DESC>
+        <EVENT>Auth Rule</EVENT>
+        <CATALOGID>C05122200004</CATALOGID>
+        <ID>F05030700192</ID>
+        <NAME>Delete Authorization Rules</NAME>
+        <DESC>Delete Authorization Rules</DESC>
+        <FUNSHORTNAME>DelAuthRules</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>GE</FUNCTYPE>
+        <MAINCOMP name="CE Secu Manager">CESecuManager</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE>SecuAuthorizeUnit</COMPTYPE>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Secu_Template.jsp">SecuAuthMgr_Rules_Matrix.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700193</ID>
+        <NAME>Delete Authorization Rules_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700193</ID>
+        <NAME>Delete Authorization Rules_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000201</ID>
+        <NAME>Delete Authorization Rules_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

@@ -1,0 +1,1 @@
+function check_mfvr(a){if(a)Ex.mfvr.ver=a;ExSvr.debug(" this "+Ex.mfvr.ver+", param "+a);Ex.check("camt.026.001.01",["D00000","D00001","InstructedAmountAndRequestedExecutionDateRule","InterbankSettlementAmountAndDateRule"]);Ex.checkRule("camt.026.001.01","CurrencyAmount","//Undrlyg/InstdAmt")};

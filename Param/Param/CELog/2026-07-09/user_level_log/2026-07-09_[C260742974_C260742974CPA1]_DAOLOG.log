@@ -1,0 +1,402 @@
+
+[start] [INFO] [2026-07-09 08:59:46.440] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:46 414    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  DELETE FROM CEUSER.SEC_LOGIN_SESSION WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' AND C_BK_GROUP_ID = 'CSBANK' AND C_SESSION_ID = 'D29QrNIODXTxNUtYcJja5Jp' 
+[02]  UPDATE CEUSER.SEC_LOGIN_SESSION SET C_IS_INFORM = 'T' WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' AND C_BK_GROUP_ID = 'CSBANK' 
+[03]  INSERT INTO CEUSER.SEC_LOGIN_SESSION (C_BK_GROUP_ID,C_UNIT_CODE,C_USER_ID,C_SESSION_ID,C_IS_INFORM) VALUES ('CSBANK','C260742974','C260742974CPA1','D29QrNIODXTxNUtYcJja5Jp','F')
+---------------------- End 2026-07-09 08:59:46 439 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:46.461] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:46 451    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  INSERT INTO CETRX.TRX_ACT_LOG (C_LOG_ID,C_BK_GROUP_ID,C_CNTY_CODE,C_GRP_CODE,C_UNIT_CODE,C_USER_ID,C_IP_ADDRESS,C_FUNC_ID,D_CREA_DATE,T_CREA_TIME,D_SYS_OP_DATE,T_SYS_OP_TIME,D_SYS_TRT_DATE,T_SYS_TRT_TIME,C_BUSI_KEY) VALUES ('8A8284979F41EEDD019F453F079101CF','CSBANK','US','C260742974','C260742974','C260742974CPA1','10.3.1.130','Login',TO_DATE('2026-07-09','YYYY-MM-DD'),TO_DATE('04:59:46','HH24:MI:SS'),TO_DATE('2026-07-09','YYYY-MM-DD'),TO_DATE('04:59:46','HH24:MI:SS'),TO_DATE('2026-07-09','YYYY-MM-DD'),TO_DATE('04:59:46','HH24:MI:SS'),'C260742974;C260742974CPA1')
+---------------------- End 2026-07-09 08:59:46 460 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:47.594] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:47 591    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:47 593 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:47.597] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:47 595    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_IS_INFORM FROM CEUSER.SEC_LOGIN_SESSION WHERE C_SESSION_ID = 'D29QrNIODXTxNUtYcJja5Jp' 
+---------------------- End 2026-07-09 08:59:47 596 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.172] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 168    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 170 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.289] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 287    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 288 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.320] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 297    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 318 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.340] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 332    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 338 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.366] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 301    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT COUNT(*) AS RECCOUNT FROM CETRX.STD_NOTIFICATION  WHERE C_NOTI_ID IN ( SELECT C_NOTI_ID FROM CETRX.STD_NOTIFICATION_STATUS  WHERE  C_READ_STATUS = 'F'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_UNIT_CODE = 'C260742974'  )
+---------------------- End 2026-07-09 08:59:50 365 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.384] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 382    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 383 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.399] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 391    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 397 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.411] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 367    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_FUNC_ID,T_OP_TIME FROM CETRX.TRX_FAVOR_FUNC  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  ORDER BY  T_OP_TIME DESC 
+---------------------- End 2026-07-09 08:59:50 409 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.424] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 406    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C260742974' AND C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 422 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.437] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 425    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 436 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.440] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 436    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 437 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.469] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 467    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 468 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.478] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 476    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT DISTINCT C_WIDGET_NAME FROM CEUSER.SEC_WIDGETS_V2_LIST  WHERE  C_IS_ACTIVE = 'Y'  AND  C_ROLE_NAME IN ('CHECKER')  ORDER BY  C_WIDGET_NAME 
+---------------------- End 2026-07-09 08:59:50 477 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.502] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 480    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT TAB.C_TAB_ID,TAB.C_TAB_NAME,TAB.I_TAB_SEQUENCE FROM CEUSER.SEC_WIDGETS_V2_TABS TAB LEFT JOIN CEUSER.SEC_WIDGETS_V2_LAYOUT LYT ON (TAB.C_TAB_ID = LYT.C_TAB_ID AND  TAB.C_UNIT_CODE = LYT.C_UNIT_CODE AND TAB.C_USER_ID = LYT.C_USER_ID )    WHERE  TAB.C_UNIT_CODE = 'C260742974'  AND  TAB.C_USER_ID = 'C260742974CPA1'  AND  LYT.C_PAGE_NAME = 'default'  ORDER BY  TAB.I_TAB_SEQUENCE ASC 
+---------------------- End 2026-07-09 08:59:50 500 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.509] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 506    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 508 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.519] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 516    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT DISTINCT C_WIDGET_NAME FROM CEUSER.SEC_WIDGETS_V2_LIST  WHERE  C_IS_ACTIVE = 'Y'  AND  C_ROLE_NAME IN ('CHECKER')  ORDER BY  C_WIDGET_NAME 
+---------------------- End 2026-07-09 08:59:50 517 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.547] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 532    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_LAYOUT_INFO FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_PAGE_NAME = 'default' 
+---------------------- End 2026-07-09 08:59:50 546 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.560] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 550    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_TAB_ID FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_PAGE_NAME = 'default' 
+---------------------- End 2026-07-09 08:59:50 559 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.681] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 592    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  DELETE FROM CEUSER.SEC_WIDGETS_V2_TABS  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[02]  INSERT INTO CEUSER.SEC_WIDGETS_V2_TABS (C_TAB_ID,C_TAB_NAME,I_TAB_SEQUENCE,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','Home',0,'C260742974','C260742974CPA1')
+[03]  DELETE FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[04]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17A301D7',{"comboId":"C2A_PendingApproval","title":"Pending Approval"},'C260742974','C260742974CPA1')
+[05]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[06]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{},"name":"CallToAction","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{},"name":"CalendarEvents","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{},"name":"ShortcutMenu","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":tr ...truncated...,'default')
+[07]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17A901D8',{"title":"Recent requests","version":2,"subtitle":"Below is an overview of your recent requests"},'C260742974','C260742974CPA1')
+[08]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[09]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"subtitle":"Below is an overview of your recent requests","title":"Recent requests","version":2},"name":"CallToAction","id":"8A8284979F41EEDD019F453F17A901D8","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{},"name":"CalendarEvents","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","heig ...truncated...,'default')
+[10]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17AE01D9',{"title":"Upcoming events"},'C260742974','C260742974CPA1')
+[11]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[12]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"subtitle":"Below is an overview of your recent requests","title":"Recent requests","version":2},"name":"CallToAction","id":"8A8284979F41EEDD019F453F17A901D8","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"title":"Upcoming events"},"name":"CalendarEvents","id":"8A8284979F41EEDD019F453F17AE01D9","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true ...truncated...,'default')
+[13]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17B301DA',{"version":1,"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"periodDays":30,"funcIds":"","funcItemTypeList":"New","functionCount":5,"funcTypes":"PM"},"component":"c-recent-func","label":"Recent Functions"}]},'C260742974','C260742974CPA1')
+[14]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[15]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"subtitle":"Below is an overview of your recent requests","title":"Recent requests","version":2},"name":"CallToAction","id":"8A8284979F41EEDD019F453F17A901D8","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"title":"Upcoming events"},"name":"CalendarEvents","id":"8A8284979F41EEDD019F453F17AE01D9","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true ...truncated...,'default')
+[16]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17B901DB',{"name":"Saved Reports","title":"Saved Reports"},'C260742974','C260742974CPA1')
+[17]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[18]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","title":"Pending Approval"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"subtitle":"Below is an overview of your recent requests","title":"Recent requests","version":2},"name":"CallToAction","id":"8A8284979F41EEDD019F453F17A901D8","position":{"w":18,"x":0,"h":69,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"title":"Upcoming events"},"name":"CalendarEvents","id":"8A8284979F41EEDD019F453F17AE01D9","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true ...truncated...,'default')
+---------------------- End 2026-07-09 08:59:50 679 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.696] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 683    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT TAB.C_TAB_ID,TAB.C_TAB_NAME,TAB.I_TAB_SEQUENCE,LYT.C_LAYOUT_INFO FROM CEUSER.SEC_WIDGETS_V2_TABS TAB LEFT JOIN CEUSER.SEC_WIDGETS_V2_LAYOUT LYT ON (TAB.C_TAB_ID = LYT.C_TAB_ID AND  TAB.C_UNIT_CODE = LYT.C_UNIT_CODE AND TAB.C_USER_ID = LYT.C_USER_ID )    WHERE  TAB.C_UNIT_CODE = 'C260742974'  AND  TAB.C_USER_ID = 'C260742974CPA1'  AND  LYT.C_PAGE_NAME = 'default'  ORDER BY  TAB.I_TAB_SEQUENCE ASC 
+---------------------- End 2026-07-09 08:59:50 695 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.707] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 700    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17A301D7'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 707 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.711] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 709    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17A301D7'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 710 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.715] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 713    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17A901D8'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 714 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.718] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 717    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17A901D8'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 717 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.723] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 721    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17AE01D9'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 722 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.726] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 724    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17AE01D9'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 725 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.730] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 729    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17B301DA'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 729 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.733] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 732    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17B301DA'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 732 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.738] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 737    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17B901DB'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 737 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.742] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 740    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INST_CONFIG FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_INST_ID = '8A8284979F41EEDD019F453F17B901DB'  AND  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:50 741 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.890] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 887    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 888 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.892] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 890    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 890 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.906] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 904    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 905 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.925] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 888    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 889 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.983] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 901    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  [Id=C2A_InProgress_Checker]  SELECT COUNT(*) FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C260742974'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T1.C_TRX_STATUS IN ('P', 'T', 'A', 'S', 'R') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') AND T1.C2A_STATUS NOT IN ('Discrepancies rejected_fully authorized') OR T1.C_TRX_STATUS = 'M' AND (T1.C_MODULE = 'IMLC' AND T1.C2A_STATUS NOT IN ('Issued', 'Amended', 'Beneficiary rejected', 'Settled') OR T1.C_MODULE = 'EXCO' AND T1.CURRNT_STATUS NOT IN ('Payment Advice') OR T1.C_MODULE = 'EXLC' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received', 'Amendment Received', 'Docment Received') OR T1.C_MODULE = 'FAEF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'FADA' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received') OR T1.C_MODULE = 'ABLF' AND T1.CURRNT_STATUS NOT IN ('Settled', 'Advise Received'))) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C260742974CPA1' AND C_GRP_CODE = 'C260742974') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF')
+---------------------- End 2026-07-09 08:59:50 982 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:50.993] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 991    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:50 992 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.004] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 001    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_IS_ACTIVE FROM CEUSER.SEC_WIDGETS_V2_LIST  WHERE  C_WIDGET_NAME = 'ShortcutMenu'  AND  C_ROLE_NAME IN ('CHECKER') 
+---------------------- End 2026-07-09 08:59:51 003 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.071] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 005    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_FUNC_ID,C_MODULE FROM CETRX.TRX_ACT_LOG WHERE C_FUNC_ID IS NOT NULL AND C_UNIT_CODE = 'C260742974' AND C_USER_ID = 'C260742974CPA1' AND D_SYS_OP_DATE BETWEEN TO_DATE('2026-06-09','yyyy-MM-dd') AND TO_DATE('2026-07-09','yyyy-MM-dd') ORDER BY D_SYS_OP_DATE DESC,T_SYS_OP_TIME DESC
+---------------------- End 2026-07-09 08:59:51 070 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.077] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:50 987    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  [Id=C2A_Closed]  SELECT COUNT(*) FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND (( T1.C_UNIT_CODE = 'C260742974'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND (T1.C2A_STATUS IN ('Issued', 'Amended', 'Beneficiary rejected', 'Discrepancies rejected_fully authorized', 'Settled') AND T1.C_MODULE = 'IMLC' OR T1.CURRNT_STATUS IN ('Issued', 'Amended', 'Detrimental Amendment', 'Beneficiary Consent', 'Beneficiary Rejected', 'Document Presentation', 'Document Presentation', 'Settlement', 'Settled') AND T1.C_MODULE = 'EXCO' OR T1.C2A_STATUS IN ('Settled', 'Amendment_fully authorized', '') AND T1.C_MODULE = 'EXLC' OR T1.C_FUNC_ID IN ('F05030700899', 'F05030700901', 'F05030700908') AND T1.C2A_STATUS = 'Fully authorized' AND T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF') AND T1.C_TRX_STATUS IN ('M', 'A', 'S') AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_USER_DISMISS WHERE C_USER_ID = 'C260742974CPA1' AND C_GRP_CODE = 'C260742974') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'FAEF')
+---------------------- End 2026-07-09 08:59:51 075 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.088] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 086    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:51 087 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.101] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 098    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_FUNC_ID,T_OP_TIME FROM CETRX.TRX_FAVOR_FUNC  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  ORDER BY  T_OP_TIME DESC 
+---------------------- End 2026-07-09 08:59:51 099 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.169] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 167    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:51 168 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.181] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 179    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:51 180 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.207] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 196    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_PAGE_NAME FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+---------------------- End 2026-07-09 08:59:51 206 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.244] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 179    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT A.C_REPORT_ID,A.C_GRP_CODE,A.C_USER_ID,A.T_PIN_DATE,B.C_SOURCE_REPORT,B.C_REPORT_NAME,B.T_UPDATE_DATE,C.C_USER_DESC FROM CETRX.TRX_USER_REPORT_PIN A LEFT JOIN CETRX.TRX_USER_REPORT B ON A.C_REPORT_ID = B.C_REPORT_ID  LEFT JOIN CEUSER.SEC_USER_INFO C ON A.C_GRP_CODE = C.C_UNIT_CODE AND A.C_USER_ID = C.C_USER_ID  WHERE  A.C_GRP_CODE = 'C260742974'  AND  A.C_USER_ID = 'C260742974CPA1'  ORDER BY B.T_UPDATE_DATE DESC
+---------------------- End 2026-07-09 08:59:51 243 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.261] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 259    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:51 260 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.383] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 016    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT FA_DOC_DUE_DT AS GROUP_DATE, COUNT(*) AS ASCOUNT FROM (SELECT C_PRODUCT_ID, C_MAIN_REF, C_CUST_ID, C_TRX_REF, I_EVENT_TIMES, C_BK_GROUP_ID, C_UNIT_CODE, FA_SEL_NM, FA_BUYER_NM, FA_DOC_CCY, FA_DOC_AMT, AUTH_AMT, AUTH_CCY, PARENT_MAIN_REF, FA_DOC_DT, FA_DOC_DUE_DT, CURRNT_STATUS, C_TRX_STATUS, D_CREA_DATE, D_RELE_DATE, C_FUNC_ID, C_EVENT_NAME, C_EVENT_STATUS, C_NOW_EVENT, C_LOCKED_FLAG, C_LOCKED_OP, C_RELE_BY FROM CETRX.FAEF_EM_INV WHERE   C_BK_GROUP_ID = 'CSBANK'  AND (( C_UNIT_CODE = 'C260742974'  AND  C_PRODUCT_ID = 'P19080800001' )) AND C_TRX_STATUS IN ('P', 'A', 'T', 'R', 'M') AND FA_DOC_DUE_DT >= TO_DATE('2026-01-01', 'YYYY-MM-DD') AND FA_DOC_DUE_DT <= TO_DATE('2026-12-31', 'YYYY-MM-DD') ) TEMP_TABLE GROUP BY FA_DOC_DUE_DT
+---------------------- End 2026-07-09 08:59:51 381 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.383] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 269    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_CRITERIA_DATA,C_TMPL_NAME,C_IS_DEFAULT FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_CATA_ID = 'C2A_PendingApproval'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4 
+---------------------- End 2026-07-09 08:59:51 382 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.420] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 236    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  DELETE FROM CEUSER.SEC_WIDGETS_V2_TABS  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[02]  INSERT INTO CEUSER.SEC_WIDGETS_V2_TABS (C_TAB_ID,C_TAB_NAME,I_TAB_SEQUENCE,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','Home',0,'C260742974','C260742974CPA1')
+[03]  DELETE FROM CEUSER.SEC_WIDGETS_V2_INST_CONFIG  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[04]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17A301D7',{"comboId":"C2A_PendingApproval","name":"PendingApproval","header":true,"title":"Pending Approval","headerButtons":"refresh"},'C260742974','C260742974CPA1')
+[05]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[06]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","name":"PendingApproval","header":true,"title":"Pending Approval","headerButtons":"refresh"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979F41EEDD019F453F17B301DA","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removab ...truncated...,'default')
+[07]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17B301DA',{"name":"ShortcutMenu","header":false,"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"periodDays":30,"funcIds":"","funcItemTypeList":"New","functionCount":5,"funcTypes":"PM"},"component":"c-recent-func","label":"Recent Functions"}],"version":1,"headerButtons":"none"},'C260742974','C260742974CPA1')
+[08]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[09]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","name":"PendingApproval","header":true,"title":"Pending Approval","headerButtons":"refresh"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979F41EEDD019F453F17B301DA","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removab ...truncated...,'default')
+[10]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17A901D8',{"name":"CallToAction","header":true,"title":"Recent requests","version":2,"headerButtons":"refresh","subtitle":"Below is an overview of your recent requests"},'C260742974','C260742974CPA1')
+[11]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[12]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","name":"PendingApproval","header":true,"title":"Pending Approval","headerButtons":"refresh"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979F41EEDD019F453F17B301DA","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removab ...truncated...,'default')
+[13]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17B901DB',{"name":"Saved Reports","header":true,"title":"Saved Reports","headerButtons":"refresh"},'C260742974','C260742974CPA1')
+[14]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[15]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","name":"PendingApproval","header":true,"title":"Pending Approval","headerButtons":"refresh"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979F41EEDD019F453F17B301DA","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removab ...truncated...,'default')
+[16]  INSERT INTO CEUSER.SEC_WIDGETS_V2_INST_CONFIG (C_TAB_ID,C_INST_ID,C_INST_CONFIG,C_UNIT_CODE,C_USER_ID) VALUES ('8A8284979F41EEDD019F453F17A101D6','8A8284979F41EEDD019F453F17AE01D9',{"name":"CalendarEvents","header":true,"title":"Upcoming events","headerButtons":"none"},'C260742974','C260742974CPA1')
+[17]  DELETE FROM CEUSER.SEC_WIDGETS_V2_LAYOUT  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_TAB_ID = '8A8284979F41EEDD019F453F17A101D6' 
+[18]  INSERT INTO CEUSER.SEC_WIDGETS_V2_LAYOUT (C_TAB_ID,C_UNIT_CODE,C_USER_ID,C_LAYOUT_INFO,C_PAGE_NAME) VALUES ('8A8284979F41EEDD019F453F17A101D6','C260742974','C260742974CPA1',{"widgets":[{"input":{"comboId":"C2A_PendingApproval","name":"PendingApproval","header":true,"title":"Pending Approval","headerButtons":"refresh"},"name":"PendingApproval","id":"8A8284979F41EEDD019F453F17A301D7","position":{"w":18,"x":0,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removable":true,"width":1,"header":true,"minWidth":1,"headerButtons":"all","height":1,"maxWidth":1}},{"input":{"components":[{"component":"c-main-menu","label":"Main Menu"},{"input":{"functionCount":5},"component":"c-favorite-func","label":"Favorites"},{"input":{"funcItemTypeList":"New","funcTypes":"PM","periodDays":30,"funcIds":"","functionCount":5},"component":"c-recent-func","label":"Recent Functions"}],"name":"ShortcutMenu","header":false,"version":1,"headerButtons":"none"},"name":"ShortcutMenu","id":"8A8284979F41EEDD019F453F17B301DA","position":{"w":6,"x":18,"h":50,"y":0},"props":{"minHeight":0,"multiInstance":true,"movable":true,"resizable":true,"maxHeight":0,"removab ...truncated...,'default')
+---------------------- End 2026-07-09 08:59:51 418 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.446] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 443    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_UNIT_CODE,C_UNIT_NAME FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:51 446 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.566] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 561    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_INACTIVE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:51 563 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.583] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 581    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_USER_INFO WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C260742974' AND C_USER_ID = 'C260742974CPA1' 
+---------------------- End 2026-07-09 08:59:51 582 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.587] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 585    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_AUTH_RULE FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_BK_GROUP_ID = 'CSBANK' AND C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:51 586 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.693] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 589    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  [Id=C2A_PendingApproval]  SELECT T1.C_BK_GROUP_ID, T1.C_MAIN_REF, T1.C_TRX_REF, T1.C_UNIT_CODE, T1.PARENT_MAIN_REF, T1.C_TRX_STATUS, T1.CURRNT_STATUS, T1.I_EVENT_TIMES, T1.C_MODULE, T1.C_FUNC_ID, T1.C_PRODUCT_ID, T1.C_TRX_ID, T1.C_CREATED_BY, T3.C_LOCKED_FLAG, T3.C_LOCKED_OP, T3.C_USER_DESC, T1.D_SYS_OP_DATE, T1.T_SYS_OP_TIME, T1.C2A_CCY, T1.C2A_AMOUNT, T1.C2A_COUNTERPARTY FROM CETRX.TRX_INBOX T1 LEFT JOIN CETRX.TRX_LOCK_INFO T3 ON T1.C_MAIN_REF = T3.C_MAIN_REF AND T1.C_UNIT_CODE = T3.C_UNIT_CODE WHERE   T1.C_BK_GROUP_ID = 'CSBANK'  AND  T1.C_UNIT_CODE = 'C260742974'  AND T1.C_PRODUCT_ID IN('FHS0YffwVNuA','P19080800001','P19080800002','epF3a6u4ZGAt') AND  T1.C_BK_GROUP_ID = 'CSBANK'  AND (T1.C_TRX_STATUS<>'R' AND T1.C_TRX_STATUS<>'A' OR T1.C_TRX_STATUS IS NULL) AND T1.C_TRX_ID NOT IN (SELECT C_TRX_ID FROM CETRX.TRX_AUTH_LIST WHERE  C_GRP_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_UNIT_CODE = 'C260742974' ) AND T1.C_TRX_ID IN (SELECT C_TRX_ID FROM CETRX.TRX_MATRIX_LIST WHERE  C_UNIT_CODE = 'C260742974'  AND ( (  I_AUTH_LEVEL = 1  AND C_PRODUCT_ID IN('FHS0YffwVNuA','P19080800001','P19080800002','epF3a6u4ZGAt')))) AND (( T1.C_UNIT_CODE = 'C260742974'  AND  T1.C_PRODUCT_ID IN ('FHS0YffwVNuA','P19080800001','P19080800002','epF3a6u4ZGAt') )) AND T1.C_TRX_STATUS IN ('P', 'T') AND (T1.C_MODULE = 'IMLC' OR T1.C_MODULE = 'EXLC' OR T1.C_MODULE = 'FAEF' OR T1.C_MODULE = 'FADA' OR T1.C_MODULE = 'ABLF') ORDER BY T1.D_SYS_OP_DATE DESC, T1.T_SYS_OP_TIME DESC
+---------------------- End 2026-07-09 08:59:51 691 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.738] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 735    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_UNIT_CODE,C_UNIT_NAME FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'C260742974' 
+---------------------- End 2026-07-09 08:59:51 737 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 08:59:51.741] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 08:59:51 739    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  SELECT C_CRITERIA_DATA,C_TMPL_NAME,C_IS_DEFAULT FROM CETRX.STD_SEARCH_CRITERIA  WHERE  C_UNIT_CODE = 'C260742974'  AND  C_USER_ID = 'C260742974CPA1'  AND  C_CATA_ID = 'C2A_PendingApproval'  AND  C_BK_GROUP_ID = 'CSBANK'  AND  I_CRITERIA_TYPE = 4 
+---------------------- End 2026-07-09 08:59:51 740 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-09 09:31:23.310] [C260742974_C260742974CPA1] 
+---------------------Begin 2026-07-09 09:31:23 304    CREATE_BU:C260742974    CREATE_BY:C260742974CPA1 ---------------------
+[01]  DELETE FROM CEUSER.SEC_LOGIN_SESSION WHERE C_BK_GROUP_ID = 'CSBANK' AND C_USER_ID = 'C260742974CPA1' AND C_UNIT_CODE = 'C260742974' AND C_SESSION_ID = 'D29QrNIODXTxNUtYcJja5Jp' 
+---------------------- End 2026-07-09 09:31:23 308 ------------------------
+ [end]

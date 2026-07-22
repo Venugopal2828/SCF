@@ -1,0 +1,42 @@
+{
+	"id": "WF000013",
+	"type": "function",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF000013",
+			"display": "chart.bar",
+			"title": "EPLC Amendments not advised",
+			"desc": "Show Export LC Amendments where the amendment has not yet been advised.",
+			"tooltip": "{\"text\":\"{a}<br/>{b} day ago: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"action": {
+				"type": "catalog",
+				"cfg": "_TRX_STATUS=CATA&_TRX_LIST_FILTER_AJAX_REQUEST=true&IC_CHECK=T1.C_MAIN_REF&OP1=LIKE&OP2=%25&OP3=AND&IC_CHECK=T2.ISSUE_BK_SW_ADD&OP4=LIKE&OP5=%25&OP6=AND&IC_CHECK=T2.LC_NO&OP7=LIKE&OP8=%25&OP9=AND&IC_CHECK=T1.AMD_DT&OP10=%3D&OP11=&OP12=AND&IC_CHECK=T2.BENE_NM&OP13=LIKE&OP14=%25&like_flag=FALSE"
+			},
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"pie": "{\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "F05030701969",
+				"extraSelect": "T1.AMD_DT,T1.C_UNIT_CODE, (TO_DATE(sysdate ) - TO_DATE(T1.AMD_DT)) NM, COUNT(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(T1.AMD_DT)),'d' )) as VL",
+				"extraWhere": "",
+				"extraGroupBy": "T1.AMD_DT,T1.C_UNIT_CODE,(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(T1.AMD_DT)),'d' ))",
+				"extraOrderBy": "T1.C_UNIT_CODE, NM asc",
+				"overwrite": ["extraSelect", "extraOrderBy"],
+				"catalog": ["AMD_DT"],
+				"catalogOp": ["OP11"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "NM",
+			"valueField": "VL"
+		}
+	}
+}

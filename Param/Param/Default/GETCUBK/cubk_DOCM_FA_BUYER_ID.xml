@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="FA_BUYER_ID" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>DOCM</module-name>
+        <cubk-mapping-name>FA_BUYER_ID</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_PARTY</table-name>
+        <table-desc>STD_PARTY</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <PARTY_ID DESC="Party Id" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">FA_BUYER_ID</PARTY_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PARTY_TYPE DESC="Party Type" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">PMIN_ORD_ACC_TYPE</PARTY_TYPE>
+        <PARTY_ADD1 DESC="Party Address - 1" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">PMIN_ORD_ADD</PARTY_ADD1>
+        <PARTY_NM DESC="Party Name" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">FA_BUYER_NM</PARTY_NM>
+        <PARTY_SW_ADD DESC="Party SWIFT Address" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">PMIN_ORD_ACC_BIC</PARTY_SW_ADD>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

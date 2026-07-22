@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FAEF</module>
+    <name>Update_LONA_EBAL</name>
+    <desc></desc>
+    <head-info>
+        <DO name="Settle_New" path="Settle_NewSettle_loan"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.INVC_LOAN</table-name>
+        <table-desc>INVC_LOAN</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql type="TBL_FLD">FA_INV_LOAN_ID</sql>
+            <sql type="SQL">='</sql>
+            <field mf="F">FA_INV_LOAN_ID</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_INV_LOAN_EBAL fv_type="V" oper="=">0</FA_INV_LOAN_EBAL>
+    </mapping>
+</root>

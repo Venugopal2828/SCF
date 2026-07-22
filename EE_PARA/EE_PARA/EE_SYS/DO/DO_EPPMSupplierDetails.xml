@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="EPPMSupplierDetails" Max="n" Min="0" Name="EPPMSupplierDetails" PendingStore="N" Screen="SCRN/o2m/EPPM_SupplierDetails.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="EPPM_SUPPLIER"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>EPP_SUPLR_ID</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Supplier Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_60" FldType="" Value="">SUPLR_NM</Element>
+        <Element DATATYPE="12" Desc="Supplier ID" DispInGrid="Y" EDIT="N" EEType="Varchar_40" FldType="" Value="">SUPLR_ID</Element>
+        <Element DATATYPE="12" Desc="Contact" DispInGrid="Y" EDIT="N" EEType="Varchar_80" FldType="" Value="">CNTC_STAF</Element>
+        <Element DATATYPE="12" Desc="Phone Number" DispInGrid="Y" EDIT="N" EEType="Varchar_30" FldType="" Value="">CUST_TEL</Element>
+        <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N" EEType="Varchar_2" FldType="" Value="">CUST_CNTRY</Element>
+        <Element DATATYPE="12" Desc="Status" DispInGrid="Y" EDIT="N" EEType="FLAG_1" FldType="" Value="">CUST_STAT</Element>
+        <Element DATATYPE="3" Desc="Supplier sub limit" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">SUPLR_SUB_LMT</Element>
+        <Element DATATYPE="3" Desc="Invoice Approved Maximum Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">AI_MAX_AMT</Element>
+        <Element DATATYPE="3" Desc="The maxium EPR amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">EPR_MAX_AMT</Element>
+        <Element DATATYPE="3" Desc="The minimum EPR amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">EPR_MIN_AMT</Element>
+        <Element DATATYPE="12" Desc="A flag that if set to 'ON' will indicate that Auto Early Payment is required for all uploaded Ais" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_AUTO_EP</Element>
+        <Element DATATYPE="12" Desc="To indicate if stop file upload STP process and contact supplier when AI files are uploaded" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_REF_SUPLR</Element>
+        <Element DATATYPE="12" Desc="To indicate if stop file upload STP process and contact buyer when AI files are uploaded." DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_REF_BUYR</Element>
+        <Element DATATYPE="12" Desc="A flag that if set to 'ON' will indicate that CN/TCN upload is allowed . The default value is &quot;OFF&quot;" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_ALLOW_CN_UPLD</Element>
+        <Element DATATYPE="12" Desc="Allows ISC to reject or process a TCN" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_ALOW_TCN2CN</Element>
+        <Element DATATYPE="2" Desc="Invoice Approved Search Day Count" DispInGrid="N" EDIT="N" EEType="Numeric" FldType="" Value="">TCN_WAIT_TIME</Element>
+        <Element DATATYPE="12" Desc="To restrict credit note upload type to TCNs only" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_TCN_ONLY</Element>
+        <Element DATATYPE="2" Desc="Imposed by a country to restrict the amount of CN or TCN that a Buyer can apply against an AI Original amount" DispInGrid="N" EDIT="N" EEType="Numeric_9_5" FldType="" Value="">RES_CN_MAX_PCT</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="EPP Supplier Id" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">EPP_SUPLR_ID</Element>
+        <Element DATATYPE="12" Desc="Company address" DispInGrid="N" EDIT="N" EEType="Varchar_140" FldType="" Value="">CUST_ADD</Element>
+        <Element DATATYPE="12" Desc="Company mailing address" DispInGrid="N" EDIT="N" EEType="Varchar_256" FldType="" Value="">CUST_MAIL</Element>
+        <Element DATATYPE="12" Desc="Customer Reference" DispInGrid="N" EDIT="N" EEType="CHAR_16" FldType="" Value="">CUST_REF</Element>
+        <Element DATATYPE="12" Desc="Company mailing address" DispInGrid="N" EDIT="N" EEType="Varchar_140" FldType="" Value="">CUST_PSTLADR</Element>
+        <Element DATATYPE="12" Desc="Customer number get from BOS HUB" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">CUST_SERIAL_NB</Element>
+        <Element DATATYPE="12" Desc="BY-Buyer, SP-Supplier, BH - Both" DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">CUST_TP</Element>
+        <Element DATATYPE="12" Desc="To identify whether this supplier is using the default  pricing profile defined in the EEP" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_DEF_PP</Element>
+        <Element DATATYPE="12" Desc="Supplier Cash Account" DispInGrid="N" EDIT="N" EEType="FLAG_35" FldType="" Value="">ACC_SUPLR_FUND</Element>
+        <Element DATATYPE="3" Desc="Minimum Invoice Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">AI_MIN_AMT</Element>
+        <Element DATATYPE="2" Desc="Approved Invoice Credit Note Maximum Percent" DispInGrid="N" EDIT="N" EEType="Numeric_9_5" FldType="" Value="">AI_CN_MX_PCT</Element>
+        <Element DATATYPE="12" Desc="ATT_UPLD_BY" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">ATT_UPLD_BY</Element>
+        <Element DATATYPE="12" Desc="Attachment required flag" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IF_ATT_REQ</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="3" Desc="Supplier Outstanding AI Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="0">EPPS_TTL_AI_BAL</Element>
+        <Element DATATYPE="3" Desc="Supplier Outstanding EPR Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="0">EPPS_TTL_EPR_BAL</Element>
+        <Element DATATYPE="3" Desc="Supplier sub limit balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="0">SUPLR_SUB_LMT_BAL</Element>
+        <Element DATATYPE="3" Desc="Amount avaliable for fund" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="0">AMT_AVAL_FOR_FUND</Element>
+        <Element DATATYPE="12" Desc="BUYR_PRC_PRFL_ID" DispInGrid="N" EDIT="N" EEType="Varchar_18" FldType="" Value="">PP_ID</Element>
+        <Element DATATYPE="12" Desc="Supllier Unique Reference" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">SUPLR_BOS_ID</Element>
+        <Element DATATYPE="12" Desc="SUPLR_CREA_TP" DispInGrid="N" EDIT="N" EEType="Varchar_2" FldType="" Value="">SUPLR_CREA_TP</Element>
+        <Element DATATYPE="12" Desc="Buyer's ID" DispInGrid="N" EDIT="N" EEType="Varchar_18" FldType="" Value="">BUYR_SCFNET_ID</Element>
+        <Element DATATYPE="12" Desc="This is the reference number for the supplier inputted by the buyer in the Approved Invoice" DispInGrid="N" EDIT="N" EEType="varchar_50_1" FldType="" Value="">SUPLR_REF</Element>
+        <Element DATATYPE="12" Desc="Buyer Identification Number" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">BUYR_ID</Element>
+        <Element DATATYPE="3" Desc="Supplier Limit Increase Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">SUPLR_LMT_INC_AMT</Element>
+        <Element DATATYPE="3" Desc="AMT_TO_SELT" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="0">AMT_TO_SELT</Element>
+    </Elements>
+</DO>

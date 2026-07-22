@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>GET_REBATE_ACC_ME</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_AC_NUMBER ALIAS="T0" DBFUNC="" DESC="Account Number" DT="12" HIDDEN="F" TYPE="F">FA_REBATE_ACCOUNT</C_AC_NUMBER>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T0.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_SBR_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_32" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+        <condition seq="2">
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T0.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_SBR_CCY</SQL>
+            <SQL TYPE="SQL">'AND
+                        </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_32" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL DT="var" DV="SYS_BUSI_UNIT" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+        <condition seq="3">
+            <SQL DT="12" EEType="Character_3" TYPE="TBL_FLD">T0.C_CURRENCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_AGM_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_32" TYPE="TBL_FLD">T0.C_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_ANCHOR_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

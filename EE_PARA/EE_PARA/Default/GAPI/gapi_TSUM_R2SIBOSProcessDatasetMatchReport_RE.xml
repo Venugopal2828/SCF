@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>F</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>Message Queue</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>EE_CE</other-system-id>
+        <other-system-interface>ProcessDatsetMatcheReport</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>TSU_OUT_ESP</send-queue-id>
+        <recv-queue-id/>
+        <msg-format>Text</msg-format>
+        <module>TSUM</module>
+        <interface-mapping-name>R2SIBOSProcessDatasetMatchReport</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>R</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="DO" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id comm="queue" type="sync">EE2CE</atth-queue-id>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <C_MAIN_REF descr="" ec-tag="" fv-type="F" op-tag="" order="">C_MAIN_REF</C_MAIN_REF>
+        <C_UNIT_CODE descr="" ec-tag="" fv-type="F" op-tag="" order="">FINC_UNIT_CODE</C_UNIT_CODE>
+        <TSUR2_TRX_STATUS descr="" ec-tag="" fv-type="F" op-tag="" order="">TSUR2_TRX_STATUS</TSUR2_TRX_STATUS>
+        <TSU_CUST_ID descr="" ec-tag="" fv-type="F" op-tag="" order="">TSU_CUST_ID</TSU_CUST_ID>
+        <TSU_CUST_REF descr="" ec-tag="" fv-type="F" op-tag="" order="">TSU_CUST_REF</TSU_CUST_REF>
+        <TSU_MSMTCH_NO descr="" ec-tag="" fv-type="F" op-tag="" order="">TSU_MSMTCH_NO</TSU_MSMTCH_NO>
+    </send-msg-map>
+    <recv-msg-map/>
+    <send-item>
+        <item name="form"/>
+    </send-item>
+</gapi>

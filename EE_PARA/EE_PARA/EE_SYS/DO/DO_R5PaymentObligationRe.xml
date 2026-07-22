@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Payment Obligation" Max="n" Min="0" Name="R5PaymentObligationRe" PendingStore="Y" Screen="SCRN/DO/TSU_PmtOblgtn_DO.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="TSUM_PMTOBLGTN"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_TRX_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>TSU_SEQ_NUM</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TSUM_EM_BASELINE">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="Obligor Bank BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_OBLGR_BK</Element>
+        <Element DATATYPE="1" Desc="Recipient Bank BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_RCPTBK</Element>
+        <Element DATATYPE="3" Desc="Max Amt  Paid Under Obligation" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_PMTOBLGR_AMT</Element>
+        <Element DATATYPE="2" Desc="Percentage of PO Net Amount - Obligor Bank" DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_PMTOBLGR_PCTG</Element>
+        <Element DATATYPE="3" Desc="Obligor Bank Charges" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_PMT_CHG_AMT</Element>
+        <Element DATATYPE="2" Desc="Charge Percentage" DispInGrid="N" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_PMT_CHG_PCTG</Element>
+        <Element DATATYPE="91" Desc="Payment Expiry Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PMT_XPRY_DT</Element>
+        <Element DATATYPE="1" Desc="Country of Applicable Law - Obligator Bank" DispInGrid="N" EDIT="N" EEType="CNTY" FldType="" Value="">TSU_APLBL_LAW</Element>
+        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+        <Element DATATYPE="12" Desc="Obligor Bank Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_OBLGRBK_NM</Element>
+        <Element DATATYPE="12" Desc="Obligor Bank ID" DispInGrid="N" EDIT="N" EEType="Varchar_11" FldType="" Value="">TSU_OBLGRBK_ID</Element>
+        <Element DATATYPE="12" Desc="Recipient Bank ID" DispInGrid="N" EDIT="N" EEType="Varchar_11" FldType="" Value="">TSU_RCPTBK_ID</Element>
+        <Element DATATYPE="12" Desc="Recipient Bank Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_RCPTBK_NM</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+        <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        <Element DATATYPE="2" Desc="URBPO Version" DispInGrid="Y" EDIT="N" EEType="Numeric_18_3" FldType="" Value="">TSU_URBPO_VRSN</Element>
+        <Element DATATYPE="12" Desc="OtherRules And Version" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_URBPO_VRSN_OTHER</Element>
+        <Element DATATYPE="12" Desc="Identification" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_JUR_ID</Element>
+        <Element DATATYPE="12" Desc="Place Of Jurisdiction Code" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_JUR_CODE</Element>
+        <Element DATATYPE="12" Desc="Place Of Jurisdiction Country Code" DispInGrid="N" EDIT="N" EEType="VARCHAR2" FldType="" Value="">TSU_JUR_CNTY</Element>
+        <Element DATATYPE="12" Desc="Issuer" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_JUR_ISSR</Element>
+        <Element DATATYPE="12" Desc="Scheme Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_JUR_SCHM_NM</Element>
+        <Element DATATYPE="12" Desc="Place Of Jurisdiction Text" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_JUR_TXT</Element>
+    </Elements>
+    <DO Desc="Payment Terms" Name="R5PaymentTerms" PendingStore="N" Screen="SCRN/DO/R5TSU_pmtTerm_DO.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="TSUM_PMT"></TABLE_NAME>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_IAFT_NO</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS></FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Other Terms" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_PMT_OT_TERM</Element>
+            <Element DATATYPE="12" Desc="Payment Code" DispInGrid="Y" EDIT="N" EEType="PaymentTime1Code" FldType="" Value="">TSU_PMT_CD</Element>
+            <Element DATATYPE="2" Desc="Payment Days" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_PMT_DAYS</Element>
+            <Element DATATYPE="2" Desc="Payment Percentage" DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_PMT_PER</Element>
+            <Element DATATYPE="3" Desc="Payment  Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_PMT_AMT</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+            <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+            <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="91" Desc="Payment DueDate" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PMT_DUE_DT</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Settlement Terms" Name="R5SettlementTerms" PendingStore="N" Screen="SCRN/DO/R5TSU_Settlement_DO.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="TSUM_SETTLEMENT_R2"></TABLE_NAME>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>TSU_IDX</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS></FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="1" Desc="Financial Institution BIC" DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_FININST_BIC</Element>
+            <Element DATATYPE="12" Desc="Financial Institution Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_FININST_NM</Element>
+            <Element DATATYPE="12" Desc="Financial Institution Country" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_FININST_CNTY</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Account BBAN" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_BBAN</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Account IBAN" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_IBAN</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Account UPIC" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_UPIC</Element>
+            <Element DATATYPE="12" Desc="Beneficiary Account" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_BENE_ACC</Element>
+            <Element DATATYPE="1" Desc="Creditor Account Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CDTRAC_CCY</Element>
+            <Element DATATYPE="12" Desc="Creditor Account Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_CDTRAC_NM</Element>
+            <Element DATATYPE="12" Desc="Cash Account Nature" DispInGrid="N" EDIT="N" EEType="CashAccountTpCode" FldType="" Value="">TSU_CDTRAC_TPCD</Element>
+            <Element DATATYPE="12" Desc="Creditor Account Proprietary" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_CDTRAC_TPID</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Identification ID" DispInGrid="Y" EDIT="N" EEType="Varchar_34" FldType="" Value="">TSU_IDNT_ID</Element>
+            <Element DATATYPE="12" Desc="scheme Code" DispInGrid="Y" EDIT="N" EEType="Varchar_4" FldType="" Value="">TSU_SCHM_CD</Element>
+            <Element DATATYPE="12" Desc="Proprietary name" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_PRTRY_NM</Element>
+            <Element DATATYPE="12" Desc="Issuer Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_NM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Charges" Max="n" Min="0" Name="R5Charges" PendingStore="N" Screen="SCRN/DO/R5TSU_Charges_DO.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="TSUM_CHARGE_R5"></TABLE_NAME>
+        <PK>
+            <PKNAME>TSU_IDX</PKNAME>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK>
+                <FKNAME PARENT_COL="TSU_IDX">TSU_SEQ_NUM</FKNAME>
+            </FK>
+            <FK>
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            </FK>
+            <FK>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            </FK>
+            <FK>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="3" Desc="charge amt" DispInGrid="Y" EDIT="N" EEType="Decimai_18_3" FldType="" Value="">TSU_CHG_AMT</Element>
+            <Element DATATYPE="8" Desc="Percentage" DispInGrid="Y" EDIT="N" EEType="RATE" FldType="" Value="">TSU_CHG_PCTG</Element>
+            <Element DATATYPE="12" Desc="ChargesPayee" DispInGrid="Y" EDIT="N" EEType="FLAG_4" FldType="" Value="">TSU_CHG_PYEE</Element>
+            <Element DATATYPE="12" Desc="ChargesPayer" DispInGrid="Y" EDIT="N" EEType="FLAG_4" FldType="" Value="">TSU_CHG_PYER</Element>
+            <Element DATATYPE="12" Desc="Charges Type" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">TSU_CHG_TP</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+</DO>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/R2TSUM_BaselineAmendmentRequest_EE.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="F">
+        <SCREEN DO="BuyerBank">TSUM_BuyerBanksInfomation</SCREEN>
+        <SCREEN DO="BuyrSdSubmitgBk">R2TSU_BuyersideSubmtBank</SCREEN>
+        <SCREEN DO="SellerBank">TSUM_SellerBankInformation</SCREEN>
+        <SCREEN DO="SellrSdSubmitgBk">R2TSU_SellerSideSubmitBank</SCREEN>
+    </DOSCREEN>
+    <OUTTSU>
+        <ID>F00000002480</ID>
+    </OUTTSU>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>Open Account Module</MODULE_DESC>
+        <EVENT>TSUR2RelatedFunction</EVENT>
+        <ID>F05030702969</ID>
+        <NAME>R2AmendmentRequest</NAME>
+        <DESC>Amendment Request(FULL)</DESC>
+        <FUNSHORTNAME>tsmt.009.001.03A</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>S</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="BaselineAmendRequest(FULL)">R00000006694</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000006797</CATALOGID>
+    </FUNCTION>
+</FUNC>

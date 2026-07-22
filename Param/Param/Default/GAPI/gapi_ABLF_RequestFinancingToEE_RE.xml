@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id>Q_BANK</recv-queue-id>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>ABLF.001.ReqFin</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>ABLF</module>
+        <interface-mapping-name>RequestFinancingToEE</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <CEMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">C_MAIN_REF</CEMainRef>
+		<CntrRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">FA_CNTR_REF</CntrRef>
+		<RegRefNo descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">REG_NO</RegRefNo>
+		<ApplId descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">FA_CUST_ID</ApplId>
+		<LoanCCY descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">FA_LOAN_CCY</LoanCCY>
+		<ReqLoanAmt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">FA_TTL_LOAN_AMT</ReqLoanAmt>
+		<LoanStatus descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">FA_LOAN_STATUS</LoanStatus>
+		<LoanDueDt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">FA_LOAN_DUE_DT</LoanDueDt>
+		<MSG_TYPE descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="9">ABLF.001.ReqFin</MSG_TYPE>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item/>
+</gapi>

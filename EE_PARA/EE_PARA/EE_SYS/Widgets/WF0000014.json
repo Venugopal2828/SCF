@@ -1,0 +1,39 @@
+{
+	"id": "WF0000014",
+	"type": "function",
+	"pub": "false",
+	"configuration": {
+		"ui": {
+			"id": "WF0000014",
+			"display": "chart.bar",
+			"title": "Guarantees to Be Processed",
+			"desc": "Show outward guarantees that have not yet been processed",
+			"tooltip": "{\"text\":\"{b} - {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"action": {
+				"type": "catalog",
+				"cfg": "_TRX_STATUS=CATA&_TRX_LIST_FILTER_AJAX_REQUEST=true&OP1=LIKE&OP2=%25&OP3=AND&IC_CHECK=C_MAIN_REF&OP4=LIKE&OP5=%25&OP6=AND&IC_CHECK=CUST_NO&OP7=LIKE&OP8=%25&OP9=AND&IC_CHECK=LOCAL_CUST_NM&OP10=LIKE&OP11=%25&OP12=AND&IC_CHECK=CCY&OP13=LIKE&OP14=%25&OP15=AND&IC_CHECK=AMT&OP16=%3D&OP17=&OP18=AND&IC_CHECK=TRX_DT&OP19=%3D&OP20=&OP21=AND&OP22=LIKE&OP23=%25&OP24=AND&OP25=LIKE&OP26=%25&like_flag=FALSE"
+			},
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Issuance method\"},\"visualMap\":{\"colors\":[\"#e74c3c\",\"#d35400\",\"#3498db\",\"#16a085\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "F05030701610",
+				"extraSelect": "ISSUANCE_METHOD,C_UNIT_CODE, case when ISSUANCE_METHOD = 'A' then 'Swift' when ISSUANCE_METHOD = 'C' then 'SWIFT' when ISSUANCE_METHOD = 'E' then 'Digital Doc' when ISSUANCE_METHOD = 'O'  then 'Paper' end as NM, COUNT(ISSUANCE_METHOD) as VL",
+				"extraWhere": "",
+				"extraGroupBy": "ISSUANCE_METHOD,C_UNIT_CODE",
+				"extraOrderBy": "C_UNIT_CODE, NM asc",
+				"overwrite": ["extraSelect", "extraOrderBy"],
+				"catalog": ["ISSUANCE_METHOD"],
+				"catalogOp": ["OP26"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "NM",
+			"valueField": "VL"
+		}
+	}
+}

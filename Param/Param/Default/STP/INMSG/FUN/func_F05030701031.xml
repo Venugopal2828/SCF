@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Baseline Report");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sRptId = stp.getXslMsgTagVal("message/Document/BaselnRpt/RptId","Id");
+stp.writeLog("sRptId=========="+sRptId);
+//var sBIC = sRptId.substr(0,11);
+//var sBIC = sRptId.split("-")[0];
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC=========="+sBIC);
+var sBuyrBkBIC = stp.getXslMsgTagVal("message/Document/BaselnRpt/BuyrBk","BIC");
+var sSellrBkBIC = stp.getXslMsgTagVal("message/Document/BaselnRpt/SellrBk","BIC");
+var sBuyrNm = stp.getXslMsgTagVal("message/Document/BaselnRpt/Buyr","Nm");
+var sSellrNm = stp.getXslMsgTagVal("message/Document/BaselnRpt/Sellr","Nm");
+var sUnitNm = "";
+if (sBIC == sBuyrBkBIC){
+sUnitNm = sBuyrNm;
+} else{
+sUnitNm = sSellrNm;
+}
+var arrKeys = [["C_UNIT_NAME",sUnitNm]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetUnitCodeByNm",arrKeys);
+var sUnitCode = arrGetDataResult[0];
+stp.writeLog("sUnitCode=========="+sUnitCode);
+stp.setCmpId(sUnitCode);
+var sTxId = stp.getXslMsgTagVal("message/Document/BaselnRpt/TxId","Id");
+stp.writeLog("sTxId=========="+sTxId);
+var sAmdSeqNo = stp.getXslMsgTagVal("message/Document/BaselnRpt/EstblishdBaselnId","AmdmntSeqNb");
+stp.writeLog("sAmdSeqNo=========="+sAmdSeqNo);
+var arrKeys1 = [["TSU_TID",sTxId],["TSU_AMD_SEQNO",sAmdSeqNo]];
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetMainRefByTxIdForAmd",arrKeys1);
+var sMainRef = arrGetDataResult1[0];
+stp.writeLog("sMainRef=========="+sMainRef);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+stp.updateFieldValue("CURRNT_STATUS","Received Baseline Report");
+stp.updateFieldValue("NXT_STATUS","Received Baseline Report");
+stp.writeLog("End: Received Baseline Report");]]></js-content>
+</root>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>F</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>Message Queue</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id/>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>FundsCheck</other-system-id>
+        <other-system-interface>FundsCheck</other-system-interface>
+        <recv-time-out>4</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>MessBridge Out Sync</send-queue-id>
+        <recv-queue-id>MessBridge Out Sync</recv-queue-id>
+        <msg-format>Object</msg-format>
+        <module>PYMT</module>
+        <interface-mapping-name>FundsCheckingDueDiligence</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>I</trx-type>
+        <gapi-mode conditional="false" gapiMode="" mode="ASYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <X103_ORDCUACNO_50A descr="" ec-tag="" fv-type="F" op-tag="" order="">X103_ORDCUACNO_50A</X103_ORDCUACNO_50A>
+    </send-msg-map>
+    <recv-msg-map>
+        <FDS_AVAL descr="" fv-type="F" order="" sheet="" sheet-separator="">FDS_AVAL</FDS_AVAL>
+    </recv-msg-map>
+    <send-item/>
+</gapi>

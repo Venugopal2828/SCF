@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Stamp Required");
+stp.setAutoProcess(true);
+var sUnitCode = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUYER_ID");
+stp.writeLog("sUnitCode================"+sUnitCode);      
+stp.setCmpId(sUnitCode);
+stp.setUserId("CSBank");
+
+var sSBRref = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_SBR_REF");
+var sCERef = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_CE_MAIN_REF");
+stp.writeLog("sSBRref================"+sSBRref);
+stp.writeLog("sCERef================"+sCERef);
+var arrKeys = [["C_UNIT_CODE",sUnitCode],["FA_SBR_REF",sSBRref],["C_MAIN_REF",sCERef]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetMainRefByInvoiceDtl",arrKeys);
+//var sCEMainRef = arrGetDataResult[0];
+
+if(arrGetDataResult!=null && arrGetDataResult!="")
+{
+var sMainRef = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_CE_MAIN_REF");
+stp.setMainRef(sMainRef);
+var sDocStatus = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_STATUS");
+stp.updateFieldValue("FA_DOC_STATUS",sDocStatus);
+var sDocRef = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_DOC_REF");
+stp.updateFieldValue("FA_DOC_REF",sDocRef);
+}
+else{
+stp.reAssignFunc("Receive Bank Rejected Invoices","Invoices Maintenance");
+}
+stp.writeLog("End: Stamp Required");]]></js-content>
+</root>

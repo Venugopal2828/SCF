@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive SBR for Anchor Customer");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+//var sMainRef = stp.getMsgTagVal("FSBC_REF");
+var sMainRef = stp.getSimpleRef(17);
+stp.writeLog("sMainRef======================"+sMainRef);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+var sUnitCode = stp.getMsgTagVal("FA_ANCHOR_ID");
+var Spmttm = stp.getMsgTagVal("FA_PMT_TERMS");
+stp.writeLog("sMainRef======================"+Spmttm);
+stp.updateFieldValue("FA_PMT_TERMS",Spmttm);
+var custreno = stp.getMsgTagVal("FA_CUST_REG_NO");
+var CounterRegNo = stp.getMsgTagVal("FA_COUNTER_REG_NO");
+stp.writeLog("custreno======================"+custreno);
+stp.writeLog("CounterRegNo======================"+CounterRegNo);
+stp.updateFieldValue("FA_COUNTER_REG_NO",CounterRegNo);
+stp.updateFieldValue("FA_CUST_REG_NO",custreno);
+stp.setCmpId(sUnitCode);
+stp.updateFieldValue("CURRNT_STATUS","Received SBR");
+var anchorRole = stp.getMsgTagVal("FA_ANCHOR_ROLE");
+if(anchorRole == "BUYER"){
+stp.updateFieldValue("FA_BUYER_ID", stp.getMsgTagVal("FA_ANCHOR_ID"));
+stp.updateFieldValue("FA_BUYER_NM", stp.getMsgTagVal("FA_ANCHOR_NM"));
+stp.updateFieldValue("FA_SEL_ID", stp.getMsgTagVal("FA_COUNTER_ID"));
+stp.updateFieldValue("FA_SEL_NM", stp.getMsgTagVal("FA_COUNTER_NM"));
+}else{
+stp.updateFieldValue("FA_BUYER_ID", stp.getMsgTagVal("FA_COUNTER_ID"));
+stp.updateFieldValue("FA_BUYER_NM", stp.getMsgTagVal("FA_COUNTER_NM"));
+stp.updateFieldValue("FA_SEL_ID", stp.getMsgTagVal("FA_ANCHOR_ID"));
+stp.updateFieldValue("FA_SEL_NM", stp.getMsgTagVal("FA_ANCHOR_NM"));
+}
+stp.writeLog("End: Receive SBR for Anchor Customer");]]></js-content>
+</root>

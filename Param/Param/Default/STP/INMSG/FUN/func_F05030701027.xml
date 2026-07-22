@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Error Report");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sRjctdMsgRef = stp.getXslMsgTagVal("message/Document/ErrRpt/RjctdMsgRef","Id");
+stp.writeLog("sRjctdMsgRef=========="+sRjctdMsgRef);
+var arrKeys = [["TSU_MESSAGE_ID",sRjctdMsgRef]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetRefUnitByMsgRqrngActn",arrKeys);
+var sMainRef = arrGetDataResult[0];
+var sUnitCode = arrGetDataResult[2];
+var sParentMainRef = arrGetDataResult[1];
+stp.writeLog("sMainRef=========="+sMainRef);
+stp.writeLog("sUnitCode=========="+sUnitCode);
+stp.writeLog("sParentMainRef=========="+sParentMainRef);
+stp.setCmpId(sUnitCode);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sParentMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Received Error Report");
+stp.writeLog("End: Received Error Report");]]></js-content>
+</root>

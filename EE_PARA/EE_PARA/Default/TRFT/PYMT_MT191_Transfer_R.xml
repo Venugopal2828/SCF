@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>PYMT</module>
+    <name>MT191_Transfer</name>
+    <desc>MT191_Transfer</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.PTCG_MASTER</table-name>
+        <table-desc>Payment Charges Master</table-desc>
+        <ledger-op>
+            <fld-mapping>
+                <C_CP_UNIT_CODE FV="F">C_CP_UNIT_CODE</C_CP_UNIT_CODE>
+                <C_FUNC_ID FV="V">F05030702010</C_FUNC_ID>
+                <C_LOCKED_FLAG FV="V">F</C_LOCKED_FLAG>
+                <C_MAIN_REF FV="F">C_MAIN_REF_FRE</C_MAIN_REF>
+                <C_UNIT_CODE FV="F">C_UNIT_CODE</C_UNIT_CODE>
+                <I_EVENT_TIMES FV="V">1</I_EVENT_TIMES>
+            </fld-mapping>
+        </ledger-op>
+        <op-type>I</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info>MT191 Transfer Failed</err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="True"/>
+    </head-info>
+    <mapping>
+        <CLOSE_TRX fv_type="V" oper="=">No</CLOSE_TRX>
+        <CPYT_CR_BK_AC fv_type="F" mf="F" oper="=">CPYT_CR_BK_AC</CPYT_CR_BK_AC>
+        <C_CP_UNIT_CODE fv_type="F" mf="F" oper="=">C_CP_UNIT_CODE</C_CP_UNIT_CODE>
+        <C_LOCKED_FLAG fv_type="V" oper="=">F</C_LOCKED_FLAG>
+        <C_MAIN_REF fv_type="F" mf="F" oper="=">C_MAIN_REF_FRE</C_MAIN_REF>
+        <C_TRX_STATUS fv_type="V" oper="=">M</C_TRX_STATUS>
+        <C_UNIT_CODE fv_type="F" mf="F" oper="=">C_UNIT_CODE</C_UNIT_CODE>
+        <MAX_191 fv_type="V" oper="=">3</MAX_191>
+        <MT191SENT_NO fv_type="F" mf="F" oper="=">MT191SENT_NO</MT191SENT_NO>
+        <MT191_BAL_AMT fv_type="F" mf="F" oper="=">XN91_AMT_32B</MT191_BAL_AMT>
+        <NXT_TRCR_DT fv_type="F" mf="F" oper="=">NXT_TRCR_DT</NXT_TRCR_DT>
+        <XN91_ACCBKADD1_57A fv_type="F" mf="F" oper="=">XN91_ACCBKADD1_57A</XN91_ACCBKADD1_57A>
+        <XN91_ACCBKADD2_57A fv_type="F" mf="F" oper="=">XN91_ACCBKADD2_57A</XN91_ACCBKADD2_57A>
+        <XN91_ACCBKADD3_57A fv_type="F" mf="F" oper="=">XN91_ACCBKADD3_57A</XN91_ACCBKADD3_57A>
+        <XN91_ACC_BKACNO57A fv_type="F" mf="F" oper="=">XN91_ACC_BKACNO57A</XN91_ACC_BKACNO57A>
+        <XN91_ACC_BKID_57A fv_type="F" mf="F" oper="=">XN91_ACC_BKID_57A</XN91_ACC_BKID_57A>
+        <XN91_ACC_BKNM_57A fv_type="F" mf="F" oper="=">XN91_ACC_BKNM_57A</XN91_ACC_BKNM_57A>
+        <XN91_ACC_BKSW_57A fv_type="F" mf="F" oper="=">XN91_ACC_BKSW_57A</XN91_ACC_BKSW_57A>
+        <XN91_AMT_32B fv_type="F" mf="F" oper="=">XN91_AMT_32B</XN91_AMT_32B>
+        <XN91_BK2BK_INF1_72 fv_type="F" mf="F" oper="=">XN91_BK2BK_INF1_72</XN91_BK2BK_INF1_72>
+        <XN91_BK2BK_INF2_72 fv_type="F" mf="F" oper="=">XN91_BK2BK_INF2_72</XN91_BK2BK_INF2_72>
+        <XN91_BK2BK_INF3_72 fv_type="F" mf="F" oper="=">XN91_BK2BK_INF3_72</XN91_BK2BK_INF3_72>
+        <XN91_BK2BK_INF4_72 fv_type="F" mf="F" oper="=">XN91_BK2BK_INF4_72</XN91_BK2BK_INF4_72>
+        <XN91_BK2BK_INF5_72 fv_type="F" mf="F" oper="=">XN91_BK2BK_INF5_72</XN91_BK2BK_INF5_72>
+        <XN91_BK2BK_INF6_72 fv_type="F" mf="F" oper="=">XN91_BK2BK_INF6_72</XN91_BK2BK_INF6_72>
+        <XN91_CCY_32B fv_type="F" mf="F" oper="=">XN91_CCY_32B</XN91_CCY_32B>
+        <XN91_DET_CHG1_71B fv_type="F" mf="F" oper="=">XN91_DET_CHG1_71B</XN91_DET_CHG1_71B>
+        <XN91_DET_CHG2_71B fv_type="F" mf="F" oper="=">XN91_DET_CHG2_71B</XN91_DET_CHG2_71B>
+        <XN91_DET_CHG3_71B fv_type="F" mf="F" oper="=">XN91_DET_CHG3_71B</XN91_DET_CHG3_71B>
+        <XN91_DET_CHG4_71B fv_type="F" mf="F" oper="=">XN91_DET_CHG4_71B</XN91_DET_CHG4_71B>
+        <XN91_DET_CHG5_71B fv_type="F" mf="F" oper="=">XN91_DET_CHG5_71B</XN91_DET_CHG5_71B>
+        <XN91_DET_CHG6_71B fv_type="F" mf="F" oper="=">XN91_DET_CHG6_71B</XN91_DET_CHG6_71B>
+        <XN91_ORDBKACNO_52A fv_type="F" mf="F" oper="=">XN91_ORDBKACNO_52A</XN91_ORDBKACNO_52A>
+        <XN91_ORDBKADD1_52A fv_type="F" mf="F" oper="=">XN91_ORDBKADD1_52A</XN91_ORDBKADD1_52A>
+        <XN91_ORDBKADD2_52A fv_type="F" mf="F" oper="=">XN91_ORDBKADD2_52A</XN91_ORDBKADD2_52A>
+        <XN91_ORDBKADD3_52A fv_type="F" mf="F" oper="=">XN91_ORDBKADD3_52A</XN91_ORDBKADD3_52A>
+        <XN91_ORD_BKID_52A fv_type="F" mf="F" oper="=">XN91_ORD_BKID_52A</XN91_ORD_BKID_52A>
+        <XN91_ORD_BKNM_52A fv_type="F" mf="F" oper="=">XN91_ORD_BKNM_52A</XN91_ORD_BKNM_52A>
+        <XN91_ORD_BKSW_52A fv_type="F" mf="F" oper="=">XN91_ORD_BKSW_52A</XN91_ORD_BKSW_52A>
+        <XN91_RELATEDNO_21 fv_type="F" mf="F" oper="=">XN91_RELATEDNO_21</XN91_RELATEDNO_21>
+        <XN91_SEND_NO_20 fv_type="F" mf="F" oper="=">XN91_SEND_NO_20</XN91_SEND_NO_20>
+        <XN91_TAG_52A fv_type="F" mf="F" oper="=">XN91_TAG_52A</XN91_TAG_52A>
+        <XN91_TAG_57A fv_type="F" mf="F" oper="=">XN91_TAG_57A</XN91_TAG_57A>
+    </mapping>
+</root>

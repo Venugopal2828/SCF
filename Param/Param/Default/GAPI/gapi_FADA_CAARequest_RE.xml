@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id>Q_BANK</recv-queue-id>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>FAEF.003.CCAR</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FADA</module>
+        <interface-mapping-name>CAARequest</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id comm="MQ" type="sync">Q_CE</atth-queue-id>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <FA_CE_MAIN_REF descr="CE system reference number" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">C_MAIN_REF</FA_CE_MAIN_REF>
+        <FA_APPL_LMT_CCY descr="New Limit Currency" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">FA_APPL_LMT_CCY</FA_APPL_LMT_CCY>
+        <FA_APPL_LMT_AMT descr="New Limit Amount" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">FA_APPL_LMT_AMT</FA_APPL_LMT_AMT>
+        <FA_APPL_LMT_DUE_DT descr="New Limit Due Date" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">FA_APPL_LMT_DUE_DT</FA_APPL_LMT_DUE_DT>
+        <FA_REQ_CODE descr="EDI Request Code" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">FA_REQ_CODE</FA_REQ_CODE>
+        <FA_CUST_INSTR descr="Customer Instructions from CE" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">FA_CUST_INSTR</FA_CUST_INSTR>
+        <MSG_TYPE descr="Messsage Type" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">MSG_TYPE</MSG_TYPE>
+        <EE_C_MAIN_REF descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">EE_C_MAIN_REF</EE_C_MAIN_REF>
+        <FA_SEL_ID descr="Seller ID" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="9">FA_SEL_ID</FA_SEL_ID>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item>
+        <item name="form"/>
+        <item name="image"/>
+    </send-item>
+</gapi>

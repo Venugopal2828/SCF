@@ -1,0 +1,475 @@
+{
+  "code":"Document",
+  "key":"100",
+  "uri":"urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10",
+  "children":[{
+    "code":"FIToFIPmtStsRpt",
+    "key":"101",
+    "children":[
+
+      {
+        "code":"GrpHdr",
+        "key":"102",
+        "children":[
+
+          {
+            "code":"MsgId",
+            "key":"103"
+          },
+          {
+            "code":"CreDtTm",
+            "key":"104",
+            "val":"ISODateTime"
+          }
+        ]
+      },
+      {
+        "code":"TxInfAndSts",
+        "key":"105",
+        "children":[
+
+          {
+            "code":"OrgnlGrpInf",
+            "key":"106",
+            "children":[
+
+              {
+                "code":"OrgnlMsgId",
+                "key":"107"
+              },
+              {
+                "code":"OrgnlMsgNmId",
+                "key":"108"
+              },
+              {
+                "code":"OrgnlCreDtTm",
+                "key":"109",
+                "min":0,
+                "val":"ISODateTime"
+              }
+            ]
+          },
+          {
+            "code":"OrgnlInstrId",
+            "key":"110",
+            "min":0
+          },
+          {
+            "code":"OrgnlEndToEndId",
+            "key":"111"
+          },
+          {
+            "code":"OrgnlTxId",
+            "key":"112",
+            "min":0
+          },
+          {
+            "code":"OrgnlUETR",
+            "key":"113"
+          },
+          {
+            "code":"TxSts",
+            "key":"114",
+            "val":"ExternalPaymentTransactionStatus1Code"
+          },
+          {
+            "code":"StsRsnInf",
+            "key":"115",
+            "min":0,
+            "children":[
+
+              {
+                "code":"Orgtr",
+                "key":"116",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Nm",
+                    "key":"117",
+                    "min":0
+                  },
+                  {
+                    "code":"PstlAdr",
+                    "key":"118",
+                    "min":0,
+                    "children":[
+
+                      {
+                        "code":"Dept",
+                        "key":"119",
+                        "min":0
+                      },
+                      {
+                        "code":"SubDept",
+                        "key":"120",
+                        "min":0
+                      },
+                      {
+                        "code":"StrtNm",
+                        "key":"121",
+                        "min":0
+                      },
+                      {
+                        "code":"BldgNb",
+                        "key":"122",
+                        "min":0
+                      },
+                      {
+                        "code":"BldgNm",
+                        "key":"123",
+                        "min":0
+                      },
+                      {
+                        "code":"Flr",
+                        "key":"124",
+                        "min":0
+                      },
+                      {
+                        "code":"PstBx",
+                        "key":"125",
+                        "min":0
+                      }
+,
+                      {
+                        "code":"Room",
+                        "key":"126",
+                        "min":0
+                      },
+                      {
+                        "code":"PstCd",
+                        "key":"127",
+                        "min":0
+                      },
+                      {
+                        "code":"TwnNm",
+                        "key":"128",
+                        "min":0
+                      },
+                      {
+                        "code":"TwnLctnNm",
+                        "key":"129",
+                        "min":0
+                      },
+                      {
+                        "code":"DstrctNm",
+                        "key":"130",
+                        "min":0
+                      },
+                      {
+                        "code":"CtrySubDvsn",
+                        "key":"131",
+                        "min":0
+                      }
+,
+                      {
+                        "code":"Ctry",
+                        "key":"132",
+                        "min":0
+                      },
+                      {
+                        "code":"AdrLine",
+                        "key":"133",
+                        "min":0,
+                        "max":3
+                      }
+                    ]
+                  }
+,
+                  {
+                    "code":"Id",
+                    "key":"134",
+                    "min":0,
+                    "choice":" OrgId PrvtId",
+                    "children":[
+
+                      {
+                        "code":"OrgId",
+                        "key":"135",
+                        "children":[
+
+                          {
+                            "code":"AnyBIC",
+                            "key":"136",
+                            "min":0,
+                            "val":"AnyBICDec2014Identifier"
+                          },
+                          {
+                            "code":"LEI",
+                            "key":"137",
+                            "min":0
+                          },
+                          {
+                            "code":"Othr",
+                            "key":"138",
+                            "min":0,
+                            "max":2,
+                            "children":[
+
+                              {
+                                "code":"Id",
+                                "key":"139"
+                              },
+                              {
+                                "code":"SchmeNm",
+                                "key":"140",
+                                "min":0,
+                                "choice":" Cd Prtry",
+                                "children":[
+
+                                  {
+                                    "code":"Cd",
+                                    "key":"141",
+                                    "val":"ExternalOrganisationIdentification1Code"
+                                  },
+                                  {
+                                    "code":"Prtry",
+                                    "key":"142"
+                                  }
+                                ]
+                              },
+                              {
+                                "code":"Issr",
+                                "key":"143",
+                                "min":0
+                              }
+
+                            ]
+                          }
+
+                        ]
+                      }
+,
+                      {
+                        "code":"PrvtId",
+                        "key":"144",
+                        "children":[
+
+                          {
+                            "code":"DtAndPlcOfBirth",
+                            "key":"145",
+                            "min":0,
+                            "children":[
+
+                              {
+                                "code":"BirthDt",
+                                "key":"146",
+                                "val":"ISODate"
+                              },
+                              {
+                                "code":"PrvcOfBirth",
+                                "key":"147",
+                                "min":0
+                              },
+                              {
+                                "code":"CityOfBirth",
+                                "key":"148"
+                              },
+                              {
+                                "code":"CtryOfBirth",
+                                "key":"149"
+                              }
+                            ]
+                          },
+                          {
+                            "code":"Othr",
+                            "key":"150",
+                            "min":0,
+                            "max":2,
+                            "children":[
+
+                              {
+                                "code":"Id",
+                                "key":"151"
+                              },
+                              {
+                                "code":"SchmeNm",
+                                "key":"152",
+                                "min":0,
+                                "choice":" Cd Prtry",
+                                "children":[
+
+                                  {
+                                    "code":"Cd",
+                                    "key":"153",
+                                    "val":"ExternalPersonIdentification1Code"
+                                  },
+                                  {
+                                    "code":"Prtry",
+                                    "key":"154"
+                                  }
+                                ]
+                              },
+                              {
+                                "code":"Issr",
+                                "key":"155",
+                                "min":0
+                              }
+
+                            ]
+                          }
+
+                        ]
+                      }
+
+                    ]
+                  }
+,
+                  {
+                    "code":"CtryOfRes",
+                    "key":"156",
+                    "min":0
+                  }
+
+                ]
+              }
+,
+              {
+                "code":"Rsn",
+                "key":"157",
+                "min":0,
+                "choice":" Cd Prtry",
+                "children":[
+
+                  {
+                    "code":"Cd",
+                    "key":"158",
+                    "val":"ExternalStatusReason1Code"
+                  },
+                  {
+                    "code":"Prtry",
+                    "key":"159"
+                  }
+                ]
+              }
+,
+              {
+                "code":"AddtlInf",
+                "key":"160",
+                "min":0,
+                "max":2
+              }
+
+            ]
+          }
+,
+          {
+            "code":"FctvIntrBkSttlmDt",
+            "key":"161",
+            "min":0,
+            "choice":" Dt DtTm",
+            "children":[
+
+              {
+                "code":"Dt",
+                "key":"162",
+                "val":"ISODate"
+              },
+              {
+                "code":"DtTm",
+                "key":"163",
+                "val":"ISODateTime"
+              }
+            ]
+          }
+,
+          {
+            "code":"ClrSysRef",
+            "key":"164",
+            "min":0
+          }
+,
+          {
+            "code":"InstgAgt",
+            "key":"165",
+            "children":[{
+              "code":"FinInstnId",
+              "key":"166",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "key":"167",
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "key":"168",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "key":"169",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "key":"170",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {
+                      "code":"MmbId",
+                      "key":"171"
+                    }
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "key":"172",
+                  "min":0
+                }
+              ]
+            }]
+          }
+,
+          {
+            "code":"InstdAgt",
+            "key":"173",
+            "children":[{
+              "code":"FinInstnId",
+              "key":"175",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "key":"176",
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "key":"177",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "key":"178",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "key":"179",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {
+                      "code":"MmbId",
+                      "key":"180"
+                    }
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "key":"181",
+                  "min":0
+                }
+              ]
+            }]
+          }
+
+        ]
+      }
+
+    ]
+  }]
+}

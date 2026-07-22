@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>X202_RECCORRID_54A_1</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X202_RECCORRID_54A_1</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">X202_RECCORRNM_54A_1</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T1" DBFUNC="" DESC="Address Line1" DT="12" HIDDEN="F" TYPE="F">X202_RECCORADD154A_1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T1" DBFUNC="" DESC="Address Line2" DT="12" HIDDEN="F" TYPE="F">X202_RECCORADD254A_1</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T1" DBFUNC="" DESC="Address Line3" DT="12" HIDDEN="F" TYPE="F">X202_RECCORADD354A_1</SWIFT_FMT_ADD3>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="F" TYPE="F">X202_RECCORRSW_54A_1</SW_ADD>
+        <SW_TAG_VAR ALIAS="T0" DBFUNC="" DESC="Swfit Tag Variable" DT="12" HIDDEN="T" TYPE="F">X202_TAG_54A_1</SW_TAG_VAR>
+        <AC1_NO ALIAS="T0" DBFUNC="" DESC="Account No1" DT="1" HIDDEN="T" TYPE="F">X202RECCORRACNO54A_1</AC1_NO>
+        <NOTES ALIAS="T0" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="T" TYPE="F">X202_54_NOTES_1</NOTES>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

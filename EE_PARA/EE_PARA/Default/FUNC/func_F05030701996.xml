@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/IPLC_RefuseDocuments.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <VOUCHER>
+        <ID>F00000000415</ID>
+        <NAME/>
+    </VOUCHER>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">IPLC</MODULE>
+        <MODULE_DESC>Import Letter of Credit</MODULE_DESC>
+        <EVENT>Negotiation</EVENT>
+        <ID>F05030701996</ID>
+        <NAME>IPLC_RefuseDocuments</NAME>
+        <DESC>Refuse Documents</DESC>
+        <FUNSHORTNAME>IPLC_REFUSE_DOCS</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="Refuse Documents">R00000002601</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000002654</CATALOGID>
+        <TransferTo>F00000005709</TransferTo>
+        <OutSWIFT>F00000000348</OutSWIFT>
+    </FUNCTION>
+</FUNC>

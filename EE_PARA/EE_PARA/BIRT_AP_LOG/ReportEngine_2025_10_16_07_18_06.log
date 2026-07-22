@@ -1,0 +1,946 @@
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.script.internal.ScriptExecutor
+WARNING: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----Settlement - Import LC Document-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+org.eclipse.birt.data.engine.core.DataException: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----Settlement - Import LC Document-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:147)
+	at org.eclipse.birt.report.engine.script.internal.DtEScriptExecutor.handleJS(DtEScriptExecutor.java:90)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleJS(DataSetScriptExecutor.java:256)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleAfterOpen(DataSetScriptExecutor.java:160)
+	at org.eclipse.birt.data.engine.impl.DataSetRuntime.afterOpen(DataSetRuntime.java:610)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.dataSetAfterOpen(QueryExecutor.java:231)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:602)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1257)
+	at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:233)
+	at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:178)
+	at org.eclipse.birt.report.engine.data.dte.QueryResultSet.<init>(QueryResultSet.java:98)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:168)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:286)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1954)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:80)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:43)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:46)
+	at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:34)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:65)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:92)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:100)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:181)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:77)
+	at com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:581)
+	at com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:378)
+	at com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:134)
+	at com.cs.eeservices.handler.BirtHandler.online(BirtHandler.java:21)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:66)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:60)
+	at com.cs.eeservices.base.EETypedRoute.handle(EETypedRoute.java:33)
+	at spark.RouteImpl$1.handle(RouteImpl.java:72)
+	at spark.http.matching.Routes.execute(Routes.java:61)
+	at spark.http.matching.MatcherFilter.doFilter(MatcherFilter.java:134)
+	at spark.servlet.SparkFilter.doFilter(SparkFilter.java:174)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4238)
+	at com.ibm.ws.webcontainer.webapp.WebAppImpl.handleRequest(WebAppImpl.java:2210)
+	at com.ibm.ws.webcontainer.webapp.WebGroup.handleRequest(WebGroup.java:304)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1033)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.ready(HttpInboundLink.java:289)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:214)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:113)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture$1.run(AsyncChannelFuture.java:205)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+Caused by: org.eclipse.birt.data.engine.core.DataException: A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.core.DataException.wrap(DataException.java:123)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:1003)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:138)
+	... 54 more
+Caused by: org.eclipse.birt.core.exception.CoreException: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.wrapRhinoException(JavascriptEvalUtil.java:307)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:106)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateScript(JavascriptEvalUtil.java:138)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:999)
+	... 55 more
+Caused by: org.mozilla.javascript.EcmaError: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3687)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3665)
+	at org.mozilla.javascript.ScriptRuntime.notFoundError(ScriptRuntime.java:3750)
+	at org.mozilla.javascript.ScriptRuntime.nameOrFunction(ScriptRuntime.java:1794)
+	at org.mozilla.javascript.ScriptRuntime.name(ScriptRuntime.java:1733)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___7._c___bm_afterOpen_1(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]:3)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___7.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:74)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8._c_script_0(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.exec(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:99)
+	... 57 more
+
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: load font config in wsjar:file:/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/DefaultCell01/BIRT.ear/EximBirtService.war/WEB-INF/lib/org.eclipse.birt.runtime_4.8.0-20180626-4.8.0.jar!/fontsConfig.xml cost 16ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/ko.UTF-8/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/zh/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/KOI8-R/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/share/fonts/zh_CN/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/X11R6/lib/X11/fonts/truetype cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/zh_HK.BIG5HK/X11/fonts/TT cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/X11R6/lib/X11/fonts/tt cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/ar/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/zh_TW.BIG5/X11/fonts/TT cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/ja/X11/fonts/TT cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in d:/windows/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/iso_8859_2/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/iso_8859_5/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/hi_IN.UTF-8/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/X11R6/lib/X11/fonts/TTF cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/zh.GBK/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/share/fonts/ja/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/share/fonts/TTF cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/zh_TW/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in C:/windows/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/X11R6/lib/X11/fonts/OTF cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in e:/windows/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in e:/WINNT/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/iso_8859_9/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in d:/WINNT/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/share/fonts/OTF cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in g:/WINNT/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/iso_8859_8/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/share/fonts/zh_TW/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/ru.ansi-1251/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/share/fonts/default/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/iso_8859_7/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in f:/WINNT/fonts cost:1ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/iso_8859_13/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/euro_fonts/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in f:/windows/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/iso_8859_15/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/th_TH/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/ko/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/X/lib/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/X11R6/lib/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/share/fonts/truetype cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in C:/WINNT/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/openwin/lib/locale/zh_CN.GB18030/X11/fonts/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in g:/windows/fonts cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: register fonts in /usr/share/fonts/ko/TrueType cost:0ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: load font config in wsjar:file:/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/DefaultCell01/BIRT.ear/EximBirtService.war/WEB-INF/lib/org.eclipse.birt.runtime_4.8.0-20180626-4.8.0.jar!/fontsConfig_linux.xml cost 3ms
+Oct 16, 2025 7:19:00 AM org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader
+INFO: load font config in wsjar:file:/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/DefaultCell01/BIRT.ear/EximBirtService.war/WEB-INF/lib/org.eclipse.birt.runtime_4.8.0-20180626-4.8.0.jar!/fontsConfig_pdf.xml cost 2ms
+Oct 20, 2025 6:59:13 AM org.eclipse.birt.report.engine.script.internal.ScriptExecutor
+WARNING: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----Volume - Import LC Issuance-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+org.eclipse.birt.data.engine.core.DataException: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----Volume - Import LC Issuance-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:147)
+	at org.eclipse.birt.report.engine.script.internal.DtEScriptExecutor.handleJS(DtEScriptExecutor.java:90)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleJS(DataSetScriptExecutor.java:256)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleAfterOpen(DataSetScriptExecutor.java:160)
+	at org.eclipse.birt.data.engine.impl.DataSetRuntime.afterOpen(DataSetRuntime.java:610)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.dataSetAfterOpen(QueryExecutor.java:231)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:602)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1257)
+	at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:233)
+	at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:178)
+	at org.eclipse.birt.report.engine.data.dte.QueryResultSet.<init>(QueryResultSet.java:98)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:168)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:286)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1954)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:80)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:43)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:46)
+	at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:34)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:65)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:92)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:100)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:181)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:77)
+	at com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:581)
+	at com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:378)
+	at com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:134)
+	at com.cs.eeservices.handler.BirtHandler.online(BirtHandler.java:21)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:66)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:60)
+	at com.cs.eeservices.base.EETypedRoute.handle(EETypedRoute.java:33)
+	at spark.RouteImpl$1.handle(RouteImpl.java:72)
+	at spark.http.matching.Routes.execute(Routes.java:61)
+	at spark.http.matching.MatcherFilter.doFilter(MatcherFilter.java:134)
+	at spark.servlet.SparkFilter.doFilter(SparkFilter.java:174)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4238)
+	at com.ibm.ws.webcontainer.webapp.WebAppImpl.handleRequest(WebAppImpl.java:2210)
+	at com.ibm.ws.webcontainer.webapp.WebGroup.handleRequest(WebGroup.java:304)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1033)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpICLReadCallback.complete(HttpICLReadCallback.java:88)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:204)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:775)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:905)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+Caused by: org.eclipse.birt.data.engine.core.DataException: A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.core.DataException.wrap(DataException.java:123)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:1003)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:138)
+	... 56 more
+Caused by: org.eclipse.birt.core.exception.CoreException: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.wrapRhinoException(JavascriptEvalUtil.java:307)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:106)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateScript(JavascriptEvalUtil.java:138)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:999)
+	... 57 more
+Caused by: org.mozilla.javascript.EcmaError: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3687)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3665)
+	at org.mozilla.javascript.ScriptRuntime.notFoundError(ScriptRuntime.java:3750)
+	at org.mozilla.javascript.ScriptRuntime.nameOrFunction(ScriptRuntime.java:1794)
+	at org.mozilla.javascript.ScriptRuntime.name(ScriptRuntime.java:1733)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___128._c___bm_afterOpen_1(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]:3)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___128.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:74)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8._c_script_0(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.exec(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:99)
+	... 59 more
+
+Oct 21, 2025 3:23:54 AM org.eclipse.birt.report.engine.script.internal.ScriptExecutor
+WARNING: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----Outstanding - Import LC Issuance-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+org.eclipse.birt.data.engine.core.DataException: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----Outstanding - Import LC Issuance-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:147)
+	at org.eclipse.birt.report.engine.script.internal.DtEScriptExecutor.handleJS(DtEScriptExecutor.java:90)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleJS(DataSetScriptExecutor.java:256)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleAfterOpen(DataSetScriptExecutor.java:160)
+	at org.eclipse.birt.data.engine.impl.DataSetRuntime.afterOpen(DataSetRuntime.java:610)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.dataSetAfterOpen(QueryExecutor.java:231)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:602)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1257)
+	at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:233)
+	at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:178)
+	at org.eclipse.birt.report.engine.data.dte.QueryResultSet.<init>(QueryResultSet.java:98)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:168)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:286)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1954)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:80)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:43)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:46)
+	at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:34)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:65)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:92)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:100)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:181)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:77)
+	at com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:581)
+	at com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:378)
+	at com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:134)
+	at com.cs.eeservices.handler.BirtHandler.online(BirtHandler.java:21)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:66)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:60)
+	at com.cs.eeservices.base.EETypedRoute.handle(EETypedRoute.java:33)
+	at spark.RouteImpl$1.handle(RouteImpl.java:72)
+	at spark.http.matching.Routes.execute(Routes.java:61)
+	at spark.http.matching.MatcherFilter.doFilter(MatcherFilter.java:134)
+	at spark.servlet.SparkFilter.doFilter(SparkFilter.java:174)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4238)
+	at com.ibm.ws.webcontainer.webapp.WebAppImpl.handleRequest(WebAppImpl.java:2210)
+	at com.ibm.ws.webcontainer.webapp.WebGroup.handleRequest(WebGroup.java:304)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1033)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpICLReadCallback.complete(HttpICLReadCallback.java:88)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:204)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:775)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:905)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+Caused by: org.eclipse.birt.data.engine.core.DataException: A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.core.DataException.wrap(DataException.java:123)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:1003)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:138)
+	... 56 more
+Caused by: org.eclipse.birt.core.exception.CoreException: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.wrapRhinoException(JavascriptEvalUtil.java:307)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:106)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateScript(JavascriptEvalUtil.java:138)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:999)
+	... 57 more
+Caused by: org.mozilla.javascript.EcmaError: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3687)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3665)
+	at org.mozilla.javascript.ScriptRuntime.notFoundError(ScriptRuntime.java:3750)
+	at org.mozilla.javascript.ScriptRuntime.nameOrFunction(ScriptRuntime.java:1794)
+	at org.mozilla.javascript.ScriptRuntime.name(ScriptRuntime.java:1733)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___296._c___bm_afterOpen_1(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]:3)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___296.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:74)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8._c_script_0(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.exec(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:99)
+	... 59 more
+
+Oct 22, 2025 3:25:06 AM org.eclipse.birt.data.engine.odaconsumer.ResultSet fetch
+SEVERE: Cannot fetch the next data row.
+org.eclipse.datatools.connectivity.oda.OdaException ;
+    org.xml.sax.SAXParseException: Premature end of file.
+	at org.eclipse.datatools.enablement.oda.xml.util.SaxParserConsumer.next(SaxParserConsumer.java:381)
+	at org.eclipse.datatools.enablement.oda.xml.impl.ResultSet.next(ResultSet.java:145)
+	at org.eclipse.datatools.connectivity.oda.consumer.helper.OdaResultSet.next(OdaResultSet.java:180)
+	at org.eclipse.birt.data.engine.odaconsumer.ResultSet.fetch(ResultSet.java:138)
+	at org.eclipse.birt.data.engine.executor.dscache.DataSetToCache.fetchFromDataSet(DataSetToCache.java:241)
+	at org.eclipse.birt.data.engine.executor.dscache.DataSetToCache.fetch(DataSetToCache.java:171)
+	at org.eclipse.birt.data.engine.executor.cache.OdiAdapter.fetch(OdiAdapter.java:218)
+	at org.eclipse.birt.data.engine.executor.cache.RowResultSet.fetch(RowResultSet.java:145)
+	at org.eclipse.birt.data.engine.executor.cache.RowResultSet.doNext(RowResultSet.java:118)
+	at org.eclipse.birt.data.engine.executor.cache.RowResultSet.next(RowResultSet.java:96)
+	at org.eclipse.birt.data.engine.executor.cache.ExpandableRowResultSet.next(ExpandableRowResultSet.java:63)
+	at org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper.populateData(SmartCacheHelper.java:318)
+	at org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper.initInstance(SmartCacheHelper.java:285)
+	at org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper.getResultSetCache(SmartCacheHelper.java:246)
+	at org.eclipse.birt.data.engine.executor.cache.SmartCache.<init>(SmartCache.java:74)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassUtil.populateOdiResultSet(PassUtil.java:132)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassUtil.pass(PassUtil.java:62)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.doSinglePass(PassManager.java:170)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.prepareDataSetResultSet(PassManager.java:94)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.populateDataSetResultSet(PassManager.java:80)
+	at org.eclipse.birt.data.engine.executor.transform.ResultSetPopulator.cacheDataSet(ResultSetPopulator.java:223)
+	at org.eclipse.birt.data.engine.executor.transform.CachedResultSet.<init>(CachedResultSet.java:147)
+	at org.eclipse.birt.data.engine.executor.DataSourceQuery.execute(DataSourceQuery.java:1077)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:607)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1257)
+	at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:233)
+	at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:178)
+	at org.eclipse.birt.report.engine.data.dte.QueryResultSet.<init>(QueryResultSet.java:98)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:168)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:286)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1954)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:80)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:43)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:46)
+	at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:34)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:65)
+	at org.eclipse.birt.report.engine.layout.html.HTMLStackingLM.layoutChildren(HTMLStackingLM.java:26)
+	at org.eclipse.birt.report.engine.layout.html.HTMLAbstractLM.layout(HTMLAbstractLM.java:140)
+	at org.eclipse.birt.report.engine.layout.html.HTMLInlineStackingLM.resumeLayout(HTMLInlineStackingLM.java:111)
+	at org.eclipse.birt.report.engine.layout.html.HTMLInlineStackingLM.layoutNodes(HTMLInlineStackingLM.java:160)
+	at org.eclipse.birt.report.engine.layout.html.HTMLStackingLM.layoutChildren(HTMLStackingLM.java:26)
+	at org.eclipse.birt.report.engine.layout.html.HTMLAbstractLM.layout(HTMLAbstractLM.java:140)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:71)
+	at org.eclipse.birt.report.engine.layout.html.HTMLStackingLM.layoutChildren(HTMLStackingLM.java:26)
+	at org.eclipse.birt.report.engine.layout.html.HTMLRepeatHeaderLM.layoutChildren(HTMLRepeatHeaderLM.java:46)
+	at org.eclipse.birt.report.engine.layout.html.HTMLAbstractLM.layout(HTMLAbstractLM.java:140)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:71)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:92)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:100)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:181)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:77)
+	at com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:964)
+	at com.cs.birt.report.portal.HttpFacade.mergeTsu(HttpFacade.java:353)
+	at com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:138)
+	at com.cs.eeservices.handler.BirtHandler.tsuMessage(BirtHandler.java:35)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S3Route.onRequest(BirtEndpoint.java:90)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S3Route.onRequest(BirtEndpoint.java:84)
+	at com.cs.eeservices.base.EETypedRoute.handle(EETypedRoute.java:33)
+	at spark.RouteImpl$1.handle(RouteImpl.java:72)
+	at spark.http.matching.Routes.execute(Routes.java:61)
+	at spark.http.matching.MatcherFilter.doFilter(MatcherFilter.java:134)
+	at spark.servlet.SparkFilter.doFilter(SparkFilter.java:174)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4238)
+	at com.ibm.ws.webcontainer.webapp.WebAppImpl.handleRequest(WebAppImpl.java:2210)
+	at com.ibm.ws.webcontainer.webapp.WebGroup.handleRequest(WebGroup.java:304)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1033)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpICLReadCallback.complete(HttpICLReadCallback.java:88)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:204)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:775)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:905)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+Caused by: org.xml.sax.SAXParseException: Premature end of file.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:90)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:508)
+	at org.eclipse.datatools.enablement.oda.xml.util.SaxParser.parse(SaxParser.java:171)
+	at org.eclipse.datatools.enablement.oda.xml.util.SaxParser.run(SaxParser.java:122)
+	at java.lang.Thread.run(Thread.java:825)
+
+Oct 22, 2025 3:25:06 AM org.eclipse.birt.data.engine.odaconsumer.ResultSet fetch
+SEVERE: Cannot fetch the next data row.
+org.eclipse.datatools.connectivity.oda.OdaException ;
+    org.xml.sax.SAXParseException: Premature end of file.
+	at org.eclipse.datatools.enablement.oda.xml.util.SaxParserConsumer.next(SaxParserConsumer.java:381)
+	at org.eclipse.datatools.enablement.oda.xml.impl.ResultSet.next(ResultSet.java:145)
+	at org.eclipse.datatools.connectivity.oda.consumer.helper.OdaResultSet.next(OdaResultSet.java:180)
+	at org.eclipse.birt.data.engine.odaconsumer.ResultSet.fetch(ResultSet.java:138)
+	at org.eclipse.birt.data.engine.executor.dscache.DataSetToCache.fetchFromDataSet(DataSetToCache.java:241)
+	at org.eclipse.birt.data.engine.executor.dscache.DataSetToCache.fetch(DataSetToCache.java:171)
+	at org.eclipse.birt.data.engine.executor.cache.OdiAdapter.fetch(OdiAdapter.java:218)
+	at org.eclipse.birt.data.engine.executor.cache.RowResultSet.fetch(RowResultSet.java:145)
+	at org.eclipse.birt.data.engine.executor.cache.RowResultSet.doNext(RowResultSet.java:118)
+	at org.eclipse.birt.data.engine.executor.cache.RowResultSet.next(RowResultSet.java:96)
+	at org.eclipse.birt.data.engine.executor.cache.ExpandableRowResultSet.next(ExpandableRowResultSet.java:63)
+	at org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper.populateData(SmartCacheHelper.java:318)
+	at org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper.initInstance(SmartCacheHelper.java:285)
+	at org.eclipse.birt.data.engine.executor.cache.SmartCacheHelper.getResultSetCache(SmartCacheHelper.java:246)
+	at org.eclipse.birt.data.engine.executor.cache.SmartCache.<init>(SmartCache.java:74)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassUtil.populateOdiResultSet(PassUtil.java:132)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassUtil.pass(PassUtil.java:62)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.doSinglePass(PassManager.java:170)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.prepareDataSetResultSet(PassManager.java:94)
+	at org.eclipse.birt.data.engine.executor.transform.pass.PassManager.populateDataSetResultSet(PassManager.java:80)
+	at org.eclipse.birt.data.engine.executor.transform.ResultSetPopulator.cacheDataSet(ResultSetPopulator.java:223)
+	at org.eclipse.birt.data.engine.executor.transform.CachedResultSet.<init>(CachedResultSet.java:147)
+	at org.eclipse.birt.data.engine.executor.DataSourceQuery.execute(DataSourceQuery.java:1077)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:607)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1257)
+	at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:233)
+	at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:178)
+	at org.eclipse.birt.report.engine.data.dte.QueryResultSet.<init>(QueryResultSet.java:98)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:168)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:286)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1954)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:80)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:43)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:46)
+	at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:34)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:65)
+	at org.eclipse.birt.report.engine.layout.html.HTMLStackingLM.layoutChildren(HTMLStackingLM.java:26)
+	at org.eclipse.birt.report.engine.layout.html.HTMLAbstractLM.layout(HTMLAbstractLM.java:140)
+	at org.eclipse.birt.report.engine.layout.html.HTMLInlineStackingLM.resumeLayout(HTMLInlineStackingLM.java:111)
+	at org.eclipse.birt.report.engine.layout.html.HTMLInlineStackingLM.layoutNodes(HTMLInlineStackingLM.java:160)
+	at org.eclipse.birt.report.engine.layout.html.HTMLStackingLM.layoutChildren(HTMLStackingLM.java:26)
+	at org.eclipse.birt.report.engine.layout.html.HTMLAbstractLM.layout(HTMLAbstractLM.java:140)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:71)
+	at org.eclipse.birt.report.engine.layout.html.HTMLStackingLM.layoutChildren(HTMLStackingLM.java:26)
+	at org.eclipse.birt.report.engine.layout.html.HTMLRepeatHeaderLM.layoutChildren(HTMLRepeatHeaderLM.java:46)
+	at org.eclipse.birt.report.engine.layout.html.HTMLAbstractLM.layout(HTMLAbstractLM.java:140)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:71)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:92)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:100)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:181)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:77)
+	at com.cs.birt.report.portal.HttpFacade.issueTSUMessageByXML(HttpFacade.java:964)
+	at com.cs.birt.report.portal.HttpFacade.mergeTsu(HttpFacade.java:353)
+	at com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:138)
+	at com.cs.eeservices.handler.BirtHandler.tsuMessage(BirtHandler.java:35)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S3Route.onRequest(BirtEndpoint.java:90)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S3Route.onRequest(BirtEndpoint.java:84)
+	at com.cs.eeservices.base.EETypedRoute.handle(EETypedRoute.java:33)
+	at spark.RouteImpl$1.handle(RouteImpl.java:72)
+	at spark.http.matching.Routes.execute(Routes.java:61)
+	at spark.http.matching.MatcherFilter.doFilter(MatcherFilter.java:134)
+	at spark.servlet.SparkFilter.doFilter(SparkFilter.java:174)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4238)
+	at com.ibm.ws.webcontainer.webapp.WebAppImpl.handleRequest(WebAppImpl.java:2210)
+	at com.ibm.ws.webcontainer.webapp.WebGroup.handleRequest(WebGroup.java:304)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1033)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpICLReadCallback.complete(HttpICLReadCallback.java:88)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:204)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:775)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:905)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+Caused by: org.xml.sax.SAXParseException: Premature end of file.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:90)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:55)
+	at java.lang.reflect.Method.invoke(Method.java:508)
+	at org.eclipse.datatools.enablement.oda.xml.util.SaxParser.parse(SaxParser.java:171)
+	at org.eclipse.datatools.enablement.oda.xml.util.SaxParser.run(SaxParser.java:122)
+	at java.lang.Thread.run(Thread.java:825)
+
+Oct 23, 2025 8:07:06 AM org.eclipse.birt.report.engine.script.internal.ScriptExecutor
+WARNING: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----Volume - Import LC Issuance-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+org.eclipse.birt.data.engine.core.DataException: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----Volume - Import LC Issuance-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:147)
+	at org.eclipse.birt.report.engine.script.internal.DtEScriptExecutor.handleJS(DtEScriptExecutor.java:90)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleJS(DataSetScriptExecutor.java:256)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleAfterOpen(DataSetScriptExecutor.java:160)
+	at org.eclipse.birt.data.engine.impl.DataSetRuntime.afterOpen(DataSetRuntime.java:610)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.dataSetAfterOpen(QueryExecutor.java:231)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:602)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1257)
+	at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:233)
+	at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:178)
+	at org.eclipse.birt.report.engine.data.dte.QueryResultSet.<init>(QueryResultSet.java:98)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:168)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:286)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1954)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:80)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:43)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:46)
+	at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:34)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:65)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:92)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:100)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:181)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:77)
+	at com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:581)
+	at com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:378)
+	at com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:134)
+	at com.cs.eeservices.handler.BirtHandler.online(BirtHandler.java:21)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:66)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:60)
+	at com.cs.eeservices.base.EETypedRoute.handle(EETypedRoute.java:33)
+	at spark.RouteImpl$1.handle(RouteImpl.java:72)
+	at spark.http.matching.Routes.execute(Routes.java:61)
+	at spark.http.matching.MatcherFilter.doFilter(MatcherFilter.java:134)
+	at spark.servlet.SparkFilter.doFilter(SparkFilter.java:174)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4238)
+	at com.ibm.ws.webcontainer.webapp.WebAppImpl.handleRequest(WebAppImpl.java:2210)
+	at com.ibm.ws.webcontainer.webapp.WebGroup.handleRequest(WebGroup.java:304)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1033)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.ready(HttpInboundLink.java:289)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:214)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:113)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture$1.run(AsyncChannelFuture.java:205)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+Caused by: org.eclipse.birt.data.engine.core.DataException: A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.core.DataException.wrap(DataException.java:123)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:1003)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:138)
+	... 54 more
+Caused by: org.eclipse.birt.core.exception.CoreException: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.wrapRhinoException(JavascriptEvalUtil.java:307)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:106)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateScript(JavascriptEvalUtil.java:138)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:999)
+	... 55 more
+Caused by: org.mozilla.javascript.EcmaError: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]#3)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3687)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3665)
+	at org.mozilla.javascript.ScriptRuntime.notFoundError(ScriptRuntime.java:3750)
+	at org.mozilla.javascript.ScriptRuntime.nameOrFunction(ScriptRuntime.java:1794)
+	at org.mozilla.javascript.ScriptRuntime.name(ScriptRuntime.java:1733)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___128._c___bm_afterOpen_1(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"]:3)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___128.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:74)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8._c_script_0(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.exec(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:99)
+	... 57 more
+
+Oct 24, 2025 5:48:35 AM org.eclipse.birt.report.engine.script.internal.ScriptExecutor
+WARNING: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----IMCO_Volume Report-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+org.eclipse.birt.data.engine.core.DataException: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----IMCO_Volume Report-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:147)
+	at org.eclipse.birt.report.engine.script.internal.DtEScriptExecutor.handleJS(DtEScriptExecutor.java:90)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleJS(DataSetScriptExecutor.java:256)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleAfterOpen(DataSetScriptExecutor.java:160)
+	at org.eclipse.birt.data.engine.impl.DataSetRuntime.afterOpen(DataSetRuntime.java:610)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.dataSetAfterOpen(QueryExecutor.java:231)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:602)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1257)
+	at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:233)
+	at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:178)
+	at org.eclipse.birt.report.engine.data.dte.QueryResultSet.<init>(QueryResultSet.java:98)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:168)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:286)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1954)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:80)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:43)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:46)
+	at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:34)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:65)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:92)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:100)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:181)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:77)
+	at com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:581)
+	at com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:378)
+	at com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:134)
+	at com.cs.eeservices.handler.BirtHandler.online(BirtHandler.java:21)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:66)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:60)
+	at com.cs.eeservices.base.EETypedRoute.handle(EETypedRoute.java:33)
+	at spark.RouteImpl$1.handle(RouteImpl.java:72)
+	at spark.http.matching.Routes.execute(Routes.java:61)
+	at spark.http.matching.MatcherFilter.doFilter(MatcherFilter.java:134)
+	at spark.servlet.SparkFilter.doFilter(SparkFilter.java:174)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4238)
+	at com.ibm.ws.webcontainer.webapp.WebAppImpl.handleRequest(WebAppImpl.java:2210)
+	at com.ibm.ws.webcontainer.webapp.WebGroup.handleRequest(WebGroup.java:304)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1033)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.ready(HttpInboundLink.java:289)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:214)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:113)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture$1.run(AsyncChannelFuture.java:205)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+Caused by: org.eclipse.birt.data.engine.core.DataException: A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.core.DataException.wrap(DataException.java:123)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:1003)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:138)
+	... 54 more
+Caused by: org.eclipse.birt.core.exception.CoreException: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.wrapRhinoException(JavascriptEvalUtil.java:307)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:106)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateScript(JavascriptEvalUtil.java:138)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:999)
+	... 55 more
+Caused by: org.mozilla.javascript.EcmaError: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3687)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3665)
+	at org.mozilla.javascript.ScriptRuntime.notFoundError(ScriptRuntime.java:3750)
+	at org.mozilla.javascript.ScriptRuntime.nameOrFunction(ScriptRuntime.java:1794)
+	at org.mozilla.javascript.ScriptRuntime.name(ScriptRuntime.java:1733)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__1297___method__name__afterOpen___548._c___bm_afterOpen_1(/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]:3)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__1297___method__name__afterOpen___548.call(/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:74)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8._c_script_0(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.exec(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:99)
+	... 57 more
+
+Oct 30, 2025 6:45:27 AM org.eclipse.birt.report.engine.script.internal.ScriptExecutor
+WARNING: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----EXCO_Volume Report-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+org.eclipse.birt.data.engine.core.DataException: Fail to execute script in function __bm_afterOpen(). Source:
+------
+" + importPackage(Packages.com.cs.scf.util);
+var slog = "-----EXCO_Volume Report-----\r\n" + this.queryText;
+SCFBirtLog.getLogger().writeLog(slog);
+ + "
+-----
+A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:147)
+	at org.eclipse.birt.report.engine.script.internal.DtEScriptExecutor.handleJS(DtEScriptExecutor.java:90)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleJS(DataSetScriptExecutor.java:256)
+	at org.eclipse.birt.report.engine.script.internal.DataSetScriptExecutor.handleAfterOpen(DataSetScriptExecutor.java:160)
+	at org.eclipse.birt.data.engine.impl.DataSetRuntime.afterOpen(DataSetRuntime.java:610)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.dataSetAfterOpen(QueryExecutor.java:231)
+	at org.eclipse.birt.data.engine.impl.PreparedOdaDSQuery$OdaDSQueryExecutor.executeOdiQuery(PreparedOdaDSQuery.java:602)
+	at org.eclipse.birt.data.engine.impl.QueryExecutor.execute(QueryExecutor.java:1257)
+	at org.eclipse.birt.data.engine.impl.ServiceForQueryResults.executeQuery(ServiceForQueryResults.java:233)
+	at org.eclipse.birt.data.engine.impl.QueryResults.getResultIterator(QueryResults.java:178)
+	at org.eclipse.birt.report.engine.data.dte.QueryResultSet.<init>(QueryResultSet.java:98)
+	at org.eclipse.birt.report.engine.data.dte.DteDataEngine.doExecuteQuery(DteDataEngine.java:168)
+	at org.eclipse.birt.report.engine.data.dte.AbstractDataEngine.execute(AbstractDataEngine.java:286)
+	at org.eclipse.birt.report.engine.executor.ExecutionContext.executeQuery(ExecutionContext.java:1954)
+	at org.eclipse.birt.report.engine.executor.QueryItemExecutor.executeQuery(QueryItemExecutor.java:80)
+	at org.eclipse.birt.report.engine.executor.TableItemExecutor.execute(TableItemExecutor.java:62)
+	at org.eclipse.birt.report.engine.internal.executor.dup.SuppressDuplicateItemExecutor.execute(SuppressDuplicateItemExecutor.java:43)
+	at org.eclipse.birt.report.engine.internal.executor.wrap.WrappedReportItemExecutor.execute(WrappedReportItemExecutor.java:46)
+	at org.eclipse.birt.report.engine.internal.executor.l18n.LocalizedReportItemExecutor.execute(LocalizedReportItemExecutor.java:34)
+	at org.eclipse.birt.report.engine.layout.html.HTMLBlockStackingLM.layoutNodes(HTMLBlockStackingLM.java:65)
+	at org.eclipse.birt.report.engine.layout.html.HTMLPageLM.layout(HTMLPageLM.java:92)
+	at org.eclipse.birt.report.engine.layout.html.HTMLReportLayoutEngine.layout(HTMLReportLayoutEngine.java:100)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.doRun(RunAndRenderTask.java:181)
+	at org.eclipse.birt.report.engine.api.impl.RunAndRenderTask.run(RunAndRenderTask.java:77)
+	at com.cs.birt.report.portal.HttpFacade.issueReportFile(HttpFacade.java:581)
+	at com.cs.birt.report.portal.HttpFacade.mergeOnlineOrBatch(HttpFacade.java:378)
+	at com.cs.birt.report.portal.HttpFacade.doPost(HttpFacade.java:134)
+	at com.cs.eeservices.handler.BirtHandler.online(BirtHandler.java:21)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:66)
+	at com.cs.eeservices.endpoint.BirtEndpoint$S1Route.onRequest(BirtEndpoint.java:60)
+	at com.cs.eeservices.base.EETypedRoute.handle(EETypedRoute.java:33)
+	at spark.RouteImpl$1.handle(RouteImpl.java:72)
+	at spark.http.matching.Routes.execute(Routes.java:61)
+	at spark.http.matching.MatcherFilter.doFilter(MatcherFilter.java:134)
+	at spark.servlet.SparkFilter.doFilter(SparkFilter.java:174)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:979)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1119)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4238)
+	at com.ibm.ws.webcontainer.webapp.WebAppImpl.handleRequest(WebAppImpl.java:2210)
+	at com.ibm.ws.webcontainer.webapp.WebGroup.handleRequest(WebGroup.java:304)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1033)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1817)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:382)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:465)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewRequest(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.processRequest(HttpInboundLink.java:318)
+	at com.ibm.ws.http.channel.inbound.impl.HttpICLReadCallback.complete(HttpICLReadCallback.java:88)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:204)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:775)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:905)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+Caused by: org.eclipse.birt.data.engine.core.DataException: A BIRT exception occurred. See next exception for more information.
+ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.data.engine.core.DataException.wrap(DataException.java:123)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:1003)
+	at org.eclipse.birt.data.engine.script.JSMethodRunner.runScript(JSMethodRunner.java:138)
+	... 56 more
+Caused by: org.eclipse.birt.core.exception.CoreException: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.wrapRhinoException(JavascriptEvalUtil.java:307)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:106)
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateScript(JavascriptEvalUtil.java:138)
+	at org.eclipse.birt.data.engine.script.ScriptEvalUtil.evaluateJSAsExpr(ScriptEvalUtil.java:999)
+	... 57 more
+Caused by: org.mozilla.javascript.EcmaError: ReferenceError: "SCFBirtLog" is not defined. (/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]#3)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3687)
+	at org.mozilla.javascript.ScriptRuntime.constructError(ScriptRuntime.java:3665)
+	at org.mozilla.javascript.ScriptRuntime.notFoundError(ScriptRuntime.java:3750)
+	at org.mozilla.javascript.ScriptRuntime.nameOrFunction(ScriptRuntime.java:1794)
+	at org.mozilla.javascript.ScriptRuntime.name(ScriptRuntime.java:1733)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__1297___method__name__afterOpen___630._c___bm_afterOpen_1(/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"]:3)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__1297___method__name__afterOpen___630.call(/report/data-sets/oda-data-set[@id="1297"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.optimizer.OptRuntime.callName0(OptRuntime.java:74)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8._c_script_0(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:394)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3091)
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.call(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.mozilla.javascript.gen._report_data_sets_oda_data_set__id__99073___method__name__afterOpen___8.exec(/report/data-sets/oda-data-set[@id="99073"]/method[@name="afterOpen"])
+	at org.eclipse.birt.core.script.JavascriptEvalUtil.evaluateRawScript(JavascriptEvalUtil.java:99)
+	... 59 more
+

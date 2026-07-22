@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>z3PNxEc1bvPl</ID>
+    <MODULE>SECU</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>DeleteErrMsg</DESC>
+    <TABLENAME SCHEMA="%EXIMUSER%">%EXIMUSER%.SEC_ERR_MSG_INFO</TABLENAME>
+    <FIELDLIST>
+        <FIELD DATATYPE="12" DESC="" EEType="Varchar_64" HIDDEN="">C_CATALOG_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Error Code" EEType="Varchar_20" HIDDEN="">C_ERR_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="" EEType="Varchar_1" HIDDEN="">C_ERR_LEVEL</FIELD>
+        <FIELD DATATYPE="12" DESC="" EEType="Varchar_512" HIDDEN="">C_ERR_MSG</FIELD>
+        <FIELD DATATYPE="12" DESC="" EEType="Varchar_1024" HIDDEN="">C_ERR_REC_ACTION</FIELD>
+        <FIELD DATATYPE="12" DESC="Language ID" EEType="Varchar_6" HIDDEN="">C_LANG_ID</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Error Code" DT="12" EEType="Varchar_20" TYPE="FLD">C_ERR_CODE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DESC="Language ID" DT="12" EEType="Varchar_6" TYPE="FLD">C_LANG_ID</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Error Code" EETYPE="Varchar_20">C_ERR_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Language ID" EETYPE="Varchar_6">C_LANG_ID</FIELD>
+    </CLAUSEFIELD>
+</CATA>

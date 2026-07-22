@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNCATTR DATABASE="EXIMMD" SCHEMA="EXIMMETA" TABLENAME="ECD_SYSFUNC_ATTR">
+    <COMPONENT TRANSACTION="NO">
+        <NAME>TrxMasterEditRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>MASTER</EVENT>
+        <TABLE_NAME>DISC_MASTER</TABLE_NAME>
+        <TABLE_DESC>Discount Master</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Edit Master</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME>TrxEventAddRec</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>DISC_PMT</TABLE_NAME>
+        <TABLE_DESC>Payment Info</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>FA_PMT_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>Add Event</BCTYPE>
+        <O2MRULE/>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME>ASOTMBDRelationshipAdd</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>RELATIONSHIP</EVENT>
+        <TABLE_NAME>DISC_INV_PMT</TABLE_NAME>
+        <TABLE_DESC>Invoice Info</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>FA_PMT_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>O2M Add Relationship</BCTYPE>
+        <O2MRULE>Domestic_Payment_P</O2MRULE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME>ASOTMBDBusinessTransferTo</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>DISC_INV</TABLE_NAME>
+        <TABLE_DESC>Invoice Info</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>FA_INV_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>O2M Transfer To Business</BCTYPE>
+        <O2MRULE>Domestic_Payment_P</O2MRULE>
+    </COMPONENT>
+    <COMPONENT TRANSACTION="NO">
+        <NAME>ASOTMBDRelationshipTransferTo</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>RELATIONSHIP</EVENT>
+        <TABLE_NAME>DISC_INV_LOAN</TABLE_NAME>
+        <TABLE_DESC>Invoice and Loan Info</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>FA_INV_LOAN_ID</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>O2M Transfer To Relationship</BCTYPE>
+        <O2MRULE>DD_SYS_DISC_INVPAY_P</O2MRULE>
+    </COMPONENT>
+    <!-- <COMPONENT TRANSACTION="NO">
+        <NAME>ASOTMBDBusinessTransferTo</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>DISC_LOAN</TABLE_NAME>
+        <TABLE_DESC>Loan Info</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>FA_LOAN_ID</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>O2M Transfer To Business</BCTYPE>
+        <O2MRULE>DD_SYS_DISC_INVPAY_P</O2MRULE>
+    </COMPONENT> -->
+    <COMPONENT TRANSACTION="NO">
+        <NAME>ASFABDMergeIAOTMGAPI</NAME>
+        <IMM_EDIT_FLAG>N</IMM_EDIT_FLAG>
+        <MODULE>DISC</MODULE>
+        <EVENT>Transaction</EVENT>
+        <TABLE_NAME>DISC_INV_LOAN</TABLE_NAME>
+        <TABLE_DESC>Invoice Loan Info</TABLE_DESC>
+        <MAINREF>C_MAIN_REF</MAINREF>
+        <TRXREF>C_MAIN_REF</TRXREF>
+        <MAPPINGRULE/>
+        <POST>YES</POST>
+        <BCTYPE>O2M GAPIs</BCTYPE>
+        <O2MRULE>DD_SYS_DISC_INVPAY_P</O2MRULE>
+    </COMPONENT>
+</FUNCATTR>

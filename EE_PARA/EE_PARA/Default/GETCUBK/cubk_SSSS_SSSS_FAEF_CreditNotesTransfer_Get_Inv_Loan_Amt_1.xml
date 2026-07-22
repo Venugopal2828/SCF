@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_FAEF_CreditNotesTransfer_Get_Inv_Loan_Amt_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_TRF_FX_RT ALIAS="T0" DBFUNC="" DESC="Transfer Limit FX Rate" DT="8" HIDDEN="F" TYPE="F">FA_TRF_FX_RT</FA_TRF_FX_RT>
+        <FA_CRN_BAL ALIAS="T0" DBFUNC="" DESC="Credit Notes Balance" DT="3" HIDDEN="F" TYPE="F">FA_TEMP_CRN_BAL</FA_CRN_BAL>
+        <FA_FIN_RET_BAL ALIAS="T0" DBFUNC="" DESC="Amt to Return Balance" DT="3" HIDDEN="F" TYPE="F">TEMP_AMT13</FA_FIN_RET_BAL>
+        <FA_FIN_LOAN_AMT ALIAS="T0" DBFUNC="" DESC="Invoice Total Loan Amount" DT="3" HIDDEN="F" TYPE="F">FA_FIN_LOAN_AMT</FA_FIN_LOAN_AMT>
+        <FA_INV_LOAN_BAL ALIAS="T0" DBFUNC="" DESC="Invoice Loan Balance" DT="3" HIDDEN="F" TYPE="F">FA_TEMP_LOAN_IBAL</FA_INV_LOAN_BAL>
+        <FA_PMT_TERMS ALIAS="T0" DBFUNC="" DESC="Payment Terms" DT="12" HIDDEN="F" TYPE="F">FA_PMT_TERMS</FA_PMT_TERMS>
+        <FA_PMT_COND ALIAS="T0" DBFUNC="" DESC="Payment Condition" DT="1" HIDDEN="F" TYPE="F">FA_PMT_COND</FA_PMT_COND>
+        <FA_ORDER_NO ALIAS="T0" DBFUNC="" DESC="Order No." DT="12" HIDDEN="F" TYPE="F">FA_ORDER_NO</FA_ORDER_NO>
+        <FA_LATEST_SHIP_DT ALIAS="T0" DBFUNC="" DESC="Latest Shipment Date" DT="91" HIDDEN="F" TYPE="F">FA_LATEST_SHIP_DT</FA_LATEST_SHIP_DT>
+        <FA_PRM_DISC_DAYS ALIAS="T0" DBFUNC="" DESC="1st Discount Days" DT="2" HIDDEN="F" TYPE="F">FA_PRM_DISC_DAYS</FA_PRM_DISC_DAYS>
+        <FA_PRM_DISC_RT ALIAS="T0" DBFUNC="" DESC="1st Discount Rate" DT="2" HIDDEN="F" TYPE="F">FA_PRM_DISC_RT</FA_PRM_DISC_RT>
+        <FA_SND_DISC_DAYS ALIAS="T0" DBFUNC="" DESC="2nd Discount Days" DT="2" HIDDEN="F" TYPE="F">FA_SND_DISC_DAYS</FA_SND_DISC_DAYS>
+        <FA_SND_DISC_RT ALIAS="T0" DBFUNC="" DESC="2nd Discount Rate" DT="2" HIDDEN="F" TYPE="F">FA_SND_DISC_RT</FA_SND_DISC_RT>
+        <FA_INV_LINK_REF ALIAS="T0" DBFUNC="" DESC="Invoice Link Reference No." DT="12" HIDDEN="F" TYPE="F">FA_INV_LINK_REF</FA_INV_LINK_REF>
+        <FA_DOC_BAL ALIAS="T0" DBFUNC="" DESC="Doc Balance" DT="3" HIDDEN="F" TYPE="F">FA_TEMP_AMT10</FA_DOC_BAL>
+        <FA_DOC_BAL ALIAS="T0" DBFUNC="" DESC="Doc Balance" DT="3" HIDDEN="F" TYPE="F">FA_TEMP_AMT11</FA_DOC_BAL>
+        <FA_DOC_AMT ALIAS="T0" DBFUNC="" DESC="Doc Amt" DT="3" HIDDEN="F" TYPE="F">FA_TEMP_AMT12</FA_DOC_AMT>
+        <FA_BA_FLG ALIAS="T0" DBFUNC="" DESC="Invoice Limit Flag" DT="1" HIDDEN="F" TYPE="F">FA_BA_FLG</FA_BA_FLG>
+        <FA_DOC_VAL_DT ALIAS="T0" DBFUNC="" DESC="Doc Value Date" DT="91" HIDDEN="F" TYPE="F">FA_TEMP_DT1</FA_DOC_VAL_DT>
+        <FA_DOC_DUE_DT ALIAS="T0" DBFUNC="" DESC="Doc Due Date" DT="91" HIDDEN="F" TYPE="F">FA_TEMP_DT2</FA_DOC_DUE_DT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_UNIT_CODE='</SQL>
+            <SQL DT="var" DV="SYS_BUSI_UNIT" TYPE="FldValue">FldValue0</SQL>
+            <SQL TYPE="SQL">' and FA_DOC_NO='</SQL>
+            <SQL TYPE="FLD">FA_CRN_INV_LINK_NO</SQL>
+            <SQL TYPE="SQL">' AND FSBC_REF='</SQL>
+            <SQL TYPE="FLD">FSBC_REF</SQL>
+            <SQL TYPE="SQL">' </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

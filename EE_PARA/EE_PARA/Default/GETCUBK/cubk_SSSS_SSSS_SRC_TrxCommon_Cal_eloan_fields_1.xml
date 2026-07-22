@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">IAAC_AMZMASTERLAY</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_SRC_TrxCommon_Cal_eloan_fields_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <IA_C_REF_NO ALIAS="T0" DBFUNC="" DESC="Reference No" DT="12" HIDDEN="F" TYPE="F">E_SEND_DOC_FLAG</IA_C_REF_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">IA_C_REF_NO='</SQL>
+            <SQL TYPE="FLD">E_REF_NO</SQL>
+            <SQL TYPE="SQL">' AND C_UNIT_CODE='</SQL>
+            <SQL TYPE="FLD">E_UNIT_CODE</SQL>
+            <SQL TYPE="SQL">' AND IA_C_MODU_NAME='</SQL>
+            <SQL DT="var" DV="SYS_MODULE_NAME" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

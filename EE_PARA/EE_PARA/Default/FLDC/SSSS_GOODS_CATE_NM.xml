@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>SSSS</module>
+    <separater></separater>
+    <full_display>false</full_display>
+    <blank_value></blank_value>
+    <multilang>N</multilang>
+    <fld_name>GOODS_CATE_NM</fld_name>
+    <type>T</type>
+    <settings>
+        <value_field>GOODS_CATE</value_field>
+        <table_name schema="%EXIMTRX%">%EXIMTRX%.DATA_GOODS_CATE</table_name>
+        <display_field>GOODS_CATE_NM</display_field>
+        <condition>
+            <sql type="COL">GOODS_CATE_LEVEL</sql>
+            <sql> = 'goodscate' AND </sql>
+            <sql type="COL">C_TRX_STATUS</sql>
+            <sql> ='M'</sql>
+        </condition>
+    </settings>
+</root>

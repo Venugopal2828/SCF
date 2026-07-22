@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Goods" Max="1" Min="1" Name="R2GoodsRe" PendingStore="Y" Screen="SCRN/DO/R2TSU_Goods.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="TSUM_GOODS_R2"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_TRX_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TSUM_EM_BASELINE">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="PO ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+        <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PO_DT</Element>
+        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+        <Element DATATYPE="12" Desc="PO Initiator" DispInGrid="N" EDIT="N" EEType="BaselineStatus1Cod" FldType="" Value="">TSU_PO_INITIATOR</Element>
+        <Element DATATYPE="12" Desc="Transport Shipment Flag" DispInGrid="Y" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_TRAN_SHIPMNT</Element>
+        <Element DATATYPE="12" Desc="Partical Shipment Flag" DispInGrid="Y" EDIT="N" EEType="YesNoIndicator" FldType="" Value="">TSU_PRTL_SHIPMNT</Element>
+        <Element DATATYPE="3" Desc="PO Total Net Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_NET_AMT</Element>
+        <Element DATATYPE="3" Desc="Lineitem Total Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_LINE_TTL_AMT</Element>
+        <Element DATATYPE="91" Desc="Latest Ship Date" DispInGrid="N" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_LATST_SHIP_DT</Element>
+        <Element DATATYPE="12" Desc="Freight Charges Associated With Goods" DispInGrid="N" EDIT="N" EEType="FreightCharges1Cd" FldType="" Value="">TSU_FRGHT_TP</Element>
+        <Element DATATYPE="12" Desc="Goods Description" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_GOODS_DESC</Element>
+        <Element DATATYPE="3" Desc="Accepted LineItems Total Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_LINE_TTL_APAMT</Element>
+        <Element DATATYPE="3" Desc="Ordered LineItems Total Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_LINE_TTL_ORAMT</Element>
+        <Element DATATYPE="3" Desc="Outstanding LineItems Total Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_LINE_TTL_OUAMT</Element>
+        <Element DATATYPE="3" Desc="Pending LineItems Total Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_LINE_TTL_PDAMT</Element>
+        <Element DATATYPE="3" Desc="Accepted Lineitem Net Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_NET_APAMT</Element>
+        <Element DATATYPE="3" Desc="Oredered Lineitem Net Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_NET_ORAMT</Element>
+        <Element DATATYPE="3" Desc="Outstanding Lineitem Net Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_NET_OUAMT</Element>
+        <Element DATATYPE="3" Desc="Pending Lineitem Net Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_NET_PDAMT</Element>
+        <Element DATATYPE="91" Desc="Earliest Shipment Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_EARLST_SHIP_DT</Element>
+        <Element DATATYPE="3" Desc="Accumulated Net Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_ACCUM_NET_AMT</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+    </Elements>
+    <DO Desc="LineItem Details" Name="R2LineItemDetails7" PendingStore="N" Screen="SCRN/DO/R2TSU_LineItem.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="TSUM_EM_LINEITEM_R2"></TABLE_NAME>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>TSU_LNITMNB</PKNAME>
+        </PK>
+        <FKS>
+            <FK>
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            </FK>
+            <FK>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+            <FK>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="Y" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+            <Element DATATYPE="12" Desc="Product Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_PDCTNM</Element>
+            <Element DATATYPE="12" Desc="UOM Quantity Code" DispInGrid="Y" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSUR2_QTY_UNIT_CD</Element>
+            <Element DATATYPE="12" Desc="Quantity Other Unit" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_QTY_OTUNIT</Element>
+            <Element DATATYPE="2" Desc="Quantity Value" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_VAL</Element>
+            <Element DATATYPE="2" Desc="Quantity Factor" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_FCTR</Element>
+            <Element DATATYPE="3" Desc="Quantity Tolerance Minus Percent" DispInGrid="N" EDIT="N" EEType="Demical_5_2" FldType="" Value="">TSU_QTYTLRN_MPCT</Element>
+            <Element DATATYPE="3" Desc="Quantity Tolerance Plus Percent" DispInGrid="N" EDIT="N" EEType="Demical_5_2" FldType="" Value="">TSU_QTYTLRN_PPCT</Element>
+            <Element DATATYPE="12" Desc="UOM Unit Price Code" DispInGrid="N" EDIT="N" EEType="UnitOfMeasure4Code" FldType="" Value="">TSUR2_UNTPRIC_CD</Element>
+            <Element DATATYPE="12" Desc="Unit Price Other Measure Code" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_UNTPRIC_OTUNIT</Element>
+            <Element DATATYPE="2" Desc="Unit Price Plus Percent" DispInGrid="N" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_UNITPRIC_PPCT</Element>
+            <Element DATATYPE="2" Desc="Unit Price Minus Percent" DispInGrid="N" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_UNITPRIC_MPCT</Element>
+            <Element DATATYPE="3" Desc="Unit Price" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_UNITPRIC_AMT</Element>
+            <Element DATATYPE="2" Desc="Unit Price Factor" DispInGrid="N" EDIT="N" EEType="Max15NumericText" FldType="" Value="">TSU_UNITPRIC_FCTR</Element>
+            <Element DATATYPE="12" Desc="Freight Charges Associated With Goods" DispInGrid="N" EDIT="N" EEType="FreightCharges1Cd" FldType="" Value="">TSU_FRGHT_TP</Element>
+            <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="3" Desc="Lineitem Total Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_AMT</Element>
+            <Element DATATYPE="2" Desc="Ordered Quantity Value" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_ORVAL</Element>
+            <Element DATATYPE="2" Desc="Ordered Quantity Factor" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_ORFCTR</Element>
+            <Element DATATYPE="2" Desc="Outstanding Quantity Value" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_OUVAL</Element>
+            <Element DATATYPE="2" Desc="Outstanding Quantity Factor" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_OUFCTR</Element>
+            <Element DATATYPE="2" Desc="Accepted Quantity Value" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_APVAL</Element>
+            <Element DATATYPE="2" Desc="Accepted Quantity Factor" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_APFCTR</Element>
+            <Element DATATYPE="2" Desc="Pending Quantity Factor" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_PDFCTR</Element>
+            <Element DATATYPE="2" Desc="Pending Quantity Value" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_QTY_PDVAL</Element>
+            <Element DATATYPE="3" Desc="Ordered Lineitem Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_ORAMT</Element>
+            <Element DATATYPE="3" Desc="Outstanding Lineitem Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_OUAMT</Element>
+            <Element DATATYPE="3" Desc="Pending Lineitem Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_PDAMT</Element>
+            <Element DATATYPE="3" Desc="Accepted Lineitem Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_APAMT</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+        </Elements>
+        <DO Desc="Product Identifier" Name="ProductIdentifier" PendingStore="N" Screen="SCRN/DO/TSU_PDC_IDR.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+            <TABLE_NAME Name="TSUM_PDC_IDR"></TABLE_NAME>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>TSU_LNITMNB</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS></FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Type" DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code" FldType="" Value="">TSU_PDC_TP</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Description" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_DESC</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTID</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTTP</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_NO</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Product Characteristics" Name="ProductCharacteristics" PendingStore="N" Screen="SCRN/DO/TSU_PDC_CHRTCS.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+            <TABLE_NAME Name="TSUM_PDC_CHRTCS"></TABLE_NAME>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>TSU_LNITMNB</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS></FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Type" DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code" FldType="" Value="">TSU_PDC_TP</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTTP</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTID</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Description" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_DESC</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="Y" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_NO</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Product Category" Name="ProductCategory" PendingStore="N" Screen="SCRN/DO/TSU_PDC_CTGY.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+            <TABLE_NAME Name="TSUM_PDC_CTGY"></TABLE_NAME>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>TSU_LNITMNB</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS></FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTID</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_OTTP</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Type" DispInGrid="Y" EDIT="N" EEType="ProIdentifier2Code" FldType="" Value="">TSU_PDC_TP</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics Description" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_DESC</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="Y" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                <Element DATATYPE="12" Desc="Product Category/Identifier/Characteristics No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PDC_NO</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Product Origin" Name="ProductOrigin" PendingStore="N" Screen="SCRN/DO/R2TSU_ProductOrigin.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_PDCTORGN_R2" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Product Origin" DispInGrid="Y" EDIT="N" EEType="AddressType1Code" FldType="" Value="">TSU_PDCTORGN</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Shipment Schedule" Name="R2ShipmntSchdl" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_SHIP_SCHDL" AutoGen-Parameter-Version="1.0">
+            <Elements></Elements>
+            <DO Desc="Shipment Date Range" Max="1" Min="0" Name="R2ShipmntDtRg" PendingStore="N" Screen="SCRN/DO/R2TSU_ShipmntSchdl.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_SHIP_DTRG" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="91" Desc="Earliest Shipment Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_EARLST_SHIP_DT</Element>
+                    <Element DATATYPE="91" Desc="Latest Ship Date" DispInGrid="Y" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_LATST_SHIP_DT</Element>
+                </Elements>
+            </DO>
+            <DO Desc="Shipment Sub Schedule" Max="n" Min="1" Name="R2ShipmntSubSchdl" PendingStore="N" Screen="SCRN/DO/R2TSU_ShipmntSubSchdl.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_SHIP_SUB_SCHDL" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="2" Desc="Partial Shipment Quantity" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_SUB_QTY</Element>
+                    <Element DATATYPE="91" Desc="Latest Ship Date" DispInGrid="Y" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_LATST_SHIP_DT</Element>
+                    <Element DATATYPE="91" Desc="Earliest Shipment Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">TSU_EARLST_SHIP_DT</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Routing Summary" Name="R2RoutingSummary" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_MltmdlTrnsprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_SUMMRY_R2" AutoGen-Parameter-Version="1.0">
+            <Elements></Elements>
+            <DO Desc="Individual Transport" Name="R2IndvTrnsprt" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_INDV_R2" AutoGen-Parameter-Version="1.0">
+                <Elements></Elements>
+                <DO Desc="Transport By Air" Name="R2TransportByAir" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtByAir.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_BY_AIR" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Air Carrier Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_AIR_CARR_NM</Element>
+                    </Elements>
+                    <DO Desc="Departure Airport" Name="DprtureAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DprtureAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DPRTUR_AIR" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Departure Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DP_AIRCD</Element>
+                            <Element DATATYPE="12" Desc="Departure Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRNM</Element>
+                            <Element DATATYPE="12" Desc="Departure Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRTWN</Element>
+                        </Elements>
+                    </DO>
+                    <DO Desc="Destination Airport" Name="DstnAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DstnAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DSTN_AIR" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Destination Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DT_AIRCD</Element>
+                            <Element DATATYPE="12" Desc="Destination Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRNM</Element>
+                            <Element DATATYPE="12" Desc="Destination Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRTWN</Element>
+                        </Elements>
+                    </DO>
+                </DO>
+                <DO Desc="Transport By Sea" Name="R2TransportBySea" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtBySea.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_BY_SEA" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Sea Carrier Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_SEA_CARR_NM</Element>
+                    </Elements>
+                    <DO Desc="Port Of Loading" Name="PortOfLoadng" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PortOfLoadng.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PORT_LOAD" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Port Of Loading" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_LOAD</Element>
+                        </Elements>
+                    </DO>
+                    <DO Desc="Port Of Discharge" Name="PortOfDschrge" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PortOfDschrge.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PORT_DSCH" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Port Of Discharge" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_DSCH</Element>
+                        </Elements>
+                    </DO>
+                </DO>
+                <DO Desc="Transport By Road" Name="R2TransportByRoad" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtByRoad.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_BY_ROAD" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Road Carrier Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ROAD_CARR_NM</Element>
+                    </Elements>
+                    <DO Desc="Place Of Receipt" Name="PlcOfRct" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PlcOfRct.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PLC_RCT" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                        </Elements>
+                    </DO>
+                    <DO Desc="Place Of Delivery" Name="PlcOfDlvry" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PlcOfDlvry.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PLC_DLV" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                        </Elements>
+                    </DO>
+                </DO>
+                <DO Desc="Transport By Rail" Name="R2TransportByRail" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtByRail.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_BY_RAIL" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Rail Carrier Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RAIL_CARR_NM</Element>
+                    </Elements>
+                    <DO Desc="Place Of Receipt" Name="PlcOfRct" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PlcOfRct.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PLC_RCT" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                        </Elements>
+                    </DO>
+                    <DO Desc="Place Of Delivery" Name="PlcOfDlvry" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PlcOfDlvry.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PLC_DLV" AutoGen-Parameter-Version="1.0">
+                        <Elements>
+                            <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                        </Elements>
+                    </DO>
+                </DO>
+            </DO>
+            <DO Desc="Multimodal Transport" Name="R2MltmdlTrnsprt" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_MltmdlTrnsprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRNS_MLTMDL" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Routing Summary Taking in Charge" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_TAK_CHG</Element>
+                    <Element DATATYPE="12" Desc="Place Of Final Destination" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_FNL_DSTN</Element>
+                </Elements>
+            </DO>
+        </DO>
+        <DO Desc="Incoterms" Name="Incoterms1" PendingStore="N" Screen="SCRN/DO/TSU_Incoterms.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+            <TABLE_NAME Name="TSUM_INCOTMS"></TABLE_NAME>
+            <PK>
+                <PKNAME>TSU_LNITMNB</PKNAME>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS></FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                <Element DATATYPE="12" Desc="Incoterms Location" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_INCOTMS_LCTN</Element>
+                <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Adjustment" Name="Adjustmtents" PendingStore="N" Screen="SCRN/DO/TSU_Adjustment_DO.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+            <TABLE_NAME Name="TSUM_ADJUST"></TABLE_NAME>
+            <PK>
+                <PKNAME>TSU_LNITMNB</PKNAME>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS></FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Adjustment Direction" DispInGrid="Y" EDIT="N" EEType="AdjustDirection1Co" FldType="" Value="">TSU_ADJUST_DRCTN</Element>
+                <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+                <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                <Element DATATYPE="2" Desc="Common Rate for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_IAFT_RT</Element>
+                <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="3" Desc="Common Calculating Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT_CAL</Element>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Freight Charge" Name="FrghtChrgs" PendingStore="N" Screen="SCRN/DO/TSU_Freight_Chrgs.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+            <TABLE_NAME Name="TSUM_FREIGHTCHG"></TABLE_NAME>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>TSU_LNITMNB</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS></FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                <Element DATATYPE="2" Desc="Common Rate for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_IAFT_RT</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                <Element DATATYPE="3" Desc="Common Calculating Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT_CAL</Element>
+                <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+                <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            </Elements>
+        </DO>
+        <DO Desc="Tax" Name="Tax3" PendingStore="N" Screen="SCRN/DO/TSU_Tax.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+            <TABLE_NAME Name="TSUM_TAX"></TABLE_NAME>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>TSU_LNITMNB</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS>
+                <FK>
+                    <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                </FK>
+                <FK>
+                    <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                </FK>
+                <FK>
+                    <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                </FK>
+                <FK>
+                    <FKNAME PARENT_COL="TSU_LNITMNB">TSU_LNITMNB</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+                <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+                <Element DATATYPE="2" Desc="Common Rate for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_IAFT_RT</Element>
+                <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+                <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+                <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+                <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+                <Element DATATYPE="3" Desc="Common Calculating Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT_CAL</Element>
+                <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+                <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Routing Summary" Name="R2RoutingSummary" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_MltmdlTrnsprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_SUMMRY_R2" AutoGen-Parameter-Version="1.0">
+        <Elements></Elements>
+        <DO Desc="Individual Transport" Name="R2IndvTrnsprt" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_TRANS_INDV_R2" AutoGen-Parameter-Version="1.0">
+            <Elements></Elements>
+            <DO Desc="Transport By Air" Name="R2TransportByAir" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtByAir.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_BY_AIR" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Air Carrier Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_AIR_CARR_NM</Element>
+                </Elements>
+                <DO Desc="Departure Airport" Name="DprtureAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DprtureAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DPRTUR_AIR" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Departure Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DP_AIRCD</Element>
+                        <Element DATATYPE="12" Desc="Departure Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRNM</Element>
+                        <Element DATATYPE="12" Desc="Departure Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DP_AIRTWN</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Destination Airport" Name="DstnAirprt" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_DstnAirprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_DSTN_AIR" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Destination Airport Code" DispInGrid="Y" EDIT="N" EEType="Max6Text" FldType="" Value="">TSU_RTG_DT_AIRCD</Element>
+                        <Element DATATYPE="12" Desc="Destination Airport Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRNM</Element>
+                        <Element DATATYPE="12" Desc="Destination Airport Town" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_DT_AIRTWN</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Transport By Sea" Name="R2TransportBySea" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtBySea.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_BY_SEA" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Sea Carrier Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_SEA_CARR_NM</Element>
+                </Elements>
+                <DO Desc="Port Of Loading" Name="PortOfLoadng" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PortOfLoadng.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PORT_LOAD" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Port Of Loading" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_LOAD</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Port Of Discharge" Name="PortOfDschrge" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PortOfDschrge.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PORT_DSCH" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Port Of Discharge" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PORT_DSCH</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Transport By Road" Name="R2TransportByRoad" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtByRoad.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_BY_ROAD" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Road Carrier Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ROAD_CARR_NM</Element>
+                </Elements>
+                <DO Desc="Place Of Receipt" Name="PlcOfRct" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PlcOfRct.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PLC_RCT" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Place Of Delivery" Name="PlcOfDlvry" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PlcOfDlvry.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PLC_DLV" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                    </Elements>
+                </DO>
+            </DO>
+            <DO Desc="Transport By Rail" Name="R2TransportByRail" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_TrnsprtByRail.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRANS_BY_RAIL" AutoGen-Parameter-Version="1.0">
+                <Elements>
+                    <Element DATATYPE="12" Desc="Rail Carrier Name" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RAIL_CARR_NM</Element>
+                </Elements>
+                <DO Desc="Place Of Receipt" Name="PlcOfRct" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PlcOfRct.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PLC_RCT" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Place Of Receipt" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_RCT</Element>
+                    </Elements>
+                </DO>
+                <DO Desc="Place Of Delivery" Name="PlcOfDlvry" PendingStore="N" Screen="SCRN/DO/TSU_RtgSummry_PlcOfDlvry.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_RTG_PLC_DLV" AutoGen-Parameter-Version="1.0">
+                    <Elements>
+                        <Element DATATYPE="12" Desc="Place Of Delivery" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_PLC_DLV</Element>
+                    </Elements>
+                </DO>
+            </DO>
+        </DO>
+        <DO Desc="Multimodal Transport" Name="R2MltmdlTrnsprt" PendingStore="N" Screen="SCRN/DO/R2TSU_RtgSummry_MltmdlTrnsprt.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSUR2_TRNS_MLTMDL" AutoGen-Parameter-Version="1.0">
+            <Elements>
+                <Element DATATYPE="12" Desc="Routing Summary Taking in Charge" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_TAK_CHG</Element>
+                <Element DATATYPE="12" Desc="Place Of Final Destination" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_RTG_FNL_DSTN</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Incoterms" Name="Incoterms1" PendingStore="N" Screen="SCRN/DO/TSU_Incoterms.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="TSUM_INCOTMS"></TABLE_NAME>
+        <PK>
+            <PKNAME>TSU_LNITMNB</PKNAME>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS></FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+            <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+            <Element DATATYPE="12" Desc="Incoterms Location" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_INCOTMS_LCTN</Element>
+            <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+            <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Adjustment" Name="Adjustmtents" PendingStore="N" Screen="SCRN/DO/TSU_Adjustment_DO.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="TSUM_ADJUST"></TABLE_NAME>
+        <PK>
+            <PKNAME>TSU_LNITMNB</PKNAME>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS></FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Adjustment Direction" DispInGrid="Y" EDIT="N" EEType="AdjustDirection1Co" FldType="" Value="">TSU_ADJUST_DRCTN</Element>
+            <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+            <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+            <Element DATATYPE="2" Desc="Common Rate for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_IAFT_RT</Element>
+            <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+            <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="3" Desc="Common Calculating Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT_CAL</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Freight Charge" Name="FrghtChrgs" PendingStore="N" Screen="SCRN/DO/TSU_Freight_Chrgs.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="TSUM_FREIGHTCHG"></TABLE_NAME>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>TSU_LNITMNB</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS></FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+            <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+            <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+            <Element DATATYPE="2" Desc="Common Rate for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_IAFT_RT</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+            <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+            <Element DATATYPE="3" Desc="Common Calculating Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT_CAL</Element>
+            <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+            <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Tax" Name="Tax3" PendingStore="N" Screen="SCRN/DO/TSU_Tax.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="TSUM_TAX"></TABLE_NAME>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>TSU_LNITMNB</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS></FKS>
+        <Elements>
+            <Element DATATYPE="3" Desc="Common Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT</Element>
+            <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+            <Element DATATYPE="2" Desc="Common Rate for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_IAFT_RT</Element>
+            <Element DATATYPE="12" Desc="Common Type" DispInGrid="Y" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="12" Desc="Lineitem No." DispInGrid="N" EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_LNITMNB</Element>
+            <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+            <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+            <Element DATATYPE="3" Desc="Common Calculating Amount for Charges, Adjustment etc." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_IAFT_AMT_CAL</Element>
+            <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+            <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+</DO>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">OWGT</MODULE>
+        <MODULE_DESC>Outward Guarantees</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030700844</ID>
+        <NAME>OWGT Received Settlement</NAME>
+        <DESC>Received Settlement</DESC>
+        <FUNSHORTNAME>RecvdStl</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">OWGT_RecvdSttlm.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700845</ID>
+        <NAME>OWGT Received Settlement_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700845</ID>
+        <NAME>OWGT Received Settlement_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000024</ID>
+        <NAME>OWGT Received Settlement_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

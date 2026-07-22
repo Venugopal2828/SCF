@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>INW_X103_RECCORRSW_54A</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <SW_ADD ALIAS="T0" DESC="Swift Address" DT="1" TYPE="F">INW_X103_RECCORRSW_54A</SW_ADD>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">INW_X103_RECCORRID_54A</C_MAIN_REF>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">INW_X103_RECCORADD154A</ADD1>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">INW_X103_RECCORRNM_54A</PARTY_NM>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="Address 3" DT="12" HIDDEN="F" TYPE="F">INW_X103_RECCORADD354A</ADD3>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address 2" DT="12" HIDDEN="F" TYPE="F">INW_X103_RECCORADD254A</ADD2>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

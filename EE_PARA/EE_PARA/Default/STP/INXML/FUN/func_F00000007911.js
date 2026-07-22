@@ -1,0 +1,136 @@
+stp.writeLog("********************start");
+stp.setAutoProcess(true);
+stp.setEdiRule("InEDI02");
+
+stp.updateFieldValue("FA_BUSI_STATUS", 'PCA');
+stp.updateFieldValue("CLERK_ID", "SYS_STP_USER");
+var fld_list = stp.addFieldList(null, "C_MAIN_REF");
+var FA_BUYER_NM = stp.getXMLNodeValue("BuyerName", "MSG02.Buyer", ".");
+var FA_SEL_NM = stp.getXMLNodeValue("SellerName", "MSG02.Seller", ".");
+var sql_condition = stp.addSQLCondition(null, "PARTY_NM", FA_BUYER_NM);
+var sql_condition2 = stp.addSQLCondition(null, "PARTY_NM", FA_SEL_NM);
+var result = stp.executeQuery("STAT_MASTER", fld_list, sql_condition);
+var result2 = stp.executeQuery("STAT_MASTER", fld_list, sql_condition2);
+var BuyermainRef = stp.getDBFieldValue(result, "C_MAIN_REF");
+var SelmainRef = stp.getDBFieldValue(result2, "C_MAIN_REF");
+stp.updateFieldValue("FA_BUYER_ID", BuyermainRef);
+stp.updateFieldValue("FA_SEL_ID", SelmainRef);
+
+
+var fld_list = stp.addFieldList(null, "FA_SEL_AC_NO");
+fld_list = stp.addFieldList(fld_list, "FA_SEL_BK_BR");
+fld_list = stp.addFieldList(fld_list, "FA_SERVICE_REQ");
+fld_list = stp.addFieldList(fld_list, "FA_GOODS_NM");
+fld_list = stp.addFieldList(fld_list, "FA_OA_TNOV_CCY");
+fld_list = stp.addFieldList(fld_list, "FA_OTHER_TNOV_CCY");
+fld_list = stp.addFieldList(fld_list, "FA_GOODS_DES");
+fld_list = stp.addFieldList(fld_list, "FA_NORMAL_TERMS");
+fld_list = stp.addFieldList(fld_list, "FA_INV_CCY1");
+fld_list = stp.addFieldList(fld_list, "FA_INV_CCY2");
+fld_list = stp.addFieldList(fld_list, "FA_INV_CCY3");
+fld_list = stp.addFieldList(fld_list, "FA_INV_CCY4");
+fld_list = stp.addFieldList(fld_list, "FA_INV_CCY5");
+fld_list = stp.addFieldList(fld_list, "FA_SEL_BK_NM");
+fld_list = stp.addFieldList(fld_list, "FA_CHG_BC_CCY");
+fld_list = stp.addFieldList(fld_list, "FA_CHG_BC_AMT");
+fld_list = stp.addFieldList(fld_list, "FA_CHG_BC_PERC");
+fld_list = stp.addFieldList(fld_list, "FA_TTL_SEL_TNOVCCY");
+fld_list = stp.addFieldList(fld_list, "FA_TTL_SEL_TNOV");
+fld_list = stp.addFieldList(fld_list, "FA_PMT_GRC_DAY");
+fld_list = stp.addFieldList(fld_list, "FA_NO_OF_BUYERS");
+fld_list = stp.addFieldList(fld_list, "FA_NO_OF_CRN");
+fld_list = stp.addFieldList(fld_list, "FA_NO_OF_INV");
+fld_list = stp.addFieldList(fld_list, "FA_OA_TNOV");
+fld_list = stp.addFieldList(fld_list, "FA_OTHER_TNOV");
+fld_list = stp.addFieldList(fld_list, "FA_SEL_NM");
+var FA_SEL_EDI_ID = stp.getXMLNodeValue("SellerNr", "MSG02.Seller", ".");
+var FA_EF_ID = stp.getXMLNodeValue("FactorCode", "MSG02.EF", ".");
+var sql_condition = stp.addSQLCondition(null, "FA_SEL_EDI_ID", FA_SEL_EDI_ID);
+sql_condition = stp.addSQLCondition(sql_condition, "FA_EF_ID", FA_EF_ID);
+var result = stp.executeQuery("FADA_SEL_INFO", fld_list, sql_condition);
+var FA_SEL_AC_NO = stp.getDBFieldValue(result, "FA_SEL_AC_NO");
+var FA_SEL_BK_BR = stp.getDBFieldValue(result, "FA_SEL_BK_BR");
+var FA_SERVICE_REQ = stp.getDBFieldValue(result, "FA_SERVICE_REQ");
+var FA_GOODS_NM = stp.getDBFieldValue(result, "FA_GOODS_NM");
+var FA_OA_TNOV_CCY = stp.getDBFieldValue(result, "FA_OA_TNOV_CCY");
+var FA_OTHER_TNOV_CCY = stp.getDBFieldValue(result, "FA_OTHER_TNOV_CCY");
+var FA_GOODS_DES = stp.getDBFieldValue(result, "FA_GOODS_DES");
+var FA_NORMAL_TERMS = stp.getDBFieldValue(result, "FA_NORMAL_TERMS");
+var FA_INV_CCY1 = stp.getDBFieldValue(result, "FA_INV_CCY1");
+var FA_INV_CCY2 = stp.getDBFieldValue(result, "FA_INV_CCY2");
+var FA_INV_CCY3 = stp.getDBFieldValue(result, "FA_INV_CCY3");
+var FA_INV_CCY4 = stp.getDBFieldValue(result, "FA_INV_CCY4");
+var FA_INV_CCY5 = stp.getDBFieldValue(result, "FA_INV_CCY5");
+var FA_SEL_BK_NM = stp.getDBFieldValue(result, "FA_SEL_BK_NM");
+var FA_CHG_BC_CCY = stp.getDBFieldValue(result, "FA_CHG_BC_CCY");
+var FA_CHG_BC_AMT = stp.getDBFieldValue(result, "FA_CHG_BC_AMT");
+var FA_CHG_BC_PERC = stp.getDBFieldValue(result, "FA_CHG_BC_PERC");
+var FA_TTL_SEL_TNOVCCY = stp.getDBFieldValue(result, "FA_TTL_SEL_TNOVCCY");
+var FA_TTL_SEL_TNOV = stp.getDBFieldValue(result, "FA_TTL_SEL_TNOV");
+var FA_PMT_GRC_DAY = stp.getDBFieldValue(result, "FA_PMT_GRC_DAY");
+var FA_NO_OF_BUYERS = stp.getDBFieldValue(result, "FA_NO_OF_BUYERS");
+var FA_NO_OF_CRN = stp.getDBFieldValue(result, "FA_NO_OF_CRN");
+var FA_NO_OF_INV = stp.getDBFieldValue(result, "FA_NO_OF_INV");
+var FA_OA_TNOV = stp.getDBFieldValue(result, "FA_OA_TNOV");
+var FA_OTHER_TNOV = stp.getDBFieldValue(result, "FA_OTHER_TNOV");
+var FA_SEL_NM = stp.getDBFieldValue(result, "FA_SEL_NM");
+
+
+stp.updateFieldValue("FA_SEL_AC_NO", FA_SEL_AC_NO);
+stp.updateFieldValue("FA_SEL_BK_BR", FA_SEL_BK_BR);
+stp.updateFieldValue("FA_SERVICE_REQ", FA_SERVICE_REQ);
+stp.updateFieldValue("FA_GOODS_NM", FA_GOODS_NM);
+stp.updateFieldValue("FA_OA_TNOV_CCY", FA_OA_TNOV_CCY);
+stp.updateFieldValue("FA_OTHER_TNOV_CCY", FA_OTHER_TNOV_CCY);
+stp.updateFieldValue("FA_GOODS_DES", FA_GOODS_DES);
+stp.updateFieldValue("FA_NORMAL_TERMS", FA_NORMAL_TERMS);
+stp.updateFieldValue("FA_INV_CCY1", FA_INV_CCY1);
+stp.updateFieldValue("FA_INV_CCY2", FA_INV_CCY2);
+stp.updateFieldValue("FA_INV_CCY3", FA_INV_CCY3);
+stp.updateFieldValue("FA_INV_CCY4", FA_INV_CCY4);
+stp.updateFieldValue("FA_INV_CCY5", FA_INV_CCY5);
+stp.updateFieldValue("FA_SEL_BK_NM", FA_SEL_BK_NM);
+stp.updateFieldValue("FA_CHG_BC_CCY", FA_CHG_BC_CCY);
+stp.updateFieldValue("FA_CHG_BC_AMT", FA_CHG_BC_AMT);
+stp.updateFieldValue("FA_CHG_BC_PERC", FA_CHG_BC_PERC);
+stp.updateFieldValue("FA_TTL_SEL_TNOVCCY", FA_TTL_SEL_TNOVCCY);
+stp.updateFieldValue("FA_TTL_SEL_TNOV", FA_TTL_SEL_TNOV);
+stp.updateFieldValue("FA_PMT_GRC_DAY", FA_PMT_GRC_DAY);
+stp.updateFieldValue("FA_NO_OF_BUYERS", FA_NO_OF_BUYERS);
+stp.updateFieldValue("FA_NO_OF_CRN", FA_NO_OF_CRN);
+stp.updateFieldValue("FA_NO_OF_INV", FA_NO_OF_INV);
+stp.updateFieldValue("FA_OA_TNOV", FA_OA_TNOV);
+stp.updateFieldValue("FA_OTHER_TNOV", FA_OTHER_TNOV);
+stp.updateFieldValue("FA_SEL_NM", FA_SEL_NM);
+
+var FA_PMT_TERMS = stp.getFieldValue("FA_PMT_TERMS");
+if (stp.getFieldValue("FA_PMT_TERMS_FLG") == '1') {
+    stp.updateFieldValue("FA_APPL_INFO", 'Payment terms is ' + FA_PMT_TERMS + ' days from invoice value date.');
+} else {
+    stp.updateFieldValue("FA_APPL_INFO", 'Payment terms is ' + FA_PMT_TERMS + ' days from invoice issue month.');
+}
+
+
+
+
+var pre = 'IF';
+stp.updateFieldValue("FA_BUSI_TYPE", pre);
+var UnitCode = stp.getBusiUnit();
+var date = stp.getSysBusiDate();
+stp.updateFieldValue("TRX_DT", date);
+var fld_list = stp.addFieldList(null, "C_MAIN_REF");
+var FA_APPL_LMT_CCY = stp.getXMLNodeValue("Currency", "MSG02.PrelCreditAssessDetails", ".");
+var FA_SEL_NM = stp.getXMLNodeValue("SellerName", "MSG02.Seller", ".");
+var FA_BUYER_NM = stp.getXMLNodeValue("BuyerName", "MSG02.Buyer", ".");
+var sql_condition = stp.addSQLCondition(null, "FA_SEL_NM", FA_SEL_NM);
+sql_condition = stp.addSQLCondition(sql_condition, "FA_EF_ID", FA_EF_ID);
+sql_condition = stp.addSQLCondition(sql_condition, "FA_BUYER_NM", FA_BUYER_NM);
+sql_condition = stp.addSQLCondition(sql_condition, "FA_APPL_LMT_CCY", FA_APPL_LMT_CCY);
+sql_condition = stp.addSQLCondition(sql_condition, "FA_BUSI_TYPE", 'IF');
+var result = stp.executeQuery("FADA_PRE_CREDIT", fld_list, sql_condition);
+var mainRef = stp.getDBFieldValue(result, "C_MAIN_REF");
+stp.writeLog("ref no=============" + result);
+stp.updateFieldValue("C_MAIN_REF", mainRef);
+stp.updateFieldValue("FA_PCA_REF", mainRef);
+stp.setEventTimesFromTable("FADA_MASTER");
+stp.writeLog("********************end");

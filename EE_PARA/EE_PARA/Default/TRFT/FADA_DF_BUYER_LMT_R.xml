@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FADA</module>
+    <name>DF_BUYER_LMT</name>
+    <desc>DF_BUYER_LMT</desc>
+    <head-info>
+        <DO name="DFAgreement" path="DFAgreement"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.STAT_MASTER</table-name>
+        <table-desc>Static Master Table</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> ='</sql>
+            <field mf="F">FA_BUYER_ID</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_LMT_BAL fv_type="F" mf="F" oper="-=">FA_TEMP1</FA_LMT_BAL>
+    </mapping>
+</root>

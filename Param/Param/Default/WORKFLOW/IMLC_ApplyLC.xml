@@ -1,0 +1,82 @@
+<WORKFLOW>
+	<STEPS>
+		<STEP>
+			<LABEL>Apply for Import LC</LABEL>
+			<INITIALINFO>Draft</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700829" DESC="IMLC Apply for Import LC"/>
+				<FUNC ID="F05030700873" DESC="IMLC Resubmit Import LC Application"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<STATUS DESC="">Z</STATUS>
+					<STATUS DESC="">P</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<EVENTINFO><![CDATA[by ${user} on ${date} at ${time}]]></EVENTINFO>
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<ENDSTATUS>Pending approval</ENDSTATUS>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>Authorize</LABEL>
+			<INITIALINFO>Pending authorization</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700829" DESC="IMLC Apply for Import LC"/>
+				<FUNC ID="F05030700873" DESC="IMLC Resubmit Import LC Application"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS>
+					<STATUS DESC="">T</STATUS>
+					<STATUS DESC="">S</STATUS>
+					<STATUS DESC="">R</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<EVENTINFO><![CDATA[next authorizers]]></EVENTINFO>
+			<ABNORMALSTATUS>Rejected by authorizer</ABNORMALSTATUS>
+			<ABINFO><![CDATA[by ${user} on ${date} at ${time}]]></ABINFO>
+			<ENDSTATUS>Fully authorized</ENDSTATUS><!--currnt status-->
+			<ENDINFO><![CDATA[authorized by ${count} users]]></ENDINFO>
+		</STEP>
+		<STEP>
+			<LABEL>Bank Decision</LABEL>
+			<INITIALINFO>Application review</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700859" DESC="IMLC Bank Decision on Import LC Application"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS>
+					<STATUS DESC="Application accepted">Accepted by bank</STATUS>
+					<STATUS DESC="Application rejected">Rejected by bank</STATUS>
+				</CURRNTSTATUS>
+				<TRXSTATUS>
+					<STATUS DESC="">M</STATUS>
+				</TRXSTATUS>
+			</STATUSLIST>
+			<EVENTINFO><![CDATA[by bank on ${date} at ${time}]]></EVENTINFO>
+			<ABNORMALSTATUS>Rejected by bank</ABNORMALSTATUS>
+			<ABINFO/>
+			<ENDSTATUS>Accepted by bank</ENDSTATUS>
+			<ENDINFO/>
+		</STEP>
+		<STEP>
+			<LABEL>LC Issued</LABEL>
+			<INITIALINFO>In process</INITIALINFO>
+			<FUNCS>
+				<FUNC ID="F05030700857" DESC="IMLC Import LC Issued"/>
+			</FUNCS>
+			<STATUSLIST>
+				<CURRNTSTATUS/>
+				<TRXSTATUS/>
+			</STATUSLIST>
+			<EVENTINFO><![CDATA[by bank on ${date} at ${time}]]></EVENTINFO>
+			<ABNORMALSTATUS/>
+			<ABINFO/>
+			<ENDSTATUS>Issued</ENDSTATUS>
+			<ENDINFO/>
+		</STEP>
+	</STEPS>
+</WORKFLOW>

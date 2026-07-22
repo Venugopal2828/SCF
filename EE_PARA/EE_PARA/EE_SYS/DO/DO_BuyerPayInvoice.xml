@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="BuyerPayInvoice" Max="n" Min="0" Name="BuyerPayInvoice" PendingStore="N" Screen="SCRN/o2m/PMAT_BuyerPaymentInvoiceLib.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>BuyerPayInvoice</Component>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Number that identifies the invoice created by the buyer" DispInGrid="Y" EDIT="N" EEType="varchar_50_1" FldType="" Value="">AI_NUM</Element>
+        <Element DATATYPE="12" Desc="Early Payment Program Supplier Relationship Identification Number" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">SUPLR_ID</Element>
+        <Element DATATYPE="12" Desc="Supplier Name" DispInGrid="Y" EDIT="N" EEType="Varchar_60" FldType="" Value="">SUPLR_NM</Element>
+        <Element DATATYPE="3" Desc="AI approved amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">AI_ACT_AMT</Element>
+        <Element DATATYPE="3" Desc="Invoice balance" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">AI_BALANCE</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 10" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT10</Element>
+        <Element DATATYPE="3" Desc="This is the payment amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">PYMT_BUYR_AMT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Due Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">AI_DUE_DT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Settlement Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">AI_SET_DT</Element>
+        <Element DATATYPE="12" Desc="Status shown to the staff" DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_STAFF_CD</Element>
+        <Element DATATYPE="12" Desc="Status shown to the buyer" DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_BUYR_CD</Element>
+        <Element DATATYPE="12" Desc="Status shown to the supplier" DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_SUPLR_CD</Element>
+        <Element DATATYPE="3" Desc="Overdue interest amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">OVD_INT_AMT</Element>
+        <Element DATATYPE="3" Desc="Interest Payment Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">PYMT_INT_AMT</Element>
+        <Element DATATYPE="3" Desc="Payment Fee Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">PYMT_FEE_AMT</Element>
+        <Element DATATYPE="3" Desc="AI Overdue Payment Penalty Charge" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">AI_OVD_FEE</Element>
+        <Element DATATYPE="3" Desc="AMT_TO_SELT" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">AMT_TO_SELT</Element>
+        <Element DATATYPE="12" Desc="Related EPP ID" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">EPP_ID</Element>
+        <Element DATATYPE="91" Desc="This is the date on which the invoice amount is paid" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">AI_PMT_DT</Element>
+        <Element DATATYPE="3" Desc="This is the paid amount for an invoice" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">AI_AMT_PAID</Element>
+        <Element DATATYPE="12" Desc="EPP Supplier Id" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">EPP_SUPLR_ID</Element>
+        <Element DATATYPE="12" Desc="Whether this invoice is funded" DispInGrid="Y" EDIT="N" EEType="FLAG_1" FldType="" Value="">IS_FUNDED</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="12" Desc="Approved invoice ID" DispInGrid="N" EDIT="N" EEType="Varchar_18" FldType="" Value="">AI_ID</Element>
+        <Element DATATYPE="12" Desc="Temporary field 3" DispInGrid="N" EDIT="N" EEType="Varchar_65" FldType="" Value="">FA_TEMP3</Element>
+        <Element DATATYPE="12" Desc="Temporary field 4" DispInGrid="N" EDIT="N" EEType="AutoGen_Ext_VARCHAR_60" FldType="" Value="">FA_TEMP4</Element>
+        <Element DATATYPE="12" Desc="RSV Link" DispInGrid="N" EDIT="N" EEType="Varchar_20" FldType="" Value="">LM_RSV_LINK</Element>
+        <Element DATATYPE="12" Desc="SYSFLD:LM_FACI_ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">LM_FACI_ID</Element>
+        <Element DATATYPE="12" Desc="SYSFLD:LM_CSL_ID" DispInGrid="N" EDIT="N" EEType="Varchar_10" FldType="" Value="">LM_CSL_ID</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 13" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT13</Element>
+        <Element DATATYPE="12" Desc="Temporary Document Status" DispInGrid="N" EDIT="N" EEType="AutoGen_Ext_VARCHAR_45" FldType="" Value="">FA_TEMP_DOC_STATUS</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 19" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT19</Element>
+        <Element DATATYPE="12" Desc="TEMP_DEP_REF" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">TEMP_DEP_REF</Element>
+        <Element DATATYPE="3" Desc="Remittance AMT1" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_REMI_AMT1</Element>
+        <Element DATATYPE="12" Desc="Direct debit collection account(Buyer)" DispInGrid="N" EDIT="N" EEType="FLAG_35" FldType="" Value="">ACC_BUYER_SETL</Element>
+        <Element DATATYPE="3" Desc="AI original amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">AI_ORG_AMT</Element>
+        <Element DATATYPE="12" Desc="Customer BOS ID" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">BUYR_BOS_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer Identification Number" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">BUYR_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer name" DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">BUYR_NM</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="EPP name" DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">EPP_NM</Element>
+    </Elements>
+</DO>

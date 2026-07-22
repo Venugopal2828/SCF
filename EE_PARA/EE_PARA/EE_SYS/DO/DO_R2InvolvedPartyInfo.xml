@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Party Information" Max="1" Min="0"
+    Name="R2InvolvedPartyInfo" PendingStore="Y">
+    <Elements/>
+    <DO Desc="Buyer Bank" Max="1" Min="1" Name="BuyerBank" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="Y" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Street Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Town" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Seller Bank ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Nature of the Identifier"
+                DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+        <DO Desc="ContactIdentification" Max="n" Min="0"
+            Name="ContactIdentification1" PendingStore="N"
+            Screen="SCRN/DO/ContactIdentification1.jsp" StoreInto="D" StoreType="T">
+            <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>TSU_CONT_ID</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS>
+                <FK PARENT_TABLE="TSUM_EM_PARTY">
+                    <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                    <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_DO_NAME">TSU_CONT_ID</FKNAME>
+                    <FKNAME PARENT_COL="TSU_SEQ_NUM">TSU_IDX</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+                <Element DATATYPE="12" Desc="Name Prefix" DispInGrid="Y"
+                    EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+                <Element DATATYPE="12" Desc="Contactor Email Address"
+                    DispInGrid="N" EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+                <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+                <Element DATATYPE="12" Desc="Contactor Given Name"
+                    DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+                <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+                <Element DATATYPE="12" Desc="Role" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                    EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                    DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N"
+                    EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+                <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N"
+                    EDIT="N" EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+                <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Seller Bank" Max="1" Min="1" Name="SellerBank" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="Y" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Street Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Town" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Seller Bank ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Nature of the Identifier"
+                DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+        <DO Desc="ContactIdentification" Max="n" Min="0"
+            Name="ContactIdentification1" PendingStore="N"
+            Screen="SCRN/DO/ContactIdentification1.jsp" StoreInto="D" StoreType="T">
+            <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>TSU_CONT_ID</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS>
+                <FK PARENT_TABLE="TSUM_EM_PARTY">
+                    <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                    <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_DO_NAME">TSU_CONT_ID</FKNAME>
+                    <FKNAME PARENT_COL="TSU_SEQ_NUM">TSU_IDX</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+                <Element DATATYPE="12" Desc="Name Prefix" DispInGrid="Y"
+                    EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+                <Element DATATYPE="12" Desc="Contactor Email Address"
+                    DispInGrid="N" EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+                <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+                <Element DATATYPE="12" Desc="Contactor Given Name"
+                    DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+                <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+                <Element DATATYPE="12" Desc="Role" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                    EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                    DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N"
+                    EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+                <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N"
+                    EDIT="N" EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+                <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Buyer Side Submitting Bank" Max="n" Min="0" Name="BuyrSdSubmitgBk"
+        PendingStore="N" Screen="SCRN/DO/FINA_PartyIdentification26.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="N" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="1" Desc="Seller Side Submitting Bank"
+                DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SEL_SUB_BK</Element>
+            <Element DATATYPE="1" Desc="Buyer Side Submitting Bank BIC"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_BUYER_SUB_BK</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Seller Side Submitting Bank" Max="n" Min="0"
+        Name="SellrSdSubmitgBk" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="N" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="1" Desc="Seller Side Submitting Bank"
+                DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SEL_SUB_BK</Element>
+            <Element DATATYPE="1" Desc="Buyer Side Submitting Bank BIC"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_BUYER_SUB_BK</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Buyer" Max="1" Min="1" Name="Buyer" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="Y" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Street Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Town" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Seller Bank ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Nature of the Identifier"
+                DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+        <DO Desc="ContactIdentification" Max="n" Min="0"
+            Name="ContactIdentification1" PendingStore="N"
+            Screen="SCRN/DO/ContactIdentification1.jsp" StoreInto="D" StoreType="T">
+            <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>TSU_CONT_ID</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS>
+                <FK PARENT_TABLE="TSUM_EM_PARTY">
+                    <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                    <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_DO_NAME">TSU_CONT_ID</FKNAME>
+                    <FKNAME PARENT_COL="TSU_SEQ_NUM">TSU_IDX</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+                <Element DATATYPE="12" Desc="Name Prefix" DispInGrid="Y"
+                    EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+                <Element DATATYPE="12" Desc="Contactor Email Address"
+                    DispInGrid="N" EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+                <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+                <Element DATATYPE="12" Desc="Contactor Given Name"
+                    DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+                <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+                <Element DATATYPE="12" Desc="Role" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                    EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                    DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N"
+                    EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+                <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N"
+                    EDIT="N" EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+                <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Seller" Max="1" Min="1" Name="Seller" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="Y" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Street Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Town" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Seller Bank ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Nature of the Identifier"
+                DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+        </Elements>
+        <DO Desc="ContactIdentification" Max="n" Min="0"
+            Name="ContactIdentification1" PendingStore="N"
+            Screen="SCRN/DO/ContactIdentification1.jsp" StoreInto="D" StoreType="T">
+            <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+            <PK>
+                <PKNAME>C_MAIN_REF</PKNAME>
+                <PKNAME>C_UNIT_CODE</PKNAME>
+                <PKNAME>C_TRX_REF</PKNAME>
+                <PKNAME>TSU_CONT_ID</PKNAME>
+                <PKNAME>TSU_SEQ_NUM</PKNAME>
+            </PK>
+            <FKS>
+                <FK PARENT_TABLE="TSUM_EM_PARTY">
+                    <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                    <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+                    <FKNAME PARENT_COL="C_DO_NAME">TSU_CONT_ID</FKNAME>
+                    <FKNAME PARENT_COL="TSU_SEQ_NUM">TSU_IDX</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+                <Element DATATYPE="12" Desc="Name Prefix" DispInGrid="Y"
+                    EDIT="N" EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+                <Element DATATYPE="12" Desc="Contactor Email Address"
+                    DispInGrid="N" EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+                <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+                <Element DATATYPE="12" Desc="Contactor Given Name"
+                    DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+                <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                    EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+                <Element DATATYPE="12" Desc="Role" DispInGrid="Y" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+                <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                    EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+                <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                    EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+                <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">C_MAIN_REF</Element>
+                <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_TRX_REF</Element>
+                <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+                <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                    DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+                <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N"
+                    EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+                <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N"
+                    EDIT="N" EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+                <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                    EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            </Elements>
+        </DO>
+    </DO>
+    <DO Desc="Bill To" Max="1" Min="0" Name="BillTo" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="N" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="1" Desc="Seller Side Submitting Bank"
+                DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SEL_SUB_BK</Element>
+            <Element DATATYPE="1" Desc="Buyer Side Submitting Bank BIC"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_BUYER_SUB_BK</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Ship To" Max="1" Min="0" Name="ShipTo" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="N" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="1" Desc="Seller Side Submitting Bank"
+                DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SEL_SUB_BK</Element>
+            <Element DATATYPE="1" Desc="Buyer Side Submitting Bank BIC"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_BUYER_SUB_BK</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Consignee" Max="1" Min="0" Name="Consignee" PendingStore="N"
+        Screen="SCRN/DO/FINA_PartyIdentification26.jsp" StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_EM_PARTY"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="BEI" DispInGrid="N" EDIT="N"
+                EEType="BEIIdentifier" FldType="" Value="">TSU_PARTY_BEI</Element>
+            <Element DATATYPE="12" Desc="Party Street Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_STREET_NM</Element>
+            <Element DATATYPE="12" Desc="Post Code" DispInGrid="N" EDIT="N"
+                EEType="Max16Text" FldType="" Value="">TSU_POST_CD</Element>
+            <Element DATATYPE="12" Desc="Party Town Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TOWN_NM</Element>
+            <Element DATATYPE="12" Desc="Country Sub Division" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CNTY_SUB_DIVI</Element>
+            <Element DATATYPE="12" Desc="Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="0">TSU_PARTY_CNTY</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BICIdentifier" FldType="" Value="">TSU_BUYER_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank ID" DispInGrid="N" EDIT="N"
+                EEType="MICIdentifier" FldType="" Value="">TSU_BUYER_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Buyer Bank" DispInGrid="N" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_BUYER_BK_NM</Element>
+            <Element DATATYPE="1" Desc="Seller Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SEL_BK_BIC</Element>
+            <Element DATATYPE="12" Desc="ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_11" FldType="" Value="">TSU_SEL_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Seller Bank Name" DispInGrid="N"
+                EDIT="N" EEType="Max70Text" FldType="" Value="">TSU_SEL_BK_NM</Element>
+            <Element DATATYPE="12" Desc="Party ID" DispInGrid="N" EDIT="N"
+                EEType="AddressType1Code" FldType="" Value="">TSU_PARTY_ID</Element>
+            <Element DATATYPE="12" Desc="Party ID Type" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_PARTY_ID_TP</Element>
+            <Element DATATYPE="1" Desc="Seller Side Submitting Bank"
+                DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SEL_SUB_BK</Element>
+            <Element DATATYPE="1" Desc="Buyer Side Submitting Bank BIC"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">TSU_BUYER_SUB_BK</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_10" FldType="" Value="">CUST_ID</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Other Bank Contact Person" Max="n" Min="0" Name="OtherBk"
+        PendingStore="N" Screen="SCRN/DO/ContactIdentification1.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_CNTC_INFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>TSU_CONT_ID</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Name" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_NM</Element>
+            <Element DATATYPE="12" Desc="Name Prefix" DispInGrid="Y" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_CONT_NMPRFX</Element>
+            <Element DATATYPE="12" Desc="Contactor Email Address" DispInGrid="N"
+                EDIT="N" EEType="Max256Text" FldType="" Value="">TSU_CONT_EMAIL</Element>
+            <Element DATATYPE="12" Desc="Contactor Fax" DispInGrid="N" EDIT="N"
+                EEType="Varchar_30" FldType="" Value="">TSU_CONT_FAX</Element>
+            <Element DATATYPE="12" Desc="Contactor Given Name" DispInGrid="N"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CONT_GVNNM</Element>
+            <Element DATATYPE="12" Desc="Contactor Phone" DispInGrid="N"
+                EDIT="N" EEType="Varchar_30" FldType="" Value="">TSU_CONT_TEL</Element>
+            <Element DATATYPE="12" Desc="Role" DispInGrid="Y" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ROLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="Table Flag" DispInGrid="N" EDIT="N"
+                EEType="Action1Code" FldType="" Value="">TSU_TABLE_FLG</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+            <Element DATATYPE="12" Desc="Contactor ID" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_CONT_ID</Element>
+            <Element DATATYPE="12" Desc="Other Bank BIC" DispInGrid="N" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_OT_BK_BIC</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_EVENT_TIMES</Element>
+        </Elements>
+    </DO>
+</DO>

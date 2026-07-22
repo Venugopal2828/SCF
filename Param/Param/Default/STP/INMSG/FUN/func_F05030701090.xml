@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start:FAEF Add Invoice");
+stp.setAutoProcess(true);
+var sUnitCode = stp.getMsgTagVal("CE_UNIT_CODE");
+stp.setCmpId(sUnitCode);
+var dtTm = stp.getXslMsgTagVal("/message/out-msg-content/Document/FinInvc/InvcHdr","IsseDtTm");
+stp.writeLog("dtTm========="+dtTm);
+var issDt = dtTm.substr(0,10);
+stp.writeLog("issDt========="+issDt);
+stp.updateFieldValue("FA_DOC_DT",issDt);
+stp.updateFieldValue("FA_DOC_VAL_DT",issDt);
+var sMainRef = stp.SYS_getRefNo("P14042500001");
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Uploaded Invoice");
+stp.setEventTimes(0);
+stp.writeLog("End:FAEF Add Invoice");]]></js-content>
+</root>

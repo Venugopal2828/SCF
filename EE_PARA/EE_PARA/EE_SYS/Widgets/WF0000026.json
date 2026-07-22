@@ -1,0 +1,29 @@
+{
+	"id": "WF0000026",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF0000026",
+			"display": "chart.bar",
+			"title": "Customer Invoice Insights Widget",
+			"desc": "Show all Customer Invoice Insights transactions here.",
+			"tooltip": "{\"text\":\"{a}<br/>{c} transaction(s) with status [{b}] comes in.{d}\",\"confine\":true,\"trigger\":\"item\"}",
+				
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Customer Invoice Insights Widget\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+					"line": "{\"xAxis\":{\"name\":\"Customer Invoice Insights Widget\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Customer Invoice Insights Widget\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Customer Invoice Insights Widget\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"sql": "SELECT C_UNIT_CODE, FA_SEL_ID AS CUSTOMER_ID, COUNT(DISTINCT FA_DOC_REF) AS REF_COUNT FROM EXIMTRX.INVC_MASTER WHERE FA_SEL_ID IS NOT NULL AND FA_DOC_REF IS NOT NULL GROUP BY FA_SEL_ID,C_UNIT_CODE ORDER BY REF_COUNT DESC fetch first 20 rows only",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "CUSTOMER_ID",
+			"valueField": "REF_COUNT"
+		}
+	}
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="LimitsDo" Max="n" Min="0"
+    Name="LimitsDo" PendingStore="N" Screen="SCRN/FSBC_CreateFSBC.jsp"
+    StoreInto="C" StoreType="C">
+    <Component>TrxLimit</Component>
+    <PK>
+        <PKNAME>LM_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FADA_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="limit Id" DispInGrid="Y" EDIT="Y"
+            EEType="Varchar_35" FldType="TextField" Value="">LM_ID</Element>
+        <Element DATATYPE="12" Desc="limit Name" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR100" FldType="" Value="">LM_NM</Element>
+        <Element DATATYPE="12" Desc="Limit Type" DispInGrid="Y" EDIT="Y"
+            EEType="" FldType="TextField" Value="">LM_TYPE</Element>
+        <Element DATATYPE="12" Desc="Type of the limit node" DispInGrid="Y"
+            EDIT="Y" EEType="VARCHAR20" FldType="TextField" Value="">LM_TYPE_DESC</Element>
+        <Element DATATYPE="12" Desc="parent Id" DispInGrid="Y" EDIT="Y"
+            EEType="Varchar_35" FldType="" Value="">LM_PARENT_ID</Element>
+        <Element DATATYPE="12" Desc="Parent Name of the limit node"
+            DispInGrid="N" EDIT="N" EEType="VARCHAR100" FldType="" Value="">LM_PARENT_NM</Element>
+        <Element DATATYPE="3" Desc="Amt" DispInGrid="Y" EDIT="Y" EEType="AMT"
+            FldType="" Value="">LM_CRED_LMT</Element>
+        <Element DATATYPE="1" Desc="CCy" DispInGrid="Y" EDIT="Y" EEType="CCY"
+            FldType="" Value="">LM_BASE_CCY</Element>
+        <Element DATATYPE="2" Desc="Exchange rate" DispInGrid="Y" EDIT="Y"
+            EEType="Numeric_18_6" FldType="" Value="1">LM_ERATE</Element>
+        <Element DATATYPE="2" Desc="Debit amount" DispInGrid="Y" EDIT="Y"
+            EEType="Numeric_18_3" FldType="" Value="0">LM_DEBT_LMT</Element>
+        <Element DATATYPE="91" Desc="create Day" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">LM_CRT_DAY</Element>
+        <Element DATATYPE="91" Desc="Start Day" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">LM_STR_DAY</Element>
+        <Element DATATYPE="91" Desc="Due Date" DispInGrid="Y" EDIT="Y"
+            EEType="DATE" FldType="" Value="">LM_DUE_DAY</Element>
+        <Element DATATYPE="12" Desc="Revolving" DispInGrid="Y" EDIT="Y"
+            EEType="VARCHAR1" FldType="" Value="">LM_REVOLVING</Element>
+        <Element DATATYPE="12" Desc="Reallo" DispInGrid="Y" EDIT="Y"
+            EEType="VARCHAR1" FldType="" Value="">LM_REALLO</Element>
+        <Element DATATYPE="12" Desc="Limit Event Type" DispInGrid="Y" EDIT="Y"
+            EEType="VARCHAR1" FldType="" Value="">LM_EVENT_TYPE</Element>
+    </Elements>
+</DO>

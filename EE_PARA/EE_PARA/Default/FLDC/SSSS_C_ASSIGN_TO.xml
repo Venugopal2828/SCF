@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>SSSS</module>
+    <separater/>
+    <full_display>false</full_display>
+    <blank_value/>
+    <multilang>N</multilang>
+    <fld_name>C_ASSIGN_TO</fld_name>
+    <type>T</type>
+    <settings>
+        <value_field>C_USER_ID</value_field>
+        <table_name schema="EXIMUSER">EXIMUSER.SEC_USER_INFO</table_name>
+        <display_field>C_USER_ID</display_field>
+        <condition>
+            <sql type="COL">I_USER_TYPE</sql>
+            <sql> = 2 OR </sql>
+            <sql type="COL">I_USER_TYPE</sql>
+            <sql> = 16 OR </sql>
+            <sql type="COL">I_USER_TYPE</sql>
+            <sql> = 64 </sql>
+        </condition>
+    </settings>
+</root>

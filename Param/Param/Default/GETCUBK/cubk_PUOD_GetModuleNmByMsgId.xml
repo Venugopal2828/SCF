@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Get Module Name By Message Id" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>PUOD</module-name>
+        <cubk-mapping-name>GetModuleNmByMsgId</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.TRX_INBOX</table-name>
+        <table-desc>TRX_INBOX</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <TSU_MESSAGE_ID DESC="Message ID" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">TSU_MESSAGE_ID</TSU_MESSAGE_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MODULE DESC="C_MODULE" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_MODULE</C_MODULE>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

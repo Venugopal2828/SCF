@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Purchase Order");
+stp.setAutoProcess(true);
+
+stp.setCmpId(stp.getMsgTagVal("TSU_CUST_ID"));
+stp.setUserId("CSBANK");
+
+var mainRef = stp.SYS_getRefNo("P16062000000");
+stp.setMainRef(mainRef);
+//stp.updateFieldValue("C_MAIN_REF",mainRef);
+
+stp.updateFieldValue("CURRNT_STATUS","Received Purchase Order");
+stp.updateFieldValue("NXT_STATUS","Decision for Received PO");
+
+stp.setEventTimes("0");
+stp.writeLog("End: Received Purchase Order");]]></js-content>
+</root>

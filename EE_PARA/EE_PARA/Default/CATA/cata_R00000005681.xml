@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="False" BYUNITCODE="False" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R00000005681</ID>
+    <MODULE>SYST</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC></DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.TRX_SOD_EOD</TABLENAME>
+    <FIELDLIST>
+        <FIELD DATATYPE="12" DESC="Bank Group ID" EEType="SYS_VARCHAR_12" HIDDEN="">C_BK_GROUP_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Business Unit" EEType="SYS_VARCHAR_12" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD DATATYPE="2" DESC="Status" EEType="Numeric_22" HIDDEN="">I_STATUS</FIELD>
+        <FIELD DATATYPE="91" DESC="SOD Date" EEType="DATE" HIDDEN="">D_BU_SOD_DATE</FIELD>
+        <FIELD DATATYPE="12" DESC="Processing Center" EEType="SYS_VARCHAR_12" HIDDEN="">C_CP_UNIT_CODE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Business Unit" DT="12" EEType="SYS_VARCHAR_12" TYPE="FLD">C_UNIT_CODE</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Status" DT="2" EEType="Numeric_22" TYPE="FLD">I_STATUS</SQL>
+        <SQL TYPE="SQL">=1</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Business Unit" EETYPE="SYS_VARCHAR_12">C_UNIT_CODE</FIELD>
+        <FIELD DATATYPE="2" DESC="Status" EETYPE="Numeric_22">I_STATUS</FIELD>
+    </CLAUSEFIELD>
+</CATA>

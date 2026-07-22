@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="RecentFunction"
+			allowInstanceContent="false"
+			supportedModes="view edit config help"
+			supportedWindowStates="maximize minimize"
+			iScope="com.cs.widgets.RecentFunction" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.RecentJs" src="RecentFunction/recentfunc.js"/>
+	<iw:resource globalid="com.cs.resources.RecentCss" src="RecentFunction/recentfunc.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="listCount" alias="listCount" lang=""
+				 readOnly="false" value="5"/>
+		<iw:item id="showProduct" alias="showProduct" lang=""
+				 readOnly="false" value="true"/>
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Recent Functions">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="view.labels">
+		<iw:item id="norec" alias="norec" lang=""
+				 readOnly="true" value="No Record">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="edit.labels">
+		<iw:item id="checkbox" alias="checkbox" lang=""
+				 readOnly="true" value="Show product description before the function">
+		</iw:item>
+		<iw:item id="selector" alias="selector" lang=""
+				 readOnly="true" value="Total record count">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-RecentFunc"></div>
+	]]></iw:content>
+	<iw:content mode="edit"><![CDATA[
+		<div class="com-cs-widget-RecentFunc">
+			<div class="edit-content">
+				<div class="content-row">
+					<div class="show-product"></div>
+					<div class="checkbox-label label"></div>
+				</div>
+				<div class="content-row">
+					<div class="selector-label label"></div>
+					<div class="records-count"></div>
+				</div>
+			</div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-RecentFunc">
+			Recent functions.
+		</div>
+	]]></iw:content>
+</iw:iwidget>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="TBPO INVO_PO" Max="n" Min="0" Name="TBPO_INVO_PO" PendingStore="N" Screen="SCRN/DO/PaymentScheduleHeader.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="TBPO_INVO_PO"></TABLE_NAME>
+    <PK>
+        <PKNAME>TSU_PO_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="BPOM_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+        <Element DATATYPE="91" Desc="PO Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">TSU_PO_DT</Element>
+        <Element DATATYPE="12" Desc="Goods Description" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_GOODS_DESC</Element>
+        <Element DATATYPE="3" Desc="Lineitem Total Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_LINE_TTL_AMT</Element>
+        <Element DATATYPE="3" Desc="PO Total Net Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_NET_AMT</Element>
+        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+        <Element DATATYPE="3" Desc="Lineitem Total Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">TSU_TTL_AMT</Element>
+        <Element DATATYPE="12" Desc="Common Type" DispInGrid="N" EDIT="N" EEType="AdjustType2Code" FldType="" Value="">TSU_IAFT_TP</Element>
+        <Element DATATYPE="12" Desc="Common Other Type" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_OT_TP</Element>
+        <Element DATATYPE="12" Desc="Incoterms Location" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_INCOTMS_LCTN</Element>
+        <Element DATATYPE="12" Desc="Radio Group0" DispInGrid="N" EDIT="N" EEType="Varchar_5" FldType="" Value="">RadioGroup0</Element>
+        <Element DATATYPE="12" Desc="Radio Group1" DispInGrid="N" EDIT="N" EEType="Varchar_5" FldType="" Value="">RadioGroup1</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

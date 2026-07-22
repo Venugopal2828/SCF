@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="SCF21" type="SCF21Type"/>
+	<xs:complexType name="SCF21Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="MsgDate" type="xs:date"/>
+			<xs:element name="Sender" type="SRType" minOccurs="0"/>
+			<xs:element name="Recipient" type="SRType" minOccurs="0"/>
+			<xs:element name="Seller" type="SellerType" minOccurs="0"/>
+			<xs:element name="Buyer" type="BuyerType" minOccurs="0"/>
+			<xs:element name="InputData" type="InputType"/>
+			<xs:element name="RET_CODE" type="NMax2TypeC"/>
+			<xs:element name="MsgText" type="AMax1400TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="ReceiverCode" type="A7TypeC" minOccurs="0"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10TypeC" minOccurs="0"/>
+			<xs:element name="MsgType" type="MSGType"/>
+			<xs:element name="DateTime" type="xs:dateTime"/>
+			<xs:element name="Status" type="NMax2TypeC" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SRType">
+		<xs:sequence>
+			<xs:element name="MemberNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="MemberName" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="ContactName" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="Telephone" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="Email" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SellerType">
+		<xs:sequence>
+			<xs:element name="SellerNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="SellerName" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BuyerType">
+		<xs:sequence>
+			<xs:element name="BuyerNr" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="BuyerName" type="AMax35TypeC" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InputType">
+		<xs:sequence>
+			<xs:element name="TrxBu" type="AMax35Type"/>
+			<xs:element name="FuncId" type="AMax35TypeC" minOccurs="0"/>
+			<xs:element name="BankId" type="AMax35Type"/>
+			<xs:element name="CntyCode" type="A2Type"/>
+			<xs:element name="GETDATA_ID" type="AMax35TypeC"/>
+			<xs:element name="MAX_TREC_SIZE" type="NDef3TypeC"/>
+			<xs:element name="MAX_PREC_SIZE" type="NDef3TypeC"/>
+			<xs:element name="FSBC_REF" type="AMax35TypeC"/>  <!-- Validation for T1 changed to T2 -->
+			<xs:element name="FETCH_PAGE_SIZE" type="MDef3TypeC"/>
+			<xs:element name="FETCH_PAGE_NO" type="MDef3TypeC"/>
+			<xs:element name="RETURN_COUNT" type="NDef3TypeC"/>
+			<xs:element name="RETURN_DETAIL" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP1" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP2" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP3" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP4" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP5" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP6" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP7" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP8" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP9" type="AMax35TypeC"/>
+			<xs:element name="CRITERIA_OP10" type="AMax35TypeC"/>
+			<xs:element name="ACT_TYPE" type="AMax35TypeC"/>
+			<xs:element name="FA_CE_FR_REF" type="AMax35TypeC"/>
+			<xs:element name="FA_DOC_REF" type="AMax3500TypeC"/>
+			<xs:element name="FA_DOC_NO" type="AMax3500TypeC"/>
+			<xs:element name="C_DELIMITER" type="AMax35TypeC"/>
+			<xs:element name="FA_SBR_REF" type="AMax35TypeC"/>
+			<xs:element name="FA_CE_MAIN_REF" type="AMax35TypeC"/>
+			<xs:element name="FA_DOC_DT" type="AMax3500TypeC"/>
+			<xs:element name="FA_DOC_AMT" type="AMax3500TypeC"/>
+			<xs:element name="FA_MAX_LOAN_PERC" type="AMax3500TypeC"/>
+			<xs:element name="PO_MAX_LOAN_PERC" type="AMax3500TypeC"/>
+			<xs:element name="PO_REF" type="AMax3500TypeC"/>
+			<xs:element name="PO_DT" type="AMax3500TypeC"/>
+			<xs:element name="PO_AMT" type="AMax3500TypeC"/>
+			<xs:element name="FA_DSP_AMT" type="AMax3500TypeC"/>
+			<xs:element name="REJ_REASON" type="AMax3500TypeC"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

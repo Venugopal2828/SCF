@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="ChargeDynamicAgreement" Max="n"
+    Min="0" Name="ChargeDynamicAgreement" PendingStore="N"
+    Screen="screen/STD/chgAgremtPage/ChargeDynamicAgreementDO.jsp" StoreInto="C" StoreType="C">
+    <Component>ChargeDynamicAgreement</Component>
+    <PK>
+        <PKNAME>CSID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="STD_CHG_RATE_RULE"/>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="1" Desc="Business Type" DispInGrid="Y" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">C_BUSI_TYPE</Element>
+        <Element DATATYPE="1" Desc="C_CHAN TYPE" DispInGrid="Y" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">C_CHAN_TYPE</Element>
+        <Element DATATYPE="1" Desc="C_CUST TYPE" DispInGrid="Y" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">C_CUST_TYPE</Element>
+        <Element DATATYPE="2005" Desc="C_TEMP_CYCLE_DATA" DispInGrid="N"
+            EDIT="N" EEType="" FldType="" Value="">C_TEMP_CYCLE_DATA</Element>
+        <Element DATATYPE="12" Desc="CSID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">CSID</Element>
+        <Element DATATYPE="12" Desc="Calculate Type" DispInGrid="N" EDIT="N"
+            EEType="Varchar_30" FldType="" Value="">C_CALCULATE_TYPE</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">C_CCY</Element>
+        <Element DATATYPE="1" Desc="Currency Tier" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">C_CCY_TIER</Element>
+        <Element DATATYPE="12" Desc="Charge Rate Description" DispInGrid="N"
+            EDIT="N" EEType="Varchar_128" FldType="" Value="">C_CHARGE_RATE_DESC</Element>
+        <Element DATATYPE="1" Desc="C_LOCKED_FLAG" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_LOCKED_FLAG</Element>
+        <Element DATATYPE="12" Desc="C_LOCKED_OP" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_LOCKED_OP</Element>
+        <Element DATATYPE="12" Desc="C_MIN_CCY" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MIN_CCY</Element>
+        <Element DATATYPE="6" Desc="SYSFLD:C_PERIOD_NUM" DispInGrid="N" EDIT="N"
+            EEType="FLOAT" FldType="" Value="">C_PERIOD_NUM</Element>
+        <Element DATATYPE="12" Desc="SYSFLD:C_PERIOD_UNIT" DispInGrid="N"
+            EDIT="N" EEType="Character_3" FldType="" Value="">C_PERIOD_UNIT</Element>
+        <Element DATATYPE="12" Desc="Product Code" DispInGrid="N" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">C_PRODUCT_CODE</Element>
+        <Element DATATYPE="12" Desc="C_REFUSE_REASON" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_REFUSE_REASON</Element>
+        <Element DATATYPE="12" Desc="SYSFLD:C_TEMP1" DispInGrid="N" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">C_TEMP1</Element>
+        <Element DATATYPE="12" Desc="SYSFLD:C_TEMP2" DispInGrid="N" EDIT="N"
+            EEType="Varchar_32" FldType="" Value="">C_TEMP2</Element>
+        <Element DATATYPE="1" Desc="C_TRX_STATUS" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_TRX_STATUS</Element>
+        <Element DATATYPE="91" Desc="Form Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">D_FORM_DATE</Element>
+        <Element DATATYPE="91" Desc="To Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">D_TO_DATE</Element>
+        <Element DATATYPE="6" Desc="Base Percentage" DispInGrid="Y" EDIT="N"
+            EEType="FLOAT" FldType="" Value="">F_BASE_PERCENTAGE</Element>
+        <Element DATATYPE="6" Desc="Extend Percentage" DispInGrid="N" EDIT="N"
+            EEType="FLOAT" FldType="" Value="">F_EXTEND_PERCENTAGE</Element>
+        <Element DATATYPE="6" Desc="Temp1 Percentage" DispInGrid="N" EDIT="N"
+            EEType="FLOAT" FldType="" Value="">F_TEMP1_PERCENTAGE</Element>
+        <Element DATATYPE="6" Desc="Temp2 Percentage" DispInGrid="N" EDIT="N"
+            EEType="FLOAT" FldType="" Value="">F_TEMP2_PERCENTAGE</Element>
+        <Element DATATYPE="12" Desc="Max Period" DispInGrid="N" EDIT="N"
+            EEType="Varchar_8" FldType="" Value="">I_PERIOD_MAX</Element>
+        <Element DATATYPE="12" Desc="Minimun Period" DispInGrid="N" EDIT="N"
+            EEType="Varchar_8" FldType="" Value="">I_PERIOD_MIN</Element>
+        <Element DATATYPE="3" Desc="Flat Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">Y_FLAT_AMT</Element>
+        <Element DATATYPE="3" Desc="Maximal Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">Y_MAX_AMT</Element>
+        <Element DATATYPE="3" Desc="Minimal Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">Y_MIN_AMT</Element>
+        <Element DATATYPE="3" Desc="Temp1 Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">Y_TEMP1_AMT</Element>
+        <Element DATATYPE="3" Desc="Temp2 Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">Y_TEMP2_AMT</Element>
+        <Element DATATYPE="3" Desc="Tier Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">Y_TIER_AMT</Element>
+        <Element DATATYPE="1" Desc="C_PARENT_ID" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_PARENT_ID</Element>
+        <Element DATATYPE="6" Desc="PERCENTAGE OVER" DispInGrid="N" EDIT="N"
+            EEType="FLOAT" FldType="" Value="">F_PERCENTAGE_OVER</Element>
+        <Element DATATYPE="3" Desc="FLAT AMT OVER" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">Y_TIER_FLAT_AMT_OVER</Element>
+    </Elements>
+</DO>

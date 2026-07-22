@@ -1,0 +1,12 @@
+stp.writeLog("===================START===============");
+stp.setAutoProcess(true);
+stp.setGapiRule("IMLC_EEIN");
+var C_MAIN_REF = stp.getXMLNodeValue("BkMainRef");
+stp.updateFieldValue("C_MAIN_REF", C_MAIN_REF);
+var DiscrpcsDecsin = stp.getXMLNodeValue("DiscrpcsDecsin");
+stp.updateFieldValue("ACCEPT_REJECT", DiscrpcsDecsin);
+var DrawgRefNb = stp.getXMLNodeValue("DrawgRefNb");
+stp.updateFieldValue("DRAWING_REF", DrawgRefNb);
+stp.updateFieldValue("CURRNT_STATUS", "IPLC_ReceiveDiscrepancies_STP");
+stp.updateFieldValue("NXT_STATUS", "IPLC_ApplicantDecision");
+stp.writeLog("===================END===============");

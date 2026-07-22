@@ -1,0 +1,88 @@
+<message GAPI_NAME="Auto_RD_WITHOUT_COUNTER_Limit" I_ORDER="0"
+	isReleaseGapi="Y">
+	<msg-selector>
+		<send />
+		<recv />
+	</msg-selector>
+	<send-item />
+	<msg-state>
+		<send-state></send-state><!-- ok -->
+		<recv-state />
+		<recv-err-info />
+	</msg-state>
+	<header>
+		<gapi-resend></gapi-resend><!-- N -->
+		<trx-type></trx-type><!-- RE -->
+		<event-name></event-name><!-- SCFME -->
+		<function-id></function-id><!-- F05030704092 -->
+		<trx-date></trx-date><!-- 2021-04-07 -->
+		<trx-user></trx-user><!-- CSBANKOP -->
+		<module></module><!-- FADA -->
+		<bank-grp></bank-grp><!-- CSBANK -->
+		<country></country><!-- US -->
+		<main-ref></main-ref><!-- SCFUS2100016 -->
+		<trx-ref></trx-ref><!-- SCFUS2100016 -->
+		<event-times></event-times><!-- 1 -->
+		<function-name></function-name><!-- SignAgreement_ME -->
+		<funcType></funcType><!-- PM -->
+		<i-order />
+		<unit-code></unit-code><!-- CSBANK -->
+		<parent-unit-code></parent-unit-code><!-- CSBANK -->
+		<function-short-name></function-short-name><!-- SignAgreement -->
+		<has-self-released><![CDATA[]]>
+		</has-self-released><!-- FALSE -->
+		<i_order></i_order><!-- 1 -->
+		<refuse-reason><![CDATA[]]>
+		</refuse-reason>
+		<trx-status><![CDATA[]]>
+		</trx-status><!-- AP -->
+		<op-user><![CDATA[]]>
+		</op-user><!-- CSBANKOP -->
+		<C_DS_ID>EXIMT</C_DS_ID><!-- EXIMT -->
+	</header>
+	<msg-header>
+		<msg-seq-no />
+		<interface-mapping-name>Auto_RD_WITHOUT_COUNTER_Limit</interface-mapping-name>
+		<gapi-type>EJB</gapi-type>
+		<jndi-flag>N</jndi-flag>
+		<gapi-type-value>TrxGenerateLMTS</gapi-type-value>
+		<ec-flag>T</ec-flag>
+		<msg-os-id>LMTS</msg-os-id>
+		<msg-os-intf-id>CL708</msg-os-intf-id>
+		<send-queue-id />
+		<recv-queue-id />
+		<time-out>0</time-out>
+		<time-out-ack-delay>0</time-out-ack-delay>
+		<msg-format />
+		<reformat-class />
+		<time-out-ack>
+			<send-queue-id />
+			<recv-queue-id />
+			<recv-time-out>0</recv-time-out>
+		</time-out-ack>
+		<gapi-mode afterTrx="false" conditional="false" gapiMode=""
+			mode="SYNC" />
+		<atth-queue-id />
+		<send-refuse-msg>N</send-refuse-msg>
+		<msg-id></msg-id><!-- UUID -->
+	</msg-header>
+	<out-msg-content>
+		<LM_CUST_ID field-name="FA_COUNTER_ID" order="1" />
+		<LM_RCUST_ID field-name="FA_CNTR_REF" order="2" />
+		<LM_CUST_NAME field-name="FA_COUNTER_NM" order="3" />
+		<LM_CRED_LMT field-name="FA_LMT_AMT" order="4" />
+		<LM_BASE_CCY field-name="FA_LMT_CCY" order="5" />
+		<LM_STR_DAY field-name="FA_AGM_VAL_DT" order="6" />
+		<LM_DUE_DAY field-name="FA_AGM_DUE_DT" order="7" />
+		<LM_CSL_DESC order="8" />
+		<LM_RSV_LINK order="9">N</LM_RSV_LINK>
+		<LM_FACI_TP field-name="FA_BUSI_TYPE" order="10"></LM_FACI_TP>
+		<LM_OP_TYPE order="11">C</LM_OP_TYPE>
+		<LM_SUB_CCY field-name="FA_LMT_CCY" order="12"></LM_SUB_CCY>
+		<LM_GTYPE order="13" />
+		<LM_CRED_LMT_M field-name="FA_LMT_AMT" order="14"></LM_CRED_LMT_M>
+		<LM_CRED_LMT_S field-name="FA_LMT_AMT" order="15"></LM_CRED_LMT_S>
+		<LM_SUBLIMIT order="16">N</LM_SUBLIMIT>
+	</out-msg-content>
+	<in-msg-content />
+</message>

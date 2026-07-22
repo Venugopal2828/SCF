@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FAEF</module>
+    <name>Update_Amt_to_Return_ME</name>
+    <desc>Update_Amt_to_Return_ME</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FADA_MASTER</table-name>
+        <table-desc>FADA MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>FA_SBR_REF</sql>
+            <sql> = '</sql>
+            <sql>FA_SBR_REF</sql>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_TTL_CRN_BAL fv_type="F" mf="F" oper="+=">FA_TTL_CRN_AMT</FA_TTL_CRN_BAL>
+        <FA_TTL_FIN_RET_BAL fv_type="F" mf="F" oper="+=">FA_TTL_FIN_RET_BAL</FA_TTL_FIN_RET_BAL>
+    </mapping>
+</root>

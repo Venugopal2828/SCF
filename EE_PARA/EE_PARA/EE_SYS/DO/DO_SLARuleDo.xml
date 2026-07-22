@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="SLARuleDo" Max="n" Min="0"
+    Name="SLARuleDo" PendingStore="N" Screen="screen/STD/Std_SLARule_Detail.jsp"
+    StoreInto="C" StoreType="C">
+    <Component>SLARule</Component>
+    <PK>
+        <PKNAME>C_LEVEL_ID</PKNAME>
+        <PKNAME>D_RULE_ACTIVE_DATE</PKNAME>
+        <PKNAME>C_RULE_VERSION</PKNAME>
+        <PKNAME>C_BG_DESC</PKNAME>
+        <PKNAME>C_BG_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="STT_SLARULE_HEADER"/>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="BANK GROUP ID" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_BK_GROUP_ID</Element>
+        <Element DATATYPE="1" Desc="Country Code" DispInGrid="N" EDIT="N"
+            EEType="CNTY" FldType="" Value="">C_CNTY_CODE</Element>
+        <Element DATATYPE="12" Desc="Process Center Unit Code" DispInGrid="N"
+            EDIT="N" EEType="" FldType="" Value="">C_CP_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Level ID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_18" FldType="" Value="">C_LEVEL_ID</Element>
+        <Element DATATYPE="12" Desc="Level Description" DispInGrid="N" EDIT="N"
+            EEType="Varchar_256" FldType="" Value="">C_LEVEL_DESC</Element>
+        <Element DATATYPE="12" Desc="Business Group Description" DispInGrid="Y"
+            EDIT="N" EEType="VARCHAR10" FldType="" Value="">C_BG_ID</Element>
+        <Element DATATYPE="12" Desc="Business Group Description" DispInGrid="Y"
+            EDIT="N" EEType="Varchar_35" FldType="" Value="">C_BG_DESC</Element>
+        <Element DATATYPE="12" Desc="Business Group Version" DispInGrid="Y"
+            EDIT="N" EEType="VARCHAR3" FldType="" Value="">C_BG_VERSION</Element>
+        <Element DATATYPE="91" Desc="D_BG_ACTIVE_DATE" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">D_BG_ACTIVE_DATE</Element>
+        <Element DATATYPE="12" Desc="C_RULE_VERSION" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">C_RULE_VERSION</Element>
+        <Element DATATYPE="91" Desc="D_RULE_ACTIVE_DATE" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">D_RULE_ACTIVE_DATE</Element>
+        <Element DATATYPE="12" Desc="C_TOTAL_TIME" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">C_TOTAL_TIME</Element>
+        <Element DATATYPE="12" Desc="Step Information" DispInGrid="N" EDIT="N"
+            EEType="Varchar_25" FldType="" Value="">C_STEP_INFO</Element>
+        <Element DATATYPE="12" Desc="Priority Information" DispInGrid="N"
+            EDIT="N" EEType="Varchar_25" FldType="" Value="">C_PRIORITY_INFO</Element>
+    </Elements>
+</DO>

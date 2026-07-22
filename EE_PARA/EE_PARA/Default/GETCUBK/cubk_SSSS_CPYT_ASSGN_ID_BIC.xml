@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>CPYT_ASSGN_ID_BIC</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">CPYT_ASSGN_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_ID</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_NM</PARTY_NM>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_ADD1</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address2" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_ADD2</ADD2>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="Address3" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_ADD3</ADD3>
+        <POST_CODE ALIAS="T0" DBFUNC="" DESC="Post Code" DT="12" HIDDEN="F" TYPE="F">CPYT_ASSGN_MAIL_ADD</POST_CODE>
+        <AC1_NO ALIAS="T0" DBFUNC="" DESC="Account No1" DT="1" HIDDEN="F" TYPE="F">CPYT_ASSGN_AC</AC1_NO>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">CPYT_ASSGN_NM</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">CPYT_ASSGN_ADD1</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">CPYT_ASSGN_ADD2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">CPYT_ASSGN_ADD3</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL TYPE="SQL"> = '1' AND </SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">CPYT_ASSGN_ID</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

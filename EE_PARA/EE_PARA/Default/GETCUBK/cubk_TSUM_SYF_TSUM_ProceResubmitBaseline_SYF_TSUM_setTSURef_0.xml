@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TSUM_EM_BASELINE</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>TSUM</module-name>
+        <cubk-mapping-name>SYF_TSUM_ProceResubmitBaseline_SYF_TSUM_setTSURef_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_FUNC_SHORT_NAME ALIAS="T0" DBFUNC="" DESC="C_FUNC_SHORT_NAME" DT="12" HIDDEN="F" TYPE="F">FUNC_SHORT_NAME</C_FUNC_SHORT_NAME>
+        <TSU_BASELN_RP_TP ALIAS="T0" DBFUNC="" DESC="Full Push Through Report Type" DT="1" HIDDEN="F" TYPE="F">BASELN_RP_TP</TSU_BASELN_RP_TP>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' AND C_UNIT_CODE='</SQL>
+            <SQL DT="var" DV="SYS_BUSI_UNIT" TYPE="FldValue">FldValue0</SQL>
+            <SQL TYPE="SQL">'
+            AND TSU_TID IS NOT NULL</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

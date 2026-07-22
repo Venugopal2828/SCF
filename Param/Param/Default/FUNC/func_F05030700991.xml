@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PUOD</MODULE>
+        <MODULE_DESC>Purchase Order</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030700991</ID>
+        <NAME>Received PO</NAME>
+        <DESC>Received Purchase Order</DESC>
+        <FUNSHORTNAME>RecIncomingPO</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">PUOD_RecIncomingPO.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700984</ID>
+        <NAME>Received PO_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700984</ID>
+        <NAME>Received PO_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000265</ID>
+        <NAME>Received PO_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

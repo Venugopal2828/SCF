@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701090</ID>
+        <NAME>FAEF Add Invoice</NAME>
+        <DESC>Upload Invoice</DESC>
+        <FUNSHORTNAME>AddInv</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">FAEF_AddInv.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701083</ID>
+        <NAME>FAEF Add Invoice_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701083</ID>
+        <NAME>FAEF Add Invoice_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000367</ID>
+        <NAME>FAEF Add Invoice_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

@@ -1,0 +1,14 @@
+{root:"SYSM_GAPI_LSTN",_type_:9742,SYSM_GAPI_LSTN:{C_ID:"CSMS03.MTMQ.OAA",
+  C_NAME:"[MTMQ OAA] SAA Oxxx in, to EE",
+  C_DESC:"Receive MT from SAA, convert, send to ESP.",
+  C_PTCL:"PTHB.MT.AA",
+  T_SCRIPT:"\
+    // stp.responseGAPI('PTEE.MT.AA');\
+    // if use REST mode receive ACK, please use following \
+    stp.responseGAPI('SYS.REST');\
+    ",
+  I_INTERVAL:0,C_GROUP:"BZND13032100035",
+  C_MODE:"A",
+  C_TRIGER:"1",
+  C_TRIGER_TYPE:"N",
+  C_START_TIME:"NOW"}}

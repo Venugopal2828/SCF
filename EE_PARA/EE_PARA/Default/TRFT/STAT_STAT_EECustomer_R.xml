@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>STAT</module>
+    <name>STAT_EECustomer</name>
+    <desc>STAT_EECustomer</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.STAT_CE_CP</table-name>
+        <table-desc>STAT_CE_CP</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">TEMP_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <EE_CUSTOMER fv_type="V" mf="F" oper="=">NO</EE_CUSTOMER>
+    </mapping>
+</root>

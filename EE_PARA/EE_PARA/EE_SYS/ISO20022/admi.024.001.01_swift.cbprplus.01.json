@@ -1,0 +1,68 @@
+{
+  "code":"Document",
+  "uri":"urn:iso:std:iso:20022:tech:xsd:admi.024.001.01",
+  "children":[{
+    "code":"NtfctnOfCrspdc",
+    "children":[
+
+      {
+        "code":"GrpHdr",
+        "children":[
+
+          {"code":"MsgId"},
+          {
+            "code":"CreDtTm",
+            "val":"ISODateTime"
+          },
+          {
+            "code":"Sndr",
+            "choice":" Agt",
+            "children":[{
+              "code":"Agt",
+              "children":[{
+                "code":"FinInstnId",
+                "children":[{
+                  "code":"BICFI",
+                  "val":"BICFIDec2014Identifier"
+                }]
+              }]
+            }]
+          },
+          {
+            "code":"Rcvr",
+            "children":[{
+              "code":"Agt",
+              "children":[{
+                "code":"FinInstnId",
+                "children":[{
+                  "code":"BICFI",
+                  "val":"BICFIDec2014Identifier"
+                }]
+              }]
+            }]
+          }
+        ]
+      },
+      {
+        "code":"NtfctnData",
+        "children":[
+
+          {"code":"SndrNtfctnId"},
+          {
+            "code":"NtfctnTp",
+            "choice":" Cd",
+            "children":[{
+              "code":"Cd",
+              "val":"ExternalNotificationType1Code"
+            }]
+          },
+          {
+            "code":"NtfctnNrrtv",
+            "max":3
+          }
+        ]
+      }
+
+    ]
+  }]
+}

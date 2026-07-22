@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>OWGT.003.ResmtGteeApplctn</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>OWGT</module>
+        <interface-mapping-name>ResubmitGuaranteeApplication</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <CEMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">C_MAIN_REF</CEMainRef>
+        <BkMainRef descr="Bank Main Reference" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">BK_MAIN_REF</BkMainRef>
+        <CustId descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">C_UNIT_CODE</CustId>
+        <ApplctnDt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">TRX_DT</ApplctnDt>
+        <EstablishBy descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">ESTABLISH_BY</EstablishBy>
+        <GteeFrmt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">GTEE_FRMT</GteeFrmt>
+        <TpOfGtee descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">GTEE_TYPE</TpOfGtee>
+        <BnfcryNm descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">BENE_NM</BnfcryNm>
+        <BnfcryAdr1 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="9">BENE_ADD1</BnfcryAdr1>
+        <BnfcryAdr2 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="10">BENE_ADD2</BnfcryAdr2>
+        <BnfcryAdr3 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="11">BENE_ADD3</BnfcryAdr3>
+        <BnfcryBkId descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="12">BENE_BK_ID</BnfcryBkId>
+        <BnfcryBkSwAdr descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="13">BENE_BK_SW_ADD</BnfcryBkSwAdr>
+        <BnfcryBkNm descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="14">BENE_BK_NM</BnfcryBkNm>
+        <BnfcryBkAdr1 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="15">BENE_BK_ADD1</BnfcryBkAdr1>
+        <BnfcryBkAdr2 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="16">BENE_BK_ADD2</BnfcryBkAdr2>
+        <BnfcryBkAdr3 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="17">BENE_BK_ADD3</BnfcryBkAdr3>
+        <CtctDtls descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="18">CNTC_DETL</CtctDtls>
+        <ForAcctOfNm descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="19">FORACOF_NM</ForAcctOfNm>
+        <ForAcctOfAdr1 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="20">FORACOF_ADD1</ForAcctOfAdr1>
+        <ForAcctOfAdr2 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="21">FORACOF_ADD2</ForAcctOfAdr2>
+        <ForAcctOfAdr3 descr="For Account Of Address  - 3" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="22">FORACOF_ADD3</ForAcctOfAdr3>
+        <CtrctNo descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="23">CONTCT_NO</CtrctNo>
+        <CtrctCcy descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="24">CONTCT_CCY</CtrctCcy>
+        <CtrctAmt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="25">CONTCT_AMT</CtrctAmt>
+        <GteeCcy descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="26">GTEE_CCY</GteeCcy>
+        <GteeAmt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="27">GTEE_AMT</GteeAmt>
+        <DtlsOfCtrct descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="28">CONTCT_DETL</DtlsOfCtrct>
+        <ExpType descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="29">EXPIRY_TYPE</ExpType>
+        <DtOfExp descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="30">EXPIRY_DT</DtOfExp>
+        <PlcOfExp descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="31">EXPIRY_PLC</PlcOfExp>
+        <ChrgsCcy descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="32">CHG_AC_CCY</ChrgsCcy>
+        <ChrgsAcct descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="33">CHG_AC</ChrgsAcct>
+        <GteeWord descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="34">GTEE_DETAILS</GteeWord>
+        <CustInstr descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="35">CUST_INSTR</CustInstr>
+        <CurSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="36">CURRNT_STATUS</CurSts>
+        <NxtSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="37">NXT_STATUS</NxtSts>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="38">OWGT.003.ResmtGteeApplctn</MSG_TYPE>
+        <OUR_ROLE descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="39">OUR_ROLE</OUR_ROLE>
+        <FORM_OF_UNDERTAKING descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="40">FORM_OF_UNDERTAKING</FORM_OF_UNDERTAKING>
+        <APLB_RULE descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="41">APLB_RULE</APLB_RULE>
+        <EXPIRY_COND descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="42">EXPIRY_COND</EXPIRY_COND>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item/>
+</gapi>

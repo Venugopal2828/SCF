@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">DATA_PRODUCT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_Settlement2_SYF_FFIT_MRGN_CUST_AC_NO3_A_3</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <INT_SBJT2 ALIAS="T0" DBFUNC="" DESC="INT_SBJT2" DT="12" HIDDEN="F" TYPE="F">MRGN_CUST_AC_NO3_A</INT_SBJT2>
+        <INT_SBJT1 ALIAS="T0" DBFUNC="" DESC="INT_SBJT1" DT="12" HIDDEN="F" TYPE="F">MRGN_CUST_AC_NO3_S</INT_SBJT1>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">FINC_TYPE_DESC</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

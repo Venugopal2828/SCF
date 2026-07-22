@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Add counterparties" Max="999" Min="0" Name="CP_ADD" PendingStore="Y" Screen="Default/SCRN/DO/FADA_ADD.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="SCF_CP_LI"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>CP_ID</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Main Ref." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_20" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Company Code" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Counterparty Id" DispInGrid="Y" EDIT="N" EEType="AutoGen_Trx_VARCHAR2_35" FldType="" Value="">CP_ID</Element>
+        <Element DATATYPE="12" Desc="Counterparty Name" DispInGrid="Y" EDIT="N" EEType="AutoGen_Trx_VARCHAR2_35" FldType="" Value="">CP_NAME</Element>
+        <Element DATATYPE="12" Desc="C_MAIL_ID" DispInGrid="Y" EDIT="N" EEType="AutoGen_Trx_VARCHAR_32" FldType="" Value="">CP_MAIL</Element>
+        <Element DATATYPE="12" Desc="Contact Details" DispInGrid="Y" EDIT="N" EEType="NARR(6_35)" FldType="" Value="">CNTC_DETL</Element>
+		<Element DATATYPE="1" Desc="Counterparty self enroll" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">CP_SELF_ENROL</Element> 
+	    <Element DATATYPE="1" Desc="Customer Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">CUST_FLAG</Element>
+		<Element DATATYPE="12" Desc="" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">COUNTER_AGM_NO</Element>
+        <Element DATATYPE="1" Desc="Counterparty Is CE Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">COUNTER_CE_FLG</Element>		
+		<Element DATATYPE="1" Desc="Counterparty Account No." DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">COUNTER_ACC</Element>
+        <Element DATATYPE="12" Desc="Counterparty Address Name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">COUNTER_ADD_ML</Element>
+        <Element DATATYPE="12" Desc="Reject Reason" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">REJECT_REASON</Element>
+        <Element DATATYPE="1" Desc="Counterparty Country Name" DispInGrid="N" EDIT="N" EEType="CNTY" FldType="" Value="">COUNTER_CNTY</Element>
+        <Element DATATYPE="12" Desc="Counterparty Contact E-mail" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">COUNTER_CONT_EM</Element>
+        <Element DATATYPE="12" Desc="Counterparty City" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">COUNTER_CT</Element>
+        <Element DATATYPE="12" Desc="Counterparty Province" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">COUNTER_PROV</Element>
+        <Element DATATYPE="12" Desc="Counterparty Register No" DispInGrid="Y" EDIT="N" EEType="CHAR_16" FldType="" Value="">COUNTER_REG_NO</Element>
+        <Element DATATYPE="12" Desc="Counterparty Street Name" DispInGrid="N" EDIT="N" EEType="Varchar_70" FldType="" Value="">COUNTER_STR</Element>
+        <Element DATATYPE="1" Desc="Service Request" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">SERVICE_REQ</Element>
+        <Element DATATYPE="12" Desc="Counterparty Contact Name" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">COUNTER_CONT_NM</Element>		
+        <Element DATATYPE="3" Desc="Limit Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">LMT_AMT</Element>
+        <Element DATATYPE="1" Desc="Limit Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">LMT_CCY</Element>
+		<Element DATATYPE="91" Desc="Limit Start Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">LMT_VAL_DT</Element>
+        <Element DATATYPE="91" Desc="Limit Due Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">LMT_DUE_DT</Element>
+
+		
+		
+    </Elements>
+</DO>

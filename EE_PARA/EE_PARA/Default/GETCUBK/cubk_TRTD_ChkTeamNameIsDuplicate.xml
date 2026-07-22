@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>TRTD</module-name>
+        <cubk-mapping-name>ChkTeamNameIsDuplicate</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRTD_TEAM_DATA</table-name>
+      	</tables>
+        <key-fields>
+            <TEAM_NM ALIAS="T0" DESC="Team Name" DT="1" TYPE="F">TEAM_NM</TEAM_NM>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">TEMP_CHK_DUP_INDEX</C_MAIN_REF>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

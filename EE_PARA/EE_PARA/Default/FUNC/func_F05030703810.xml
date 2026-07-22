@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/FAEF_Rev_CreditNotesTransfer_main.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FORM>
+        <ID>F00000008048</ID>
+        <NAME/>
+    </FORM>
+    <VOUCHER>
+        <ID>F00000008047</ID>
+        <NAME/>
+    </VOUCHER>
+    <EDI>
+        <ID>F00000008050</ID>
+        <NAME/>
+    </EDI>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>SCF Transaction</MODULE_DESC>
+        <EVENT>FromCE</EVENT>
+        <ID>F05030703810</ID>
+        <NAME>ReceiveCNTransferFromCE</NAME>
+        <DESC>Receive Credit Notes Transfer From CE</DESC>
+        <FUNSHORTNAME>RecCNTransfer</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>Y</ADDMASTER>
+        <ATTR_ID name="ReceiveCNTFromCE_ATTRIBUTE">R00000011921</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID/>
+        <TransferTo>F00000008042</TransferTo>
+        <InXML>F00000008045</InXML>
+    </FUNCTION>
+</FUNC>

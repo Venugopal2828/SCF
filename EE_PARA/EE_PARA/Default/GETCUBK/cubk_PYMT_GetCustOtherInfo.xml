@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>GetCustOtherInfo</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <CNTY_CODE ALIAS="T0" DESC="CNTY_CODE" DT="1" TYPE="S">SYS_BANK_COUNTRY</CNTY_CODE>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X103_ORDCU_ID_50A</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <DRT_DEAL_IND ALIAS="T0" DBFUNC="" DESC="Direct Dealing Indicator" DT="1" HIDDEN="F" TYPE="F">DRT_DEAL_IND</DRT_DEAL_IND>
+        <RECORDER_TYPE ALIAS="T0" DBFUNC="" DESC="Record Type" DT="1" HIDDEN="F" TYPE="F">RECORDER_TYPE</RECORDER_TYPE>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="County Code" DT="1" HIDDEN="F" TYPE="F">APPL_CNTY_RES</CNTY_CODE>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

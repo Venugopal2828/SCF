@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>PYMT_SRC_PYMT_DI_RegisterMain_debit_account_changed_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_CURRENCY ALIAS="T0" DBFUNC="" DESC="Currency Code" DT="12" HIDDEN="F" TYPE="F">X103_SETT_CCY_32A</C_CURRENCY>
+        <C_CUST_ID ALIAS="T0" DBFUNC="" DESC="CUSTOMER ID" DT="12" HIDDEN="F" TYPE="F">X103_ORDCU_ID_50A</C_CUST_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_AC_NUMBER = '</SQL>
+            <SQL TYPE="FLD">X103_ORDCUACNO_50A</SQL>
+            <SQL TYPE="SQL">' and (C_DBT_CRDT= 'B' OR C_DBT_CRDT='</SQL>
+            <SQL TYPE="FLD">FIELD_6_X</SQL>
+            <SQL TYPE="SQL">')</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

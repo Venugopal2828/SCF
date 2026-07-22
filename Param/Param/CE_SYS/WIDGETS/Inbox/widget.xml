@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget"
+	id="Inbox"
+	allowInstanceContent="false"
+	supportedModes="view config"
+	supportedWindowStates="maximize"
+	iScope="com.cs.widgets.Inbox"
+	lang="">
+	<iw:resource globalid="com.cs.resources.InboxJs" src="Inbox/Inbox.js"/>
+	<iw:resource globalid="com.cs.resources.InboxCss" src="Inbox/Inbox.css"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="hideTitles" alias="hideTitles" lang="" readOnly="false" value="">
+		</iw:item>
+		<iw:item id="hideItems" alias="hideItems" lang="" readOnly="false" value="">
+		</iw:item>
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="Y">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang="" readOnly="false" value="Inbox">
+			<iw:alt lang="AR" value="test AR"/>
+			<iw:alt lang="FR" value="Test FR"/>
+		</iw:item>
+		<iw:item id="titleSpe" alias="titleSpe" lang="" readOnly="true" value="Check the below titles to show inbox">
+			<iw:alt lang="AR" value="test AR title"/>
+			<iw:alt lang="FR" value="Test FR title"/>
+		</iw:item>
+		<iw:item id="itemSpe" alias="itemSpe" lang="" readOnly="true" value="Check the below items to show inbox">
+			<iw:alt lang="AR" value="test AR item"/>
+			<iw:alt lang="FR" value="Test FR item"/>
+		</iw:item>
+		<iw:item id="norec" alias="norec" lang="" readOnly="true" value="No record to show">
+			<iw:alt lang="AR" value="test AR no record"/>
+			<iw:alt lang="FR" value="Test FR no record"/>
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-Inbox">
+			<div class="norec"></div>
+			<div id="inboxTab"></div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="edit"><![CDATA[
+		<div class="com-cs-widget-Inbox">
+			<div class="title-spe"></div>
+			<div class="title-div"></div>
+			<div class="item-spe"></div>
+			<div class="item-div"></div>
+		</div>
+	]]></iw:content>
+	<iw:content mode="help"><![CDATA[
+			<div class="com-cs-widget-InboxHelp">Inbox</div>
+	]]></iw:content>
+</iw:iwidget>

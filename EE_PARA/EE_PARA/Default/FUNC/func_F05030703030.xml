@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/TSU_Incoming_View.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">TSUM</MODULE>
+        <MODULE_DESC>Open Account Module</MODULE_DESC>
+        <EVENT>Standing Maintenance</EVENT>
+        <ID>F05030703030</ID>
+        <NAME>ReReceiveMessagetoFTP</NAME>
+        <DESC>Reassign TSU Message</DESC>
+        <FUNSHORTNAME>RereceiveTSUMsg</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>GE</FUNCTYPE>
+        <MAINCOMP name="Trx Common Manager">TrxCommonManager</MAINCOMP>
+        <UIStyle>S</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="RereceiveMessageFromTSU">R00000006753</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000006831</CATALOGID>
+    </FUNCTION>
+</FUNC>

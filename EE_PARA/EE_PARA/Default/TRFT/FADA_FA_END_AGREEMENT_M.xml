@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FADA</module>
+    <name>FA_END_AGREEMENT</name>
+    <desc>FA_END_AGREEMENT</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FAEF_MASTER</table-name>
+        <table-desc>FAEF_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>FA_SEL_ID</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_SEL_ID</field>
+            <sql>' AND </sql>
+            <sql>FA_BUSI_TYPE</sql>
+            <sql> = 'IF' AND </sql>
+            <sql>FA_EF_ID</sql>
+            <sql>= '</sql>
+            <field mf="F">FA_EF_ID</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_BUSI_STATUS fv_type="F" mf="F" oper="=">FA_BUSI_STATUS</FA_BUSI_STATUS>
+        <FA_END_DT fv_type="F" mf="F" oper="=">FA_END_DT</FA_END_DT>
+    </mapping>
+</root>

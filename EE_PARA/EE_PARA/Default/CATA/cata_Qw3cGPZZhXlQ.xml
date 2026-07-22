@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYGLOBAL="True" BYUNITCODE="False" AutoGen-Parameter-Version="1.0">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>Qw3cGPZZhXlQ</ID>
+    <MODULE>IAAC</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Enquire Accrual Schedule</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.IAAC_ACCSCHELAY</TABLENAME>
+    <FIELDLIST>
+        <FIELD DATATYPE="12" DESC="Module Name" EEType="Varchar_4" HIDDEN="">IA_C_MODU_NAME</FIELD>
+        <FIELD DATATYPE="12" DESC="Reference No" EEType="Varchar_35" HIDDEN="">IA_C_REF_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Tenor No" EEType="AutoGen_Trx_VARCHAR2_6" HIDDEN="">IA_C_TENOR_NO</FIELD>
+        <FIELD DATATYPE="91" DESC="Schedule From Date" EEType="AutoGen_Trx_DATE_7" HIDDEN="">IA_D_SCHE_FROMDATE</FIELD>
+        <FIELD DATATYPE="91" DESC="Schedule To Date" EEType="AutoGen_Trx_DATE_7" HIDDEN="">IA_D_SCHE_TODATE</FIELD>
+        <FIELD DATATYPE="2" DESC="Schedule Amount" EEType="AutoGen_Trx_NUMBER_24" HIDDEN="">IA_Y_SCHE_AMOUNT</FIELD>
+        <FIELD DATATYPE="2" DESC="Schedule Interest" EEType="AutoGen_Trx_NUMBER_24" HIDDEN="">IA_Y_SCHE_INT</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DT="12" EEType="AutoGen_Trx_VARCHAR2_6" TYPE="FLD">IA_C_TENOR_NO</SQL>
+        <SQL TYPE="SQL"></SQL>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' ORDER BY </SQL>
+        <SQL DT="12" EEType="AutoGen_Trx_VARCHAR2_6" TYPE="FLD">IA_C_TENOR_NO</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="" EETYPE="AutoGen_Trx_VARCHAR2_6">IA_C_TENOR_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="" EETYPE="AutoGen_Trx_VARCHAR2_6">IA_C_TENOR_NO</FIELD>
+    </CLAUSEFIELD>
+</CATA>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">CFNC_MAIN</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>CFNC</module-name>
+        <cubk-mapping-name>SYM_CFNC_GetData_S</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <CFNC_N_PCT ALIAS="T0" DBFUNC="" DESC="Finance Percentage" DT="2" HIDDEN="F" TYPE="F">CFNC_N_PCT</CFNC_N_PCT>
+        <CFNC_C_CCY ALIAS="T0" DBFUNC="" DESC="Finance CCY" DT="1" HIDDEN="F" TYPE="F">CFNC_C_CCY</CFNC_C_CCY>
+        <CFNC_N_AMT_LCCCY ALIAS="T0" DBFUNC="" DESC="Finance Amount" DT="3" HIDDEN="F" TYPE="F">CFNC_N_AMT_LCCCY</CFNC_N_AMT_LCCCY>
+        <CFNC_D_DT ALIAS="T0" DBFUNC="" DESC="Start Date" DT="91" HIDDEN="F" TYPE="F">CFNC_D_DT</CFNC_D_DT>
+        <CFNC_I_DAYS ALIAS="T0" DBFUNC="" DESC="Period" DT="2" HIDDEN="F" TYPE="F">CFNC_I_DAYS</CFNC_I_DAYS>
+        <CFNC_D_DUE_DT ALIAS="T0" DBFUNC="" DESC="End Date" DT="91" HIDDEN="F" TYPE="F">CFNC_D_DUE_DT</CFNC_D_DUE_DT>
+        <CFNC_C_GRACE_FLG ALIAS="T0" DBFUNC="" DESC="Grace Days Flag" DT="1" HIDDEN="F" TYPE="F">CFNC_C_GRACE_FLG</CFNC_C_GRACE_FLG>
+        <CFNC_C_GRACE_DAYS ALIAS="T0" DBFUNC="" DESC="Grace Days" DT="2" HIDDEN="F" TYPE="F">CFNC_C_GRACE_DAYS</CFNC_C_GRACE_DAYS>
+        <CFNC_N_LIBOR_RT ALIAS="T0" DBFUNC="" DESC="Base Rate" DT="8" HIDDEN="F" TYPE="F">CFNC_N_LIBOR_RT</CFNC_N_LIBOR_RT>
+        <CFNC_N_MARGIN_RT ALIAS="T0" DBFUNC="" DESC="Margin" DT="8" HIDDEN="F" TYPE="F">CFNC_N_MARGIN_RT</CFNC_N_MARGIN_RT>
+        <CFNC_N_RT ALIAS="T0" DBFUNC="" DESC="Interest Rate" DT="8" HIDDEN="F" TYPE="F">CFNC_N_RT</CFNC_N_RT>
+        <CFNC_OVERDUE_DT ALIAS="T0" DBFUNC="" DESC="Overdue Date" DT="91" HIDDEN="F" TYPE="F">CFNC_OVERDUE_DT</CFNC_OVERDUE_DT>
+        <CFNC_N_PNLT_RT ALIAS="T0" DBFUNC="" DESC="Penalty Rate" DT="8" HIDDEN="F" TYPE="F">CFNC_N_PNLT_RT</CFNC_N_PNLT_RT>
+        <CFNC_C_REF ALIAS="T0" DBFUNC="" DESC="Finance Reference" DT="12" HIDDEN="F" TYPE="F">CFNC_C_REF</CFNC_C_REF>
+        <CFNC_RELA_MAIN_REF ALIAS="T0" DBFUNC="" DESC="CFNC RELA_MAIN_REF" DT="12" HIDDEN="F" TYPE="F">RELA_MAIN_REF</CFNC_RELA_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF ='</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

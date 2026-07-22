@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FAEF</module>
+    <name>Up_POLoan_Bal_Return</name>
+    <desc>Up_POLoan_Bal to POMM</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.POMM_MASTER</table-name>
+        <table-desc>PO MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql type="TBL_FLD">PO_REF</sql>
+            <sql type="SQL">='</sql>
+            <field mf="F">PO_REF</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">FA_SBR_REF</sql>
+            <sql type="SQL"> = '</sql>
+            <field mf="F">FA_SBR_REF</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">PO_STATUS</sql>
+            <sql type="SQL"> &lt;&gt;'Reject'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <PO_LOAN_BAL fv_type="F" mf="F" oper="=">PO_LOAN_BAL</PO_LOAN_BAL>
+        <CPYT_STL_AMT fv_type="F" mf="F" oper="=">CPYT_STL_AMT</CPYT_STL_AMT>
+        <PO_STATUS fv_type="F" mf="F" oper="=">PO_STATUS</PO_STATUS>
+    </mapping>
+</root>

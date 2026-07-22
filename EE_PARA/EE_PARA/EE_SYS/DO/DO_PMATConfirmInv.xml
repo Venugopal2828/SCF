@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="PMAT Confirm Invoice" Max="n" Min="0" Name="PMATConfirmInv" PendingStore="N" Screen="SCRN/o2m/PMAT_ConfirmInv.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>PMATConfirmInv</Component>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Number that identifies the invoice created by the buyer" DispInGrid="Y" EDIT="N" EEType="varchar_50_1" FldType="" Value="">AI_NUM</Element>
+        <Element DATATYPE="12" Desc="Supplier Name" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_60" FldType="" Value="">SUPLR_NM</Element>
+        <Element DATATYPE="1" Desc="Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">CCY</Element>
+        <Element DATATYPE="3" Desc="AI approved amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">AI_ACT_AMT</Element>
+        <Element DATATYPE="3" Desc="This is the paid amount for an invoice" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">AI_AMT_PAID</Element>
+        <Element DATATYPE="91" Desc="This is the date on which the invoice amount is paid" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">AI_PMT_DT</Element>
+        <Element DATATYPE="12" Desc="Status shown to the staff" DispInGrid="Y" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_STAFF_CD</Element>
+        <Element DATATYPE="12" Desc="Reconciliation status" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">RECON_STAT</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Due Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">AI_DUE_DT</Element>
+        <Element DATATYPE="3" Desc="AI original amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">AI_ORG_AMT</Element>
+        <Element DATATYPE="12" Desc="Approved invoice ID" DispInGrid="N" EDIT="N" EEType="Varchar_18" FldType="" Value="">AI_ID</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Related EPP ID" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">EPP_ID</Element>
+        <Element DATATYPE="12" Desc="EPP name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">EPP_NM</Element>
+        <Element DATATYPE="12" Desc="Early Payment Program Supplier Relationship Identification Number" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">SUPLR_ID</Element>
+        <Element DATATYPE="12" Desc="This is the reference number for the supplier inputted by the buyer in the Approved Invoice" DispInGrid="N" EDIT="N" EEType="varchar_50_1" FldType="" Value="">SUPLR_REF</Element>
+        <Element DATATYPE="91" Desc="Invoice Approved Settlement Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">AI_SET_DT</Element>
+        <Element DATATYPE="12" Desc="Transaction Reference Number" DispInGrid="N" EDIT="N" EEType="Varchar_16" FldType="" Value="">TAG_20</Element>
+        <Element DATATYPE="12" Desc="ISC Trade account number" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">TRAD_ACC_NO</Element>
+        <Element DATATYPE="3" Desc="Invoice balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">AI_BALANCE</Element>
+        <Element DATATYPE="12" Desc="Status shown to the buyer" DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_BUYR_CD</Element>
+        <Element DATATYPE="12" Desc="Status shown to the supplier" DispInGrid="N" EDIT="N" EEType="FLAG_2" FldType="" Value="">AI_STAT_SUPLR_CD</Element>
+        <Element DATATYPE="12" Desc="Is settled" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IS_SETTLED</Element>
+        <Element DATATYPE="12" Desc="Direct debit collection account(Buyer)" DispInGrid="N" EDIT="N" EEType="FLAG_35" FldType="" Value="">ACC_BUYER_SETL</Element>
+        <Element DATATYPE="12" Desc="Whether this invoice is funded" DispInGrid="N" EDIT="N" EEType="FLAG_1" FldType="" Value="">IS_FUNDED</Element>
+        <Element DATATYPE="12" Desc="Buyer Identification Number" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">BUYR_ID</Element>
+        <Element DATATYPE="12" Desc="Buyer name" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">BUYR_NM</Element>
+        <Element DATATYPE="12" Desc="Customer BOS ID" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">BUYR_BOS_ID</Element>
+    </Elements>
+</DO>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("sherrytest006 begin");
+
+var GetTxId1= stp.getValue("/Document/AmdmntAccptncNtfctn/TxId","Id");
+var GetTxId=GetTxId1[0];
+
+var bu=stp.getTSUUnitCode();
+var fld_list = stp.addFieldList(null,"C_MAIN_REF");
+var sql_condition = stp.addSQLCondition(null,"TSU_TID",GetTxId);
+sql_condition = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+var result = stp.executeQuery("TSUM_EM_BASELINE",fld_list,sql_condition);
+var mainRef = stp.getDBFieldValue(result,"C_MAIN_REF");
+stp.writeLog("mainRef="+mainRef);
+ //get  C_FUNC_SHORT_NAME,TSU_TRX_AMD,TSUR2_TRX_STATUS,TSU_TRX_STATUS,TSU_AMD_REF from table TSUM_MASTER  -S
+var fld_list      = stp.addFieldList(null,"C_FUNC_SHORT_NAME");  
+fld_list      = stp.addFieldList(fld_list,"TSU_TRX_AMD");    
+fld_list      = stp.addFieldList(fld_list,"TSUR2_TRX_STATUS");
+fld_list      = stp.addFieldList(fld_list,"TSU_TRX_STATUS");
+fld_list = stp.addFieldList(fld_list,"TSU_AMD_REF");
+fld_list      = stp.addFieldList(fld_list,"TSU_CCY");
+var sql_condition = stp.addSQLCondition(null,"C_MAIN_REF",mainRef);
+sql_condition     = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu); 
+var result        = stp.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+var Shortname	= stp.getDBFieldValue(result,"C_FUNC_SHORT_NAME");
+stp.writeLog("Shortname="+Shortname);
+var Amstatus	= stp.getDBFieldValue(result,"TSU_TRX_STATUS"); 
+stp.writeLog("Amstatus="+Amstatus);
+var Custatus  	= stp.getDBFieldValue(result,"TSUR2_TRX_STATUS");
+stp.writeLog("Custatus="+Custatus);
+var Amtype 	= stp.getDBFieldValue(result,"TSU_TRX_AMD");
+stp.writeLog("Amtype="+Amtype);
+var amdNo_org 	= stp.getDBFieldValue(result,"TSU_AMD_REF");
+stp.writeLog("amdNo_org="+amdNo_org);
+var tsuccy 	= stp.getDBFieldValue(result,"TSU_CCY");
+stp.writeLog("tsuccy="+tsuccy);
+  //get  C_FUNC_SHORT_NAME,TSU_TRX_AMD,TSUR2_TRX_STATUS,TSU_TRX_STATUS,TSU_AMD_REF from table TSUM_MASTER  -E
+stp.updateFieldValue("/root/domData","C_MAIN_REF",mainRef);
+stp.updateFieldValue("/root/domData","C_TRX_REF",mainRef);
+stp.updateFieldValue("/root/domData","C_UNIT_CODE",bu);
+stp.updateFieldValue("/root/domData","TSU_AMD_REF",amdNo_org);
+stp.updateFieldValue("/root/domData","TSU_CCY",tsuccy);
+
+// for reqforactn begin
+
+var TSU_REQ_ACT_TP = stp.getValue("/Document/AmdmntAccptncNtfctn/ReqForActn","Tp");
+stp.writeLog("Request Action Type: "+TSU_REQ_ACT_TP[0]);
+if ( TSU_REQ_ACT_TP[0]== undefined)
+{
+	stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");	
+	stp.updateFieldValue("/root/domData","TSU_REQ_ACT_DESC","");
+	stp.setNodeAttribute("/root/domData/TSU_REQ_ACT_DESC");
+}
+//for reqforactn end
+
+
+var OurBIC=stp.getTSUBIC();
+stp.writeLog("ourBIC="+OurBIC);
+
+/*var ACPT= stp.getValue("/Document/AmdmntAccptncNtfctn/AccptdAmdmntNb","Nb");
+if (ACPT[0] != null)
+{ 
+var sts="A"
+stp.updateFieldValue("TSU_RESP_RESULT",sts);
+}*/
+
+var FirstREF1= stp.getValue("/Document/AmdmntAccptncNtfctn/UsrTxRef","Id");
+var FirstREF = FirstREF1[0];
+var FirstBIC1 = stp.getValue("/Document/AmdmntAccptncNtfctn/UsrTxRef/IdIssr","BIC");
+var FirstBIC = FirstBIC1[0];
+var SecondREF1 =stp.getValue("/Document/AmdmntAccptncNtfctn/UsrTxRef","Id");
+var SecondREF = SecondREF1[1];
+var SecondBIC1 =stp.getValue("/Document/AmdmntAccptncNtfctn/UsrTxRef/IdIssr","BIC");
+var SecondBIC = SecondBIC1[1];
+
+if (FirstREF== undefined)
+{ FirstREF =null;
+}
+if (SecondREF == undefined)
+{ SecondREF =null;
+}
+
+if(FirstBIC == undefined)
+{FirstBIC =null;
+}
+if(SecondBIC == undefined )
+{SecondBIC=null;
+}
+
+var BIC1 = stp.compareString(FirstBIC,OurBIC);
+var BIC2 = stp.compareString(SecondBIC,OurBIC);
+stp.writeLog("BIC1 = " +BIC1);
+stp.writeLog("BIC2 = " +BIC2);
+
+if(BIC1 == "true")
+{    
+	stp.updateFieldValue("/root/domData","TSU_OUR_BIC",FirstBIC);
+	stp.updateFieldValue("/root/domData","TSU_OUR_REF",FirstREF);
+	stp.updateFieldValue("/root/domData","TSU_THEIR_REF",SecondREF);
+	stp.updateFieldValue("/root/domData","TSU_THEIR_BIC",SecondBIC);	
+	
+}
+
+if(BIC2 == "true")
+{
+    stp.updateFieldValue("/root/domData","TSU_OUR_BIC",SecondBIC);
+    stp.updateFieldValue("/root/domData","TSU_OUR_REF",SecondREF);
+    stp.updateFieldValue("/root/domData","TSU_THEIR_REF",FirstREF);
+    stp.updateFieldValue("/root/domData","TSU_THEIR_BIC",FirstBIC);
+   
+}
+
+stp.setAutoProcess(true);   
+ 	
+if(Amstatus=="AMRQ") 
+{
+	if(Amtype == " " && Custatus=="AMRQ")
+	{
+		stp.updateFieldValue("/root/domData","TSU_TRX_AMD","006");
+		stp.setFunc("R2AmendmentsAcceptanceNotifi");
+	}
+	if(Amtype == "011" && Custatus=="ACTV")
+	{
+		stp.updateFieldValue("/root/domData","SPECIAL_METHOD","Y");
+		stp.updateFieldValue("/root/domData","DELETE_ALL_DATA","Y");
+		 
+	  	stp.setFunc("R2ProcessAmendAcceptNot");
+	  	stp.writeLog("End assign function R2ProcessAmendAcceptNot");
+	    
+	  	stp.updateFieldValue("/root/domData","TSU_TRX_AMD","");
+		stp.updateFieldValue("/root/domData","TSU_TRX_STATUS","");
+		stp.setNodeAttribute("/root/domData/TSU_TRX_AMD"); 
+		stp.setNodeAttribute("/root/domData/TSU_TRX_STATUS");
+		//replace node -S	
+		var xlist = new Array(7);
+		xlist[0] = "R2InvolvedPartyInfoRe";
+		xlist[1] = "R2GoodsRe";
+		xlist[2] = "R2PaymentTermsRe";
+		xlist[3] = "R2SettlementTermsRe";
+		xlist[4] = "R2PaymentObligationRe";
+		xlist[5] = "R2DatasetRequiredRe";
+		xlist[6] = "UserDefinedInformationRe";
+		stp.replaceDoSpecial(xlist,"006");
+		//replace node -E		
+	}
+}
+if(Amstatus!="AMRQ")
+{
+	stp.setFunc("R2AmendmentsAcceptanceNotifi");
+	stp.writeLog("End assign function R2AmendmentsAcceptanceNotifi");
+}]]></js-content>
+</root>

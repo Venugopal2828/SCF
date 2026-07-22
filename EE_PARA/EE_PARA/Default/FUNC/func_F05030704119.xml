@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/PYMT_CreaCorres.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PYMT</MODULE>
+        <MODULE_DESC>Clean Payment</MODULE_DESC>
+        <EVENT>Inward Payments</EVENT>
+        <ID>F05030704119</ID>
+        <NAME>Incoming_MT199</NAME>
+        <DESC>Receive MT199</DESC>
+        <FUNSHORTNAME>Incoming_MT199</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>Y</ADDMASTER>
+        <ATTR_ID name="ReceiveIMT">R00000012802</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID/>
+        <InSWIFT>F00000008959</InSWIFT>
+    </FUNCTION>
+</FUNC>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Envelope>
+  <AppHdr xmlns="${xmlns}">
+    <Fr>
+      <FIId>
+        <FinInstnId>
+          <BICFI>${sender_bic}</BICFI>
+        </FinInstnId>
+      </FIId>
+    </Fr>
+    <To>
+      <FIId>
+        <FinInstnId>
+          <BICFI>${receiver_bic}</BICFI>
+        </FinInstnId>
+      </FIId>
+    </To>
+    <BizMsgIdr>${msgid}</BizMsgIdr>
+    <MsgDefIdr>${mxtype}</MsgDefIdr>
+    <BizSvc>${bizsvc}</BizSvc>
+    <CreDt>${CreDt}</CreDt>
+  </AppHdr>
+</Envelope>

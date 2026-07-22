@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="AdviceForBankCust" Max="n" Min="0" Name="AdviceForBankCust" PendingStore="N" Screen="SCRN/DO/AdivceForBankCust.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="ADV_BANK_CUST"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>I_EVENT_TIMES</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="EPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="EXCO_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IMCO_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IWGT_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="RPFM_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="SHGT_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="SYND_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="1" Desc="Bank Message Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">MESG_TYPE_BANK</Element>
+        <Element DATATYPE="1" Desc="Customer Message Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">MESG_TYPE_CUST</Element>
+        <Element DATATYPE="12" Desc="Send to bank Id" DispInGrid="N" EDIT="N" EEType="BKID" FldType="" Value="">SEND_TO_BANK_ID</Element>
+        <Element DATATYPE="12" Desc="Send to bank Name" DispInGrid="N" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">SEND_TO_BANK_NM</Element>
+        <Element DATATYPE="12" Desc="Send to bank Address1" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SEND_TO_BANK_ADD1</Element>
+        <Element DATATYPE="12" Desc="Send to bank Address2" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SEND_TO_BANK_ADD2</Element>
+        <Element DATATYPE="12" Desc="Send to Bank Address3" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SEND_TO_BANK_ADD3</Element>
+        <Element DATATYPE="12" Desc="Send To bank mail Address" DispInGrid="N" EDIT="N" EEType="NARR(6_35)" FldType="" Value="">SEND_TO_BANK_MAIL</Element>
+        <Element DATATYPE="12" Desc="Send to Bank SWIFT Tag" DispInGrid="N" EDIT="N" EEType="SW_TAG" FldType="" Value="">SEND_TO_BK_SW_TAG</Element>
+        <Element DATATYPE="1" Desc="Send to Bank SWIFT Address" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">SEND_TO_BK_SW_ADD</Element>
+        <Element DATATYPE="12" Desc="Send to Bank Reference" DispInGrid="N" EDIT="N" EEType="RELATED_REF" FldType="" Value="">SEND_TO_BANK_REF</Element>
+        <Element DATATYPE="1" Desc="Send to Bank Language" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">SEND_TO_BANK_LANG</Element>
+        <Element DATATYPE="12" Desc="Send to Bank Telex No" DispInGrid="N" EDIT="N" EEType="TELEX" FldType="" Value="">SEND_TO_BANK_TLX</Element>
+        <Element DATATYPE="12" Desc="Send to Bank Notes" DispInGrid="N" EDIT="N" EEType="NARR(6_35)" FldType="" Value="">SEND_TO_BANK_NOTES</Element>
+        <Element DATATYPE="12" Desc="Send to Bank Narrative Mail" DispInGrid="N" EDIT="N" EEType="TEXTAREA_1750" FldType="" Value="">BANK_NARR_MAIL</Element>
+        <Element DATATYPE="12" Desc="Bank Narrative tag 79" DispInGrid="N" EDIT="N" EEType="TEXTAREA_1750" FldType="" Value="">BANK_NARR_TAG_79</Element>
+        <Element DATATYPE="12" Desc="Send to Customer ID" DispInGrid="N" EDIT="N" EEType="BKID" FldType="" Value="">SEND_TO_CUST_ID</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Name" DispInGrid="Y" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">SEND_TO_CUST_NM</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Address1" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SEND_TO_CUST_ADD1</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Address2" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SEND_TO_CUST_ADD2</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Address3" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SEND_TO_CUST_ADD3</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Mailing Address" DispInGrid="N" EDIT="N" EEType="EMAIL_VARCHAR50" FldType="" Value="">SEND_TO_CUST_MAIL</Element>
+        <Element DATATYPE="1" Desc="Send to Customer Language" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">SEND_TO_CUST_LANG</Element>
+        <Element DATATYPE="12" Desc="Send to Custome Telex No" DispInGrid="N" EDIT="N" EEType="TELEX" FldType="" Value="">SEND_TO_CUST_TLX</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Fax No" DispInGrid="N" EDIT="N" EEType="PhoneNumber" FldType="" Value="">SEND_TO_CUST_FAX</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Email Address" DispInGrid="N" EDIT="N" EEType="EMAIL_VARCHAR50" FldType="" Value="">SEND_TO_CUST_EMAIL</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Reference" DispInGrid="N" EDIT="N" EEType="RELATED_REF" FldType="" Value="">SEND_TO_CUST_REF</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Notes" DispInGrid="N" EDIT="N" EEType="NARR(6_35)" FldType="" Value="">SEND_TO_CUST_NOTES</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Bank N90 Reference for Tag 20" DispInGrid="N" EDIT="N" EEType="RELATED_REF" FldType="" Value="">BANK_N90_REF_20</Element>
+        <Element DATATYPE="12" Desc="Bank N90 Reference for Tag 21" DispInGrid="N" EDIT="N" EEType="RELATED_REF" FldType="" Value="">BANK_N90_REF_21</Element>
+        <Element DATATYPE="12" Desc="Send to Customer Postal Address" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">SEND_TO_CUST_POST_ADD</Element>
+        <Element DATATYPE="12" Desc="Send to Bank Post Address" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">SEND_TO_BANK_POST_ADD</Element>
+        <Element DATATYPE="12" Desc="Customer Narrative Tag 79" DispInGrid="N" EDIT="N" EEType="TEXTAREA_1750" FldType="" Value="">CUST_NARR_TAG_79</Element>
+        <Element DATATYPE="1" Desc="Mail Method" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">MAIL_MTHD_BANK</Element>
+        <Element DATATYPE="1" Desc="Mail Method" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">MAIL_MTHD_CUST</Element>
+        <Element DATATYPE="1" Desc="Send to Bank SWIFT Address Old" DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">SEND_TO_BK_SW_ADD_OLD</Element>
+        <Element DATATYPE="12" Desc="SUB_MESS_TYPE" DispInGrid="N" EDIT="N" EEType="CHAR_3" FldType="" Value="">SUB_MESS_TYPE</Element>
+        <Element DATATYPE="12" Desc="Customer Reference Number" DispInGrid="N" EDIT="N" EEType="RELATED_REF" FldType="" Value="">X798_CUST_REF</Element>
+        <Element DATATYPE="12" Desc="X798_ADV_BK_REF_21P" DispInGrid="N" EDIT="N" EEType="CHAR_16" FldType="" Value="">X798_ADV_BK_REF_21P</Element>
+        <Element DATATYPE="91" Desc="Message Creation Date (Tag13E)" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">X798_CRE_DATE</Element>
+        <Element DATATYPE="12" Desc="Message Creation Time" DispInGrid="N" EDIT="N" EEType="VARCHAR20" FldType="" Value="">X798_CRE_TIME</Element>
+        <Element DATATYPE="12" Desc="Customer Contact  (Tag29A)" DispInGrid="N" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">X798_CUST_CONT</Element>
+        <Element DATATYPE="12" Desc="X798_23X_CODE" DispInGrid="N" EDIT="N" EEType="Varchar_4" FldType="" Value="">X798_23X_CODE</Element>
+        <Element DATATYPE="12" Desc="X798_23X_NARR" DispInGrid="N" EDIT="N" EEType="Varchar_68" FldType="" Value="">X798_23X_NARR</Element>
+        <Element DATATYPE="12" Desc="SEND_TO_BANKEMAIL" DispInGrid="N" EDIT="N" EEType="EMAIL_VARCHAR50" FldType="" Value="">SEND_TO_BANK_EMAIL</Element>
+        <Element DATATYPE="12" Desc="SEND_TO_BANKFAX" DispInGrid="N" EDIT="N" EEType="Varchar_20" FldType="" Value="">SEND_TO_BANK_FAX</Element>
+    </Elements>
+</DO>

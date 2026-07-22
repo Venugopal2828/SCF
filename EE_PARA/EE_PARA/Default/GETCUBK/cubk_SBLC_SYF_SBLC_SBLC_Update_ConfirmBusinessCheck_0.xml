@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">SBLC_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SBLC</module-name>
+        <cubk-mapping-name>SYF_SBLC_SBLC_Update_ConfirmBusinessCheck_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_TRX_STATUS ALIAS="T0" DBFUNC="" DESC="C_TRX_STATUS" DT="1" HIDDEN="F" TYPE="F">TEMP_C_TRX_STATUS</C_TRX_STATUS>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'  AND C_TRX_STATUS ='P'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

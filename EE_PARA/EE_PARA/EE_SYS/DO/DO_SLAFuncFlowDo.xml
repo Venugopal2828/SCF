@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="SLAFuncFlowDo" Max="n" Min="0"
+    Name="SLAFuncFlowDo" PendingStore="N"
+    Screen="screen/STD/Std_SLAFuncFlow_Func.jsp" StoreInto="C" StoreType="C">
+    <Component>SLAFuncFlow</Component>
+    <PK>
+        <PKNAME>C_BG_VERSION</PKNAME>
+        <PKNAME>C_BG_ID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="STT_COND_HEADER"/>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="BANK GROUP ID" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_BK_GROUP_ID</Element>
+        <Element DATATYPE="1" Desc="Country Code" DispInGrid="N" EDIT="N"
+            EEType="CNTY" FldType="" Value="">C_CNTY_CODE</Element>
+        <Element DATATYPE="12" Desc="Process Center Unit Code" DispInGrid="N"
+            EDIT="N" EEType="" FldType="" Value="">C_CP_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Business Group ID" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR10" FldType="" Value="">C_BG_ID</Element>
+        <Element DATATYPE="12" Desc="Business Group Version" DispInGrid="N"
+            EDIT="N" EEType="VARCHAR3" FldType="" Value="">C_BG_VERSION</Element>
+        <Element DATATYPE="12" Desc="Business Group Description" DispInGrid="N"
+            EDIT="N" EEType="Varchar_35" FldType="" Value="">C_BG_DESC</Element>
+        <Element DATATYPE="12" Desc="C_DO_NAME_DESC" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_DO_NAME</Element>
+        <Element DATATYPE="2" Desc="I_STEP_SEQ_NO" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">I_STEP_SEQ_NO</Element>
+        <Element DATATYPE="12" Desc="C_STEP_NAME" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">C_STEP_NAME</Element>
+        <Element DATATYPE="12" Desc="C_MODU_NAME" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">C_MODU_NAME</Element>
+        <Element DATATYPE="2" Desc="I_FUNC_SEQ_NO" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">I_FUNC_SEQ_NO</Element>
+        <Element DATATYPE="12" Desc="C_FUNCGRP_ID" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_FUNCGRP_ID</Element>
+        <Element DATATYPE="12" Desc="function description" DispInGrid="Y"
+            EDIT="N" EEType="Varchar_40" FldType="" Value="">C_FUNC_DESC</Element>
+        <Element DATATYPE="1" Desc="C_FUNC_ID" DispInGrid="Y" EDIT="N" EEType=""
+            FldType="" Value="">C_FUNC_ID</Element>
+    </Elements>
+    <DO Desc="SLAFuncFlowCondDo" Max="n" Min="0" Name="SLAFuncFlowCondDo"
+        PendingStore="N" Screen="screen/STD/Std_SLAFuncFlow_Condition.jsp"
+        StoreInto="C" StoreType="C">
+        <Component>SLAFuncFlow</Component>
+        <PK>
+            <PKNAME>I_STEP_SEQ_NO</PKNAME>
+            <PKNAME>I_FUNC_SEQ_NO</PKNAME>
+            <PKNAME>I_TO_FUNC_NO</PKNAME>
+            <PKNAME>I_TO_STEP_NO</PKNAME>
+            <PKNAME>C_BG_VERSION</PKNAME>
+            <PKNAME>C_BG_ID</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="SLAFuncFlow">
+                <FKNAME PARENT_COL="C_BG_VERSION">C_BG_VERSION</FKNAME>
+                <FKNAME PARENT_COL="C_BG_ID">C_BG_ID</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="C_DO_NAME_DESC" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_DO_NAME</Element>
+            <Element DATATYPE="2" Desc="I_STEP_SEQ_NO" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_STEP_SEQ_NO</Element>
+            <Element DATATYPE="2" Desc="I_FUNC_SEQ_NO" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">I_FUNC_SEQ_NO</Element>
+            <Element DATATYPE="2" Desc="I_TO_STEP_NO" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">I_TO_STEP_NO</Element>
+            <Element DATATYPE="2" Desc="I_TO_FUNC_NO" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">I_TO_FUNC_NO</Element>
+            <Element DATATYPE="12" Desc="C_TO_STEP_NAME" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">C_TO_STEP_NAME</Element>
+            <Element DATATYPE="12" Desc="C_TO_FUNC_DESC" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">C_TO_FUNC_DESC</Element>
+            <Element DATATYPE="12" Desc="C_TO_FUNC_ID" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">C_TO_FUNC_ID</Element>
+            <Element DATATYPE="12" Desc="C_TO_FUNCGRP_ID" DispInGrid="N"
+                EDIT="N" EEType="" FldType="" Value="">C_TO_FUNCGRP_ID</Element>
+            <Element DATATYPE="12" Desc="C_GATEWAY_TYPE" DispInGrid="Y" EDIT="N"
+                EEType="" FldType="" Value="">C_GATEWAY_TYPE</Element>
+            <Element DATATYPE="12" Desc="Business Group Version" DispInGrid="N"
+                EDIT="N" EEType="VARCHAR3" FldType="" Value="">C_BG_VERSION</Element>
+            <Element DATATYPE="12" Desc="Business Group ID" DispInGrid="N"
+                EDIT="N" EEType="VARCHAR10" FldType="" Value="">C_BG_ID</Element>
+        </Elements>
+        <DO Desc="SLAFuncFlowCondDefDo" Max="n" Min="0"
+            Name="SLAFuncFlowCondDefDo" PendingStore="N"
+            Screen="screen/STD/Std_SLAFuncFlow_ConditionDefinition.jsp"
+            StoreInto="C" StoreType="C">
+            <Component>SLAFuncFlow</Component>
+            <PK>
+                <PKNAME>I_TO_FUNC_NO</PKNAME>
+                <PKNAME>I_COND_SEQ_NO</PKNAME>
+                <PKNAME>I_TO_STEP_NO</PKNAME>
+                <PKNAME>C_BG_VERSION</PKNAME>
+                <PKNAME>C_BG_ID</PKNAME>
+            </PK>
+            <FKS>
+                <FK PARENT_TABLE="SLAFuncFlow">
+                    <FKNAME PARENT_COL="I_STEP_SEQ_NO">I_STEP_SEQ_NO</FKNAME>
+                    <FKNAME PARENT_COL="I_FUNC_SEQ_NO">I_FUNC_SEQ_NO</FKNAME>
+                    <FKNAME PARENT_COL="I_TO_FUNC_NO">I_TO_FUNC_NO</FKNAME>
+                    <FKNAME PARENT_COL="I_TO_STEP_NO">I_TO_STEP_NO</FKNAME>
+                    <FKNAME PARENT_COL="C_BG_VERSION">C_BG_VERSION</FKNAME>
+                    <FKNAME PARENT_COL="C_BG_ID">C_BG_ID</FKNAME>
+                </FK>
+            </FKS>
+            <Elements>
+                <Element DATATYPE="12" Desc="C_DO_NAME_DESC" DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">C_DO_NAME</Element>
+                <Element DATATYPE="12" Desc="C_AND_OR" DispInGrid="Y" EDIT="N"
+                    EEType="" FldType="" Value="">C_AND_OR</Element>
+                <Element DATATYPE="12" Desc="C_FIELD_TYPE" DispInGrid="Y"
+                    EDIT="N" EEType="" FldType="" Value="">C_FIELD_TYPE</Element>
+                <Element DATATYPE="12" Desc="C_FIELD_ID" DispInGrid="Y" EDIT="N"
+                    EEType="" FldType="" Value="">C_FIELD_ID</Element>
+                <Element DATATYPE="12" Desc="C_FIELD_VALUE" DispInGrid="Y"
+                    EDIT="N" EEType="" FldType="" Value="">C_FIELD_VALUE</Element>
+                <Element DATATYPE="12" Desc="C_OPERATOR" DispInGrid="Y" EDIT="N"
+                    EEType="" FldType="" Value="">C_OPERATOR</Element>
+                <Element DATATYPE="12" Desc="C_CASE_SENSTIVE" DispInGrid="Y"
+                    EDIT="N" EEType="" FldType="" Value="">C_CASE_SENSTIVE</Element>
+                <Element DATATYPE="12" Desc="Business Group Version"
+                    DispInGrid="N" EDIT="N" EEType="VARCHAR3" FldType="" Value="">C_BG_VERSION</Element>
+                <Element DATATYPE="12" Desc="Business Group ID" DispInGrid="N"
+                    EDIT="N" EEType="VARCHAR10" FldType="" Value="">C_BG_ID</Element>
+                <Element DATATYPE="2" Desc="I_COND_SEQ_NO" DispInGrid="Y"
+                    EDIT="N" EEType="" FldType="" Value="">I_COND_SEQ_NO</Element>
+                <Element DATATYPE="2" Desc="I_TO_FUNC_NO" DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">I_TO_FUNC_NO</Element>
+                <Element DATATYPE="2" Desc="I_TO_STEP_NO" DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">I_TO_STEP_NO</Element>
+                <Element DATATYPE="2" Desc="I_STEP_SEQ_NO" DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">I_STEP_SEQ_NO</Element>
+                <Element DATATYPE="2" Desc="I_FUNC_SEQ_NO" DispInGrid="N"
+                    EDIT="N" EEType="" FldType="" Value="">I_FUNC_SEQ_NO</Element>
+            </Elements>
+        </DO>
+    </DO>
+</DO>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EE-7692,EE-11204(remove width) add bill huang 2014-12-01 -->
+<root>
+	<INBOXCATALOG>
+		<ProcessInstanceId>ProcessInstance Id</ProcessInstanceId>
+		<processDefinition>Process Definition</processDefinition>
+		<activityInstance>Activity Instance</activityInstance>
+		<id>id</id>
+		<name>name</name>
+		<priority>priority no</priority>
+		<assignee disp="Y">Assignee</assignee>
+		<priorityDesc disp="Y">Priority</priorityDesc>
+		<!-- /*@ref  EE-8740_1   @date 2017-06-15 @author bill huang bundled by tyrion add-S */ -->
+		<SLACreateTime disp="Y" type="date">BG Initialize Time</SLACreateTime>
+		<!-- /*@ref  EE-8740_1   @date 2017-06-15 @author bill huang bundled by tyrion add-E */ -->
+		<createTime disp="Y" type="date">Create Time</createTime>
+		<DueDate disp="Y" type="date">Due Time</DueDate>
+		<C_SLA_ID disp="Y" type="string">SLA ID</C_SLA_ID>
+		<C_MAIN_REF disp="Y">Main Ref.</C_MAIN_REF>
+		<C_TRX_REF disp="Y">Trx. Ref</C_TRX_REF>
+		<C_CUST_ID disp="Y">Customer ID</C_CUST_ID>
+		<C_CURRENCY disp="Y">CCY</C_CURRENCY>
+		<Y_TRX_AMT disp="Y">Trx. Amount</Y_TRX_AMT>
+		<C_BG_ID disp="Y">BG ID</C_BG_ID>
+		<C_BG_DESC disp="Y">BG Desc</C_BG_DESC>
+		<C_BG_VERSION disp="Y">Version</C_BG_VERSION>
+		<C_LEVEL_ID>Level ID</C_LEVEL_ID>
+		<C_LEVEL_DESC disp="Y">Level</C_LEVEL_DESC>
+		<I_STEP_SEQ_NO disp="Y">Step No</I_STEP_SEQ_NO>
+		<C_STEP_NAME disp="Y">Step name</C_STEP_NAME>
+		<C_FUNCGRP_ID disp="N">FuncGroup. ID</C_FUNCGRP_ID>
+		<C_FUNC_ID disp="Y">Func. ID</C_FUNC_ID>
+		<C_FUNC_DESC disp="Y">Func. Desc</C_FUNC_DESC>
+		<C_STATUS_FLAG disp="N">Status Flag</C_STATUS_FLAG>
+		<C_FUNCGRP_ID disp="N">FuncGroup. ID</C_FUNCGRP_ID>
+		<!--EE-8897 add bill huang 2017-10-17 - begin -->
+		<MODULE disp="Y">Module</MODULE>
+		<!--EE-8897 add bill huang 2017-10-17 - end -->
+	</INBOXCATALOG>
+	<ModuleMapping>
+		<IPLC>
+			<C_TRX_REF>C_TRX_REF</C_TRX_REF>
+			<C_CURRENCY>LC_CCY</C_CURRENCY>
+			<Y_TRX_AMT>LC_AMT</Y_TRX_AMT>
+		</IPLC>
+		<IMCO>
+			<C_TRX_REF>C_TRX_REF</C_TRX_REF>
+			<C_CURRENCY>COLL_CCY</C_CURRENCY>
+			<Y_TRX_AMT>COLL_TRX_CCY_AMT</Y_TRX_AMT>
+		</IMCO>
+	</ModuleMapping>
+</root>

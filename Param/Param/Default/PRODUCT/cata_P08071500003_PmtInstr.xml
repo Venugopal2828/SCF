@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>P08071500003</ID>
+    <CRTJSP POS="C">EXLC_PmtInstr.jsp</CRTJSP>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_MultiCatalog.jsp</JSPFILE>
+    <ADAPT/>
+    <TABLENAME>CETRX.TRX_INBOX</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Company Code" EEType="" HIDDEN="H" NOEVENT="Y">C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Main Ref." EEType="" HIDDEN="H" NOEVENT="Y">C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Trx Status" EEType="" HIDDEN="H" NOEVENT="Y">C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Advise Number" EEType="RELATED_REF" HIDDEN="" NOEVENT="Y">ADV_NO</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="LC Number" EEType="RELATED_REF" HIDDEN="" NOEVENT="Y">LC_NO</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Drawing Number" EEType="RELATED_REF" HIDDEN="" NOEVENT="Y">DRAW_NO</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" NOEVENT="Y">APPL_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" NOEVENT="Y">BENE_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Presentation Currency" EEType="CCY" HIDDEN="" NOEVENT="Y">PRES_CCY</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="3" DESC="Presentation Amount" EEType="AMT" HIDDEN="" ISAMT="Y" NOEVENT="Y">PRES_AMT</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Parent Main Reference" EEType="" HIDDEN="H" NOEVENT="Y">PARENT_MAIN_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Current Status" EEType="" HIDDEN="H" NOEVENT="Y">CURRNT_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Check Result" EEType="" HIDDEN="H" NOEVENT="Y">CHK_REST</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC>Payment Instructions</DESC>
+    <CLAUSE>
+        <SQL EEType="" TYPE="SQL">(</SQL>
+        <SQL DESC="Advise Number" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">ADV_NO</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG2</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL DESC="LC Number" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP3</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE4</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG5</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL DESC="Drawing Number" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">DRAW_NO</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP6</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE7</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG8</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL DESC="Applicant Name" DT="12" EEType="NM_CHAR35" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP9</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE10</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG11</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL DESC="Beneficiary Name" DT="12" EEType="NM_CHAR35" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP12</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE13</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG14</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL DESC="Presentation Currency" DT="12" EEType="CCY" TYPE="FLD" WTYPE="CASE">PRES_CCY</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP15</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE16</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG17</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL DESC="Presentation Amount" DT="3" EEType="AMT" TYPE="FLD" WTYPE="CASE">PRES_AMT</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP18</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE19</SQL>
+        <SQL EEType="" TYPE="SQL">)  AND </SQL>
+        <SQL DESC="Current Status" DT="12" EEType="NARR(1*35)" TYPE="FLD" WTYPE="CASE">CURRNT_STATUS</SQL>
+        <SQL EEType="" TYPE="SQL"> &lt;&gt; &apos;Payment Instructions&apos;  AND </SQL>
+        <SQL DESC="Drawing Number" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">DRAW_NO</SQL>
+        <SQL EEType="" TYPE="SQL"> IS NOT NULL AND (</SQL>
+        <SQL DESC="Check Result" DT="12" EEType="" TYPE="FLD" WTYPE="CASE">CHK_REST</SQL>
+        <SQL EEType="" TYPE="SQL"> =&apos;CLEAN&apos; OR (</SQL>
+        <SQL DESC="Check Result" DT="12" EEType="" TYPE="FLD" WTYPE="CASE">CHK_REST</SQL>
+        <SQL EEType="" TYPE="SQL"> =&apos;DISCREPANT&apos; AND </SQL>
+        <SQL DESC="Current Status" DT="12" EEType="NARR(1*35)" TYPE="FLD" WTYPE="CASE">CURRNT_STATUS</SQL>
+        <SQL EEType="" TYPE="SQL"> =&apos;Disposal Instructions&apos;)) AND ( </SQL>
+        <SQL DESC="Trx Status" DT="12" EEType="" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+        <SQL EEType="" TYPE="SQL">=&apos;A&apos; OR </SQL>
+        <SQL DESC="Trx Status" DT="12" EEType="" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+        <SQL EEType="" TYPE="SQL">=&apos;S&apos; OR  </SQL>
+        <SQL DESC="Trx Status" DT="12" EEType="" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+        <SQL EEType="" TYPE="SQL">=&apos;B&apos; OR </SQL>
+        <SQL DESC="Trx Status" DT="12" EEType="" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+        <SQL EEType="" TYPE="SQL">=&apos;M&apos; ) ORDER BY </SQL>
+        <SQL DESC="LC Number" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">LC_NO</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Advise Number">ADV_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="LC Number">LC_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Drawing Number">DRAW_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Applicant Name">APPL_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Beneficiary Name">BENE_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Presentation Currency">PRES_CCY</FIELD>
+        <FIELD DATATYPE="3" DESC="Presentation Amount">PRES_AMT</FIELD>
+        <FIELD DATATYPE="12" DESC="Current Status">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Drawing Number">DRAW_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Check Result">CHK_REST</FIELD>
+        <FIELD DATATYPE="12" DESC="Check Result">CHK_REST</FIELD>
+        <FIELD DATATYPE="12" DESC="Current Status">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Trx Status">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Trx Status">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Trx Status">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Trx Status">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="LC Number">LC_NO</FIELD>
+    </CLAUSEFIELD>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

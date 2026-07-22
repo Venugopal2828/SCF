@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302336</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>DeleteSLABusinessGroup_CATA</DESC>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_SLABG_HEADER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="BANK GROUP ID" EEType="" HIDDEN="">C_BK_GROUP_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Country Code" EEType="CNTY" HIDDEN="H">C_CNTY_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Group Description"
+            EEType="Varchar_35" HIDDEN="">C_BG_DESC</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Group ID"
+            EEType="VARCHAR10" HIDDEN="">C_BG_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Group Version"
+            EEType="VARCHAR3" HIDDEN="">C_BG_VERSION</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Business Group Active Date"
+            EEType="" HIDDEN="">D_BG_ACTIVE_DATE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Add Flag" EEType="Varchar_1" HIDDEN="">C_ADD_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Transaction Status" EEType="" HIDDEN="">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Process Center Unit Code"
+            EEType="" HIDDEN="">C_CP_UNIT_CODE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Business Group Description" DT="12" EEType="Varchar_35" TYPE="FLD">C_BG_DESC</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND (</SQL>
+        <SQL DESC="Process Center Unit Code" DT="12" EEType="" TYPE="FLD">C_CP_UNIT_CODE</SQL>
+        <SQL TYPE="SQL"> ='XXXXXX' OR </SQL>
+        <SQL DESC="Process Center Unit Code" DT="12" EEType="" TYPE="FLD">C_CP_UNIT_CODE</SQL>
+        <SQL TYPE="SQL"> ='</SQL>
+        <SQL DT="var" DV="SYS_PC_UNIT" TYPE="FldValue">FldValue2</SQL>
+        <SQL TYPE="SQL">') ORDER BY </SQL>
+        <SQL DESC="Business Group Description" DT="12" EEType="Varchar_35" TYPE="FLD">C_BG_DESC</SQL>
+        <SQL TYPE="SQL"/>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Business Group Description" EEType="Varchar_35">C_BG_DESC</FIELD>
+        <FIELD DATATYPE="12" DESC="Process Center Unit Code" EEType="">C_CP_UNIT_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Process Center Unit Code" EEType="">C_CP_UNIT_CODE</FIELD>
+        <FIELD DATATYPE="12" DESC="Business Group Description" EEType="Varchar_35">C_BG_DESC</FIELD>
+    </CLAUSEFIELD>
+</CATA>

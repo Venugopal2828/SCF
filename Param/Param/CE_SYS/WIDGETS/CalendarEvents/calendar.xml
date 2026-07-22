@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notification>
+	<task-group>
+		<type>maturity</type>
+		<title>IMLCMaturingLCs</title>
+		<content><![CDATA[${C_MAIN_REF} ${itemLabel} ${DUE_DT}]]></content>
+		<func>F05030700890</func>
+		<criteria><![CDATA[C_UNIT_CODE=${C_UNIT_CODE}&C_MAIN_REF=${C_MAIN_REF}&I_EVENT_TIMES=${I_EVENT_TIMES}]]></criteria>
+		<record-limit>
+			<display-rows>3</display-rows>
+		</record-limit>
+		<dates-sql id="S00000000005"><![CDATA[SELECT DISTINCT A.DUE_DT FROM CETRX.IMLC_EM_NEGO A, CETRX.IMLC_EM_ISSUE B WHERE A.C_UNIT_CODE IN($.DAP) AND (B.LC_BALA>0 AND B.AVAL_BY<>'BY PAYMENT') AND A.DUE_DT-15 >= TO_DATE('$.startDate','YYYY-MM-DD') AND A.DUE_DT-15 <=  TO_DATE('$.endDate','YYYY-MM-DD') AND A.LC_NO=B.LC_NO ORDER BY A.DUE_DT DESC]]></dates-sql>
+		<tasks-sql id="S00000000006"><![CDATA[SELECT DISTINCT A.C_MAIN_REF, A.PARENT_MAIN_REF, A.DUE_DT,A.CURRNT_STATUS,A.C_UNIT_CODE,A.I_EVENT_TIMES FROM CETRX.IMLC_EM_NEGO A, CETRX.IMLC_EM_ISSUE B WHERE A.C_UNIT_CODE IN($.DAP) AND (B.LC_BALA>0 AND B.AVAL_BY<>'BY PAYMENT') AND A.DUE_DT-15 <= TO_DATE('$.currDate','YYYY-MM-DD') AND A.DUE_DT >= TO_DATE('$.currDate','YYYY-MM-DD') AND A.LC_NO=B.LC_NO ORDER BY A.DUE_DT DESC]]></tasks-sql>
+	</task-group>
+</notification>

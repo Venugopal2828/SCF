@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root jspFilePath_0="" jspFilePath_1="">
+    <desc>Update Amd to Master</desc>
+    <module>IWGT</module>
+    <name>UpdateAmdtoMaster</name>
+    <head-info>
+        <table-name>CETRX.IWGT_EM_GTEE</table-name>
+        <table-desc>IWGT_EM_GTEE</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition>
+            <sql type="TBL_FLD">ADV_NO</sql>
+            <sql type="SQL">='</sql>
+            <field mf="F">ADV_NO</field>
+            <sql type="SQL">' AND </sql>
+            <sql type="TBL_FLD">C_UNIT_CODE</sql>
+            <sql type="SQL">='</sql>
+            <field mf="F">C_UNIT_CODE</field>
+            <sql type="SQL">'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <EXPIRY_DT fv_type="F" mf="F" oper="=">TEMP_EXPIRY_DT</EXPIRY_DT>
+        <GTEE_AMT fv_type="F" mf="F" oper="=">TEMP_GTEE_AMT</GTEE_AMT>
+        <GTEE_BAL fv_type="F" mf="F" oper="=">TEMP_GTEE_BAL</GTEE_BAL>
+        <BENE_NM fv_type="F" mf="F" oper="@">NEW_BENE_NM</BENE_NM>
+        <BENE_ADD1 fv_type="F" mf="F" oper="@">NEW_BENE_ADD1</BENE_ADD1>
+        <BENE_ADD2 fv_type="F" mf="F" oper="@">NEW_BENE_ADD2</BENE_ADD2>
+        <BENE_ADD3 fv_type="F" mf="F" oper="@">NEW_BENE_ADD3</BENE_ADD3>
+        <EXPIRY_TYPE fv_type="F" mf="F" oper="@">NEW_EXPIRY_TYPE</EXPIRY_TYPE>
+        <EXPIRY_COND fv_type="F" mf="F" oper="=">TEMP_EXPIRY_COND</EXPIRY_COND>
+    </mapping>
+</root>

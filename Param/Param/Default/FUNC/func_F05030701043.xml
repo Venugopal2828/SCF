@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">MESG</MODULE>
+        <MODULE_DESC>General Correspondence</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701043</ID>
+        <NAME>Intent to Pay Notification</NAME>
+        <DESC>Intent to Pay Notification</DESC>
+        <FUNSHORTNAME>InttToPayNtfctn</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>Y</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">MESG_InttToPayNtfctn.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701036</ID>
+        <NAME>Intent to Pay Notification_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701036</ID>
+        <NAME>Intent to Pay Notification_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000320</ID>
+        <NAME>Intent to Pay Notification_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>FunctionSSJS</JS_CLASS>
+    </CAL>
+</FUNC>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="TEMPLATE:GTEE WORDING" type="normal" jspFilePath_0="" jspFilePath_1="">
+    <CRTJSP POS="C">CUBKCriteria_Template.jsp</CRTJSP>
+    <key-mapping>
+        <module-name>OWGT</module-name>
+        <cubk-mapping-name>TEMPLATE_GTEE_WORDING</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.TMPL_EVENT</table-name>
+        <table-desc></table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <EXPIRY_TYPE DESC="Expiry Type" DT="1" HIDDEN="" TYPE="F" WTYPE="NOCASE">EXPIRY_TYPE</EXPIRY_TYPE>
+            <FORM_OF_UNDERTAKING DESC="Form of Undertaking" DT="1" HIDDEN="" TYPE="F" WTYPE="NOCASE">FORM_OF_UNDERTAKING</FORM_OF_UNDERTAKING>
+            <GTEE_TYPE DESC="Guarantee Type" DT="1" HIDDEN="" TYPE="F" WTYPE="NOCASE">GTEE_TYPE</GTEE_TYPE>
+            <CLASSIFICATION DESC="" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">CLASSIFICATION</CLASSIFICATION>
+            <LANG_CD DESC="" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">LANG_CD</LANG_CD>
+            <ISSU_METHOD DESC="" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">ISSU_METHOD</ISSU_METHOD>
+            <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="H" TYPE="V" WTYPE="CASE">sTemplateMainRef</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <TEMP_NAME DESC="Template Name" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">TEMP_NAME</TEMP_NAME>
+        <C_CONTENT DESC="C_CONTENT" DT="2005" HIDDEN="H" TYPE="F" WTYPE="NOCASE">GTEE_DETAILS</C_CONTENT>
+        <TEMP_TYPE DESC="Template Type" DT="12" HIDDEN="H" TYPE="F" WTYPE="NOCASE">TEMP_TYPE</TEMP_TYPE>
+        <EXPIRY_TYPE DESC="Expiry Type" DT="1" HIDDEN="" TYPE="F" WTYPE="NOCASE">EXPIRY_TYPE</EXPIRY_TYPE>
+        <FORM_OF_UNDERTAKING DESC="Form of Undertaking" DT="1" HIDDEN="" TYPE="F" WTYPE="NOCASE">FORM_OF_UNDERTAKING</FORM_OF_UNDERTAKING>
+        <GTEE_TYPE DESC="Type of Undertaking" DT="1" HIDDEN="" TYPE="F" WTYPE="NOCASE">GTEE_TYPE</GTEE_TYPE>
+        <CLASSIFICATION DESC="Undertaking Classification" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">CLASSIFICATION</CLASSIFICATION>
+        <LANG_CD DESC="Language" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">LANG_CD</LANG_CD>
+        <ISSU_METHOD DESC="Issuance Method" DT="12" HIDDEN="" TYPE="F" WTYPE="NOCASE">ISSU_METHOD</ISSU_METHOD>
+        <C_MAIN_REF DESC="Main Ref." DT="12" HIDDEN="H" TYPE="V" WTYPE="CASE">sTemplateMainRef</C_MAIN_REF>
+    </field-mapping>
+    <CLAUSE>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="Expiry Type" DT="1" ISFC="Y" TYPE="FLD" WTYPE="NOCASE">EXPIRY_TYPE</SQL>
+        <SQL TYPE="SQL"> </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL ALIAS="EXPIRY_TYPE" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Form of Undertaking" DT="1" ISFC="Y" TYPE="FLD" WTYPE="NOCASE">FORM_OF_UNDERTAKING</SQL>
+        <SQL TYPE="SQL"> </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP2</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL ALIAS="FORM_OF_UNDERTAKING" DT="val" TYPE="OP">VALUE3</SQL>
+        <SQL TYPE="SQL">'AND </SQL>
+        <SQL DESC="Guarantee Type" DT="1" ISFC="Y" TYPE="FLD" WTYPE="NOCASE">GTEE_TYPE</SQL>
+        <SQL TYPE="SQL"> </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP4</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL ALIAS="GTEE_TYPE" DT="val" TYPE="OP">VALUE5</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">CLASSIFICATION</SQL>
+        <SQL TYPE="SQL"> </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">LANG_CD</SQL>
+        <SQL TYPE="SQL"> </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP8</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE9</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">ISSU_METHOD</SQL>
+        <SQL TYPE="SQL"> </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP10</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE11</SQL>
+        <SQL TYPE="SQL">') AND </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">TEMP_TYPE</SQL>
+        <SQL TYPE="SQL"> = 'Undertaking Wording' AND (</SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">CUST_SPEC</SQL>
+        <SQL TYPE="SQL"> = 'No' OR </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">CUST_ID</SQL>
+        <SQL TYPE="SQL"> = </SQL>
+        <SQL DT="sys" DV="SYS_BUSI_UNIT" TYPE="OP">VALUE</SQL>
+        <SQL TYPE="SQL">) AND </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">C_MODU_NAME</SQL>
+        <SQL TYPE="SQL"> = 'GTEE' AND </SQL>
+        <SQL DESC="" DT="12" TYPE="FLD" WTYPE="NOCASE">ACTIVE_FLAG</SQL>
+        <SQL TYPE="SQL"> = 'Y'</SQL>
+    </CLAUSE>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/PYMT_DI_Capture.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FORM>
+        <ID>F00000004894</ID>
+        <NAME/>
+    </FORM>
+    <VOUCHER>
+        <ID>F00000004901</ID>
+        <NAME/>
+    </VOUCHER>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PYMT</MODULE>
+        <MODULE_DESC>Clean Payment</MODULE_DESC>
+        <EVENT>Draft Payments</EVENT>
+        <ID>F05030703204</ID>
+        <NAME>DI_Capture</NAME>
+        <DESC>Draft Capture</DESC>
+        <FUNSHORTNAME>DI_Capture</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>KP</FUNCTYPE>
+        <MAINCOMP name="TrxManagerKP">TrxManagerKP</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="CompOutPmt">R00000007679</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000007769</CATALOGID>
+        <GAPI>F00000004895</GAPI>
+        <OutSWIFT>F00000004893</OutSWIFT>
+    </FUNCTION>
+</FUNC>

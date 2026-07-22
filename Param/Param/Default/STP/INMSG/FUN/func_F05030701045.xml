@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive Intent To Pay Report");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sRptId = stp.getXslMsgTagVal("message/Document/InttToPayRpt/RptId","Id");
+stp.writeLog("sRptId=========="+sRptId);
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC=========="+sBIC);
+stp.updateFieldValue("TSU_PCBK_BIC",sBIC);
+var sRelNo = stp.getXslMsgTagVals("message/Document/InttToPayRpt/RptdItms/PurchsOrdrRef","Id");
+var sTxId = stp.getXslMsgTagVal("message/Document/InttToPayRpt/RptdItms","TxId");
+stp.writeLog("sTxId=========="+sTxId);
+var sNxtSts = "Waiting for Report";
+var arrKeys = [["TSU_TID",sTxId],["NXT_STATUS",sNxtSts],["TSU_PCBK_BIC",sBIC]];
+stp.writeLog("sRelNo.length=========="+sRelNo.length);
+if(sRelNo.length == 1){
+var arrGetDataResult = stp.SYS_getCUBKVal("GetRefUnitByTxIdAndNXTAndBIC",arrKeys);
+var sUnitCode = arrGetDataResult[0];
+var sMainRef = arrGetDataResult[1];
+var sParentRef = arrGetDataResult[2];
+stp.setCmpId(sUnitCode);
+stp.writeLog("sMainRef=========="+sMainRef);
+stp.setMainRef(sMainRef);
+}
+else if(sRelNo.length > 1){
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetRefUnitByTxId",arrKeys);
+var sUnitCode = arrGetDataResult1[0];
+var sMainRef = arrGetDataResult1[1];
+stp.setCmpId(sUnitCode);
+stp.writeLog("sMainRef=========="+sMainRef);
+stp.setMainRef(sMainRef);
+var arrKeys1 = [["C_MAIN_REF",sMainRef]];
+var arrGetDataResult2 = stp.SYS_getCUBKVal("GetParentRefByCMainRef",arrKeys1);
+var sParentRef = arrGetDataResult2[0];
+}
+stp.updateFieldValue("PARENT_MAIN_REF",sParentRef);
+stp.updateFieldValue("CURRNT_STATUS","Received Intent To Pay Report");
+stp.updateFieldValue("NXT_STATUS","Received Intent To Pay Report");
+stp.writeLog("End: Receive Intent To Pay Report");]]></js-content>
+</root>

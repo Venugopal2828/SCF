@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="ee_cache_batch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EE_Cache_Config.xsd">
+    <diskStore path="java.io.tmpdir/ee_cache_batch"/>
+    <defaultCache diskExpiryThreadIntervalSeconds="120" diskPersistent="false"
+        eternal="false" maxElementsInMemory="100"
+        memoryStoreEvictionPolicy="LRU" overflowToDisk="false"
+        timeToIdleSeconds="600" timeToLiveSeconds="600"/>
+    <!--
+       Cache configuration of task.
+    -->
+    <cache eternal="true" maxElementsInMemory="300" name="BATCH_TASK_INFO"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600"/>
+    <cache eternal="true" maxElementsInMemory="100" name="JOB_STATUS"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+        <!--<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+        <cacheEventListenerFactory class="com.cs.cache.CacheClusteringEventFactory"/>
+        -->
+     </cache>
+    <cache eternal="true" maxElementsInMemory="300" name="TEMPORARY_JOB"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+        <!--<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+        <cacheEventListenerFactory class="com.cs.cache.CacheClusteringEventFactory"/>
+        -->
+     </cache>
+    <cache eternal="true" maxElementsInMemory="300" name="EE_BATCH_CACHE"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+        <!--<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+        <cacheEventListenerFactory class="com.cs.cache.CacheClusteringEventFactory"/>
+        -->
+    </cache>
+    <cache name="CACHE_SODEOD_COMMON_DATA"
+           maxElementsInMemory="100"
+           eternal="true"
+           timeToIdleSeconds="600"
+           timeToLiveSeconds="600"
+           overflowToDisk="false">
+            <!-- @ref EE-6506 @date 2012-08-23 @author salk  modify from @ref:EE-5432 _s -->
+           <!--Common Global Simple Data(Cluster Support)
+           <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+         properties="replicateAsynchronously=true,
+         replicatePuts=true,
+         replicateUpdates=true,
+         replicateUpdatesViaCopy=true,
+         replicateRemovals=true "/-->
+         <!-- @ref EE-6506 @date 2012-08-23 @author salk  modify from @ref:EE-5432 _e -->
+    </cache>
+    <!--@author monroe @date 2011-07-15 @ref ISC-EE-0096 add bundled by amelia for EE-7813-s-->
+    <cache eternal="true" maxElementsInMemory="300" name="CACHE_WEB_AP_HOLIDAY"
+        overflowToDisk="false" timeToIdleSeconds="600" timeToLiveSeconds="600">
+    </cache>
+    <!--@author inman @date 2012-08-20 @ref EE-6257 _S -->
+	<cache name="CACHE_BUSINESSUNIT_TIMEZONE"
+			maxElementsInMemory="100"
+			eternal="true"
+			timeToIdleSeconds="600"
+			timeToLiveSeconds="600"
+			overflowToDisk="false">
+	</cache>
+	<!--@author inman @date 2012-08-20 @ref EE-6257 _E -->
+    <!--@author monroe @date 2011-07-15 @ref ISC-EE-0096 add bundled by amelia for EE-7813-e-->
+</ehcache>

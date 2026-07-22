@@ -1,0 +1,2659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.15" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.2.1.r22a_v20071101 Build &lt;2.2.1.v20071101-1439></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <html-property name="description">Creates a blank report with no predefined content.</html-property>
+    <text-property name="displayName">Blank Report</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <parameters>
+        <scalar-parameter name="CompanyCode" id="10">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">CompanyCode</text-property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="MainRef" id="11">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">MainRef</text-property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="EventTimes" id="12">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">EventTimes</text-property>
+            <property name="concealValue">false</property>
+            <property name="isRequired">true</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="CEBaseLine" id="6">
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin:@10.39.101.179:1521:CEDB</property>
+            <property name="odaUser">system</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">c3lz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="IMLC_AppImpLc" id="9">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ADDT_AMT_CVR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ADDT_COND</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ADV_BKADD1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ADV_BKADD2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ADV_BKADD3</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ADV_BKNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ADV_THR_BKADD1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">ADV_THR_BKADD2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">ADV_THR_BKADD3</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">ADV_THR_BKNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">APPL_ACCT_CHRG</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">APPL_ACCT_DR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">APPL_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">APP_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">AVBL_BKADD1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">AVBL_BKADD2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">AVBL_BKADD3</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">AVBL_BKNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">AVBL_BY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">BENE_ADD1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">BENE_ADD2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">BENE_ADD3</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">BENE_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">CCY_ACCT_CHRG</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">CCY_ACCT_DR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">CONF_INSTR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">CUST_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">C_BK_GROUP_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">C_CP_UNIT_CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">C_CUST_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">C_EVENT_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">C_EVENT_STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">C_FUNC_SHORT_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
+                        <property name="name">C_LOCKED_FLAG</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">35</property>
+                        <property name="name">C_LOCKED_OP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">36</property>
+                        <property name="name">C_LOCK_FUNC_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">38</property>
+                        <property name="name">C_PRODUCT_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">39</property>
+                        <property name="name">C_PRODUCT_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">40</property>
+                        <property name="name">C_RELE_BY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">41</property>
+                        <property name="name">C_TRX_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">42</property>
+                        <property name="name">C_TRX_STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">43</property>
+                        <property name="name">C_UNIT_CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">44</property>
+                        <property name="name">GOODS_DESC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">45</property>
+                        <property name="name">DOCS_REQ</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">46</property>
+                        <property name="name">DRAFTS_AT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">47</property>
+                        <property name="name">DRAWEE_ADD1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">48</property>
+                        <property name="name">DRAWEE_ADD2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">49</property>
+                        <property name="name">DRAWEE_ADD3</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">50</property>
+                        <property name="name">DRAWEE_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">51</property>
+                        <property name="name">D_CREA_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">52</property>
+                        <property name="name">D_RELE_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">53</property>
+                        <property name="name">D_SYS_OP_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">54</property>
+                        <property name="name">D_SYS_REL_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">55</property>
+                        <property name="name">EXP_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">56</property>
+                        <property name="name">EXP_PLACE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">57</property>
+                        <property name="name">FORM_OF_LC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">58</property>
+                        <property name="name">ICO_PLACE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">59</property>
+                        <property name="name">INCOTERMS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">60</property>
+                        <property name="name">ISS_COMM_PAID_BY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">61</property>
+                        <property name="name">I_EVENT_TIMES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">62</property>
+                        <property name="name">LC_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">63</property>
+                        <property name="name">LC_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">64</property>
+                        <property name="name">LTST_SHIP_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">65</property>
+                        <property name="name">NEGATV_TOLER</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">66</property>
+                        <property name="name">NOTES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">67</property>
+                        <property name="name">OTHER_CHG_PAID_BY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">68</property>
+                        <property name="name">PARTIAL_SHIP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">69</property>
+                        <property name="name">PAY_DETAILS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">70</property>
+                        <property name="name">PORT_ARRIVE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">71</property>
+                        <property name="name">PORT_DEPART</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">72</property>
+                        <property name="name">POSITV_TOLER</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">73</property>
+                        <property name="name">POS_NEG_TOL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">74</property>
+                        <property name="name">PRES_DAYS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">75</property>
+                        <property name="name">PRES_PERIOD_TEXT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">76</property>
+                        <property name="name">SHIP_FROM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">77</property>
+                        <property name="name">SHIP_PERIOD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">78</property>
+                        <property name="name">SHIP_TO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">79</property>
+                        <property name="name">TRANSHIPMENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">80</property>
+                        <property name="name">T_LOCKED_TIME</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">81</property>
+                        <property name="name">T_RELE_TIME</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">82</property>
+                        <property name="name">T_SYS_OP_TIME</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">83</property>
+                        <property name="name">T_SYS_REL_TIME</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">84</property>
+                        <property name="name">ISSUE_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">85</property>
+                        <property name="name">IAMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">86</property>
+                        <property name="name">NEW_EXP_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">87</property>
+                        <property name="name">DAMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">88</property>
+                        <property name="name">NEW_LC_AMT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">89</property>
+                        <property name="name">APPL_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CEBaseLine</property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="paramName">MainRef</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">params["C_MAIN_REF"]</expression>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">C_UNIT_CODE</property>
+                    <property name="paramName">CompanyCode</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <expression name="defaultValue">params["C_UNIT_CODE"]</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">I_EVENT_TIMES</property>
+                    <property name="paramName">EventTimes</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">3</property>
+                    <expression name="defaultValue">params["I_EVENT_TIMES"]</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ADDT_AMT_CVR</property>
+                    <property name="nativeName">ADDT_AMT_CVR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ADDT_COND</property>
+                    <property name="nativeName">ADDT_COND</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ADV_BKADD1</property>
+                    <property name="nativeName">ADV_BKADD1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ADV_BKADD2</property>
+                    <property name="nativeName">ADV_BKADD2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ADV_BKADD3</property>
+                    <property name="nativeName">ADV_BKADD3</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ADV_BKNAME</property>
+                    <property name="nativeName">ADV_BKNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ADV_THR_BKADD1</property>
+                    <property name="nativeName">ADV_THR_BKADD1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">ADV_THR_BKADD2</property>
+                    <property name="nativeName">ADV_THR_BKADD2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">ADV_THR_BKADD3</property>
+                    <property name="nativeName">ADV_THR_BKADD3</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">ADV_THR_BKNAME</property>
+                    <property name="nativeName">ADV_THR_BKNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">APPL_ACCT_CHRG</property>
+                    <property name="nativeName">APPL_ACCT_CHRG</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">APPL_ACCT_DR</property>
+                    <property name="nativeName">APPL_ACCT_DR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">APPL_NAME</property>
+                    <property name="nativeName">APPL_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">APP_DATE</property>
+                    <property name="nativeName">APP_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">AVBL_BKADD1</property>
+                    <property name="nativeName">AVBL_BKADD1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">AVBL_BKADD2</property>
+                    <property name="nativeName">AVBL_BKADD2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">AVBL_BKADD3</property>
+                    <property name="nativeName">AVBL_BKADD3</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">AVBL_BKNAME</property>
+                    <property name="nativeName">AVBL_BKNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">AVBL_BY</property>
+                    <property name="nativeName">AVBL_BY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">BENE_ADD1</property>
+                    <property name="nativeName">BENE_ADD1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">BENE_ADD2</property>
+                    <property name="nativeName">BENE_ADD2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">BENE_ADD3</property>
+                    <property name="nativeName">BENE_ADD3</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">BENE_NAME</property>
+                    <property name="nativeName">BENE_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">CCY_ACCT_CHRG</property>
+                    <property name="nativeName">CCY_ACCT_CHRG</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">CCY_ACCT_DR</property>
+                    <property name="nativeName">CCY_ACCT_DR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">CONF_INSTR</property>
+                    <property name="nativeName">CONF_INSTR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">CUST_NO</property>
+                    <property name="nativeName">CUST_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">C_BK_GROUP_ID</property>
+                    <property name="nativeName">C_BK_GROUP_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">C_CP_UNIT_CODE</property>
+                    <property name="nativeName">C_CP_UNIT_CODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">C_CUST_ID</property>
+                    <property name="nativeName">C_CUST_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">C_EVENT_NAME</property>
+                    <property name="nativeName">C_EVENT_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">32</property>
+                    <property name="name">C_EVENT_STATUS</property>
+                    <property name="nativeName">C_EVENT_STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">33</property>
+                    <property name="name">C_FUNC_SHORT_NAME</property>
+                    <property name="nativeName">C_FUNC_SHORT_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">34</property>
+                    <property name="name">C_LOCKED_FLAG</property>
+                    <property name="nativeName">C_LOCKED_FLAG</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">35</property>
+                    <property name="name">C_LOCKED_OP</property>
+                    <property name="nativeName">C_LOCKED_OP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">36</property>
+                    <property name="name">C_LOCK_FUNC_ID</property>
+                    <property name="nativeName">C_LOCK_FUNC_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">37</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">38</property>
+                    <property name="name">C_PRODUCT_ID</property>
+                    <property name="nativeName">C_PRODUCT_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">39</property>
+                    <property name="name">C_PRODUCT_NAME</property>
+                    <property name="nativeName">C_PRODUCT_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">40</property>
+                    <property name="name">C_RELE_BY</property>
+                    <property name="nativeName">C_RELE_BY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">41</property>
+                    <property name="name">C_TRX_REF</property>
+                    <property name="nativeName">C_TRX_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">42</property>
+                    <property name="name">C_TRX_STATUS</property>
+                    <property name="nativeName">C_TRX_STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">43</property>
+                    <property name="name">C_UNIT_CODE</property>
+                    <property name="nativeName">C_UNIT_CODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">44</property>
+                    <property name="name">GOODS_DESC</property>
+                    <property name="nativeName">GOODS_DESC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">45</property>
+                    <property name="name">DOCS_REQ</property>
+                    <property name="nativeName">DOCS_REQ</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">46</property>
+                    <property name="name">DRAFTS_AT</property>
+                    <property name="nativeName">DRAFTS_AT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">47</property>
+                    <property name="name">DRAWEE_ADD1</property>
+                    <property name="nativeName">DRAWEE_ADD1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">48</property>
+                    <property name="name">DRAWEE_ADD2</property>
+                    <property name="nativeName">DRAWEE_ADD2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">49</property>
+                    <property name="name">DRAWEE_ADD3</property>
+                    <property name="nativeName">DRAWEE_ADD3</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">50</property>
+                    <property name="name">DRAWEE_NAME</property>
+                    <property name="nativeName">DRAWEE_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">51</property>
+                    <property name="name">D_CREA_DATE</property>
+                    <property name="nativeName">D_CREA_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">52</property>
+                    <property name="name">D_RELE_DATE</property>
+                    <property name="nativeName">D_RELE_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">53</property>
+                    <property name="name">D_SYS_OP_DATE</property>
+                    <property name="nativeName">D_SYS_OP_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">54</property>
+                    <property name="name">D_SYS_REL_DATE</property>
+                    <property name="nativeName">D_SYS_REL_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">55</property>
+                    <property name="name">EXP_DATE</property>
+                    <property name="nativeName">EXP_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">56</property>
+                    <property name="name">EXP_PLACE</property>
+                    <property name="nativeName">EXP_PLACE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">57</property>
+                    <property name="name">FORM_OF_LC</property>
+                    <property name="nativeName">FORM_OF_LC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">58</property>
+                    <property name="name">ICO_PLACE</property>
+                    <property name="nativeName">ICO_PLACE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">59</property>
+                    <property name="name">INCOTERMS</property>
+                    <property name="nativeName">INCOTERMS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">60</property>
+                    <property name="name">ISS_COMM_PAID_BY</property>
+                    <property name="nativeName">ISS_COMM_PAID_BY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">61</property>
+                    <property name="name">I_EVENT_TIMES</property>
+                    <property name="nativeName">I_EVENT_TIMES</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">62</property>
+                    <property name="name">LC_AMT</property>
+                    <property name="nativeName">LC_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">63</property>
+                    <property name="name">LC_CCY</property>
+                    <property name="nativeName">LC_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">64</property>
+                    <property name="name">LTST_SHIP_DATE</property>
+                    <property name="nativeName">LTST_SHIP_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">65</property>
+                    <property name="name">NEGATV_TOLER</property>
+                    <property name="nativeName">NEGATV_TOLER</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">66</property>
+                    <property name="name">NOTES</property>
+                    <property name="nativeName">NOTES</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">67</property>
+                    <property name="name">OTHER_CHG_PAID_BY</property>
+                    <property name="nativeName">OTHER_CHG_PAID_BY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">68</property>
+                    <property name="name">PARTIAL_SHIP</property>
+                    <property name="nativeName">PARTIAL_SHIP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">69</property>
+                    <property name="name">PAY_DETAILS</property>
+                    <property name="nativeName">PAY_DETAILS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">70</property>
+                    <property name="name">PORT_ARRIVE</property>
+                    <property name="nativeName">PORT_ARRIVE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">71</property>
+                    <property name="name">PORT_DEPART</property>
+                    <property name="nativeName">PORT_DEPART</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">72</property>
+                    <property name="name">POSITV_TOLER</property>
+                    <property name="nativeName">POSITV_TOLER</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">73</property>
+                    <property name="name">POS_NEG_TOL</property>
+                    <property name="nativeName">POS_NEG_TOL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">74</property>
+                    <property name="name">PRES_DAYS</property>
+                    <property name="nativeName">PRES_DAYS</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">75</property>
+                    <property name="name">PRES_PERIOD_TEXT</property>
+                    <property name="nativeName">PRES_PERIOD_TEXT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">76</property>
+                    <property name="name">SHIP_FROM</property>
+                    <property name="nativeName">SHIP_FROM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">77</property>
+                    <property name="name">SHIP_PERIOD</property>
+                    <property name="nativeName">SHIP_PERIOD</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">78</property>
+                    <property name="name">SHIP_TO</property>
+                    <property name="nativeName">SHIP_TO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">79</property>
+                    <property name="name">TRANSHIPMENT</property>
+                    <property name="nativeName">TRANSHIPMENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">80</property>
+                    <property name="name">T_LOCKED_TIME</property>
+                    <property name="nativeName">T_LOCKED_TIME</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">81</property>
+                    <property name="name">T_RELE_TIME</property>
+                    <property name="nativeName">T_RELE_TIME</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">82</property>
+                    <property name="name">T_SYS_OP_TIME</property>
+                    <property name="nativeName">T_SYS_OP_TIME</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">83</property>
+                    <property name="name">T_SYS_REL_TIME</property>
+                    <property name="nativeName">T_SYS_REL_TIME</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">84</property>
+                    <property name="name">ISSUE_DATE</property>
+                    <property name="nativeName">ISSUE_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">85</property>
+                    <property name="name">IAMT</property>
+                    <property name="nativeName">IAMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">86</property>
+                    <property name="name">NEW_EXP_DATE</property>
+                    <property name="nativeName">NEW_EXP_DATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">87</property>
+                    <property name="name">DAMT</property>
+                    <property name="nativeName">DAMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">88</property>
+                    <property name="name">NEW_LC_AMT</property>
+                    <property name="nativeName">NEW_LC_AMT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+                <structure>
+                    <property name="position">89</property>
+                    <property name="name">APPL_ID</property>
+                    <property name="nativeName">APPL_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select * from CETRX.IMLC_EM_ISSUE where C_MAIN_REF=? AND C_UNIT_CODE =? AND I_EVENT_TIMES=?</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:DataSetParameters>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name></design:name>
+        <design:position>1</design:position>
+        <design:nativeDataTypeCode>0</design:nativeDataTypeCode>
+        <design:nullability>Unknown</design:nullability>
+        <design:uiHints>
+          <design:displayName>MainRef</design:displayName>
+        </design:uiHints>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>false</design:optional>
+          <design:masksValue>false</design:masksValue>
+          <design:uiHints>
+            <design:promptStyle>TextField</design:promptStyle>
+          </design:uiHints>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+  </design:DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="headerName" id="141">
+            <property name="fontFamily">"Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">24px</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#F7941D</property>
+        </style>
+        <style name="FldLabel" id="470">
+            <property name="fontFamily">"Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="color">#0064B2</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">2px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">5px</property>
+            <property name="textAlign">left</property>
+            <property name="verticalAlign">top</property>
+        </style>
+        <style name="HeadingBg" id="471">
+            <property name="backgroundColor">#000066</property>
+            <property name="fontFamily">"Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">16px</property>
+            <property name="color">#FFFFFF</property>
+            <property name="paddingLeft">3px</property>
+        </style>
+        <style name="Body" id="472">
+            <property name="backgroundColor">#D9DBE7</property>
+        </style>
+        <style name="Tab" id="473">
+            <property name="fontFamily">"Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#FFFFFF</property>
+        </style>
+        <style name="CHAR_O" id="477">
+            <property name="backgroundColor">#FFFFFF</property>
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="borderBottomColor">#7F9DB9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#7F9DB9</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#7F9DB9</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#7F9DB9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">left</property>
+        </style>
+        <style name="INT_O" id="488">
+            <property name="backgroundColor">#FFFFFF</property>
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="borderBottomColor">#7F9DB9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#7F9DB9</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#7F9DB9</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#7F9DB9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">right</property>
+        </style>
+        <style name="AMT_O" id="491">
+            <property name="backgroundColor">#FFFFFF</property>
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="borderBottomColor">#7F9DB9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#7F9DB9</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#7F9DB9</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#7F9DB9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">right</property>
+        </style>
+        <style name="DATE_O" id="521">
+            <property name="backgroundColor">#FFFFFF</property>
+            <property name="fontFamily">"Courier New", "Arial", "Verdana", sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="borderBottomColor">#7F9DB9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#7F9DB9</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#7F9DB9</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#7F9DB9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <structure name="dateTimeFormat">
+                <property name="category">Medium Date</property>
+                <property name="pattern">Medium Date</property>
+            </structure>
+            <property name="textAlign">left</property>
+        </style>
+        <style name="NewStyle" id="566">
+            <property name="orphans">inherit</property>
+            <property name="widows">inherit</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <grid id="13">
+            <property name="style">Body</property>
+            <property name="textTransform">none</property>
+            <property name="pageBreakInside">avoid</property>
+            <property name="width">100%</property>
+            <column id="14">
+                <property name="width">2.0520833333in</property>
+            </column>
+            <column id="15"/>
+            <row id="16">
+                <cell id="17">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="106">
+                        <property name="style">headerName</property>
+                        <text-property name="text">Apply for Import LC</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="19">
+                <cell id="20">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="143">
+                        <property name="style">Tab</property>
+                        <text-property name="text">Main</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="22">
+                <cell id="23">
+                    <label id="144">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Date of Application</text-property>
+                    </label>
+                </cell>
+                <cell id="24">
+                    <property name="borderLeftStyle">none</property>
+                    <property name="widows">2</property>
+                    <data id="562">
+                        <property name="style">DATE_O</property>
+                        <property name="whiteSpace">normal</property>
+                        <property name="widows">2</property>
+                        <property name="width">70px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">D_SYS_OP_DATE</property>
+                                <expression name="expression">dataSetRow["D_SYS_OP_DATE"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">D_SYS_OP_DATE</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="25">
+                <cell id="26">
+                    <label id="145">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Our Ref Number</text-property>
+                    </label>
+                </cell>
+                <cell id="27">
+                    <data id="476">
+                        <property name="style">CHAR_O</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CUST_NO</property>
+                                <expression name="expression">dataSetRow["CUST_NO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">CUST_NO</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="28">
+                <cell id="29">
+                    <label id="146">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Type of LC</text-property>
+                    </label>
+                </cell>
+                <cell id="30">
+                    <data id="478">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FORM_OF_LC</property>
+                                <expression name="expression">dataSetRow["FORM_OF_LC"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">FORM_OF_LC</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="31">
+                <cell id="32">
+                    <label id="147">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">LC Currency</text-property>
+                    </label>
+                </cell>
+                <cell id="33">
+                    <data id="479">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">100px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">LC_CCY</property>
+                                <expression name="expression">dataSetRow["LC_CCY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">LC_CCY</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="34">
+                <cell id="35">
+                    <label id="148">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">LC Amount</text-property>
+                    </label>
+                </cell>
+                <cell id="36">
+                    <data id="480">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">140px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">LC_AMT</property>
+                                <expression name="expression">dataSetRow["LC_AMT"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">LC_AMT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="37">
+                <cell id="38">
+                    <label id="149">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Tolerance - Specification % + / -</text-property>
+                    </label>
+                </cell>
+                <cell id="39">
+                    <data id="482">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">100px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TOL_SPEC</property>
+                                <expression name="expression">dataSetRow["TOL_SPEC"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TOL_SPEC</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="40">
+                <cell id="41">
+                    <label id="150">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Positive tolerance</text-property>
+                    </label>
+                </cell>
+                <cell id="42">
+                    <data id="487">
+                        <property name="style">INT_O</property>
+                        <property name="width">14px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">POS_TOL</property>
+                                <expression name="expression">dataSetRow["POS_TOL"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">POS_TOL</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="43">
+                <cell id="44">
+                    <label id="151">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Negative tolerance</text-property>
+                    </label>
+                </cell>
+                <cell id="45">
+                    <data id="489">
+                        <property name="style">INT_O</property>
+                        <property name="width">14px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">NEG_TOL</property>
+                                <expression name="expression">dataSetRow["NEG_TOL"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">NEG_TOL</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="46">
+                <cell id="47">
+                    <label id="152">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Total Exposure</text-property>
+                    </label>
+                </cell>
+                <cell id="48">
+                    <data id="490">
+                        <property name="style">AMT_O</property>
+                        <property name="width">140px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TTL_EXPOE</property>
+                                <expression name="expression">dataSetRow["TTL_EXPOE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TTL_EXPOE</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="58">
+                <property name="height">0.2395833333in</property>
+                <cell id="50">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <label id="153">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Additional Amounts Covered</text-property>
+                    </label>
+                </cell>
+                <cell id="51">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <data id="492">
+                        <property name="style">CHAR_O</property>
+                        <property name="height">64px</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ADD_AMT_COVR</property>
+                                <expression name="expression">dataSetRow["ADD_AMT_COVR"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ADD_AMT_COVR</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="61">
+                <cell id="62">
+                    <label id="154">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Available By</text-property>
+                    </label>
+                </cell>
+                <cell id="63">
+                    <data id="493">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">150px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">AVAL_BY</property>
+                                <expression name="expression">dataSetRow["AVAL_BY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">AVAL_BY</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="64">
+                <cell id="65">
+                    <label id="155">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Tenor Days / Type</text-property>
+                    </label>
+                </cell>
+                <cell id="66">
+                    <grid id="496">
+                        <property name="width">100%</property>
+                        <column id="497">
+                            <property name="width">0.3645833333in</property>
+                        </column>
+                        <column id="498"/>
+                        <row id="499">
+                            <cell id="500">
+                                <data id="503">
+                                    <property name="style">INT_O</property>
+                                    <property name="width">21px</property>
+                                    <property name="dataSet">IMLC_AppImpLc</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">TENOR_DAYS</property>
+                                            <expression name="expression">dataSetRow["TENOR_DAYS"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">TENOR_DAYS</property>
+                                </data>
+                            </cell>
+                            <cell id="501">
+                                <data id="502">
+                                    <property name="style">CHAR_O</property>
+                                    <property name="width">180px</property>
+                                    <property name="dataSet">IMLC_AppImpLc</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">TENOR_TYPE</property>
+                                            <expression name="expression">dataSetRow["TENOR_TYPE"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">TENOR_TYPE</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="67">
+                <cell id="68">
+                    <label id="156">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Deferred Payment Terms</text-property>
+                    </label>
+                </cell>
+                <cell id="69">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <data id="504">
+                        <property name="style">CHAR_O</property>
+                        <property name="height">64px</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DEF_PMT_TERM</property>
+                                <expression name="expression">dataSetRow["DEF_PMT_TERM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DEF_PMT_TERM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="79">
+                <cell id="80">
+                    <label id="160">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Drafts At</text-property>
+                    </label>
+                </cell>
+                <cell id="81">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <data id="505">
+                        <property name="style">CHAR_O</property>
+                        <property name="height">48px</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DRAFTS_AT</property>
+                                <expression name="expression">dataSetRow["DRAFTS_AT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DRAFTS_AT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="91">
+                <cell id="92">
+                    <label id="161">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Mixed Payment Details</text-property>
+                    </label>
+                </cell>
+                <cell id="93">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <data id="506">
+                        <property name="style">CHAR_O</property>
+                        <property name="height">64px</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">MIX_PMT_DETL</property>
+                                <expression name="expression">dataSetRow["MIX_PMT_DETL"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">MIX_PMT_DETL</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="103">
+                <cell id="104">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="177">
+                        <property name="style">Tab</property>
+                        <text-property name="text">Parties</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="165">
+                <cell id="166">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="178">
+                        <property name="style">HeadingBg</property>
+                        <text-property name="text">Beneficiary</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="162">
+                <cell id="163">
+                    <label id="179">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Name</text-property>
+                    </label>
+                </cell>
+                <cell id="164">
+                    <data id="507">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_NM</property>
+                                <expression name="expression">dataSetRow["BENE_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_NM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="168">
+                <cell id="169">
+                    <label id="180">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Location</text-property>
+                    </label>
+                </cell>
+                <cell id="170">
+                    <data id="508">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_ADD1</property>
+                                <expression name="expression">dataSetRow["BENE_ADD1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_ADD1</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="171">
+                <cell id="172">
+                    <label id="181">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">City</text-property>
+                    </label>
+                </cell>
+                <cell id="173">
+                    <data id="509">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_ADD2</property>
+                                <expression name="expression">dataSetRow["BENE_ADD2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_ADD2</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="174">
+                <cell id="175">
+                    <label id="182">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Country</text-property>
+                    </label>
+                </cell>
+                <cell id="176">
+                    <data id="510">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_ADD3</property>
+                                <expression name="expression">dataSetRow["BENE_ADD3"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_ADD3</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="183">
+                <cell id="184">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="210">
+                        <property name="style">HeadingBg</property>
+                        <text-property name="text">Applicant</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="186">
+                <cell id="187">
+                    <label id="211">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Name</text-property>
+                    </label>
+                </cell>
+                <cell id="188">
+                    <data id="511">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">APPL_NM</property>
+                                <expression name="expression">dataSetRow["APPL_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">APPL_NM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="189">
+                <cell id="190">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="212">
+                        <property name="style">HeadingBg</property>
+                        <text-property name="text">Beneficiary Bank</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="192">
+                <cell id="193">
+                    <label id="213">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">SWIFT Address</text-property>
+                    </label>
+                </cell>
+                <cell id="194">
+                    <data id="512">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">77px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_BK_SW_ADD</property>
+                                <expression name="expression">dataSetRow["BENE_BK_SW_ADD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_BK_SW_ADD</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="195">
+                <cell id="196">
+                    <label id="214">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Name</text-property>
+                    </label>
+                </cell>
+                <cell id="197">
+                    <data id="513">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_BK_NM</property>
+                                <expression name="expression">dataSetRow["BENE_BK_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_BK_NM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="198">
+                <cell id="199">
+                    <label id="215">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Location</text-property>
+                    </label>
+                </cell>
+                <cell id="200">
+                    <data id="514">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_BK_ADD1</property>
+                                <expression name="expression">dataSetRow["BENE_BK_ADD1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_BK_ADD1</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="201">
+                <cell id="202">
+                    <label id="216">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">City</text-property>
+                    </label>
+                </cell>
+                <cell id="203">
+                    <data id="515">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_BK_ADD2</property>
+                                <expression name="expression">dataSetRow["BENE_BK_ADD2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_BK_ADD2</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="207">
+                <cell id="208">
+                    <label id="217">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Country</text-property>
+                    </label>
+                </cell>
+                <cell id="209">
+                    <data id="516">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BENE_BK_ADD3</property>
+                                <expression name="expression">dataSetRow["BENE_BK_ADD3"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">BENE_BK_ADD3</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="204">
+                <cell id="205">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="230">
+                        <property name="style">HeadingBg</property>
+                        <text-property name="text">For Account Of</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="218">
+                <cell id="219">
+                    <label id="239">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Name</text-property>
+                    </label>
+                </cell>
+                <cell id="220">
+                    <data id="517">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FOR_AC_OF_NM</property>
+                                <expression name="expression">dataSetRow["FOR_AC_OF_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">FOR_AC_OF_NM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="221">
+                <cell id="222">
+                    <label id="240">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Location</text-property>
+                    </label>
+                </cell>
+                <cell id="223">
+                    <data id="518">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FOR_AC_OF_ADD1</property>
+                                <expression name="expression">dataSetRow["FOR_AC_OF_ADD1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">FOR_AC_OF_ADD1</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="224">
+                <cell id="225">
+                    <label id="241">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">City</text-property>
+                    </label>
+                </cell>
+                <cell id="226">
+                    <data id="519">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FOR_AC_OF_ADD2</property>
+                                <expression name="expression">dataSetRow["FOR_AC_OF_ADD2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">FOR_AC_OF_ADD2</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="227">
+                <cell id="228">
+                    <label id="242">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Country</text-property>
+                    </label>
+                </cell>
+                <cell id="229">
+                    <data id="520">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FOR_AC_OF_ADD3</property>
+                                <expression name="expression">dataSetRow["FOR_AC_OF_ADD3"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">FOR_AC_OF_ADD3</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="243">
+                <cell id="244">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="288">
+                        <property name="style">Tab</property>
+                        <text-property name="text">Shipment / Expiry</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="246">
+                <cell id="247">
+                    <label id="289">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Date of Expiry</text-property>
+                    </label>
+                </cell>
+                <cell id="248">
+                    <data id="522">
+                        <property name="style">DATE_O</property>
+                        <property name="width">70px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EXPIRY_DT</property>
+                                <expression name="expression">dataSetRow["EXPIRY_DT"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">EXPIRY_DT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="249">
+                <cell id="250">
+                    <label id="290">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Place of Expiry</text-property>
+                    </label>
+                </cell>
+                <cell id="251">
+                    <data id="523">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">203px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">EXPIRY_PLC</property>
+                                <expression name="expression">dataSetRow["EXPIRY_PLC"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">EXPIRY_PLC</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="252">
+                <cell id="253">
+                    <label id="291">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Latest Shipment Date</text-property>
+                    </label>
+                </cell>
+                <cell id="254">
+                    <data id="524">
+                        <property name="style">DATE_O</property>
+                        <property name="width">70px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">LTST_SHIP_DT</property>
+                                <expression name="expression">dataSetRow["LTST_SHIP_DT"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">LTST_SHIP_DT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="255">
+                <cell id="256">
+                    <label id="292">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Shipment Period</text-property>
+                    </label>
+                </cell>
+                <cell id="257">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <data id="525">
+                        <property name="style">CHAR_O</property>
+                        <property name="height">96px</property>
+                        <property name="width">455px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">SHIP_PRD</property>
+                                <expression name="expression">dataSetRow["SHIP_PRD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">SHIP_PRD</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="276">
+                <cell id="277">
+                    <label id="293">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Partial Shipment</text-property>
+                    </label>
+                </cell>
+                <cell id="278">
+                    <data id="526">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">91px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">PARTIAL_SHIP</property>
+                                <expression name="expression">dataSetRow["PARTIAL_SHIP"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">PARTIAL_SHIP</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="273">
+                <cell id="274">
+                    <label id="294">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Transhipment</text-property>
+                    </label>
+                </cell>
+                <cell id="275">
+                    <data id="527">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">91px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TNSHIP</property>
+                                <expression name="expression">dataSetRow["TNSHIP"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">TNSHIP</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="279">
+                <cell id="280">
+                    <label id="295">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Ship From</text-property>
+                    </label>
+                </cell>
+                <cell id="281">
+                    <data id="528">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">455px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">LOAD_PLACE</property>
+                                <expression name="expression">dataSetRow["LOAD_PLACE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">LOAD_PLACE</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="282">
+                <cell id="283">
+                    <label id="296">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Port of Loading</text-property>
+                    </label>
+                </cell>
+                <cell id="284">
+                    <data id="529">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">455px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">LOAD_PORT</property>
+                                <expression name="expression">dataSetRow["LOAD_PORT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">LOAD_PORT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="285">
+                <cell id="286">
+                    <label id="297">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Port of Discharge</text-property>
+                    </label>
+                </cell>
+                <cell id="287">
+                    <data id="530">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">455px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DEST_PORT</property>
+                                <expression name="expression">dataSetRow["DEST_PORT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DEST_PORT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="298">
+                <cell id="299">
+                    <label id="301">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Ship To</text-property>
+                    </label>
+                </cell>
+                <cell id="300">
+                    <data id="531">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">455px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DEST_PLACE</property>
+                                <expression name="expression">dataSetRow["DEST_PLACE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DEST_PLACE</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="302">
+                <cell id="303">
+                    <label id="305">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Description of Goods</text-property>
+                    </label>
+                </cell>
+                <cell id="304">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <property name="style">NewStyle</property>
+                    <data id="532">
+                        <property name="style">CHAR_O</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="textTransform">none</property>
+                        <property name="display">block</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <property name="showIfBlank">true</property>
+                        <property name="canShrink">false</property>
+                        <property name="height">250px</property>
+                        <property name="width">455px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">GOODS_DESC</property>
+                                <expression name="expression">dataSetRow["GOODS_DESC"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">GOODS_DESC</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="342">
+                <cell id="343">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="357">
+                        <property name="style">Tab</property>
+                        <text-property name="text">Documents</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="339">
+                <cell id="340">
+                    <label id="358">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Incoterms</text-property>
+                    </label>
+                </cell>
+                <cell id="341">
+                    <data id="533">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">91px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">INCOTERMS</property>
+                                <expression name="expression">dataSetRow["INCOTERMS"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">INCOTERMS</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="336">
+                <cell id="337">
+                    <label id="359">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Incoterms Instructions</text-property>
+                    </label>
+                </cell>
+                <cell id="338">
+                    <data id="534">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">350px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">INCOTERMS_INSTR</property>
+                                <expression name="expression">dataSetRow["INCOTERMS_INSTR"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">INCOTERMS_INSTR</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="327">
+                <cell id="328">
+                    <label id="360">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Documents Required</text-property>
+                    </label>
+                </cell>
+                <cell id="329">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <data id="535">
+                        <property name="style">CHAR_O</property>
+                        <property name="height">250px</property>
+                        <property name="width">455px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">DOC_PRES</property>
+                                <expression name="expression">dataSetRow["DOC_PRES"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">DOC_PRES</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="364">
+                <cell id="365">
+                    <label id="382">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Presentation Days</text-property>
+                    </label>
+                </cell>
+                <cell id="366">
+                    <data id="536">
+                        <property name="style">INT_O</property>
+                        <property name="width">21px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">PRES_DAYS</property>
+                                <expression name="expression">dataSetRow["PRES_DAYS"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">PRES_DAYS</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="361">
+                <cell id="362">
+                    <label id="383">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Presentation Period Event</text-property>
+                    </label>
+                </cell>
+                <cell id="363">
+                    <data id="537">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">320px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">PRES_PRD_EVENT</property>
+                                <expression name="expression">dataSetRow["PRES_PRD_EVENT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">PRES_PRD_EVENT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="387">
+                <cell id="388">
+                    <label id="393">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Presentation Period</text-property>
+                    </label>
+                </cell>
+                <cell id="389">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <data id="538">
+                        <property name="style">CHAR_O</property>
+                        <property name="height">64px</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">PRES_PRD_TXT</property>
+                                <expression name="expression">dataSetRow["PRES_PRD_TXT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">PRES_PRD_TXT</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="400">
+                <cell id="401">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="406">
+                        <property name="style">Tab</property>
+                        <text-property name="text">Instructions</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="394">
+                <cell id="395">
+                    <label id="408">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Additional Conditions</text-property>
+                    </label>
+                </cell>
+                <cell id="396">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">1pt</property>
+                    <property name="textTransform">none</property>
+                    <data id="539">
+                        <property name="style">CHAR_O</property>
+                        <property name="height">250px</property>
+                        <property name="width">455px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ADDIT_CONDITION</property>
+                                <expression name="expression">dataSetRow["ADDIT_CONDITION"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ADDIT_CONDITION</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="447">
+                <cell id="448">
+                    <label id="461">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Charges</text-property>
+                    </label>
+                </cell>
+                <cell id="449">
+                    <data id="558">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">370px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CHG_FLAG</property>
+                                <expression name="expression">dataSetRow["CHG_FLAG"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">CHG_FLAG</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="453">
+                <cell id="454">
+                    <label id="462">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Forward Cover</text-property>
+                    </label>
+                </cell>
+                <cell id="455">
+                    <data id="559">
+                        <property name="style">CHAR_O</property>
+                        <property name="width">98px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FWD_COVER</property>
+                                <expression name="expression">dataSetRow["FWD_COVER"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">FWD_COVER</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="450">
+                <cell id="451">
+                    <label id="463">
+                        <property name="style">FldLabel</property>
+                        <text-property name="text">Customer Instructions</text-property>
+                    </label>
+                </cell>
+                <cell id="452">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <data id="560">
+                        <property name="style">CHAR_O</property>
+                        <property name="textAlign">left</property>
+                        <property name="orphans">2</property>
+                        <property name="textTransform">none</property>
+                        <property name="whiteSpace">normal</property>
+                        <property name="widows">2</property>
+                        <property name="display">block</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">auto</property>
+                        <property name="showIfBlank">false</property>
+                        <property name="canShrink">true</property>
+                        <property name="height">240px</property>
+                        <property name="width">245px</property>
+                        <property name="dataSet">IMLC_AppImpLc</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">CUST_INSTR</property>
+                                <expression name="expression">dataSetRow["CUST_INSTR"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">CUST_INSTR</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <text id="567"/>
+    </body>
+</report>

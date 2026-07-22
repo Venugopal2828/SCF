@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302316</ID>
+    <MODULE>SSSS</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.FADA_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="MAIN REF. NO." EEType="" HIDDEN="H">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="" HIDDEN="H">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35" HIDDEN="">FA_BUYER_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller Name" EEType="Varchar_35" HIDDEN="">FA_SEL_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Limit Due Date" EEType="DATE" HIDDEN="">FA_LMT_DUE_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Limit Currency" EEType="CCY" HIDDEN="">FA_LMT_CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="Limit Amount" EEType="AMT" HIDDEN="">FA_LMT_AMT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller ID" EEType="Varchar_35" HIDDEN="">FA_SEL_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Limit Start Date" EEType="DATE" HIDDEN="">FA_LMT_VAL_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer ID" EEType="Varchar_35" HIDDEN="H">FA_BUYER_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Need Buyer Approve"
+            EEType="INTERPRETER" HIDDEN="H">FA_REQ_BUYER_APR_FLG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="3" DESC="Total Fin. Return Balance"
+            EEType="AMT" HIDDEN="H">FA_TTL_FIN_RET_BAL</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Service Request"
+            EEType="INTERPRETER" HIDDEN="H">FA_SERVICE_REQ</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Business Type" EEType="INTERPRETER" HIDDEN="H">FA_BUSI_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_LOCKED_FLAG" EEType="" HIDDEN="H">C_LOCKED_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Close Flag" EEType="INTERPRETER" HIDDEN="H">CLS_FLG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="BPO SETTLEMENT FLG"
+            EEType="INTERPRETER" HIDDEN="H">BPO_SETT_FLG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="Maximal Loan Percentage"
+            EEType="INTEGER" HIDDEN="">FA_MAX_LOAN_PERC</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="8" DESC="EF Commission Rate" EEType="RATE" HIDDEN="">FA_EF_COMM_RT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Status"
+            EEType="Varchar_35" HIDDEN="">FA_BUSI_STATUS</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" TYPE="FLD">FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Limit Currency" DT="1" EEType="CCY" TYPE="FLD">FA_LMT_CCY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' 
+AND (</SQL>
+        <SQL DESC="Need Buyer Approve" DT="1" EEType="INTERPRETER" TYPE="FLD">FA_REQ_BUYER_APR_FLG</SQL>
+        <SQL TYPE="SQL"> IS NULL OR </SQL>
+        <SQL DESC="Need Buyer Approve" DT="1" EEType="INTERPRETER" TYPE="FLD">FA_REQ_BUYER_APR_FLG</SQL>
+        <SQL TYPE="SQL"> = '2') 
+AND (</SQL>
+        <SQL DESC="Seller ID" DT="12" EEType="Varchar_35" TYPE="FLD">FA_SEL_ID</SQL>
+        <SQL DT="var" DV="SYS_CE_BUSI_UNIT" OPTYPE="VALUE" TYPE="OP">OP8</SQL>
+        <SQL TYPE="SQL">) 
+AND (</SQL>
+        <SQL DESC="Total Fin. Return Balance" DT="3" EEType="AMT" TYPE="FLD">FA_TTL_FIN_RET_BAL</SQL>
+        <SQL TYPE="SQL"> =0 OR </SQL>
+        <SQL DESC="Total Fin. Return Balance" DT="3" EEType="AMT" TYPE="FLD">FA_TTL_FIN_RET_BAL</SQL>
+        <SQL TYPE="SQL"> IS NULL) 
+AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'M' 
+AND (</SQL>
+        <SQL DESC="Service Request" DT="1" EEType="INTERPRETER" TYPE="FLD">FA_SERVICE_REQ</SQL>
+        <SQL TYPE="SQL"> ='1' OR </SQL>
+        <SQL DESC="Service Request" DT="1" EEType="INTERPRETER" TYPE="FLD">FA_SERVICE_REQ</SQL>
+        <SQL TYPE="SQL"> ='2' OR </SQL>
+        <SQL DESC="Service Request" DT="1" EEType="INTERPRETER" TYPE="FLD">FA_SERVICE_REQ</SQL>
+        <SQL TYPE="SQL"> IS NULL) 
+AND </SQL>
+        <SQL DESC="Business Type" DT="1" EEType="INTERPRETER" TYPE="FLD">FA_BUSI_TYPE</SQL>
+        <SQL TYPE="SQL"> &lt;&gt;'IF' 
+AND </SQL>
+        <SQL DESC="BPO SETTLEMENT FLG" DT="1" EEType="INTERPRETER" TYPE="FLD">BPO_SETT_FLG</SQL>
+        <SQL TYPE="SQL"> IS NULL 
+AND </SQL>
+        <SQL DESC="Close Flag" DT="1" EEType="INTERPRETER" TYPE="FLD">CLS_FLG</SQL>
+        <SQL TYPE="SQL"> IS NULL
+AND (</SQL>
+        <SQL DESC="Business Status" DT="12" EEType="Varchar_35" TYPE="FLD">FA_BUSI_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'SBR' OR </SQL>
+        <SQL DESC="Business Status" DT="12" EEType="Varchar_35" TYPE="FLD">FA_BUSI_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'CCR' OR </SQL>
+        <SQL DESC="Business Status" DT="12" EEType="Varchar_35" TYPE="FLD">FA_BUSI_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'CAR')</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35">FA_BUYER_NM</FIELD>
+        <FIELD DATATYPE="1" DESC="Limit Currency" EEType="CCY">FA_LMT_CCY</FIELD>
+        <FIELD DATATYPE="1" DESC="Need Buyer Approve" EEType="INTERPRETER">FA_REQ_BUYER_APR_FLG</FIELD>
+        <FIELD DATATYPE="1" DESC="Need Buyer Approve" EEType="INTERPRETER">FA_REQ_BUYER_APR_FLG</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller ID" EEType="Varchar_35">FA_SEL_ID</FIELD>
+        <FIELD DATATYPE="3" DESC="Total Fin. Return Balance" EEType="AMT">FA_TTL_FIN_RET_BAL</FIELD>
+        <FIELD DATATYPE="3" DESC="Total Fin. Return Balance" EEType="AMT">FA_TTL_FIN_RET_BAL</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="1" DESC="Service Request" EEType="INTERPRETER">FA_SERVICE_REQ</FIELD>
+        <FIELD DATATYPE="1" DESC="Service Request" EEType="INTERPRETER">FA_SERVICE_REQ</FIELD>
+        <FIELD DATATYPE="1" DESC="Service Request" EEType="INTERPRETER">FA_SERVICE_REQ</FIELD>
+        <FIELD DATATYPE="1" DESC="Business Type" EEType="INTERPRETER">FA_BUSI_TYPE</FIELD>
+        <FIELD DATATYPE="1" DESC="BPO SETTLEMENT FLG" EEType="INTERPRETER">BPO_SETT_FLG</FIELD>
+        <FIELD DATATYPE="1" DESC="Close Flag" EEType="INTERPRETER">CLS_FLG</FIELD>
+        <FIELD DATATYPE="12" DESC="Business Status" EEType="Varchar_35">FA_BUSI_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Business Status" EEType="Varchar_35">FA_BUSI_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Business Status" EEType="Varchar_35">FA_BUSI_STATUS</FIELD>
+    </CLAUSEFIELD>
+</CATA>

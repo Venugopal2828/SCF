@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/FAEF_InvoiceWrite-off_ME.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <VOUCHER>
+        <ID>F00000009100</ID>
+        <NAME/>
+    </VOUCHER>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>SCF Transaction</MODULE_DESC>
+        <EVENT>SCFME</EVENT>
+        <ID>F05030704106</ID>
+        <NAME>InvoiceWrite-off_ME</NAME>
+        <DESC>Invoice Closure</DESC>
+        <FUNSHORTNAME>InvWriteoff</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>Y</ADDMASTER>
+        <ATTR_ID name="InvoiceWrite-off_ME">R00000013197</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000013203</CATALOGID>
+        <TransferTo>F00000008936</TransferTo>
+    </FUNCTION>
+</FUNC>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("=======Begin: R2 ForwardDataSetSubmissionReport=======");  
+    var OurBIC=stp.getTSUBIC();
+    stp.writeLog("getTSUBIC="+OurBIC); 
+    var mainRef=stp.SYS_getRefNo("TSUM");
+    mainRef = OurBIC+"FDS"+ mainRef;
+    stp.writeLog("MainRef="+mainRef);  
+    stp.updateFieldValue("/root/domData","C_MAIN_REF",mainRef);
+
+    //sum of the PO amount -S
+    var SumPOTotal=stp.getOCBCSum("/root/domData/R2ForwdDataSetReport/R2ComrclDataSet017/R2Goods017","TSU_TTL_NET_AMT");
+    stp.writeLog("SumPOTotal="+SumPOTotal); 
+    stp.updateFieldValue("/root/domData/R2ForwdDataSetReport/R2ComrclDataSet017","TSU_COMM_AMT",SumPOTotal);
+    //sum of the PO amount -E
+    
+    //Set field value to TSU_TRX_STATUS -S
+    stp.updateFieldValue("/root/domData","TSU_TRX_STATUS","ForwardDataSetSubmission");
+    //Set field value to TSU_TRX_STATUS -E
+    
+    //Get TID from PO Ref. -S
+    var POId =stp.getValue("/Document/FwdDataSetSubmissnRpt/ComrclDataSet/Goods/PurchsOrdrRef","Id");
+    stp.writeLog("POId length:"+ POId.length);
+    var nlength = POId.length;
+    for(var k=0;k<nlength;k++)
+    {
+    var xpath = "/root/domData/R2ForwdDataSetReport/R2ComrclDataSet017/R2Goods017["+stp.toDouble(k+1)+"]";
+    stp.writeLog("xpath = "+ xpath);
+    var TSU_PO_ID = POId[k];
+    var bu = stp.getTSUUnitCode();
+    var fld_list  = stp.addFieldList(null,"TSU_TID");
+    var sql_condition = stp.addSQLCondition(null,"TSU_PO_ID",TSU_PO_ID);
+    sql_condition = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+    stp.writeLog("sql_condition = "+ sql_condition);
+    var result   = stp.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+    var TID= stp.getDBFieldValue(result,"TSU_TID");
+    stp.writeLog("TID = "+ TID);
+    stp.updateFieldValue(xpath,"TSU_TID",TID);
+    }
+    //Get TID from PO Ref. -E
+    stp.setAutoProcess(true); 
+    stp.setFunc("R2ForwardDataSetSubmissionRep");
+    stp.writeLog("=======End: R2 ForwardDataSetSubmissionReport========"); 
+       
+    var BuyrBKBIC =stp.getValue("/Document/FwdDataSetSubmissnRpt/BuyrBk","BIC");
+    var TSU_BYRBK_BIC = BuyrBKBIC[0];
+    var SellrBKBIC =stp.getValue("/Document/FwdDataSetSubmissnRpt/SellrBk","BIC");
+    var TSU_SELLRBK_BIC = SellrBKBIC[0];
+  // Add by hattie on 2014/4/3/27 for CoE;
+	var compare = stp.compareString(TSU_BYRBK_BIC,OurBIC);
+	if(compare=="true"){
+		stp.updateFieldValue("/root/domData","TSU_OUR_ROLE","Supplier Bank");
+		// Start For CoE 2014/03/27 to select the supplier related corporate BIC/PIC/BEI;
+		var SELLER_Name = stp.getValue("/Document/FwdDataSetSubmissnRpt/ComrclDataSet/Sellr","Nm");
+		var TSU_SELLER_NM = SELLER_Name[0];
+		stp.updateFieldValue("/root/domData","TSU_PARTY_NM",TSU_SELLER_NM);
+		stp.SYS_getCUBK("GET_CUST_BRANCH_CD","TSU_PARTY_NM");
+		// End For CoE 2014/02/26 to select the supplier related corporate BIC/PIC/BEI;
+	}
+ 	var compare = stp.compareString(TSU_SELLRBK_BIC,OurBIC);
+	if(compare=="true"){
+		stp.updateFieldValue("/root/domData","TSU_OUR_ROLE","Buyer Bank");
+		// Start For CoE 2014/03/27 to select the supplier related corporate BIC/PIC/BEI;
+		var BUYER_Name = stp.getValue("/Document/FwdDataSetSubmissnRpt/ComrclDataSet/Buyr","Nm");
+		var TSU_BUYER_NM = BUYER_Name[0];
+		stp.updateFieldValue("/root/domData","TSU_PARTY_NM",TSU_BUYER_NM);
+		stp.SYS_getCUBK("GET_CUST_BRANCH_CD","TSU_PARTY_NM");
+		// End For CoE 2014/03/27 to select the supplier related corporate BIC/PIC/BEI;
+	}
+    stp.updateFieldValue("/root/domData","TSU_BUYER_BK_BIC",TSU_BYRBK_BIC);
+    stp.updateFieldValue("/root/domData","TSU_SEL_BK_BIC",TSU_SELLRBK_BIC);
+    
+// get Buyer Bank's ID Name and Country Code from table by Buyer Bank's BIC---Start
+     var fld_list = stp.addFieldList(null,"BK_FULL_NM");
+	fld_list = stp.addFieldList(fld_list,"BK_ID");
+	fld_list = stp.addFieldList(fld_list,"CNTY_NM");
+    var sql_condition = stp.addSQLCondition(null,"C_MAIN_REF",TSU_BYRBK_BIC);
+    stp.writeLog("sql_condition="+sql_condition);
+    var result    = stp.executeQuery("BANK_MASTER",fld_list,sql_condition);
+    var TSU_BYRBK_ID = stp.getDBFieldValue(result,"BK_ID");
+    stp.writeLog("TSU_BYRBK_ID="+TSU_BYRBK_ID);
+    stp.updateFieldValue("/root/domData","TSU_BUYER_BK_ID",TSU_BYRBK_ID); 
+    var TSU_BYRBK_NAME = stp.getDBFieldValue(result,"BK_FULL_NM");
+    stp.writeLog("TSU_BYRBK_NAME="+TSU_BYRBK_NAME); 
+    stp.updateFieldValue("/root/domData","TSU_BUYER_BK_NM",TSU_BYRBK_NAME);
+    var TSU_BYRBK_CNTY = stp.getDBFieldValue(result,"CNTY_NM");
+    stp.writeLog("TSU_BYRBK_CNTY="+TSU_BYRBK_CNTY); 
+    stp.updateFieldValue("/root/domData","TSU_BUYER_BK_CNTY",TSU_BYRBK_CNTY);
+// get Buyer Bank's ID Name and Country Code from table by Buyer Bank's BIC---End
+
+// get Seller Bank's ID Name and Country Code from table by Seller Bank's BIC---Start
+    var fld_list1      = stp.addFieldList(null,"BK_FULL_NM");
+	fld_list1      = stp.addFieldList(fld_list,"BK_ID");
+	fld_list1      = stp.addFieldList(fld_list,"CNTY_NM");
+    var sql_condition1 = stp.addSQLCondition(null,"C_MAIN_REF",TSU_SELLRBK_BIC);
+    stp.writeLog("sql_condition1="+sql_condition1);
+    var result1    = stp.executeQuery("BANK_MASTER",fld_list1,sql_condition1);
+    var TSU_SELLRBK_ID = stp.getDBFieldValue(result1,"BK_ID");
+    stp.writeLog("TSU_SELLRBK_ID="+TSU_SELLRBK_ID);
+    stp.updateFieldValue("/root/domData","TSU_SEL_BK_ID",TSU_SELLRBK_ID); 
+    var TSU_SELLRBK_NAME = stp.getDBFieldValue(result1,"BK_FULL_NM");
+    stp.writeLog("TSU_SELLRBK_NAME="+TSU_SELLRBK_NAME); 
+    stp.updateFieldValue("/root/domData","TSU_SEL_BK_NM",TSU_SELLRBK_NAME);
+    var TSU_SELLRBK_CNTY = stp.getDBFieldValue(result1,"CNTY_NM");
+    stp.writeLog("TSU_SELLRBK_CNTY="+TSU_SELLRBK_CNTY); 
+    stp.updateFieldValue("/root/domData","TSU_SEL_BK_CNTY",TSU_SELLRBK_CNTY);
+// get Seller Bank's ID Name and Country Code from table by Seller Bank's BIC---End
+
+    // for later finance
+    
+	var Buyer  =stp.getValue("/Document/FwdDataSetSubmissnRpt/ComrclDataSet/Buyr","Nm");
+	var Buyer = Buyer[0];
+	stp.writeLog("Buyer = "+Buyer);
+	stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Buyer);
+	stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2ForwdDataSetReport/R2ComrclDataSet017/R2BuyrInfo");
+    
+	var Seller =stp.getValue("/Document/FwdDataSetSubmissnRpt/ComrclDataSet/Sellr","Nm");
+	var Seller = Seller[0];
+	stp.writeLog("Seller = "+Seller);
+    stp.updateFieldValue("/root/domData","TSU_PARTY_NM",Seller);
+    stp.SYS_getCUBK("TSU_CUST_NAME","TSU_PARTY_NM","/root/domData/R2ForwdDataSetReport/R2ComrclDataSet017/R2SellrInfo");]]></js-content>
+</root>

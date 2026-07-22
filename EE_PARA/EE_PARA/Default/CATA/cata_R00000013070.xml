@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302526</ID>
+    <MODULE>PYMT</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>Process_Stop_Recall</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.PYMT_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="MAIN REF. NO." EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="C_FUNC_SHORT_NAME" EEType="" HIDDEN="H">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="121" EEType="Varchar_36" HIDDEN="">UETR_GPI_121</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Transaction Date" EEType="DATE" HIDDEN="">TRX_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Payment Stop Type"
+            EEType="INTERPRETER" HIDDEN="H">GSRP_STRC_TYPE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="121" DT="12" EEType="Varchar_36" TYPE="FLD">UETR_GPI_121</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Transaction Date" DT="91" EEType="DATE" TYPE="FLD">TRX_DT</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" DV=">=" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="var" DV="SYS_BUSI_DATE" OPTYPE="VALUE" TYPE="OP">OP7</SQL>
+        <SQL TYPE="SQL">'</SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Transaction Date" DT="91" EEType="DATE" TYPE="FLD">TRX_DT</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" DV="&lt;=" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="var" DV="SYS_BUSI_DATE" OPTYPE="VALUE" TYPE="OP">OP10</SQL>
+        <SQL TYPE="SQL">'
+AND </SQL>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> ='M' 
+AND </SQL>
+        <SQL DESC="Payment Stop Type" DT="1" EEType="INTERPRETER" TYPE="FLD">GSRP_STRC_TYPE</SQL>
+        <SQL TYPE="SQL"> = 'RECV' ORDER BY </SQL>
+        <SQL DESC="MAIN REF. NO." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="121" EEType="Varchar_36">UETR_GPI_121</FIELD>
+        <FIELD DATATYPE="91" DESC="Transaction Date" EEType="DATE">TRX_DT</FIELD>
+        <FIELD DATATYPE="91" DESC="Transaction Date" EEType="DATE">TRX_DT</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="1" DESC="Payment Stop Type" EEType="INTERPRETER">GSRP_STRC_TYPE</FIELD>
+        <FIELD DATATYPE="12" DESC="MAIN REF. NO." EEType="">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">FFIT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FFIT</module-name>
+        <cubk-mapping-name>SYF_FFIT_FFT_CFRegister2_SYF_FFIT_MARGIN_RT_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <MARGIN_RT ALIAS="T0" DBFUNC="" DESC="MARGIN_RT" DT="6" HIDDEN="F" TYPE="F">MARGIN_RT</MARGIN_RT>
+        <COMMIT_FEE_RT ALIAS="T0" DBFUNC="" DESC="COMMIT_FEE_RT" DT="6" HIDDEN="F" TYPE="F">COMMIT_FEE_RT</COMMIT_FEE_RT>
+        <CLOSE_COMMIT_DT ALIAS="T0" DBFUNC="" DESC="CLOSE_COMMIT_DT" DT="91" HIDDEN="F" TYPE="F">CLOSE_COMMIT_DT</CLOSE_COMMIT_DT>
+        <COMMIT_START_DT ALIAS="T0" DBFUNC="" DESC="COMMIT_START_DT" DT="91" HIDDEN="F" TYPE="F">COMMIT_START_DT</COMMIT_START_DT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">COMMIT_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

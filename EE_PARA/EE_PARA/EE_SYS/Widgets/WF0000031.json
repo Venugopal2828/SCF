@@ -1,0 +1,28 @@
+{
+  "id": "WF000031",
+  "type": "sql",
+  "pub": "true",
+  "configuration": {
+    "ui": {
+      "id": "WF000030",
+      "display": "chart.bar",
+      "title": "Multiple Series 2",
+      "desc": "Show Several Series in the same Chart.",
+      "tooltip": "{\"text\":\"{a}<br/>{b} day ago: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+      "renderers": {
+        "chart": {
+          "bar": "{\"xAxis\":{\"name\":\"Number of transactions\"},\"legend\":{\"show\":true},\"colorBy\":\"data\"}",
+          "line": "{\"xAxis\":{\"name\":\"Number of transactions\"}}",
+          "scatter": "{\"xAxis\":{\"name\":\"Number of transactions\"}}",
+          "effectScatter": "{\"xAxis\":{\"name\":\"Number of transactions\"}}"
+        }
+      }
+    },
+    "data": {
+      "sql": "SELECT SERIES, CATEGORY, VL FROM (SELECT S.SERIES, C.CATEGORY, NVL(COUNT(F.FA_BUSI_TYPE),0) VL FROM (SELECT 'DD' SERIES FROM DUAL UNION ALL SELECT 'PF' FROM DUAL UNION ALL SELECT 'POF' FROM DUAL UNION ALL SELECT 'RD' FROM DUAL) S CROSS JOIN (SELECT 'DD' CATEGORY FROM DUAL UNION ALL SELECT 'PF' FROM DUAL UNION ALL SELECT 'POF' FROM DUAL UNION ALL SELECT 'RD' FROM DUAL) C LEFT JOIN EXIMTRX.FADA_MASTER F ON F.FA_BUSI_TYPE=C.CATEGORY AND F.FA_BUSI_TYPE=S.SERIES AND F.C_UNIT_CODE='{{SYS_BUSI_UNIT}}' GROUP BY S.SERIES, C.CATEGORY) ORDER BY SERIES, CATEGORY",
+      "dataSetField": "SERIES",
+      "nameField": "CATEGORY",
+      "valueField": "VL"
+    }
+  }
+}

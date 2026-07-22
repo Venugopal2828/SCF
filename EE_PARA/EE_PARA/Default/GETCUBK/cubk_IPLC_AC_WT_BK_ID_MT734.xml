@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>IPLC</module-name>
+        <cubk-mapping-name>AC_WT_BK_ID_MT734</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">AC_WT_BK_ID_MT734</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">AC_WT_BK_ID_MT734</C_MAIN_REF>
+        <SWF_FMT_NM ALIAS="T1" DBFUNC="" DESC="SWIFT Format Name" DT="12" HIDDEN="F" TYPE="F">AC_WT_BK_NM_MT734</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T1" DBFUNC="" DESC="Bank Contact SWIFT Format Address1" DT="12" HIDDEN="F" TYPE="F">AC_WT_BK_ADD1_MT734</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T1" DBFUNC="" DESC="Bank Contact SWIFT Format Address2" DT="12" HIDDEN="F" TYPE="F">AC_WT_BK_ADD2_MT734</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T1" DBFUNC="" DESC="Bank Contact SWIFT Format Address3" DT="12" HIDDEN="T" TYPE="F">AC_WT_BK_ADD3_MT734</SWIFT_FMT_ADD3>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="T" TYPE="F">AC_WT_BK_SW_ADD_MT734</SW_ADD>
+        <NOTES ALIAS="T0" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="T" TYPE="F">AC_WT_BK_MT734_NOTES</NOTES>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="BIC" TYPE="TBL_FLD">T0.SW_ADD</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">AC_WT_BK_SW_ADD</SQL>
+            <SQL TYPE="SQL">%' AND 
+            </SQL>
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T1.SWF_FMT_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">AC_WT_BK_NM</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD1</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">AC_WT_BK_ADD1</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD2</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">AC_WT_BK_ADD2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T1.SWIFT_FMT_ADD3</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">AC_WT_BK_ADD3</SQL>
+            <SQL TYPE="SQL">%' AND
+            </SQL>
+            <SQL DT="4" EEType="INTEGER" TYPE="TBL_FLD">T1.ORDER_NO</SQL>
+            <SQL TYPE="SQL"> = '1' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T1.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">AC_WT_BK_ID_MT734</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

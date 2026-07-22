@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey" AutoGen-Parameter-Version="1.0">
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>Get_PO_REF</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POMM_MASTER</table-name>
+        </tables>
+        <key-fields>
+            <PO_REF ALIAS="T0" DESC="PO Ref" DT="12" TYPE="F">PO_REF</PO_REF>
+            <FA_SBR_REF ALIAS="T0" DESC="SBR REF" DT="12" TYPE="F">FA_SBR_REF</FA_SBR_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <PO_NO ALIAS="T0" DBFUNC="" DESC="PO No." DT="12" HIDDEN="F" TYPE="F">PO_NO</PO_NO>
+        <PO_REF ALIAS="T0" DBFUNC="" DESC="PO Ref" DT="12" HIDDEN="F" TYPE="F">PO_REF</PO_REF>
+        <PO_AMT ALIAS="T0" DBFUNC="" DESC="PO Amount" DT="3" HIDDEN="F" TYPE="F">PO_AMT</PO_AMT>
+        <PO_DUE_DT ALIAS="T0" DBFUNC="" DESC="PO Due Date" DT="91" HIDDEN="F" TYPE="F">PO_DUE_DT</PO_DUE_DT>
+        <PO_LOAN_AVL ALIAS="T0" DBFUNC="" DESC="PO Available Loan Amount" DT="3" HIDDEN="F" TYPE="F">FA_TEMP1</PO_LOAN_AVL>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

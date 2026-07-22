@@ -1,0 +1,1768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.2.v20070205-1728 Build &lt;20070205-1728></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <parameters>
+        <scalar-parameter name="C_MAIN_REF" id="1036">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.xml" name="Data Source" id="1179">
+            <property name="FILELIST">X:\STBANK\ZM\AP\FORM\form_schema_PYMT_DI_Re_Issue.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.xml.dataSet" name="Data Set" id="1180">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RPLCD_CHEQ_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">X103_VALUE_DT_32A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">X103_ORDCU_NM_50A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">REVERSAL_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">X103_ORDCUADD2_50A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">X103BENECUADD3_59A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">X202BENEBKADD3_58A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">X103_SETT_AMT_32A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">X103BENECUADD2_59A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">X103_SETT_CCY_32A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">X103_EXCH_RT_36</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">X103_ORDCUADD1_50A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">X103_BENECU_NM_59A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">X103_ORDCUACNO_50A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">X202BENEBKADD1_58A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">DB_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">CR_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">X103_ORDCUADD3_50A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">X103BENECUADD1_59A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">REVE_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">RELATED_REF_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">CHEQ_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">X103_INSTR_CCY_33B</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">CUST_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RPLCD_CHEQ_NO</property>
+                    <property name="nativeName">RPLCD_CHEQ_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">X103_VALUE_DT_32A</property>
+                    <property name="nativeName">X103_VALUE_DT_32A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">X103_ORDCU_NM_50A</property>
+                    <property name="nativeName">X103_ORDCU_NM_50A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">REVERSAL_DT</property>
+                    <property name="nativeName">REVERSAL_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">X103_ORDCUADD2_50A</property>
+                    <property name="nativeName">X103_ORDCUADD2_50A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">X103BENECUADD3_59A</property>
+                    <property name="nativeName">X103BENECUADD3_59A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">X202BENEBKADD3_58A</property>
+                    <property name="nativeName">X202BENEBKADD3_58A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">X103_SETT_AMT_32A</property>
+                    <property name="nativeName">X103_SETT_AMT_32A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">X103BENECUADD2_59A</property>
+                    <property name="nativeName">X103BENECUADD2_59A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">X103_SETT_CCY_32A</property>
+                    <property name="nativeName">X103_SETT_CCY_32A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">X103_EXCH_RT_36</property>
+                    <property name="nativeName">X103_EXCH_RT_36</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">X103_ORDCUADD1_50A</property>
+                    <property name="nativeName">X103_ORDCUADD1_50A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">X103_BENECU_NM_59A</property>
+                    <property name="nativeName">X103_BENECU_NM_59A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">X103_ORDCUACNO_50A</property>
+                    <property name="nativeName">X103_ORDCUACNO_50A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">X202BENEBKADD1_58A</property>
+                    <property name="nativeName">X202BENEBKADD1_58A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">DB_AMT</property>
+                    <property name="nativeName">DB_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">CR_AMT</property>
+                    <property name="nativeName">CR_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">X103_ORDCUADD3_50A</property>
+                    <property name="nativeName">X103_ORDCUADD3_50A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">X103BENECUADD1_59A</property>
+                    <property name="nativeName">X103BENECUADD1_59A</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">REVE_AMT</property>
+                    <property name="nativeName">REVE_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">RELATED_REF_NO</property>
+                    <property name="nativeName">RELATED_REF_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">CHEQ_NO</property>
+                    <property name="nativeName">CHEQ_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">X103_INSTR_CCY_33B</property>
+                    <property name="nativeName">X103_INSTR_CCY_33B</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">CUST_REF</property>
+                    <property name="nativeName">CUST_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">table0#-TNAME-#table0#:#[/domData]#:#{RPLCD_CHEQ_NO;String;/RPLCD_CHEQ_NO},{X103_VALUE_DT_32A;String;/X103_VALUE_DT_32A},{X103_ORDCU_NM_50A;String;/X103_ORDCU_NM_50A},{REVERSAL_DT;String;/REVERSAL_DT},{X103_ORDCUADD2_50A;String;/X103_ORDCUADD2_50A},{X103BENECUADD3_59A;String;/X103BENECUADD3_59A},{X202BENEBKADD3_58A;String;/X202BENEBKADD3_58A},{X103_SETT_AMT_32A;String;/X103_SETT_AMT_32A},{X103BENECUADD2_59A;String;/X103BENECUADD2_59A},{X103_SETT_CCY_32A;String;/X103_SETT_CCY_32A},{X103_EXCH_RT_36;String;/X103_EXCH_RT_36},{X103_ORDCUADD1_50A;String;/X103_ORDCUADD1_50A},{X103_BENECU_NM_59A;String;/X103_BENECU_NM_59A},{X103_ORDCUACNO_50A;String;/X103_ORDCUACNO_50A},{X202BENEBKADD1_58A;String;/X202BENEBKADD1_58A},{DB_AMT;String;/DB_AMT},{CR_AMT;String;/CR_AMT},{C_MAIN_REF;String;/C_MAIN_REF},{X103_ORDCUADD3_50A;String;/X103_ORDCUADD3_50A},{X103BENECUADD1_59A;String;/X103BENECUADD1_59A},{REVE_AMT;String;/REVE_AMT},{RELATED_REF_NO;String;/RELATED_REF_NO},{CHEQ_NO;String;/CHEQ_NO},{X103_INSTR_CCY_33B;String;/X103_INSTR_CCY_33B},{CUST_REF;String;/CUST_REF}</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>RPLCD_CHEQ_NO</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RPLCD_CHEQ_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_VALUE_DT_32A</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_VALUE_DT_32A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_ORDCU_NM_50A</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_ORDCU_NM_50A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>REVERSAL_DT</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>REVERSAL_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_ORDCUADD2_50A</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_ORDCUADD2_50A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103BENECUADD3_59A</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103BENECUADD3_59A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X202BENEBKADD3_58A</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X202BENEBKADD3_58A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_SETT_AMT_32A</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_SETT_AMT_32A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103BENECUADD2_59A</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103BENECUADD2_59A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_SETT_CCY_32A</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_SETT_CCY_32A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_EXCH_RT_36</design:name>
+            <design:position>11</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_EXCH_RT_36</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_ORDCUADD1_50A</design:name>
+            <design:position>12</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_ORDCUADD1_50A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_BENECU_NM_59A</design:name>
+            <design:position>13</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_BENECU_NM_59A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_ORDCUACNO_50A</design:name>
+            <design:position>14</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_ORDCUACNO_50A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X202BENEBKADD1_58A</design:name>
+            <design:position>15</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X202BENEBKADD1_58A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>DB_AMT</design:name>
+            <design:position>16</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DB_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CR_AMT</design:name>
+            <design:position>17</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CR_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>C_MAIN_REF</design:name>
+            <design:position>18</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>C_MAIN_REF</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103_ORDCUADD3_50A</design:name>
+            <design:position>19</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103_ORDCUADD3_50A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>X103BENECUADD1_59A</design:name>
+            <design:position>20</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>X103BENECUADD1_59A</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>REVE_AMT</design:name>
+            <design:position>21</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>REVE_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="MAX_ROW">-1</property>
+            <property name="XML_FILE">X:\STBANK\ZM\AP\FORM\form_schema_PYMT_DI_Re_Issue.xml</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.xml.dataSet" name="TrxCharge" id="1181">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CHG_GL_AC_NUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CHG_COLLECT_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CHG_COLLECT_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CHG_COMMISSION_DESC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">CHG_PAY_AC_NUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">CHG_PAY_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">CHG_PAY_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">CHG_TEMP5</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">CHG_ACTIVE_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">CHG_ACTIVE_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CHG_GL_AC_NUMBER</property>
+                    <property name="nativeName">CHG_GL_AC_NUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CHG_COLLECT_AMT</property>
+                    <property name="nativeName">CHG_COLLECT_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CHG_COLLECT_CCY</property>
+                    <property name="nativeName">CHG_COLLECT_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CHG_COMMISSION_DESC</property>
+                    <property name="nativeName">CHG_COMMISSION_DESC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">CHG_PAY_AC_NUMBER</property>
+                    <property name="nativeName">CHG_PAY_AC_NUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">CHG_PAY_CCY</property>
+                    <property name="nativeName">CHG_PAY_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">CHG_PAY_AMT</property>
+                    <property name="nativeName">CHG_PAY_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">CHG_TEMP5</property>
+                    <property name="nativeName">CHG_TEMP5</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">CHG_ACTIVE_AMT</property>
+                    <property name="nativeName">CHG_ACTIVE_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">CHG_ACTIVE_CCY</property>
+                    <property name="nativeName">CHG_ACTIVE_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">table0#-TNAME-#table0#:#[/domData/ChargeForm/TrxCharge]#:#{CHG_GL_AC_NUMBER;String;/CHG_GL_AC_NUMBER},{CHG_COLLECT_AMT;String;/CHG_COLLECT_AMT},{CHG_COLLECT_CCY;String;/CHG_COLLECT_CCY},{CHG_COMMISSION_DESC;String;/CHG_COMMISSION_DESC},{CHG_PAY_AC_NUMBER;String;/CHG_PAY_AC_NUMBER},{CHG_PAY_CCY;String;/CHG_PAY_CCY},{CHG_PAY_AMT;String;/CHG_PAY_AMT},{CHG_TEMP5;String;/CHG_TEMP5},{CHG_ACTIVE_AMT;String;/CHG_ACTIVE_AMT},{CHG_ACTIVE_CCY;String;/CHG_ACTIVE_CCY}</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CHG_GL_AC_NUMBER</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CHG_GL_AC_NUMBER</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CHG_COLLECT_AMT</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CHG_COLLECT_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CHG_COLLECT_CCY</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CHG_COLLECT_CCY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CHG_COMMISSION_DESC</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CHG_COMMISSION_DESC</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="MAX_ROW">-1</property>
+            <property name="XML_FILE">X:\STBANK\ZM\AP\FORM\form_schema_PYMT_DI_Re_Issue.xml</property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-header>
+                <grid id="5">
+                    <property name="height">0.59375in</property>
+                    <property name="width">6.15625in</property>
+                    <column id="6">
+                        <property name="width">2.8229166667in</property>
+                    </column>
+                    <column id="7">
+                        <property name="width">3.3333333333in</property>
+                    </column>
+                    <row id="8">
+                        <property name="height">0.59375in</property>
+                        <cell id="9">
+                            <image id="1270">
+                                <property name="height">1.5cm</property>
+                                <property name="width">6cm</property>
+                                <property name="source">embed</property>
+                                <property name="imageName">Report_Logo.JPG</property>
+                            </image>
+                        </cell>
+                        <cell id="10"/>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="2181">
+                    <property name="width">100%</property>
+                    <column id="2182"/>
+                    <row id="2189">
+                        <cell id="2190">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                        </cell>
+                    </row>
+                    <row id="2183">
+                        <cell id="2184">
+                            <text id="2187">
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<CENTER><B>This is an electronically generated advice and requires no bank signature 
+</B></CENTER>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                    <row id="2185">
+                        <cell id="2186">
+                            <text id="2188">
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">6pt</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<br>Stanbic Bank Zambia Limited. Registered Commercial Bank – Registered in Zambia Reg. No. 6559 <br>
+Stanbic Bank Zambia Limited provides the details as “information only” and the clients should view the contents of their advice to confirm whether transaction have been successfully processed.  Based on the aforesaid Stanbic Bank Zambia Limited makes no representation or warranty, whether express or implied as to the integrity, accuracy, completeness or reliability of any information contained herein.]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="1881">
+            <text-property name="text">  </text-property>
+        </label>
+        <label id="1773">
+            <text-property name="text">  </text-property>
+        </label>
+        <grid id="1938">
+            <property name="width">100%</property>
+            <column id="1939"/>
+            <column id="1940"/>
+            <row id="1941">
+                <cell id="1942">
+                    <grid id="1926">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">7pt</property>
+                        <property name="width">100%</property>
+                        <column id="1927">
+                            <property name="textAlign">justify</property>
+                        </column>
+                        <row id="1928">
+                            <property name="textAlign">justify</property>
+                            <cell id="1929">
+                                <label id="1934">
+                                    <text-property name="text">INTERNATIONAL BUSINESS CENTRE</text-property>
+                                </label>
+                                <label id="1937">
+                                    <text-property name="text">PO BOX 31955 LUSAKA ZAMBIA</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="1943">
+                    <grid id="2039">
+                        <property name="textAlign">right</property>
+                        <property name="width">100%</property>
+                        <column id="2040"/>
+                        <row id="2041">
+                            <cell id="2042">
+                                <label id="2045">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Re-Issue Advice</text-property>
+                                </label>
+                                <label id="2046">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Foreign Draft</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="2043">
+                            <cell id="2044"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <label id="669">
+            <text-property name="text">  </text-property>
+        </label>
+        <grid id="1947">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">9pt</property>
+            <property name="width">100%</property>
+            <column id="1948">
+                <property name="width">0.8229166667in</property>
+            </column>
+            <column id="1949">
+                <property name="width">5.1666666667in</property>
+            </column>
+            <row id="1950">
+                <cell id="1951">
+                    <label id="1952">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Date:</text-property>
+                    </label>
+                </cell>
+                <cell id="1953">
+                    <text id="1954">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<value-of format ="dd MMMM yyyy">new Date()</value-of>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <label id="1955">
+            <text-property name="text">  </text-property>
+        </label>
+        <grid id="67">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">9pt</property>
+            <property name="width">100%</property>
+            <column id="68"/>
+            <row id="69">
+                <cell id="70">
+                    <data id="1231">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">X103_ORDCU_NM_50A</property>
+                                <expression name="expression">dataSetRow["X103_ORDCU_NM_50A"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">X103_ORDCU_NM_50A</property>
+                    </data>
+                    <data id="1233">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">X103BENECUADD1_59A</property>
+                                <expression name="expression">dataSetRow["X103BENECUADD1_59A"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">X103BENECUADD1_59A</property>
+                    </data>
+                    <data id="1232">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">X103_ORDCUADD2_50A</property>
+                                <expression name="expression">dataSetRow["X103_ORDCUADD2_50A"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">X103_ORDCUADD2_50A</property>
+                    </data>
+                    <data id="1234">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">X103_ORDCUADD3_50A</property>
+                                <expression name="expression">dataSetRow["X103_ORDCUADD3_50A"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">X103_ORDCUADD3_50A</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <label id="81">
+            <text-property name="text"> </text-property>
+        </label>
+        <label id="91">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">9pt</property>
+            <text-property name="text">We advise having re-issued the following Draft:</text-property>
+        </label>
+        <label id="131">
+            <text-property name="text">  </text-property>
+        </label>
+        <table id="2275">
+            <property name="width">100%</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">RPLCD_CHEQ_NO</property>
+                    <expression name="expression">dataSetRow["RPLCD_CHEQ_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_VALUE_DT_32A</property>
+                    <expression name="expression">dataSetRow["X103_VALUE_DT_32A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_ORDCU_NM_50A</property>
+                    <expression name="expression">dataSetRow["X103_ORDCU_NM_50A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REVERSAL_DT</property>
+                    <expression name="expression">dataSetRow["REVERSAL_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_ORDCUADD2_50A</property>
+                    <expression name="expression">dataSetRow["X103_ORDCUADD2_50A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103BENECUADD3_59A</property>
+                    <expression name="expression">dataSetRow["X103BENECUADD3_59A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X202BENEBKADD3_58A</property>
+                    <expression name="expression">dataSetRow["X202BENEBKADD3_58A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_SETT_AMT_32A</property>
+                    <expression name="expression">dataSetRow["X103_SETT_AMT_32A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103BENECUADD2_59A</property>
+                    <expression name="expression">dataSetRow["X103BENECUADD2_59A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_SETT_CCY_32A</property>
+                    <expression name="expression">dataSetRow["X103_SETT_CCY_32A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_EXCH_RT_36</property>
+                    <expression name="expression">dataSetRow["X103_EXCH_RT_36"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_ORDCUADD1_50A</property>
+                    <expression name="expression">dataSetRow["X103_ORDCUADD1_50A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_BENECU_NM_59A</property>
+                    <expression name="expression">dataSetRow["X103_BENECU_NM_59A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_ORDCUACNO_50A</property>
+                    <expression name="expression">dataSetRow["X103_ORDCUACNO_50A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X202BENEBKADD1_58A</property>
+                    <expression name="expression">dataSetRow["X202BENEBKADD1_58A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DB_AMT</property>
+                    <expression name="expression">dataSetRow["DB_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CR_AMT</property>
+                    <expression name="expression">dataSetRow["CR_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">C_MAIN_REF</property>
+                    <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_ORDCUADD3_50A</property>
+                    <expression name="expression">dataSetRow["X103_ORDCUADD3_50A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103BENECUADD1_59A</property>
+                    <expression name="expression">dataSetRow["X103BENECUADD1_59A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REVE_AMT</property>
+                    <expression name="expression">dataSetRow["REVE_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RELATED_REF_NO</property>
+                    <expression name="expression">dataSetRow["RELATED_REF_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHEQ_NO</property>
+                    <expression name="expression">dataSetRow["CHEQ_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">X103_INSTR_CCY_33B</property>
+                    <expression name="expression">dataSetRow["X103_INSTR_CCY_33B"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUST_REF</property>
+                    <expression name="expression">dataSetRow["CUST_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="2300">
+                <property name="width">2.146in</property>
+            </column>
+            <column id="2301">
+                <property name="width">3.844in</property>
+            </column>
+            <detail>
+                <row id="2279">
+                    <cell id="2280">
+                        <label id="132">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Reissue Reference Number:</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2281">
+                        <data id="1055">
+                            <property name="fontSize">9pt</property>
+                            <property name="dataSet">Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">C_MAIN_REF</property>
+                                    <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">C_MAIN_REF</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="2282">
+                    <cell id="2283">
+                        <label id="298">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">New Draft Number:</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2284">
+                        <data id="1056">
+                            <property name="fontSize">9pt</property>
+                            <property name="dataSet">Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">RPLCD_CHEQ_NO</property>
+                                    <expression name="expression">dataSetRow["RPLCD_CHEQ_NO"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">RPLCD_CHEQ_NO</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="2285">
+                    <cell id="2286">
+                        <label id="1188">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Orginal Reference Number:</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2287">
+                        <data id="1216">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="dataSet">Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">RELATED_REF_NO</property>
+                                    <expression name="expression">dataSetRow["RELATED_REF_NO"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">RELATED_REF_NO</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="2288">
+                    <cell id="2289">
+                        <label id="1189">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Orginal Draft Number:</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2290">
+                        <data id="1217">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="dataSet">Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">CHEQ_NO</property>
+                                    <expression name="expression">dataSetRow["CHEQ_NO"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">CHEQ_NO</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="2291">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr">if(row["CUST_REF"]=="" || row["CUST_REF"]==null){
+true}else{
+false}</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="2292">
+                        <label id="2226">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Customer Reference</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2293">
+                        <data id="2274">
+                            <property name="dataSet">Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">CUST_REF</property>
+                                    <expression name="expression">dataSetRow["CUST_REF"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">CUST_REF</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="2294">
+                    <cell id="2295">
+                        <label id="137">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">12px</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Amount:</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2296">
+                        <table id="1221">
+                            <property name="height">0.2395833333in</property>
+                            <property name="width">1.7604166667in</property>
+                            <property name="dataSet">Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">X103_INSTR_CCY_33B</property>
+                                    <expression name="expression">dataSetRow["X103_INSTR_CCY_33B"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">CR_AMT</property>
+                                    <expression name="expression">dataSetRow["CR_AMT"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                            </list-property>
+                            <column id="1227">
+                                <property name="width">0.6666666667in</property>
+                                <property name="textAlign">left</property>
+                            </column>
+                            <column id="1228">
+                                <property name="width">1.09375in</property>
+                            </column>
+                            <detail>
+                                <row id="1222">
+                                    <property name="height">0.2395833333in</property>
+                                    <property name="textAlign">left</property>
+                                    <cell id="1223">
+                                        <data id="1224">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">9pt</property>
+                                            <property name="resultSetColumn">X103_INSTR_CCY_33B</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1225">
+                                        <data id="1226">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">9pt</property>
+                                            <property name="resultSetColumn">CR_AMT</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </detail>
+                        </table>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <table id="1150">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">9pt</property>
+            <property name="width">100%</property>
+            <property name="dataSet">TrxCharge</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">CHG_COMMISSION_DESC</property>
+                    <expression name="expression">dataSetRow["CHG_COMMISSION_DESC"] + ":"</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_COLLECT_CCY</property>
+                    <expression name="expression">dataSetRow["CHG_COLLECT_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_COLLECT_AMT</property>
+                    <expression name="expression">dataSetRow["CHG_COLLECT_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_GL_AC_NUMBER</property>
+                    <expression name="expression">dataSetRow["CHG_GL_AC_NUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_PAY_CCY</property>
+                    <expression name="expression">dataSetRow["CHG_PAY_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_PAY_AMT</property>
+                    <expression name="expression">dataSetRow["CHG_PAY_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_PAY_AC_NUMBER</property>
+                    <expression name="expression">if (isNaN(dataSetRow["CHG_PAY_AC_NUMBER"])){
+ temp = "";
+ } else{
+  temp = dataSetRow["CHG_PAY_AC_NUMBER"];
+}
+ this.text = temp;</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_ACTIVE_AMT</property>
+                    <expression name="expression">dataSetRow["CHG_ACTIVE_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_ACTIVE_CCY</property>
+                    <expression name="expression">dataSetRow["CHG_ACTIVE_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CHG_TEMP5</property>
+                    <expression name="expression">if(dataSetRow["CHG_ACTIVE_CCY"] == dataSetRow["CHG_PAY_CCY"]){
+temp = '';
+}else{
+temp ='('+ dataSetRow["CHG_ACTIVE_CCY"]+' '+dataSetRow["CHG_ACTIVE_AMT"]+')';
+}
+ this.text = temp;</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="1169">
+                <property name="width">1.208in</property>
+            </column>
+            <column id="1170">
+                <property name="width">0.646in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="1171">
+                <property name="width">1.542in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="1172">
+                <property name="width">1.0208333333in</property>
+                <property name="textAlign">center</property>
+            </column>
+            <column id="1173">
+                <property name="width">1.8333333333in</property>
+                <property name="textAlign">left</property>
+            </column>
+            <header>
+                <row id="2047">
+                    <cell id="2048"/>
+                    <cell id="2049">
+                        <label id="2053">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Currency</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2050">
+                        <label id="2054">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <text-property name="text"> Amount </text-property>
+                        </label>
+                    </cell>
+                    <cell id="2051">
+                        <label id="2055">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Exchange Rate</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2052">
+                        <label id="2056">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Account Number</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="1157">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <property name="textAlign">justify</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr">if(row["CHG_PAY_AMT"]==0){
+true
+}else{
+false
+}</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="1158">
+                        <data id="1174">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">CHG_COMMISSION_DESC</property>
+                        </data>
+                    </cell>
+                    <cell id="1159">
+                        <data id="1235">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="resultSetColumn">CHG_PAY_CCY</property>
+                        </data>
+                    </cell>
+                    <cell id="1160">
+                        <data id="1236">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="resultSetColumn">CHG_PAY_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="1161">
+                        <data id="2193">
+                            <property name="resultSetColumn">CHG_TEMP5</property>
+                        </data>
+                    </cell>
+                    <cell id="1162">
+                        <data id="1237">
+                            <property name="fontFamily">"Arial"</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="resultSetColumn">CHG_PAY_AC_NUMBER</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <label id="154">
+            <text-property name="text">  </text-property>
+        </label>
+        <grid id="172">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">12px</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="width">100%</property>
+            <column id="173"/>
+            <row id="174">
+                <cell id="175">
+                    <label id="182">
+                        <property name="backgroundColor">#808080</property>
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">NOTICE</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="176">
+                <cell id="177">
+                    <label id="183">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">11pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">In the event of general queries relating to this document please email your enquiry to the below address</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="178">
+                <cell id="179">
+                    <grid id="2154">
+                        <property name="width">100%</property>
+                        <column id="2155">
+                            <property name="width">1.8229166667in</property>
+                        </column>
+                        <column id="2156">
+                            <property name="width">2.2291666667in</property>
+                        </column>
+                        <column id="2157">
+                            <property name="width">1.8645833333in</property>
+                        </column>
+                        <row id="2158">
+                            <cell id="2159"/>
+                            <cell id="2160">
+                                <property name="textUnderline">underline</property>
+                                <property name="textAlign">center</property>
+                                <label id="2162">
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="color">red</property>
+                                    <text-property name="text">ZambiaIBC@Stanbic.com</text-property>
+                                </label>
+                            </cell>
+                            <cell id="2161"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="2164">
+                <cell id="2165">
+                    <grid id="188">
+                        <property name="fontSize">11pt</property>
+                        <property name="width">100%</property>
+                        <column id="189">
+                            <property name="width">2.9791666667in</property>
+                        </column>
+                        <column id="190">
+                            <property name="width">2.9375in</property>
+                        </column>
+                        <row id="191">
+                            <cell id="192">
+                                <label id="194">
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">Please quote our reference:</text-property>
+                                </label>
+                            </cell>
+                            <cell id="193">
+                                <data id="196">
+                                    <property name="color">black</property>
+                                    <property name="dataSet">Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">C_MAIN_REF</property>
+                                            <expression name="expression">dataSetRow["C_MAIN_REF"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">C_MAIN_REF</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <label id="215">
+            <text-property name="text">   </text-property>
+        </label>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">Report_Logo.JPG</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwg
+                JC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIy
+                MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABEAPoDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+qt5qVjp0fmX17b2qf3p5VQfmT7H8q89+OOrXmmeCbZLK6lt
+                3ub1Y5GiYqWjEcjEZGMcqvcflmvGtZ8Aano2l6Z4huYpbzSL63huJrm3X54d6hiHB6YJwG6HAztJAHZQ
+                wsakVKUrXMp1HF2SPo+fx74RtxmTxLpR/wBy6R//AEEn3/KoB8SPBrMB/wAJFYg+8mMfn07/AJGvD7TS
+                fhP9kjlu/FmvCR13GIWxVk+9w2ImGeCOD29OnV6L8Mvhv4lQf2R4p1Kd+cxrcxJL35KNEGHfsOntWksN
+                ShrLm+4lTqPsepweMfDFyQsPiLSnY9FF5Hu79s57GtlHWRQyMGU9CDkV4/d/s/aW6kWevX0ZycfaI1lH
+                fH3dnTj/ADjHm/iXRL34WeILcaV4gjnuArSE2x8tlI5AkQMeD6HggHj0mGGpVXanPX0G6k46yR9VUUiO
+                siK6nKsMg+1JJIkMTyyuqRopZnY4CgdST2FcJsOorlpPiR4Niufs7eIrHeDjKvuX/vofL2PftXQWOo2W
+                qWwudPvLe7gJKiWCQOuR1GQcZqnCUVdoSknomWaKKKkYUUUUAFFFVtQvoNL0261C6Yrb2sLzSsASQigs
+                TgdeAaErgWaKwfC3i/S/GFrc3OleeYLeXymeVNm5sZ4Gc9x1xW9TlFxdnuJNNXQUVzc3jzw7B4uTwvJe
+                41RyF2eWdoYjcFLdAxHb39a6SnKMo2utwuFFFFSMKKwLjxx4WtbmW3uPEGnRTQu0ciPcKCjKSCD6EEH8
+                jU9h4s8O6pcJb2OuadcTucLFHcoXY+y5yeh/I1XJK17C5l3NiiiipGFFFFABRRXOab450HWPElxoFhcy
+                zX9uJPOXyXRUKNtYEsBkg+mR+RqlFu7S2E2kdHRRRUjPGP2g5ymn6FBuwHlnfGcfdVR7f3vX/Eavw18S
+                2XjnwPc+FLuJ7ea1sBZSeWwzJAUMYdcjhsDkYwDj1wOf/aHf954dUfeCXR646iP/AA/zjIq+Kreb4ZfE
+                fS/FNoko0y9jH2mNeAxx++THv8sgB6tnsvHpwip4eMPtateqZzNtVG+mh6Za/C3wXaQ+WuhQSEjBeZmd
+                j75J4P0x29BXO698C/DuoskukXE+kzIcgLmaPvztYhgeezADHTpj06CeK5t47iCRZIZUDo6nIZSMgj2x
+                UlcUcRVi7qTNnTi1ax4n/wAKp8fMfsreNnNjjbj7XcHI/wBzp36Z7fTHI/Ef4c2ngTSNLaG8mu57p5hc
+                yuoRCQAV2qDxwTnJOfYYx9NV45+0DPANF0eHzkFx9pdvL34bZ5bZOPTIHOR/h14bE1J1YxexlUpxUW0e
+                peH5/tXhvS7jn97ZxPz7oDXmHx/1K7t9D0rTondLW7kla4AOA+xQVVumRls49VB7ZHofgpt3gTw8c5/4
+                ltvn6+WtO8VeFdN8X6O2m6kj7d2+KWM4eJ8EblPrgnr61y0pqnWUnsmaSi5QsjifCPww8D6j4T0+7aA6
+                m88KtLc/apBlyPmGFYBcEkYxkYweRWjqlz4Z+E/hK4soJprVrwTy2qlXkaSbYONwHH8IBYjgdeK871j4
+                VeK/BSXOseHdZeaGCNpJTA7QTbVBYkrnDADtnnsvTHQeHfF8vjn4Y+KE1mCG41HTLGYifylBZWjfa2P4
+                WyjZxgcDp26pw5vfU+aNzNNR0tZnOfCz4iaR4VsNUXxDe3TT3EqujbWmLBVIOT+Hf/6w9k13xz4f8N6f
+                Z3mq3rW6XqF7ZPJdnkAUE8AccMOuAM15r8BbCyvdJ1o3VrBcFbmPBmiDEcH16dP84wOy8deLPCOg3ljZ
+                6zpa6pqAG62tktUleIHIBBfAXJXHBycdMCliYwliGkn529B021Tu2RaT8ZPCWr6lDYLNdW0s7hI2uIdq
+                sxJAGQTjp3x/Ot7xT430TwabMaxNLH9r3+UY4i4OzGc46feFeA/FS+XULrT7xfCk/h9milGZoxE8+3G0
+                lQBgr788+3HX/tDkhvDmB/Dd85wOkX+fw/EP6rTc4LpK/XsL2kuWT7Hb658XPCWg6i9hLdy3U8Z2yi0j
+                3rGcHILEhSRgggEkHOehxd1/WbDX/hXrup6ZcCe0m0q62OARyI3BBB5BBBGDXO+LvBPhrS/hTqBstGs4
+                pYLQSJceUPODZBz5h+b269OOBWB8P2ZvgJ4uDNu2pfKP/Acf5/w6VnGlTcFOF7ppFc0uflfUzfhX450L
+                wZ4T1I6tdP50t6THBEu+RwEHOOgHB5OBxjPGB6v4R+IOg+NDNFpksyXUK75La4j2SBc43cEgjPHBOO+K
+                88+BugaRqWh6pdahplreTrd+UstxEshVdoOBnOOSc46/hgYdnZxeF/2i47HT8xW32oKsSLhQksO4rjso
+                LcDp8o9Pl2rUqdSpNK/MtfIiEpRjF9Dvb2fwIPjDElza3LeJd0aA7GMJk8sFHIzjcEwAfUDuuR1/ijxd
+                o3g+wS71i68oSErDEi7pJSBkhR/MnAGRkjNeO6p/yc5GMkZuoOMcH/Rl6/5/+tB4wiTxN+0Db6TfsWtE
+                lgtwgOMxiPzGXI6ZJYfj6j5Z+rxk48zduW4+dpOy6nf6V8bPCeqahDZY1C1knkEcZntwQzE4A+QsRk+o
+                H869GrPXQtIQQhdKsVEBVosW6Dyyv3SvHBGBjHStCuKo4N+4rG0b9T5v8O6FpviP42a5p2rW/wBotGvL
+                5zH5jJ8wmfBypB/z3xxe+MPgjw/4U0/TL3Ro2tJpp2jaHzncMApbeNxJBUgDqPvD0yMjS9Fvdf8AjJrt
+                jYazPpM5vL5hdQbtwAmfj5WU8/Xt37XfGvhDVPAd7YeItUvLfxRCZRBnUxITuAZwGBc5GFPUkZHK9Met
+                e1aPvdNv60Oa14vTruez6Vr8em/DvTdb8RXXkBbGCS5nkUk7mCjJAGckkdup6Cubk+OfgxLgxiS/eMEj
+                zltSF4zzgkN29P5HGrqHjjwzN8PLbX9ahR9OvowPscsQlMkgyTHtPBIKnk4Hy5JFeY+N/Een6/4Fml0v
+                wJc2FkHRodSltkhVPmAONvXIyvBxz14OOKjRjN+/F790kaznZaM9pvvFOkaf4XPiOW536XsSQTRqWyGY
+                KOOvUjOenfGKwb34teELHSLXUXv3dboO0MEcRMpCsVJK/wAAypxuxnB9DjhOf+GWGBOdrEZPoL7j/PH4
+                Vr/CLwb4dv8AwNHqN9pFre3dzJKkkt1GJOFdlAAbheB2xnH5HsKcIylK+krBzybSXY7rwr410TxlbSy6
+                TcOzwkCWGVCkkec4yPQ4PIJ9OoIryb4aZHxy8RAZHzXwI6f8vH0Hp6Dp+UXwVRbb4l61axFvKjtJlUHP
+                RZ1Az/n/AOtzdt4nuPCPxC8WalaW7S3G68hj4+SNmuOHfpgDHTAycD3XojQ5XOnDqkZ894xlLue96l8Q
+                NA0vxHH4fkmmn1STaFgtoTIdzZwpI4B4zzjAOTxzXUV5N8GPDFo2ny+L7u5S/wBWvpJB5pJZoPmO4Nn/
+                AJaMeSfTAHGc+s1wV4QhLlj039Tog21dniX7Q1s7QaBdbSYlNxEx5wCyoQPTord+34jtdf0WH4gfC2FI
+                AGuJbSO6s23Y2zBOATxjOSh9Nx6GrXxL8MSeK/BN5Z2yb76HFzajOMyKD8v/AAJSy/8AAq4v4IeMopdO
+                PhO+lCXdszvZ7zgyRkksmP7ynccf3e3ynHRFt0FKG8GZuyqNPqL8JNbfxB4Q1Lwbe3Nxb3tpE8cMqsUl
+                SFsqMc5DI3HbAKj1A8t0TwzrbeNbrRLTUPsGvw+YEYyvH5zpnIV15yVBZSQAQDyOMdz48tZvh18VLHxb
+                Yxv9gvHMkyKcBmOfOT/gQIcZ/iJ7LxZ+MGlm3utH8f6JKu1vLLyIOCwG+KU+uRxk+ij6dMJpT5o7TX4m
+                Ulpr0/IiCfHBIzY7p26r5v8AopOOf4+vpz1+nbjPHXhDUPC8Fjd69qv2zWtRMjSASmTYiDgs7YLE7gOw
+                G04zwV+j/D/iax13wpbeIBIlvbSQmSYyPhYSud4YnHCkNycdM14bLJJ8XPi/EYo2bRrYgHcOBaoTkt0I
+                LtxjGRuH93iaFWfO3KKilvZDnBW3u3se7eFrSTT/AAhotlMpWW3sIInU9QVjUEfpWT461TxXpVnaT+Ft
+                Ji1Bg7Nch/mIULgAJuUnJOcg8bemDx1lFeap+9zNXOhq6tc8O1fx/wDEPXdPm0m08E31jJcoYnnNrMSA
+                wIOCyqFz/eJ/I8jo/Anw2utC8B6zp986JqeswPFIA2VhXYyopI6kb2JI9cDgCvTqK2lifd5YRsifZ63b
+                PnbwLqvjD4frqGnDwPqV9NdSrglJECOAw+8qMrqeOQQODzj7ul4303xNp/j7SvGtt4eursPBBPLaRoZv
+                JlVMPG2wHGOMPjGT7ce70Vbxd58/KrvfzF7JcvKfO/xHh8a+N7bTNRm8IXVnAizRwW0QeeYZAy0g2jYD
+                hcAqDwc9sdL8d9F1bWG0AaXpd5feWt15n2eBpAmRFgNtHGcH8j6ZHsdFJYppxaj8N/xB0rp67nK+NbO5
+                u/hrqdpa28s1w9kFSGNCXY8cBRzn/PFcT4E0PV7X4L+KNNudNu4b64F4IYJoSkkm6BVXAPXJ4H+RXsFF
+                ZxrOMOS3W5XJ73MfPfg9fiL4D0W5ubPw3Jd2k85ElrJCxmVgvDhVw2DkDgEfL/DWv8O/CPiHV/Hs/jPx
+                JaS2YDvKkU0ZjaSRtygBG+YKingnB4Xrg49torSWLbUtEm+pCo2trseK6l4b1p/2gk1hNMu2037RAxuV
+                iJjIECqST7EY/wA8S/E/wRrqeK4PGXhqF7idPLeaGJd0iyR8K4X+MEBQRyeO4+77LRSWKkpRaWyt8huk
+                mmn1PJNM8c/EvWbu2toPBaWwEi/aJryKWBCmfm278beP94+x7et0UVjUnGT92Ni4prd3PnSCDxX4X+J+
+                ta9Y+FNSv1e8uxEPs8gR1eViGDAHjGD6HP5XfEv/AAsb4l/ZdOk8MnTrSKXzVEyNEobBXc7vg8Bjwoyc
+                ngn7vv1FdH1vVS5VddSPZbq+h418Q/h5fwfDrQtP0WKa+fSN4ljiXLSB1JZ1Ucn5+ijs3tms3VtW8b+L
+                fh5Locfgq4tLe2ijSeeQOHm8thhYodqnJKg9wAD0OCPd6KmOKaS5ldp3G6au2up45/YerD9m46UdNvDq
+                W4kWvkN5x/03d9zGfu89uOeOtdZ8JdOvNL+Htna31tPbXCyzM0c8ZRxmRiCQQO1dvRUTruUXG27uNQs0
+                zxP4U6Fq+m/EnWrq+0u+traSCcRzT27IjEzqQASMHjn6D8oPBnhW+l+KniQatot4NIvkvYzJNA6RSo84
+                IAbA6jBGMdMjpx7nRVvFSbbturExpJWPD9H0zxL8LPHM9tZadqGreG7xgzm3t2lIXnDHb0kXoezDsONv
+                t4IZQRnBGeRilorKrVdRptalQjy6IK8Z+JfwwvW1OTxT4UDrebvOuLWD5XMgyfNjwRl84yByTyOa9mop
+                UqsqUuaI5xUlZnzxefEiy8aeD5/DnimM2mqqN1pfquIjMm4L5gHMZPKk4x8zH5cYG18JNVtfFXg3UvA2
+                rPv2RN9nLYLeSxPQY4ZH5HplcY28d94q+G3h3xazz3Vsba/YY+2Wx2OfTd2b8Rn0Irm/CPwbPhfxNDrJ
+                8QzTG3ZvLjjgCb1IIIcktxzjAA6A5HGO11qEqTitHv8APyMeSakr6nlFnovjGa9v/AFgZpEW6L3Ua5WL
+                cMgSO3UIQFI6Z+XAJxj6C8C+CrPwTon2SFhNdzEPdXJGDK3OB7KM4A/xrpUhijkkkSNFeUhpGVQC5AAB
+                J78AD8KfWFfFSqrlSsvzZcKSi7hRRRXKahRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFF
+                ABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFF
+                ABRRRQAUUUUAFFFFABRRRQB//9k=
+            </property>
+        </structure>
+    </list-property>
+</report>

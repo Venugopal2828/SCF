@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>FAEF</module>
+    <name>SETTLE_EF</name>
+    <desc>SETTLE_EF</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.FAEF_PMT</table-name>
+        <table-desc>FAEF_PMT</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>FA_PMT_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">FA_TEMP2</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <FA_BUSI_STATUS fv_type="V" oper="=">STL</FA_BUSI_STATUS>
+    </mapping>
+</root>

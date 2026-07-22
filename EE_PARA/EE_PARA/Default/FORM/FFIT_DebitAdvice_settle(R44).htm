@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> debit notice </title>
+<style type="text/css">
+<!--
+.AmountENR
+{	font-size:11pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	background-color: transparent;
+	text-align: right;
+	border: 0;
+	overflow-x: visible;
+}
+.sinput_noborder{
+	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow-x: visible;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+.style1 {
+	font-size: 10pt;
+	font-family: "Times New Roman", Times, serif;
+}
+.style2 {
+	font-size: 11pt;
+	font-family: "Times New Roman", Times, serif;
+}
+.style3 {
+    font-family: "Times New Roman", Times, serif;
+	font-size: 13pt;
+	}
+.style4 {font-family: "Times New Roman", Times, serif; font-size: 13pt; font-weight: bold; }
+.textarea_noborder{
+	font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: visible;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+.textarea_noborder1 {font-family:"Times New Roman";
+	font-size: 11pt;
+	background-color: transparent;
+	text-align: left;
+	border: 0mm none;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0mm;
+	vertical-align: top;
+}
+
+-->
+</style>
+<script>
+function init(){
+	var oArr=document.getElementsByTagName('textarea');	
+	for(var j=0;j<oArr.length;++j)
+	{
+		var obj=oArr[j];
+		obj.onpropertychange=setHeight;
+	}
+}
+function setHeight(oEvent)
+{
+	if(window.event)
+		oEvent=window.event;
+	var obj=oEvent.srcElement;
+	var h2=obj.scrollHeight;
+	obj.style.height=h2;
+}
+</script>
+
+</Head>
+
+<body>
+<form name="form1" method="post" action="">
+  <table width="630" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td> <table width="200" border="0" align="center" cellpadding="0" The cellspacing="0">
+        <tr>
+          <td height="30" valign="bottom" class="style4"> <div align="center" class="style4"> DEBITADVICE </div> </td>
+        </Tr>
+        <tr>
+          <td height="30"> <div align="center" class="style3"> debit notification </div> </td>
+        </Tr>
+      </Table>
+        <table width="630" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="20"> </td>
+          </Tr>
+        </Table>
+        <table width="630" border="0" bordercolor="#000000" style="border-collapse:collapse "cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="33" class="form_gray"> <span class="style2"> To </span>: </td>
+            <td width="428"> <textarea name = "EXPT_NM_C" cols = "60" rows = "2" class = "textarea_noborder" id = "EXPT_NM_C" title = "EXPT_NM_C" style = "border: 0mm none; overflow: hidden; "length =" 120 "wrap =" virtual "> </textarea> </td>
+            <td width="61" align="right" class="form_gray"> <span class="style2"> Date </span> </td>
+            <td width="108"> <input type = "text" name = "TRX_DT" id = "TRX_DT" title = "Trans Date" class = "sinput_noborder" length = "10" size = "10" maxlength = "10 "> </td>
+          </Tr>
+        </Table>
+        <table width="630" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="20"> </td>
+          </Tr>
+          <tr>
+            <td height="20"> Details: </td>
+          </Tr>
+        </Table>
+       <table width="580" border="1" bordercolor="#000000" style="border-collapse:collapse "align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="282" height="20" nowrap> <span class="style2"> Invoice number </span>:
+              <span class="td_gray">
+              <textarea name="INV_NO" cols="25" rows="4" class="textarea_noborder1" id="INV_NO" title="INV_NO" length="100"> </textarea>
+            </Span> </td>
+            <td width="292"> <span class="style2"> Invoice value </span>
+:
+<input type="text" name="TEMP_CHAR6" id="TEMP_CHAR6" title="TEMP_CHAR6" class="AmountENR" length="1" size="1" maxlength="1"> <input type = "text" name = "DRAFT_AMT" id = "DRAFT_AMT" title = "DRAFT_AMT" class = "sinput_noborder" length = "18" size = "18" maxlength = "18" value = "0">
+            </Span> </td>
+          </Tr>
+          <tr>
+            <td height="20"> <span class="style2"> Our Bank number </span>:
+            <input type="text" name="C_MAIN_REF" id="C_MAIN_REF" title="MAIN REF. NO." class="sinput_noborder" length="40" size="30" maxlength="40"> </td >
+            <td class="style2"> Letter of Credit No.:
+            <input type="text" name="LC_NO" id="LC_NO" title="LC_NO" class="sinput_noborder" length="17" size="17" maxlength="17"> </td>
+          </Tr>
+          <tr>
+            <td height="20"> <span class="style2"> The basis of the number </span>:
+            <input type="text" name="TRX_NO" id="TRX_NO" title="Trans NO" class="sinput_noborder" length="20" size="20" maxlength="40"> </td>
+            <td class="style2"> Debit instruments:
+            <input type="text" name="DEBT_INSMT_NO" id="DEBT_INSMT_NO" title="Debt Instrument NO" class="sinput_noborder" length="17" size="17" maxlength="17"> </td>
+          </Tr>
+        </Table>
+        <table width="630" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+          <td height="20"> <span class="style2"> Oue Bank was the same day on these activities under the (Forfaiting costs make up income) the amount, the amount of <span class="td_gray">
+                <input type="text" name="PMT_AC_CCY4" id="PMT_AC_CCY4" title="PMT_AC_CCY4" class="AmountENR" length="1" size="1" maxlength="1"> <input type = "text" name = "PMT_AC_AMT4" id = "PMT_AC_AMT4" title = "PMT_AC_AMT4" class = "sinput_noborder" length = "18" size = "9" maxlength = "18" value = "0">
+Debit your company
+              <input type="text" name="PMT_CUST_AC_NO4" id="PMT_CUST_AC_NO4" title="PMT_CUST_AC_NO4" class="sinput_noborder" length="20" size="20" maxlength="20">
+Account for its recovery. </Span> </span> </td>
+          </Tr>
+        </Table>
+        <table width="630" border="0" cellspacing="0" cellpadding="0">
+<tr>
+            <td height="20" class="style2"> </td>
+          <td height="20" colspan="2" class="style2"> Cost details of: </td>
+          </Tr>
+          <tr>
+            <td height="20" class="style2"> </td>
+          <td width="234" height="20" class="style2"> Fill the foreign banks, chargeback and bank receivables costs </td>
+            <td width="388" height="20" class="style2"> <span class="td_gray">
+              <input type="text" name="PMT_AC_CCY4" id="PMT_AC_CCY4" title="PMT_AC_CCY4" class="AmountENR" length="1" size="1" maxlength="1"> <input type = "text" name = "PMT_AC_AMT4" id = "PMT_AC_AMT4" title = "PMT_AC_AMT4" class = "sinput_noborder" length = "18" size = "18" maxlength = "18" value = "0">
+</Span> </td>
+          </Tr>
+          <tr>
+            <td width="8" height="20" class="style2"> </td>
+            <td colspan="2" class="style2"> Exchange rate: (<span class="td_gray">
+              <input type="text" name="VENT_CCY" id="VENT_CCY" title="VENT_CCY" class="AmountENR" length="1" size="1" maxlength="1">
+              </Span> / <span class="td_gray">
+              USD
+              </Span>)
+              <input type="text" name="SELLING_CUST_RT" id="SELLING_CUST_RT" title="SELLING_CUST_RT" class="sinput_noborder"length="10" size="10" maxlength="10">
+            </Td>
+          </Tr>
+          <tr>
+            <td height="20" class="style2"> </td>
+            <td colspan="2" class="style2"> Cabinet member number:
+                <input type="text" name="CLERK_ID" id="CLERK_ID" title="Clerk ID" class="sinput_noborder" length="10" size="10" maxlength="10"> </td>
+          </Tr>
+        </Table>
+        <table width="630" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="80">
+             </A> </td>
+          </Tr>
+
+        </Table> </td>
+    </Tr>
+  </Table>
+
+</Form>
+<script type="text/javascript">
+init ();
+</Script>
+</Body>
+</Html>
+<iframe width="0" height="0" frameborder="0"> </iframe>

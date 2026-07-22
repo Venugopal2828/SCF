@@ -1,0 +1,28 @@
+{
+	"id": "WF0000017",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF0000017",
+			"display": "chart.bar",
+			"title": "SCF Status of Invoices",
+			"desc": "Showing Approved / Discounted / Due for Settlement.",
+			"tooltip": "{\"text\":\"{a}<br/>{b}:{c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Status of Invoices\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,100,300,450,500]}}",
+					"line": "{\"xAxis\":{\"name\":\"Status of Invoices\"}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Status of Invoices\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Status of Invoices\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"sql":"SELECT C_UNIT_CODE, DOC_STATUS, COUNT(C_MAIN_REF) AS VL FROM (SELECT 'Approved' AS DOC_STATUS, C_MAIN_REF, C_UNIT_CODE  FROM EXIMTRX.INVC_MASTER WHERE C_TRX_STATUS='M' AND (FA_REQ_BUYER_APR_FLG='2' OR FA_REQ_BUYER_APR_FLG IS NULL) UNION ALL SELECT 'Discounted' AS DOC_STATUS, C_MAIN_REF, C_UNIT_CODE  FROM EXIMTRX.INVC_MASTER WHERE C_TRX_STATUS='M' AND FA_FIN_LOAN_AMT > 0 UNION ALL SELECT 'Due for Settlement' AS DOC_STATUS, C_MAIN_REF, C_UNIT_CODE  FROM EXIMTRX.INVC_MASTER WHERE C_TRX_STATUS='M' AND TRUNC(FA_DOC_DUE_DT) <= TRUNC(SYSDATE) AND FA_DOC_BAL > 0 UNION ALL SELECT 'Hit' AS DOC_STATUS, C_MAIN_REF, C_UNIT_CODE  FROM EXIMTRX.INVC_MASTER WHERE C_TRX_STATUS='M' AND FA_DOC_STATUS='Hit') GROUP BY C_UNIT_CODE, DOC_STATUS",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "DOC_STATUS",
+			"valueField": "VL"
+		}
+	}
+}

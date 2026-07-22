@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="INQMASTER_CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082301501</ID>
+    <MODULE>FADA</MODULE>
+    <JSPFILE>screen/CATA/Inquire_Master_Catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.FADA_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Main Ref. No." EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Business Type" EEType="INTERPRETER"
+            HIDDEN="H" ISFC="Y">FA_BUSI_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35" HIDDEN="">FA_BUYER_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller Name" EEType="Varchar_35" HIDDEN="">FA_SEL_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Transaction Ref." EEType="" HIDDEN="">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_LOCKED_FLAG" EEType="" HIDDEN="H">C_LOCKED_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Transaction Date" EEType="DATE" HIDDEN="">TRX_DT</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Created By" EEType="" HIDDEN="">C_CREA_BY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Function Short Name" EEType="" HIDDEN="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Seller ID" EEType="Varchar_35" HIDDEN="">FA_SEL_ID</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Main Ref. No." DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Buyer Name" DT="12" EEType="Varchar_35" TYPE="FLD">FA_BUYER_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Seller Name" DT="12" EEType="Varchar_35" TYPE="FLD">FA_SEL_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP6</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE7</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG8</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Business Type" DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="FLD">FA_BUSI_TYPE</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP9</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE10</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG11</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Seller ID" DT="12" EEType="Varchar_35" TYPE="FLD">FA_SEL_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP12</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE13</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG14</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Function Short Name" DT="12" EEType="" TYPE="FLD">C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP15</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE16</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG17</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Created By" DT="12" EEType="" TYPE="FLD">C_CREA_BY</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP18</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE19</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Function Short Name" DT="12" EEType="" TYPE="FLD">C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL"> &lt;&gt; 'AddFactor' AND </SQL>
+        <SQL DESC="Function Short Name" DT="12" EEType="" TYPE="FLD">C_FUNC_SHORT_NAME</SQL>
+        <SQL TYPE="SQL"> &lt;&gt; 'EditFactor'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Main Ref. No." EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="12" DESC="Buyer Name" EEType="Varchar_35">FA_BUYER_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller Name" EEType="Varchar_35">FA_SEL_NM</FIELD>
+        <FIELD DATATYPE="1" DESC="Business Type" EEType="INTERPRETER">FA_BUSI_TYPE</FIELD>
+        <FIELD DATATYPE="12" DESC="Seller ID" EEType="Varchar_35">FA_SEL_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Function Short Name" EEType="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD DATATYPE="12" DESC="Created By" EEType="">C_CREA_BY</FIELD>
+        <FIELD DATATYPE="12" DESC="Function Short Name" EEType="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD DATATYPE="12" DESC="Function Short Name" EEType="">C_FUNC_SHORT_NAME</FIELD>
+    </CLAUSEFIELD>
+</CATA>

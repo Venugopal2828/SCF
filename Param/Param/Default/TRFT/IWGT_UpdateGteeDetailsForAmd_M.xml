@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <desc>Update guarantee details when amended</desc>
+    <module>IWGT</module>
+    <name>UpdateGteeDetailsForAmd</name>
+    <head-info>
+        <table-name>CETRX.IWGT_EM_GTEE</table-name>
+        <table-desc>Guarantee Details</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info>Update guarantee details failure when demerge BKTS.IWGT.004.Amd</err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition>
+            <sql type="SQL">(</sql>
+            <sql type="TBL_FLD">ADV_NO</sql>
+            <sql type="SQL">=&apos;</sql>
+            <field mf="F">ADV_NO</field>
+            <sql type="SQL">&apos; AND </sql>
+            <sql type="TBL_FLD">C_UNIT_CODE</sql>
+            <sql type="SQL">=&apos;</sql>
+            <field mf="F">C_UNIT_CODE</field>
+            <sql type="SQL">&apos;)</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <EXPIRY_TYPE fv_type="F" mf="F" oper="=">EXPIRY_TYPE</EXPIRY_TYPE>
+        <BENE_ADD1 fv_type="F" mf="F" oper="=">BENE_ADD1</BENE_ADD1>
+        <BENE_ADD2 fv_type="F" mf="F" oper="=">BENE_ADD2</BENE_ADD2>
+        <BENE_ADD3 fv_type="F" mf="F" oper="=">BENE_ADD3</BENE_ADD3>
+        <BENE_NM fv_type="F" mf="F" oper="=">BENE_NM</BENE_NM>
+        <EXPIRY_DT fv_type="F" mf="F" oper="=">EXPIRY_DT</EXPIRY_DT>
+        <EXPIRY_PLC fv_type="F" mf="F" oper="=">EXPIRY_PLC</EXPIRY_PLC>
+        <GTEE_AMT fv_type="F" mf="F" oper="=">GTEE_AMT</GTEE_AMT>
+        <GTEE_CCY fv_type="F" mf="F" oper="=">GTEE_CCY</GTEE_CCY>
+        <GTEE_DETAILS fv_type="F" mf="F" oper="=">GTEE_DETAILS</GTEE_DETAILS>
+        <APPL_NM fv_type="F" mf="F" oper="=">APPL_NM</APPL_NM>
+        <APPL_ADD1 fv_type="F" mf="F" oper="=">APPL_ADD1</APPL_ADD1>
+        <APPL_ADD2 fv_type="F" mf="F" oper="=">APPL_ADD2</APPL_ADD2>
+        <APPL_ADD3 fv_type="F" mf="F" oper="=">APPL_ADD3</APPL_ADD3>
+        <ISSUE_BK_ADD1 fv_type="F" mf="F" oper="=">ISSUE_BK_ADD1</ISSUE_BK_ADD1>
+        <ISSUE_BK_ADD2 fv_type="F" mf="F" oper="=">ISSUE_BK_ADD2</ISSUE_BK_ADD2>
+        <ISSUE_BK_ADD3 fv_type="F" mf="F" oper="=">ISSUE_BK_ADD3</ISSUE_BK_ADD3>
+        <ISSUE_BK_NM fv_type="F" mf="F" oper="=">ISSUE_BK_NM</ISSUE_BK_NM>
+        <GTEE_BAL fv_type="F" mf="F" oper="=">GTEE_BAL</GTEE_BAL>
+    </mapping>
+</root>

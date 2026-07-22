@@ -1,0 +1,1 @@
+DV.appendField("FAEF_FA_DOC_AMT", "InvTRF", "FA_DOC_TYPE='2'");

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="User Defined Information" Max="1"
+    Min="0" Name="UserDefinedInformation" PendingStore="Y">
+    <Elements/>
+    <DO Desc="Buyer Defined Information" Max="n" Min="0" Name="BuyerDefined"
+        PendingStore="N" Screen="SCRN/DO/TSU_DefinedInformation.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_USER_DEDINFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Defined Information Description"
+                DispInGrid="Y" EDIT="N" EEType="Max140Text" FldType="" Value="">TSU_DFINFO_DESC</Element>
+            <Element DATATYPE="12" Desc="Defined Information Label"
+                DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DFINFO_LABLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+    <DO Desc="Seller Defined Information" Max="n" Min="0" Name="SellerDefined"
+        PendingStore="N" Screen="SCRN/DO/TSU_DefinedInformation.jsp"
+        StoreInto="D" StoreType="T">
+        <TABLE_NAME Name="TSUM_USER_DEDINFO"/>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_DO_NAME</PKNAME>
+            <PKNAME>TSU_SEQ_NUM</PKNAME>
+        </PK>
+        <FKS>
+            <FK PARENT_TABLE="TSUM_EM_BASELINE">
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="Defined Information Description"
+                DispInGrid="Y" EDIT="N" EEType="Max140Text" FldType="" Value="">TSU_DFINFO_DESC</Element>
+            <Element DATATYPE="12" Desc="Defined Information Label"
+                DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DFINFO_LABLE</Element>
+            <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N"
+                EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="2" Desc="Sequence No. to Account Records"
+                DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+        </Elements>
+    </DO>
+</DO>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">BICIBAN</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_BICDirectory_SYF_PYMT_X103_59A_1_IBAN_41</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_IBAN_BIC ALIAS="T0" DBFUNC="" DESC="Iban BIC" DT="12" HIDDEN="F" TYPE="F">X103_56A_BENE_BKBIC</C_IBAN_BIC>
+        <C_IBAN_BRANCH ALIAS="T0" DBFUNC="" DESC="C_IBAN_BRANCH" DT="12" HIDDEN="F" TYPE="F">X103_56A_BENE_BKBRANCH</C_IBAN_BRANCH>
+        <C_PARENT_BANK ALIAS="T0" DBFUNC="" DESC="C_PARENT_BANK" DT="12" HIDDEN="F" TYPE="F">X103_56_PARENT_BANK_TEMP1</C_PARENT_BANK>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_IBAN_COUNTRY like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">X103_BENE_IBAN</SQL>
+            <SQL TYPE="SQL">',0,2),'%')) AND C_UNIQIBAN_NATION like CONCAT('%',CONCAT(substr('</SQL>
+            <SQL TYPE="FLD">X103_BENE_IBAN</SQL>
+            <SQL TYPE="SQL">',</SQL>
+            <SQL TYPE="FLD">X103_59A_BANK_IDENPOSI</SQL>
+            <SQL TYPE="SQL"> - 1,</SQL>
+            <SQL TYPE="FLD">X103_59A_IBAN_NATLEN</SQL>
+            <SQL TYPE="SQL">),'%'))</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

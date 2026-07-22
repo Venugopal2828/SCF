@@ -1,0 +1,19 @@
+{root:"SYSM_GAPI_PTCL",_type_:9732,SYSM_GAPI_PTCL:{
+  C_ID:"PTC0FILE.MK.SAA",
+  C_NAME:"PTC0FILE.MK.SAA"
+  ,C_DESC:"Mock swift file, generate ack, 011, convert Ixxx to Oxxx",
+  C_TYPE_F:"9733",
+  T_CTX_F:{folder:"/tmp/to.saa",name:"*.saa_out"},
+  C_TYPE:"9737",
+  T_CTX:{HOST:"EEMQ","password":"passw1rd","userID":"admin"
+   ,QueueManagerName:"QMEE"
+   ,"SvrConnection-Channel":"DEV.ADMIN.SVRCONN"
+   ,"Receive.QueueName":"SWIFT_OUT"
+   ,"Send.QueueName":"SWIFT_IN"
+   ,"Error.Queue":"Q.ERROR"
+   ,"Listener.TCP.Port":"1414"
+   ,"Coded.Character.Set.ID":"1381"},
+
+IS_SYNC:"1",C_GROUP:"BZND13020400033",
+C_CONVERTER:"com.cs.esp.swift.mock.MockConvert",
+C_EXT_NAME:"ESP"}}

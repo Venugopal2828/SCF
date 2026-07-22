@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" DATATYPE="2005" Desc="Report"
+    Field="R2AR_RPT" Max="n" Min="0" Name="R2ARReport" PendingStore="Y"
+    Screen="SCRN/DO/TSUM_ActivityReport_Report.jsp" StoreInto="D" StoreType="X">
+    <Elements>
+        <Element DATATYPE="12" Desc="Transaction TID" DispInGrid="Y" EDIT="N"
+            EEType="Max35Text" FldType="" Value="">TSU_TID</Element>
+        <Element DATATYPE="1" Desc="Submitter Bank BIC" DispInGrid="Y" EDIT="N"
+            EEType="BIC" FldType="" Value="">TSU_SUB_B_BIC</Element>
+        <Element DATATYPE="12" Desc="Our Bank BIC" DispInGrid="Y" EDIT="N"
+            EEType="BIC" FldType="" Value="">TSU_OUR_BIC</Element>
+        <Element DATATYPE="12" Desc="Our Ref. No." DispInGrid="N" EDIT="N"
+            EEType="Max35Text" FldType="" Value="">TSU_OUR_REF</Element>
+        <Element DATATYPE="1" Desc="Their Bank BIC" DispInGrid="Y" EDIT="N"
+            EEType="BIC" FldType="" Value="">TSU_THEIR_BIC</Element>
+        <Element DATATYPE="12" Desc="Their Ref. No." DispInGrid="N" EDIT="N"
+            EEType="Max35Text" FldType="" Value="">TSU_THEIR_REF</Element>
+    </Elements>
+    <DO DATATYPE="2005" Desc="ReportedItem" Field="AR_RPTDITM" Max="1" Min="0"
+        Name="AR_RptdItm" PendingStore="N"
+        Screen="SCRN/DO/TSUM_ActivityReport_RPTItem.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Delta Report Date/Time" DispInGrid="Y"
+                EDIT="N" EEType="Varcha_50" FldType="" Value="">TSU_DLTAPR_DTTM</Element>
+            <Element DATATYPE="12" Desc="Submitter BIC" DispInGrid="Y" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+            <Element DATATYPE="12" Desc="Party Name" DispInGrid="Y" EDIT="N"
+                EEType="Max70Text" FldType="" Value="">TSU_PARTY_NM</Element>
+            <Element DATATYPE="12" Desc="Request Action Description"
+                DispInGrid="Y" EDIT="N" EEType="Max140Text" FldType="" Value="">TSU_REQ_ACT_DESC</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="PendingRequestForAction"
+        Field="R2AP_PDGREQFORACTN" Max="1" Min="0" Name="R2AR_PdgReqForActn"
+        PendingStore="N" Screen="SCRN/DO/R2TSUM_ActivityReport_PDG.jsp"
+        StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Pending Request For Action Type"
+                DispInGrid="Y" EDIT="N" EEType="Action1Code" FldType="" Value="">TSUR2_REQ_ACT_TP</Element>
+            <Element DATATYPE="12" Desc="Pending Request For Action Description"
+                DispInGrid="N" EDIT="N" EEType="Max140Text" FldType="" Value="">TSUR2_REQ_ACT_DESC</Element>
+        </Elements>
+    </DO>
+</DO>

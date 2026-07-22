@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA BYUNITCODE="True">
+    <ID>P08071500000</ID>
+    <CRTJSP POS="C">IMLC_GeneralCriteria.jsp</CRTJSP>
+    <JSPFILE TMPLFILE="SYS_Template.jsp">SYS_MultiCatalog.jsp</JSPFILE>
+    <ADAPT/>
+    <TABLENAME>CETRX.TRX_INBOX</TABLENAME>
+    <FIELDLIST>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Our Reference" EEType="RELATED_REF" HIDDEN="" NOEVENT="Y">CUST_NO</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" NOEVENT="Y">APPL_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" NOEVENT="Y">BENE_NM</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_MAIN_REF" EEType="" HIDDEN="H" NOEVENT="Y">C_MAIN_REF</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_TRX_STATUS" EEType="" HIDDEN="H" NOEVENT="Y">C_TRX_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="C_UNIT_CODE" EEType="" HIDDEN="H" NOEVENT="Y">C_UNIT_CODE</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="CURRNT_STATUS" EEType="" HIDDEN="H" NOEVENT="Y">CURRNT_STATUS</FIELD>
+        <FIELD ALIAS="" CONFIG="Y" DATATYPE="12" DESC="ACPT_REJ" EEType="" HIDDEN="H" NOEVENT="Y">ACPT_REJ</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <TYPE>1</TYPE>
+    <DESC>Resubmit Import LC</DESC>
+    <CLAUSE>
+        <SQL EEType="" TYPE="SQL">( </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG2</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL DESC="Applicant Name" DT="12" EEType="NM_CHAR35" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP3</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE4</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">LOG5</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL DESC="Beneficiary Name" DT="12" EEType="NM_CHAR35" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP6</SQL>
+        <SQL EEType="" TYPE="SQL"> &apos;</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE7</SQL>
+        <SQL EEType="" TYPE="SQL">&apos; )  AND  ( </SQL>
+        <SQL DESC="CURRNT_STATUS" DT="12" EEType="NARR(1*35)" TYPE="FLD" WTYPE="CASE">CURRNT_STATUS</SQL>
+        <SQL EEType="" TYPE="SQL"> = &apos;LC App Verified By Bank&apos; AND </SQL>
+        <SQL DESC="ACPT_REJ" DT="12" EEType="INTERPRETER" ISFC="Y" TYPE="FLD" WTYPE="CASE">ACPT_REJ</SQL>
+        <SQL EEType="" TYPE="SQL"> = &apos;REJECTED&apos; )  ORDER BY </SQL>
+        <SQL DESC="Our Reference" DT="12" EEType="RELATED_REF" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+        <SQL EEType="" TYPE="SQL"/>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference">CUST_NO</FIELD>
+        <FIELD DATATYPE="12" DESC="Applicant Name">APPL_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="Beneficiary Name">BENE_NM</FIELD>
+        <FIELD DATATYPE="12" DESC="CURRNT_STATUS">CURRNT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="ACPT_REJ">ACPT_REJ</FIELD>
+        <FIELD DATATYPE="12" DESC="Our Reference">CUST_NO</FIELD>
+    </CLAUSEFIELD>
+    <HYPERLINK/>
+    <ACTION/>
+</CATA>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("Begin:  STPJS    function 052");
+var GetTxId1 = stp.getValue("/Document/RoleAndBaselnRjctnNtfctn/TxId","Id");
+var GetTxId=GetTxId1[0];
+stp.writeLog("GetTxId="+GetTxId);
+var bu=stp.getTSUUnitCode();
+
+ //get  C_MAIN_REF,C_FUNC_SHORT_NAME,TSU_TRX_AM,TSUR2_TRX_STATUS,TSU_TRX_STATUS from table TSUM_MASTER  -S
+var fld_list      = stp.addFieldList(null,"C_MAIN_REF");
+	fld_list      = stp.addFieldList(fld_list,"C_FUNC_SHORT_NAME");  
+	fld_list      = stp.addFieldList(fld_list,"TSU_TRX_AMD");    
+	fld_list      = stp.addFieldList(fld_list,"TSUR2_TRX_STATUS");
+	fld_list      = stp.addFieldList(fld_list,"TSU_TRX_STATUS");
+var sql_condition = stp.addSQLCondition(null,"TSU_TID",GetTxId);
+sql_condition     = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu); 
+var result        = stp.executeQuery("TSUM_MASTER",fld_list,sql_condition);
+var mainRef       = stp.getDBFieldValue(result,"C_MAIN_REF");
+var Shortname	= stp.getDBFieldValue(result,"C_FUNC_SHORT_NAME");
+stp.writeLog("Shortname="+Shortname);
+var Amstatus	= stp.getDBFieldValue(result,"TSU_TRX_STATUS"); 
+stp.writeLog("Amstatus="+Amstatus);
+var Custatus  	= stp.getDBFieldValue(result,"TSUR2_TRX_STATUS");
+stp.writeLog("Custatus="+Custatus);
+var Amtype 	= stp.getDBFieldValue(result,"TSU_TRX_AMD");
+stp.writeLog("Amtype="+Amtype);
+  //get  C_MAIN_REF,C_FUNC_SHORT_NAME,TSU_TRX_AM,TSUR2_TRX_STATUS,TSU_TRX_STATUS from table TSUM_MASTER  -E  
+     
+stp.writeLog("mainRef="+mainRef);
+stp.updateFieldValue("","C_MAIN_REF",mainRef);
+stp.updateFieldValue("/root/domData","C_TRX_REF",mainRef);
+stp.updateFieldValue("","C_UNIT_CODE",bu);
+
+var OurBIC =stp.getTSUBIC();
+stp.writeLog("ourBIC="+OurBIC);
+var REF = stp.getValue("/Document/RoleAndBaselnRjctnNtfctn/UsrTxRef","Id");
+var FirstREF = REF[0];
+stp.writeLog("FirstREF="+FirstREF);
+var SecondREF = REF[1];
+stp.writeLog("SecondREF="+SecondREF);
+if (FirstREF== undefined)
+{ FirstREF ="null";
+}
+if (SecondREF == undefined)
+{ SecondREF ="null";
+}
+stp.writeLog("FirstREF2="+FirstREF);
+stp.writeLog("SecondREF2="+SecondREF);
+
+var RjctnRsn = stp.getValue("/Document/RoleAndBaselnRjctnNtfctn/RjctnRsn","Desc");
+if(RjctnRsn[0]==undefined)
+{
+	stp.updateFieldValue("/root/domData","TSU_REJT_RSN2","");
+	stp.setNodeAttribute("/root/domData/TSU_REJT_RSN2");
+}
+var ReqForActn = stp.getValue("/Document/RoleAndBaselnRjctnNtfctn/ReqForActn","Tp");
+if(ReqForActn[0]==undefined)
+{
+  stp.updateFieldValue("/root/domData","TSUR2_REQ_ACT_TP","EMPT");
+  stp.updateFieldValue("/root/domData","TSU_REQ_ACT_DESC","");
+  stp.setNodeAttribute("/root/domData/TSU_REQ_ACT_DESC");
+}
+
+var BIC = stp.getValue("/Document/RoleAndBaselnRjctnNtfctn/UsrTxRef/IdIssr","BIC");
+
+var FirstBIC = BIC[0];
+var SecondBIC = BIC[1];
+stp.writeLog("FirstBIC="+FirstBIC);
+stp.writeLog("SecondBIC="+SecondBIC);
+if(FirstBIC == undefined)
+{FirstBIC ="null";
+}
+if(SecondBIC == undefined )
+{SecondBIC="null";
+}
+stp.writeLog("FirstBIC2="+FirstBIC);
+stp.writeLog("SecondBIC2="+SecondBIC);
+
+var BIC1 = stp.compareString(FirstBIC,OurBIC);
+var BIC2 = stp.compareString(SecondBIC,OurBIC);
+stp.writeLog("BIC1 = " +BIC1);
+stp.writeLog("BIC2 = " +BIC2);
+
+if(BIC1 == "true")
+{ 
+	stp.updateFieldValue("","TSU_OUR_BIC",FirstBIC);
+	stp.updateFieldValue("","TSU_OUR_REF",FirstREF);
+	stp.updateFieldValue("","TSU_THEIR_REF",SecondREF);
+	stp.updateFieldValue("","TSU_THEIR_BIC",SecondBIC);	
+
+}
+if(BIC2 == "true")
+{  
+	stp.updateFieldValue("","TSU_OUR_BIC",SecondBIC);
+	stp.updateFieldValue("","TSU_OUR_REF",SecondREF);
+	stp.updateFieldValue("","TSU_THEIR_REF",FirstREF);
+	stp.updateFieldValue("","TSU_THEIR_BIC",FirstBIC);	
+
+}
+
+stp.setAutoProcess(true);  
+
+if(Amstatus=="AMRQ" && Amtype != "011")
+	{
+	stp.updateFieldValue("/root/domData","TSU_TRX_AMD","052");
+	} 
+	
+if(Amstatus=="AMRQ" && Amtype == "011")
+	{
+	stp.writeLog("052001");
+  stp.updateFieldValue("/root/domData","TSU_TRX_AMD","");
+	stp.updateFieldValue("/root/domData","TSU_TRX_STATUS","");
+	stp.setNodeAttribute("/root/domData/TSU_TRX_AMD"); 
+	stp.setNodeAttribute("/root/domData/TSU_TRX_STATUS");
+	stp.writeLog("052002");
+	}
+	stp.setFunc("R2RoleAndBaselineRejectNot");
+	stp.writeLog("end assign function 052 successfully");]]></js-content>
+</root>

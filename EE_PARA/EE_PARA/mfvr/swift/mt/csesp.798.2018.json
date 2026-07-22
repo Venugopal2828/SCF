@@ -1,0 +1,1134 @@
+{
+  "@def":{
+    "corp_":{"Account":"'/'34x'\r\n'{0,1}","NameAndAddress":"4*35x"},
+    "corp_a":{"Account":"'/'34x'\r\n'{0,1}","IdentifierCode":"BIC"},
+    "bank_a":{"PartyIdentifier":"PTYID'\r\n'{0,1}","IdentifierCode":"BIC"},
+    "bank_b":{"PartyIdentifier":"PTYID'\r\n'{0,1}","Location":"35x{0,1}"},
+    "bank_c":{"PartyIdentifier":"PTYID"},
+    "bank_d":{"PartyIdentifier":"PTYID'\r\n'{0,1}","NameAndAddress":"4*35x"},
+    "f23x":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|OTHR)","Narrative":"/65x{0,1}"}
+  },
+
+  "MT700_770":{"@name":"Application for LC - C2B",
+    "@include":"swift/mtjson/2018/fin.700.ESP.json",
+
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n{'/'}","Total":"1!n"},
+    "Choice_21a":{"F21A":"16x"},"F21T":"16x{0,1}","F21P":"16x{0,1}","F21S":"16x{0,1}","F25F":"5!c(DRAFT|FINAL)",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F24D":{"Code":"4!c(TELE|PSTP|PSTW|COUP|COUW)","AdditionalInformation":"/35x{0,1}"},
+    "F53C":"/34x{0,1}",
+    "F71A":"3!a(BEN|OUR|SHA|OTH)","F73A":"6*35z{0,1}",
+    "F25A":"/34x{0,1}","F71M":"4!c(APPL|BENE){0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29T":{"Code":"4!c(AIRT|SEAT|RAIL|ROAD|MULT|OTHR){0,1}","Narrative":"/35x{0,1}","@occur":"{0,1}"},
+    "F21E":"35x{0,1}","F45C":"100*65z{0,1}","F29A":"4*35x{0,1}",
+    "Seq798":{
+      "F72Z":"6*35z{0,1}","@occur":"{0,1}"
+    },
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT700_771":{"@name":"Notification of draft or issuance of LC - B2C",
+    "@include":"swift/mtjson/2018/fin.700.ESP.json",
+
+    "F20Z":"16x","F12":"3!n",
+
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21A":"16x","F21T":"16x{0,1}",
+    "Choice_21a":{"F21P":"16x"},"F21S":"16x{0,1}",
+    "F25F":"5!c(DRAFT|FINAL)","F12K":"2!n{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+      "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"}},
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "Seq798": {
+      "F72Z":"6*35z{0,1}","@occur":"{0,1}"
+    },
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT700_774":{"@name":"Advice of LC - B2C",
+    "@include":"swift/mtjson/2018/fin.700.ESP.json",
+
+    "F20Z":"16x","F12":"3!n",
+
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "Choice_21a":{"F21P":"16x"},"F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"}},
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"}},
+    "F29B":"4*35x{0,1}",
+    "F21A":"16x{0,1}","F21T":"16x{0,1}",
+    "F49D":"7!x(CONFIRM|WITHOUT)","F49F":"50*65z{0,1}",
+    "F49Y":"50*65z{0,1}",
+    "F47E":"100*65z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+
+  "MT707_772":{"@name":"Request for amendment of LC - C2B",
+    "@include":"swift/mtjson/2018/fin.707.ESP.json",
+
+    "F20Z":"16x","F12":"3!n",
+
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "Choice_21a":{"F21A":"16x"},"F21T":"16x{0,1}",
+    "Seq20": {
+      "F20": "16x{0,1}"
+    },
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F24D":{"Code":"4!c(TELE|PSTW|COUW)","Narrative":"/35x{0,1}"},
+    "F71A":"3!c(BEN|OUR|SHA|OTH)",
+    "F73A":"6*35z{0,1}",
+    "F29A":"4*35x{0,1}",
+    "Seq798": {
+      "F72Z":"6*35z{0,1}","@occur":"{0,1}"
+    },
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT707_773":{"@name":"Notification of amendment of LC - B2C",
+    "@include":"swift/mtjson/2018/fin.707.ESP.json",
+    "F20Z":"16x","F12":"3!n",
+
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21A":"16x","F21T":"16x{0,1}",
+    "Choice_21a":{"F21P":"16x"},"F21S":"16x{0,1}",
+    "Seq20": {
+      "F20": "16x"
+    },
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F29B":"4*35x{0,1}",
+    "Seq798": {
+    "F72Z":"6*35z{0,1}","@occur":"{0,1}"
+    },
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT707_776":{"@name":"Advice of amendment or confirmation of LC - B2C",
+    "@include":"swift/mtjson/2018/fin.707.ESP.json",
+
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "Choice_21a":{"F21P":"16x"},"F21S":"16x{0,1}",
+    "Seq20": {
+    "F20":"16x"
+    },
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"}},
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"}},
+    "F29B":"4*35x{0,1}",
+    "F21A":"16x{0,1}","F21T":"16x{0,1}",
+    "F49D":"7!x(CONFIRM|WITHOUT){0,1}","F49F":"50*65z{0,1}",
+    "F49Y":"50*65z{0,1}",
+    "F47E":"100*65z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT710_780":{"@name":"Advice of third bank LC - B2C",
+    "@include":"swift/mtjson/2018/fin.710.ESP.json",
+
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21P":"16x","F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"}},
+    "F29B":"4*35x{0,1}",
+    "Choice_56a":{"F56A":{"@type":"bank_a"},"F56C":{"@type":"bank_c"},"F56D":{"@type":"bank_d"}},
+    "F21B":"16x","F21A":"16x{0,1}","F21T":"16x{0,1}",
+    "F49D":"7!x(CONFIRM|WITHOUT)","F49F":"50*65z{0,1}",
+    "F49Y":"50*65z{0,1}",
+    "F47E":"100*65z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","S":"1!x(/)","Narrative":"65x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","S":"1!x(/)","Narrative":"35x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT722_722":{"@name":"Request for Transfer of LC - C2B",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21A":"16x","F21T":"16x{0,1}","F20":"16x",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F32B":{"Currency":"3!a","Amount":"15d"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F50B":"4*35x{0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F59K":{"@type":"corp_"},
+    "F29F":"4*35x{0,1}",
+    "F59":{"@type":"corp_"},
+    "F29A":"4*35x{0,1}",
+    "F31D":{"Date":"YYMMDD","Place":"29x","@occur":"{0,1}"},
+    "Choice_41a":{
+      "F41A": {
+        "IdentifierCode": "BIC'\r\n'",
+        "Code": "14x(BY ACCEPTANCE|BY DEF PAYMENT|BY MIXED PYMT|BY NEGOTIATION|BY PAYMENT)"
+      },
+      "F41D": {
+        "NameAndAddress": "4*35x'\r\n'",
+        "Code": "14x(BY ACCEPTANCE|BY DEF PAYMENT|BY MIXED PYMT|BY NEGOTIATION|BY PAYMENT)"
+      },"@occur":"{0,1}"},
+    "F48":{"Days":"3n","Narrative":"/35x{0,1}","@occur":"{0,1}"},
+    "F39A":{"Tolerance1":"2n'/'","Tolerance2":"2n","@occur":"{0,1}"},
+    "F44C":"YYMMDD{0,1}","F44D":"6*65x{0,1}",
+    "F37J":"12d{0,1}",
+    "F45C":"100*65x{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT712_712":{@name:"Claim for payment under Guarantee",
+    F20Z:"16x",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x{0,1}",F20:"16x",
+    F31C:"YYMMDD",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F49J:"50*65x{0,1}",
+    Choice_57ABD:{F57A:{@type:"bank_a"},F57B:{@type:"bank_b"},F57D:{@type:"bank_d"},@occur:"{0,1}"},
+    F53C:"/34x{0,1}",F25A:"/34x{0,1}",F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  "MT714_714":{@name:"Ack of Claim for payment under Guarantee",
+    F20Z:"16x",F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21P:"16x{0,1}",F20:"16x",F21A:"16x",
+    F31C:"YYMMDD",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F31S:"YYMMDD",
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F78B:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  "MT719_719":{"@name":"Response to a draft undertaking - C2B",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21A":"16x","F21T":"16x{0,1}","F21P":"16x","F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F12K":"2!n",
+    "F25G":"4!c(ACCP){0,1}",
+    "F77J":"70*50z{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}","F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  }, 
+  "MT720_782":{"@name":"Adive of Transfer of LC - B2C",
+    "@include":"swift/mtjson/2018/fin.720.ESP.json",
+
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21P":"16x","F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"}},
+    "F29B":"4*35x{0,1}",
+    "Choice_55a":{"F55A":{"@type":"bank_a"},"F55B":{"@type":"bank_b"},"F56D":{"@type":"bank_d"}},
+    "F21N":"16x","F21A":"16x{0,1}","F21T":"16x{0,1}",
+    "F49D":"7x",
+    "F49F":"50*65z{0,1}","F49Y":"50*65z{0,1}",
+    "F47E":"100*65z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT720_723":{"@name":"Notification of Transfer of LC - B2C",
+    "@include":"swift/mtjson/2018/fin.720.ESP.json",
+
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21P":"16x","F21S":"16x{0,1}","F21A":"16x","F21T":"16x{0,1}",
+    "Seq20": {
+      "F20": "16x"
+    },
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F12E":"4!c(TRNF|REFU)",
+    "F31N":"YYMMDD{0,1}",
+    "F49Y":"50*65z{0,1}",
+    "Seq798": {
+    "F72Z":"6*35z{0,1}","@occur":"{0,1}"
+    },
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT732_731":{"@name":"Notification of Advice of Discharge - B2C",
+    "@include":"swift/mtjson/2018/fin.732.json",
+    "F20Z":"16x","F12":"3!n",
+
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x",
+    "F21S":"16x{0,1}",
+    "Seq20": {
+      "F20": "16x"
+    },
+    "F21R":"16x{0,1}","F21A":"16x{0,1}","F21T":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29D":"4*35x{0,1}",
+    "Seq798": {
+    "F32B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F34D":{"Currency":"3!a","Amount":"15d"},
+    "F32G":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "Choice_33a":{
+      "F33A":{"Date":"YYMMDD","Currency":"3!a","Amount":"15d"},
+      "F33B":{"Currency":"3!a","Amount":"15d"},
+      "@occur":"{0,1}"},
+    "F12R":"4!c(SGHT|ACCT|DEFP|MIXD|NEGN){0,1}",
+    "F12S":"4!c(BPOB|NOOB){0,1}",
+    "F72Z":"6*35z{0,1}"
+    },
+    "F78B":"50*65z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT734_733":{"@name":"Notification of Advice of Refusal - B2C",
+    "@include":"swift/mtjson/2018/fin.734.json",
+    "F20Z":"16x","F12":"3!n",
+    
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x",
+    "F21S":"16x{0,1}",
+    "Seq20": {
+      "F20": "16x"
+    },
+    "F21A":"16x{0,1}","F21T":"16x{0,1}","F21R":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F32B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29D":"4*35x{0,1}",
+    "Seq798": {
+      "F72Z":"6*35z{0,1}","@occur":"{0,1}"
+    },
+    "F78B":"50*65z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT735_735":{"@name":"Advice of Acceptance/Refusal of Amendment - C2B",
+    "F20Z":"16x","F12":"3!n",
+
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21A":"16x",
+    "F21T":"16x{0,1}","F20":"16x","F21P":"16x","F21S":"16x{0,1}",
+    "F30":"YYMMDD{0,1}","F26E":"2n",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F31C":"YYMMDD",
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F12D":"4!c(REFU|ACCP)",
+    "F29A":"4*35x",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+
+  "MT736_736":{"@name":"Notification of Acceptance/Refusal of Amendment - B2C",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x{0,1}",
+    "F21S":"16x{0,1}",
+    "F20":"16x","F21A":"16x","F21T":"16x{0,1}",
+    "F31C":"YYMMDD{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}","F30":"YYMMDD{0,1}","F26E":"2n",
+    "F12D":"4!c(REFU|ACCP)",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT737_737":{"@name":"Response of LC Presentation - B2C",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x",
+    "F21S":"16x{0,1}","F21A":"16x{0,1}","F21T":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F21R":"16x{0,1}","F20":"16x",
+    "F31C":"YYMMDD",
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"}},
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"}},
+    "F29B":"4*35x{0,1}",
+    "F31S":"YYMMDD",
+    "F34O":{"Currency":"3!a","Amount":"15d"},
+    "F12D":"4!c(REFU|COMP){0,1}",
+    "F77J":"70*50z{0,1}",
+    "F24E":{"Code":"4!c(COUR|AIRM)","Narrative":"/35x{0,1}","@occur":"{0,1}"},
+    "F31N":"YYMMDD{0,1}",
+    "F78B":"50*65z{0,1}","F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT738_738":{"@name":"Response to Advice of Discrepant Presentation - C2B",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21A":"16x","F21T":"16x{0,1}","F21P":"16x","F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F20":"16x",
+    "F31C":"YYMMDD","F21R":"16x{0,1}",
+    "F34O":{"Currency":"3!a","Amount":"15d"},
+    "F31S":"YYMMDD",
+    "F12D":"4!c(REFU|COMP)",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },    
+  "MT741_741":{"@name":"Notification of Cancellation/Refusal - B2C",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21P":"16x","F21S":"16x{0,1}","F20":"16x{0,1}","F21A":"16x{0,1}","F21T":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F21":"16x",
+    "F11T":{"Type":"3!n'\r\n'","DateTime":"YYYYMMDDHHMM"},
+    "F79":"35*50x{0,1}",
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F26E":"3n{0,1}",
+    "F22D":"4!c(DOCR|DGAR|STLC|UNDK)",
+    "F12E":"4!c(CNCU|CNBK|REFU)",
+    "F49L":"50*65z{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },        
+    
+  "MT749_749":{"@name":"Response to Advice of Discrepancy - C2B",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21A":"16x",
+    "F21T":"16x{0,1}","F20":"16x","F21P":"16x{0,1}","F21S":"16x{0,1}", "F21R":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F31S":"YYMMDD{0,1}","F12D":"4!c(REFU|AUTH)",
+    "F35B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F32G":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F34B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F30":"YYMMDD{0,1}",
+    "Choice_57a":{"F57A":{"@type":"bank_a"},"F57B":{"@type":"bank_b"},"F57D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F53C":"/34x{0,1}","F25A":"/34x{0,1}","F29A":"4*35x{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT750_748":{"@name":"Advice of Discrepancy - B2C",
+    "@include":"swift/mtjson/2018/fin.750.json",
+
+    "F20Z":"16x","F12":"3!n",
+
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x",
+    "F21S":"16x{0,1}",
+    "Seq20": {
+      "F20": "16x"
+    },
+    "F21A":"16x{0,1}","F21T":"16x{0,1}","F21R":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F59":{"@type":"corp_","@occur":"{0,1}"},
+    "F31S":"YYMMDD{0,1}","F31T":"YYMMDD{0,1}",
+    "F77J":"70*50z{0,1}",
+    "Seq798": {
+    "F72Z":"6*35z{0,1}","@occur":"{0,1}"
+    },
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT751_751":{"@name":"Notification of authorisation to Pay/Acpt/Nego - B2C",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21P":"16x","F21S":"16x{0,1}","F20":"16x","F21R":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29D":"4*35x{0,1}",
+    "F50":"4*35x{0,1}",
+    "F35B":{"Currency":"3!a","Amount":"15d"},
+    "F33B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F32B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F12R":"4!c(SGHT|ACCT|DEFP|MIXD|NEGN)",
+    "F12S":"4!c(BPOB|NOOB)",
+    "F31M":"YYMMDD{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT753_753":{"@name":"Notification of Advice of Payment/Acceptance/Negotiation - B2C",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x",
+    "F21S":"16x{0,1}","F20":"16x","F21A":"16x{0,1}","F21T":"16x{0,1}","F21R":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29D":"4*35x{0,1}",
+    "F35B":{"Currency":"3!a","Amount":"15d"},
+    "F33B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F32B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F31M":"YYMMDD{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT755_755":{"@name":"Notification of Advice of Reimbursement or Payment - B2C",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x",
+    "F21S":"16x{0,1}","F20":"16x","F21A":"16x{0,1}","F21T":"16x{0,1}","F21R":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29D":"4*35x{0,1}",
+    "F35B":{"Currency":"3!a","Amount":"15d"},
+    "F33B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F32G":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F33A":{"Date":"YYMMDD","Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F71E":"100*35z{0,1}",
+    "F32B":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT757_757":{"@name":"Settlement of LC - B2C",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x",
+    "F21S":"16x{0,1}","F20":"16x","F21A":"16x{0,1}","F21T":"16x{0,1}","F21R":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F12R":"4!c(PAYM|CHGS|BOTH)","F31S":"YYMMDD{0,1}",
+    "F32B":{"Currency":"3!a","Amount":"15d"},
+    "F34D":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F32G":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "Choice_33a":{
+      "F33A":{"Date":"YYMMDD","Currency":"3!a","Amount":"15d"},
+      "F33B":{"Currency":"3!a","Amount":"15d"}
+    },    
+    "F71E":"100*35z{0,1}",
+    "Choice_57a":{
+      "F57A":{"@type":"bank_a"},"F57B":{"@type":"bank_b"},"F57D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F53C":"/34x{0,1}", "F34V":{"Currency":"3!a","Amount":"15d"},
+    "F25A":"/34x{0,1}", "F34W":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F36":"12d{0,1}","F34X":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT758_758":{"@name":"Settlement of Export LC - B2C",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},"F21P":"16x",
+    "F21S":"16x{0,1}","F21A":"16x{0,1}","F21T":"16x{0,1}","F20":"16x","F21R":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "F12R":"4!c(PAYM|CHGS|BOTH)","F31S":"YYMMDD{0,1}",
+    "F32B":{"Currency":"3!a","Amount":"15d"},
+    "F34D":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F32G":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "Choice_33a":{
+      "F33A":{"Date":"YYMMDD","Currency":"3!a","Amount":"15d"},
+      "F33B":{"Currency":"3!a","Amount":"15d"}
+    },    
+    "F71E":"100*35z{0,1}",
+    "Choice_57a":{
+      "F57A":{"@type":"bank_a"},"F57B":{"@type":"bank_b"},"F57D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F53C":"/34x{0,1}", "F34Y":{"Currency":"3!a","Amount":"15d"},
+    "F25A":"/34x{0,1}", "F34W":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F12F":"4!c(WCSR|OCSR){0,1}",
+    "F36":"12d{0,1}","F34X":{"Currency":"3!a","Amount":"15d","@occur":"{0,1}"},
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+
+  "MT759_725":{"@name":"Ancillary message - B2C",
+    "@include":"swift/mtjson/2018/fin.759.json",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21A":"16x","F21T":"16x{0,1}",
+    "Choice_21a":{"F21P":"16x"},"F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F29B":"4*35x{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },    
+  "MT759_726":{"@name":"Ancillary message - C2B",
+    "@include":"swift/mtjson/2018/fin.759.json",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "Choice_21a":{"F21A":"16x"},"F21T":"16x{0,1}","F21P":"16x{0,1}","F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F29A":"4*35x{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },    
+  
+
+  "MT760_420":{"@name":"B2C: Guarantee Application Refusal / No MT798 / Bolero 420",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20:"16x",F12:"3!n",F20Z:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F79:"150*65x{0,1}",F72:"150*65x{0,1}",F72C:"6*35x{0,1}",
+    F50:"4*35x",F50M:"4*35x{0,1}",F12E:"4!c{0,1}",
+    F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x{0,1}",@occur:"{0,1}"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"}
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  "MT760_761":{@name:"GT 761",
+    "@include":"swift/mtjson/2018/fin.760.ESP.json",
+    "F20Z":"16x","F12":"3!n",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},F22D:"4!c",F22K:{TypeOfEvent:"4!c",Narrative:"35x{0,1}"},
+    F22E:"4!c",F22J:"4!c",F22B:"4!c{0,1}",F22L:"2!c{0,1}",F50:"4*35x",F50M:"4*35x{0,1}",F12E:"4!c{0,1}",
+    F39P:{Type:"4!c{'/'}",Currency:"3!a",Amount:"15d"},
+    F39C:"4*35x{0,1}",F23B:"4!c",F31L:"YYMMDD{0,1}",
+    F31S:"YYMMDD{0,1}",F35L:"4*35x{0,1}",
+    F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"},F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"},
+    F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F53C:"/34x{0,1}",F25A:"/34x{0,1}",
+    F59:{@type: "corp_"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F49:"7!x{0,1}",F26D:"30*65x",
+    F20E:{Code:"4!c",Reference:"/35x{0,1}",@occur:"{0,1}"},F31R:{Date1:"YYMMDD",Date2:"YYMMDD{0,1}",@occur:"{0,1}"},
+    F71F:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F37J:"12d{0,1}",F29A:"4*35x{0,1}",F29D:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  "MT760_762":{@name:"GT 762",
+    "@include":"swift/mtjson/2018/fin.760.ESP.json",
+
+    "F20Z":"16x", "F12":"3!n",
+    "F27A":{"Number":"1!n{'/'}","Total":"1!n"},
+    "F21A":"16x",
+    "Seq20":{"F20":"16x"},
+    "F13E":{"Date":"YYYYMMDD",Time:"HHMM"},F39P:{Type:"4!c{'/'}",Currency:"3!a",Amount:"15d"},
+    F23B:"4!c",F31L:"YYMMDD{0,1}",F31S:"YYMMDD{0,1}",
+    F50:"4*35x",F50M:"4*35x{0,1}",F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x"},
+    Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F49H:"50*65x{0,1}",F72C:"6*35x{0,1}",F29B:"4*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",
+    F22L:"2!c{0,1}",F22D:"4!c{0,1}",F22K:{TypeOfEvent:"4!c",Narrative:"35x{0,1}",@occur:"{0,1}"},F35L:"4*35x{0,1}"
+
+    ,F21E:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F21F:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F21R:{Date:"YYMMDD",Reference:"34x",@occur:"{0,1}"}
+    ,F36E:"YYMMDD{0,1}",F36L:"YYMMDD{0,1}",F36S:"YYMMDD{0,1}",F39C:"4*35x{0,1}",F22J:"35x{0,1}"
+    ,F49D:"35x{0,1}",F49M:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_784:{@name:"GT 784",
+    "@include":"swift/mtjson/2018/fin.760.ESP.json",
+    F20Z:"16x", F12:"3!n",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+   ,F40A:"24x",F50:"4*35x",F50M:"4*35x{0,1}"
+   ,F33E:{Currency:"3!a",Amount:"15d"}
+   ,F39A:{Tolerance1:"2n'/'",Tolerance2:"2n",@occur:"{0,1}"}
+   ,F39B:"13x{0,1}",F31L:"YYMMDD",F35L:"4*35x{0,1}"
+   ,F23F:{Code:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+   ,F38A:"3n{0,1}",F31S:"YYMMDD{0,1}"
+   ,F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+   ,F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+   ,F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F25A:"/34x{0,1}"
+   ,F22P:{Code1:"4!c{0,1}",Code2:"4!c{0,1}",@occur:"{0,1}"}
+   ,F45C:"100*65x",F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x"}
+   ,F29D:"4*35x{0,1}",F50N:"4*35x{0,1}"
+   ,F29C:"35x{0,1}",F22K:{TypeOfGuarantee:"4!c",Narrative:"35x{0,1}",@occur:"{0,1}"}
+   ,F33F:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+   ,F31V:"YYMMDD{0,1}"
+   ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"}
+   ,Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"}
+   ,F49:"7!x{0,1}",F26D:"30*65x",F29A:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_785:{@name:"GT 785",
+    "@include":"swift/mtjson/2018/fin.760.ESP.json",
+    F20Z:"16x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,F40A:"24x",F50:"4*35x",F50M:"4*35x{0,1}"
+    ,F33E:{Currency:"3!a",Amount:"15d"}
+    ,F39A:{Tolerance1:"2n'/'",Tolerance2:"2n",@occur:"{0,1}"}
+    ,F39B:"13x{0,1}"
+    ,F31L:"YYMMDD",F35L:"4*35x{0,1}"
+    ,F23F:{Code:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F38A:"3n{0,1}",F31S:"YYMMDD{0,1}"
+    ,F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F25A:"/34x{0,1}"
+    ,F22P:{Code1:"4!c{0,1}",Code2:"4!c{0,1}",@occur:"{0,1}"}
+    ,F45C:"100*65x"
+    ,F59:{Account:"/34x'\r\n'{0,1}",NameAndAddress:"4*35x"}
+    ,F29D:"4*35x{0,1}",F50N:"4*35x{0,1}",F29C:"35x{0,1}"
+    ,F22K:{TypeOfGuarantee:"4!c",Narrative:"35x{0,1}",@occur:"{0,1}"}
+    ,F33F:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F31V:"YYMMDD{0,1}"
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"}
+    ,Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"}
+    ,F49:"7!x{0,1}"
+    ,F26D:"30*65x",F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_745:{@name:"GT 745",
+    "@include":"swift/mtjson/2018/fin.760.ESP.json",
+    "F20Z":"16x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21P:"16x{0,1}",F21A:"16x{0,1}",
+    F31C:"YYMMDD{0,1}",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+  MT760_746:{@name:"GT 746",
+    "@include":"swift/mtjson/2018/fin.760.ESP.json",
+    "F20Z":"16x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+
+  "MT769_766":{@name:"GT 766",
+    "@include":"swift/mtjson/2018/fin.769.json",
+    F20Z:"16x",
+    F12:"3!n",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},
+    F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  "MT767_763":{@name:"GT 763",
+    "@include":"swift/mtjson/2018/fin.767.ESP.json",
+    "F20Z":"16x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F23B:"4!c{0,1}",F31L:"YYMMDD{0,1}",F31S:"YYMMDD{0,1}",
+    F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"},
+    F24E:{Type:"4!c",AdditionalInformation:"35x{0,1}",@occur:"{0,1}"},
+    F22G:"4!c{0,1}",
+    F50B:"4*35x{0,1}",
+    F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_764:{@name:"GT 764",
+    "@include":"swift/mtjson/2018/fin.767.ESP.json",
+    "F20Z":"16x",
+
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    "Seq20":{"F20":"16x"},
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F23B:"4!c{0,1}",F31L:"YYMMDD{0,1}",F31S:"YYMMDD{0,1}",
+    F49H:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_421:{@name:"GT 421",
+    "@include":"swift/mtjson/2018/fin.767.ESP.json",
+    "F20Z":"16x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    F29B:"4*35x{0,1}",
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_786:{@name:"GT 786",
+    "@include":"swift/mtjson/2018/fin.767.ESP.json",
+    "F20Z":"16x",
+
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"}
+    ,F31L:"YYMMDD{0,1}",F35L:"4*35x{0,1}"
+    ,F23F:{Code:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F38A:"3n{0,1}",F31S:"YYMMDD{0,1}"
+    ,F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F29A:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_787:{@name:"GT 787",
+    "@include":"swift/mtjson/2018/fin.767.ESP.json",
+    "F20Z":"16x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,F32B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"}
+    ,F39A:{Tolerance1:"2n{'/'}",Tolerance2:"2n",@occur:"{0,1}"}
+    ,F31L:"YYMMDD{0,1}",F35L:"4*35x{0,1}"
+    ,F23F:{Code:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F38A:"3n{0,1}",F31S:"YYMMDD{0,1}"
+    ,F23E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F24E:{Type:"4!c",AdditionalInformation:"30x{0,1}",@occur:"{0,1}"}
+    ,F22G:"4!c{0,1}",F50B:"4*35x{0,1}",F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_743:{@name:"GT 743",
+    "@include":"swift/mtjson/2018/fin.767.ESP.json",
+    "F20Z":"16x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"}
+    ,F21P:"16x{0,1}",F21A:"16x{0,1}",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT767_744:{@name:"GT 744",
+    "@include":"swift/mtjson/2018/fin.767.ESP.json",
+    "F20Z":"16x",
+    F12:"3!n",F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"}
+    ,Choice_52AD:{F52A:{@type:"bank_a"},F52D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29B:"4*35x{0,1}",
+    Choice_58AD:{F58A:{@type:"bank_a"},F58D:{@type:"bank_d"},@occur:"{0,1}"},
+    F29D:"4*35x{0,1}",
+    F50:"4*35x{0,1}",F78B:"50*65x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}",F21R:"16x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT777_777:{@name:"Query to extend or pay of Guarantee",
+    F20Z:"16x",F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x{0,1}",F20:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD",
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F31L:"YYMMDD{0,1}",
+    F49J:"50*65x{0,1}",F78B:"50*65x{0,1}",
+    F31T:"YYMMDD",
+    F29B:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+
+  MT778_778:{@name:"Response to extend or pay of Guarantee",
+    F20Z:"16x",F12:"3!n"
+    ,F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x{0,1}",F20:"16x",
+    F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD",
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F31L:"YYMMDD{0,1}",F22M:"4!c",
+    F53C:"/34x{0,1}",F25A:"/34x{0,1}",F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+
+  "MT779_779":{"@name":"B2C: Notification of Claim for payment of Guarantee/Standby LC (MT798 779) /Bolero 428",
+    F20Z:"16x",F12:"3!n",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD",F39D:{Currency:"3!a",Amount:"15d"},
+    F49J:"50*65x{0,1}",F78B:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT779_497:{"@name":"Bolero - GT Change",
+    F20:"16x",F12:"3!n",
+    F27A:{Number:"1!n{'/'}",Total:"1!n"},F21A:"16x",
+    F20Z:"16x{0,1}",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F31C:"YYMMDD{0,1}",F25:{Type:"4a{'/'}",Account:"16x"},
+    F32A:{Date:"YYMMDD",Currency:"3!a",Amount:"15d"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F34B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},F35B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F49J:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT781_781:{@name:"Settlement of Claim for payment under Guarantee",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x{0,1}",
+    F20Z:"16x",F20:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F22R:"4!c",
+    F39D:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34K:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34L:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34M:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F71B:"6*35x{0,1}",
+    F34S:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F34T:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F22S:"4!c{0,1}",F31J:"YYMMDD{0,1}",F31K:"YYMMDD{0,1}",
+    F37J:"12d{0,1}",
+    F34U:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F53C:"/34x{0,1}",F34V:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F25A:"/34x{0,1}",F34W:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F30:"YYMMDD{0,1}",
+    F36:"12d{0,1}",F34X:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F78B:"50*65x{0,1}",
+    F29B:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+    },
+  MT783_783:{@name:"Request for Guarantee release",
+    F12:"3!n",
+    F27A:{Number:"1!n'/'",Total:"1!n"},F21A:"16x",F20:"16x",
+    F20Z:"16x",F13E:{Date:"YYYYMMDD",Time:"HHMM"},
+    F33B:{Currency:"3!a",Amount:"15d",@occur:"{0,1}"},
+    F22N:"4!c",F49K:"6*35x{0,1}",F29A:"4*35x{0,1}",
+    F72C:"6*35x{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    F29P:"35x{0,1}",F29U:"35x{0,1}"
+    ,FATT:"64x{0,1}",FB9:"BIC{0,1}",F10X:"64x{0,1}",F10A:"64x{0,1}",F10B:"64x{0,1}"
+  },
+
+  "MT790_793":{"@name":"Notification of Settlement or charges - B2C",
+    "@include":"swift/mtjson/2018/fin.790.json",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21P":"16x","F21S":"16x{0,1}","F20":"16x","F21A":"16x","F21T":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT791_794":{"@name":"Request for Settlement of charges - B2C",
+    "@include":"swift/mtjson/2018/fin.791.json",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21P":"16x","F21S":"16x{0,1}","F20":"16x","F21A":"16x","F21T":"16x{0,1}",
+    "F31C":"YYMMDD",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29B":"4*35x{0,1}",
+    "Choice_58a":{"F58A":{"@type":"bank_a"},"F58D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F29D":"4*35x{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MT797_797":{"@name":"Request for Cancellation - C2B",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21P":"16x","F21S":"16x{0,1}","F21A":"16x","F21T":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F21":"16x",
+    "F11T":{"Type":"3!n'\r\n'","DateTime":"YYYYMMDDHHMM"},
+    "F79":"35*50x{0,1}",
+    "F22D":"4!c(DOCR|DGAR|STLC|UNDK)",
+    "Choice_52a":{"F52A":{"@type":"bank_a"},"F52D":{"@type":"bank_d"},"@occur":"{0,1}"},
+    "F26E":"3n{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+
+  "MT799_788":{"@name":"Free message - C2B",
+    "F20":"16x","F21":"16x{0,1}","F79":"999*50x",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "Choice_21a":{"F21A":"16x"},"F21T":"16x{0,1}","F21P":"16x","F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F29A":"4*35x{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+    },
+  "MT799_789":{"@name":"Free message - B2C",
+    "F20":"16x","F21":"16x{0,1}","F79":"999*50x",
+    "F20Z":"16x","F12":"3!n",
+    "F27A":{"Number":"1!n'/'","Total":"1!n"},
+    "F21A":"16x","F21T":"16x{0,1}",
+    "Choice_21a":{"F21P":"16x"},"F21S":"16x{0,1}",
+    "F13E":{"Date":"YYYYMMDD","Time":"HHMM"},
+    "F29B":"4*35x{0,1}",
+    "F72Z":"6*35z{0,1}",
+    "F23X":{"Code":"4!c(FACT|FAXT|EMAL|MAIL|COUR|HOST|ORIG|OTHR)","Narrative":"66x","@occur":"{0,1}"},
+    "F29S":{"Code":"4!c(BICC|OTHR)","Narrative":"36x","@occur":"{0,1}"},
+    "F29P":"BIC{0,1}",
+    "F29U":"BIC{0,1}",
+    "FATT":"64x{0,1}","FB9":"BIC{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  },
+  "MTDOC_DOC":{"@name":"Free message - attachment files",
+    "F20Z":"35x","F12":"3!c"
+    ,"FATT":"'FATT/'64x{0,1}","F10X":"64x{0,1}","F10A":"64x{0,1}","F10B":"64x{0,1}"
+  }
+}

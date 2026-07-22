@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">INVC</MODULE>
+        <MODULE_DESC>Invoice</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C13120300000</CATALOGID>
+        <ID>F05030701011</ID>
+        <NAME>Process Invoice</NAME>
+        <DESC>Process Invoice</DESC>
+        <FUNSHORTNAME>ProcessInvc</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">INVC_ProcessInvc.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701004</ID>
+        <NAME>Process Invoice_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701004</ID>
+        <NAME>Process Invoice_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000285</ID>
+        <NAME>Process Invoice_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>FunctionSSJS</JS_CLASS>
+    </CAL>
+</FUNC>

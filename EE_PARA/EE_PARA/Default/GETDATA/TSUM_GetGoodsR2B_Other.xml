@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk>
+	<SQL PREP="Y"><![CDATA[SELECT a.C_TEMP_DATA  FROM TSUM_LEDGER a , ( select C_MAIN_REF ,max(I_EVENT_TIMES) I_EVENT_TIMES_ from TSUM_LEDGER  group by C_MAIN_REF) b  WHERE  
+a.C_MAIN_REF in ( select  C_MAIN_REF  from TSUM_EM_BASELINE WHERE TSUM_EM_BASELINE.TSU_BUYER_NM= 'other_tsu_001' AND TSUM_EM_BASELINE.TSU_SEL_NM= 'other_tsu_002' AND LOWER(TSUM_EM_BASELINE.TSU_COMM_REF) LIKE 'other_tsu_004' AND TSUM_EM_BASELINE.TSU_COMM_AMT > 0.00 AND ( TSUM_EM_BASELINE.TSUR2_TRX_STATUS= 'ACTV' OR TSUM_EM_BASELINE.TSUR2_TRX_STATUS= 'ESTD' ) AND TSUM_EM_BASELINE.C_UNIT_CODE= 'other_tsu_003') and a.c_Main_Ref= b.c_main_ref and a.i_Event_Times<=b.I_EVENT_TIMES_]]></SQL>
+	<field-mapping>
+		<FLD NAME="other_tsu_001" TYPE ="">TSU_BUYER_NM</FLD>
+		<FLD NAME="other_tsu_002" TYPE ="">TSU_SEL_NM</FLD>
+		<FLD NAME="other_tsu_003" TYPE ="SYS">SYS_BUSI_UNIT</FLD>
+		<FLD NAME="other_tsu_004" TYPE ="">TSU_COMM_REF</FLD>
+	</field-mapping>
+</cubk>

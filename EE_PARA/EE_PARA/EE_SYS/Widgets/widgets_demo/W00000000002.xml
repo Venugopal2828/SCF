@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WIDGET NAME="limit_utilization">
+	<PATTERN>
+		<TYPE>line</TYPE>
+		<TITLE>limit_utilization</TITLE>
+		<RENDERCONTROL>div1</RENDERCONTROL>
+		<AXIS/>
+		<PERIOD Mapping_Field="D_CREA_DATE" Period_value="L">100</PERIOD>
+		<!-- Interval = "NEXT/LAST" X MONTHS -->
+		<INTERVAL>Weekly</INTERVAL><!--Weekly Monthly Quarterly	Semiyearly Yearly-->
+	</PATTERN>
+	<MAP_TBL>
+		<TABLES>
+			<TABLE ALIAS="" schema="%EXIMTRX%">GTEE_MASTER</TABLE>
+		</TABLES>
+		<FIELDS>
+           
+            <FIELD DESC="GTEE_CCY" FIELD="GTEE_CCY" TBL_ALIAS="" TYPE="" DBFUNC=""></FIELD>
+            <FIELD DESC="GTEE_AMT" FIELD="GTEE_AMT" TBL_ALIAS="" TYPE="" DBFUNC="SUM">				
+				<GROUPBY>GTEE_CCY</GROUPBY></FIELD>          
+		</FIELDS>
+	</MAP_TBL>
+	<CLAUSE BYUNITCODE="True">
+		<SQL EETYPE="" TYPE="TBL_FLD" TBL_ALIAS="">C_TRX_STATUS</SQL>
+		<SQL TYPE="SQL"> = 'M'  ORDER BY </SQL>
+		<SQL EETYPE="" TYPE="TBL_FLD">GTEE_CCY</SQL>
+	</CLAUSE>
+</WIDGET>

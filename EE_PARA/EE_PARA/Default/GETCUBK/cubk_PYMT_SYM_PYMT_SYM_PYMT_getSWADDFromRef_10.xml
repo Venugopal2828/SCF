@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="">BANK_ROUTCODES</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYM_PYMT_SYM_PYMT_getSWADDFromRef_10</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <ROUT_CODE ALIAS="T0" DBFUNC="" DESC="ROUT_CODE" DT="12" HIDDEN="F" TYPE="V">trgtFldCUBK</ROUT_CODE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">refValCUBK</SQL>
+            <SQL TYPE="SQL">' AND ROUT_TYPE='SWIFT'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

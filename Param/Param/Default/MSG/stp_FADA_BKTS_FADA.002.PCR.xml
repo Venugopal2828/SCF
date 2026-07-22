@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>FADA.002.PCR</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>FADA</module>
+        <map-name>PCAResponse</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <C_MAIN_REF descr="CE system reference number" fv-type="F" intfconv="N">FA_CE_MAIN_REF</C_MAIN_REF>
+        <FA_APPL_LMT_AMT descr="Applied Limit Amount" fv-type="F" intfconv="N">FA_APPL_LMT_AMT</FA_APPL_LMT_AMT>
+        <FA_APPL_LMT_CCY descr="Applied Limit Currency" fv-type="F" intfconv="N">FA_APPL_LMT_CCY</FA_APPL_LMT_CCY>
+        <FA_IF_NM descr="IF Name" fv-type="F" intfconv="N">FA_IF_NM</FA_IF_NM>
+        <FA_LMT_ASS_AMT descr="Credit Assessment Amount" fv-type="F" intfconv="N">FA_LMT_ASS_AMT</FA_LMT_ASS_AMT>
+        <FA_LMT_ASS_CCY descr="Credit Assessment Currency" fv-type="F" intfconv="N">FA_LMT_ASS_CCY</FA_LMT_ASS_CCY>
+        <FA_REASON descr="Reason" fv-type="F" intfconv="N">FA_REASON</FA_REASON>
+        <FA_REPL_DT descr="Reply Date" fv-type="F" intfconv="N">FA_REPL_DT</FA_REPL_DT>
+        <FA_REQ_DT descr="Require Date" fv-type="F" intfconv="N">FA_REQ_DT</FA_REQ_DT>
+        <FA_SEL_ID descr="Seller ID" fv-type="F" intfconv="N">FA_SEL_ID</FA_SEL_ID>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

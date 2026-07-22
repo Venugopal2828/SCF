@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root version="1.0">
+	<!--com.cs.core.policy.v1_0.IXPathPolicy-->
+	<object name="XPath" extClass="com.cs.ce.interim.ceap.policy.XPathManager">
+	</object>
+	<object name="UploadMsgValidator" extClass="com.cs.ceweb.uploadMsg.ARFUploadMsgValidator">
+    <type name="validate"></type>
+  </object>
+  <object name="UploadMsgValidator" extClass="com.cs.ceweb.uploadMsg.ARFUploadMsgValidator">
+    <type name="validate"></type>
+    <type name="customProcess"></type>
+  </object>
+	<!-- com.cs.core.policy.v1_0.ICurrencyPolicy -->
+	<!--
+	<object name="Currency" extClass="">
+		<type name="getCurrency"></type>
+	</object>
+	-->
+	<!-- com.cs.core.policy.v1_0.IExchangeRatePolicy -->
+	<!--
+	<object name="ExchangeRate" extClass="">
+		<type name="getRate"></type>	
+	</object>
+	-->
+	<!-- com.cs.core.policy.v1_0.IAuthRulePolicy -->
+	<!--
+	<object name="AuthRule" extClass="">
+		<type name="getRule"></type>
+	</object>
+	-->
+	<!-- com.cs.core.policy.v1_0.IUserLoginPolicy -->
+	<!--
+	<object name="UserLogin" extClass="">
+		<type name="getUserInfo"></type>	
+		<type name="getGroupInfo"></type>
+		<type name="getUserFAP"></type>
+		<type name="authentication"></type>
+	</object>
+	-->
+	<!-- com.cs.core.policy.v1_0.ILoginAuthenticationEventPolicy -->
+	<!--
+	<object name="AuthenticationEvent" extClass="">
+		<type name="sucess"></type>
+		<type name="failure"></type>
+	</object>
+	-->
+	<!-- com.cs.core.policy.v1_0.ILoginAuthorizationEventPolicy -->
+	<!--
+	<object name="AuthorizationEvent" extClass="">
+		<type name="sucess"></type>
+		<type name="failure"></type>
+	</object>
+	-->
+	<!-- com.cs.core.policy.v1_0.ILogoutEventPolicy -->
+	<!--
+	<object name="LogoutEvent" extClass="">
+		<type name="logout"></type>
+	</object>
+	-->
+	<!-- com.cs.core.policy.v1_0.IRandomPwdPolicy -->
+	<!--object name="RandomPwd" extClass="com.cs.ceweb.policy.bacb.RandomPwd"> 
+		<type name="getPwd">
+			<param name="PWD_FIELD">C_AUTH_PSW</param>
+		</type>
+	</object-->
+	<!-- com.cs.core.policy.v1_0.IUserInfoPolicy -->
+	<!--object name="UserInfo" extClass="com.cs.ceap.policy.bacb.UserInfo"> 
+		<type name="addPwd">
+			<param name="PWD_FIELD">C_AUTH_PSW</param>
+	    <param name="FIRST_PWD_FIELD">C_AUTH_FIRST_PSW</param>
+	    <param name="LAST_PWD_FIELD">C_AUTH_LAST_PSW</param>
+		</type>
+		<type name="relPwd">
+		  <param name="PWD_FIELD">C_AUTH_PSW</param>
+	    <param name="FIRST_PWD_FIELD">C_AUTH_FIRST_PSW</param>
+	    <param name="LAST_PWD_FIELD">C_AUTH_LAST_PSW</param>
+		</type>
+	</object-->
+	<!-- com.cs.core.policy.v1_0.IResetPwdPolicy -->
+	<!--object name="ResetPwd" extClass="com.cs.ceap.policy.bacb.ResetPwd"> 
+		<type name="resetPwd">
+		  <param name="PWD_FIELD">C_AUTH_PSW</param>
+	    <param name="FIRST_PWD_FIELD">C_AUTH_FIRST_PSW</param>
+	    <param name="LAST_PWD_FIELD">C_AUTH_LAST_PSW</param>
+		</type>	
+	</object-->
+	<!-- com.cs.core.policy.v1_0.IChangeProfilePolicy -->
+	<!--object name="ChangeProfile" extClass="com.cs.ceap.policy.bacb.ChangeProfile"> 
+		<type name="change">
+		  <param name="PWD_FIELD">C_AUTH_PSW</param>
+		  <param name="NEW_PWD_FIELD">NEWAUTHPASSWORD</param>
+		  <param name="OLD_PWD_FIELD">OLDAUTHPASSWORD</param>
+	  </type>
+	</object-->
+	<!--object name="DealImages" extClass="com.cs.ceap.policy.project.DealImagesProject">
+      <type name="getThirdIndex"></type>
+    </object>
+    <object name="DealImages" extClass="com.cs.ceap.policy.project.DealImagesProject">
+      <type name="addImage"></type>
+    </object>
+    <object name="DealImages" extClass="com.cs.ceap.policy.project.DealImagesProject">
+      <type name="editImae"></type>
+    </object>
+    <object name="DealImages" extClass="com.cs.ceap.policy.project.DealImagesProject">
+      <type name="deleteImage"></type>
+    </object>
+    <object name="DealImages" extClass="com.cs.ceap.policy.project.DealImagesProject">
+      <type name="getImage"></type>
+    </object>
+    <object name="DealImages" extClass="com.cs.ceap.policy.project.DealImagesProject">
+      <type name="gapiNeedDetail"></type>
+    </object>
+    <object name="DealImages" extClass="com.cs.ceap.policy.project.DealImagesProject">
+      <type name="stpNeedDetail"></type>
+    </object>
+	<object name="ImageVirusScan" extClass="com.cs.ceap.policy.project.ImageVirusScan">
+      <type name="virusScan"></type>
+    </object>
+	<object name="ImageValidation" extClass="com.cs.ceap.policy.project.ImageValidation">
+      <type name="validateImae"></type>
+    </object-->
+	<object name="MailPwdVerification" extClass="com.cs.core.policy.MailPwdVerificationRuleIML">
+		<type name="pwdVerification"></type>
+	</object>
+	<object name="ExcelByRowSplitter" extClass="com.cs.ce.core.h2hfile.splitter.ExcelByRowSplitter"></object>
+	<object name="ExcelByColumnSplitter" extClass="com.cs.ce.core.h2hfile.splitter.ExcelByColumnSplitter"></object>
+	<object name="ExcelBySheetSplitter" extClass="com.cs.ce.core.h2hfile.splitter.ExcelBySheetSplitter"></object>
+	<object name="ExcelBySAXSplitter" extClass="com.cs.ce.core.h2hfile.splitter.ExcelBySAXSplitter"></object>
+	<object name="ExcelSingleDOSplitter" extClass="com.cs.ce.core.h2hfile.splitter.ExcelSingleDOSplitter">	</object>
+	<object name="SingleRecordXMLSplitter" extClass="com.cs.ce.core.h2hfile.splitter.SingleRecordXMLSplitter"></object>
+	<object name="SingleRecordPDFSplitter" extClass="com.cs.ce.core.h2hfile.splitter.SingleRecordPDFSplitter"></object>
+	<object name="MultiRecordsXMLSplitter" extClass="com.cs.ce.core.h2hfile.splitter.MultiRecordsXMLSplitter"></object>
+	<object name="SendCEXSLFormatter" extClass="com.cs.ce.core.h2hfile.formatter.SendCEXSLFormatter">		
+		<type name="format"></type>
+	</object>
+	<object name="CSVSingleDOSplitter" extClass="com.cs.ce.core.h2hfile.splitter.CSVSingleDOSplitter">
+</object>
+
+<object name="CSVFormatter" extClass="com.cs.ce.core.h2hfile.formatter.CSVFormatter">
+    <type name="format"></type>
+</object>
+	<object name="SendEEXSLFormatter" extClass="com.cs.ce.core.h2hfile.formatter.SendEEXSLFormatter">
+		<type name="format"></type>
+	</object>
+	<object name="ExcelFormatter" extClass="com.cs.ce.core.h2hfile.formatter.ExcelFormatter">
+		<type name="format"></type>
+	</object>
+<!--CEV2-01-04-05 E-->
+    <object name="ParseUploadFile" extClass="com.cs.core.policy.ParseUploadFile">
+		<type name="getCallBackDataByBytes"></type>	
+	</object>
+	<object name="ParseUploadFileByAI" extClass="com.cs.core.policy.ParseUploadFileByAI">
+		<type name="getCallBackDataByBytes"></type>
+	</object>
+</root>

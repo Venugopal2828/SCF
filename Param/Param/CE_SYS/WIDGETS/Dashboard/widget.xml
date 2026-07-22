@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iw:iwidget xmlns:iw="http://www.ibm.com/xmlns/prod/iWidget" 
+			id="Dashboard"
+			allowInstanceContent="true"
+			supportedModes="view edit config help"
+			supportedWindowStates="maximize minimize"
+			iScope="com.cs.widgets.Dashboard" 
+			lang="">
+	<iw:resource globalid="com.cs.resources.DashboardCss" src="Dashboard/dashboard.css"/>
+	<iw:resource globalid="com.cs.resources.DashboardJs" src="Dashboard/dashboard.js"/>
+	<iw:itemSet id="attributes">
+		<iw:item id="boardLayout" alias="boardLayout" lang=""
+				 readOnly="false" value="2|3"/>
+		<iw:item id="maxCapacity" alias="maxCapacity" lang=""
+				 readOnly="false" value="3|3"/>
+		<iw:item id="noneItemDesc" alias="noneItemDesc" lang=""
+				 readOnly="true" value="None"/>
+		<iw:item id="acrossColumn" alias="acrossColumn" lang="" readOnly="false" value="N"/>
+	</iw:itemSet>
+	<iw:itemSet id="idescriptor">
+		<iw:item id="title" alias="title" lang=""
+				 readOnly="false" value="Dashboard">
+		</iw:item>
+	</iw:itemSet>
+	<iw:itemSet id="edit.labels">
+		<iw:item id="rowCount" alias="rowCount" lang=""
+				 readOnly="true" value="Row Count">
+		</iw:item>
+		<iw:item id="colCount" alias="colCount" lang=""
+				 readOnly="true" value="Column Count">
+		</iw:item>
+		<iw:item id="noneItemDesc" alias="noneItemDesc" lang=""
+				 readOnly="true" value="None">
+		</iw:item>
+	</iw:itemSet>
+	<iw:content mode="view"><![CDATA[
+		<div class="com-cs-widget-Dashboard"></div>
+	]]></iw:content>
+	<iw:content mode="edit" uri="../Dashboard/edit.jsp"></iw:content>
+	<iw:content mode="help"><![CDATA[
+		<div class="com-cs-widget-Dashboard">
+			Dashboard.
+		</div>
+	]]></iw:content>
+</iw:iwidget>

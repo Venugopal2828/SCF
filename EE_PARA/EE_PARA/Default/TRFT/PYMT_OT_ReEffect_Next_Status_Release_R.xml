@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>PYMT</module>
+    <name>OT_ReEffect_Next_Status_Release</name>
+    <desc>OT_ReEffect_Next_Status_Release</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.PYMT_MASTER</table-name>
+        <table-desc>PYMT_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>M</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info>The original transaction has been reeffected. Please cancel this transaction.</err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">ORG_MAIN_REF</field>
+            <sql>' AND
+</sql>
+            <sql>NXT_STATUS</sql>
+            <sql> != 'END'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <NXT_STATUS fv_type="V" oper="=">END</NXT_STATUS>
+    </mapping>
+</root>

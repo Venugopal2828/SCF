@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>CFNC</module>
+    <name>CFNC_AMEND</name>
+    <desc>CFNC_AMEND</desc>
+    <head-info>
+        <DO name="FincAmend" path="FincAmend"/>
+        <table-name schema="%EXIMSYS%">%EXIMSYS%.CFNC_AMEND</table-name>
+        <table-desc>CFNC_AMEND</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">CFNC_C_RELT_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <CFNC_D_DUE_DT fv_type="F" mf="F" oper="=">CFNC_D_EXTEN_DUE_DT</CFNC_D_DUE_DT>
+    </mapping>
+</root>

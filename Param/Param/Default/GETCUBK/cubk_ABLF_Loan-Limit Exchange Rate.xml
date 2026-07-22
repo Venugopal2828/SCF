@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Loan-Limit Exchange Rate" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>ABLF</module-name>
+        <cubk-mapping-name>Loan-Limit Exchange Rate</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_EXCHAN_RATE</table-name>
+        <table-desc>STD_EXCHAN_RATE</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <C_FROM_CCY DESC="C_FROM_CCY" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">FA_LOAN_CCY</C_FROM_CCY>
+            <C_TO_CCY DESC="C_TO_CCY" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">FA_LMT_CCY</C_TO_CCY>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <F_VALUE DESC="F_VALUE" DT="2" HIDDEN="" TYPE="F" WTYPE="CASE">FA_LOAN_EXCH</F_VALUE>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

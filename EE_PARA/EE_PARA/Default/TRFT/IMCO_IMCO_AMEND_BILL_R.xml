@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>IMCO</module>
+    <name>IMCO_AMEND_BILL</name>
+    <desc>IMCO_AMEND_BILL</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.IMCO_MASTER</table-name>
+        <table-desc>IMCO_MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="False">
+            <sql>C_MAIN_REF</sql>
+            <sql> = '</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <ACPT_AMT fv_type="F" mf="F" oper="=">NEW_ACPT_AMT</ACPT_AMT>
+        <COLL_TRX_CCY_AMT fv_type="F" mf="F" oper="=">NEW_ACPT_AMT</COLL_TRX_CCY_AMT>
+        <COLL_TRX_CCY_BAL fv_type="F" mf="F" oper="=">NEW_ACPT_AMT</COLL_TRX_CCY_BAL>
+    </mapping>
+</root>

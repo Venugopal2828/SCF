@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>CPYT_DR_AC</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_CURRENCY ALIAS="T0" DESC="Currency" DT="12" TYPE="F">CPYT_DR_CCY</C_CURRENCY>
+            <C_AC_NUMBER ALIAS="T0" DESC="Account Number" DT="12" TYPE="F">CPYT_DR_AC</C_AC_NUMBER>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_AC_NUMBER ALIAS="T0" DBFUNC="" DESC="Account Number" DT="12" HIDDEN="F" TYPE="F">CPYT_DR_AC</C_AC_NUMBER>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.C_AC_NUMBER</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">CPYT_DR_AC</SQL>
+            <SQL TYPE="SQL">%'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

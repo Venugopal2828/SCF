@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="Get UnitCode By UnitName" type="normal">
+    <CRTJSP POS="C"/>
+    <key-mapping>
+        <module-name>INVC</module-name>
+        <cubk-mapping-name>GetUnitCodeByNm</cubk-mapping-name>
+        <table-name dsType="SD">CEUSER.SEC_BUSINESS_UNIT</table-name>
+        <table-desc>SEC_BUSINESS_UNIT</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <C_UNIT_NAME DESC="C_UNIT_NAME" DT="12" HIDDEN="" TYPE="V" WTYPE="CASE">sUnitName</C_UNIT_NAME>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_UNIT_CODE DESC="Company Code" DT="12" HIDDEN="" TYPE="F" WTYPE="CASE">C_UNIT_CODE</C_UNIT_CODE>
+    </field-mapping>
+    <CLAUSE/>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

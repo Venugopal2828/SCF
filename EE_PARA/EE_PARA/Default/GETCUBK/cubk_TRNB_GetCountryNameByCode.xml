@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMUSER%" TYPE="U">SEC_COUNTRY</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>TRNB</module-name>
+        <cubk-mapping-name>GetCountryNameByCode</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country Code" DT="1" HIDDEN="F" TYPE="F">NS_BK_CNTY_CD</C_CNTY_CODE>
+        <C_CNTY_NAME ALIAS="T0" DBFUNC="" DESC="Country English Name" DT="12" HIDDEN="F" TYPE="F">NS_BK_CNTY_NM</C_CNTY_NAME>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="CNTY" TYPE="TBL_FLD">T0.C_CNTY_CODE</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">NS_BK_CNTY_CD</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

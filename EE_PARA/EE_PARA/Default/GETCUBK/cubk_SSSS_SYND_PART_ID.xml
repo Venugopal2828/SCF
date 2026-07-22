@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">POST_ADD_DO</table-name>
+        <table-name ALIAS="T2" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SYND_PART_ID</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T2.C_MAIN_REF</C_MAIN_REF>
+            <ORDER_NO ALIAS="T2" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <ORDER_NO ALIAS="T1" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SYND_PART_ID</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">SYND_PART_ID</C_MAIN_REF>
+        <SWF_FMT_NM ALIAS="T2" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">SYND_PART_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T2" DBFUNC="" DESC="Address Line1" DT="12" HIDDEN="F" TYPE="F">SYND_PART_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T2" DBFUNC="" DESC="Address Line2" DT="12" HIDDEN="F" TYPE="F">SYND_PART_ADD2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T2" DBFUNC="" DESC="Address Line3" DT="12" HIDDEN="F" TYPE="F">SYND_PART_ADD3</SWIFT_FMT_ADD3>
+        <SW_TAG_VAR ALIAS="T0" DBFUNC="" DESC="Swfit Tag Variable" DT="12" HIDDEN="F" TYPE="F">SYND_PART_SW_TAG</SW_TAG_VAR>
+        <SW_ADD ALIAS="T0" DBFUNC="" DESC="SWIFT Address" DT="1" HIDDEN="F" TYPE="F">SYND_PART_SW_ADD</SW_ADD>
+        <FAX_NO ALIAS="T0" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="T" TYPE="F">PART_FAX_NO</FAX_NO>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="County Code" DT="1" HIDDEN="F" TYPE="F">SYND_PART_CNTY_CD</CNTY_CODE>
+        <NOTES ALIAS="T0" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="T" TYPE="F">SYND_PART_NOTES</NOTES>
+        <EMAIL_ADD ALIAS="T0" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="T" TYPE="F">PART_EMAIL_ADD</EMAIL_ADD>
+        <TLX_NO ALIAS="T0" DBFUNC="" DESC="Telex No" DT="12" HIDDEN="F" TYPE="F">PART_TLX_NO</TLX_NO>
+        <POSTAL_FMT_ADD ALIAS="T1" DBFUNC="" DESC="Bank Postal Format Address" DT="12" HIDDEN="F" TYPE="F">PART_MAIL_ADD</POSTAL_FMT_ADD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="BIC" TYPE="TBL_FLD">T0.SW_ADD</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SYND_PART_SW_ADD</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="NM_CHAR35" TYPE="TBL_FLD">T2.SWF_FMT_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SYND_PART_NM</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T2.SWIFT_FMT_ADD1</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SYND_PART_ADD1</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T2.SWIFT_FMT_ADD2</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SYND_PART_ADD2</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="ADD_CHAR35" TYPE="TBL_FLD">T2.SWIFT_FMT_ADD3</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SYND_PART_ADD3</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="4" EEType="INTEGER" TYPE="TBL_FLD">T2.ORDER_NO</SQL>
+            <SQL TYPE="SQL"> = '1' AND </SQL>
+            <SQL DT="4" EEType="INTEGER" TYPE="TBL_FLD">T1.ORDER_NO</SQL>
+            <SQL TYPE="SQL"> = '1' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T1.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T2.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">SYND_PART_ID</SQL>
+            <SQL TYPE="SQL">%'
+            </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

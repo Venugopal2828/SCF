@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>EXLC.007.PmtInstr</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>EXLC</module>
+        <interface-mapping-name>PaymentInstructions</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <CEMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">C_MAIN_REF</CEMainRef>
+        <BkMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">BK_MAIN_REF</BkMainRef>
+        <AdvNb descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">ADV_NO</AdvNb>
+        <LcNb descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">LC_NO</LcNb>
+        <DrawgRefNb descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">DRAW_NO</DrawgRefNb>
+        <PrestinCcy descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">PRES_CCY</PrestinCcy>
+        <PrestinAmt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">PRES_AMT</PrestinAmt>
+        <PrestinBala descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">PRES_BAL</PrestinBala>
+        <PrestinBkChrgs descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="9">PRES_BK_CHG</PrestinBkChrgs>
+        <AdditnlPrestinBkChrgs descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="10">ADDIT_PRES_BK_CHG</AdditnlPrestinBkChrgs>
+        <TtlAmtPayab descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="11">TTL_PAYABLE_AMT</TtlAmtPayab>
+        <DueDt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="12">DUE_DT</DueDt>
+        <SpclInstr descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="13">SPCL_INSTR</SpclInstr>
+        <CurSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="14">CURRNT_STATUS</CurSts>
+        <NxtSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="15">NXT_STATUS</NxtSts>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="16">EXLC.007.PmtInstr</MSG_TYPE>
+        <CustId descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="17">C_UNIT_CODE</CustId>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item/>
+</gapi>

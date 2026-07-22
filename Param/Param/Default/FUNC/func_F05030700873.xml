@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">IMLC</MODULE>
+        <MODULE_DESC>Import Letters of Credit</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030700873</ID>
+        <NAME>Resubmit Import LC Application</NAME>
+        <DESC>Resubmit Import LC Application</DESC>
+        <FUNSHORTNAME>ResmtImpLc</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">IMLC_ApplyImpLc.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700872</ID>
+        <NAME>Resubmit Import LC Application_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700872</ID>
+        <NAME>Resubmit Import LC Application_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000054</ID>
+        <NAME>Resubmit Import LC Application_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

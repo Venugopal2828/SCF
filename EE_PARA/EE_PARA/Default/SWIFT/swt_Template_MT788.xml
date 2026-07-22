@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0"
+    descr="Free Format Message - Corporate-to-Bank Index" length="2000" non-regular="FALSE">
+    <tags>
+        <tag>
+            <tag-code>B3</tag-code>
+            <tag-desc>Incoming SWIFT Header 3</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>2</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="0" rows="25"/>
+        </tag>
+        <tag>
+            <tag-code>B4</tag-code>
+            <tag-desc>Incoming SWIFT Header 4</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>2</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="0" rows="37"/>
+        </tag>
+        <tag>
+            <tag-code>B5</tag-code>
+            <tag-desc>Incoming SWIFT Header 5</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>2</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="0" rows="25"/>
+        </tag>
+        <tag>
+            <tag-code>B6</tag-code>
+            <tag-desc>Incoming SWIFT Header 6</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>2</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <tag-group/>
+            <segment-1 cols="1" illegal-char="0" rows="51"/>
+        </tag>
+        <tag>
+            <tag-code>20</tag-code>
+            <tag-desc>Transaction Reference Number</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>12</tag-code>
+            <tag-desc>Sub-Message Type</tag-desc>
+            <tag-mo>M</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="3" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>27A</tag-code>
+            <tag-desc>Message Index/Total</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="3" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>21A</tag-code>
+            <tag-desc>Customer Reference Number</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>21R</tag-code>
+            <tag-desc>Bank Reference Number</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="16" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>13E</tag-code>
+            <tag-desc>Message Creation Date Time</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="12" illegal-char="" rows="1"/>
+        </tag>
+        <tag>
+            <tag-code>29A</tag-code>
+            <tag-desc>Customer Contact</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="4"/>
+        </tag>
+        <tag>
+            <tag-code>72C</tag-code>
+            <tag-desc>Corporate to Bank Information</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="35" illegal-char="" rows="6"/>
+        </tag>
+        <tag>
+            <tag-code>23X</tag-code>
+            <tag-desc>File Identification</tag-desc>
+            <tag-mo>O</tag-mo>
+            <tag-form>7</tag-form>
+            <char-sets-type>X</char-sets-type>
+            <Allow-Lowercase>FALSE</Allow-Lowercase>
+            <sequence/>
+            <tag-group/>
+            <segment-1 cols="70" illegal-char="" rows="1">
+                <fb>
+                    <srow>1</srow>
+                    <scol>1</scol>
+                    <len>4</len>
+                    <vtype>C</vtype>
+                    <prefix/>
+                    <descr/>
+                </fb>
+                <fb>
+                    <srow>1</srow>
+                    <scol>5</scol>
+                    <len>66</len>
+                    <vtype>C</vtype>
+                    <prefix/>
+                    <descr/>
+                </fb>
+            </segment-1>
+        </tag>
+    </tags>
+</root>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Receive Agreement");
+stp.autoCreateCustomerUser();
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+//var sMainRef = stp.getSimpleRef(17);
+var sMainRef = stp.getMsgTagVal("C_MAIN_REF");
+stp.writeLog("sMainRef======================"+sMainRef);
+var FACUSTREGNO = stp.getMsgTagVal("FA_CUST_REG_NO");
+var FAPMT = stp.getMsgTagVal("FA_PMT_TERMS");
+var RJREAS = stp.getMsgTagVal("REJECT_REASON");
+stp.updateFieldValue("FA_CUST_REG_NO",FACUSTREGNO);
+stp.updateFieldValue("FA_PMT_TERMS",FAPMT);
+stp.updateFieldValue("REJECT_REASON",RJREAS);
+stp.writeLog("FACUSTREGNO======================"+FACUSTREGNO);
+stp.writeLog("FAPMT======================"+FAPMT);
+stp.writeLog("RJREAS======================"+RJREAS);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+var sUnitCode = stp.getMsgTagVal("FA_ANCHOR_ID");
+stp.writeLog("sUnitCode======================"+sUnitCode);
+stp.setCmpId(sUnitCode);
+stp.updateFieldValue("CURRNT_STATUS","Received Anchor Customer");
+stp.writeLog("End: Receive Agreement");]]></js-content>
+</root>

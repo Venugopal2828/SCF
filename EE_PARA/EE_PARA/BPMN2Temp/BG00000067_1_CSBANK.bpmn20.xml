@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EE-7692 add bill huang 2014-11-12 -->
+<definitions expressionLanguage="http://www.w3.org/1999/XPath"
+    targetNamespace="http://localhost/flow"
+    typeLanguage="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:funcflow="http://localhost/bpmn"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <process id="BG00000067_1_CSBANK" isExecutable="true" name="Import LC WorkFlow 001">
+        <sequenceFlow id="id21396a312f9949a8b7d2e5230a7efd1f"
+            sourceRef="id4926cd2d4e7e47f18364e95c4339e366" targetRef="id3c1f6130d59c4c1da0137cff00355fdf">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="idfbbc747b673246ffbf65df4bd126f9bd" name="Register_Back-to-Back_(Export)_LC">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Register Back-to-Back (Export) LC</C_FUNC_DESC>
+                    <C_STEP_NAME>Register Back-to-Back (Export) LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300272</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000067</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702011</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <startEvent id="id9cb9dcde88bb45cf841671bfe5de9c3f" name="startEvent_Import_LC_WorkFlow_001"/>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="id3c1f6130d59c4c1da0137cff00355fdf" name="Issue_Back-to-Back_LC">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Issue Back-to-Back LC</C_FUNC_DESC>
+                    <C_STEP_NAME>Issue Back-to-Back LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300272</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000067</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702016</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <endEvent id="ida2905ca097c54898b7e1150fc7b80832" name="endEvent_Import_LC_WorkFlow_001"/>
+        <sequenceFlow id="idbac9bb9ff7a740de85a1312cdc104780"
+            sourceRef="id5330ef9305d84e12ac7dba6c419db246" targetRef="ida2905ca097c54898b7e1150fc7b80832">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id82c2c13f522b492e89e45fc57c2c7bb4"
+            sourceRef="id3c1f6130d59c4c1da0137cff00355fdf" targetRef="id5330ef9305d84e12ac7dba6c419db246">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="id4926cd2d4e7e47f18364e95c4339e366" name="Supervisor_Release">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                    <C_STEP_NAME>Register Back-to-Back (Export) LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000067</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702041</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="id5330ef9305d84e12ac7dba6c419db246" name="Supervisor_Release">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                    <C_STEP_NAME>Issue Back-to-Back LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000067</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702041</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="idfdb2797ca14e488b96d029757fb64f91"
+            sourceRef="idfbbc747b673246ffbf65df4bd126f9bd" targetRef="id4926cd2d4e7e47f18364e95c4339e366">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="idb14a74260028499fae687ef9dce09556"
+            sourceRef="id9cb9dcde88bb45cf841671bfe5de9c3f" targetRef="idfbbc747b673246ffbf65df4bd126f9bd"/>
+    </process>
+</definitions>

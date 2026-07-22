@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POMM_LOAN</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>POMM</module-name>
+        <cubk-mapping-name>Get_PO_Loan</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_LOAN_INT_RT ALIAS="T0" DBFUNC="" DESC="Loan Interest Rate" DT="8" HIDDEN="F" TYPE="F">FA_LOAN_INT_RT</FA_LOAN_INT_RT>
+        <FA_LOAN_INT_AMT ALIAS="T0" DBFUNC="" DESC="Loan Interest Amount" DT="3" HIDDEN="F" TYPE="F">FA_LOAN_INT_AMT</FA_LOAN_INT_AMT>
+        <FA_LOAN_VAL_DT ALIAS="T0" DBFUNC="" DESC="Loan Value Date" DT="91" HIDDEN="F" TYPE="F">FA_LOAN_VAL_DT</FA_LOAN_VAL_DT>
+        <FA_LOAN_DUE_DT ALIAS="T0" DBFUNC="" DESC="Financing Due Date" DT="91" HIDDEN="F" TYPE="F">FA_LOAN_DUE_DT</FA_LOAN_DUE_DT>
+        <PO_LOAN_ID ALIAS="T0" DBFUNC="" DESC="PO Loan ID" DT="12" HIDDEN="F" TYPE="F">PO_LOAN_ID</PO_LOAN_ID>
+        <PO_LOAN_AMT ALIAS="T0" DBFUNC="" DESC="PO Loan Amount" DT="3" HIDDEN="F" TYPE="F">PO_LOAN_AMT</PO_LOAN_AMT>
+        <PO_LOAN_TIMES ALIAS="T0" DBFUNC="" DESC="PO Loan Times" DT="2" HIDDEN="F" TYPE="F">PO_LOAN_TIMES</PO_LOAN_TIMES>
+        <PO_LOAN_BAL ALIAS="T0" DBFUNC="" DESC="PO Loan Balance" DT="3" HIDDEN="F" TYPE="F">PO_LOAN_BAL</PO_LOAN_BAL>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.PO_REF</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">PO_REF</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.PO_NO</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">PO_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">INVC</MODULE>
+        <MODULE_DESC>Invoice</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701010</ID>
+        <NAME>Manual Capture Invoice</NAME>
+        <DESC>Manual Capture Invoice</DESC>
+        <FUNSHORTNAME>ManlCaptInvc</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>Y</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="SYS_SIMPLE_DO_Template.jsp">INVC_ManlCaptInvc.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701003</ID>
+        <NAME>Manual Capture Invoice_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701003</ID>
+        <NAME>Manual Capture Invoice_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000284</ID>
+        <NAME>Manual Capture Invoice_NOTIFY</NAME>
+    </NOTIFY>
+    <CAL>
+        <JS_CLASS>FunctionSSJS</JS_CLASS>
+    </CAL>
+</FUNC>

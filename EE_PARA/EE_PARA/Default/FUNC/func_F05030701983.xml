@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/IPLC_RegisterClaim.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FORM>
+        <ID>F00000000670</ID>
+        <NAME/>
+    </FORM>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">IPLC</MODULE>
+        <MODULE_DESC>Import Letter of Credit</MODULE_DESC>
+        <EVENT>Negotiation</EVENT>
+        <ID>F05030701983</ID>
+        <NAME>IPLC_RegisterClaim</NAME>
+        <DESC>Register Claim (Mail)</DESC>
+        <FUNSHORTNAME>IPLC_REG_CLAIM</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>N</ADDMASTER>
+        <ATTR_ID name="Register Claim">R00000002391</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID>R00000002394</CATALOGID>
+        <TransferTo>F00000005900</TransferTo>
+        <OutSWIFT>F00000000393</OutSWIFT>
+    </FUNCTION>
+</FUNC>

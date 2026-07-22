@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="" Max="n" Min="0" Name="Discrepancies_Clause" PendingStore="N" Screen="SCRN/DO/Discrepancies_Clause.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="DISCREPANCY_CLAUSE"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>C_MAIN_REF</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="EPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="4" Desc="Order Number" DispInGrid="Y" EDIT="N" EEType="INTEGER" FldType="" Value="">ORDER_NO</Element>
+        <Element DATATYPE="1" Desc="Discrepancies Code Transaction" DispInGrid="Y" EDIT="N" EEType="INTERPRETER" FldType="" Value="">DISCRE_CODE</Element>
+        <Element DATATYPE="12" Desc="Discrepancies Description" DispInGrid="Y" EDIT="N" EEType="CHAR_30" FldType="" Value="">DISCRE_DESC</Element>
+        <Element DATATYPE="12" Desc="Discrepancies  Clause" DispInGrid="N" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">DISCRE_CLAUSE</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+    </Elements>
+</DO>

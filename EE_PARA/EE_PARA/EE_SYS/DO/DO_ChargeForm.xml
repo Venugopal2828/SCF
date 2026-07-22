@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" DATATYPE="2005" Desc="ChargeForm"
+    Field="CHARGEFORM" Max="1" Min="0" Name="ChargeForm" PendingStore="N"
+    Screen="SCRN/Library/ChgVoucherDOMap.lbi" StoreInto="D" StoreType="X">
+    <Elements>
+        <Element DATATYPE="12" Desc="Local Customer ID" DispInGrid="N" EDIT="N"
+            EEType="Varchar_100" FldType="" Value="">CHG_LOCAL_CUST_ID</Element>
+        <Element DATATYPE="12" Desc="Local Customer Name" DispInGrid="N"
+            EDIT="N" EEType="Varchar_100" FldType="" Value="">CHG_LOCAL_CUST_NAME</Element>
+        <Element DATATYPE="12" Desc="Local Customer CCY" DispInGrid="N" EDIT="N"
+            EEType="Varchar_100" FldType="" Value="">CHG_LOCAL_CUST_CCY</Element>
+        <Element DATATYPE="12" Desc="Local Customer Account Number"
+            DispInGrid="N" EDIT="N" EEType="Varchar_100" FldType="" Value="">CHG_LOCAL_CUST_AC_NO</Element>
+        <Element DATATYPE="3" Desc="Local Collect Total Amount" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CHG_LOCAL_COLLECT_TOTAL</Element>
+        <Element DATATYPE="3" Desc="Local Collect Charge Total Amount"
+            DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">CHG_LOCAL_COLLECT_CHG_TOTAL</Element>
+        <Element DATATYPE="3" Desc="Local Collect Vat Total Amount"
+            DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">CHG_LOCAL_COLLECT_VAT_TOTAL</Element>
+        <Element DATATYPE="12" Desc="Foreign Customer ID" DispInGrid="N"
+            EDIT="N" EEType="Varchar_100" FldType="" Value="">CHG_FOREIGN_CUST_ID</Element>
+        <Element DATATYPE="12" Desc="Foreign Customer Name" DispInGrid="N"
+            EDIT="N" EEType="Varchar_100" FldType="" Value="">CHG_FOREIGN_CUST_NAME</Element>
+        <Element DATATYPE="1" Desc="Charge Nostro CCY" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">CHG_NOSTRO_CCY</Element>
+        <Element DATATYPE="1" Desc="Charge Nostro Account No" DispInGrid="N"
+            EDIT="N" EEType="ACNO" FldType="" Value="">CHG_NOSTRO_AC_NO</Element>
+        <Element DATATYPE="3" Desc="Foreign Collect Total" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CHG_FOREIGN_COLLECT_TOTAL</Element>
+        <Element DATATYPE="3" Desc="Foreign Collect Charge Total" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CHG_FOREIGN_COLLECT_CHG_TOTAL</Element>
+        <Element DATATYPE="3" Desc="Foreign Collect VAT Total" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CHG_FOREIGN_COLLECT_VAT_TOTAL</Element>
+        <Element DATATYPE="1" Desc="Collect CCY" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">CHG_COLLECT_CCY</Element>
+        <Element DATATYPE="3" Desc="Local Pay Charge Total" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CHG_LOCAL_PAY_CHG_TOTAL</Element>
+        <Element DATATYPE="3" Desc="Local Pay VAT Total" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">CHG_LOCAL_PAY_VAT_TOTAL</Element>
+        <Element DATATYPE="3" Desc="Foreign Pay Charge Total Amount"
+            DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">CHG_FOREIGN_PAY_CHG_TOTAL</Element>
+        <Element DATATYPE="3" Desc="Foreign Pay Vat Total Amount" DispInGrid="N"
+            EDIT="N" EEType="AMT" FldType="" Value="">CHG_FOREIGN_PAY_VAT_TOTAL</Element>
+        <Element DATATYPE="12" Desc="Foreign Unpaid Flag" DispInGrid="N"
+            EDIT="N" EEType="FLAG" FldType="" Value="">CHG_FOREIGN_UNPAID_FLAG</Element>
+        <Element DATATYPE="12" Desc="Local Unpaid Flag" DispInGrid="N" EDIT="N"
+            EEType="FLAG" FldType="" Value="">CHG_LOCAL_UNPAID_FLAG</Element>
+    </Elements>
+    <DO DATATYPE="2005" Desc="TrxCharge" Field="TRXCHARGE" Max="n" Min="0"
+        Name="TrxCharge" PendingStore="N"
+        Screen="SCRN/Library/ChgVoucherDOMap.lbi" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Charges Unit Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_16" FldType="" Value="">CHG_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Charge Module" DispInGrid="N" EDIT="N"
+                EEType="Varchar_12" FldType="" Value="">CHG_MODULE</Element>
+            <Element DATATYPE="12" Desc="Charge Main Reference" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="Create Transaction Reference"
+                DispInGrid="N" EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_CREAT_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="Create Event Times" DispInGrid="N"
+                EDIT="N" EEType="Varchar_4" FldType="" Value="">CHG_CREAT_EVENT_TIMES</Element>
+            <Element DATATYPE="12" Desc="Create Function ID" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_CREAT_FUNCTION_ID</Element>
+            <Element DATATYPE="91" Desc="Create Date" DispInGrid="N" EDIT="N"
+                EEType="DATE" FldType="" Value="">CHG_CREAT_DATE</Element>
+            <Element DATATYPE="12" Desc="Create User ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_32" FldType="" Value="">CHG_CREAT_USER_ID</Element>
+            <Element DATATYPE="12" Desc="Charges Product Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PRODUCT_CODE</Element>
+            <Element DATATYPE="12" Desc="Charges Product Description"
+                DispInGrid="N" EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PRODUCT_DESC</Element>
+            <Element DATATYPE="12" Desc="Charges Product Name" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PRODUCT_NAME</Element>
+            <Element DATATYPE="12" Desc="Charges Product Short Name"
+                DispInGrid="N" EDIT="N" EEType="Varchar_12" FldType="" Value="">CHG_PRODUCT_SHORTNAME</Element>
+            <Element DATATYPE="12" Desc="Commission Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_COMMISSION_CODE</Element>
+            <Element DATATYPE="12" Desc="Commission Name" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_COMMISSION_NAME</Element>
+            <Element DATATYPE="12" Desc="Commission Descripition" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_COMMISSION_DESC</Element>
+            <Element DATATYPE="12" Desc="Charges At" DispInGrid="N" EDIT="N"
+                EEType="interpreter_32" FldType="" Value="">CHG_CHARGE_AT</Element>
+            <Element DATATYPE="12" Desc="Charges For" DispInGrid="N" EDIT="N"
+                EEType="interpreter_32" FldType="" Value="">CHG_CHARGE_FOR</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_32" FldType="" Value="">CHG_CUSTOMER_ID</Element>
+            <Element DATATYPE="12" Desc="Customer Name" DispInGrid="N" EDIT="N"
+                EEType="Varchar_32" FldType="" Value="">CHG_CUSTOMER_NAME</Element>
+            <Element DATATYPE="1" Desc="Active CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_ACTIVE_CCY</Element>
+            <Element DATATYPE="3" Desc="Charges Active Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_ACTIVE_AMT</Element>
+            <Element DATATYPE="1" Desc="Balance CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_BALANCE_CCY</Element>
+            <Element DATATYPE="3" Desc="Balance Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_BALANCE_AMT</Element>
+            <Element DATATYPE="1" Desc="Local CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_LOCAL_CCY</Element>
+            <Element DATATYPE="3" Desc="Local Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_LOCAL_AMT</Element>
+            <Element DATATYPE="3" Desc="Local Banlance" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_LOCAL_BAL_AMT</Element>
+            <Element DATATYPE="2" Desc="Discount Rate" DispInGrid="N" EDIT="N"
+                EEType="Numeric_6_2" FldType="" Value="">CHG_DISCOUNT_RATE</Element>
+            <Element DATATYPE="3" Desc="Discount Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_DISCOUNT_AMT</Element>
+            <Element DATATYPE="1" Desc="Base CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_BASE_CCY</Element>
+            <Element DATATYPE="3" Desc="Base Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_BASE_AMT</Element>
+            <Element DATATYPE="3" Desc="Lost Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_LOST_AMT</Element>
+            <Element DATATYPE="12" Desc="Lost Prop" DispInGrid="N" EDIT="N"
+                EEType="Varchar_32" FldType="" Value="">CHG_LOST_PROP</Element>
+            <Element DATATYPE="12" Desc="Charge Pay Entry ID" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PAY_ENTRY_ID</Element>
+            <Element DATATYPE="12" Desc="Charge Pay Account No" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PAY_AC_NUMBER</Element>
+            <Element DATATYPE="1" Desc="Charge Pay CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_PAY_CCY</Element>
+            <Element DATATYPE="3" Desc="Charge Pay Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_PAY_AMT</Element>
+            <Element DATATYPE="3" Desc="Charge Pay VAT Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_PAY_VAT_AMT</Element>
+            <Element DATATYPE="3" Desc="Charge Pay Local Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_PAY_LOCAL_AMT</Element>
+            <Element DATATYPE="12" Desc="GL Account Number" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_GL_AC_NUMBER</Element>
+            <Element DATATYPE="12" Desc="Charges Vat GL Account No"
+                DispInGrid="N" EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_VAT_GL_AC_NUMBER</Element>
+            <Element DATATYPE="91" Desc="Charge Pay Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">CHG_PAY_DATE</Element>
+            <Element DATATYPE="3" Desc="Charge Customer Pay VAT Amount"
+                DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">CHG_PAY_VAT_CUST_PAY_AMT</Element>
+            <Element DATATYPE="3" Desc="Local VAT Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_LOCAL_VAT_AMT</Element>
+            <Element DATATYPE="1" Desc="Customer Pay CCY" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">CHG_CUST_PAY_CCY</Element>
+            <Element DATATYPE="3" Desc="Customer Pay Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_CUST_PAY_AMT</Element>
+            <Element DATATYPE="1" Desc="Collect CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_COLLECT_CCY</Element>
+            <Element DATATYPE="3" Desc="Collect Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_COLLECT_AMT</Element>
+            <Element DATATYPE="3" Desc="Collect Vat Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_COLLECT_VAT_AMT</Element>
+            <Element DATATYPE="12" Desc="CHG_TEMP1" DispInGrid="N" EDIT="N"
+                EEType="" FldType="" Value="">CHG_TEMP1</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="DefCharge" Field="DEFCHARGE" Max="n" Min="0"
+        Name="DefCharge" PendingStore="N"
+        Screen="SCRN/Library/ChgVoucherDOMap.lbi" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Charges Unit Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_16" FldType="" Value="">CHG_UNIT_CODE</Element>
+            <Element DATATYPE="12" Desc="Charge Module" DispInGrid="N" EDIT="N"
+                EEType="Varchar_12" FldType="" Value="">CHG_MODULE</Element>
+            <Element DATATYPE="12" Desc="Charge Main Reference" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_MAIN_REF</Element>
+            <Element DATATYPE="12" Desc="Create Transaction Reference"
+                DispInGrid="N" EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_CREAT_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="Create Event Times" DispInGrid="N"
+                EDIT="N" EEType="Varchar_4" FldType="" Value="">CHG_CREAT_EVENT_TIMES</Element>
+            <Element DATATYPE="12" Desc="Create Function ID" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_CREAT_FUNCTION_ID</Element>
+            <Element DATATYPE="91" Desc="Create Date" DispInGrid="N" EDIT="N"
+                EEType="DATE" FldType="" Value="">CHG_CREAT_DATE</Element>
+            <Element DATATYPE="12" Desc="Create User ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_32" FldType="" Value="">CHG_CREAT_USER_ID</Element>
+            <Element DATATYPE="12" Desc="Charges Product Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PRODUCT_CODE</Element>
+            <Element DATATYPE="12" Desc="Charges Product Description"
+                DispInGrid="N" EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PRODUCT_DESC</Element>
+            <Element DATATYPE="12" Desc="Charges Product Name" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PRODUCT_NAME</Element>
+            <Element DATATYPE="12" Desc="Charges Product Short Name"
+                DispInGrid="N" EDIT="N" EEType="Varchar_12" FldType="" Value="">CHG_PRODUCT_SHORTNAME</Element>
+            <Element DATATYPE="12" Desc="Commission Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_COMMISSION_CODE</Element>
+            <Element DATATYPE="12" Desc="Commission Descripition" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_COMMISSION_DESC</Element>
+            <Element DATATYPE="12" Desc="Commission Name" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_COMMISSION_NAME</Element>
+            <Element DATATYPE="12" Desc="Charges At" DispInGrid="N" EDIT="N"
+                EEType="interpreter_32" FldType="" Value="">CHG_CHARGE_AT</Element>
+            <Element DATATYPE="12" Desc="Charges For" DispInGrid="N" EDIT="N"
+                EEType="interpreter_32" FldType="" Value="">CHG_CHARGE_FOR</Element>
+            <Element DATATYPE="12" Desc="Customer ID" DispInGrid="N" EDIT="N"
+                EEType="Varchar_32" FldType="" Value="">CHG_CUSTOMER_ID</Element>
+            <Element DATATYPE="12" Desc="Customer Name" DispInGrid="N" EDIT="N"
+                EEType="Varchar_32" FldType="" Value="">CHG_CUSTOMER_NAME</Element>
+            <Element DATATYPE="1" Desc="Active CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_ACTIVE_CCY</Element>
+            <Element DATATYPE="3" Desc="Charges Active Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_ACTIVE_AMT</Element>
+            <Element DATATYPE="1" Desc="Balance CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_BALANCE_CCY</Element>
+            <Element DATATYPE="3" Desc="Balance Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_BALANCE_AMT</Element>
+            <Element DATATYPE="1" Desc="Local CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_LOCAL_CCY</Element>
+            <Element DATATYPE="3" Desc="Local Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_LOCAL_AMT</Element>
+            <Element DATATYPE="3" Desc="Local Banlance" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_LOCAL_BAL_AMT</Element>
+            <Element DATATYPE="2" Desc="Discount Rate" DispInGrid="N" EDIT="N"
+                EEType="Numeric_6_2" FldType="" Value="">CHG_DISCOUNT_RATE</Element>
+            <Element DATATYPE="3" Desc="Discount Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_DISCOUNT_AMT</Element>
+            <Element DATATYPE="1" Desc="Base CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_BASE_CCY</Element>
+            <Element DATATYPE="3" Desc="Base Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_BASE_AMT</Element>
+            <Element DATATYPE="3" Desc="Lost Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_LOST_AMT</Element>
+            <Element DATATYPE="12" Desc="Lost Prop" DispInGrid="N" EDIT="N"
+                EEType="Varchar_32" FldType="" Value="">CHG_LOST_PROP</Element>
+            <Element DATATYPE="12" Desc="Charge Pay Entry ID" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PAY_ENTRY_ID</Element>
+            <Element DATATYPE="12" Desc="Charge Pay Account No" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_PAY_AC_NUMBER</Element>
+            <Element DATATYPE="1" Desc="Charge Pay CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_PAY_CCY</Element>
+            <Element DATATYPE="3" Desc="Charge Pay Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_PAY_AMT</Element>
+            <Element DATATYPE="3" Desc="Charge Pay VAT Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_PAY_VAT_AMT</Element>
+            <Element DATATYPE="3" Desc="Charge Pay Local Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_PAY_LOCAL_AMT</Element>
+            <Element DATATYPE="12" Desc="GL Account Number" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_GL_AC_NUMBER</Element>
+            <Element DATATYPE="12" Desc="Charges Vat GL Account No"
+                DispInGrid="N" EDIT="N" EEType="Varchar_32" FldType="" Value="">CHG_VAT_GL_AC_NUMBER</Element>
+            <Element DATATYPE="91" Desc="Charge Pay Date" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">CHG_PAY_DATE</Element>
+            <Element DATATYPE="3" Desc="Charge Customer Pay VAT Amount"
+                DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">CHG_PAY_VAT_CUST_PAY_AMT</Element>
+            <Element DATATYPE="3" Desc="Local VAT Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_LOCAL_VAT_AMT</Element>
+            <Element DATATYPE="3" Desc="Customer Pay Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_CUST_PAY_AMT</Element>
+            <Element DATATYPE="1" Desc="Customer Pay CCY" DispInGrid="N"
+                EDIT="N" EEType="CCY" FldType="" Value="">CHG_CUST_PAY_CCY</Element>
+            <Element DATATYPE="3" Desc="Collect Amount" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">CHG_COLLECT_AMT</Element>
+            <Element DATATYPE="1" Desc="Collect CCY" DispInGrid="N" EDIT="N"
+                EEType="CCY" FldType="" Value="">CHG_COLLECT_CCY</Element>
+            <Element DATATYPE="3" Desc="Collect Vat Amount" DispInGrid="N"
+                EDIT="N" EEType="AMT" FldType="" Value="">CHG_COLLECT_VAT_AMT</Element>
+        </Elements>
+    </DO>
+</DO>

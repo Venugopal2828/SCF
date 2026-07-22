@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <id>SCFCalculator</id>
+    <name>SCFCalculator</name>
+    <desc>SCFCalculator</desc>
+    <init-state>START</init-state>
+    <inbound>
+        <ref>InqCatalogData</ref>
+        <msg-interval>10</msg-interval>
+        <receive-thread>1</receive-thread>
+        <process-thread-pool>
+            <minPoolSize>0</minPoolSize>
+            <maxPoolSize>2</maxPoolSize>
+        </process-thread-pool>
+        <reconnect-tactics>
+            <quick-reconnect-times>5</quick-reconnect-times>
+            <quick-reconnect-time>2000</quick-reconnect-time>
+            <long-reconnect-times>5</long-reconnect-times>
+            <long-reconnect-time>2000</long-reconnect-time>
+            <emailRef/>
+        </reconnect-tactics>
+        <decoder>
+            <class/>
+        </decoder>
+        <transformer>
+            <class/>
+            <parameters/>
+        </transformer>
+    </inbound>
+    <process>
+        <service>
+            <id>SCFCalculator</id>
+        </service>
+    </process>
+    <error>
+        <class>com.cs.soa.errhandling.SystemErrorHandler</class>
+        <sender>InqCatalogData_S</sender>
+        <parameters/>
+    </error>
+    <logType>
+        <db>N</db>
+    </logType>
+</root>

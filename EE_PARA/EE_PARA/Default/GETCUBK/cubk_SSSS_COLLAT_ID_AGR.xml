@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">ABLF_COLL_SCOPE</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="U">CMDT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>COLLAT_ID_AGR</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <COLLAT_ID ALIAS="T0" DESC="Collateral ID" DT="12" TYPE="J">T1.GOODS_ID</COLLAT_ID>
+            <COLLAT_ID ALIAS="T0" DESC="Collateral ID" DT="12" TYPE="F">COLLAT_ID</COLLAT_ID>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">C_MAIN_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T1" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">COLLAT_ID</C_MAIN_REF>
+        <GOODS_NM ALIAS="T1" DBFUNC="" DESC="GOODS_NM" DT="12" HIDDEN="F" TYPE="F">COLLAT_NM</GOODS_NM>
+        <GOODS_CATE ALIAS="T1" DBFUNC="" DESC="Goods Category ID" DT="1" HIDDEN="F" TYPE="F">COLLAT_TP</GOODS_CATE>
+        <UNIT ALIAS="T1" DBFUNC="" DESC="Price Units" DT="12" HIDDEN="F" TYPE="F">COLLAT_UNIT</UNIT>
+        <UNIT_PRICE ALIAS="T1" DBFUNC="" DESC="UNIT_PRICE" DT="3" HIDDEN="F" TYPE="F">COLLAT_PRICE</UNIT_PRICE>
+        <GOODS_4TH_ID ALIAS="T1" DBFUNC="" DESC="Reference Specification" DT="12" HIDDEN="F" TYPE="F">COLLAT_SPEC</GOODS_4TH_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="CHAR_30" TYPE="TBL_FLD">T0.COLLAT_ID</SQL>
+            <SQL TYPE="SQL"> in (select COLLAT_ID from EXIMTRX.ABLF_COLL_SCOPE where </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">= '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">') </SQL>
+        </condition>
+        <condition seq="2">
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="1" EEType="CCY" TYPE="TBL_FLD">T1.CCY</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">COLLAT_CCY</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="CHAR_30" TYPE="TBL_FLD">T0.COLLAT_ID</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">COLLAT_ID</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Varchar_30" TYPE="TBL_FLD">T1.GOODS_ID</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="CHAR_30" TYPE="TBL_FLD">T0.COLLAT_ID</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk DESC="BANK:CONF" type="normal" jspFilePath_0="" jspFilePath_1="">
+    <CRTJSP POS="C">CUBKCriteria_Bank.jsp</CRTJSP>
+    <key-mapping>
+        <module-name>IMLC</module-name>
+        <cubk-mapping-name>BANK_CONF</cubk-mapping-name>
+        <table-name dsType="TD">CETRX.STD_BANK</table-name>
+        <table-desc>STD_BANK</table-desc>
+        <table-type>U</table-type>
+        <select-type>A</select-type>
+        <fire-event>F</fire-event>
+        <key-fields>
+            <BK_ID DESC="Bank ID" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CONF_BK_ID</BK_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <BK_ID DESC="Bank ID" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CONF_BK_ID</BK_ID>
+        <BK_NM DESC="Bank Name" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CONF_BK_NM</BK_NM>
+        <BK_ADD1 DESC="Bank Address1" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CONF_BK_ADD1</BK_ADD1>
+        <BK_ADD2 DESC="Bank Address2" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CONF_BK_ADD2</BK_ADD2>
+        <BK_ADD3 DESC="Bank Address3" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CONF_BK_ADD3</BK_ADD3>
+        <BK_SW_ADD DESC="Bank SWIFT Address" DT="1" HIDDEN="" TYPE="F" WTYPE="CASE">CONF_BK_SW_ADD</BK_SW_ADD>
+    </field-mapping>
+    <CLAUSE>
+        <SQL TYPE="SQL">(</SQL>
+        <SQL DESC="Bank ID" DT="1" TYPE="FLD" WTYPE="NOCASE">BK_ID</SQL>
+        <SQL TYPE="SQL"> </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="Bank Name" DT="1" TYPE="FLD" WTYPE="NOCASE">BK_NM</SQL>
+        <SQL TYPE="SQL"> </SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">OP2</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL ALIAS="" DT="val" TYPE="OP">VALUE3</SQL>
+        <SQL TYPE="SQL">')</SQL>
+    </CLAUSE>
+    <relation-function>
+        <ID/>
+        <init-mapping/>
+    </relation-function>
+</cubk>

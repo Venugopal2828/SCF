@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">DATA_GOODS_CATE</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>DATA</module-name>
+        <cubk-mapping-name>Get_GOODS_CATE</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <GOODS_CATE ALIAS="T0" DBFUNC="" DESC="Goods Category ID" DT="1" HIDDEN="F" TYPE="F">TEMP_CHAR1</GOODS_CATE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="1" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.GOODS_CATE</SQL>
+            <SQL TYPE="SQL"> in (select max(GOODS_CATE) from eximtrx.data_goods_cate where GOODS_CATE_LEVEL = 'goodscate')</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

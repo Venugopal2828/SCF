@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">LMTS_CSFL</table-name>
+        <table-name ALIAS="T1" SCHEMA="%EXIMSYS%" TYPE="C">LMTS_CSL</table-name>
+        <table-name ALIAS="T2" SCHEMA="%EXIMSYS%" TYPE="U">LMTS_FACI</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>RPFM</module-name>
+        <cubk-mapping-name>GRANTOR_LIMIT</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <LM_CSL_DESC ALIAS="T1" DBFUNC="" DESC="SubLimit Name" DT="12" HIDDEN="F" TYPE="F">SUB_LMT_ID</LM_CSL_DESC>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T1.LM_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">GRANTOR_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T1.LM_CSL_ID</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.LM_CSL_ID</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.LM_FACI_ID</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T2.LM_FACI_ID</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T2.LM_FACI_TP</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">RPFM_FACI_TP</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

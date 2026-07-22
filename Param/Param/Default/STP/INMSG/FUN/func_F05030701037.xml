@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Time Out Notification");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+sRptId = stp.getXslMsgTagVal("message/Document/TmOutNtfctn/NtfctnId","Id");
+sTxId = stp.getXslMsgTagVal("message/Document/TmOutNtfctn/TxId","Id");
+stp.writeLog("sRptId=========="+sRptId);
+stp.writeLog("sTxId=========="+sTxId);
+var arrKeys = [["TSU_TID",sTxId]];
+var arrGetDataResult = stp.SYS_getCUBKVal("GetBksInforByTxIdforTmOut",arrKeys);
+var sIndex = sRptId.indexOf("-");
+var sBIC = sRptId.substr(0,sIndex);
+stp.writeLog("sBIC=========="+sBIC);
+var sBuyrBkBIC = arrGetDataResult[0];
+var sSellrBkBIC = arrGetDataResult[1];
+var sBuyrNm = arrGetDataResult[2];
+var sSellrNm = arrGetDataResult[3];
+var sUnitNm = "";
+if (sBIC == sBuyrBkBIC){
+sUnitNm = sBuyrNm;
+} else{
+sUnitNm = sSellrNm;
+}
+var arrKeys1 = [["C_UNIT_NAME",sUnitNm]];
+var arrGetDataResult1 = stp.SYS_getCUBKVal("GetUnitCodeByNm",arrKeys1);
+var sUnitCode = arrGetDataResult1[0];
+stp.writeLog("sUnitCode=========="+sUnitCode);
+stp.setCmpId(sUnitCode);
+
+var arrGetDataResult2 = stp.SYS_getCUBKVal("GetMainRefByTxId",arrKeys);
+var sMainRef = arrGetDataResult2[0];
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sTxId);
+stp.updateFieldValue("CURRNT_STATUS","Time Out Notification");
+stp.writeLog("End: Time Out Notification");]]></js-content>
+</root>

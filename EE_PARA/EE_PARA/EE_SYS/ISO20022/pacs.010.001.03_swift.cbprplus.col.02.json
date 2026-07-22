@@ -1,0 +1,1620 @@
+{
+  "code":"Document",
+  "uri":"urn:iso:std:iso:20022:tech:xsd:pacs.010.001.03",
+  "children":[{
+    "code":"FIDrctDbt",
+    "children":[
+
+      {
+        "code":"GrpHdr",
+        "children":[
+
+          {"code":"MsgId"},
+          {
+            "code":"CreDtTm",
+            "val":"ISODateTime"
+          },
+          {
+            "code":"NbOfTxs",
+            "val":"1|"
+          }
+        ]
+      },
+      {
+        "code":"CdtInstr",
+        "children":[
+
+          {"code":"CdtId"},
+          {
+            "code":"PmtTpInf",
+            "min":0,
+            "children":[
+
+              {
+                "code":"InstrPrty",
+                "min":0,
+                "val":"HIGH|NORM|"
+              },
+              {
+                "code":"CtgyPurp",
+                "min":0,
+                "choice":" Cd Prtry",
+                "children":[
+
+                  {
+                    "code":"Cd",
+                    "val":"ExternalCategoryPurpose1Code"
+                  },
+                  {"code":"Prtry"}
+                ]
+              }
+            ]
+          },
+          {
+            "code":"InstgAgt",
+            "children":[{
+              "code":"FinInstnId",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {"code":"MmbId"}
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "min":0
+                }
+              ]
+            }]
+          }
+,
+          {
+            "code":"InstdAgt",
+            "children":[{
+              "code":"FinInstnId",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {"code":"MmbId"}
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "min":0
+                }
+              ]
+            }]
+          }
+,
+          {
+            "code":"IntrmyAgt1",
+            "min":0,
+            "children":[{
+              "code":"FinInstnId",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "min":0,
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {"code":"MmbId"}
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "min":0
+                },
+                {
+                  "code":"Nm",
+                  "min":0
+                },
+                {
+                  "code":"PstlAdr",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"Dept",
+                      "min":0
+                    },
+                    {
+                      "code":"SubDept",
+                      "min":0
+                    },
+                    {
+                      "code":"StrtNm",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNb",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNm",
+                      "min":0
+                    },
+                    {
+                      "code":"Flr",
+                      "min":0
+                    },
+                    {
+                      "code":"PstBx",
+                      "min":0
+                    },
+                    {
+                      "code":"Room",
+                      "min":0
+                    },
+                    {
+                      "code":"PstCd",
+                      "min":0
+                    }
+,
+                    {
+                      "code":"TwnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"TwnLctnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"DstrctNm",
+                      "min":0
+                    },
+                    {
+                      "code":"CtrySubDvsn",
+                      "min":0
+                    },
+                    {
+                      "code":"Ctry",
+                      "min":0
+                    },
+                    {
+                      "code":"AdrLine",
+                      "min":0,
+                      "max":3
+                    }
+                  ]
+                }
+
+              ]
+            }]
+          }
+,
+          {
+            "code":"IntrmyAgt1Acct",
+            "min":0,
+            "children":[
+
+              {
+                "code":"Id",
+                "choice":" IBAN Othr",
+                "children":[
+
+                  {"code":"IBAN"},
+                  {
+                    "code":"Othr",
+                    "children":[
+
+                      {"code":"Id"},
+                      {
+                        "code":"SchmeNm",
+                        "min":0,
+                        "choice":" Cd Prtry",
+                        "children":[
+
+                          {
+                            "code":"Cd",
+                            "val":"ExternalAccountIdentification1Code"
+                          },
+                          {"code":"Prtry"}
+                        ]
+                      },
+                      {
+                        "code":"Issr",
+                        "min":0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code":"Tp",
+                "min":0,
+                "choice":" Cd Prtry",
+                "children":[
+
+                  {
+                    "code":"Cd",
+                    "val":"ExternalCashAccountType1Code"
+                  },
+                  {"code":"Prtry"}
+                ]
+              }
+,
+              {
+                "code":"Ccy",
+                "min":0
+              },
+              {
+                "code":"Nm",
+                "min":0
+              },
+              {
+                "code":"Prxy",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Tp",
+                    "min":0,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalProxyAccountType1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {"code":"Id"}
+                ]
+              }
+            ]
+          }
+,
+          {
+            "code":"IntrmyAgt2",
+            "min":0,
+            "children":[{
+              "code":"FinInstnId",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "min":0,
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {"code":"MmbId"}
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "min":0
+                },
+                {
+                  "code":"Nm",
+                  "min":0
+                },
+                {
+                  "code":"PstlAdr",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"Dept",
+                      "min":0
+                    },
+                    {
+                      "code":"SubDept",
+                      "min":0
+                    },
+                    {
+                      "code":"StrtNm",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNb",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNm",
+                      "min":0
+                    },
+                    {
+                      "code":"Flr",
+                      "min":0
+                    },
+                    {
+                      "code":"PstBx",
+                      "min":0
+                    },
+                    {
+                      "code":"Room",
+                      "min":0
+                    },
+                    {
+                      "code":"PstCd",
+                      "min":0
+                    }
+,
+                    {
+                      "code":"TwnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"TwnLctnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"DstrctNm",
+                      "min":0
+                    },
+                    {
+                      "code":"CtrySubDvsn",
+                      "min":0
+                    },
+                    {
+                      "code":"Ctry",
+                      "min":0
+                    },
+                    {
+                      "code":"AdrLine",
+                      "min":0,
+                      "max":3
+                    }
+                  ]
+                }
+
+              ]
+            }]
+          }
+,
+          {
+            "code":"IntrmyAgt2Acct",
+            "min":0,
+            "children":[
+
+              {
+                "code":"Id",
+                "choice":" IBAN Othr",
+                "children":[
+
+                  {"code":"IBAN"},
+                  {
+                    "code":"Othr",
+                    "children":[
+
+                      {"code":"Id"},
+                      {
+                        "code":"SchmeNm",
+                        "min":0,
+                        "choice":" Cd Prtry",
+                        "children":[
+
+                          {
+                            "code":"Cd",
+                            "val":"ExternalAccountIdentification1Code"
+                          },
+                          {"code":"Prtry"}
+                        ]
+                      },
+                      {
+                        "code":"Issr",
+                        "min":0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code":"Tp",
+                "min":0,
+                "choice":" Cd Prtry",
+                "children":[
+
+                  {
+                    "code":"Cd",
+                    "val":"ExternalCashAccountType1Code"
+                  },
+                  {"code":"Prtry"}
+                ]
+              }
+,
+              {
+                "code":"Ccy",
+                "min":0
+              },
+              {
+                "code":"Nm",
+                "min":0
+              },
+              {
+                "code":"Prxy",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Tp",
+                    "min":0,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalProxyAccountType1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {"code":"Id"}
+                ]
+              }
+            ]
+          }
+,
+          {
+            "code":"IntrmyAgt3",
+            "min":0,
+            "children":[{
+              "code":"FinInstnId",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "min":0,
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {"code":"MmbId"}
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "min":0
+                },
+                {
+                  "code":"Nm",
+                  "min":0
+                },
+                {
+                  "code":"PstlAdr",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"Dept",
+                      "min":0
+                    },
+                    {
+                      "code":"SubDept",
+                      "min":0
+                    },
+                    {
+                      "code":"StrtNm",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNb",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNm",
+                      "min":0
+                    },
+                    {
+                      "code":"Flr",
+                      "min":0
+                    },
+                    {
+                      "code":"PstBx",
+                      "min":0
+                    },
+                    {
+                      "code":"Room",
+                      "min":0
+                    },
+                    {
+                      "code":"PstCd",
+                      "min":0
+                    }
+,
+                    {
+                      "code":"TwnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"TwnLctnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"DstrctNm",
+                      "min":0
+                    },
+                    {
+                      "code":"CtrySubDvsn",
+                      "min":0
+                    },
+                    {
+                      "code":"Ctry",
+                      "min":0
+                    },
+                    {
+                      "code":"AdrLine",
+                      "min":0,
+                      "max":3
+                    }
+                  ]
+                }
+
+              ]
+            }]
+          }
+,
+          {
+            "code":"IntrmyAgt3Acct",
+            "min":0,
+            "children":[
+
+              {
+                "code":"Id",
+                "choice":" IBAN Othr",
+                "children":[
+
+                  {"code":"IBAN"},
+                  {
+                    "code":"Othr",
+                    "children":[
+
+                      {"code":"Id"},
+                      {
+                        "code":"SchmeNm",
+                        "min":0,
+                        "choice":" Cd Prtry",
+                        "children":[
+
+                          {
+                            "code":"Cd",
+                            "val":"ExternalAccountIdentification1Code"
+                          },
+                          {"code":"Prtry"}
+                        ]
+                      },
+                      {
+                        "code":"Issr",
+                        "min":0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code":"Tp",
+                "min":0,
+                "choice":" Cd Prtry",
+                "children":[
+
+                  {
+                    "code":"Cd",
+                    "val":"ExternalCashAccountType1Code"
+                  },
+                  {"code":"Prtry"}
+                ]
+              }
+,
+              {
+                "code":"Ccy",
+                "min":0
+              },
+              {
+                "code":"Nm",
+                "min":0
+              },
+              {
+                "code":"Prxy",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Tp",
+                    "min":0,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalProxyAccountType1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {"code":"Id"}
+                ]
+              }
+            ]
+          }
+,
+          {
+            "code":"CdtrAgt",
+            "min":0,
+            "children":[{
+              "code":"FinInstnId",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "min":0,
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {"code":"MmbId"}
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "min":0
+                },
+                {
+                  "code":"Nm",
+                  "min":0
+                },
+                {
+                  "code":"PstlAdr",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"Dept",
+                      "min":0
+                    },
+                    {
+                      "code":"SubDept",
+                      "min":0
+                    },
+                    {
+                      "code":"StrtNm",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNb",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNm",
+                      "min":0
+                    },
+                    {
+                      "code":"Flr",
+                      "min":0
+                    },
+                    {
+                      "code":"PstBx",
+                      "min":0
+                    },
+                    {
+                      "code":"Room",
+                      "min":0
+                    },
+                    {
+                      "code":"PstCd",
+                      "min":0
+                    }
+,
+                    {
+                      "code":"TwnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"TwnLctnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"DstrctNm",
+                      "min":0
+                    },
+                    {
+                      "code":"CtrySubDvsn",
+                      "min":0
+                    },
+                    {
+                      "code":"Ctry",
+                      "min":0
+                    },
+                    {
+                      "code":"AdrLine",
+                      "min":0,
+                      "max":3
+                    }
+                  ]
+                }
+
+              ]
+            }]
+          }
+,
+          {
+            "code":"CdtrAgtAcct",
+            "min":0,
+            "children":[
+
+              {
+                "code":"Id",
+                "choice":" IBAN Othr",
+                "children":[
+
+                  {"code":"IBAN"},
+                  {
+                    "code":"Othr",
+                    "children":[
+
+                      {"code":"Id"},
+                      {
+                        "code":"SchmeNm",
+                        "min":0,
+                        "choice":" Cd Prtry",
+                        "children":[
+
+                          {
+                            "code":"Cd",
+                            "val":"ExternalAccountIdentification1Code"
+                          },
+                          {"code":"Prtry"}
+                        ]
+                      },
+                      {
+                        "code":"Issr",
+                        "min":0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code":"Tp",
+                "min":0,
+                "choice":" Cd Prtry",
+                "children":[
+
+                  {
+                    "code":"Cd",
+                    "val":"ExternalCashAccountType1Code"
+                  },
+                  {"code":"Prtry"}
+                ]
+              }
+,
+              {
+                "code":"Ccy",
+                "min":0
+              },
+              {
+                "code":"Nm",
+                "min":0
+              },
+              {
+                "code":"Prxy",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Tp",
+                    "min":0,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalProxyAccountType1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {"code":"Id"}
+                ]
+              }
+            ]
+          }
+,
+          {
+            "code":"Cdtr",
+            "children":[{
+              "code":"FinInstnId",
+              "children":[
+
+                {
+                  "code":"BICFI",
+                  "min":0,
+                  "val":"BICFIDec2014Identifier"
+                },
+                {
+                  "code":"ClrSysMmbId",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"ClrSysId",
+                      "choice":" Cd",
+                      "children":[{
+                        "code":"Cd",
+                        "val":"ExternalClearingSystemIdentification1Code"
+                      }]
+                    },
+                    {"code":"MmbId"}
+                  ]
+                },
+                {
+                  "code":"LEI",
+                  "min":0
+                },
+                {
+                  "code":"Nm",
+                  "min":0
+                },
+                {
+                  "code":"PstlAdr",
+                  "min":0,
+                  "children":[
+
+                    {
+                      "code":"Dept",
+                      "min":0
+                    },
+                    {
+                      "code":"SubDept",
+                      "min":0
+                    },
+                    {
+                      "code":"StrtNm",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNb",
+                      "min":0
+                    },
+                    {
+                      "code":"BldgNm",
+                      "min":0
+                    },
+                    {
+                      "code":"Flr",
+                      "min":0
+                    },
+                    {
+                      "code":"PstBx",
+                      "min":0
+                    },
+                    {
+                      "code":"Room",
+                      "min":0
+                    },
+                    {
+                      "code":"PstCd",
+                      "min":0
+                    }
+,
+                    {
+                      "code":"TwnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"TwnLctnNm",
+                      "min":0
+                    },
+                    {
+                      "code":"DstrctNm",
+                      "min":0
+                    },
+                    {
+                      "code":"CtrySubDvsn",
+                      "min":0
+                    },
+                    {
+                      "code":"Ctry",
+                      "min":0
+                    },
+                    {
+                      "code":"AdrLine",
+                      "min":0,
+                      "max":3
+                    }
+                  ]
+                }
+
+              ]
+            }]
+          }
+,
+          {
+            "code":"CdtrAcct",
+            "min":0,
+            "children":[
+
+              {
+                "code":"Id",
+                "choice":" IBAN Othr",
+                "children":[
+
+                  {"code":"IBAN"},
+                  {
+                    "code":"Othr",
+                    "children":[
+
+                      {"code":"Id"},
+                      {
+                        "code":"SchmeNm",
+                        "min":0,
+                        "choice":" Cd Prtry",
+                        "children":[
+
+                          {
+                            "code":"Cd",
+                            "val":"ExternalAccountIdentification1Code"
+                          },
+                          {"code":"Prtry"}
+                        ]
+                      },
+                      {
+                        "code":"Issr",
+                        "min":0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code":"Tp",
+                "min":0,
+                "choice":" Cd Prtry",
+                "children":[
+
+                  {
+                    "code":"Cd",
+                    "val":"ExternalCashAccountType1Code"
+                  },
+                  {"code":"Prtry"}
+                ]
+              }
+,
+              {
+                "code":"Ccy",
+                "min":0
+              },
+              {
+                "code":"Nm",
+                "min":0
+              },
+              {
+                "code":"Prxy",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Tp",
+                    "min":0,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalProxyAccountType1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {"code":"Id"}
+                ]
+              }
+            ]
+          }
+,
+          {
+            "code":"DrctDbtTxInf",
+            "children":[
+
+              {
+                "code":"PmtId",
+                "children":[
+
+                  {"code":"InstrId"},
+                  {"code":"EndToEndId"},
+                  {
+                    "code":"TxId",
+                    "min":0
+                  },
+                  {"code":"UETR"},
+                  {
+                    "code":"ClrSysRef",
+                    "min":0
+                  }
+                ]
+              },
+              {
+                "code":"PmtTpInf",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"InstrPrty",
+                    "min":0,
+                    "val":"HIGH|NORM|"
+                  },
+                  {
+                    "code":"SvcLvl",
+                    "min":0,
+                    "max":3,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalServiceLevel1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {
+                    "code":"LclInstrm",
+                    "min":0,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalLocalInstrument1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {
+                    "code":"CtgyPurp",
+                    "min":0,
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalCategoryPurpose1Code"
+                      },
+                      {"code":"Prtry"}
+                    ],
+                    "choice":" Cd Prtry"
+                  }
+
+                ]
+              }
+,
+              {
+                "code":"IntrBkSttlmAmt",
+                "children":[{
+                  "code":"Ccy",
+                  "type":"attr"
+                }],
+                "val":"ActiveCurrencyAndAmount_SimpleType"
+              }
+,
+              {
+                "code":"IntrBkSttlmDt",
+                "val":"ISODate"
+              },
+              {
+                "code":"SttlmTmReq",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"CLSTm",
+                    "min":0,
+                    "val":"ISOTime"
+                  },
+                  {
+                    "code":"TillTm",
+                    "min":0,
+                    "val":"ISOTime"
+                  },
+                  {
+                    "code":"FrTm",
+                    "min":0,
+                    "val":"ISOTime"
+                  },
+                  {
+                    "code":"RjctTm",
+                    "min":0,
+                    "val":"ISOTime"
+                  }
+                ]
+              },
+              {
+                "code":"Dbtr",
+                "children":[{
+                  "code":"FinInstnId",
+                  "children":[
+
+                    {
+                      "code":"BICFI",
+                      "min":0,
+                      "val":"BICFIDec2014Identifier"
+                    },
+                    {
+                      "code":"ClrSysMmbId",
+                      "min":0,
+                      "children":[
+
+                        {
+                          "code":"ClrSysId",
+                          "choice":" Cd",
+                          "children":[{
+                            "code":"Cd",
+                            "val":"ExternalClearingSystemIdentification1Code"
+                          }]
+                        },
+                        {"code":"MmbId"}
+                      ]
+                    },
+                    {
+                      "code":"LEI",
+                      "min":0
+                    },
+                    {
+                      "code":"Nm",
+                      "min":0
+                    },
+                    {
+                      "code":"PstlAdr",
+                      "min":0,
+                      "children":[
+
+                        {
+                          "code":"Dept",
+                          "min":0
+                        },
+                        {
+                          "code":"SubDept",
+                          "min":0
+                        },
+                        {
+                          "code":"StrtNm",
+                          "min":0
+                        },
+                        {
+                          "code":"BldgNb",
+                          "min":0
+                        },
+                        {
+                          "code":"BldgNm",
+                          "min":0
+                        },
+                        {
+                          "code":"Flr",
+                          "min":0
+                        },
+                        {
+                          "code":"PstBx",
+                          "min":0
+                        },
+                        {
+                          "code":"Room",
+                          "min":0
+                        }
+,
+                        {
+                          "code":"PstCd",
+                          "min":0
+                        },
+                        {
+                          "code":"TwnNm",
+                          "min":0
+                        },
+                        {
+                          "code":"TwnLctnNm",
+                          "min":0
+                        },
+                        {
+                          "code":"DstrctNm",
+                          "min":0
+                        },
+                        {
+                          "code":"CtrySubDvsn",
+                          "min":0
+                        },
+                        {
+                          "code":"Ctry",
+                          "min":0
+                        },
+                        {
+                          "code":"AdrLine",
+                          "min":0,
+                          "max":3
+                        }
+                      ]
+                    }
+
+                  ]
+                }]
+              }
+,
+              {
+                "code":"DbtrAcct",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Id",
+                    "choice":" IBAN Othr",
+                    "children":[
+
+                      {"code":"IBAN"},
+                      {
+                        "code":"Othr",
+                        "children":[
+
+                          {"code":"Id"},
+                          {
+                            "code":"SchmeNm",
+                            "min":0,
+                            "choice":" Cd Prtry",
+                            "children":[
+
+                              {
+                                "code":"Cd",
+                                "val":"ExternalAccountIdentification1Code"
+                              },
+                              {"code":"Prtry"}
+                            ]
+                          },
+                          {
+                            "code":"Issr",
+                            "min":0
+                          }
+                        ]
+                      }
+                    ]
+                  }
+,
+                  {
+                    "code":"Tp",
+                    "min":0,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalCashAccountType1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {
+                    "code":"Ccy",
+                    "min":0
+                  },
+                  {
+                    "code":"Nm",
+                    "min":0
+                  },
+                  {
+                    "code":"Prxy",
+                    "min":0,
+                    "children":[
+
+                      {
+                        "code":"Tp",
+                        "min":0,
+                        "choice":" Cd Prtry",
+                        "children":[
+
+                          {
+                            "code":"Cd",
+                            "val":"ExternalProxyAccountType1Code"
+                          },
+                          {"code":"Prtry"}
+                        ]
+                      },
+                      {"code":"Id"}
+                    ]
+                  }
+
+                ]
+              }
+,
+              {
+                "code":"DbtrAgt",
+                "min":0,
+                "children":[{
+                  "code":"FinInstnId",
+                  "children":[
+
+                    {
+                      "code":"BICFI",
+                      "min":0,
+                      "val":"BICFIDec2014Identifier"
+                    },
+                    {
+                      "code":"ClrSysMmbId",
+                      "min":0,
+                      "children":[
+
+                        {
+                          "code":"ClrSysId",
+                          "choice":" Cd",
+                          "children":[{
+                            "code":"Cd",
+                            "val":"ExternalClearingSystemIdentification1Code"
+                          }]
+                        },
+                        {"code":"MmbId"}
+                      ]
+                    },
+                    {
+                      "code":"LEI",
+                      "min":0
+                    },
+                    {
+                      "code":"Nm",
+                      "min":0
+                    },
+                    {
+                      "code":"PstlAdr",
+                      "min":0,
+                      "children":[
+
+                        {
+                          "code":"Dept",
+                          "min":0
+                        },
+                        {
+                          "code":"SubDept",
+                          "min":0
+                        },
+                        {
+                          "code":"StrtNm",
+                          "min":0
+                        },
+                        {
+                          "code":"BldgNb",
+                          "min":0
+                        },
+                        {
+                          "code":"BldgNm",
+                          "min":0
+                        },
+                        {
+                          "code":"Flr",
+                          "min":0
+                        },
+                        {
+                          "code":"PstBx",
+                          "min":0
+                        },
+                        {
+                          "code":"Room",
+                          "min":0
+                        }
+,
+                        {
+                          "code":"PstCd",
+                          "min":0
+                        },
+                        {
+                          "code":"TwnNm",
+                          "min":0
+                        },
+                        {
+                          "code":"TwnLctnNm",
+                          "min":0
+                        },
+                        {
+                          "code":"DstrctNm",
+                          "min":0
+                        },
+                        {
+                          "code":"CtrySubDvsn",
+                          "min":0
+                        },
+                        {
+                          "code":"Ctry",
+                          "min":0
+                        },
+                        {
+                          "code":"AdrLine",
+                          "min":0,
+                          "max":3
+                        }
+                      ]
+                    }
+
+                  ]
+                }]
+              }
+,
+              {
+                "code":"DbtrAgtAcct",
+                "min":0,
+                "children":[
+
+                  {
+                    "code":"Id",
+                    "choice":" IBAN Othr",
+                    "children":[
+
+                      {"code":"IBAN"},
+                      {
+                        "code":"Othr",
+                        "children":[
+
+                          {"code":"Id"},
+                          {
+                            "code":"SchmeNm",
+                            "min":0,
+                            "choice":" Cd Prtry",
+                            "children":[
+
+                              {
+                                "code":"Cd",
+                                "val":"ExternalAccountIdentification1Code"
+                              },
+                              {"code":"Prtry"}
+                            ]
+                          },
+                          {
+                            "code":"Issr",
+                            "min":0
+                          }
+                        ]
+                      }
+                    ]
+                  }
+,
+                  {
+                    "code":"Tp",
+                    "min":0,
+                    "choice":" Cd Prtry",
+                    "children":[
+
+                      {
+                        "code":"Cd",
+                        "val":"ExternalCashAccountType1Code"
+                      },
+                      {"code":"Prtry"}
+                    ]
+                  },
+                  {
+                    "code":"Ccy",
+                    "min":0
+                  },
+                  {
+                    "code":"Nm",
+                    "min":0
+                  },
+                  {
+                    "code":"Prxy",
+                    "min":0,
+                    "children":[
+
+                      {
+                        "code":"Tp",
+                        "min":0,
+                        "choice":" Cd Prtry",
+                        "children":[
+
+                          {
+                            "code":"Cd",
+                            "val":"ExternalProxyAccountType1Code"
+                          },
+                          {"code":"Prtry"}
+                        ]
+                      },
+                      {"code":"Id"}
+                    ]
+                  }
+
+                ]
+              }
+,
+              {
+                "code":"InstrForDbtrAgt",
+                "min":0
+              }
+,
+              {
+                "code":"Purp",
+                "min":0,
+                "choice":" Cd Prtry",
+                "children":[
+
+                  {
+                    "code":"Cd",
+                    "val":"ExternalPurpose1Code"
+                  },
+                  {"code":"Prtry"}
+                ]
+              }
+,
+              {
+                "code":"RmtInf",
+                "min":0,
+                "children":[{"code":"Ustrd"}]
+              }
+
+            ]
+          }
+
+        ]
+      }
+
+    ]
+  }]
+}

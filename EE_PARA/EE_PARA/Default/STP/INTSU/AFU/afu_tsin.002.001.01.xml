@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <js-content><![CDATA[stp.writeLog("====tsin.002.001.01 assign function begin====");
+ //var OurBIC=stp.getTSUBIC();
+ //stp.writeLog("getTSUBIC="+OurBIC);
+
+    var GrpId = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts","Id");
+    stp.writeLog("GrpId="+GrpId[0]);
+    var bu = stp.getBusiUnit();
+    var fld_list  = stp.addFieldList(null,"C_MAIN_REF");
+    var sql_condition = stp.addSQLCondition(null,"FIN_GRP_ID",GrpId[0]);
+    sql_condition = stp.addSQLCondition(sql_condition,"C_UNIT_CODE",bu);
+    var result   = stp.executeQuery("FINC_MASTER",fld_list,sql_condition);
+    var mainRef= stp.getDBFieldValue(result,"C_MAIN_REF"); 
+    stp.updateFieldValue("","C_MAIN_REF",mainRef);
+    stp.updateFieldValue("","C_TRX_REF",mainRef);
+
+ var IntrmyAgtUSCHU = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","USCHU");
+ var IntrmyAgtNZNCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","NZNCC");
+ var IntrmyAgtIENSC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","IENSC");
+ var IntrmyAgtGBSC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","GBSC");
+ var IntrmyAgtUSCH = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","USCH");
+ var IntrmyAgtCHBC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","CHBC");
+ var IntrmyAgtUSFW = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","USFW");
+ var IntrmyAgtPTNCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","PTNCC");
+ var IntrmyAgtRUCB = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","RUCB");
+ var IntrmyAgtATBLZ = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","ATBLZ");
+ var IntrmyAgtCACPA = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","CACPA");
+ var IntrmyAgtCHSIC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","CHSIC");
+ var IntrmyAgtDEBLZ = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","DEBLZ");
+ var IntrmyAgtESNCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","ESNCC");
+ var IntrmyAgtZANCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","ZANCC");
+ var IntrmyAgtHKNCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","HKNCC");
+ var IntrmyAgtAUBSBx = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","AUBSBx");
+ var IntrmyAgtAUBSBs = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","AUBSBs");
+ var IntrmyAgtINIFSC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","INIFSC");
+ var IntrmyAgtGRHEBIC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","GRHEBIC");
+ var IntrmyAgtPLKNR = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","PLKNR");
+ var IntrmyAgtOthrClrCdId = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/IntrmyAgt/ClrSysMmbId","OthrClrCdId");
+        
+ if(IntrmyAgtUSCHU[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtUSCHU[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","USCHU");
+ }
+  if(IntrmyAgtNZNCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtNZNCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","NZNCC");
+ }
+  if(IntrmyAgtIENSC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtIENSC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","IENSC");
+ }
+  if(IntrmyAgtGBSC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtGBSC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","GBSC");
+ }
+  if(IntrmyAgtUSCH[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtUSCH[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","USCH");
+ }
+  if(IntrmyAgtCHBC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtCHBC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","CHBC");
+ }
+  if(IntrmyAgtUSFW[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtUSFW[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","USFW");
+ }
+  if(IntrmyAgtPTNCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtPTNCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","PTNCC");
+ }
+  if(IntrmyAgtRUCB[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtRUCB[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","RUCB");
+ }
+  if(IntrmyAgtATBLZ[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtATBLZ[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","ATBLZ");
+ }
+  if(IntrmyAgtCACPA[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtCACPA[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","CACPA");
+ }
+  if(IntrmyAgtCHSIC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtCHSIC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","CHSIC");
+ }
+  if(IntrmyAgtDEBLZ[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtDEBLZ[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","DEBLZ");
+ }
+  if(IntrmyAgtESNCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtESNCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","ESNCC");
+ }
+  if(IntrmyAgtZANCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtZANCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","ZANCC");
+ }
+  if(IntrmyAgtHKNCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtHKNCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","HKNCC");
+ }
+  if(IntrmyAgtAUBSBx[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtAUBSBx[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","AUBSBx");
+ }
+  if(IntrmyAgtAUBSBs[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtAUBSBs[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","AUBSBs");
+ }
+  if(IntrmyAgtINIFSC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtINIFSC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","INIFSC");
+ }
+  if(IntrmyAgtGRHEBIC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtGRHEBIC[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","GRHEBIC");
+ }
+  if(IntrmyAgtPLKNR[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtPLKNR[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","PLKNR");
+ }
+  if(IntrmyAgtOthrClrCdId[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_VAL",IntrmyAgtOthrClrCdId[0]);
+ stp.updateFieldValue("/root/domData","FIN_INTRMY_CSM_ID","OthrClrCdId");
+ }
+  
+ var FrstAgtUSCHU = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","USCHU");
+ var FrstAgtNZNCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","NZNCC");
+ var FrstAgtIENSC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","IENSC");
+ var FrstAgtGBSC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","GBSC");
+ var FrstAgtUSCH = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","USCH");
+ var FrstAgtCHBC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","CHBC");
+ var FrstAgtUSFW = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","USFW");
+ var FrstAgtPTNCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","PTNCC");
+ var FrstAgtRUCB = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","RUCB");
+ var FrstAgtATBLZ = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","ATBLZ");
+ var FrstAgtCACPA = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","CACPA");
+ var FrstAgtCHSIC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","CHSIC");
+ var FrstAgtDEBLZ = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","DEBLZ");
+ var FrstAgtESNCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","ESNCC");
+ var FrstAgtZANCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","ZANCC");
+ var FrstAgtHKNCC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","HKNCC");
+ var FrstAgtAUBSBx = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","AUBSBx");
+ var FrstAgtAUBSBs = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","AUBSBs");
+ var FrstAgtINIFSC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","INIFSC");
+ var FrstAgtGRHEBIC = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","GRHEBIC");
+ var FrstAgtPLKNR = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","PLKNR");
+ var FrstAgtOthrClrCdId = stp.getValue("/Document/InvcFincgReqSts/OrgnlReqInfAndSts/FrstAgt/ClrSysMmbId","OthrClrCdId");
+        
+ if(FrstAgtUSCHU[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtUSCHU[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","USCHU");
+ }
+  if(FrstAgtNZNCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtNZNCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","NZNCC");
+ }
+  if(FrstAgtIENSC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtIENSC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","IENSC");
+ }
+  if(FrstAgtGBSC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtGBSC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","GBSC");
+ }
+  if(FrstAgtUSCH[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtUSCH[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","USCH");
+ }
+  if(FrstAgtCHBC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtCHBC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","CHBC");
+ }
+  if(FrstAgtUSFW[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtUSFW[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","USFW");
+ }
+   if(FrstAgtPTNCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtPTNCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","PTNCC");
+ }
+   if(FrstAgtRUCB[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtRUCB[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","RUCB");
+ }
+   if(FrstAgtATBLZ[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtATBLZ[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","ATBLZ");
+ }
+  if(FrstAgtCACPA[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtCACPA[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","CACPA");
+ }
+  if(FrstAgtCHSIC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtCHSIC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","CHSIC");
+ }
+  if(FrstAgtDEBLZ[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtDEBLZ[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","DEBLZ");
+ }
+  if(FrstAgtESNCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtESNCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","ESNCC");
+ }
+  if(FrstAgtZANCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtZANCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","ZANCC");
+ }
+  if(FrstAgtHKNCC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtHKNCC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","HKNCC");
+ }
+  if(FrstAgtAUBSBx[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtAUBSBx[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","AUBSBx");
+ }
+  if(FrstAgtAUBSBs[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtAUBSBs[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","AUBSBs");
+ }
+  if(FrstAgtINIFSC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtINIFSC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","INIFSC");
+ }
+  if(FrstAgtGRHEBIC[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtGRHEBIC[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","GRHEBIC");
+ }
+  if(FrstAgtPLKNR[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtPLKNR[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","PLKNR");
+ }
+  if(FrstAgtOthrClrCdId[0] != undefined)
+ {
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_VAL",FrstAgtOthrClrCdId[0]);
+ stp.updateFieldValue("/root/domData","FIN_FSTAGT_CSM_ID","OthrClrCdId");
+ }
+ 
+ var SellerAdrLine = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/PstlAdr","AdrLine");
+ if(SellerAdrLine [0] != undefined)
+ {
+       stp.updateFieldValue("/root/domData/FinancingInformationAndStatus/InvoiceFinancingDetails/Supplier/PartyIdentification8","FIN_ADR_LINE1",SellerAdrLine [0]);
+ }
+ if(SellerAdrLine [1] != undefined)
+ {
+       stp.updateFieldValue("/root/domData/FinancingInformationAndStatus/InvoiceFinancingDetails/Supplier/PartyIdentification8","FIN_ADR_LINE2",SellerAdrLine [1]);
+ }
+ if(SellerAdrLine [2] != undefined)
+ {
+       stp.updateFieldValue("/root/domData/FinancingInformationAndStatus/InvoiceFinancingDetails/Supplier/PartyIdentification8","FIN_ADR_LINE3",SellerAdrLine [2]);
+ }
+ if(SellerAdrLine [3] != undefined)
+ {
+       stp.updateFieldValue("/root/domData/FinancingInformationAndStatus/InvoiceFinancingDetails/Supplier/PartyIdentification8","FIN_ADR_LINE4",SellerAdrLine [3]);
+ }
+ if(SellerAdrLine [4] != undefined)
+ {
+       stp.updateFieldValue("/root/domData/FinancingInformationAndStatus/InvoiceFinancingDetails/Supplier/PartyIdentification8","FIN_ADR_LINE5",SellerAdrLine [4]);
+ }
+ 
+ var SellerNm = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr","Nm");
+ var SellerCtry = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/PstlAdr","Ctry");
+ var SellerBIC = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId","BIC");
+ var SellerIBEI = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId","IBEI");
+ var SellerBEI = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId","BEI");
+ var SellerEANGLN = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId","EANGLN");
+ var SellerUSCHU = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId","USCHU");
+ var SellerDUNS = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId","DUNS");
+ var SellerBkPtyId = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId","BkPtyId");
+ var SellerTaxIdNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId","TaxIdNb");
+ var SellerId = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/OrgId/PrtryId","Id");
+ var DrvrsLicNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId","DrvrsLicNb");
+ var CstmrNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId","CstmrNb");
+ var SclSctyNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId","SclSctyNb");
+ var AlnRegnNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId","AlnRegnNb");
+ var PsptNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId","PsptNb");
+ var TaxIdNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId","TaxIdNb");
+ var IdntyCardNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId","IdntyCardNb");
+ var MplyrIdNb = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId","MplyrIdNb");
+ var BirthDt = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId/DtAndPlcOfBirth","BirthDt");
+ var Id = stp.getValue("/Document/InvcFincgReqSts/FincgInfAndSts/InvcFincgDtls/Spplr/Id/PrvtId/OthrId","Id");
+if(DrvrsLicNb[0]==undefined && CstmrNb[0]==undefined && SclSctyNb[0]==undefined && AlnRegnNb[0]==undefined && PsptNb[0]==undefined && TaxIdNb[0]==undefined && IdntyCardNb[0]==undefined && MplyrIdNb[0]==undefined && BirthDt[0]==undefined && Id[0]==undefined)
+{
+	stp.deleNode("/root/domData/FinancingInformationAndStatus/InvoiceFinancingDetails/Supplier/PartyIdentification8","PrivateIdentification");
+	if(SellerNm[0]==undefined && SellerCtry[0]==undefined && SellerBIC[0]==undefined && SellerIBEI[0]==undefined && SellerBEI[0]==undefined && SellerEANGLN[0]==undefined && SellerUSCHU[0]==undefined && SellerDUNS[0]==undefined && SellerBkPtyId[0]==undefined && SellerTaxIdNb[0]==undefined && SellerId[0]==undefined)
+   {
+    stp.deleNode("/root/domData/FinancingInformationAndStatus/InvoiceFinancingDetails","Supplier");
+   }
+}
+/*if(SellerNm[0]!=undefined || SellerCtry[0]!=undefined || SellerBIC[0]!=undefined || SellerIBEI[0]!=undefined || SellerBEI[0]!=undefined || SellerEANGLN[0]!=undefined || SellerUSCHU[0]!=undefined || SellerDUNS[0]!=undefined || SellerBkPtyId[0]!=undefined || SellerTaxIdNb[0]!=undefined || SellerId[0]!=undefined || DrvrsLicNb[0]!=undefined || CstmrNb[0]!=undefined || SclSctyNb[0]!=undefined || AlnRegnNb[0]!=undefined || PsptNb[0]!=undefined || TaxIdNb[0]!=undefined || IdntyCardNb[0]!=undefined || MplyrIdNb[0]!=undefined || BirthDt[0]!=undefined || Id[0]!=undefined)
+{
+	stp.updateFieldValue("/root/domData","DOM_FROM_STP_TSU","Y");    
+}*/
+    //stp.updateFieldValue("/root/domData","DOM_FROM_STP_TSU","Y");  
+    stp.updateFieldValue("/root/domData","DELETE_ALL_DATA","Y");
+    stp.setAutoProcess(true);
+    stp.setFunc("ReceiveInvoiceFinancingReqSts");
+    stp.writeLog("End: ReceiveInvoiceFinancingRequestStatus");
+
+    
+  stp.writeLog("====tsin.002.001.01 assign function end====");]]></js-content>
+</root>

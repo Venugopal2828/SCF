@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="PaymentTermsHeaderTest" Max="1" Min="1" Name="PaymentTermsHeaderTest" PendingStore="N" Screen="SCRN/DO/PaymentTermsHeader.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>PaymentTerms</Component>
+    <PK>
+        <PKNAME>CPYT_C_REF</PKNAME>
+    </PK>
+    <FKS></FKS>
+    <Elements>
+        <Element DATATYPE="1" Desc="Local Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">CPYT_C_LOCAL_CCY</Element>
+        <Element DATATYPE="12" Desc="Payment Reference" DispInGrid="Y" EDIT="N" EEType="Varchar_40" FldType="" Value="">CPYT_C_REF</Element>
+        <Element DATATYPE="-1" Desc="Payment Reason" DispInGrid="Y" EDIT="N" EEType="Long Varchar" FldType="" Value="">CPYT_C_PAY_FOR</Element>
+        <Element DATATYPE="12" Desc="Mix Payment Detail Information" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_420" FldType="" Value="">CPYT_C_MIX_PAY_DETAIL</Element>
+        <Element DATATYPE="3" Desc="Total Pay Out Amount in Local CCY" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">CPYT_N_PAY_TTL_AMT_LCY</Element>
+        <Element DATATYPE="3" Desc="Total Pay Out Amount in Transaction CCY" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">CPYT_N_PAY_TTL_AMT_TXCCY</Element>
+        <Element DATATYPE="12" Desc="Individual Drawing" DispInGrid="N" EDIT="N" EEType="Varchar_5" FldType="" Value="">CPYT_INDIVID_DRAW_FLG</Element>
+        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">CPYT_C_TRX_CCY</Element>
+    </Elements>
+    <DO Desc="PaymentTerms" Max="n" Min="1" Name="PaymentTerms" PendingStore="N" Screen="" StoreInto="D" StoreType="X" isBigData="false" Field="PAYMENTTERMS" AutoGen-Parameter-Version="1.0">
+        <Elements>
+            <Element DATATYPE="12" Desc="Percentage" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">CPYT_C_PAY_PER</Element>
+            <Element DATATYPE="12" Desc="Sight/Def/Acc Flag" DispInGrid="Y" EDIT="N" EEType="Varchar_10" FldType="" Value="">CPYT_C_SDA_FLAG</Element>
+            <Element DATATYPE="12" Desc="Tenor Type" DispInGrid="Y" EDIT="N" EEType="Varchar_40" FldType="" Value="">CPYT_C_TENOR_TYPE</Element>
+            <Element DATATYPE="12" Desc="Tenor Description" DispInGrid="N" EDIT="N" EEType="Varchar_160" FldType="" Value="">CPYT_C_TENOR_DESC</Element>
+            <Element DATATYPE="2" Desc="Tenor Days" DispInGrid="Y" EDIT="N" EEType="Numeric_22" FldType="" Value="">CPYT_I_TENOR_DAYS</Element>
+            <Element DATATYPE="91" Desc="Payment Tenor Start Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">CPYT_D_TENOR_START_DATE</Element>
+            <Element DATATYPE="3" Desc="Pay Amount In Transaction Currency" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">CPYT_N_PAY_AMT</Element>
+            <Element DATATYPE="91" Desc="Debit Maturity Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">CPYT_D_MAT_DATE</Element>
+            <Element DATATYPE="1" Desc="Pay Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">CPYT_PAY_CCY</Element>
+        </Elements>
+    </DO>
+</DO>

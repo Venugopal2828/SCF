@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>STAT</module-name>
+        <cubk-mapping-name>FA_PARENT_COMP_NEW</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="Customer ID" DT="12" TYPE="F">FA_PARENT_COMP</C_MAIN_REF>
+            <C_TRX_STATUS ALIAS="T0" DESC="C_TRX_STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="Customer ID" DT="12" HIDDEN="F" TYPE="F">FA_PARENT_COMP</C_MAIN_REF>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Customer Name" DT="12" HIDDEN="F" TYPE="F">FA_PARENT_COMP_NM</PARTY_NM>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

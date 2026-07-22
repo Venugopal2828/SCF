@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>SCF_Counterparty</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+            <FA_CUST_REG_NO ALIAS="T0" DESC="Customer Register No." DT="12" TYPE="F">FA_COUNTER_REG_NO</FA_CUST_REG_NO>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">FA_COUNTER_ID</C_MAIN_REF>
+        <FA_CUST_REG_NO ALIAS="T0" DBFUNC="" DESC="Customer Register No." DT="12" HIDDEN="F" TYPE="F">FA_COUNTER_REG_NO</FA_CUST_REG_NO>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">FA_COUNTER_NM</PARTY_NM>
+        <FA_CUST_FLAG ALIAS="T0" DBFUNC="" DESC="FA_CUST_FLAG" DT="1" HIDDEN="T" TYPE="F">FA_CUST_FLAG</FA_CUST_FLAG>
+        <FA_CUST_PROV ALIAS="T0" DBFUNC="" DESC="FA_CUST_PROV" DT="12" HIDDEN="T" TYPE="F">FA_COUNTER_PROV</FA_CUST_PROV>
+        <CUST_STREET_NM ALIAS="T0" DBFUNC="" DESC="CUST_STREET_NM" DT="12" HIDDEN="T" TYPE="F">FA_COUNTER_STR</CUST_STREET_NM>
+        <CUST_CITY ALIAS="T0" DBFUNC="" DESC="Customer City" DT="12" HIDDEN="T" TYPE="F">FA_COUNTER_CT</CUST_CITY>
+        <CNTY_CODE ALIAS="T0" DBFUNC="" DESC="Country Code" DT="1" HIDDEN="F" TYPE="F">FA_COUNTER_CNTY</CNTY_CODE>
+        <FA_CUST_NM_ADD_ML ALIAS="T0" DBFUNC="" DESC="Customer Mailing Name Address" DT="12" HIDDEN="T" TYPE="F">FA_COUNTER_ADD_ML</FA_CUST_NM_ADD_ML>
+        <FST_CNTC_NM ALIAS="T0" DBFUNC="" DESC="First Contact Person Name" DT="12" HIDDEN="T" TYPE="F">FA_COUNTER_CONT_NM</FST_CNTC_NM>
+        <FST_CNTC_TEL_NO ALIAS="T0" DBFUNC="" DESC="First Contact Telephone No" DT="12" HIDDEN="F" TYPE="F">FA_COUNTER_CONT_TEL</FST_CNTC_TEL_NO>
+        <CE_CUSTOMER ALIAS="T0" DBFUNC="" DESC="Is CE Customer?" DT="1" HIDDEN="F" TYPE="F">FA_COUNTER_CE_FLG</CE_CUSTOMER>
+        <CUST_TYPE ALIAS="T0" DBFUNC="" DESC="Customer Type" DT="1" HIDDEN="F" TYPE="F">FA_COUNTER_TYPE</CUST_TYPE>
+        <EMAIL_ADD ALIAS="T0" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="F" TYPE="F">FA_COUNTER_CONT_EM</EMAIL_ADD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="SYS_VARCHAR_40" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">&lt;&gt; '</SQL>
+            <SQL TYPE="FLD">FA_ANCHOR_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

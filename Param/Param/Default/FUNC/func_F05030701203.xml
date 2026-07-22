@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID/>
+        <ID>F05030701203</ID>
+        <NAME>FAEF Upload Invoice ME</NAME>
+        <DESC>Upload Invoice</DESC>
+        <FUNSHORTNAME>UploadInvME</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_UploadInvME.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701211</ID>
+        <NAME>FAEF Upload Invoice ME_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701211</ID>
+        <NAME>FAEF Upload Invoice ME_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000501</ID>
+        <NAME>FAEF Upload Invoice ME_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

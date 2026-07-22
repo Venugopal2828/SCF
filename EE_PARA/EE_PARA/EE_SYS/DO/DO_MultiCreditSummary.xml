@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="MultiCreditSummary" Max="n" Min="0" Name="MultiCreditSummary" PendingStore="N" Screen="SCRN/DO/MultiCreditSummary.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="MLDC_CR_SUMMARY"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_TRX_REF</PKNAME>
+        <PKNAME>I_MLDC_SEQ</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+        <Element DATATYPE="1" Desc="C_TRX_CCY" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_3" FldType="" Value="">C_TRX_CCY</Element>
+        <Element DATATYPE="1" Desc="Multi Credit Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">C_MLDC_CCY</Element>
+        <Element DATATYPE="3" Desc="Multi Credit Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">N_MLDC_AMT</Element>
+        <Element DATATYPE="12" Desc="Multi Debit/Credit From" DispInGrid="N" EDIT="N" EEType="Varchar_30" FldType="" Value="">C_MLDC_FROM</Element>
+        <Element DATATYPE="12" Desc="Summary Reference Number" DispInGrid="N" EDIT="N" EEType="VARCHAR50" FldType="" Value="">I_MLDC_SEQ</Element>
+        <Element DATATYPE="12" Desc="Is Protected CCY" DispInGrid="N" EDIT="N" EEType="VARCHAR1" FldType="" Value="">C_PROTECT_FLAG</Element>
+        <Element DATATYPE="12" Desc="Merge Type" DispInGrid="N" EDIT="N" EEType="VARCHAR1" FldType="" Value="">I_MLDC_MERGE_TYPE</Element>
+        <Element DATATYPE="12" Desc="Description" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_210" FldType="" Value="">C_MLDC_DESC</Element>
+    </Elements>
+    <DO Desc="Multi Credit Info" Max="n" Min="0" Name="MultiCredit" PendingStore="N" Screen="SCRN/DO/MultiCredit.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <TABLE_NAME Name="MLDC_CREDIT"></TABLE_NAME>
+        <PK>
+            <PKNAME>C_MAIN_REF</PKNAME>
+            <PKNAME>C_TRX_REF</PKNAME>
+            <PKNAME>C_UNIT_CODE</PKNAME>
+            <PKNAME>I_MLDC_SEQ</PKNAME>
+        </PK>
+        <FKS>
+            <FK>
+                <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            </FK>
+            <FK>
+                <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+            </FK>
+            <FK>
+                <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            </FK>
+            <FK>
+                <FKNAME PARENT_COL="I_MLDC_IDX">I_MLDC_SEQ</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+            <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+            <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+            <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+            <Element DATATYPE="1" Desc="C_TRX_CCY" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_3" FldType="" Value="">C_TRX_CCY</Element>
+            <Element DATATYPE="12" Desc="FK of Parent multi summary DO" DispInGrid="N" EDIT="N" EEType="Varcha_50" FldType="" Value="">I_MLDC_IDX</Element>
+            <Element DATATYPE="12" Desc="Assignee Vat Number" DispInGrid="N" EDIT="N" EEType="VARCHAR10" FldType="" Value="">C_MLDC_ANNGN_VAT_NO</Element>
+            <Element DATATYPE="1" Desc="Assignee Account No" DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">C_MLDC_ASSGN_AC</Element>
+            <Element DATATYPE="12" Desc="Assignee Address1" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">C_MLDC_ASSGN_ADD1</Element>
+            <Element DATATYPE="12" Desc="Assignee Address2" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">C_MLDC_ASSGN_ADD2</Element>
+            <Element DATATYPE="12" Desc="Assignee Address3" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">C_MLDC_ASSGN_ADD3</Element>
+            <Element DATATYPE="12" Desc="Assignee Correspondent Medium" DispInGrid="N" EDIT="N" EEType="VARCHAR32" FldType="" Value="">C_MLDC_ASSGN_COR_MED</Element>
+            <Element DATATYPE="12" Desc="Assignee Email Address" DispInGrid="N" EDIT="N" EEType="VARCHAR32" FldType="" Value="">C_MLDC_ASSGN_EMAIL_ADD</Element>
+            <Element DATATYPE="12" Desc="Assignee Fax No" DispInGrid="N" EDIT="N" EEType="Varchar_30" FldType="" Value="">C_MLDC_ASSGN_FAX_NO</Element>
+            <Element DATATYPE="12" Desc="Assignee ID" DispInGrid="N" EDIT="N" EEType="BKID" FldType="" Value="">C_MLDC_ASSGN_ID</Element>
+            <Element DATATYPE="12" Desc="Assignee Name" DispInGrid="N" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">C_MLDC_ASSGN_NM</Element>
+            <Element DATATYPE="1" Desc="Credit Account No" DispInGrid="Y" EDIT="N" EEType="ACNO" FldType="" Value="">C_MLDC_CR_AC</Element>
+            <Element DATATYPE="12" Desc="Credit Account Type" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">C_MLDC_CR_AC_TYPE</Element>
+            <Element DATATYPE="1" Desc="Credit Bank Account No" DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">C_MLDC_CR_BK_AC</Element>
+            <Element DATATYPE="12" Desc="Credit Account Bank Address1" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">C_MLDC_CR_BK_ADD1</Element>
+            <Element DATATYPE="12" Desc="Credit Account Bank Address2" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">C_MLDC_CR_BK_ADD2</Element>
+            <Element DATATYPE="12" Desc="Credit Account Bank Address3" DispInGrid="N" EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">C_MLDC_CR_BK_ADD3</Element>
+            <Element DATATYPE="12" Desc="Credit Account Bank Correspondence Medium" DispInGrid="N" EDIT="N" EEType="Varchar_128" FldType="" Value="">C_MLDC_CR_BK_COR_MED</Element>
+            <Element DATATYPE="12" Desc="Credit Account Bank ID" DispInGrid="N" EDIT="N" EEType="BKID" FldType="" Value="">C_MLDC_CR_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Credit Account Bank Name" DispInGrid="N" EDIT="N" EEType="NM_CHAR35" FldType="" Value="">C_MLDC_CR_BK_NAME</Element>
+            <Element DATATYPE="12" Desc="Credit Account Bank SWIFT" DispInGrid="N" EDIT="N" EEType="Varchar_105" FldType="" Value="">C_MLDC_CR_BK_SW_ADD</Element>
+            <Element DATATYPE="12" Desc="Credit Account Bank SWIFT Tag" DispInGrid="N" EDIT="N" EEType="VARCHAR1" FldType="" Value="">C_MLDC_CR_BK_SW_TAG</Element>
+            <Element DATATYPE="12" Desc="Credit Bank Branch" DispInGrid="N" EDIT="N" EEType="VARCHAR6" FldType="" Value="">C_MLDC_CR_BRANCH</Element>
+            <Element DATATYPE="1" Desc="Credit Currency" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">C_MLDC_CR_CCY</Element>
+            <Element DATATYPE="12" Desc="Credit Deal Number" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">C_MLDC_CR_DEAL</Element>
+            <Element DATATYPE="6" Desc="Credit Deal Rate" DispInGrid="N" EDIT="N" EEType="FLOAT" FldType="" Value="">F_MLDC_CR_RATE</Element>
+            <Element DATATYPE="6" Desc="Debit Buy Rate" DispInGrid="N" EDIT="N" EEType="FLOAT" FldType="" Value="">F_MLDC_DR_BUY_RATE</Element>
+            <Element DATATYPE="91" Desc="Credit Value Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">D_MLDC_CR_VAL_DATE</Element>
+            <Element DATATYPE="3" Desc="Credit Amount in Credit Currency" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">N_MLDC_CR_AMT_CRCCY</Element>
+            <Element DATATYPE="3" Desc="Credit Amount in Transaction Currency" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">N_MLDC_CR_AMT_TXCCY</Element>
+            <Element DATATYPE="1" Desc="Nostro Account No" DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">C_MLDC_NOSTRO_AC</Element>
+            <Element DATATYPE="1" Desc="Currency of Nostro Account" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">C_MLDC_NOSTRO_AC_CCY</Element>
+            <Element DATATYPE="12" Desc="Pay Advise Message" DispInGrid="N" EDIT="N" EEType="VARCHAR10" FldType="" Value="">C_MLDC_PAY_ADV_MSG</Element>
+            <Element DATATYPE="12" Desc="Pay Cover Message" DispInGrid="N" EDIT="N" EEType="VARCHAR10" FldType="" Value="">C_MLDC_PAY_COV_MSG</Element>
+            <Element DATATYPE="12" Desc="Settlement Method" DispInGrid="N" EDIT="N" EEType="Varchar_40" FldType="" Value="">C_MLDC_SETTLE_METHOD</Element>
+            <Element DATATYPE="12" Desc="Unpaid Flag" DispInGrid="N" EDIT="N" EEType="VARCHAR1" FldType="" Value="">C_MLDC_UNPAID_FLAG</Element>
+            <Element DATATYPE="1" Desc="Vostro Account No" DispInGrid="N" EDIT="N" EEType="ACNO" FldType="" Value="">C_MLDC_VOSTRO_AC</Element>
+            <Element DATATYPE="1" Desc="Vostro Account CCY" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">C_MLDC_VOSTRO_AC_CCY</Element>
+            <Element DATATYPE="12" Desc="Summary Reference Number" DispInGrid="N" EDIT="N" EEType="VARCHAR50" FldType="" Value="">I_MLDC_SEQ</Element>
+            <Element DATATYPE="12" Desc="Percent of total credit amount" DispInGrid="Y" EDIT="N" EEType="VARCHAR10" FldType="" Value="">C_MLDC_CR_PER</Element>
+            <Element DATATYPE="12" Desc="Multi Debit/Credit From" DispInGrid="N" EDIT="N" EEType="Varchar_30" FldType="" Value="">C_MLDC_FROM</Element>
+            <Element DATATYPE="3" Desc="Credit Charge Amount in LC CCY" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">N_MLDC_CR_CHG_LCCCY</Element>
+            <Element DATATYPE="3" Desc="Exchange Favor Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">N_MLDC_EXCH_FAVAMT</Element>
+            <Element DATATYPE="1" Desc="Multi Debit/Credit Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">C_MLDC_CCY</Element>
+        </Elements>
+    </DO>
+</DO>

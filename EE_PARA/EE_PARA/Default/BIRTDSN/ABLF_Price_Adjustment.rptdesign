@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.2.r262_v20110209 Build &lt;2.6.2.v20110219-1842></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="Data Source" id="7">
+            <property name="FILELIST">O:\CSBANK\US\AP\FORM\ABLF_PriceAdjust.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set" id="8">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FA_CNTR_DOC_NO</property>
+                    <text-property name="heading">FA_CNTR_DOC_NO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REG_NO</property>
+                    <text-property name="heading">REG_NO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_CNTR_REF</property>
+                    <text-property name="heading">FA_CNTR_REF</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_CUST_ID</property>
+                    <text-property name="heading">FA_CUST_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FA_CUST_NM</property>
+                    <text-property name="heading">FA_CUST_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REG_INSPEC_NM</property>
+                    <text-property name="heading">REG_INSPEC_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REG_INSPEC_NO</property>
+                    <text-property name="heading">REG_INSPEC_NO</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FA_CNTR_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">REG_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FA_CNTR_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_CUST_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_CUST_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">REG_INSPEC_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">REG_INSPEC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <property name="nativeName">FA_CNTR_DOC_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">REG_NO</property>
+                    <property name="nativeName">REG_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FA_CNTR_REF</property>
+                    <property name="nativeName">FA_CNTR_REF</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_CUST_ID</property>
+                    <property name="nativeName">FA_CUST_ID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_CUST_NM</property>
+                    <property name="nativeName">FA_CUST_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">REG_INSPEC_NM</property>
+                    <property name="nativeName">REG_INSPEC_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">REG_INSPEC_NO</property>
+                    <property name="nativeName">REG_INSPEC_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData]#:#{FA_CNTR_DOC_NO;STRING;/FA_CNTR_DOC_NO},{REG_NO;STRING;/REG_NO},{FA_CNTR_REF;STRING;/FA_CNTR_REF},{FA_CUST_ID;STRING;/FA_CUST_ID},{FA_CUST_NM;STRING;/FA_CUST_NM},{REG_INSPEC_NM;STRING;/REG_INSPEC_NM},{REG_INSPEC_NO;STRING;/REG_INSPEC_NO}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_CNTR_DOC_NO</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_CNTR_DOC_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_CNTR_REF</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_CNTR_REF</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>REG_NO</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>REG_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FA_CUST_ID</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_CUST_ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Data Set1" id="460">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">COLLAT_NM</property>
+                    <text-property name="heading">COLLAT_NM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COMPMTRY_QTY</property>
+                    <text-property name="heading">COMPMTRY_QTY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COMPMT_QTY</property>
+                    <text-property name="heading">COMPMT_QTY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RELEBLE_QTY</property>
+                    <text-property name="heading">RELEBLE_QTY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RELE_QTY</property>
+                    <text-property name="heading">RELE_QTY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLLAT_PRICE</property>
+                    <text-property name="heading">COLLAT_PRICE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLLAT_SPEC</property>
+                    <text-property name="heading">COLLAT_SPEC</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">COLLAT_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">COMPMTRY_QTY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">COMPMT_QTY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">RELEBLE_QTY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">RELE_QTY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">COLLAT_PRICE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">COLLAT_SPEC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">COLLAT_NM</property>
+                    <property name="nativeName">COLLAT_NM</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">COMPMTRY_QTY</property>
+                    <property name="nativeName">COMPMTRY_QTY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">COMPMT_QTY</property>
+                    <property name="nativeName">COMPMT_QTY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">RELEBLE_QTY</property>
+                    <property name="nativeName">RELEBLE_QTY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">RELE_QTY</property>
+                    <property name="nativeName">RELE_QTY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">COLLAT_PRICE</property>
+                    <property name="nativeName">COLLAT_PRICE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">COLLAT_SPEC</property>
+                    <property name="nativeName">COLLAT_SPEC</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/domData/CollateralAdjustment]#:#{COLLAT_NM;STRING;/COLLAT_NM},{COMPMTRY_QTY;STRING;/COMPMTRY_QTY},{COMPMT_QTY;STRING;/COMPMT_QTY},{RELEBLE_QTY;STRING;/RELEBLE_QTY},{RELE_QTY;STRING;/RELE_QTY},{COLLAT_PRICE;STRING;/COLLAT_PRICE},{COLLAT_SPEC;STRING;/COLLAT_SPEC}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>COLLAT_NM</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>COLLAT_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>COMPMTRY_QTY</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>COMPMTRY_QTY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>COMPMT_QTY</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>COMPMT_QTY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RELEBLE_QTY</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RELEBLE_QTY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RELE_QTY</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RELE_QTY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="10">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <text-property name="displayName">FA_CNTR_DOC_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CNTR_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REG_NO</property>
+                    <text-property name="displayName">REG_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REG_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_CNTR_REF</property>
+                    <text-property name="displayName">FA_CNTR_REF</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CNTR_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_CUST_ID</property>
+                    <text-property name="displayName">FA_CUST_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CUST_ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_CUST_NM</property>
+                    <text-property name="displayName">FA_CUST_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FA_CUST_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REG_INSPEC_NM</property>
+                    <text-property name="displayName">REG_INSPEC_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REG_INSPEC_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REG_INSPEC_NO</property>
+                    <text-property name="displayName">REG_INSPEC_NO</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REG_INSPEC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="60">
+                <property name="width">0.3854166666666667in</property>
+            </column>
+            <column id="61">
+                <property name="width">2.2708333333333335in</property>
+            </column>
+            <column id="62">
+                <property name="width">1.625in</property>
+            </column>
+            <column id="63">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="64">
+                <property name="width">1.3229166666666667in</property>
+            </column>
+            <column id="65">
+                <property name="width">1.3229166666666667in</property>
+            </column>
+            <header>
+                <row id="11">
+                    <cell id="12"/>
+                    <cell id="13">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <label id="101">
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Price Adjust Advice</text-property>
+                        </label>
+                    </cell>
+                    <cell id="17"/>
+                </row>
+            </header>
+            <detail>
+                <row id="18">
+                    <cell id="19">
+                        <label id="241">
+                            <text-property name="text">To:</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <text id="462">
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<VALUE-OF>row["REG_INSPEC_NM"]</VALUE-OF>,<VALUE-OF>row["FA_CUST_NM"]</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="23"/>
+                    <cell id="24"/>
+                </row>
+                <row id="25">
+                    <cell id="26"/>
+                    <cell id="27">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <text id="239">
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[According to the Inspect Agreement No. :<VALUE-OF>row["REG_INSPEC_NO"]</VALUE-OF> ,we hereby inform you of the latest adjusted collateral Price: ]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="306">
+                    <cell id="307"/>
+                    <cell id="308">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+        <table id="422">
+            <property name="width">7.96875in</property>
+            <property name="dataSet">Data Set1</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">COLLAT_NM</property>
+                    <text-property name="displayName">COLLAT_NM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLLAT_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COMPMTRY_QTY</property>
+                    <text-property name="displayName">COMPMTRY_QTY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COMPMTRY_QTY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COMPMT_QTY</property>
+                    <text-property name="displayName">COMPMT_QTY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COMPMT_QTY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RELEBLE_QTY</property>
+                    <text-property name="displayName">RELEBLE_QTY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RELEBLE_QTY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RELE_QTY</property>
+                    <text-property name="displayName">RELE_QTY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RELE_QTY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLLAT_PRICE</property>
+                    <text-property name="displayName">COLLAT_PRICE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLLAT_PRICE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLLAT_SPEC</property>
+                    <text-property name="displayName">COLLAT_SPEC</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLLAT_SPEC"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="448">
+                <property name="width">0.9583333333333334in</property>
+            </column>
+            <column id="449">
+                <property name="width">1.5in</property>
+            </column>
+            <column id="450">
+                <property name="width">1.5in</property>
+            </column>
+            <column id="451">
+                <property name="width">1.5in</property>
+            </column>
+            <column id="470">
+                <property name="width">1.6979166666666667in</property>
+            </column>
+            <header>
+                <row id="423">
+                    <cell id="424"/>
+                    <cell id="425">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="453">
+                            <text-property name="text">Collateral Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="426">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="454">
+                            <text-property name="text"> Compensation Price</text-property>
+                        </label>
+                    </cell>
+                    <cell id="427">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <label id="463">
+                            <text-property name="text"> Compensation Spection</text-property>
+                        </label>
+                    </cell>
+                    <cell id="466"/>
+                </row>
+            </header>
+            <detail>
+                <row id="428">
+                    <cell id="429"/>
+                    <cell id="430">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="458">
+                            <property name="marginLeft">30pt</property>
+                            <property name="whiteSpace">nowrap</property>
+                            <structure name="toc"/>
+                            <property name="resultSetColumn">COLLAT_NM</property>
+                        </data>
+                    </cell>
+                    <cell id="431">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="464">
+                            <property name="marginLeft">30pt</property>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">COLLAT_PRICE</property>
+                        </data>
+                    </cell>
+                    <cell id="432">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <data id="465">
+                            <property name="marginLeft">20pt</property>
+                            <property name="whiteSpace">nowrap</property>
+                            <property name="resultSetColumn">COLLAT_SPEC</property>
+                        </data>
+                    </cell>
+                    <cell id="467"/>
+                </row>
+                <row id="438">
+                    <cell id="439"/>
+                    <cell id="440"/>
+                    <cell id="441"/>
+                    <cell id="442"/>
+                    <cell id="468"/>
+                </row>
+            </detail>
+            <footer>
+                <row id="443">
+                    <cell id="444"/>
+                    <cell id="445"/>
+                    <cell id="446"/>
+                    <cell id="447"/>
+                    <cell id="469"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

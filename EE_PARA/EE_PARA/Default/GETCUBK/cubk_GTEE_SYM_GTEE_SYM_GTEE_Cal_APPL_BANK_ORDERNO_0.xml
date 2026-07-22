@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>GTEE</module-name>
+        <cubk-mapping-name>SYM_GTEE_SYM_GTEE_Cal_APPL_BANK_ORDERNO_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T0" DBFUNC="" DESC="SWIFT Format Name" DT="12" HIDDEN="F" TYPE="F">APPL_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address1" DT="12" HIDDEN="F" TYPE="F">APPL_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address2" DT="12" HIDDEN="F" TYPE="F">APPL_ADD2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T0" DBFUNC="" DESC="Bank Contact SWIFT Format Address3" DT="12" HIDDEN="F" TYPE="F">APPL_ADD3</SWIFT_FMT_ADD3>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="4" EEType="INTEGER" TYPE="TBL_FLD">T0.ORDER_NO</SQL>
+            <SQL TYPE="SQL"> = </SQL>
+            <SQL TYPE="FLD">APPL_BANK_ADD_ORDERNO</SQL>
+            <SQL TYPE="SQL"> AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">APPL_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

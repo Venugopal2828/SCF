@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" DATATYPE="2005"
+    Desc="Transaction Report Request" Field="TSU_TRXRPT_REQ" Max="1" Min="0"
+    Name="TransactionReportRequest" PendingStore="Y" Screen="" StoreInto="D" StoreType="X">
+    <Elements/>
+    <DO DATATYPE="2005" Desc="Transaction ID" Field="TSU_TX_ID" Max="n" Min="0"
+        Name="TSU_TX_ID" PendingStore="N" Screen="SCRN/DO/TSU_TX_ID.jsp"
+        StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Transaction Ref." DispInGrid="Y"
+                EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_TRX_REF</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Submitter Transaction Reference"
+        Field="TSU_SUBMITR_TX_REF" Max="n" Min="0" Name="TSU_SUBMITR_TX_REF"
+        PendingStore="N" Screen="SCRN/DO/TSU_SUBMITR_TX_REF.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Submitter Transaction Ref."
+                DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_SUBMITR_TRX_REF</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="EntitiesTo Be Reported"
+        Field="TSU_NTTIES_TOBE_RPTD" Max="n" Min="0" Name="NttiesToBeRptd"
+        PendingStore="N" Screen="SCRN/DO/TSU_PAYRTY_BIC.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="1" Desc="Party BIC" DispInGrid="Y" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_PARTY_BIC</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Crspdt BIC" Field="TSU_CRSPDT_BIC" Max="n" Min="0"
+        Name="Crspdt" PendingStore="N" Screen="SCRN/DO/TSU_PAYRTY_BIC.jsp"
+        StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="1" Desc="Party BIC" DispInGrid="Y" EDIT="N"
+                EEType="BIC" FldType="" Value="">TSU_PARTY_BIC</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Buyer Country" Field="TSU_BUYER_CNTY" Max="n"
+        Min="0" Name="BuyerCountry" PendingStore="N"
+        Screen="SCRN/DO/TSU_PAYRTY_CNTY.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Seller Country" Field="TSU_SELLER_CNTY" Max="n"
+        Min="0" Name="SellerCountry" PendingStore="N"
+        Screen="SCRN/DO/TSU_PAYRTY_CNTY.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Crspdt Ctry" Field="TSU_CRSPDT_CNTY" Max="n"
+        Min="0" Name="CrspdtCtry" PendingStore="N"
+        Screen="SCRN/DO/TSU_PAYRTY_CNTY.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Party Country" DispInGrid="Y" EDIT="N"
+                EEType="CountryCode" FldType="" Value="">TSU_PARTY_CNTY</Element>
+        </Elements>
+    </DO>
+    <DO DATATYPE="2005" Desc="Pending Activity" Field="TSU_PDG_REQ" Max="n"
+        Min="0" Name="PendingActivity1" PendingStore="N"
+        Screen="SCRN/DO/TSU_PDG_REQ_FOR_ACT.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Pending Request For Action Type"
+                DispInGrid="Y" EDIT="N" EEType="Action1Code" FldType="" Value="">TSUR2_REQ_ACT_TP</Element>
+            <Element DATATYPE="12" Desc="Pending Request For Action Description"
+                DispInGrid="Y" EDIT="N" EEType="Max140Text" FldType="" Value="">TSUR2_REQ_ACT_DESC</Element>
+        </Elements>
+    </DO>
+</DO>

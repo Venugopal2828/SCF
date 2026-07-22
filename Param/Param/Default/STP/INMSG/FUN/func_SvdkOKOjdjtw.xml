@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Received Template");
+stp.setAutoProcess(true);
+
+stp.setCmpId("CSBANK");
+stp.setUserId("STPUser");
+var sMainRef = stp.getMsgTagVal("C_MAIN_REF");
+stp.setMainRef(sMainRef);
+
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+stp.setEventTimes(0);
+stp.writeLog("End: Received Template");]]></js-content>
+</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Receive Intent To Pay Report" Max="n" Min="0" Name="TDO_ITPRPT" PendingStore="N"
+    Screen="Default/SCRN/DO/ITPRPT.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="TSU_ITPRPT"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>TSU_TID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="MESG_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Main Ref." DispInGrid="N" EEType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Transaction TID" DispInGrid="Y" EEType="" Value="">TSU_TID</Element>
+        <Element DATATYPE="12" Desc="PO Number" DispInGrid="Y" EEType="" Value="">TSU_PO_ID</Element>
+        <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EEType="DATE" Value="">TSU_PO_DT</Element>
+        <Element DATATYPE="3" Desc="PO Total Net Amount" DispInGrid="Y" EEType="AMT" Value="">TSU_TTL_NET_AMT</Element>
+        <Element DATATYPE="3" Desc="Accumulated Net Amount" DispInGrid="Y" EEType="AMT" Value="">TSU_ACCUM_NET_AMT</Element>
+        <Element DATATYPE="12" Desc="Company Code" DispInGrid="N" EEType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Current Status" DispInGrid="N" EEType="NARR(1*35)" Value="">CURRNT_STATUS</Element>
+        <Element DATATYPE="12" Desc="Next Status" DispInGrid="N" EEType="NARR(1*35)" Value="">NXT_STATUS</Element>
+        <Element DATATYPE="1" Desc="Transaction Status" DispInGrid="Y" EEType="INTERPRETER" Value="">TSUR2_TRX_STATUS</Element>
+        <Element DATATYPE="12" Desc="Process Bank BIC" DispInGrid="N" EEType="" Value="">TSU_PCBK_BIC</Element>
+    </Elements>
+</DO>

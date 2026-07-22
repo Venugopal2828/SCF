@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>TrxSys_SYT_Chk_CHG_FLD_LOCAL_CUST_AC_NO_15</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_CUST_ID ALIAS="T0" DBFUNC="" DESC="CUSTOMER ID" DT="12" HIDDEN="F" TYPE="V">CHG_LOCAL_CUST_AC_NO_CHK</C_CUST_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_AC_NUMBER='</SQL>
+            <SQL TYPE="FLD">CHG_FLD_LOCAL_CUST_AC_NO</SQL>
+            <SQL TYPE="SQL">'AND C_CUST_ID='</SQL>
+            <SQL TYPE="FLD">LocalCustIdCUBK</SQL>
+            <SQL TYPE="SQL">)'AND (C_DBT_CRDT='C' or C_DBT_CRDT='B' or C_DBT_CRDT is null)AND C_CURRENCY='</SQL>
+            <SQL TYPE="FLD">CHG_FLD_LOCAL_CUST_CCY</SQL>
+            <SQL TYPE="SQL">'AND C_CNTY_CODE='</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+        <condition seq="2">
+            <SQL TYPE="SQL">C_AC_NUMBER='</SQL>
+            <SQL TYPE="FLD">CHG_FLD_LOCAL_CUST_AC_NO</SQL>
+            <SQL TYPE="SQL">'AND C_CUST_ID='</SQL>
+            <SQL TYPE="FLD">LocalCustIdCUBK</SQL>
+            <SQL TYPE="SQL">'AND (C_DBT_CRDT='D' or C_DBT_CRDT='B' or C_DBT_CRDT is null)AND C_CURRENCY='</SQL>
+            <SQL TYPE="FLD">CHG_FLD_LOCAL_CUST_CCY</SQL>
+            <SQL TYPE="SQL">'AND C_CNTY_CODE='</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

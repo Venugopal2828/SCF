@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>SBLC</module>
+    <name>SBLC_insertinto_MASTER</name>
+    <desc>SBLC_insertinto_MASTER</desc>
+    <head-info>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.SBLC_MASTER</table-name>
+        <table-desc>SBLC MASTER</table-desc>
+        <ledger-op/>
+        <op-type>U</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info/>
+        <imme-update>F</imme-update>
+        <ec-flag>F</ec-flag>
+        <condition BYUNITCODE="True">
+            <sql>C_MAIN_REF</sql>
+            <sql> ='</sql>
+            <field mf="F">C_MAIN_REF</field>
+            <sql>'</sql>
+        </condition>
+    </head-info>
+    <mapping>
+        <ADD_AMT_COVRD fv_type="F" mf="F" oper="=">TEMP_ADDIT_COV_AMT</ADD_AMT_COVRD>
+        <AMT_SPEC fv_type="F" mf="F" oper="=">TEMP_AMT_SPEC</AMT_SPEC>
+        <BASE_BAL fv_type="F" mf="F" oper="=">TEMP_BASE_BAL</BASE_BAL>
+        <BENE_ADD1 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD1</BENE_ADD1>
+        <BENE_ADD2 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD2</BENE_ADD2>
+        <BENE_ADD3 fv_type="F" mf="F" oper="=">TEMP_BENE_ADD3</BENE_ADD3>
+        <BENE_ID fv_type="F" mf="F" oper="=">TEMP_BENE_ID</BENE_ID>
+        <BENE_NM fv_type="F" mf="F" oper="=">TEMP_BENE_NM</BENE_NM>
+        <BENE_NOTES fv_type="F" mf="F" oper="=">TEMP_BENE_NOTES</BENE_NOTES>
+        <CHARGES fv_type="F" mf="F" oper="=">TEMP_CHARGES</CHARGES>
+        <DEST_PORT fv_type="F" mf="F" oper="=">TEMP_DEST_PLACE</DEST_PORT>
+        <EXPIRY_DT fv_type="F" mf="F" oper="=">TEMP_EXPIRY_DT</EXPIRY_DT>
+        <FINAL_EXPIRY_DT fv_type="F" mf="F" oper="=">TEMP_FINAL_EXPIRY_DT</FINAL_EXPIRY_DT>
+        <FREQUENCY fv_type="F" mf="F" oper="=">TEMP_FREQUENCY</FREQUENCY>
+        <LC_AMT fv_type="F" mf="F" oper="=">TEMP_LC_AMT</LC_AMT>
+        <LC_BAL fv_type="F" mf="F" oper="=">TEMP_LC_BAL</LC_BAL>
+        <LTST_SHIP_DT fv_type="F" mf="F" oper="=">TEMP_LTST_SHIP_DT</LTST_SHIP_DT>
+        <MT707_SEND_TO_RCV_INFO fv_type="F" mf="F" oper="="/>
+        <NEG_TOL fv_type="F" mf="F" oper="=">TEMP_NEG_TOL</NEG_TOL>
+        <NOTIFY_DATE fv_type="F" mf="F" oper="=">TEMP_NOTIFY_DATE</NOTIFY_DATE>
+        <NOTIFY_DAYS fv_type="F" mf="F" oper="=">TEMP_NOTIFY_DAYS</NOTIFY_DAYS>
+        <NRENEW_ADV_DATE fv_type="F" mf="F" oper="=">TEMP_NRENEW_ADV_DATE</NRENEW_ADV_DATE>
+        <NRENEW_ADV_PERIOD fv_type="F" mf="F" oper="=">TEMP_NRENEW_ADV_PERIOD</NRENEW_ADV_PERIOD>
+        <OLD_DEST_PORT fv_type="F" mf="F" oper="=">TEMP_DEST_PORT</OLD_DEST_PORT>
+        <OLD_LOAD_PORT fv_type="F" mf="F" oper="=">TEMP_LOAD_PORT</OLD_LOAD_PORT>
+        <ORIGIN fv_type="F" mf="F" oper="=">TEMP_LOAD_PLACE</ORIGIN>
+        <POS_TOL fv_type="F" mf="F" oper="=">TEMP_POS_TOL</POS_TOL>
+        <PRES_PRD_TXT fv_type="F" mf="F" oper="=">TEMP_PRES_PRD_TXT</PRES_PRD_TXT>
+        <RENEWAL_DAYS fv_type="F" mf="F" oper="=">TEMP_RENEWAL_DAYS</RENEWAL_DAYS>
+        <RENEWAL_STATUS fv_type="F" mf="F" oper="=">TEMP_RENEWAL_STATUS</RENEWAL_STATUS>
+        <SHIP_PRD fv_type="F" mf="F" oper="=">TEMP_SHIP_PRD</SHIP_PRD>
+    </mapping>
+</root>

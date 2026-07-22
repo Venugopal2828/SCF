@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EE-7692 add bill huang 2014-11-12 -->
+<definitions expressionLanguage="http://www.w3.org/1999/XPath"
+    targetNamespace="http://localhost/flow"
+    typeLanguage="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:funcflow="http://localhost/bpmn"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <process id="BG00000143_1_CSBANK" isExecutable="true" name="SLA_Demo">
+        <userTask funcflow:candidateGroups="1000000002" funcflow:priority="1"
+            id="id941cb91010364dbe8a9770ca4ce814e4" name="Supervisor_Release">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000143</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702041</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id2633a93062c8434c9dc72707b5d7fb99"
+            sourceRef="id941cb91010364dbe8a9770ca4ce814e4" targetRef="idc28765e971af42e9aade089f9ef8ee16">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id18cb64c42c9249ad80b13eccc51e3468"
+            sourceRef="id9bdc8cfb503a4cd2bcfd6678156e8ac8" targetRef="id2d2993e3d20d44d5923f400525816da5"/>
+        <sequenceFlow id="id098d3a0645604838a89de4ae32d6d50f"
+            sourceRef="iddd7230859dfd4cd2a0b0e134d195ee1c" targetRef="id39551d3c60be4b65b578ab3f5fc60112">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000002" funcflow:priority="1"
+            id="idc28765e971af42e9aade089f9ef8ee16" name="Issue_Letter_of_Credit">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Issue Letter of Credit</C_FUNC_DESC>
+                    <C_STEP_NAME>Issue LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300272</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000143</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702015</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <userTask funcflow:candidateGroups="1000000002" funcflow:priority="1"
+            id="id1bf69d363e2b49ab9bf75e8ed4c1b4a8" name="Fix_Pending">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Fix Pending</C_FUNC_DESC>
+                    <C_STEP_NAME>Issue LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000143</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702040</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="ida8633c6a651542a284ac6cb7430f8def"
+            sourceRef="id39551d3c60be4b65b578ab3f5fc60112" targetRef="idcd2f5be4a9f642efa4c934e9cb38872f"/>
+        <sequenceFlow id="id2ffb346e272c4c3b8346825282859c74"
+            sourceRef="id2341f55083164acbbaa9758534704e61" targetRef="id941cb91010364dbe8a9770ca4ce814e4">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000002" funcflow:priority="1"
+            id="id39551d3c60be4b65b578ab3f5fc60112" name="Supervisor_Release">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                    <C_STEP_NAME>Issue LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000143</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702041</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id7b4d13b36c5142288da76479b3f87ddb"
+            sourceRef="id2d2993e3d20d44d5923f400525816da5" targetRef="id2341f55083164acbbaa9758534704e61">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <endEvent id="idcd2f5be4a9f642efa4c934e9cb38872f" name="endEvent_SLA_Demo"/>
+        <sequenceFlow id="idbfeb8a52e8d84d49938a0109b537a621"
+            sourceRef="id1bf69d363e2b49ab9bf75e8ed4c1b4a8" targetRef="iddd7230859dfd4cd2a0b0e134d195ee1c">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000002" funcflow:priority="1"
+            id="id2d2993e3d20d44d5923f400525816da5" name="Register_Letter_of_Credit">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Register Letter of Credit</C_FUNC_DESC>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300272</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000143</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702010</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <startEvent id="id9bdc8cfb503a4cd2bcfd6678156e8ac8" name="startEvent_SLA_Demo"/>
+        <userTask funcflow:candidateGroups="1000000002" funcflow:priority="1"
+            id="id2341f55083164acbbaa9758534704e61" name="Fix_Pending">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Fix Pending</C_FUNC_DESC>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000143</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702040</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id93f2318d9bc9485d8382bc8354993c13"
+            sourceRef="idc28765e971af42e9aade089f9ef8ee16" targetRef="id1bf69d363e2b49ab9bf75e8ed4c1b4a8">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000002" funcflow:priority="1"
+            id="iddd7230859dfd4cd2a0b0e134d195ee1c" name="Authorization">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Authorization</C_FUNC_DESC>
+                    <C_STEP_NAME>Issue LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000143</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030703065</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+    </process>
+</definitions>

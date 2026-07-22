@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_PRICING</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FADA</module-name>
+        <cubk-mapping-name>SYF_FADA_EFPricing_SYF_FADA_Get_EDI4_information_3</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_MSG_DT ALIAS="T0" DBFUNC="" DESC="Message Date" DT="91" HIDDEN="F" TYPE="F">FA_MSG_DT</FA_MSG_DT>
+        <FA_MSG_TEXT ALIAS="T0" DBFUNC="" DESC="Message Text" DT="12" HIDDEN="F" TYPE="F">FA_MSG_TEXT</FA_MSG_TEXT>
+        <FA_IF_COMM_RT ALIAS="T0" DBFUNC="" DESC="IF Commission Rate" DT="2" HIDDEN="F" TYPE="F">FA_IF_COMM_RT</FA_IF_COMM_RT>
+        <FA_IF_HAN_CHG_CCY ALIAS="T0" DBFUNC="" DESC="IF Handling Charge Currency" DT="1" HIDDEN="F" TYPE="F">FA_REMI_CCY1</FA_IF_HAN_CHG_CCY>
+        <FA_IF_HAN_CHG_AMT ALIAS="T0" DBFUNC="" DESC="IF Handling Charge" DT="3" HIDDEN="F" TYPE="F">FA_TEMP1</FA_IF_HAN_CHG_AMT>
+        <FA_IF_OTH_CHG_CCY ALIAS="T0" DBFUNC="" DESC="IF Other Charge Currency" DT="1" HIDDEN="F" TYPE="F">FA_REMI_CCY2</FA_IF_OTH_CHG_CCY>
+        <FA_IF_OTH_CHG_AMT ALIAS="T0" DBFUNC="" DESC="IF Other Charge" DT="3" HIDDEN="F" TYPE="F">FA_TEMP5</FA_IF_OTH_CHG_AMT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">FA_MSG_DT=(select max(FA_MSG_DT) from FADA_PRICING where FA_MSG_DT &lt; = to_date('</SQL>
+            <SQL DT="var" DV="SYS_BUSI_DATE" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">','</SQL>
+            <SQL DT="var" DV="SYS_DATE_FORMAT" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">') AND FA_SEL_ID='</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_IF_ID='</SQL>
+            <SQL TYPE="FLD">FA_IF_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_EF_ID='</SQL>
+            <SQL TYPE="FLD">FA_EF_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_BUSI_STATUS='EDI4' AND C_TRX_STATUS ='M') AND FA_EF_ID ='</SQL>
+            <SQL TYPE="FLD">FA_EF_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_SEL_ID='</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND FA_IF_ID='</SQL>
+            <SQL TYPE="FLD">FA_IF_ID</SQL>
+            <SQL TYPE="SQL">' AND C_TRX_STATUS ='M' AND FA_BUSI_STATUS='EDI4' </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

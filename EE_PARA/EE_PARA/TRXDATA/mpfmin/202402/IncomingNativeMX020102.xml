@@ -1,0 +1,44 @@
+003006TtkL6SDEc2+9zDIQbYRHJQ==<?xml version="1.0" encoding="utf-8"?>
+<Saa:DataPDU xmlns:Saa="urn:swift:saa:xsd:saa.2.0" xmlns:Sw="urn:swift:snl:ns.Sw"
+  xmlns:SwGbl="urn:swift:snl:ns.SwGbl" xmlns:SwInt="urn:swift:snl:ns.SwInt" xmlns:SwSec="urn:swift:snl:ns.SwSec">
+  <Saa:Revision>2.0.2</Saa:Revision>
+  <Saa:Header>
+  <Saa:Message>
+    <Saa:SenderReference>PYMT0007260925</Saa:SenderReference>
+    <Saa:MessageIdentifier>pacs.008.001.08</Saa:MessageIdentifier>
+    <Saa:Format>MX</Saa:Format>
+    <Saa:Sender><Saa:DN>ou=xxx,o=ptsabmaa,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMAAXXX</Saa:X1></Saa:FullName></Saa:Sender>
+    <Saa:Receiver><Saa:DN>ou=xxx,o=ptsabmab,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMABXXX</Saa:X1></Saa:FullName></Saa:Receiver>
+    <Saa:InterfaceInfo><Saa:UserReference>PYMT0007260925</Saa:UserReference></Saa:InterfaceInfo>
+    <Saa:NetworkInfo>
+      <Saa:Service>swift.finplus!xpf</Saa:Service>
+      <Saa:SWIFTNetNetworkInfo>
+        <Saa:RequestType>pacs.008.001.08</Saa:RequestType>
+      </Saa:SWIFTNetNetworkInfo>
+    </Saa:NetworkInfo>
+  </Saa:Message></Saa:Header>
+  <Saa:Body>
+  
+  <AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">
+    <Fr>
+      <FIId>
+        <FinInstnId>
+          <BICFI>CITIUS33XXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </Fr>
+    <To>
+      <FIId>
+        <FinInstnId>
+          <BICFI>PTSABMAAXXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </To>
+    <BizMsgIdr>PYMT0007260925</BizMsgIdr>
+    <MsgDefIdr>pacs.008.001.08</MsgDefIdr>
+    <BizSvc>swift.cbprplus.02</BizSvc>
+    <CreDt>2024-02-01T10:07:41+08:00</CreDt>
+  </AppHdr>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"><FIToFICstmrCdtTrf><GrpHdr><MsgId>PYMT0007260925</MsgId><CreDtTm>2024-02-01T10:08:04+08:00</CreDtTm><NbOfTxs>1</NbOfTxs><SttlmInf><SttlmMtd>INGA</SttlmMtd></SttlmInf></GrpHdr><CdtTrfTxInf><PmtId><InstrId>PYMT0007260925</InstrId><EndToEndId>PYMT0007260925</EndToEndId><UETR>176d5d91-8a21-4b30-8e4f-695a06271607</UETR></PmtId><IntrBkSttlmAmt Ccy="USD">50000</IntrBkSttlmAmt><IntrBkSttlmDt>2021-10-28</IntrBkSttlmDt><ChrgBr>SHAR</ChrgBr><InstgAgt><FinInstnId><BICFI>CITIUS33XXX</BICFI></FinInstnId></InstgAgt><InstdAgt><FinInstnId><BICFI>PTSABMAAXXX</BICFI></FinInstnId></InstdAgt><IntrmyAgt1><FinInstnId><BICFI>HBUKGB4BXXX</BICFI></FinInstnId></IntrmyAgt1><Dbtr><Nm>ABC Corporation</Nm><PstlAdr><StrtNm>Times Square</StrtNm><BldgNb>7</BldgNb><PstCd>NY 10036</PstCd><TwnNm>New York</TwnNm><Ctry>US</Ctry></PstlAdr></Dbtr><DbtrAcct><Id><Othr><Id>1234568400</Id></Othr></Id></DbtrAcct><DbtrAgt><FinInstnId><BICFI>CITIUS33XXX</BICFI></FinInstnId></DbtrAgt><CdtrAgt><FinInstnId><BICFI>NWBKGB2LXXX</BICFI></FinInstnId></CdtrAgt><Cdtr><Nm>JOHN SMITH</Nm><PstlAdr><AdrLine>HOOGSTRAAT 6, 18th floor</AdrLine>
+<AdrLine>1000 BRUSSELS</AdrLine><AdrLine>BE</AdrLine></PstlAdr></Cdtr><CdtrAcct><Id><IBAN>GB29NWBK60161331926819</IBAN></Id></CdtrAcct></CdtTrfTxInf></FIToFICstmrCdtTrf></Document>
+</Saa:Body></Saa:DataPDU>

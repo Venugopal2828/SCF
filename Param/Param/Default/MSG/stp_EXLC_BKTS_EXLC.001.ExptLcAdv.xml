@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>EXLC.001.ExptLcAdv</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>EXLC</module>
+        <map-name>ExportLcAdvise</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <C_MAIN_REF descr="" fv-type="F" intfconv="N">CEMainRef</C_MAIN_REF>
+        <BK_MAIN_REF descr="" fv-type="F" intfconv="N">BkMainRef</BK_MAIN_REF>
+        <C_UNIT_CODE descr="" fv-type="F" intfconv="N">CustId</C_UNIT_CODE>
+        <ADV_NO descr="" fv-type="F" intfconv="N">AdvNb</ADV_NO>
+        <LC_NO descr="" fv-type="F" intfconv="N">LcNb</LC_NO>
+        <RCV_DT descr="" fv-type="F" intfconv="N">DtRecvd</RCV_DT>
+        <ESTABLISH_BY descr="" fv-type="F" intfconv="N">EstablishBy</ESTABLISH_BY>
+        <ISSUE_DT descr="" fv-type="F" intfconv="N">DtOfIsse</ISSUE_DT>
+        <FORM_OF_LC descr="" fv-type="F" intfconv="N">TpOfLc</FORM_OF_LC>
+        <BK_CONF descr="" fv-type="F" intfconv="N">BkConf</BK_CONF>
+        <LC_CCY descr="" fv-type="F" intfconv="N">LcCcy</LC_CCY>
+        <LC_AMT descr="" fv-type="F" intfconv="N">LcAmt</LC_AMT>
+        <LC_BAL descr="" fv-type="F" intfconv="N">LcBala</LC_BAL>
+        <AMT_SPEC descr="" fv-type="F" intfconv="N">TlrnceSpcfctn</AMT_SPEC>
+        <POS_TOL descr="" fv-type="F" intfconv="N">PostveTlrnce</POS_TOL>
+        <NEG_TOL descr="" fv-type="F" intfconv="N">NegtveTlrnce</NEG_TOL>
+        <BENE_NM descr="" fv-type="F" intfconv="N">BnfcryNm</BENE_NM>
+        <EXPIRY_PLC descr="" fv-type="F" intfconv="N">PlcOfExp</EXPIRY_PLC>
+        <EXPIRY_DT descr="" fv-type="F" intfconv="N">DtOfExp</EXPIRY_DT>
+        <NO_OF_AMD descr="" fv-type="F" intfconv="N">NoOfAmdmnt</NO_OF_AMD>
+        <APPL_NM descr="" fv-type="F" intfconv="N">ApplNm</APPL_NM>
+        <APPL_ADD1 descr="" fv-type="F" intfconv="N">ApplAdr1</APPL_ADD1>
+        <APPL_ADD2 descr="" fv-type="F" intfconv="N">ApplAdr2</APPL_ADD2>
+        <APPL_ADD3 descr="" fv-type="F" intfconv="N">ApplAdr3</APPL_ADD3>
+        <FORACOF_ADD1 descr="" fv-type="F" intfconv="N">ForAcctOfAdr1</FORACOF_ADD1>
+        <FORACOF_ADD2 descr="" fv-type="F" intfconv="N">ForAcctOfAdr2</FORACOF_ADD2>
+        <FORACOF_ADD3 descr="" fv-type="F" intfconv="N">ForAcctOfAdr3</FORACOF_ADD3>
+        <FORACOF_NM descr="" fv-type="F" intfconv="N">ForAcctOfNm</FORACOF_NM>
+        <ISSUE_BK_ADD1 descr="" fv-type="F" intfconv="N">IsseBkAdr1</ISSUE_BK_ADD1>
+        <ISSUE_BK_ADD2 descr="" fv-type="F" intfconv="N">IsseBkAdr2</ISSUE_BK_ADD2>
+        <ISSUE_BK_ADD3 descr="" fv-type="F" intfconv="N">IsseBkAdr3</ISSUE_BK_ADD3>
+        <ISSUE_BK_NM descr="" fv-type="F" intfconv="N">IsseBkNm</ISSUE_BK_NM>
+        <ISSUE_BK_SW_ADD descr="Issuing Bank SWIFT Address" fv-type="F" intfconv="N">IsseBkSwAdr</ISSUE_BK_SW_ADD>
+        <AVAL_WT_BK_ADD1 descr="" fv-type="F" intfconv="N">AvalWtBkAdr1</AVAL_WT_BK_ADD1>
+        <AVAL_WT_BK_ADD2 descr="" fv-type="F" intfconv="N">AvalWtBkAdr2</AVAL_WT_BK_ADD2>
+        <AVAL_WT_BK_ADD3 descr="" fv-type="F" intfconv="N">AvalWtBkAdr3</AVAL_WT_BK_ADD3>
+        <AVAL_WT_BK_NM descr="" fv-type="F" intfconv="N">AvalWtBkNm</AVAL_WT_BK_NM>
+        <AVAL_WT_BK_SW_ADD descr="" fv-type="F" intfconv="N">AvalWtBkSwAdr</AVAL_WT_BK_SW_ADD>
+        <CONF_BK_ADD1 descr="" fv-type="F" intfconv="N">ConfgBkAdr1</CONF_BK_ADD1>
+        <CONF_BK_ADD2 descr="" fv-type="F" intfconv="N">ConfgBkAdr2</CONF_BK_ADD2>
+        <CONF_BK_ADD3 descr="" fv-type="F" intfconv="N">ConfgBkAdr3</CONF_BK_ADD3>
+        <CONF_BK_NM descr="" fv-type="F" intfconv="N">ConfgBkNm</CONF_BK_NM>
+        <CONF_BK_SW_ADD descr="" fv-type="F" intfconv="N">ConfgBkSwAdr</CONF_BK_SW_ADD>
+        <REIM_BK_ADD1 descr="" fv-type="F" intfconv="N">ReimbgBkAdr1</REIM_BK_ADD1>
+        <REIM_BK_ADD2 descr="" fv-type="F" intfconv="N">ReimbgBkAdr2</REIM_BK_ADD2>
+        <REIM_BK_ADD3 descr="" fv-type="F" intfconv="N">ReimbgBkAdr3</REIM_BK_ADD3>
+        <REIM_BK_NM descr="" fv-type="F" intfconv="N">ReimbgBkNm</REIM_BK_NM>
+        <REIM_BK_SW_ADD descr="" fv-type="F" intfconv="N">ReimbgBkSwAdr</REIM_BK_SW_ADD>
+        <CHG_DETL descr="" fv-type="F" intfconv="N">Chrgs</CHG_DETL>
+        <AVAL_BY descr="" fv-type="F" intfconv="N">AvalBy</AVAL_BY>
+        <TENOR_DAYS descr="" fv-type="F" intfconv="N">TenorDays</TENOR_DAYS>
+        <DRWE_ADD1 descr="" fv-type="F" intfconv="N">DrweAdr1</DRWE_ADD1>
+        <DRWE_ADD2 descr="" fv-type="F" intfconv="N">DrweAdr2</DRWE_ADD2>
+        <DRWE_ADD3 descr="" fv-type="F" intfconv="N">DrweAdr3</DRWE_ADD3>
+        <DRWE_NM descr="" fv-type="F" intfconv="N">DrweNm</DRWE_NM>
+        <DRAFTS_AT descr="" fv-type="F" intfconv="N">DraftAt</DRAFTS_AT>
+        <DEF_PMT_DET descr="Deferred Payment Details" fv-type="F" intfconv="N">DeferdPmtDtls</DEF_PMT_DET>
+        <MIX_PMT_DETL descr="" fv-type="F" intfconv="N">MixdPmtDtls</MIX_PMT_DETL>
+        <LTST_SHIP_DT descr="" fv-type="F" intfconv="N">LatstShipmntDt</LTST_SHIP_DT>
+        <PARTIAL_SHIP descr="" fv-type="F" intfconv="N">PrtlShipmnt</PARTIAL_SHIP>
+        <TNSHIP descr="" fv-type="F" intfconv="N">Transhipment</TNSHIP>
+        <LOAD_PLACE descr="" fv-type="F" intfconv="N">ShipFr</LOAD_PLACE>
+        <LOAD_PORT descr="" fv-type="F" intfconv="N">PortOfLoadng</LOAD_PORT>
+        <DEST_PORT descr="" fv-type="F" intfconv="N">PortOfDschrge</DEST_PORT>
+        <DEST_PLACE descr="" fv-type="F" intfconv="N">ShipTo</DEST_PLACE>
+        <SHIP_PRD descr="" fv-type="F" intfconv="N">ShipmntPrd</SHIP_PRD>
+        <INCOTERMS descr="" fv-type="F" intfconv="N">Incotrms</INCOTERMS>
+        <GOODS_DESC descr="" fv-type="F" intfconv="N">DescOfGoods</GOODS_DESC>
+        <DOC_PRES descr="" fv-type="F" intfconv="N">DocToBePres</DOC_PRES>
+        <PRES_PRD_TXT descr="" fv-type="F" intfconv="N">PrestinPrd</PRES_PRD_TXT>
+        <ADDIT_CONDITION descr="" fv-type="F" intfconv="N">AdditnlCondtin</ADDIT_CONDITION>
+        <NXT_STATUS descr="" fv-type="F" intfconv="N">NxtSts</NXT_STATUS>
+        <EXLC_STATUS descr="" fv-type="F" intfconv="N">ExlcSts</EXLC_STATUS>
+        <PAY_COND_TO_BENE descr="" fv-type="F" intfconv="N">PAY_COND_TO_BENE</PAY_COND_TO_BENE>
+        <PAY_COND_TO_REV_BK descr="" fv-type="F" intfconv="N">PAY_COND_TO_REV_BK</PAY_COND_TO_REV_BK>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Intent to Pay" Max="n" Min="0" Name="TDO_ITP" PendingStore="N" Screen="Default/SCRN/DO/ITP.jsp"
+    StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="TSU_ITP"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>TSU_TID</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="MESG_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Main Ref." DispInGrid="N" EEType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="Transaction TID" DispInGrid="Y" EEType="" Value="">TSU_TID</Element>
+        <Element DATATYPE="12" Desc="PO Number" DispInGrid="Y" EEType="" Value="">TSU_PO_ID</Element>
+        <Element DATATYPE="91" Desc="PO Date" DispInGrid="Y" EEType="DATE" Value="">TSU_PO_DT</Element>
+        <Element DATATYPE="3" Desc="Net Amount" DispInGrid="Y" EEType="AMT" Value="">TSU_NET_AMT</Element>
+        <Element DATATYPE="12" Desc="Company Code" DispInGrid="N" EEType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Next Status" DispInGrid="N" EEType="NARR(1*35)" Value="">NXT_STATUS</Element>
+        <Element DATATYPE="12" Desc="Process Bank BIC" DispInGrid="N" EEType="" Value="">TSU_PCBK_BIC</Element>
+        <Element DATATYPE="12" Desc="Parent Main Reference" DispInGrid="N" EEType="" Value="">PARENT_MAIN_REF</Element>
+    </Elements>
+</DO>

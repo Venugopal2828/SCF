@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>X103_ORDCUACNO_50A_NBOL</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_AC_NUMBER</table-name>
+      	</tables>
+        <key-fields>
+            <C_CNTY_CODE ALIAS="T0" DESC="Country Code" DT="1" TYPE="S">SYS_BANK_COUNTRY</C_CNTY_CODE>
+            <C_AC_NUMBER ALIAS="T0" DESC="Account Number" DT="12" TYPE="F">X103_ORDCUACNO_50A</C_AC_NUMBER>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_AC_NUMBER ALIAS="T0" DBFUNC="" DESC="Account Number" DT="12" HIDDEN="F" TYPE="F">X103_ORDCUACNO_50A</C_AC_NUMBER>
+        <C_CUST_ID ALIAS="T0" DBFUNC="" DESC="CUSTOMER ID" DT="12" HIDDEN="F" TYPE="F">X103_ORDCU_ID_50A</C_CUST_ID>
+        <C_AC_IDENTIFIER ALIAS="T0" DBFUNC="" DESC="C_AC_IDENTIFIER" DT="12" HIDDEN="F" TYPE="F">C_AC_IDENTIFIER</C_AC_IDENTIFIER>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

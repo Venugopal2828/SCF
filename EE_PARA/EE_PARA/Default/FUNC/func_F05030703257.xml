@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC AutoGen-Parameter-Version="1.0">
+    <SCREEN>
+        <JSPFILE>SCRN/SWIFT/203.jsp</JSPFILE>
+    </SCREEN>
+    <DOSCREEN ISDEF="T"/>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PYMT</MODULE>
+        <MODULE_DESC>Clean Payment</MODULE_DESC>
+        <EVENT>SWIFTMessage</EVENT>
+        <ID>F05030703257</ID>
+        <NAME>ProcessMT203</NAME>
+        <DESC>Capture MT203</DESC>
+        <FUNSHORTNAME>ProcessMT203</FUNSHORTNAME>
+        <FUNCPROCEVENT/>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <UIStyle>C</UIStyle>
+        <ADDMASTER>Y</ADDMASTER>
+        <ATTR_ID name="TEST">R00000007702</ATTR_ID>
+        <ASYNCSWIFT>N</ASYNCSWIFT>
+        <CATALOGID/>
+        <TransferTo>F00000005377</TransferTo>
+        <OutSWIFT>F00000005155</OutSWIFT>
+    </FUNCTION>
+</FUNC>

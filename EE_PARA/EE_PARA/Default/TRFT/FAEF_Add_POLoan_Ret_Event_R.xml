@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="">
+    <module>FAEF</module>
+    <name>Add_POLoan_Ret_Event</name>
+    <desc>Add_POLoan_Ret_Event</desc>
+    <head-info>
+        <DO name="Settle_loan_po" path="Settle_loan_po"/>
+        <table-name schema="%EXIMTRX%">%EXIMTRX%.POMM_LOAN_RETURN</table-name>
+        <table-desc>POMM_LOAN_RETURN</table-desc>
+        <ledger-op/>
+        <op-type>I</op-type>
+        <trx-type>C</trx-type>
+        <mo-flag>O</mo-flag>
+        <mr-flag>F</mr-flag>
+        <err-info></err-info>
+        <imme-update>F</imme-update>
+        <ec-flag>T</ec-flag>
+        <condition BYUNITCODE="False">
+        </condition>
+    </head-info>
+    <mapping>
+        <C_MAIN_REF fv_type="F" mf="F" oper="=">C_MAIN_REF</C_MAIN_REF>
+        <C_UNIT_CODE fv_type="F" mf="F" oper="=">FA_TEMP3</C_UNIT_CODE>
+        <PO_LOAN_ID fv_type="F" mf="F" oper="=">PO_LOAN_ID</PO_LOAN_ID>
+        <PO_REF fv_type="F" mf="F" oper="=">PO_REF</PO_REF>
+        <FA_PMT_DT fv_type="F" mf="F" oper="=">TRX_DT</FA_PMT_DT>
+        <FA_PMT_AMT fv_type="F" mf="F" oper="=">FA_LOAN_PAID_AMT</FA_PMT_AMT>
+        <TIMES fv_type="F" mf="F" oper="=">TEMP_PMT_TIMES</TIMES>
+        <PMT_REF fv_type="F" mf="F" oper="=">FA_PMT_REF</PMT_REF>
+        <FA_LOAN_IPAID_AMT fv_type="F" mf="F" oper="=">FA_LOAN_IPAID_AMT</FA_LOAN_IPAID_AMT>
+        <FA_LOAN_PAID_AMT fv_type="F" mf="F" oper="=">FA_LOAN_PPAID_AMT</FA_LOAN_PAID_AMT>
+        <I_SEQ_NUM fv_type="F" mf="F" oper="=">I_SEQ_NUM</I_SEQ_NUM>
+    </mapping>
+</root>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">FAEF</MODULE>
+        <MODULE_DESC>Finance Transaction</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C14050700001</CATALOGID>
+        <ID>F05030701084</ID>
+        <NAME>Request for Dispute Register</NAME>
+        <DESC>Request for Dispute Register</DESC>
+        <FUNSHORTNAME>ReqDispute</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>IQ</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Get Data">TrxManagerGetData</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">FAEF_ReqDispute.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701077</ID>
+        <NAME>Request for Dispute Register_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701077</ID>
+        <NAME>Request for Dispute Register_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000361</ID>
+        <NAME>Request for Dispute Register_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

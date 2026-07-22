@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302446</ID>
+    <MODULE>CMDT</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC>EditCommodityInformation</DESC>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.CMDT_MASTER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Main Ref. No." EEType="" HIDDEN="H">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="H">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="EVENT TIMES" EEType="" HIDDEN="H">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_STATUS" EEType="" HIDDEN="H">C_TRX_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Func Short Name" EEType="" HIDDEN="H">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_LOCKED_FLAG" EEType="" HIDDEN="H">C_LOCKED_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Goods ID" EEType="Varchar_30" HIDDEN="">GOODS_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Goods Name" EEType="" HIDDEN="">GOODS_NM</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Goods Category"
+            EEType="INTERPRETER" HIDDEN="" ISFC="Y">GOODS_CATE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Goods Sub Category"
+            EEType="INTERPRETER" HIDDEN="" ISFC="Y">SUB_CATE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Reference Specification"
+            EEType="Varchar_35" HIDDEN="">GOODS_4TH_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Goods Character"
+            EEType="Varchar_32" HIDDEN="">GOODS_CHARACTER</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Region" EEType="Varchar_35" HIDDEN="">REGION</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Currency" EEType="CCY" HIDDEN="H">CCY</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="91" DESC="Update Date" EEType="DATE" HIDDEN="H">UPDATE_DT</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Goods ID" DT="12" EEType="Varchar_30" TYPE="FLD">GOODS_ID</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG2</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="Goods Name" DT="12" EEType="" TYPE="FLD">GOODS_NM</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP3</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE4</SQL>
+        <SQL TYPE="SQL">' </SQL>
+        <SQL DT="val" OPTYPE="RELATION" TYPE="OP">LOG5</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DESC="C_TRX_STATUS" DT="1" EEType="" TYPE="FLD">C_TRX_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'M' AND </SQL>
+        <SQL DESC="C_LOCKED_FLAG" DT="1" EEType="" TYPE="FLD">C_LOCKED_FLAG</SQL>
+        <SQL TYPE="SQL"> = 'F'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Goods ID" EEType="Varchar_30">GOODS_ID</FIELD>
+        <FIELD DATATYPE="12" DESC="Goods Name" EEType="">GOODS_NM</FIELD>
+        <FIELD DATATYPE="1" DESC="C_TRX_STATUS" EEType="">C_TRX_STATUS</FIELD>
+        <FIELD DATATYPE="1" DESC="C_LOCKED_FLAG" EEType="">C_LOCKED_FLAG</FIELD>
+    </CLAUSEFIELD>
+</CATA>

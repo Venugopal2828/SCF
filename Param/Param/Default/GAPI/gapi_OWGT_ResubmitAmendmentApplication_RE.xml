@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi>
+    <header>
+        <ec-flag>F</ec-flag>
+        <gapi-type>MQ</gapi-type>
+        <gapi-type-value/>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>Q_CE</send-queue-id>
+            <recv-queue-id/>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>OWGT.007.ResmtAmdApplctn</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>Y</is-trx>
+        <send-queue-id>Q_CE</send-queue-id>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>OWGT</module>
+        <interface-mapping-name>ResubmitAmendmentApplication</interface-mapping-name>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <trx-type>R</trx-type>
+        <hasMappingJS>N</hasMappingJS>
+        <gapi-resend>N</gapi-resend>
+        <xsl-mapping>N</xsl-mapping>
+        <msg>
+            <prefix/>
+            <len/>
+            <postfix/>
+            <auto>Y</auto>
+        </msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no">
+        <CEMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="1">C_MAIN_REF</CEMainRef>
+        <BkMainRef descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="2">BK_MAIN_REF</BkMainRef>
+        <CustId descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="3">C_UNIT_CODE</CustId>
+        <ApplctnDt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="4">TRX_DT</ApplctnDt>
+        <NewExpType descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="5">NEW_EXPIRY_TYPE</NewExpType>
+        <NewDtOfExp descr="New Expiry Date" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="6">NEW_EXPIRY_DT</NewDtOfExp>
+        <IncAmt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="7">INC_AMT</IncAmt>
+        <DecAmt descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="8">DEC_AMT</DecAmt>
+        <AmdmntDtls descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="9">AMD_DETAILS</AmdmntDtls>
+        <CustInstr descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="10">CUST_INSTR</CustInstr>
+        <CurSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="11">CURRNT_STATUS</CurSts>
+        <NxtSts descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="12">NXT_STATUS</NxtSts>
+        <MSG_TYPE descr="" ec-tag="N" fv-type="V" intfconv="N" op-tag="N" order="13">OWGT.007.ResmtAmdApplctn</MSG_TYPE>
+        <NewGteeAmt descr="New GTEE Amount" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="14">NEW_GTEE_AMT</NewGteeAmt>
+        <CANCLE_REQ descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="16">CANCLE_REQ</CANCLE_REQ>
+        <NEW_EXPIRY_COND descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="17">NEW_EXPIRY_COND</NEW_EXPIRY_COND>
+        <NEW_BENE_NM descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="18">NEW_BENE_NM</NEW_BENE_NM>
+        <NEW_BENE_ADD1 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="19">NEW_BENE_ADD1</NEW_BENE_ADD1>
+        <NEW_BENE_ADD2 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="20">NEW_BENE_ADD2</NEW_BENE_ADD2>
+        <NEW_BENE_ADD3 descr="" ec-tag="N" fv-type="F" intfconv="N" op-tag="N" order="21">NEW_BENE_ADD3</NEW_BENE_ADD3>
+    </send-msg-map>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no"/>
+    <send-item/>
+</gapi>

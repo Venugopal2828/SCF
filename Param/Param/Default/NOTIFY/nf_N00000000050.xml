@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[var sEmailId=NS.createMail("CSBankSupport","Received Payment Advice");
+var sEmailto = NS.getFieldValue("EMAIL_TO");
+if (sEmailto != null) {
+    NS.setAutoSend(sEmailId,true);
+    //NS.attachImage(sEmailId,"STP_IN_IMG");
+    NS.appendAllImage(sEmailId);
+}]]></js-content>
+</root>

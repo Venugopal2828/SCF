@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Other Certificate DataSet" Max="n" Min="0" Name="R2OthrCertDataset" PendingStore="Y" Screen="SCRN/DO/R2TSU_OthrCertDataSet.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="TSUM_DS_OTHRCERT"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_TRX_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TSUM_EM_COMTRNS">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="12" Desc="Dataset ID" DispInGrid="Y" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_DS_ID</Element>
+        <Element DATATYPE="2" Desc="Dataset Version" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_DS_VRSN</Element>
+        <Element DATATYPE="1" Desc="Submitter BIC" DispInGrid="Y" EDIT="N" EEType="BIC" FldType="" Value="">TSU_SUBMITR_BIC</Element>
+        <Element DATATYPE="12" Desc="Certificate ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_CERT_ID</Element>
+        <Element DATATYPE="12" Desc="Other Certificate Type" DispInGrid="N" EDIT="N" EEType="TradeFinServ2Code" FldType="" Value="">TSU_OTCERT_TP</Element>
+        <Element DATATYPE="91" Desc="Issued Date of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="ISODate" FldType="" Value="">TSU_ISS_DT</Element>
+        <Element DATATYPE="12" Desc="Issuer Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_NM</Element>
+        <Element DATATYPE="12" Desc="Issuer ID of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_ID</Element>
+        <Element DATATYPE="12" Desc="Issuer ID Type of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_ID_TP</Element>
+        <Element DATATYPE="12" Desc="Issuer Street Name of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="TEXTAREA_70" FldType="" Value="">TSU_ISSR_STREET</Element>
+        <Element DATATYPE="12" Desc="Issuer Post Code of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max16Text" FldType="" Value="">TSU_ISSR_POST_CD</Element>
+        <Element DATATYPE="12" Desc="Issuer Town of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_TOWN</Element>
+        <Element DATATYPE="12" Desc="Issuer Country Subdivision of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_ISSR_CNTY_SUB</Element>
+        <Element DATATYPE="12" Desc="Issuer Country of Insurance Certificate" DispInGrid="N" EDIT="N" EEType="CountryCode" FldType="" Value="">TSU_ISSR_CNTY</Element>
+    </Elements>
+    <DO Desc="Certificate Information" Name="DT_CertInf" PendingStore="N" Screen="SCRN/DO/R2TSU_DT_CertInf.jsp" StoreInto="D" StoreType="X" isBigData="false" Field="TSU_CERT_INF" AutoGen-Parameter-Version="1.0">
+        <Elements>
+            <Element DATATYPE="12" Desc="Certificate Information" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_350" FldType="" Value="">TSU_CERT_INF</Element>
+        </Elements>
+    </DO>
+</DO>

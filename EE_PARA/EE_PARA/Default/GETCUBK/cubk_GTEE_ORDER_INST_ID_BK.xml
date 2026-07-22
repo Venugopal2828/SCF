@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>GTEE</module-name>
+        <cubk-mapping-name>ORDER_INST_ID</cubk-mapping-name>
+        <select-type>U</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">POST_ADD_DO</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMTRX%" TYPE="C">STAT_MASTER</table-name>
+        	<table-name ALIAS="T2" SCHEMA="%EXIMTRX%" TYPE="U">SWF_ADD_DO</table-name>
+      	</tables>
+        <key-fields>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="J">T2.C_MAIN_REF</C_MAIN_REF>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="F">ORDER_INST_ID</C_MAIN_REF>
+            <ORDER_NO ALIAS="T0" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <ORDER_NO ALIAS="T2" DESC="Order Number" DT="4" TYPE="V">1</ORDER_NO>
+            <C_MAIN_REF ALIAS="T1" DESC="MAIN REF. NO." DT="12" TYPE="J">T0.C_MAIN_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <SWF_FMT_NM ALIAS="T2" DBFUNC="" DESC="Name" DT="12" HIDDEN="F" TYPE="F">ORDER_INST_NM</SWF_FMT_NM>
+        <SWIFT_FMT_ADD1 ALIAS="T2" DBFUNC="" DESC="Address Line1" DT="12" HIDDEN="F" TYPE="F">ORDER_INST_ADD1</SWIFT_FMT_ADD1>
+        <SWIFT_FMT_ADD2 ALIAS="T2" DBFUNC="" DESC="Address Line2" DT="12" HIDDEN="F" TYPE="F">ORDER_INST_ADD2</SWIFT_FMT_ADD2>
+        <SWIFT_FMT_ADD3 ALIAS="T2" DBFUNC="" DESC="Address Line3" DT="12" HIDDEN="F" TYPE="F">ORDER_INST_ADD3</SWIFT_FMT_ADD3>
+        <FAX_NO ALIAS="T1" DBFUNC="" DESC="Fax No." DT="12" HIDDEN="T" TYPE="F">ORDER_FAX_NO</FAX_NO>
+        <POSTAL_FMT_ADD ALIAS="T0" DBFUNC="" DESC="Bank Postal Format Address" DT="12" HIDDEN="T" TYPE="F">ORDER_MAIL_ADD</POSTAL_FMT_ADD>
+        <NOTES ALIAS="T1" DBFUNC="" DESC="Notes" DT="2005" HIDDEN="T" TYPE="F">ORDER_NOTES</NOTES>
+        <EMAIL_ADD ALIAS="T1" DBFUNC="" DESC="Email Address" DT="12" HIDDEN="T" TYPE="F">ORDER_EMAIL_ADD</EMAIL_ADD>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

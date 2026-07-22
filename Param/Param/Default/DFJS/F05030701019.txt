@@ -1,0 +1,7 @@
+var sType = DF.getFieldValue("PROCESS_TYPE");
+DF.writeLog("sType======="+sType);
+if(sType=="RESUBMIT"){
+DF.changeFunction("Resubmit PO");
+} else if(sType=="AMD"){
+DF.changeFunction("Add Amend PO");
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-edifactoring-com:MSG14" targetNamespace="urn:schemas-edifactoring-com:MSG14" elementFormDefault="qualified">
+	<xs:include schemaLocation="typeDef.xsd"/>
+	<xs:element name="MSG14" type="MSG14Type"/>
+	<xs:complexType name="MSG14Type">
+		<xs:sequence>
+			<xs:element name="MsgInfo" type="MsgInfoType"/>
+			<xs:element name="EF" type="FType"/>
+			<xs:element name="IF" type="FType"/>
+			<xs:element name="MsgDate" type="xs:date"/>
+			<xs:element name="DisputeNr" type="AMax35Type"/>
+			<xs:element name="DateOriginDispute" type="xs:date"/>
+			<xs:element name="DisputeCurrency" type="A3Type"/>
+			<xs:element name="Seller" type="SellerType"/>
+			<xs:element name="Buyer" type="BuyerType"/>
+			<xs:element name="DisputeDetails" type="DisputeDetailsType" maxOccurs="999"/>
+			<xs:element name="DisputeReasonText" type="AMax3500Type" minOccurs="0"/>
+			<xs:element name="ActionText" type="AMax3500Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MsgInfoType">
+		<xs:sequence>
+			<xs:element name="SenderCode" type="A7Type"/>
+			<xs:element name="ReceiverCode" type="A7Type"/>
+			<xs:element name="CreatedBy" type="AMax16Type"/>
+			<xs:element name="SequenceNr" type="NMax10Type" minOccurs="0"/>
+			<xs:element name="DateTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Status" type="NMax2Type" minOccurs="0"/>
+			<xs:element name="Error" type="NMax2Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FType">
+		<xs:sequence>
+			<xs:element name="FactorCode" type="A7Type"/>
+			<xs:element name="FactorName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SellerType">
+		<xs:sequence>
+			<xs:element name="SellerNr" type="AMax35Type"/>
+			<xs:element name="SellerName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BuyerType">
+		<xs:sequence>
+			<xs:element name="BuyerNr" type="AMax35Type"/>
+			<xs:element name="BuyerName" type="AMax35Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DisputeDetailsType">
+		<xs:sequence>
+			<xs:element name="DocType" type="NMax3Type"/>
+			<xs:element name="DocNr" type="AMax35Type" minOccurs="0"/>
+			<xs:element name="DocDate" type="xs:date" minOccurs="0"/>
+			<xs:element name="DocAmt" type="NMax14.2Type" minOccurs="0"/>
+			<xs:element name="DisputeAmt" type="NMax14.2Type"/>
+			<xs:element name="DisputeReason" type="NMax3Type"/>
+			<xs:element name="NotifyingParty" type="AMax35Type"/>
+			<xs:element name="Action" type="NMax3Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

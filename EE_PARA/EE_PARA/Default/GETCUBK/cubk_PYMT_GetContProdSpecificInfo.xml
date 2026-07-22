@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>GetContProdSpecificInfo</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">PROD_SPEC_INFO</table-name>
+      	</tables>
+        <key-fields>
+            <CNTY_CODE ALIAS="T0" DESC="CNTY_CODE" DT="1" TYPE="S">SYS_BANK_COUNTRY</CNTY_CODE>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">X103_BENECU_ID_59A</C_MAIN_REF>
+            <PROD ALIAS="T0" DESC="Product" DT="1" TYPE="V">IT</PROD>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <HIGH_CARE_CUST ALIAS="T0" DBFUNC="" DESC="HIGH_CARE_CUST" DT="1" HIDDEN="F" TYPE="F">HIGH_CARE_CUST</HIGH_CARE_CUST>
+        <CONT_NM_1 ALIAS="T0" DBFUNC="" DESC="Contact Name1" DT="1" HIDDEN="F" TYPE="F">CONT_NM_1</CONT_NM_1>
+        <CONT_NM_2 ALIAS="T0" DBFUNC="" DESC="CONT_NM_2" DT="1" HIDDEN="F" TYPE="F">CONT_NM_2</CONT_NM_2>
+        <CONT_NM_3 ALIAS="T0" DBFUNC="" DESC="CONT_NM_3" DT="1" HIDDEN="F" TYPE="F">CONT_NM_3</CONT_NM_3>
+        <CONT_NM_4 ALIAS="T0" DBFUNC="" DESC="CONT_NM_4" DT="1" HIDDEN="F" TYPE="F">CONT_NM_4</CONT_NM_4>
+        <CONT_NM_5 ALIAS="T0" DBFUNC="" DESC="CONT_NM_5" DT="1" HIDDEN="F" TYPE="F">CONT_NM_5</CONT_NM_5>
+        <STAN_INSTR ALIAS="T0" DBFUNC="" DESC="STAN_INSTR" DT="1" HIDDEN="F" TYPE="F">STAN_INSTR</STAN_INSTR>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

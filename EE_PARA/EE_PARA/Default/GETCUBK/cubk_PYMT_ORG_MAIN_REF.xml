@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">PYMT_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>ORG_MAIN_REF</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <NXT_STATUS ALIAS="T0" DESC="Next Status" DT="12" TYPE="V">OTT_RELEASE</NXT_STATUS>
+            <C_UNIT_CODE ALIAS="T0" DESC="UNIT CODE" DT="12" TYPE="S">SYS_BUSI_UNIT</C_UNIT_CODE>
+            <CURRNT_STATUS ALIAS="T0" DESC="Current Status" DT="12" TYPE="V">OTT_CAPTURE</CURRNT_STATUS>
+            <C_MAIN_REF ALIAS="T0" DESC="Original Reference" DT="12" TYPE="F">ORG_MAIN_REF</C_MAIN_REF>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <X103_ORDCU_ID_50A ALIAS="T0" DBFUNC="" DESC="Ordering Customer Id" DT="12" HIDDEN="F" TYPE="F">X103_ORDCU_ID_50A</X103_ORDCU_ID_50A>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.CURRNT_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'OTT_CAPTURE' AND </SQL>
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.NXT_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'OTT_RELEASE' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_MAIN_REF</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">ORG_MAIN_REF</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_UNIT_CODE</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">%'
+            </SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="">STD_COMDT_CAT</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>CMDT</module-name>
+        <cubk-mapping-name>SYF_CMDT_CreateCommodityInformation_SYF_CMDT_CategoryCode_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <COMDT_CAT_CD ALIAS="T0" DBFUNC="" DESC="Category Code" DT="12" HIDDEN="F" TYPE="F">COMDT_CAT_CD</COMDT_CAT_CD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">COMDT_CAT_DESC= '</SQL>
+            <SQL TYPE="FLD">COMDT_CAT_DESC</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

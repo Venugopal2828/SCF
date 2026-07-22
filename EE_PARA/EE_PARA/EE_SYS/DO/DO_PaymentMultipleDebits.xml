@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="PaymentMultipleDebits" Max="5" Min="0"
+    Name="PaymentMultipleDebits" PendingStore="Y"
+    Screen="SCRN/DO/PYMT_MultipleDebits.jsp" StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="CLNPYMT_DEBITS"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>C_DO_NAME</PKNAME>
+        <PKNAME>I_SEQ_NUM</PKNAME>
+        <PKNAME>CPYT_FUNC_NAME</PKNAME>
+    </PK>
+    <FKS/>
+    <Elements>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="1" Desc="Payment Currency" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">PAY_CCY</Element>
+        <Element DATATYPE="3" Desc="Payment Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">PAY_AMT</Element>
+        <Element DATATYPE="1" Desc="Settlement Currency" DispInGrid="Y" EDIT="N"
+            EEType="CCY" FldType="" Value="">SETT_CCY</Element>
+        <Element DATATYPE="3" Desc="Settlement Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">SETT_AMT</Element>
+        <Element DATATYPE="91" Desc="Cover Value Date" DispInGrid="N" EDIT="N"
+            EEType="DATE" FldType="" Value="">COV_VAL_DT</Element>
+        <Element DATATYPE="1" Desc="Debit Account No" DispInGrid="Y" EDIT="N"
+            EEType="ACNO" FldType="" Value="">CPYT_DR_AC</Element>
+        <Element DATATYPE="2" Desc="Exchange Rate" DispInGrid="Y" EDIT="N"
+            EEType="Numeric_18_6" FldType="" Value="">EXCH_RATE</Element>
+        <Element DATATYPE="12" Desc="Cover Number" DispInGrid="Y" EDIT="N"
+            EEType="" FldType="" Value="">COV_NO</Element>
+        <Element DATATYPE="12" Desc="Purchase Sales Indicator" DispInGrid="N"
+            EDIT="N" EEType="" FldType="" Value="">PUR_SAL_IND</Element>
+        <Element DATATYPE="3" Desc="Cover Amount" DispInGrid="N" EDIT="N"
+            EEType="AMT" FldType="" Value="">COV_AMT</Element>
+        <Element DATATYPE="1" Desc="Cover Currency" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">COV_CCY</Element>
+        <Element DATATYPE="1" Desc="Debit Account Type" DispInGrid="N" EDIT="N"
+            EEType="ACNO" FldType="" Value="">CPYT_DR_AC_TYPE</Element>
+        <Element DATATYPE="12" Desc="Debit Custome Name" DispInGrid="N" EDIT="N"
+            EEType="NM_CHAR35" FldType="" Value="">CPYT_DR_NAME</Element>
+        <Element DATATYPE="1" Desc="Cash Indicator Multiple" DispInGrid="N"
+            EDIT="N" EEType="SW_FLG" FldType="" Value="">MUL_CASH_IND</Element>
+        <Element DATATYPE="1" Desc="Funds Available Multiple" DispInGrid="N"
+            EDIT="N" EEType="SW_FLG" FldType="" Value="">MUL_FDS_AVAL</Element>
+        <Element DATATYPE="1" Desc="MUL_OVRIDE" DispInGrid="N" EDIT="N"
+            EEType="SW_FLG" FldType="" Value="">MUL_OVRIDE</Element>
+        <Element DATATYPE="12" Desc="RELA_REF" DispInGrid="N" EDIT="N" EEType=""
+            FldType="" Value="">RELA_REF</Element>
+        <Element DATATYPE="12" Desc="Payment Function Name" DispInGrid="N"
+            EDIT="N" EEType="Varchar_35" FldType="" Value="">CPYT_FUNC_NAME</Element>
+        <Element DATATYPE="8" Desc="FORM_EXCH_RATE" DispInGrid="N" EDIT="N"
+            EEType="RATE" FldType="" Value="">FORM_EXCH_RATE</Element>
+        <Element DATATYPE="12" Desc="CAP_AMT_IND" DispInGrid="N" EDIT="N"
+            EEType="VARCHAR32" FldType="" Value="">CAP_AMT_IND</Element>
+        <Element DATATYPE="12" Desc="Account Identifier" DispInGrid="N" EDIT="N"
+            EEType="Varchar_35" FldType="" Value="">C_AC_IDENTIFIER</Element>
+        <Element DATATYPE="1" Desc="Mulitply divide indicator" DispInGrid="N"
+            EDIT="N" EEType="" FldType="" Value="">MD_I</Element>
+    </Elements>
+</DO>

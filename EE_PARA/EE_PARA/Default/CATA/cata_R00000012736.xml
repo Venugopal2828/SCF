@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="True">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="CATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>R49082302495</ID>
+    <MODULE>CFNC</MODULE>
+    <JSPFILE>screen/CATA/catalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMTRX%">%EXIMTRX%.CFNC_LEDGER</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Main Reference" EEType="" HIDDEN="">C_MAIN_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="UNIT CODE" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="4" DESC="Event Times" EEType="" HIDDEN="">I_EVENT_TIMES</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Function Short Name" EEType="" HIDDEN="">C_FUNC_SHORT_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_TRX_REF" EEType="" HIDDEN="H">C_TRX_REF</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_FUNC_ID" EEType="" HIDDEN="H">C_FUNC_ID</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_EVENT_STATUS" EEType="" HIDDEN="H">C_EVENT_STATUS</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="C_LOCKED_FLAG" EEType="" HIDDEN="H">C_LOCKED_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Business Type" EEType="INTERPRETER"
+            HIDDEN="" ISFC="Y">FINC_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Related Ref No"
+            EEType="RELATED_REF" HIDDEN="">RELA_MAIN_REF</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Main Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">' AND </SQL>
+        <SQL DESC="C_EVENT_STATUS" DT="1" EEType="" TYPE="FLD">C_EVENT_STATUS</SQL>
+        <SQL TYPE="SQL"> = 'S' ORDER BY </SQL>
+        <SQL DESC="Main Reference" DT="12" EEType="" TYPE="FLD">C_MAIN_REF</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Main Reference" EEType="">C_MAIN_REF</FIELD>
+        <FIELD DATATYPE="1" DESC="C_EVENT_STATUS" EEType="">C_EVENT_STATUS</FIELD>
+        <FIELD DATATYPE="12" DESC="Main Reference" EEType="">C_MAIN_REF</FIELD>
+    </CLAUSEFIELD>
+</CATA>

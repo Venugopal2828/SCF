@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>SSSS_SRC_SWIFT_MT202_single_X202_1_52A_ID_onchange_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <BK_FULL_NM ALIAS="T0" DBFUNC="" DESC="Bank Full Name" DT="12" HIDDEN="F" TYPE="F">X202_1_52A_NM</BK_FULL_NM>
+        <GTS_ADD ALIAS="T0" DBFUNC="" DESC="GTS Address" DT="12" HIDDEN="F" TYPE="F">X202_1_52A_ADD</GTS_ADD>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">BK_ID='</SQL>
+            <SQL TYPE="FLD">X202_1_52A_ID</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

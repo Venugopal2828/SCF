@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_CLEARING</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>TrxSys_SYT_FLD_PYMT_FRGN_AC_NO_onchange_28</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_CLEAR_TYPE ALIAS="T0" DBFUNC="" DESC="Clear Type" DT="12" HIDDEN="F" TYPE="F">FRGN_AC_TYPE</C_CLEAR_TYPE>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_CNTY_CODE='</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">' AND C_CLEAR_VALID='T' AND C_ACCT_CCY= '</SQL>
+            <SQL TYPE="FLD">FRGN_AC_CCY</SQL>
+            <SQL TYPE="SQL">' AND C_ACCT_NR='</SQL>
+            <SQL TYPE="FLD">FRGN_AC_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INBOX>
+    <TABL>TRX_INBOX</TABL>
+    <ITEM DESC="Awaiting Corporate Approval" NAME="Awaiting Authorisation">
+        <FLDS>
+            <FLD DESC="Our Reference Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+            <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+            <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+            <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+            <FLD DESC="Module Name" EEType="" HIDDEN="" SELECTED="N" TYPE="12">C_MODULE</FLD>
+        </FLDS>
+        <CRTJSP>IMLC_GeneralCriteria.jsp</CRTJSP>
+        <SHOWFLDS/>
+        <CLAUSE>
+            <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+            <SQL TYPE="SQL">&apos; </SQL>
+            <SQL DT="val" TYPE="OP">LOG2</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP3</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+            <SQL TYPE="SQL">&apos; </SQL>
+            <SQL DT="val" TYPE="OP">LOG5</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP6</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+            <SQL TYPE="SQL">&apos; AND (</SQL>
+            <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> IN (&apos;P&apos;,&apos;T&apos;))</SQL>
+        </CLAUSE>
+    </ITEM>
+    <ITEM DESC="Saved" NAME="Saved Records">
+        <FLDS>
+            <FLD DESC="Our Reference Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+            <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+            <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+            <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+            <FLD DESC="Module Name" EEType="" HIDDEN="" SELECTED="N" TYPE="12">C_MODULE</FLD>
+        </FLDS>
+        <CRTJSP>IMLC_GeneralCriteria.jsp</CRTJSP>
+        <SHOWFLDS/>
+        <CLAUSE>
+            <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+            <SQL TYPE="SQL">&apos; </SQL>
+            <SQL DT="val" TYPE="OP">LOG2</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP3</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+            <SQL TYPE="SQL">&apos; </SQL>
+            <SQL DT="val" TYPE="OP">LOG5</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP6</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+            <SQL TYPE="SQL">&apos; AND (</SQL>
+            <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = &apos;Z&apos;)</SQL>
+        </CLAUSE>
+    </ITEM>
+    <ITEM DESC="Rejected by Supervisor" NAME="Rejected">
+        <FLDS>
+            <FLD DESC="Our Reference Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+            <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+            <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+            <FLD DESC="Transaction Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+            <FLD DESC="Module Name" EEType="" HIDDEN="" SELECTED="N" TYPE="12">C_MODULE</FLD>
+        </FLDS>
+        <CRTJSP>IMLC_GeneralCriteria.jsp</CRTJSP>
+        <SHOWFLDS/>
+        <CLAUSE>
+            <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+            <SQL TYPE="SQL">&apos; </SQL>
+            <SQL DT="val" TYPE="OP">LOG2</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP3</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+            <SQL TYPE="SQL">&apos; </SQL>
+            <SQL DT="val" TYPE="OP">LOG5</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP6</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+            <SQL TYPE="SQL">&apos; AND (</SQL>
+            <SQL DESC="Trx Status" DT="12" TYPE="FLD" WTYPE="CASE">C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = &apos;R&apos;)</SQL>
+        </CLAUSE>
+    </ITEM>
+    <ITEM DESC="Bank Message" NAME="Bank Message">
+        <FLDS>
+            <FLD DESC="C_NOW_EVENT" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_NOW_EVENT</FLD>
+            <FLD DESC="Main Ref." EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_MAIN_REF</FLD>
+            <FLD DESC="Trx Status" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_TRX_STATUS</FLD>
+            <FLD DESC="Company Code" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">C_UNIT_CODE</FLD>
+            <FLD DESC="Our Reference Number" EEType="RELATED_REF" HIDDEN="" SELECTED="N" TYPE="12">CUST_NO</FLD>
+            <FLD DESC="Applicant Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">APPL_NM</FLD>
+            <FLD DESC="Beneficiary Name" EEType="NM_CHAR35" HIDDEN="" SELECTED="N" TYPE="12">BENE_NM</FLD>
+            <FLD DESC="Module Name" EEType="" HIDDEN="" SELECTED="N" TYPE="12">C_MODULE</FLD>
+            <FLD DESC="Parent Main Reference" EEType="" HIDDEN="H" SELECTED="N" TYPE="12">PARENT_MAIN_REF</FLD>
+        </FLDS>
+        <CRTJSP>IMLC_GeneralCriteria.jsp</CRTJSP>
+        <SHOWFLDS/>
+        <CLAUSE>
+            <SQL DESC="Our Reference" DT="12" TYPE="FLD" WTYPE="CASE">CUST_NO</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE1</SQL>
+            <SQL TYPE="SQL">&apos; </SQL>
+            <SQL DT="val" TYPE="OP">LOG2</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DESC="Applicant Name" DT="12" TYPE="FLD" WTYPE="CASE">APPL_NM</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP3</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE4</SQL>
+            <SQL TYPE="SQL">&apos; </SQL>
+            <SQL DT="val" TYPE="OP">LOG5</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DESC="Beneficiary Name" DT="12" TYPE="FLD" WTYPE="CASE">BENE_NM</SQL>
+            <SQL TYPE="SQL"/>
+            <SQL DT="val" TYPE="OP">OP6</SQL>
+            <SQL TYPE="SQL"> &apos;</SQL>
+            <SQL DT="val" ISEnable="T" LENGTH="0" TYPE="OP">VALUE7</SQL>
+            <SQL TYPE="SQL">&apos; AND </SQL>
+            <SQL DESC="C_NOW_EVENT" DT="12" TYPE="FLD" WTYPE="CASE">C_NOW_EVENT</SQL>
+            <SQL TYPE="SQL"> = &apos;STP&apos;</SQL>
+        </CLAUSE>
+    </ITEM>
+</INBOX>

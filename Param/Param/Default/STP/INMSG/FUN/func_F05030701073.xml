@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: Dispute Settlement Notification");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sType = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUSI_TYPE");
+var sUnitCode = "";
+if(sType == "EF"){
+sUnitCode = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_SEL_ID");
+}else if(sType == "IF"){
+sUnitCode = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUYER_ID");
+}
+stp.setCmpId(sUnitCode);
+var sMainRef = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_CE_MAIN_REF");
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Received Dispute Settlement");
+stp.writeLog("End: Dispute Settlement Notification");]]></js-content>
+</root>

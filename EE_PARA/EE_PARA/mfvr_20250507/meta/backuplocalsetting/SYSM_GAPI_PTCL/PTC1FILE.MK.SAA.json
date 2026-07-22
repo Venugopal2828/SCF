@@ -1,0 +1,22 @@
+{root:"SYSM_GAPI_PTCL",_type_:9732,SYSM_GAPI_PTCL:{
+  C_ID:"PTC1FILE.MK.SAA",
+  C_NAME:"PTC1FILE.MK.SAA"
+  ,C_DESC:"Mock swift file, convert Ixxx to Oxxx",
+  C_TYPE:"9733",
+  T_CTX:{
+   "send_fd":"/data/EE_PARA/TRXDATA/MOCK_SAA_O798", "send_name":"*.txt",
+   "recv_fd":"/data/EE_PARA/TRXDATA/SAA_QI_MT", "recv_name":"*.abi"
+  },
+  C_TYPE_Q:"9737",
+  T_CTX_Q:{HOST:"EEMQ","password":"passw0rd","userID":"admin"
+   ,QueueManagerName:"QMEE"
+   ,"SvrConnection-Channel":"CHL.SVR"
+   ,"Receive.QueueName":"QI.MT.QMTS"
+   ,"Send.QueueName":"QS.MT.QMTS"
+   ,"Error.Queue":"Q.ERROR"
+   ,"Listener.TCP.Port":"1414"
+   ,"Coded.Character.Set.ID":"1381"},
+   
+IS_SYNC:"1",C_GROUP:"BZND13020400033",
+C_CONVERTER:"com.cs.esp.swift.mock.MockConvert",
+C_EXT_NAME:"MOCK"}}

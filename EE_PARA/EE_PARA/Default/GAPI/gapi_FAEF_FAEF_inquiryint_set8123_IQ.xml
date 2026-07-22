@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gapi AutoGen-Parameter-Version="1.0">
+    <header>
+        <ec-flag>T</ec-flag>
+        <jndi-flag>N</jndi-flag>
+        <gapi-type>EJB</gapi-type>
+        <gapi-type-value>GAPI2IATrxBusiness</gapi-type-value>
+        <reformat-class/>
+        <time-out-ack-delay>0</time-out-ack-delay>
+        <time-out-ack>
+            <send-queue-id>SWIFT.BACKUP</send-queue-id>
+            <recv-queue-id>SWIFT.BACKUP</recv-queue-id>
+            <recv-time-out>0</recv-time-out>
+        </time-out-ack>
+        <other-system-id>eLOAN</other-system-id>
+        <other-system-interface>8123</other-system-interface>
+        <recv-time-out>0</recv-time-out>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id/>
+        <msg-format/>
+        <module>FAEF</module>
+        <interface-mapping-name>FAEF_inquiryint_set8123</interface-mapping-name>
+        <other-system-desc/>
+        <trx-type>I</trx-type>
+        <gapi-mode afterTrx="false" conditional="false" gapiMode="" mode="SYNC"/>
+        <gapi-resend>N</gapi-resend>
+        <send-refuse-msg>N</send-refuse-msg>
+        <atth-queue-id/>
+    </header>
+    <selector-setting>
+        <send/>
+        <recv/>
+    </selector-setting>
+    <send-msg-map>
+        <C_UNIT_CODE descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_TEMP3</C_UNIT_CODE>
+        <IA_D_POST_TODATE descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_PMT_VAL_DT</IA_D_POST_TODATE>
+        <IA_C_MODU_NAME descr="" ec-tag="" fv-type="V" op-tag="" order="">FAEF</IA_C_MODU_NAME>
+        <IA_N_PEN_RATE descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_OVDUE_INT_RT</IA_N_PEN_RATE>
+        <IA_C_REF_NO descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_INV_LOAN_ID</IA_C_REF_NO>
+        <IA_D_POST_FROMDATE descr="" ec-tag="" fv-type="F" op-tag="" order="">FA_LAST_PINT_DT</IA_D_POST_FROMDATE>
+    </send-msg-map>
+    <recv-msg-map>
+        <FA_TEMP_AMT11 descr="" fv-type="F" order="" sheet="" sheet-separator="">IA_Y_REACC_INT</FA_TEMP_AMT11>
+    </recv-msg-map>
+    <send-item/>
+</gapi>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TSUM_EM_BASELINE</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>TSUM</module-name>
+        <cubk-mapping-name>TSU_PO_ID_GET</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_UNIT_CODE ALIAS="T0" DESC="BUSINESS UNIT" DT="12" TYPE="S">SYS_BUSI_UNIT</C_UNIT_CODE>
+            <TSU_PO_ID ALIAS="T0" DESC="PO Ref." DT="12" TYPE="F">TSU_PO_ID</TSU_PO_ID>
+            <TSU_SEL_NM ALIAS="T0" DESC="Seller Name" DT="12" TYPE="F">TSU_SEL_NM</TSU_SEL_NM>
+            <TSU_BUYER_NM ALIAS="T0" DESC="Buyer Name" DT="12" TYPE="F">TSU_BUYER_NM</TSU_BUYER_NM>
+            <C_TRX_STATUS ALIAS="T0" DESC="C_TRX_STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <TSU_PO_DT ALIAS="T0" DBFUNC="" DESC="PO Date" DT="91" HIDDEN="F" TYPE="F">TSU_PO_DT</TSU_PO_DT>
+        <TSU_PO_ID ALIAS="T0" DBFUNC="" DESC="PO Ref." DT="12" HIDDEN="F" TYPE="F">TSU_PO_ID</TSU_PO_ID>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">C_MAIN_REF</C_MAIN_REF>
+        <TSUR2_TRX_STATUS ALIAS="T0" DBFUNC="" DESC="Transaction Status 2" DT="12" HIDDEN="F" TYPE="F">TSUR2_TRX_STATUS</TSUR2_TRX_STATUS>
+        <TSU_BUYER_NM ALIAS="T0" DBFUNC="" DESC="Buyer Name" DT="12" HIDDEN="F" TYPE="F">TSU_BUYER_NM</TSU_BUYER_NM>
+        <TSU_SEL_NM ALIAS="T0" DBFUNC="" DESC="Seller Name" DT="12" HIDDEN="F" TYPE="F">TSU_SEL_NM</TSU_SEL_NM>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">(</SQL>
+            <SQL DT="12" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.TSUR2_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> ='ESTD' OR </SQL>
+            <SQL DT="12" EEType="INTERPRETER" ISFC="Y" TYPE="TBL_FLD">T0.TSUR2_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> ='ACTV') AND </SQL>
+            <SQL DT="12" EEType="Max70Text" TYPE="TBL_FLD">T0.TSU_BUYER_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">TSU_BUYER_NM</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="12" EEType="Max70Text" TYPE="TBL_FLD">T0.TSU_SEL_NM</SQL>
+            <SQL TYPE="SQL"> LIKE '%</SQL>
+            <SQL TYPE="FLD">TSU_SEL_NM</SQL>
+            <SQL TYPE="SQL">%' AND </SQL>
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> ='M' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_UNIT_CODE</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL DT="var" DV="SYS_BUSI_UNIT" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

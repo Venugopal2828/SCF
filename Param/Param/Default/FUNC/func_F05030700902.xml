@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">EXCO</MODULE>
+        <MODULE_DESC>Export Collections</MODULE_DESC>
+        <EVENT>Transaction</EVENT>
+        <CATALOGID>C08100200002</CATALOGID>
+        <ID>F05030700902</ID>
+        <NAME>EXCO Apply for Amendment</NAME>
+        <DESC>Export Collection Amendment</DESC>
+        <FUNSHORTNAME>ApplyAmd</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>PM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Pending">TrxManagerPending</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">EXCO_ApplyAmd.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030700901</ID>
+        <NAME>EXCO Apply for Amendment_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030700901</ID>
+        <NAME>EXCO Apply for Amendment_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000113</ID>
+        <NAME>EXCO Apply for Amendment_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

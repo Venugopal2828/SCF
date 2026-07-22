@@ -1,0 +1,42 @@
+{
+	"id": "WF000004",
+	"type": "function",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "WF000004",
+			"display": "chart.bar",
+			"title": "Supervisor Release IMCO",
+			"desc": "Show all IMCO transactions waiting to be released.",
+			"tooltip": "{\"text\":\"{a}<br/>{b} day ago: {c} transaction {d}\",\"confine\":true,\"trigger\":\"item\"}",
+			"action": {
+				"type": "catalog",
+				"cfg": "_TRX_STATUS=RELEASE_CATA&_TRX_LIST_FILTER_AJAX_REQUEST=true&IC_CHECK=C_MAIN_REF&OP1=LIKE&OP2=%25&OP3=AND&IC_CHECK=C_UNIT_CODE&OP4=LIKE&OP5=%25&OP6=AND&IC_CHECK=D_CREA_DATE&OP7=%3D&OP8=&like_flag=FALSE"
+			},
+			"renderers": {
+				"chart": {
+					"bar": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"pie": "{\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"scatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}",
+					"effectScatter": "{\"xAxis\":{\"name\":\"Number of days\"},\"visualMap\":{\"colors\":[\"#4caf50\",\"#FCDC00\",\"#FB9E00\",\"#fc5c65\"],\"values\":[0,3,5,7,10]}}"
+				}
+			}
+		},
+		"data": {
+			"function": {
+				"functionId": "F05030701640",
+				"extraSelect": "D_CREA_DATE,C_UNIT_CODE, (TO_DATE(sysdate ) - TO_DATE(D_CREA_DATE)) NM, COUNT(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(D_CREA_DATE)),'d' )) as VL",
+				"extraWhere": "",
+				"extraGroupBy": "D_CREA_DATE,C_UNIT_CODE,(CONCAT(to_char(TO_DATE(sysdate ) - TO_DATE(D_CREA_DATE)),'d' ))",
+				"extraOrderBy": "C_UNIT_CODE, NM asc",
+				"overwrite": ["extraSelect", "extraOrderBy"],
+				"catalog": ["D_CREA_DATE"],
+				"catalogOp": ["OP8"]
+			},
+			"sql": "",
+			"dataSetField": "C_UNIT_CODE",
+			"nameField": "NM",
+			"valueField": "VL"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start: RecPricing");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sMainRef = stp.getMsgTagVal("FA_CE_MAIN_REF");
+stp.writeLog("sMainRef*******"+sMainRef);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+var sUnitCode = stp.getMsgTagVal("FA_SEL_ID");
+stp.setCmpId(sUnitCode);
+stp.updateFieldValue("CURRNT_STATUS","Received Pricing");
+stp.writeLog("End: RecPricing");]]></js-content>
+</root>

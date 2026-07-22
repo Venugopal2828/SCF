@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <DO name="XDO_PAYINV">
+        <FLD name="FA_BUSI_STATUS" path="XDO_PAYINV"><![CDATA[业务状态]]></FLD>
+        <FLD name="FA_DOC_CCY" path="XDO_PAYINV"><![CDATA[单据币种]]></FLD>
+        <FLD name="FA_DOC_BAL" path="XDO_PAYINV"><![CDATA[单据余额]]></FLD>
+        <FLD name="FA_DOC_NO" path="XDO_PAYINV"><![CDATA[单据编号]]></FLD>
+        <FLD name="FA_DOC_REF" path="XDO_PAYINV"><![CDATA[单据参考编号]]></FLD>
+        <FLD name="FA_DOC_DT" path="XDO_PAYINV"><![CDATA[单据日期]]></FLD>
+        <FLD name="FA_DOC_AMT" path="XDO_PAYINV"><![CDATA[单据金额]]></FLD>
+    </DO>
+    <DO desc="发票贸易数据对象（TDO）" name="INV_LI">
+        <FLD name="FA_DOC_TYPE" path="INV_LI"><![CDATA[单据类型]]></FLD>
+        <FLD name="FA_DOC_NO" path="INV_LI"><![CDATA[单据编号]]></FLD>
+        <FLD name="FA_DOC_VAL_DT" path="INV_LI"><![CDATA[单据起息日]]></FLD>
+        <FLD name="FA_DOC_DUE_DT" path="INV_LI"><![CDATA[单据到期日]]></FLD>
+        <FLD name="FA_DOC_AMT" path="INV_LI"><![CDATA[单据金额]]></FLD>
+        <FLD name="FA_DOC_CCY" path="INV_LI"><![CDATA[单据币种]]></FLD>
+        <FLD name="FA_DOC_DT" path="INV_LI"><![CDATA[单据日期]]></FLD>
+    </DO>
+    <DO desc="发票" name="Invoice">
+        <FLD name="FA_DOC_NO" path="Invoice"><![CDATA[单据编号]]></FLD>
+    </DO>
+    <DO desc="应收结算 XML 数据对象实体" name="XDO_INVOICE">
+        <FLD name="FA_PMT_VAL_DT" path="XDO_INVOICE"><![CDATA[付款起息日]]></FLD>
+        <FLD name="FA_DOC_BAL" path="XDO_INVOICE"><![CDATA[单据余额]]></FLD>
+        <FLD name="FA_DOC_DUE_DT" path="XDO_INVOICE"><![CDATA[单据到期日]]></FLD>
+        <FLD name="FA_DOC_CCY" path="XDO_INVOICE"><![CDATA[单据币别]]></FLD>
+        <FLD name="FA_DOC_DT" path="XDO_INVOICE"><![CDATA[单据日期]]></FLD>
+        <FLD name="FA_PMT_AMT" path="XDO_INVOICE"><![CDATA[付款金额]]></FLD>
+        <FLD name="FA_DEDUCT_AMT" path="XDO_INVOICE"><![CDATA[扣减金额]]></FLD>
+        <FLD name="FA_BK_CHG_AMT" path="XDO_INVOICE"><![CDATA[银行费用金额]]></FLD>
+        <FLD name="FA_DOC_AMT" path="XDO_INVOICE"><![CDATA[单据金额]]></FLD>
+        <FLD name="FA_DOC_NO" path="XDO_INVOICE"><![CDATA[单据编号]]></FLD>
+    </DO>
+    <DO desc="RF 补充协议签署 XML 数据对象实体" name="XDO_SA_RF">
+        <FLD name="FA_SEL_NM" path="XDO_SA_RF"><![CDATA[卖方名称]]></FLD>
+        <FLD name="FA_APPL_LMT_CCY" path="XDO_SA_RF"><![CDATA[已用额度币种]]></FLD>
+        <FLD name="FA_LMT_TYPE" path="XDO_SA_RF"><![CDATA[额度类型]]></FLD>
+        <FLD name="FA_APPL_LMT_AMT" path="XDO_SA_RF"><![CDATA[已用额度金额]]></FLD>
+        <FLD name="FA_SERVICE_REQ" path="XDO_SA_RF"><![CDATA[服务申请]]></FLD>
+        <FLD name="FA_SEL_ID" path="XDO_SA_RF"><![CDATA[卖方名称]]></FLD>
+    </DO>
+    <DO desc="发票-采购订单贸易数据对象模板" name="TDO_INV_PO">
+        <FLD name="TSU_PO_ID" path="TDO_INV_PO"><![CDATA[采购订单编号]]></FLD>
+        <FLD name="TSU_PO_DT" path="TDO_INV_PO"><![CDATA[采购订单日期]]></FLD>
+        <FLD name="TSU_TTL_NET_AMT" path="TDO_INV_PO"><![CDATA[采购订单总净额]]></FLD>
+        <FLD name="TSU_DS_FINAL_FLG" path="TDO_INV_PO"><![CDATA[数据集最终提交标志]]></FLD>
+        <FLD name="TSU_LINE_TTL_AMT" path="TDO_INV_PO"><![CDATA[行项目合计金额]]></FLD>
+    </DO>
+    <DO desc="接收催收 XML 实体" name="XDO_DUN">
+        <FLD name="FA_DOC_BAL" path="XDO_DUN"><![CDATA[单据余额]]></FLD>
+        <FLD name="FA_DOC_DUE_DT" path="XDO_DUN"><![CDATA[单据到期日]]></FLD>
+        <FLD name="FA_DOC_VAL_DT" path="XDO_DUN"><![CDATA[单据起息日]]></FLD>
+        <FLD name="FA_DOC_CCY" path="XDO_DUN"><![CDATA[单据币种]]></FLD>
+        <FLD name="FA_DOC_NO" path="XDO_DUN"><![CDATA[单据编号]]></FLD>
+        <FLD name="FA_DOC_AMT" path="XDO_DUN"><![CDATA[单据金额]]></FLD>
+    </DO>
+    <DO desc="争议 XML 数据对象实体" name="XDO_DISPUTE">
+        <FLD name="FA_DOC_REF" path="XDO_DISPUTE"><![CDATA[单据参考号]]></FLD>
+        <FLD name="FA_DOC_NO" path="XDO_DISPUTE"><![CDATA[单据编号]]></FLD>
+        <FLD name="FA_DSP_AMT" path="XDO_DISPUTE"><![CDATA[争议金额]]></FLD>
+        <FLD name="FA_DOC_AMT" path="XDO_DISPUTE"><![CDATA[单据金额]]></FLD>
+    </DO>
+    <DO desc="贷项通知单传输 XML 数据对象实体" name="XDO_CN">
+        <FLD name="FA_DOC_CCY" path="XDO_CN"><![CDATA[单据币种]]></FLD>
+        <FLD name="FA_DOC_AMT" path="XDO_CN"><![CDATA[单据金额]]></FLD>
+        <FLD name="FA_DOC_VAL_DT" path="XDO_CN"><![CDATA[单据有效]]></FLD>
+        <FLD name="FA_DOC_DT" path="XDO_CN"><![CDATA[单据日期]]></FLD>
+        <FLD name="FA_PMT_COND" path="XDO_CN"><![CDATA[付款条件]]></FLD>
+        <FLD name="FA_CRN_INV_LINK_NO" path="XDO_CN"><![CDATA[贷项通知单关联发票号]]></FLD>
+        <FLD name="FA_DOC_DUE_DT" path="XDO_CN"><![CDATA[单据到期日]]></FLD>
+        <FLD name="FA_DOC_BAL" path="XDO_CN"><![CDATA[单据余额]]></FLD>
+        <FLD name="FA_DOC_NO" path="XDO_CN"><![CDATA[单据编号]]></FLD>
+    </DO>
+    <DO desc="采购订单贸易数据对象" name="PO_LI">
+        <FLD name="PO_AMT" path="PO_LI"><![CDATA[采购订单金额]]></FLD>
+        <FLD name="PO_CCY" path="PO_LI"><![CDATA[采购订单币种]]></FLD>
+        <FLD name="PO_NO" path="PO_LI"><![CDATA[采购订单编号]]></FLD>
+        <FLD name="FA_LATEST_SHIP_DT" path="PO_LI"><![CDATA[最迟装运日期]]></FLD>
+        <FLD name="PO_DT" path="PO_LI"><![CDATA[采购订单日期]]></FLD>
+        <FLD name="FA_DOC_TYPE" path="PO_LI"><![CDATA[单据类型]]></FLD>
+    </DO>
+    <DO desc="接收付款意向报告" name="TDO_ITPRPT">
+        <FLD name="TSUR2_TRX_STATUS" path="TDO_ITPRPT"><![CDATA[交易状态]]></FLD>
+        <FLD name="TSU_PO_ID" path="TDO_ITPRPT"><![CDATA[采购订单编号]]></FLD>
+        <FLD name="TSU_TTL_NET_AMT" path="TDO_ITPRPT"><![CDATA[采购订单总净额]]></FLD>
+        <FLD name="TSU_PO_DT" path="TDO_ITPRPT"><![CDATA[采购订单日期]]></FLD>
+        <FLD name="TSU_TID" path="TDO_ITPRPT"><![CDATA[交易TID]]></FLD>
+        <FLD name="TSU_ACCUM_NET_AMT" path="TDO_ITPRPT"><![CDATA[累计净额]]></FLD>
+    </DO>
+    <DO desc="采购订单行项目 TDO 实体" name="XDO_PO_LI">
+        <FLD name="TSUR2_QTY_UNIT_CD" path="XDO_PO_LI"><![CDATA[计量单位数量代码]]></FLD>
+        <FLD name="TSU_QTY_VAL" path="XDO_PO_LI"><![CDATA[数量值]]></FLD>
+        <FLD name="TSU_UNITPRIC_AMT" path="XDO_PO_LI"><![CDATA[单价]]></FLD>
+        <FLD name="TSU_TTL_AMT" path="XDO_PO_LI"><![CDATA[行项目合计金额]]></FLD>
+        <FLD name="TSU_LNITMNB" path="XDO_PO_LI"><![CDATA[行项目编号]]></FLD>
+        <FLD name="TSU_PDCTNM" path="XDO_PO_LI"><![CDATA[商品名称]]></FLD>
+    </DO>
+    <DO desc="接收融资通知 XML 数据对象实体" name="XDO_INVFIN">
+        <FLD name="FA_DOC_AMT" path="XDO_INVFIN"><![CDATA[单据金额]]></FLD>
+        <FLD name="FA_DOC_NO" path="XDO_INVFIN"><![CDATA[单据编号]]></FLD>
+        <FLD name="FA_LOAN_VAL_DT" path="XDO_INVFIN"><![CDATA[贷款起息日]]></FLD>
+        <FLD name="FA_LOAN_DUE_DT" path="XDO_INVFIN"><![CDATA[融资到期日]]></FLD>
+        <FLD name="FA_DOC_BAL" path="XDO_INVFIN"><![CDATA[单据余额]]></FLD>
+        <FLD name="FA_INV_LOAN_EBAL" path="XDO_INVFIN"><![CDATA[发票融资余额]]></FLD>
+        <FLD name="FA_INV_LOAN_AMT" path="XDO_INVFIN"><![CDATA[发票融资金额]]></FLD>
+        <FLD name="FA_LOAN_INT_AMT" path="XDO_INVFIN"><![CDATA[贷款利息金额]]></FLD>
+    </DO>
+    <DO desc="付款意向" name="TDO_ITP">
+        <FLD name="TSU_PO_ID" path="TDO_ITP"><![CDATA[采购订单编号]]></FLD>
+        <FLD name="TSU_PO_DT" path="TDO_ITP"><![CDATA[采购订单日期]]></FLD>
+        <FLD name="TSU_TID" path="TDO_ITP"><![CDATA[交易TID]]></FLD>
+        <FLD name="TSU_NET_AMT" path="TDO_ITP"><![CDATA[净额]]></FLD>
+    </DO>
+    <DO desc="接收催收 XML 实体" name="XDO_FINRTN">
+        <FLD name="FA_DOC_NO" path="XDO_FINRTN"><![CDATA[单据编号]]></FLD>
+        <FLD name="FA_PMT_AMT" path="XDO_FINRTN"><![CDATA[付款金额]]></FLD>
+        <FLD name="FA_FIN_RETURN_RSN" path="XDO_FINRTN"><![CDATA[融资退回原因]]></FLD>
+        <FLD name="FA_FIN_RET_BAL" path="XDO_FINRTN"><![CDATA[应退回余额]]></FLD>
+        <FLD name="FA_PMT_DT" path="XDO_FINRTN"><![CDATA[付款日期]]></FLD>
+        <FLD name="FA_DSP_AMT" path="XDO_FINRTN"><![CDATA[争议金额]]></FLD>
+    </DO>
+    <DO desc="DF 补充协议签署 XML 数据对象实体" name="XDO_SA_DF">
+        <FLD name="FA_LMT_TYPE" path="XDO_SA_DF"><![CDATA[额度类型]]></FLD>
+        <FLD name="FA_BUYER_ID" path="XDO_SA_DF"><![CDATA[买方编号]]></FLD>
+        <FLD name="FA_APPL_LMT_AMT" path="XDO_SA_DF"><![CDATA[已用额度金额]]></FLD>
+        <FLD name="FA_APPL_LMT_CCY" path="XDO_SA_DF"><![CDATA[已用额度币种]]></FLD>
+        <FLD name="FA_BUYER_NM" path="XDO_SA_DF"><![CDATA[买方名称]]></FLD>
+        <FLD name="FA_SERVICE_REQ" path="XDO_SA_DF"><![CDATA[服务申请]]></FLD>
+    </DO>
+    <DO desc="抵押" name="Collateral">
+        <FLD name="FA_CNTR_REF" path="Collateral"><![CDATA[合同参考编号]]></FLD>
+        <FLD name="C_MAIN_REF" path="Collateral"><![CDATA[主参考号]]></FLD>
+    </DO>
+</root>

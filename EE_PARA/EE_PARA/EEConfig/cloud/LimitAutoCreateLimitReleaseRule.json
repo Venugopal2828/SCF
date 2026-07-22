@@ -1,0 +1,143 @@
+{
+    "req_data": {
+        "type": "array",
+        "source": {
+            "type": "xpath",
+            "value": "/message/out-msg-content"
+        },
+        "items": [
+            {
+                "type": "object",
+                "fields": {
+                    "custId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_CUST_ID"
+                        }
+                    },
+                    "rcustId": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_RCUST_ID"
+                        }
+                    },
+                    "grupName": {
+                        "type": "arrayString",
+						"arraySource":[
+							{
+								"xType":"G",
+								"source": {
+									"type": "xpath",
+									"value": "LM_PARENT_NAME"
+								}
+							},
+							{
+								"xType":"C",
+								"source": {
+									"type": "xpath",
+									"value": "LM_GRUP_DES"
+								}
+							},
+							{
+								"xType":"S",
+								"source": {
+									"type": "xpath",
+									"value": "LM_PARENT_NAME"
+								}
+							},
+							{
+								"xType":"M",
+								"source": {
+									"type": "xpath",
+									"value": "LM_CSL_DESC"
+								}
+							},
+							{
+								"xType":"T",
+								"source": {
+									"type": "xpath",
+									"value": "LM_CSL_DESC"
+								}
+							},
+							{
+								"xType":"B",
+								"source": {
+									"type": "xpath",
+									"value": "LM_CSL_DESC"
+								}
+							}
+						]
+                    },
+					"currName": {
+                        "type": "arrayString",
+						"arraySource":[
+							{
+								"xType":"G",
+								"source": {
+									"type": "xpath",
+									"value": "LM_GRUP_DES"
+								}
+							},
+							{
+								"xType":"S",
+								"source": {
+									"type": "xpath",
+									"value": "LM_CSL_DESC"
+								}
+							},
+							{
+								"xType":"M",
+								"source": {
+									"type": "xpath",
+									"value": "LM_FACI_TP"
+								}
+							},
+							{
+								"xType":"T",
+								"source": {
+									"type": "xpath",
+									"value": "LM_FACI_TP"
+								}
+							},
+							{
+								"xType":"B",
+								"source": {
+									"type": "xpath",
+									"value": "LM_FACI_TP"
+								}
+							}
+						]
+                    },
+					"parentName": {
+                        "type": "arrayString",
+						"arraySource":[
+							{
+								"xType":"T",
+								"source": {
+									"type": "xpath",
+									"value": "LM_PARENT_NAME"
+								}
+							},
+							{
+								"xType":"B",
+								"source": {
+									"type": "xpath",
+									"value": "LM_GRUP_DES"
+								}
+							}
+						]
+                    },
+					"opType": {
+                        "type": "string",
+                        "source": {
+                            "type": "xpath",
+                            "value": "LM_OP_TYPE"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,1561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.2.v20070205-1728 Build &lt;20070205-1728></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.xml" name="Data Source" id="231">
+            <property name="FILELIST">H:\BCR\RO\AP\FORM\form_schema_FAEF_DFDisputeReg.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.xml.dataSet" name="Data Set" id="232">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TRX_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">C_BU_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">C_MAIN_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_CNTR_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_SEL_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">FA_BUYER_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">CLERK_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">FA_INDR_PMT_FLG</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">OWNER_BR_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TRX_DT</property>
+                    <property name="nativeName">TRX_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">C_BU_ID</property>
+                    <property name="nativeName">C_BU_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">C_MAIN_REF</property>
+                    <property name="nativeName">C_MAIN_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_CNTR_DOC_NO</property>
+                    <property name="nativeName">FA_CNTR_DOC_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_SEL_NM</property>
+                    <property name="nativeName">FA_SEL_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">FA_BUYER_NM</property>
+                    <property name="nativeName">FA_BUYER_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">CLERK_ID</property>
+                    <property name="nativeName">CLERK_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">FA_INDR_PMT_FLG</property>
+                    <property name="nativeName">FA_INDR_PMT_FLG</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">OWNER_BR_NM</property>
+                    <property name="nativeName">OWNER_BR_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">table0#-TNAME-#table0#:#[/domData]#:#{TRX_DT;String;/TRX_DT},{C_BU_ID;String;/C_BU_ID},{C_MAIN_REF;String;/C_MAIN_REF},{FA_CNTR_DOC_NO;String;/FA_CNTR_DOC_NO},{FA_SEL_NM;String;/FA_SEL_NM},{FA_BUYER_NM;String;/FA_BUYER_NM},{CLERK_ID;String;/CLERK_ID},{FA_INDR_PMT_FLG;String;/FA_INDR_PMT_FLG},{OWNER_BR_NM;String;/OWNER_BR_NM}</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>TRX_DT</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TRX_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_NO</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_REF</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_REF</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_STATUS</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_STATUS</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_DT</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_TRF_DT</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_TRF_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_CCY</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_CCY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_AMT</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_TYPE</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_TYPE</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>C_MAIN_REF</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>C_MAIN_REF</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_SEL_NM</design:name>
+            <design:position>11</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_SEL_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_IF_NM</design:name>
+            <design:position>12</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_IF_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_MSG_TEXT</design:name>
+            <design:position>13</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_MSG_TEXT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_BUYER_NM</design:name>
+            <design:position>14</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_BUYER_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CLERK_ID</design:name>
+            <design:position>15</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLERK_ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="MAX_ROW">-1</property>
+            <property name="XML_FILE">H:\BCR\RO\AP\FORM\form_schema_FAEF_DFDisputeReg.xml</property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.xml.dataSet" name="dispute" id="255">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FA_DOC_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FA_DOC_REF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FA_DOC_STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">FA_DOC_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">FA_NOTIFY_BY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">FA_NOTIFY_BY_NM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">FA_DOC_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">FA_DOC_CCY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">FA_DSP_AMT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">FA_MSG_TEXT02</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">FA_DOC_DUE_DT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FA_DOC_NO</property>
+                    <property name="nativeName">FA_DOC_NO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FA_DOC_REF</property>
+                    <property name="nativeName">FA_DOC_REF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FA_DOC_STATUS</property>
+                    <property name="nativeName">FA_DOC_STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">FA_DOC_DT</property>
+                    <property name="nativeName">FA_DOC_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">FA_NOTIFY_BY</property>
+                    <property name="nativeName">FA_NOTIFY_BY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">FA_NOTIFY_BY_NM</property>
+                    <property name="nativeName">FA_NOTIFY_BY_NM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">FA_DOC_AMT</property>
+                    <property name="nativeName">FA_DOC_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">FA_DOC_CCY</property>
+                    <property name="nativeName">FA_DOC_CCY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">FA_DSP_AMT</property>
+                    <property name="nativeName">FA_DSP_AMT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">FA_MSG_TEXT02</property>
+                    <property name="nativeName">FA_MSG_TEXT02</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">FA_DOC_DUE_DT</property>
+                    <property name="nativeName">FA_DOC_DUE_DT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">table0#-TNAME-#table0#:#[/domData/DisputeReg]#:#{FA_DOC_NO;String;/FA_DOC_NO},{FA_DOC_REF;String;/FA_DOC_REF},{FA_DOC_STATUS;String;/FA_DOC_STATUS},{FA_DOC_DT;String;/FA_DOC_DT},{FA_NOTIFY_BY;String;/FA_NOTIFY_BY},{FA_NOTIFY_BY_NM;String;/FA_NOTIFY_BY_NM},{FA_DOC_AMT;String;/FA_DOC_AMT},{FA_DOC_CCY;String;/FA_DOC_CCY},{FA_DSP_AMT;String;/FA_DSP_AMT},{FA_MSG_TEXT02;String;/FA_MSG_TEXT02},{FA_DOC_DUE_DT;String;/FA_DOC_DUE_DT}</property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_NO</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_NO</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_REF</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_REF</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_STATUS</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_STATUS</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_DT</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_DT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_NOTIFY_BY</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_NOTIFY_BY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_NOTIFY_BY_NM</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_NOTIFY_BY_NM</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_AMT</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DOC_CCY</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DOC_CCY</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_DSP_AMT</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_DSP_AMT</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FA_MSG_TEXT02</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FA_MSG_TEXT02</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <property name="MAX_ROW">-1</property>
+            <property name="XML_FILE">H:\BCR\RO\AP\FORM\form_schema_FAEF_DFDisputeReg.xml</property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-header>
+                <grid id="263">
+                    <property name="width">100%</property>
+                    <column id="264">
+                        <property name="width">2.9270833333in</property>
+                    </column>
+                    <column id="265">
+                        <property name="width">2.417in</property>
+                    </column>
+                    <row id="266">
+                        <cell id="267">
+                            <image id="269">
+                                <property name="source">embed</property>
+                                <property name="imageName">image111.bmp</property>
+                            </image>
+                        </cell>
+                        <cell id="268">
+                            <label id="270">
+                                <property name="fontSize">9px</property>
+                                <text-property name="text">BANCA COMERCIALA ROMANA S.A.
+SOCIETATE ADMINISTRATA IN SISTEM DUALIST
+Bd. Regina Elisabeta Nr 5, Sector 3 Bucuresti
+Inmatriculata la Registrul Comertului: J40/90/1991
+Inmatriculata la Registrul Bancar nr. RB-PJR-40-008/18.02.1999
+Cod Unic de Inregistrare: 361757
+Capital Social 792.468.750 lei
+SWIFT: RNCB RO BU
+Telex 11994; telefon/fax:  021 312 61 85
+Site: http://www.bcr.ro
+</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="13">
+            <property name="width">100%</property>
+            <column id="14">
+                <property name="width">0.7083333333in</property>
+            </column>
+            <column id="16">
+                <property name="width">5.28125in</property>
+            </column>
+            <row id="17">
+                <cell id="18">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="32"/>
+                </cell>
+            </row>
+            <row id="21">
+                <cell id="22">
+                    <label id="33">
+                        <property name="fontFamily">serif</property>
+                        <property name="fontSize">medium</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">DFFC Nr.</text-property>
+                    </label>
+                </cell>
+                <cell id="24">
+                    <data id="250">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">C_MAIN_REF</property>
+                                <expression name="expression">this.value=dataSetRow["C_MAIN_REF"]+'/'+dataSetRow["TRX_DT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">C_MAIN_REF</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="25">
+                <cell id="26">
+                    <label id="35">
+                        <property name="fontFamily">serif</property>
+                        <property name="fontSize">medium</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">De la:</text-property>
+                    </label>
+                </cell>
+                <cell id="28">
+                    <label id="313">
+                        <text-property name="text">Directia Factoring si Finantarea Comertului - Departamentul Factoring</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="29">
+                <cell id="30">
+                    <label id="37">
+                        <property name="fontFamily">serif</property>
+                        <property name="fontSize">medium</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Catre:</text-property>
+                    </label>
+                </cell>
+                <cell id="31">
+                    <data id="310">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">OWNER_BR_NM</property>
+                                <expression name="expression">dataSetRow["OWNER_BR_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">OWNER_BR_NM</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="39">
+                <cell id="40">
+                    <label id="51">
+                        <property name="fontFamily">serif</property>
+                        <property name="fontSize">medium</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Referitor:</text-property>
+                    </label>
+                </cell>
+                <cell id="41">
+                    <data id="253">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Acord Cadru de Factoring nr</property>
+                                <expression name="expression">this.value='Acord Cadru de Factoring nr '+dataSetRow["FA_CNTR_DOC_NO"]+' incheiat cu '+dataSetRow["FA_SEL_NM"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">Acord Cadru de Factoring nr</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="233">
+                <cell id="234">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <label id="237"/>
+                </cell>
+                <cell id="236">
+                    <grid id="302">
+                        <property name="width">100%</property>
+                        <column id="303">
+                            <property name="width">0.65625in</property>
+                        </column>
+                        <column id="304">
+                            <property name="width">4.5729166667in</property>
+                        </column>
+                        <row id="305">
+                            <cell id="306">
+                                <label id="308">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">disputa –</text-property>
+                                </label>
+                            </cell>
+                            <cell id="307">
+                                <data id="309">
+                                    <property name="dataSet">Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">FA_BUYER_NM</property>
+                                            <expression name="expression">dataSetRow["FA_BUYER_NM"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">FA_BUYER_NM</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="288">
+                <cell id="289"/>
+                <cell id="290"/>
+            </row>
+            <row id="45">
+                <cell id="46">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="96">
+                        <property name="width">100%</property>
+                        <column id="97">
+                            <property name="width">3.625in</property>
+                        </column>
+                        <column id="98">
+                            <property name="width">1.3645833333in</property>
+                        </column>
+                        <column id="99">
+                            <property name="width">0.9270833333in</property>
+                        </column>
+                        <row id="100">
+                            <cell id="101">
+                                <property name="colSpan">3</property>
+                                <property name="rowSpan">1</property>
+                                <label id="312">
+                                    <text-property name="text">Prin prezenta va informam ca sunt disputate urmatoarele facturi:</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <table id="110">
+            <property name="width">100%</property>
+            <property name="dataSet">dispute</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FA_DOC_NO</property>
+                    <expression name="expression">dataSetRow["FA_DOC_NO"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_REF</property>
+                    <expression name="expression">dataSetRow["FA_DOC_REF"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_STATUS</property>
+                    <expression name="expression">dataSetRow["FA_DOC_STATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_DT</property>
+                    <expression name="expression">dataSetRow["FA_DOC_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_NOTIFY_BY</property>
+                    <expression name="expression">dataSetRow["FA_NOTIFY_BY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_NOTIFY_BY_NM</property>
+                    <expression name="expression">dataSetRow["FA_NOTIFY_BY_NM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_AMT</property>
+                    <expression name="expression">dataSetRow["FA_DOC_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_CCY</property>
+                    <expression name="expression">dataSetRow["FA_DOC_CCY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DSP_AMT</property>
+                    <expression name="expression">dataSetRow["FA_DSP_AMT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_MSG_TEXT02</property>
+                    <expression name="expression">dataSetRow["FA_MSG_TEXT02"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FA_DOC_DUE_DT</property>
+                    <expression name="expression">dataSetRow["FA_DOC_DUE_DT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="131"/>
+            <column id="154"/>
+            <column id="148">
+                <property name="width">0.5625in</property>
+            </column>
+            <column id="142">
+                <property name="width">0.9166666667in</property>
+            </column>
+            <column id="132">
+                <property name="width">0.7291666667in</property>
+            </column>
+            <column id="133">
+                <property name="width">0.84375in</property>
+            </column>
+            <column id="160">
+                <property name="width">1.21875in</property>
+            </column>
+            <header>
+                <row id="111">
+                    <property name="fontWeight">bold</property>
+                    <property name="fontStyle">italic</property>
+                    <property name="textAlign">center</property>
+                    <cell id="112">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="134">
+                            <property name="fontFamily">serif</property>
+                            <property name="fontSize">medium</property>
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Numar factura</text-property>
+                        </label>
+                    </cell>
+                    <cell id="149">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="161">
+                            <property name="fontFamily">serif</property>
+                            <property name="fontSize">medium</property>
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Valoare factura </text-property>
+                        </label>
+                    </cell>
+                    <cell id="143">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="162">
+                            <property name="fontFamily">serif</property>
+                            <property name="fontSize">medium</property>
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Valuta</text-property>
+                        </label>
+                    </cell>
+                    <cell id="137">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="163">
+                            <property name="fontFamily">serif</property>
+                            <property name="fontSize">medium</property>
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Data emitere factura</text-property>
+                        </label>
+                    </cell>
+                    <cell id="113">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="135">
+                            <property name="fontFamily">serif</property>
+                            <property name="fontSize">medium</property>
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Scadenta</text-property>
+                        </label>
+                    </cell>
+                    <cell id="114">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="136">
+                            <property name="fontFamily">serif</property>
+                            <property name="fontSize">medium</property>
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Suma disputata</text-property>
+                        </label>
+                    </cell>
+                    <cell id="155">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <label id="164">
+                            <property name="fontFamily">serif</property>
+                            <property name="fontSize">medium</property>
+                            <property name="fontStyle">italic</property>
+                            <text-property name="text">Motivul invocat</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="115">
+                    <cell id="116">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="256">
+                            <property name="resultSetColumn">FA_DOC_NO</property>
+                        </data>
+                    </cell>
+                    <cell id="150">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="257">
+                            <property name="resultSetColumn">FA_DOC_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="144">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="258">
+                            <property name="resultSetColumn">FA_DOC_CCY</property>
+                        </data>
+                    </cell>
+                    <cell id="138">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="259">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">yyyy-MM-dd</property>
+                            </structure>
+                            <property name="resultSetColumn">FA_DOC_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="117">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="260">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">yyyy-MM-dd</property>
+                            </structure>
+                            <property name="resultSetColumn">FA_DOC_DUE_DT</property>
+                        </data>
+                    </cell>
+                    <cell id="118">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="261">
+                            <property name="resultSetColumn">FA_DSP_AMT</property>
+                        </data>
+                    </cell>
+                    <cell id="156">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="262">
+                            <property name="resultSetColumn">FA_MSG_TEXT02</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <grid id="177">
+            <property name="width">100%</property>
+            <column id="178"/>
+            <row id="179">
+                <cell id="180">
+                    <label id="185"/>
+                </cell>
+            </row>
+            <row id="181">
+                <cell id="182">
+                    <label id="311">
+                        <text-property name="text">Avand in vedere cele de mai sus va rugam sa:
+  solicitati clientului dvs solutionarea de urgenta de comun acord cu debitorul a acestei dispute si sa ne transmiteti decizia acestuia pentru a putea informa corespunzator societatea de factoring.</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="183">
+                <cell id="184"/>
+            </row>
+            <row id="207">
+                <cell id="208">
+                    <table id="277">
+                        <property name="width">100%</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">row["FA_INDR_PMT_FLG"]!='1'</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">FA_INDR_PMT_FLG</property>
+                                <expression name="expression">dataSetRow["FA_INDR_PMT_FLG"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="284"/>
+                        <header>
+                            <row id="278">
+                                <cell id="279">
+                                    <label id="285">
+                                        <text-property name="text">   sa solicitati si sa urmariti restituirea sumelor finantate aferente facturilor disputate, incasate direct in contul clientului. Va rugam sa transferati sumele incasate in contul curent in contul de colateral, pentru a fi in masura sa operam rambursarea finantarii. </text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="280">
+                                <cell id="281">
+                                    <data id="287">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">true</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">FA_INDR_PMT_FLG</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="282">
+                                <cell id="283"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="210">
+                <cell id="211">
+                    <label id="286">
+                        <text-property name="text">Pana la rezolvarea acestei dispute finantarea facturilor emise pentru debitorul mai sus mentionat va fi stopata. 
+
+Cu stima,
+
+Sef departament/Supervizor,	                                                                        Economist,</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">image111.bmp</property>
+            <property name="data">
+                Qk2mOgAAAAAAADYAAAAoAAAAcQAAACwAAAABABgAAAAAAHA6AAAAAAAAAAAAAAAAAAAAAAAA////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////AP//////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                /////////////////wD/////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                //////////////////////////////////////////////////////////////////////8A////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////AP//////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                /////////////////wDMzJnMzJnMzJnMzJnMzJnMzJnMzJnMzJnMzJnMzJnMzJnMzJnMzJnMzMzj4+P4
+                +Pj////////////////////////////////////////////////////////x8fHwyqbMmZnMmWaZmWaZ
+                mWbMmWbMmZnMzJnq6ur////////////////////////////////MzMzMzJnMzJnMzJnMzJnMzJnMzJn4
+                +Pj////////////////////////X19fMzJnMzJnMzJnMzJnMzJnMzJnMzJnx8fH/////////////////
+                ///////////////MzP/MzP+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Z
+                mf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf+Zmf/G1u////////////////////////////////8AZjMAZjMA
+                ZjMAZjMAZjMAZjMAZjMAZjMAZjMAZjMAZjMAZjMAZjMAmTMAmTMAmWYzmWZmzMyZ+Pj4////////////
+                ////////////////////////3d3dzJlmmWYzZjMAZjMAZjMAZjMAZjMAZjMAZjMAZjMAmTMAmWZmzMzM
+                ////////////////////////mWYzZjMAZjMAZjMAZjMAZjMAmTMA4+Pj////////////////////+Pj4
+                mWYzZjMAZjMAZjMAZjMAZjMAZjMAmWYz+Pj4////////////////////////zMz/UFD/AADMAADMAADM
+                AADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADM
+                AADMAADMAADMmZn/////////////////////////////AGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYz
+                AGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAJlmM9fX1////////////////////////////8yZmZkz
+                AGYzAGYzAGYzAGYzAJkzAJkzAJkzAJkzAGYzAGYzAGYzAGYzAJkzAMyZZvHx8f///////////////5lm
+                M2YzAGYzAGYzAGYzAGYzAJkzAOPj4////////////////////8DAwJkzAGYzAGYzAGYzAGYzAGYzAGYz
+                AMzMmf///////////////////////8zM/wAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzIB8////////
+                /////////////////wCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZ
+                MwCZMwBmMwBmMwCZZjPX19f////////////////4+PjMmWZmMwBmMwCZMwCZMwCZMwCZMwCZMwCZMwCZ
+                MwCZMwCZMwCZMwCZMwCZMwBmMwBmMwCZZjPq6ur///////////+ZZjNmMwCZMwCZMwCZMwBmMwCZMwDj
+                4+P///////////////////+ZZmZmMwCZMwCZMwCZMwCZMwBmMwCZZjPx8fH////////////////////w
+                +/8zM8wAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwA
+                AMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMzMzP////////////////////8AmTMAmTMA
+                mTMAmTMAmTMAmTMAmTMAZjMAZjMAZjMAZjMAZjMAZjMAZjMAmTMAmTMAmTMAmTMAmTMAZjMAmWYz8fHx
+                ////////////zJlmZjMAZjMAmTMAmTMAmTMAmTMAmTMAZjMAZjMAZjMAZjMAZjMAmTMAmTMAmTMAmTMA
+                mTMAZjMAmWYz////////////mWYzZjMAmTMAmTMAmTMAZjMAmTMA4+Pj////////////////19fXmTMA
+                ZjMAmTMAmTMAmTMAZjMAZjMAzJmZ////////////////////////zMz/AADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMMzPM////////////////////AJkzAJkzAJkzAJkzAJkzAJkzAJkzAJlmM8yZ
+                ZsyZZsyZZpmZZplmM5kzAGYzAJkzAJkzAJkzAJkzAJkzAGYzAMzMmf///////8zMmWYzAGYzAJkzAJkz
+                AJkzAJkzAGYzAGYzAJkzAJlmM5lmM5lmM2YzAGYzAJkzAJkzAJkzAJkzAGYzAGYzAMzMmf///////5lm
+                M2YzAJkzAJkzAJkzAGYzAJkzAOPj4////////////////8yZZmYzAJkzAJkzAJkzAJkzAGYzAJlmM/Hx
+                8f///////////////////////5mZ/wAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzP//
+                /////////////////wCZMwCZMwCZMwCZMwCZMwBmMwBmMwDwyqb////////////////////d3d2ZZmZm
+                MwCZMwCZMwCZMwCZMwBmMwCZZjP////x8fGZZjNmMwCZMwCZMwCZMwCZMwBmMwCZMwDMmWbd3d3/////
+                ///x8fHMzJmZZjNmMwCZMwCZMwCZMwCZMwBmMwCZZjP4+Pj///+ZZjNmMwCZMwCZMwCZMwBmMwCZMwDj
+                4+P////////////q6uqZZjNmMwCZMwCZMwCZMwCZMwBmMwDMmZn///////////////////////////+Z
+                mf8AAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwA
+                AMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMz///////////////////8AmTMAmTMA
+                mTMAmTMAmTMAZjMAZjMAzMyZ////////////////////////8fHxmWYzZjMAmTMAmTMAmTMAZjMAmWYz
+                +Pj4zMyZZjMAmTMAmTMAmTMAmTMAmTMAZjMAzJlm////////////////////////19fXmTMAZjMAmTMA
+                mTMAmTMAZjMAmTMAzMzM////mWYzZjMAmTMAmTMAmTMAZjMAmTMA4+Pj////////////zJmZZjMAmTMA
+                mTMAmTMAmTMAZjMAmWYz6urq////////////////////////////mZn/AADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADM////////////////////AJkzAJkzAJkzAJkzAJkzAGYzAGYzAMzMmf//
+                /////////////////////////5lmZmYzAJkzAJkzAJkzAGYzAJlmM+rq6plmM2YzAJkzAJkzAJkzAJkz
+                AGYzAJlmM/j4+P///////////////////////////8yZZmYzAJkzAJkzAJkzAJkzAGYzAMyZZv///5lm
+                M2YzAJkzAJkzAJkzAGYzAJkzAOPj4/////////j4+JlmM2YzAJkzAJkzAJkzAJkzAGYzAMyZZv//////
+                /////////////////////////8zM/2ZmzGZm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm
+                /2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/2Zm/zMzzAAAzAAAzAAAzAAAzAAAzAAAzAAAzP//
+                /////////////////wCZMwCZMwCZMwCZMwCZMwBmMwBmMwDMzJn///////////////////////////+Z
+                ZmZmMwCZMwCZMwCZMwBmMwCZZjPX19eZMzNmMwCZMwCZMwCZMwCZMwBmMwDMzJn/////////////////
+                ///////////////X19eZMwBmMwBmMwBmMwBmMwBmMwCZZmb///+ZZjNmMwCZMwCZMwCZMwBmMwCZMwDq
+                6ur////////MzMyZMwBmMwCZMwCZMwCZMwBmMwCZMwDj4+P/////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                //////////////////+AfP8AAMwAAMwAAMwAAMwAAMwAAMwAAMz///////////////////8AmTMAmTMA
+                mTMAmTMAmTMAZjMAZjMAzMyZ////////////////////////4+PjmWYzZjMAmTMAmTMAmTMAZjMAmWYz
+                zMyZmTMAZjMAmTMAmTMAmTMAZjMAmTMA4+Pj////////////////////////////////8fHxmWYzZjMA
+                mTMAmTMAmTMAZjMAmWYz////mWYzZjMAmTMAmTMAmTMAZjMAmTMA3d3d+Pj48fHxmWZmZjMAmTMAmTMA
+                mTMAmTMAZjMAzJlm////////////////////////////////////zMz/UFD/UFD/UFD/UFD/UFD/UFD/
+                UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/UFD/MzPMAADM
+                AADMAADMAADMAADMAADMAADM////////////////////AJkzAJkzAJkzAJkzAJkzAGYzAGYzAMzMmfHx
+                8fHx8fHx8erq6t3d3czMmZlmM2YzAJkzAJkzAJkzAJkzAGYzAMyZmczMmWYzAJkzAJkzAJkzAJkzAGYz
+                AJlmM/j4+P///////////////////////////////////9fX18zMzMzMzMzMzMzMzMzMzNfX1////5lm
+                M2YzAJkzAJkzAJkzAJkzAJkzAJlmM5lmM5lmM5kzAGYzAJkzAJkzAJkzAGYzAJkzAN3d3f//////////
+                /////////////////////////5mZ/wAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzP//
+                /////////////////wCZMwCZMwCZMwCZMwCZMwCZMwBmMwCZMwCZZjOZZjOZZjOZMwCZMwBmMwBmMwCZ
+                MwCZMwCZMwBmMwBmMwCZZjPx8fHMmZlmMwCZMwCZMwCZMwCZMwBmMwCZZjP/////////////////////
+                //////////////////////////////////////////////////+ZZjNmMwCZMwCZMwCZMwCZMwCZMwBm
+                MwBmMwBmMwBmMwCZMwCZMwCZMwCZMwBmMwCZZjP4+Pj///////////////////////////////////+Z
+                mf8AAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwA
+                AMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMz///////////////////8AmTMAmTMA
+                mTMAmTMAmTMAmTMAmTMAZjMAZjMAZjMAZjMAZjMAZjMAZjMAmTMAmTMAmTMAZjMAZjMAmWYz19fX////
+                zJlmZjMAmTMAmTMAmTMAmTMAZjMAmWZm////////////////////////////////////////////////
+                ////////////////////////mWYzZjMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMA
+                mTMAmTMAmTMAmWYz4+Pj////////////////////////////////mZn/AADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADM////////////////////AJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkz
+                AJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJlmM8yZmerq6v///////8yZZmYzAJkzAJkzAJkzAJkzAGYz
+                AJlmZv///////////////////////////////////////////////////////////////////////5lm
+                M2YzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAJkzAGYzAGYzAJlmM+rq6v//
+                /////////////////////////5mZ/wAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzP//
+                /////////////////wCZMwCZMwCZMwCZMwCZMwCZMwCZMwBmMwBmMwBmMwBmMwBmMwBmMwCZMwCZMwCZ
+                MwCZMwCZmWbq6ur////////////MmWZmMwCZMwCZMwCZMwCZMwBmMwCZZjP/////////////////////
+                //////////////////////////////////////////////////+ZZjNmMwCZMwCZMwCZMwCZMwCZMwBm
+                MwBmMwBmMwBmMwBmMwBmMwCZMwCZMwCZMwCZMwCZMwBmMwCZmWb///////////////////////////+Z
+                mf8AAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwA
+                AMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMz///////////////////8AmTMAmTMA
+                mTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAZjMAZjMAmTMAmTMAmTMAZjMAmWYzzMzM////////
+                zJmZZjMAmTMAmTMAmTMAmTMAZjMAmWYz+Pj4////////////////////////////////////////////
+                ////////////////////////mWYzZjMAmTMAmTMAmTMAmTMAmTMAmWYzmWYzmWYzmWYzmWYzZjMAZjMA
+                mTMAmTMAmTMAmTMAZjMAmTMA19fX////////////////////////mZn/AADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADM////////////////////AJkzAJkzAJkzAJkzAJkzAGYzAGYzAMyZmePj
+                4+Pj493d3czMzMyZmZkzAGYzAJkzAJkzAJkzAGYzAJlmM+rq6v///8DAwJkzAGYzAJkzAJkzAJkzAGYz
+                AJkzM+Pj4/////////////////////////////////////////j4+Pj4+Pj4+Pj4+Pj4+P///////5lm
+                M2YzAJkzAJkzAJkzAGYzAJkzAN3d3fj4+Pj4+PHx8erq6szMmZlmM2YzAJkzAJkzAJkzAJkzAGYzAMyZ
+                Zv///////////////////////5mZ/wAAzAAAzAAAzAAAzAAAzAAAzAAAzFBQ/5mZ/5mZ/5mZ/5mZ/5mZ
+                /5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ/5mZ////
+                /////////////////wCZMwCZMwCZMwCZMwCZMwBmMwBmMwDMzJn////////////////////AwMCZMwBm
+                MwCZMwCZMwBmMwBmMwDMmZn////j4+OZMwBmMwCZMwCZMwCZMwCZMwBmMwDMzJn/////////////////
+                ///////////////x8fGZZmaZZjOZZjOZZjOZZjOZZjPMmZn///+ZZjNmMwCZMwCZMwCZMwBmMwCZMwDq
+                6ur////////////////////MzJlmMwBmMwCZMwCZMwCZMwBmMwCZZjP///////////////////////+Z
+                mf8AAMwAAMwAAMwAAMwAAMwAAMwAAMyAfP//////////////////////////////////////////////
+                //////////////////////////////////////////////////////////////////////8AmTMAmTMA
+                mTMAmTMAmTMAZjMAZjMAzMyZ////////////////////+Pj4mWYzZjMAmTMAmTMAmTMAZjMAmZlm////
+                ////mWYzZjMAmTMAmTMAmTMAmTMAZjMAmWZm////////////////////////////////zMzMZjMAZjMA
+                ZjMAZjMAZjMAZjMAzJlm////mWYzZjMAmTMAmTMAmTMAZjMAmTMA4+Pj////////////////////3d3d
+                mTMAZjMAmTMAmTMAmTMAZjMAmWYz////////////////////////mZn/AADMAADMAADMAADMAADMAADM
+                AADMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPMMzPM
+                MzPMMzPMMzPMMzPMMzPMMzPM////////////////////AJkzAJkzAJkzAJkzAJkzAGYzAGYzAMzMmf//
+                /////////////////+rq6pkzAGYzAJkzAJkzAJkzAGYzAJlmM////////8yZmWYzAJkzAJkzAJkzAJkz
+                AGYzAJkzAMzMmf////////////////////////j4+JlmM2YzAJkzAJkzAJkzAGYzAJkzAPDKpv///5lm
+                M2YzAJkzAJkzAJkzAGYzAJkzAOPj4////////////////////8zMzJkzAGYzAJkzAJkzAJkzAGYzAJlm
+                M////////////////////////5mZ/wAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzP//
+                /////////////////wCZMwCZMwCZMwCZMwCZMwBmMwBmMwDwyqb////////////////4+PjMmWZmMwCZ
+                MwCZMwCZMwCZMwBmMwCZmWb////////x8fGZZjNmMwCZMwCZMwCZMwCZMwBmMwCZMwDMzJn4+Pj/////
+                ///////j4+OZmWZmMwCZMwCZMwCZMwCZMwBmMwCZZjPx8fH///+ZZjNmMwCZMwCZMwCZMwBmMwCZMwDx
+                8fH////////////////q6uqZZjNmMwCZMwCZMwCZMwCZMwBmMwCZZmb///////////////////////+Z
+                mf8AAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwA
+                AMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMz///////////////////8AmTMAmTMA
+                mTMAmTMAmTMAZjMAZjMAzJlmzMyZzMyZzJmZzJlmmWYzZjMAZjMAmTMAmTMAmTMAmTMAZjMAzJmZ////
+                ////////zMyZZjMAZjMAmTMAmTMAmTMAmTMAZjMAZjMAmWYzzJlmzJlmmWZmmTMAZjMAZjMAmTMAmTMA
+                mTMAmTMAZjMAzJlm////////mWYzZjMAmTMAmTMAmTMAZjMAmTMAzJlmzJmZzJmZzJmZzJlmmWYzZjMA
+                ZjMAmTMAmTMAmTMAmTMAZjMAzJmZ////////////////////////mZn/AADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADM////////////////////AJkzAJkzAJkzAJkzAJkzAJkzAJkzAGYzAGYz
+                AGYzAGYzAGYzAGYzAGYzAJkzAJkzAJkzAJkzAGYzAJkzAOPj4////////////////5mZZmYzAGYzAJkz
+                AJkzAJkzAJkzAGYzAGYzAGYzAGYzAGYzAGYzAJkzAJkzAJkzAJkzAJkzAGYzAJlmM/Hx8f///////5lm
+                M2YzAJkzAJkzAJkzAJkzAJkzAGYzAGYzAGYzAGYzAGYzAGYzAJkzAJkzAJkzAJkzAJkzAGYzAJkzAOPj
+                4////////////////////////5mZ/wAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzDMzzP//
+                /////////////////wCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwBmMwBmMwBmMwCZMwCZMwCZMwCZMwCZ
+                MwCZMwBmMwBmMwDMmZn////////////////////x8fGZZjNmMwBmMwCZMwCZMwCZMwCZMwCZMwCZMwCZ
+                MwCZMwCZMwCZMwCZMwCZMwBmMwBmMwCZMwDX19f///////////+ZZjNmMwCZMwCZMwCZMwCZMwCZMwCZ
+                MwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwCZMwBmMwBmMwDMmZn////////////////////////////q
+                6uozM8wAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwA
+                AMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMyZmf////////////////////8AmTMAmTMA
+                mTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAZjMAZjMAZjMAZjMAmTMAzJlm////////////
+                ////////////////8fHxzJlmZjMAZjMAZjMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAZjMAZjMAZjMA
+                mWYz19fX////////////////mWYzZjMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMAmTMA
+                ZjMAZjMAZjMAZjMAzJlm////////////////////////////////////mZn/AADMAADMAADMAADMAADM
+                AADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADMAADM
+                AADMAADMAADMAADMZmbM////////////////////////AGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYz
+                AGYzAGYzAGYzAGYzAGYzAJkzAJlmM5lmZszMzP///////////////////////////////////////8zM
+                mZlmM5kzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAJlmM8yZmfHx8f///////////////////5lm
+                M2YzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAGYzAJkzAJlmM8zMmf//////////
+                /////////////////////////////////5mZ/zMzzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzAAAzJmZ////////////
+                /////////////////wDMmWbMmWbMmWbMmWbMmWbMmWbMmWbMmWbMmWbMmWbMmWbMmWbMmZnMzJnMzMzq
+                6ur////////////////////////////////////////////////////////MzMzMmZmZZmaZZjOZZjOZ
+                ZjOZZjOZZmbMmWbwyqbx8fH////////////////////////////MmZnMmWbMmWbMmWbMmWbMmWbMmWbM
+                mWbMmWbMmWbMmWbMmWbMmWbMmWbMmZnX19f4+Pj/////////////////////////////////////////
+                ///////////x8fGZmf+AfP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+A
+                fP+AfP+AfP+AfP+AfP+AfP+AfP+AfP+Zmf/MzP////////////////////////////////8A////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////+Pj4+Pj4+Pj4////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////8fHx6urq////////////////////////////////////
+                ////////////////////////////////////////////AP//////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                /8zM/zMzzAAAzAAAzDMzzIB8//j4+P//////////////////////////////////////////////////
+                /////////////////wD/////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                //////////////////////////////////////////////////+Zmf8AAMwAAMwAAMwAAMwAAMwAAMxQ
+                UP/x8fH///////////////////////////////////////////////////////////////8A////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////zMz/AADMAADMAADMAADMAADMAADMAADMAADMgHz/////////////////////
+                ////////////////////////////////////////////AP//////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////////////4B8/wAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzDMzzPHx8f//////////////////////////////////////////
+                /////////////////wD/////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                //////////////////////////////////////////////9QUP8AAMwAAMwAAMwAAMwAAMwAAMwAAMwA
+                AMwAAMzMzP////////////////////////////////////////////////////////////8A////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////UFD/AADMAADMAADMAADMAADMAADMAADMAADMAADMzMz/////////////////
+                ////////////////////////////////////////////AP//////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////////////4B8/wAA
+                zAAAzAAAzAAAzAAAzAAAzAAAzAAAzDMzzPHx8f//////////////////////////////////////////
+                /////////////////wD/////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ///////////////////////////////////////////////G1u8AAMwAAMwAAMwAAMwAAMwAAMwAAMwA
+                AMyAfP////////////////////////////////////////////////////////////////8A////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////mZn/AADMAADMAADMAADMAADMAADMZmbM+Pj4////////////////////
+                ////////////////////////////////////////////AP//////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////
+                /8zM/1BQ/wAAzAAAzDMzzJmZ////////////////////////////////////////////////////////
+                /////////////////wA=
+            </property>
+        </structure>
+    </list-property>
+</report>

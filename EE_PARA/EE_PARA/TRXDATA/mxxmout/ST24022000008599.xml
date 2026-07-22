@@ -1,0 +1,44 @@
+002518/pEbM53AzreZXDNvT7v9LA==<?xml version="1.0" encoding="utf-8"?>
+<Saa:DataPDU xmlns:Saa="urn:swift:saa:xsd:saa.2.0" xmlns:Sw="urn:swift:snl:ns.Sw"
+  xmlns:SwGbl="urn:swift:snl:ns.SwGbl" xmlns:SwInt="urn:swift:snl:ns.SwInt" xmlns:SwSec="urn:swift:snl:ns.SwSec">
+  <Saa:Revision>2.0.10</Saa:Revision>
+  <Saa:Header>
+  <Saa:Message>
+    <Saa:SenderReference>PYMT003279BEDV</Saa:SenderReference>
+    <Saa:MessageIdentifier>pacs.009.001.08</Saa:MessageIdentifier>
+    <Saa:Format>MX</Saa:Format>
+    <Saa:Sender><Saa:DN>ou=xxx,o=ptsabmaa,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMAAXXX</Saa:X1></Saa:FullName></Saa:Sender>
+    <Saa:Receiver><Saa:DN>ou=xxx,o=ptsabmab,o=swift</Saa:DN><Saa:FullName><Saa:X1>PTSABMABXXX</Saa:X1></Saa:FullName></Saa:Receiver>
+    <Saa:InterfaceInfo><Saa:UserReference>1708396811428631</Saa:UserReference></Saa:InterfaceInfo>
+    <Saa:NetworkInfo>
+      <Saa:Service>swift.finplus!xpf</Saa:Service>
+      <Saa:SWIFTNetNetworkInfo>
+        <Saa:RequestType>pacs.009.001.08</Saa:RequestType>
+        <Saa:RequestSubtype>swift.cbprplus.02</Saa:RequestSubtype>
+      </Saa:SWIFTNetNetworkInfo>
+    </Saa:NetworkInfo>
+  </Saa:Message></Saa:Header>
+  <Saa:Body>
+  
+  <AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">
+    <Fr>
+      <FIId>
+        <FinInstnId>
+          <BICFI>PTSABMAAXXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </Fr>
+    <To>
+      <FIId>
+        <FinInstnId>
+          <BICFI>PTSABMABXXX</BICFI>
+        </FinInstnId>
+      </FIId>
+    </To>
+    <BizMsgIdr>1708396811428631</BizMsgIdr>
+    <MsgDefIdr>pacs.009.001.08</MsgDefIdr>
+    <BizSvc>swift.cbprplus.02</BizSvc>
+    <CreDt>2024-02-20T02:40:11+00:00</CreDt>
+  </AppHdr>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.009.001.08"><FICdtTrf><GrpHdr><MsgId>PYMT003279BEDV</MsgId><CreDtTm>2024-02-20T02:40:11+00:00</CreDtTm><NbOfTxs>1</NbOfTxs><SttlmInf><SttlmMtd>INDA</SttlmMtd></SttlmInf></GrpHdr><CdtTrfTxInf><PmtId><InstrId>PYMT003279BEDV</InstrId><EndToEndId>PYMT003279BEDV</EndToEndId><TxId>PYMT003279BEDV</TxId><UETR>d457251c-c97b-4d8c-b025-93c1f0e8ebb7</UETR></PmtId><IntrBkSttlmAmt Ccy="USD">100000.00</IntrBkSttlmAmt><IntrBkSttlmDt>2024-02-20</IntrBkSttlmDt><InstgAgt><FinInstnId><BICFI>PTSABMAAXXX</BICFI></FinInstnId></InstgAgt><InstdAgt><FinInstnId><BICFI>PTSABMABXXX</BICFI></FinInstnId></InstdAgt><Dbtr><FinInstnId><BICFI>PTSABMAAXXX</BICFI></FinInstnId></Dbtr><Cdtr><FinInstnId><BICFI>PTSABMABXXX</BICFI></FinInstnId></Cdtr></CdtTrfTxInf></FICdtTrf></Document>
+</Saa:Body></Saa:DataPDU>

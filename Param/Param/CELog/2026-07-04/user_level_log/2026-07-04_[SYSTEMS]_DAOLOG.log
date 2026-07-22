@@ -1,0 +1,135 @@
+
+[start] [INFO] [2026-07-04 12:20:34.788] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:34 650 ---------------------
+[01]  [Id=USER_INFO]  SELECT I_LOGON_RETRIES,C_BK_GROUP_ID,C_CNTY_CODE,C_PASSWORD,C_USER_ID,C_UNIT_CODE,C_INACTIVE,I_EXPIRY_TYPE,EXPIRY_DATE ,EFFECTIVE_DATE ,I_USER_TYPE,C_CHANGE_PSW,D_PSW_DATE,C_CHANGE_MAIL FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+[02]  [Id=SUCCESS_INFO]  SELECT C_UNIT_CODE,C_USER_ID,T_LAST_LOGIN_TIME,T_CURR_LOGIN_TIME FROM CEUSER.SEC_LOGIN_SUCCEED_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 12:20:34 787 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:34.804] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:34 792 ---------------------
+[01]  SELECT I_USER_TYPE,D_PSW_DATE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 12:20:34 803 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:34.817] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:34 806 ---------------------
+[01]  SELECT I_LOGON_RETRIES FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 12:20:34 816 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:34.830] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:34 818 ---------------------
+[01]  SELECT C_PASSWORD FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 12:20:34 829 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:34.842] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:34 831 ---------------------
+[01]  SELECT C_SALT_VAL FROM CEUSER.SEC_SALT_INFO  WHERE  C_UNIT_CODE = 'CSOFFICE'  AND  C_USER_ID = 'superofficer' 
+---------------------- End 2026-07-04 12:20:34 841 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:34.878] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:34 845 ---------------------
+[01]  UPDATE CEUSER.SEC_USER_INFO SET I_LOGON_RETRIES = 0 WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+[02]  UPDATE CEUSER.SEC_USER_INFO_TEMP SET I_LOGON_RETRIES = 0 WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+[03]  UPDATE CEUSER.SEC_LOGIN_SUCCEED_INFO SET T_LAST_LOGIN_TIME = TO_DATE('2026-07-03 18:33:50','YYYY-MM-DD HH24:MI:SS'),T_CURR_LOGIN_TIME = TO_DATE('2026-07-04 08:20:34','YYYY-MM-DD HH24:MI:SS') WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 12:20:34 876 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:34.967] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:34 881 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-07-04 12:20:34 966 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:34.991] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:34 969 ---------------------
+[01]  [Id=buinfo]  SELECT I_UNIT_TYPE,I_SEC_TYPE,C_IS_BANK,C_DUAL_CTRL,I_AUTH_TYPE,C_AUTH_RULE,C_UNIT_NAME,C_UNIT_CODE,C_HAVE_AUTH,C_DATE_FORM,C_SUB_CNTY,C_LANG_VAL,C_LANG_NAME,C_CNTY_CODE,C_BK_GROUP_ID,C_TMPL_PROTECT,C_BANK_UNIT,C_INT_FORMAT,C_DEC_FORMAT,I_INT_FMT_LEN,C_BANK_CODE FROM CEUSER.SEC_BUSINESS_UNIT  WHERE  C_UNIT_CODE = 'CSOFFICE' 
+[02]  [Id=userinfo]  SELECT I_SEC_TYPE,I_MULTI_LOGIN,C_BK_GROUP_ID,C_UNIT_CODE,C_USER_ID,C_CNTY_CODE,C_USER_DESC,C_PASSWORD,I_USER_TYPE,I_AUTH_LEVEL,C_DFLT_UNIT_CODE,C_TMPL_PROTECT,C_LOGIN_RULE,C_LANG_NAME,C_LANG_VAL,C_CHANGE_PSW,C_AUTH_SET,C_TIMEZONE_ID,C_PRIVATE_MAIL FROM CEUSER.SEC_USER_INFO  WHERE  C_UNIT_CODE = 'CSOFFICE'  AND  C_USER_ID = 'superofficer' 
+---------------------- End 2026-07-04 12:20:34 990 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:35.062] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:35 054 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 12:20:35 061 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:20:43.765] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:20:43 748 ---------------------
+[01]  INSERT INTO CETRX.TRX_SYS_ACESS_LOG (C_BK_GROUP_ID,C_UNIT_CODE,C_OP_IP,C_USER_ID,D_SYS_LOG_DATE,T_SYS_LOG_TIME,C_LOG_TYPE,C_LOG_INFO) VALUES ('CSBANK','CSOFFICE','10.3.1.4','superofficer',TO_DATE('2026-07-04','YYYY-MM-DD'),TO_DATE('08:20:35','HH24:MI:SS'),'SGIN','User Logon OK')
+---------------------- End 2026-07-04 12:20:43 763 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 12:37:24.200] [SYSTEMS] 
+---------------------Begin 2026-07-04 12:37:24 177 ---------------------
+[01]  INSERT INTO CETRX.TRX_SYS_ACESS_LOG (C_BK_GROUP_ID,C_UNIT_CODE,C_OP_IP,C_USER_ID,D_SYS_LOG_DATE,T_SYS_LOG_TIME,C_LOG_TYPE,C_LOG_INFO) VALUES ('CSBANK','CSOFFICE','10.3.1.4','superofficer',TO_DATE('2026-07-04','YYYY-MM-DD'),TO_DATE('08:37:05','HH24:MI:SS'),'SGOF','User Logout OK!')
+---------------------- End 2026-07-04 12:37:24 198 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:05.844] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:05 673 ---------------------
+[01]  [Id=USER_INFO]  SELECT I_LOGON_RETRIES,C_BK_GROUP_ID,C_CNTY_CODE,C_PASSWORD,C_USER_ID,C_UNIT_CODE,C_INACTIVE,I_EXPIRY_TYPE,EXPIRY_DATE ,EFFECTIVE_DATE ,I_USER_TYPE,C_CHANGE_PSW,D_PSW_DATE,C_CHANGE_MAIL FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+[02]  [Id=SUCCESS_INFO]  SELECT C_UNIT_CODE,C_USER_ID,T_LAST_LOGIN_TIME,T_CURR_LOGIN_TIME FROM CEUSER.SEC_LOGIN_SUCCEED_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 20:31:05 843 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:05.859] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:05 846 ---------------------
+[01]  SELECT I_USER_TYPE,D_PSW_DATE FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 20:31:05 857 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:05.905] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:05 860 ---------------------
+[01]  SELECT I_LOGON_RETRIES FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 20:31:05 903 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:05.919] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:05 906 ---------------------
+[01]  SELECT C_PASSWORD FROM CEUSER.SEC_USER_INFO WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 20:31:05 917 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:05.940] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:05 920 ---------------------
+[01]  SELECT C_SALT_VAL FROM CEUSER.SEC_SALT_INFO  WHERE  C_UNIT_CODE = 'CSOFFICE'  AND  C_USER_ID = 'superofficer' 
+---------------------- End 2026-07-04 20:31:05 938 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:05.986] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:05 950 ---------------------
+[01]  UPDATE CEUSER.SEC_USER_INFO SET I_LOGON_RETRIES = 0 WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+[02]  UPDATE CEUSER.SEC_USER_INFO_TEMP SET I_LOGON_RETRIES = 0 WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+[03]  UPDATE CEUSER.SEC_LOGIN_SUCCEED_INFO SET T_LAST_LOGIN_TIME = TO_DATE('2026-07-04 08:20:34','YYYY-MM-DD HH24:MI:SS'),T_CURR_LOGIN_TIME = TO_DATE('2026-07-04 16:31:05','YYYY-MM-DD HH24:MI:SS') WHERE C_USER_ID = 'superofficer' AND C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 20:31:05 985 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:06.080] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:05 990 ---------------------
+[01]  SELECT to_char(systimestamp, 'yyyy-mm-dd hh24:mi:ssxff') AS sysDT FROM dual
+---------------------- End 2026-07-04 20:31:06 079 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:06.105] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:06 083 ---------------------
+[01]  [Id=buinfo]  SELECT I_UNIT_TYPE,I_SEC_TYPE,C_IS_BANK,C_DUAL_CTRL,I_AUTH_TYPE,C_AUTH_RULE,C_UNIT_NAME,C_UNIT_CODE,C_HAVE_AUTH,C_DATE_FORM,C_SUB_CNTY,C_LANG_VAL,C_LANG_NAME,C_CNTY_CODE,C_BK_GROUP_ID,C_TMPL_PROTECT,C_BANK_UNIT,C_INT_FORMAT,C_DEC_FORMAT,I_INT_FMT_LEN,C_BANK_CODE FROM CEUSER.SEC_BUSINESS_UNIT  WHERE  C_UNIT_CODE = 'CSOFFICE' 
+[02]  [Id=userinfo]  SELECT I_SEC_TYPE,I_MULTI_LOGIN,C_BK_GROUP_ID,C_UNIT_CODE,C_USER_ID,C_CNTY_CODE,C_USER_DESC,C_PASSWORD,I_USER_TYPE,I_AUTH_LEVEL,C_DFLT_UNIT_CODE,C_TMPL_PROTECT,C_LOGIN_RULE,C_LANG_NAME,C_LANG_VAL,C_CHANGE_PSW,C_AUTH_SET,C_TIMEZONE_ID,C_PRIVATE_MAIL FROM CEUSER.SEC_USER_INFO  WHERE  C_UNIT_CODE = 'CSOFFICE'  AND  C_USER_ID = 'superofficer' 
+---------------------- End 2026-07-04 20:31:06 103 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:06.175] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:06 167 ---------------------
+[01]  SELECT * FROM CEUSER.SEC_BUSINESS_UNIT WHERE C_UNIT_CODE = 'CSOFFICE' 
+---------------------- End 2026-07-04 20:31:06 174 ------------------------
+ [end]
+
+[start] [INFO] [2026-07-04 20:31:21.092] [SYSTEMS] 
+---------------------Begin 2026-07-04 20:31:21 073 ---------------------
+[01]  INSERT INTO CETRX.TRX_SYS_ACESS_LOG (C_BK_GROUP_ID,C_UNIT_CODE,C_OP_IP,C_USER_ID,D_SYS_LOG_DATE,T_SYS_LOG_TIME,C_LOG_TYPE,C_LOG_INFO) VALUES ('CSBANK','CSOFFICE','10.3.1.43','superofficer',TO_DATE('2026-07-04','YYYY-MM-DD'),TO_DATE('16:31:06','HH24:MI:SS'),'SGIN','User Logon OK')
+[02]  INSERT INTO CETRX.TRX_SYS_ACESS_LOG (C_BK_GROUP_ID,C_UNIT_CODE,C_OP_IP,C_USER_ID,D_SYS_LOG_DATE,T_SYS_LOG_TIME,C_LOG_TYPE,C_LOG_INFO) VALUES ('CSBANK','CSOFFICE','10.3.1.43','superofficer',TO_DATE('2026-07-04','YYYY-MM-DD'),TO_DATE('16:31:09','HH24:MI:SS'),'SGOF','User Logout OK!')
+---------------------- End 2026-07-04 20:31:21 090 ------------------------
+ [end]

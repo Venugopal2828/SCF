@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<msgSet name="Invoice">
+		<spliters>
+			<spliter type="xml" spliter="XmlConvertor"/>
+			<spliter type="excel" spliter="ExcelConvertor">
+				<param name="subMsgType">UploadInvoice</param>
+			</spliter>
+		</spliters>
+		<submsgs>
+			<submsg name="tsin.004.001.01">
+				<keys type="xml" formatter="XSLFormatter">
+					<XSLID>X00000000002</XSLID>
+					<business_keys>
+						<key path="/root/FinInvc/InvcHdr/Id"/>
+					</business_keys>
+					<unit path="/root/FinInvc/InvcHdr/C_UNIT_CODE"/>
+				</keys>
+			</submsg>
+			<submsg name="tsmt.018.001.01">
+				<keys type="xml" formatter="XSLFormatter">
+					<XSLID>X00000000001</XSLID>
+					<business_keys>
+						<key path="/root/FA_DOC_NO"/>
+					</business_keys>
+					<unit path="/root/C_UNIT_CODE"/>
+				</keys>
+			</submsg>
+			<submsg name="tsmt.019.001.03">
+				<keys type="xml" formatter="XSLFormatter">
+					<XSLID>X00000004</XSLID>
+					<business_keys>
+						<key path="/Document/FinInvc/InvcHdr/Id"/>
+						<key path="/Document/FinInvc/InvcHdr/IsseDtTm"/>
+						<key path="/Document/FinInvc/TradAgrmt/Buyr/PtyId/Nm"/>
+						<key path="/Document/FinInvc/TradAgrmt/Sellr/PtyId/Nm"/>
+						<key path="/Document/FinInvc/TradSttlm/InvcCcyCd"/>
+					</business_keys>
+					<unit path="/Document/FinInvc/InvcHdr/Id"/>
+				</keys>
+			</submsg>
+		</submsgs>
+	</msgSet>
+	<!--msgSet name="PO">
+		<spliters>
+			<spliter type="xml" spliter="XmlConvertor"/>
+			<spliter type="excel" spliter="ExcelConvertor">
+				<param name="subMsgType">UploadPO</param>
+			</spliter>
+		</spliters>
+	</msgSet>
+	<msgSet name="SBR">
+		<spliters>
+			<spliter type="xml" spliter="XmlConvertor"/>
+			<spliter type="excel" spliter="ExcelConvertor">
+				<param name="subMsgType">UploadSBR</param>
+			</spliter>
+		</spliters>
+	</msgSet-->
+	<msgSet name="Onboarding">
+		<spliters>
+			<spliter type="xml" spliter="XmlConvertor"/>
+			<spliter type="excel" spliter="ExcelConvertor">
+				<param name="subMsgType">UploadOnBoarding</param>
+			</spliter>
+		</spliters>
+	</msgSet>
+</root>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STD_CLEARING</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>SYF_PYMT_ReversePayment_ITT_SYF_PYMT_Check_Reve_Ac_No_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_ACCT_NR ALIAS="T0" DBFUNC="" DESC="C_ACCT_NR" DT="12" HIDDEN="F" TYPE="F">C_AC_NUMBER</C_ACCT_NR>
+        <C_ACCT_WITH_ID ALIAS="T0" DBFUNC="" DESC="Account Held With ID" DT="12" HIDDEN="F" TYPE="F">C_CUST_ID</C_ACCT_WITH_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_ACCT_CCY='</SQL>
+            <SQL TYPE="FLD">REVE_CCY</SQL>
+            <SQL TYPE="SQL">' AND C_CNTY_CODE='</SQL>
+            <SQL DT="var" DV="SYS_BANK_COUNTRY" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">' AND C_ACCT_NR='</SQL>
+            <SQL TYPE="FLD">REVE_AC_NO</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

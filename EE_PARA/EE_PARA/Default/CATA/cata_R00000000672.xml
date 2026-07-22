@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATA AutoGen-Parameter-Version="1.0" BYGLOBAL="False" BYUNITCODE="False">
+    <CATA_HIDDEN_FLD>
+        <FIELD NAME="_TRX_STATUS" VALUE="SECUCATA"/>
+    </CATA_HIDDEN_FLD>
+    <ID>C49082300440</ID>
+    <MODULE>STAN</MODULE>
+    <JSPFILE>screen/CATA/SecurityCatalog.jsp</JSPFILE>
+    <BYPAGE>Y</BYPAGE>
+    <NON-SELF>F</NON-SELF>
+    <DESC/>
+    <TABLENAME SCHEMA="%EXIMSYS%">%EXIMSYS%.STT_TRX_REF</TABLENAME>
+    <FIELDLIST>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Initial Flag" EEType="INTERPRETER"
+            HIDDEN="" ISFC="Y">C_INIT_FLAG</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Reference Number Name"
+            EEType="Varchar_20" HIDDEN="">C_REF_NAME</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Reference Number Description"
+            EEType="Varchar_48" HIDDEN="">C_REF_DESC</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="1" DESC="Reference Type"
+            EEType="INTERPRETER" HIDDEN="" ISFC="Y">C_REF_TYPE</FIELD>
+        <FIELD CONFIG="Y" DATATYPE="12" DESC="Business Unit" EEType="" HIDDEN="">C_UNIT_CODE</FIELD>
+    </FIELDLIST>
+    <VARLIST>
+        <VAR>OP</VAR>
+        <VAR>VALUE</VAR>
+        <VAR>LOG</VAR>
+    </VARLIST>
+    <CLAUSE>
+        <SQL DESC="Reference Number Name" DT="12" EEType="Varchar_20" TYPE="FLD">C_REF_NAME</SQL>
+        <SQL TYPE="SQL"/>
+        <SQL DT="val" OPTYPE="OPERATE" TYPE="OP">OP0</SQL>
+        <SQL TYPE="SQL"> '</SQL>
+        <SQL DT="val" OPTYPE="VALUE" TYPE="OP">VALUE1</SQL>
+        <SQL TYPE="SQL">'</SQL>
+    </CLAUSE>
+    <CLAUSEFIELD>
+        <FIELD DATATYPE="12" DESC="Reference Number Name" EEType="Varchar_20">C_REF_NAME</FIELD>
+    </CLAUSEFIELD>
+</CATA>

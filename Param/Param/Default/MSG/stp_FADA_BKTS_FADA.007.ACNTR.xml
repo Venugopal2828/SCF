@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <header>
+        <stp-type>MQ</stp-type>
+        <hasMappingJS>N</hasMappingJS>
+        <stp-type-value/>
+        <other-system-id>BKTS</other-system-id>
+        <other-system-interface>FADA.007.ACNTR</other-system-interface>
+        <other-system-desc>Bank Trade System</other-system-desc>
+        <is-trx>N</is-trx>
+        <send-queue-id/>
+        <recv-queue-id>Q_BANK</recv-queue-id>
+        <atth-queue-id comm="MQ">Q_BANK</atth-queue-id>
+        <msg-format>Text</msg-format>
+        <module>FADA</module>
+        <map-name>AmendedAgreement</map-name>
+    </header>
+    <recv-adp-map/>
+    <recv-msg-map xmlmap="no">
+        <C_MAIN_REF descr="CE system reference number" fv-type="F" intfconv="N">FA_CE_MAIN_REF</C_MAIN_REF>
+        <FA_AGM_DUE_DT descr="Agreement Due Date" fv-type="F" intfconv="N">FA_AGM_DUE_DT</FA_AGM_DUE_DT>
+        <FA_AGM_VAL_DT descr="Agreement Value Date" fv-type="F" intfconv="N">FA_AGM_VAL_DT</FA_AGM_VAL_DT>
+        <FA_BUSI_FUNC descr="Business Function" fv-type="F" intfconv="N">FA_BUSI_FUNC</FA_BUSI_FUNC>
+        <FA_BUSI_TYPE descr="Business Type" fv-type="F" intfconv="N">FA_BUSI_TYPE</FA_BUSI_TYPE>
+        <FA_BUYER_ID descr="Buyer ID" fv-type="F" intfconv="N">FA_BUYER_ID</FA_BUYER_ID>
+        <FA_CNTR_DOC_NO descr="Contract Document No." fv-type="F" intfconv="N">FA_CNTR_DOC_NO</FA_CNTR_DOC_NO>
+        <FA_END_REASON descr="End Reason" fv-type="F" intfconv="N">FA_END_REASON</FA_END_REASON>
+        <FA_EXTEND_TIMES descr="Extend Times" fv-type="F" intfconv="N">FA_EXTEND_TIMES</FA_EXTEND_TIMES>
+        <FA_ORG_DUE_DT descr="Original Due Date" fv-type="F" intfconv="N">FA_ORG_DUE_DT</FA_ORG_DUE_DT>
+        <FA_SEL_ID descr="Seller ID" fv-type="F" intfconv="N">FA_SEL_ID</FA_SEL_ID>
+    </recv-msg-map>
+    <send-adp-map/>
+    <send-msg-map xmlmap="no"/>
+</root>

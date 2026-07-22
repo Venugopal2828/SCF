@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STP_IN_MSG_STO</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>MsgViewAll_0</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_STP_CODE ALIAS="T0" DBFUNC="" DESC="STP Code" DT="12" HIDDEN="F" TYPE="F">C_STP_CODE</C_STP_CODE>
+        <T_RECV_TIME ALIAS="T0" DBFUNC="" DESC="SYSFLD:T_RECV_TIME" DT="91" HIDDEN="F" TYPE="F">T_RECV_TIME</T_RECV_TIME>
+        <C_MESSAGE_TYPE ALIAS="T0" DBFUNC="" DESC="Message Type" DT="12" HIDDEN="F" TYPE="F">C_MESSAGE_TYPE</C_MESSAGE_TYPE>
+        <C_ADBIC_LC ALIAS="T0" DBFUNC="" DESC="Advising Bank LC" DT="12" HIDDEN="F" TYPE="F">C_ADBIC_LC</C_ADBIC_LC>
+        <C_TAG_20 ALIAS="T0" DBFUNC="" DESC="SYSFLD:C_TAG_20" DT="12" HIDDEN="F" TYPE="F">C_TAG_20</C_TAG_20>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">C_MAIN_REF</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' OR C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">DRAWING_REF</SQL>
+            <SQL TYPE="SQL">' OR C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">MAST_C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' </SQL>
+        </condition>
+        <condition seq="2">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' OR C_TAG_20 = '</SQL>
+            <SQL TYPE="FLD">LC_NO</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_25" TYPE="TBL_FLD">T0.C_MSG_TYPE</SQL>
+            <SQL TYPE="SQL"> LIKE '%InSwift%'</SQL>
+        </condition>
+        <condition seq="3">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' OR C_MAIN_REF = '' AND </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.C_MESSAGE_TYPE</SQL>
+            <SQL TYPE="SQL"> &lt;&gt; 'message' AND </SQL>
+            <SQL DT="12" EEType="Varchar_16" TYPE="TBL_FLD">T0.C_TAG_20</SQL>
+            <SQL TYPE="SQL"> IS NOT NULL</SQL>
+        </condition>
+        <condition seq="4">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' OR C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">MAST_C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+        <condition seq="5">
+            <SQL TYPE="SQL">C_MAIN_REF='</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' OR C_TAG_20='</SQL>
+            <SQL TYPE="FLD">LC_NO</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_25" TYPE="TBL_FLD">T0.C_MSG_TYPE</SQL>
+            <SQL TYPE="SQL"> LIKE '%InSwift%'</SQL>
+        </condition>
+        <condition seq="6">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_10" TYPE="TBL_FLD">T0.C_MESSAGE_TYPE</SQL>
+            <SQL TYPE="SQL"> NOT IN ('message') AND </SQL>
+            <SQL DT="12" EEType="Varchar_16" TYPE="TBL_FLD">T0.C_TAG_20</SQL>
+            <SQL TYPE="SQL"> IS NOT NULL</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

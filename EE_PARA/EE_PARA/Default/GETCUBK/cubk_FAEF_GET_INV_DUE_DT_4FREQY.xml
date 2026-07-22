@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byCondition" AutoGen-Parameter-Version="1.0">
+    <is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">INVC_MASTER</table-name>
+    </tables>
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>GET_INV_DUE_DT_4FREQY</cubk-mapping-name>
+        <select-type>A</select-type>
+        <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <FA_DOC_DUE_DT ALIAS="T0" DBFUNC="" DESC="Doc Due Date" DT="91" HIDDEN="F" TYPE="F">FA_DOC_DUE_DT</FA_DOC_DUE_DT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="CHAR_40" TYPE="TBL_FLD">T0.FSBC_REF</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_SBR_REF</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_35" TYPE="TBL_FLD">T0.FA_DOC_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'Finance Requested' AND  </SQL>
+            <SQL DT="91" EEType="DATE" TYPE="TBL_FLD">T0.FA_DOC_DUE_DT</SQL>
+            <SQL TYPE="SQL"> &gt;=TO_DATE('</SQL>
+            <SQL DT="var" DV="SYS_BUSI_DATE" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+            <SQL TYPE="SQL">','</SQL>
+            <SQL DT="var" DV="SYS_DATE_FORMAT" OPTYPE="VALUE" TYPE="OP">OP1</SQL>
+            <SQL TYPE="SQL">') group by FA_DOC_DUE_DT</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

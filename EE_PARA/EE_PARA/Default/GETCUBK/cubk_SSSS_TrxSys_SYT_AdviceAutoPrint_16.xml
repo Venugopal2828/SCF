@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="">TRX_DOCS_INDX_MGR</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>TrxSys_SYT_AdviceAutoPrint_16</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">TEMP_RESULT</C_MAIN_REF>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">C_MAIN_REF = '</SQL>
+            <SQL TYPE="FLD">mainRefNumberCUBK</SQL>
+            <SQL TYPE="SQL">' AND UPPER(C_DOC_DESC) LIKE '%CASH VOUCHER%' AND I_EVENT_TIMES = </SQL>
+            <SQL DT="var" DV="SYS_I_EVENT_TIMES" OPTYPE="VALUE" TYPE="OP">OP0</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

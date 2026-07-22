@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="GeneralAccountHeader" Max="1" Min="0"
+    Name="GeneralAccountHeader" PendingStore="N"
+    Screen="SCRN/GeneralAccounting.jsp" StoreInto="C" StoreType="C">
+    <Component>GeneralAccount</Component>
+    <PK>
+        <PKNAME>GENERALACCOUNT</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="COMM_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="EPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="EXCO_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="GTEE_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IMCO_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="IWGT_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="REIM_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="SBLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="SYND_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+                <FK PARENT_TABLE="RPFM_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements/>
+    <DO DATATYPE="2005" Desc="GeneralAccount" Field="GENERALACCOUNT" Max="100"
+        Min="0" Name="GeneralAccount" PendingStore="N"
+        Screen="SCRN/GeneralAccounting.jsp" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="General Debit/Credit Flag"
+                DispInGrid="Y" EDIT="N" EEType="CHAR_1" FldType="" Value="">GA_DC_FLG</Element>
+            <Element DATATYPE="1" Desc="General Account No" DispInGrid="Y"
+                EDIT="N" EEType="ACNO" FldType="" Value="">GA_AC_NO</Element>
+            <Element DATATYPE="1" Desc="General Currency" DispInGrid="Y"
+                EDIT="N" EEType="CCY" FldType="" Value="">GA_CCY</Element>
+            <Element DATATYPE="3" Desc="General Amount" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">GA_AMT</Element>
+            <Element DATATYPE="91" Desc="General Value Date" DispInGrid="Y"
+                EDIT="N" EEType="DATE" FldType="" Value="">GA_VALUE_DT</Element>
+            <Element DATATYPE="12" Desc="General Reference Nunber"
+                DispInGrid="N" EDIT="N" EEType="CHAR_35" FldType="" Value="">GA_REF_NO</Element>
+            <Element DATATYPE="12" Desc="Transaction Code" DispInGrid="N"
+                EDIT="N" EEType="Varchar_32" FldType="" Value="">C_TRANS_CODE</Element>
+            <Element DATATYPE="12" Desc="General Voucher Description"
+                DispInGrid="N" EDIT="N" EEType="CHAR_30" FldType="" Value="">GA_VCH_DESC</Element>
+            <Element DATATYPE="91" Desc="General Booking Rate" DispInGrid="N"
+                EDIT="N" EEType="DATE" FldType="" Value="">GA_BOOKING_DT</Element>
+        </Elements>
+    </DO>
+</DO>

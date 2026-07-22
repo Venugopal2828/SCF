@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <js-content><![CDATA[stp.writeLog("Start:Issue Agreement");
+stp.setAutoProcess(true);
+stp.setUserId("CSBANK");
+var sType = stp.getMsgTagVal("FA_BUSI_TYPE");
+var iLen= sType.toString().length();
+stp.writeLog("iLen**************"+iLen);
+if(iLen == 0){
+  var sType = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUSI_TYPE");
+}
+stp.writeLog("sType**************"+sType);
+var sMainRef = "";
+var sUnitCode = "";
+if(sType == "EF" || sType == "DISC"){
+   sMainRef = stp.getMsgTagVal("FA_CE_MAIN_REF");
+   sUnitCode = stp.getMsgTagVal("FA_SEL_ID");
+}else{
+   sMainRef = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_CE_MAIN_REF");
+   if(sType == "RF"){
+     sUnitCode = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_BUYER_ID");
+   }else{
+     sUnitCode = stp.getXslMsgTagVal("message/out-msg-content/trx","FA_SEL_ID");
+   }
+}
+stp.writeLog("sMainRef**************"+sMainRef);
+stp.setCmpId(sUnitCode);
+stp.setMainRef(sMainRef);
+stp.updateFieldValue("PARENT_MAIN_REF",sMainRef);
+stp.updateFieldValue("CURRNT_STATUS","Signed Agreement");
+stp.writeLog("End: Issue Agreement");]]></js-content>
+</root>

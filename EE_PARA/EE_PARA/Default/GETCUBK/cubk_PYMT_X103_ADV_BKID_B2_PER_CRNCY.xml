@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>PYMT</module-name>
+        <cubk-mapping-name>X103_ADV_BKID_B2_PER_CRNCY</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">BANK_MASTER</table-name>
+        	<table-name ALIAS="T1" SCHEMA="%EXIMSYS%" TYPE="U">STD_CLEARING</table-name>
+      	</tables>
+        <key-fields>
+            <C_CLEAR_TYPE ALIAS="T1" DESC="C_CLEAR_TYPE" DT="12" TYPE="V">NOSTRO</C_CLEAR_TYPE>
+            <C_BK_GROUP_ID ALIAS="T1" DESC="BANK GROUP ID" DT="12" TYPE="S">SYS_BANK_GROUP</C_BK_GROUP_ID>
+            <C_CLEAR_DEF ALIAS="T1" DESC="C_CLEAR_DEF" DT="12" TYPE="V">T</C_CLEAR_DEF>
+            <C_CNTY_CODE ALIAS="T1" DESC="Country Code" DT="1" TYPE="S">SYS_BANK_COUNTRY</C_CNTY_CODE>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="J">T1.C_ACCT_WITH_ID</C_MAIN_REF>
+            <C_ACCT_WITH_ID ALIAS="T1" DESC="C_ACCT_WITH_ID" DT="12" TYPE="F">X103_ADV_BKID_B2</C_ACCT_WITH_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <C_ACCT_NR ALIAS="T1" DBFUNC="" DESC="C_ACCT_NR" DT="12" HIDDEN="F" TYPE="F">CPYT_CR_BK_AC</C_ACCT_NR>
+        <ADD1 ALIAS="T0" DBFUNC="" DESC="Address1" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD1_B2</ADD1>
+        <ADD2 ALIAS="T0" DBFUNC="" DESC="Address 2" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD2_B2</ADD2>
+        <ADD3 ALIAS="T0" DBFUNC="" DESC="Address 3" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKADD3_B2</ADD3>
+        <PARTY_NM ALIAS="T0" DBFUNC="" DESC="Party Name" DT="12" HIDDEN="F" TYPE="F">X103_ADV_BKNM_B2</PARTY_NM>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

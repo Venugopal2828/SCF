@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Swift Fomat Address" Max="n" Min="1"
+    Name="SwFMTAddress" PendingStore="N" Screen="SCRN/DO/SwFMTAddress.jsp"
+    StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="SWF_ADD_DO"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>ORDER_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="BANK_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+        <FK PARENT_TABLE="STAT_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="4" Desc="Order Number" DispInGrid="Y" EDIT="N"
+            EEType="INTEGER" FldType="" Value="">ORDER_NO</Element>
+        <Element DATATYPE="12" Desc="SWIFT Format Name" DispInGrid="Y" EDIT="N"
+            EEType="NM_CHAR35" FldType="" Value="">SWF_FMT_NM</Element>
+        <Element DATATYPE="12" Desc="SWIFT Format Address1" DispInGrid="Y"
+            EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SWIFT_FMT_ADD1</Element>
+        <Element DATATYPE="12" Desc="SWIFT Format Address2" DispInGrid="Y"
+            EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SWIFT_FMT_ADD2</Element>
+        <Element DATATYPE="12" Desc="SWIFT Format Address3" DispInGrid="Y"
+            EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">SWIFT_FMT_ADD3</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

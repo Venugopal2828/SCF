@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="AssigneeHeader" Max="1" Min="0"
+    Name="AssigneeHeader" PendingStore="N"
+    Screen="SCRN/EPLC_AddOrEditAssignee.jsp" StoreInto="C" StoreType="C">
+    <Component>TrxAssignee</Component>
+    <PK>
+        <PKNAME>ASSIGNEE</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="EPLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements/>
+    <DO DATATYPE="2005" Desc="Assignee" Field="ASSIGNEE" Max="n" Min="0"
+        Name="Assignee" PendingStore="N" Screen="" StoreInto="D" StoreType="X">
+        <Elements>
+            <Element DATATYPE="12" Desc="Assignee Bank Address1" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">ASSIGNEE_BK_ADD1</Element>
+            <Element DATATYPE="12" Desc="Assignee Bank Address2" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">ASSIGNEE_BK_ADD2</Element>
+            <Element DATATYPE="12" Desc="Assignee Bank Address3" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">ASSIGNEE_BK_ADD3</Element>
+            <Element DATATYPE="12" Desc="Assignee Bank SWIFT Tag" DispInGrid="N"
+                EDIT="N" EEType="SW_TAG" FldType="" Value="">ASSIGNEE_BK_SW_TAG</Element>
+            <Element DATATYPE="1" Desc="Assignee Bank SWIFT Address"
+                DispInGrid="N" EDIT="N" EEType="BIC" FldType="" Value="">ASSIGNEE_BK_SW_ADD</Element>
+            <Element DATATYPE="12" Desc="Assignee Bank Detail" DispInGrid="N"
+                EDIT="N" EEType="CHAR_35" FldType="" Value="">ASSIGNEE_BK_DTL</Element>
+            <Element DATATYPE="1" Desc="Assignee ID" DispInGrid="N" EDIT="N"
+                EEType="CID" FldType="" Value="">ASSIGNEE_ID</Element>
+            <Element DATATYPE="1" Desc="Assignee Type" DispInGrid="N" EDIT="N"
+                EEType="INTERPRETER" FldType="" Value="">ASSIGNEE_TYPE</Element>
+            <Element DATATYPE="12" Desc="Assignee Name" DispInGrid="Y" EDIT="N"
+                EEType="NM_CHAR35" FldType="" Value="">ASSIGNEE_NM</Element>
+            <Element DATATYPE="12" Desc="Assignee Address1" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">ASSIGNEE_ADD1</Element>
+            <Element DATATYPE="12" Desc="Assignee Address2" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">ASSIGNEE_ADD2</Element>
+            <Element DATATYPE="12" Desc="Assignee Address3" DispInGrid="N"
+                EDIT="N" EEType="ADD_CHAR35" FldType="" Value="">ASSIGNEE_ADD3</Element>
+            <Element DATATYPE="12" Desc="Assignee SWIFT Tag" DispInGrid="N"
+                EDIT="N" EEType="SW_TAG" FldType="" Value="">ASSIGNEE_SW_TAG</Element>
+            <Element DATATYPE="1" Desc="Assignee SWIFT Address" DispInGrid="N"
+                EDIT="N" EEType="BIC" FldType="" Value="">ASSIGNEE_SW_ADD</Element>
+            <Element DATATYPE="1" Desc="Assignee Account No" DispInGrid="N"
+                EDIT="N" EEType="ACNO" FldType="" Value="">ASSIGNEE_ACNO</Element>
+            <Element DATATYPE="12" Desc="Assignee Bank ID" DispInGrid="N"
+                EDIT="N" EEType="BKID" FldType="" Value="">ASSIGNEE_BK_ID</Element>
+            <Element DATATYPE="12" Desc="Assignee Bank Name" DispInGrid="Y"
+                EDIT="N" EEType="NM_CHAR35" FldType="" Value="">ASSIGNEE_BK_NM</Element>
+            <Element DATATYPE="3" Desc="Assign Amount" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">ASSIGN_AMT</Element>
+            <Element DATATYPE="3" Desc="Assign Balance" DispInGrid="Y" EDIT="N"
+                EEType="AMT" FldType="" Value="">ASSIGN_BAL</Element>
+            <Element DATATYPE="1" Desc="Assign CCY" DispInGrid="Y" EDIT="N"
+                EEType="CCY" FldType="" Value="">ASSIGN_CCY</Element>
+            <Element DATATYPE="3" Desc="Assign Charge" DispInGrid="N" EDIT="N"
+                EEType="AMT" FldType="" Value="">ASSIGN_CHG</Element>
+            <Element DATATYPE="1" Desc="Assign Charge By" DispInGrid="N"
+                EDIT="N" EEType="INTERPRETER" FldType="" Value="">ASSIGN_CHG_BY</Element>
+            <Element DATATYPE="3" Desc="Assignment Deduction Amount"
+                DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">ASSIGN_DEDUCT_AMT</Element>
+        </Elements>
+    </DO>
+</DO>

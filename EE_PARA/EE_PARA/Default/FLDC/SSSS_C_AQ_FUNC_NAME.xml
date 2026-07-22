@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root AutoGen-Parameter-Version="1.0">
+    <module>SSSS</module>
+    <separater>[C_AQ_FUNC_NAME]</separater>
+    <full_display>false</full_display>
+    <blank_value/>
+    <multilang>N</multilang>
+    <fld_name>C_AQ_FUNC_NAME</fld_name>
+    <type>T</type>
+    <settings>
+        <value_field>C_AQ_FUNC_NAME</value_field>
+        <table_name schema="%EXIMSYS%">%EXIMSYS%.TRX_SYS_ACT_LOG</table_name>
+        <display_field>C_FUNC_DESC</display_field>
+        <condition>
+            <sql type="COL">C_UNIT_CODE</sql>
+            <sql> = '</sql>
+            <sql type="SV">SYS_BUSI_UNIT</sql>
+            <sql>'</sql>
+        </condition>
+    </settings>
+</root>

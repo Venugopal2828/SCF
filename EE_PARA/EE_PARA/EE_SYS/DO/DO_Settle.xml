@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Settle" Max="100" Min="0" Name="Settle" PendingStore="N" Screen="SCRN/o2m/FAEF_setl.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <Component>FactExportPaymentUpdatePmt</Component>
+    <PK>
+        <PKNAME>FA_DOC_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="FAEF_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Document Status" DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_STATUS</Element>
+        <Element DATATYPE="12" Desc="Doc Ref" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_REF</Element>
+        <Element DATATYPE="12" Desc="Doc No." DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_NO</Element>
+        <Element DATATYPE="12" Desc="Credit Notes Invoice Link No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_CRN_INV_LINK_NO</Element>
+        <Element DATATYPE="1" Desc="Payment Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_PMT_TYPE</Element>
+        <Element DATATYPE="91" Desc="Doc Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_DT</Element>
+        <Element DATATYPE="91" Desc="Doc Due Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_DOC_DUE_DT</Element>
+        <Element DATATYPE="1" Desc="Doc CCY" DispInGrid="Y" EDIT="N" EEType="CCY" FldType="" Value="">FA_DOC_CCY</Element>
+        <Element DATATYPE="3" Desc="Doc Amt" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_DOC_AMT</Element>
+        <Element DATATYPE="3" Desc="Payment Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_PMT_AMT</Element>
+        <Element DATATYPE="3" Desc="Doc Balance" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_DOC_BAL</Element>
+        <Element DATATYPE="3" Desc="Bank Charge Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_BK_CHG_AMT</Element>
+        <Element DATATYPE="3" Desc="Deduct Amt" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_DEDUCT_AMT</Element>
+        <Element DATATYPE="91" Desc="Payment Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_PMT_DT</Element>
+        <Element DATATYPE="1" Desc="Final Payment Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_FINAL_PMT_FLG</Element>
+        <Element DATATYPE="1" Desc="Document Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_DOC_TYPE</Element>
+        <Element DATATYPE="12" Desc="Payment Reference" DispInGrid="Y" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_PMT_REF</Element>
+        <Element DATATYPE="12" Desc="Temporary field 3" DispInGrid="N" EDIT="N" EEType="Varchar_65" FldType="" Value="">FA_TEMP3</Element>
+        <Element DATATYPE="12" Desc="Clerk ID" DispInGrid="N" EDIT="N" EEType="Varchar_32" FldType="" Value="">CLERK_ID</Element>
+        <Element DATATYPE="1" Desc="Payment Clear Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_PMT_CLEAR_TYPE</Element>
+        <Element DATATYPE="12" Desc="Invoice Link Reference No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_INV_LINK_REF</Element>
+        <Element DATATYPE="91" Desc="Invoice Payment Value Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_INV_PMT_VAL_DT</Element>
+        <Element DATATYPE="3" Desc="Temporary Credit Notes For BA" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_CRN_BA</Element>
+        <Element DATATYPE="3" Desc="Temp Invoice Limit Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_INV_BA</Element>
+        <Element DATATYPE="1" Desc="Invoice Limit Flag" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_BA_FLG</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 12" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT12</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 13" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT13</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 14" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT14</Element>
+        <Element DATATYPE="3" Desc="Temporary field 5" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP5</Element>
+        <Element DATATYPE="3" Desc="Temporary field 6" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP6</Element>
+        <Element DATATYPE="91" Desc="Transaction Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">TRX_DT</Element>
+        <Element DATATYPE="3" Desc="Invoice Clear Amount" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_CLEAR_AMT</Element>
+        <Element DATATYPE="3" Desc="Interest Balance" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_INT_BAL</Element>
+        <Element DATATYPE="91" Desc="Payment Value Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_PMT_VAL_DT</Element>
+        <Element DATATYPE="3" Desc="Temporary field for interest" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_INV_INT_AMT</Element>
+        <Element DATATYPE="3" Desc="Paid Interest Amount" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_PAID_INT_AMT</Element>
+        <Element DATATYPE="3" Desc="Paid Principal Amount" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_PAID_PRIN_AMT</Element>
+        <Element DATATYPE="3" Desc="Overdue Interest Amount" DispInGrid="N" EDIT="N" EEType="Decimal_24_4" FldType="" Value="">FA_OVD_INT_AMT</Element>
+        <Element DATATYPE="4" Desc="Invoice Loan Times" DispInGrid="N" EDIT="N" EEType="INTEGER" FldType="" Value="">FA_INV_LOAN_TIMES</Element>
+        <Element DATATYPE="3" Desc="Invoice Loan Balance" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_LOAN_BAL</Element>
+        <Element DATATYPE="3" Desc="Temporary Amount 8" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT8</Element>
+        <Element DATATYPE="3" Desc="SYSFLD:FA_INV_REFUND_INT" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_REFUND_INT</Element>
+        <Element DATATYPE="12" Desc="Invoice Loan ID" DispInGrid="N" EDIT="N" EEType="Varchar_50" FldType="" Value="">FA_INV_LOAN_ID</Element>
+        <Element DATATYPE="1" Desc="Interest Charge Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_INT_CHG_TYPE</Element>
+    </Elements>
+    <DO Desc="Settlement update loan" Max="100" Min="0" Name="Settle_loan" PendingStore="N" Screen="SCRN/o2m/FAEF_setl_second.jsp" StoreInto="C" StoreType="C" isBigData="false" AutoGen-Parameter-Version="1.0">
+        <Component>FactExportPaymentUpdateLoan</Component>
+        <PK>
+            <PKNAME>FA_LOAN_ID</PKNAME>
+        </PK>
+        <FKS>
+            <FK>
+                <FKNAME PARENT_COL="FA_DOC_NO">FA_DOC_NO</FKNAME>
+            </FK>
+        </FKS>
+        <Elements>
+            <Element DATATYPE="91" Desc="Loan Value Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_LOAN_VAL_DT</Element>
+            <Element DATATYPE="4" Desc="Invoice Loan Times" DispInGrid="Y" EDIT="N" EEType="INTEGER" FldType="" Value="">FA_INV_LOAN_TIMES</Element>
+            <Element DATATYPE="12" Desc="Loan Reference No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_LOAN_ID</Element>
+            <Element DATATYPE="12" Desc="Doc No." DispInGrid="N" EDIT="N" EEType="Varchar_35" FldType="" Value="">FA_DOC_NO</Element>
+            <Element DATATYPE="12" Desc="Invoice Loan ID" DispInGrid="N" EDIT="N" EEType="Varchar_50" FldType="" Value="">FA_INV_LOAN_ID</Element>
+            <Element DATATYPE="3" Desc="Loan Paid" DispInGrid="Y" EDIT="Y" EEType="AMT" FldType="" Value="">FA_LOAN_PAID_AMT</Element>
+            <Element DATATYPE="3" Desc="Loan Interest Paid" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_LOAN_IPAID_AMT</Element>
+            <Element DATATYPE="3" Desc="Loan Principal Paid Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_LOAN_PPAID_AMT</Element>
+            <Element DATATYPE="3" Desc="Loan Interest Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_LOAN_INT_AMT</Element>
+            <Element DATATYPE="91" Desc="Last Pay Interest Date" DispInGrid="Y" EDIT="N" EEType="DATE" FldType="" Value="">FA_LAST_PINT_DT</Element>
+            <Element DATATYPE="3" Desc="Invoice Loan Balance Per Trx." DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_INV_LOAN_EBAL</Element>
+            <Element DATATYPE="2" Desc="Overdue Interest Rate" DispInGrid="N" EDIT="N" EEType="Numeric_15_10" FldType="" Value="">FA_OVDUE_INT_RT</Element>
+            <Element DATATYPE="91" Desc="Temporary Date1" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_TEMP_DT1</Element>
+            <Element DATATYPE="1" Desc="Interest Charge Type" DispInGrid="N" EDIT="N" EEType="INTERPRETER" FldType="" Value="">FA_INT_CHG_TYPE</Element>
+            <Element DATATYPE="3" Desc="Overdue Interest Amt Per Transaction" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_OVD_INT_EAMT</Element>
+            <Element DATATYPE="91" Desc="Financing Due Date" DispInGrid="N" EDIT="N" EEType="DATE" FldType="" Value="">FA_LOAN_DUE_DT</Element>
+            <Element DATATYPE="3" Desc="Refund Interest Amount" DispInGrid="Y" EDIT="N" EEType="Decimal_24_4" FldType="" Value="0">IA_Y_REFUND_INT</Element>
+            <Element DATATYPE="8" Desc="Loan Interest Rate" DispInGrid="Y" EDIT="N" EEType="RATE" FldType="" Value="">FA_LOAN_INT_RT</Element>
+            <Element DATATYPE="3" Desc="For Invoice Loan Balance" DispInGrid="N" EDIT="N" EEType="AutoGen_Ext_DECIMAL_24" FldType="" Value="">FA_TEMP_LOAN_EBAL</Element>
+            <Element DATATYPE="3" Desc="Temporary Amount 19" DispInGrid="N" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_AMT19</Element>
+            <Element DATATYPE="1" Desc="Financing Currency" DispInGrid="N" EDIT="N" EEType="INPUTCCY" FldType="" Value="">FA_LOAN_CCY</Element>
+            <Element DATATYPE="3" Desc="Temporary field for interest" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">FA_TEMP_INV_INT_AMT</Element>
+        </Elements>
+    </DO>
+</DO>

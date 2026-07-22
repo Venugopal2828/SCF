@@ -1,0 +1,16 @@
+{
+	"id": "scf_business_type",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_business_type",
+			"display": "pie",
+			"title": "SCF Business Type Transactions",
+			"desc": "Transaction counts and values grouped by currency code."
+		},
+		"data": {
+			"sql": "SELECT FA_LMT_CCY as \"Business_Type\", COUNT(*) as \"Transaction_Count\" FROM %EXIMTRX%.FAEF_MASTER WHERE FA_LMT_CCY IS NOT NULL GROUP BY FA_LMT_CCY"
+		}
+	}
+}

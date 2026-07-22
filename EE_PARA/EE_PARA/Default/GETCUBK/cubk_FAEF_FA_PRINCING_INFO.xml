@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byKey">
+    <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>FA_PRINCING_INFO</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+      	<tables>
+        	<table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">FADA_PRICING</table-name>
+      	</tables>
+        <key-fields>
+            <FA_EF_ID ALIAS="T0" DESC="EF ID" DT="12" TYPE="F">FA_EF_ID</FA_EF_ID>
+            <FA_BUYER_ID ALIAS="T0" DESC="FA_BUYER_ID" DT="12" TYPE="F">FA_BUYER_ID</FA_BUYER_ID>
+            <FA_SEL_ID ALIAS="T0" DESC="Seller ID" DT="12" TYPE="F">FA_SEL_ID</FA_SEL_ID>
+            <FA_BUSI_STATUS ALIAS="T0" DESC="Business Status" DT="12" TYPE="V">PCI</FA_BUSI_STATUS>
+            <FA_BUSI_TYPE ALIAS="T0" DESC="Business Type" DT="1" TYPE="V">IF</FA_BUSI_TYPE>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <FA_PRICING_DT ALIAS="T0" DBFUNC="" DESC="Pricing Date" DT="91" HIDDEN="F" TYPE="F">TEMP_DATE1</FA_PRICING_DT>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

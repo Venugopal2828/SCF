@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO AutoGen-Parameter-Version="1.0" Desc="Schedule" Max="n" Min="0"
+    Name="SBLCSchedule" PendingStore="N" Screen="SCRN/DO/Schedule.jsp"
+    StoreInto="D" StoreType="T">
+    <TABLE_NAME Name="SBLC_SCHD_DO"/>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>SCHD_ORDER_NO</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="SBLC_MASTER">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="4" Desc="Schedule Order Number" DispInGrid="Y"
+            EDIT="N" EEType="INTEGER" FldType="" Value="">SCHD_ORDER_NO</Element>
+        <Element DATATYPE="91" Desc="Date of Schedule" DispInGrid="Y" EDIT="N"
+            EEType="DATE" FldType="" Value="">DT_SCH</Element>
+        <Element DATATYPE="1" Desc="Schedule Action" DispInGrid="Y" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">SCHD_ACTION</Element>
+        <Element DATATYPE="3" Desc="Schedule Amount" DispInGrid="Y" EDIT="N"
+            EEType="AMT" FldType="" Value="">SCHD_AMT</Element>
+        <Element DATATYPE="1" Desc="LC Currency" DispInGrid="N" EDIT="N"
+            EEType="CCY" FldType="" Value="">LC_CCY</Element>
+        <Element DATATYPE="1" Desc="Schedule Status" DispInGrid="Y" EDIT="N"
+            EEType="INTERPRETER" FldType="" Value="">SCHD_STATUS</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N"
+            EEType="" FldType="" Value="">C_UNIT_CODE</Element>
+    </Elements>
+</DO>

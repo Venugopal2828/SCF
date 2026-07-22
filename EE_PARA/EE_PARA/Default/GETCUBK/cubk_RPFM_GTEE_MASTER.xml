@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="C">GTEE_MASTER</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>RPFM</module-name>
+        <cubk-mapping-name>GTEE_MASTER</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+            <C_MAIN_REF ALIAS="T0" DESC="MAIN REF. NO." DT="12" TYPE="F">SOURCE_REF</C_MAIN_REF>
+            <C_TRX_STATUS ALIAS="T0" DESC="C_TRX_STATUS" DT="1" TYPE="V">M</C_TRX_STATUS>
+            <C_FUNC_SHORT_NAME ALIAS="T0" DESC="C_FUNC_SHORT_NAME" DT="12" TYPE="V">RegisterOutward</C_FUNC_SHORT_NAME>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <C_MAIN_REF ALIAS="T0" DBFUNC="" DESC="MAIN REF. NO." DT="12" HIDDEN="F" TYPE="F">SOURCE_REF</C_MAIN_REF>
+        <GTEE_CCY ALIAS="T0" DBFUNC="" DESC="Guarantee Currency" DT="1" HIDDEN="F" TYPE="F">MAST_LC_CCY</GTEE_CCY>
+        <GTEE_AMT ALIAS="T0" DBFUNC="" DESC="Guarantee Amount" DT="3" HIDDEN="F" TYPE="F">MAST_LC_AMT</GTEE_AMT>
+        <GTEE_BAL ALIAS="T0" DBFUNC="" DESC="Guarantee Balance" DT="3" HIDDEN="F" TYPE="F">MAST_LC_BAL</GTEE_BAL>
+        <ISSUE_DT ALIAS="T0" DBFUNC="" DESC="Issuing Date" DT="91" HIDDEN="F" TYPE="F">MAST_START_DT</ISSUE_DT>
+        <EXPIRY_DT ALIAS="T0" DBFUNC="" DESC="Expiry Date" DT="91" HIDDEN="F" TYPE="F">MAST_END_DT</EXPIRY_DT>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="3" EEType="AMT" TYPE="TBL_FLD">T0.GTEE_BAL</SQL>
+            <SQL TYPE="SQL"> &gt;0 AND </SQL>
+            <SQL DT="1" EEType="" TYPE="TBL_FLD">T0.C_TRX_STATUS</SQL>
+            <SQL TYPE="SQL"> = 'M' AND </SQL>
+            <SQL DT="12" EEType="" TYPE="TBL_FLD">T0.C_FUNC_SHORT_NAME</SQL>
+            <SQL TYPE="SQL"> = 'RegisterOutward'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

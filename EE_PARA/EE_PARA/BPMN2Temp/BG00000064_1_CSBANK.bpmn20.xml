@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EE-7692 add bill huang 2014-11-12 -->
+<definitions expressionLanguage="http://www.w3.org/1999/XPath"
+    targetNamespace="http://localhost/flow"
+    typeLanguage="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:funcflow="http://localhost/bpmn"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <process id="BG00000064_1_CSBANK" isExecutable="true" name="MICHAEL_BG">
+        <sequenceFlow id="id0ef6a52eed7c4244a8d4508587f13fdf"
+            sourceRef="idfc226338ad984f1b8507c9a8917293c5" targetRef="idab2597fd455945bca8355476ca79e6c6">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id7bf7dd07d663487fa56b70cd9210f8e6"
+            sourceRef="idd00bacfec3e24b2583e204087cb40157" targetRef="id2574126548b44afdacd5547ba336122e">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="idb5ce74ed338a412fa90366779398d1ac"
+            sourceRef="idec75241e60db4cbdb5cfc03d6d04c645" targetRef="idb53ffea8c3b542e09126dfe2f75c3806"/>
+        <exclusiveGateway id="id986a08492f3b4e29be07e41f3f9bc101" name="exclusiveGateway"/>
+        <exclusiveGateway id="idfc226338ad984f1b8507c9a8917293c5" name="exclusiveGateway"/>
+        <sequenceFlow id="id0d3a4dab59174f40846ccbec4648a1af"
+            sourceRef="idab2597fd455945bca8355476ca79e6c6" targetRef="idd00bacfec3e24b2583e204087cb40157"/>
+        <sequenceFlow id="idcaaac42e17384e8a9268165fba1ff230"
+            sourceRef="id986a08492f3b4e29be07e41f3f9bc101" targetRef="idab2597fd455945bca8355476ca79e6c6">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P' && APPL_NM == 'C000703'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id34806dea29d14525b7eb63310eac2f6a"
+            sourceRef="idb53ffea8c3b542e09126dfe2f75c3806" targetRef="id986a08492f3b4e29be07e41f3f9bc101"/>
+        <sequenceFlow id="idac14f19f8caa488088b60e0147c42c94"
+            sourceRef="idf9ea60be6d774d71839c4bb8844cc5ef" targetRef="idfc226338ad984f1b8507c9a8917293c5"/>
+        <inclusiveGateway id="id50dfb45840d445d68f6fcdd112318790" name="inclusiveGateway"/>
+        <endEvent id="id2574126548b44afdacd5547ba336122e" name="endEvent_MICHAEL_BG"/>
+        <sequenceFlow id="idc6cc29be8e4a447b9ee03a0e8e390b6c"
+            sourceRef="id50dfb45840d445d68f6fcdd112318790" targetRef="idf9ea60be6d774d71839c4bb8844cc5ef"/>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="idb53ffea8c3b542e09126dfe2f75c3806" name="Issue_Letter_of_Credit_One_Step">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Issue Letter of Credit One Step</C_FUNC_DESC>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300272</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000064</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702070</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="idf9ea60be6d774d71839c4bb8844cc5ef" name="Fix_Pending">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Fix Pending</C_FUNC_DESC>
+                    <C_STEP_NAME>Register LC</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000064</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702040</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <userTask funcflow:candidateGroups="1000000004" funcflow:priority="1"
+            id="idd00bacfec3e24b2583e204087cb40157" name="Supervisor_Release">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                    <C_STEP_NAME>Release Trx</C_STEP_NAME>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <C_FUNCGRP_ID>G49082300274</C_FUNCGRP_ID>
+                    <C_BG_ID>BG00000064</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_FUNC_ID>F05030702041</C_FUNC_ID>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <startEvent id="idec75241e60db4cbdb5cfc03d6d04c645" name="startEvent_MICHAEL_BG"/>
+        <sequenceFlow id="idd1cda38777a4498888fe7541247861f2"
+            sourceRef="id986a08492f3b4e29be07e41f3f9bc101" targetRef="id50dfb45840d445d68f6fcdd112318790">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="idefe8ce7d3a29468ba7d1a739755d3f61"
+            sourceRef="idfc226338ad984f1b8507c9a8917293c5" targetRef="id50dfb45840d445d68f6fcdd112318790">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+        <inclusiveGateway id="idab2597fd455945bca8355476ca79e6c6" name="inclusiveGateway"/>
+    </process>
+</definitions>

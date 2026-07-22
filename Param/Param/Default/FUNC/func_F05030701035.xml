@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FUNC>
+    <FUNCTION>
+        <MODULE TYPE="TRANS">PUOD</MODULE>
+        <MODULE_DESC>Purchase Order</MODULE_DESC>
+        <EVENT>STP</EVENT>
+        <CATALOGID/>
+        <ID>F05030701035</ID>
+        <NAME>Received PO Error Report</NAME>
+        <DESC>Received Error Report</DESC>
+        <FUNSHORTNAME>RecErrRpt</FUNSHORTNAME>
+        <LOCKCHECK>Y</LOCKCHECK>
+        <HOLDMASTER>T</HOLDMASTER>
+        <FUNCTYPE>MM</FUNCTYPE>
+        <MAINCOMP name="Trx Manager Master">TrxManagerMaster</MAINCOMP>
+        <ADDMASTER>N</ADDMASTER>
+        <RIGHT_MSG/>
+        <RIGHTJSP TMPLFILE=""/>
+        <COMPTYPE/>
+        <RELEASE>N</RELEASE>
+        <SIGN>Y</SIGN>
+    </FUNCTION>
+    <SCREEN>
+        <JSPFILE TMPLFILE="Trx_Template.jsp">PUOD_RecErrRpt.jsp</JSPFILE>
+    </SCREEN>
+    <FORM>
+        <ID>F05030701028</ID>
+        <NAME>Received PO Error Report_FORM</NAME>
+    </FORM>
+    <VOUCHER>
+        <ID>A05030701028</ID>
+        <NAME>Received PO Error Report_ACCOUT</NAME>
+    </VOUCHER>
+    <NOTIFY>
+        <ID>N00000000312</ID>
+        <NAME>Received PO Error Report_NOTIFY</NAME>
+    </NOTIFY>
+</FUNC>

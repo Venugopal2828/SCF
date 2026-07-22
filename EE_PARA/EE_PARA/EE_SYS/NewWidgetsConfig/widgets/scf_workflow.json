@@ -1,0 +1,16 @@
+{
+	"id": "scf_workflow",
+	"type": "sql",
+	"pub": "true",
+	"configuration": {
+		"ui": {
+			"id": "scf_workflow",
+			"display": "custom_sql_table",
+			"title": "SCF Action / Workflow Widget",
+			"desc": "Pending SCF financing tasks that require workflow review."
+		},
+		"data": {
+			"sql": "SELECT C_MAIN_REF as \"Reference\", C_USER_ID as \"Assignee\", 'Financing Review' as \"Task_Type\", TO_CHAR(D_CREA_DATE, 'YYYY-MM-DD') as \"Created\" FROM %EXIMTRX%.FAEF_MASTER WHERE C_TRX_STATUS = 'P' AND ROWNUM <= 5"
+		}
+	}
+}

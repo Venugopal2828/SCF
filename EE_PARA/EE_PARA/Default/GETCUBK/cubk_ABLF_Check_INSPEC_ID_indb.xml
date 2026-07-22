@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">ABLF_EM_REG</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>ABLF</module-name>
+        <cubk-mapping-name>Check_INSPEC_ID_indb</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <REG_INSPEC_ID ALIAS="T0" DBFUNC="" DESC="Inspect Institution ID" DT="12" HIDDEN="F" TYPE="F">FA_TEMP2</REG_INSPEC_ID>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL TYPE="SQL">REG_INSPEC_ID='</SQL>
+            <SQL TYPE="FLD">FA_TEMP3</SQL>
+            <SQL TYPE="SQL">' AND FA_CNTR_REF='</SQL>
+            <SQL TYPE="FLD">FA_CNTR_REF</SQL>
+            <SQL TYPE="SQL">' AND REG_AMT&gt;0</SQL>
+        </condition>
+    </multi-condition>
+</cubk>

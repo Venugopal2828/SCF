@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DO Desc="Payment Terms" Max="n" Min="1" Name="R2PaymentTerms" PendingStore="Y" Screen="SCRN/DO/TSU_pmtTerm_DO.jsp" StoreInto="D" StoreType="T" isBigData="false" AutoGen-Parameter-Version="1.0">
+    <TABLE_NAME Name="TSUM_PMT"></TABLE_NAME>
+    <PK>
+        <PKNAME>C_MAIN_REF</PKNAME>
+        <PKNAME>C_UNIT_CODE</PKNAME>
+        <PKNAME>C_TRX_REF</PKNAME>
+        <PKNAME>TSU_IAFT_NO</PKNAME>
+        <PKNAME>TSU_SEQ_NUM</PKNAME>
+    </PK>
+    <FKS>
+        <FK PARENT_TABLE="TSUM_EM_BASELINE">
+            <FKNAME PARENT_COL="C_MAIN_REF">C_MAIN_REF</FKNAME>
+            <FKNAME PARENT_COL="C_UNIT_CODE">C_UNIT_CODE</FKNAME>
+            <FKNAME PARENT_COL="C_TRX_REF">C_TRX_REF</FKNAME>
+        </FK>
+    </FKS>
+    <Elements>
+        <Element DATATYPE="12" Desc="Other Terms" DispInGrid="Y" EDIT="N" EEType="TEXTAREA_140" FldType="" Value="">TSU_PMT_OT_TERM</Element>
+        <Element DATATYPE="12" Desc="Payment Code" DispInGrid="Y" EDIT="N" EEType="PaymentTime1Code" FldType="" Value="">TSU_PMT_CD</Element>
+        <Element DATATYPE="2" Desc="Payment Days" DispInGrid="Y" EDIT="N" EEType="Number" FldType="" Value="">TSU_PMT_DAYS</Element>
+        <Element DATATYPE="2" Desc="Payment Percentage" DispInGrid="Y" EDIT="N" EEType="PercentageRate" FldType="" Value="">TSU_PMT_PER</Element>
+        <Element DATATYPE="3" Desc="Payment  Amount" DispInGrid="Y" EDIT="N" EEType="AMT" FldType="" Value="">TSU_PMT_AMT</Element>
+        <Element DATATYPE="12" Desc="MAIN REF. NO." DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_40" FldType="" Value="">C_MAIN_REF</Element>
+        <Element DATATYPE="12" Desc="UNIT CODE" DispInGrid="N" EDIT="N" EEType="SYS_VARCHAR_12" FldType="" Value="">C_UNIT_CODE</Element>
+        <Element DATATYPE="4" Desc="EVENT TIMES" DispInGrid="N" EDIT="N" EEType="SYS_INTEGER_0" FldType="" Value="">I_EVENT_TIMES</Element>
+        <Element DATATYPE="1" Desc="Transaction Currency" DispInGrid="N" EDIT="N" EEType="CCY" FldType="" Value="">TSU_CCY</Element>
+        <Element DATATYPE="12" Desc="Index No" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IDX</Element>
+        <Element DATATYPE="1" Desc="C_TRX_REF" DispInGrid="N" EDIT="N" EEType="SYS_CHAR_40" FldType="" Value="">C_TRX_REF</Element>
+        <Element DATATYPE="12" Desc="PO ID" DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_PO_ID</Element>
+        <Element DATATYPE="12" Desc="Commercial Invoice Ref." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_COMM_REF</Element>
+        <Element DATATYPE="12" Desc="Common Adjust/Freight Charge No." DispInGrid="N" EDIT="N" EEType="Max35Text" FldType="" Value="">TSU_IAFT_NO</Element>
+        <Element DATATYPE="2" Desc="Sequence No. to Account Records" DispInGrid="N" EDIT="N" EEType="Number" FldType="" Value="">TSU_SEQ_NUM</Element>
+    </Elements>
+</DO>

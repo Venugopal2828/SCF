@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk type="byKey">
+    <key-mapping>
+        <module-name>SSSS</module-name>
+        <cubk-mapping-name>GetBrokerNameByBrokerId</cubk-mapping-name>
+        <select-type>A</select-type>
+        <is-Distinct>N</is-Distinct>
+        <tables>
+            <table-name ALIAS="T0" SCHEMA="%EXIMTRX%" TYPE="U">TRCO_BROKER_DATA</table-name>
+        </tables>
+        <key-fields>
+            <BROKER_ID ALIAS="T0" DESC="Broker ID" DT="1" TYPE="F">BROKER_ID</BROKER_ID>
+        </key-fields>
+    </key-mapping>
+    <field-mapping>
+        <BROKER_NM ALIAS="T0" DBFUNC="" DESC="Broker Name" DT="1" HIDDEN="F" TYPE="F">BROKER_NM</BROKER_NM>
+    </field-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+</cubk>

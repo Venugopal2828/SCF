@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions expressionLanguage="http://www.w3.org/1999/XPath"
+    targetNamespace="http://localhost/test"
+    typeLanguage="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+    xmlns:funcflow="http://localhost/bpmn"
+    xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+    xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <process id="BG00003294_1_CSBANK" isExecutable="true" name="EXCO_CreateColl">
+        <startEvent id="id052952dcfbc04e8086183382b322393e" name="startEvent EXCO_CreateColl"/>
+        <userTask funcflow:candidateGroups="1000000001"
+            funcflow:candidateUsers="CSBANKOP" id="ida084697e5332473694057e8179047e2d">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300264</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030701901</C_FUNC_ID>
+                    <C_BG_ID>BG00003294</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>1</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>EXCO Create Collection</C_STEP_NAME>
+                    <C_FUNC_DESC>Create Collection</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id8ea02aa933704f568c0ec4ad932caf1c"
+            sourceRef="id052952dcfbc04e8086183382b322393e" targetRef="ida084697e5332473694057e8179047e2d"/>
+        <userTask funcflow:candidateGroups=" "
+            funcflow:candidateUsers="CSBANKOP" id="id9a6d4b2dcf624ce48725703e8fa19bf3">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300223</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030701684</C_FUNC_ID>
+                    <C_BG_ID>BG00003294</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>Release Step</C_STEP_NAME>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id9e3975c10203462b9c990ce0ea9b85de"
+            sourceRef="ida084697e5332473694057e8179047e2d" targetRef="id9a6d4b2dcf624ce48725703e8fa19bf3">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups=" "
+            funcflow:candidateUsers="CSBANKOP" id="idac8f2dd6e08d495798195fc610f1b619">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300223</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030701685</C_FUNC_ID>
+                    <C_BG_ID>BG00003294</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>2</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>Release Step</C_STEP_NAME>
+                    <C_FUNC_DESC>Fix Pending</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id299de3c69399465d8c1edae43a195be4"
+            sourceRef="ida084697e5332473694057e8179047e2d" targetRef="idac8f2dd6e08d495798195fc610f1b619">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id28d6307ba85140b7802c05526c8fa1bc"
+            sourceRef="id9a6d4b2dcf624ce48725703e8fa19bf3" targetRef="idac8f2dd6e08d495798195fc610f1b619">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000001"
+            funcflow:candidateUsers="CSBANKOP" id="id7d5b7fd70ad74ff888606ae600b6e051">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300315</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030701934</C_FUNC_ID>
+                    <C_BG_ID>BG00003294</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>3</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>Payment</C_STEP_NAME>
+                    <C_FUNC_DESC>Payment</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id065ee3230b4e4eb2b2ae30b3f1a04b57"
+            sourceRef="id9a6d4b2dcf624ce48725703e8fa19bf3" targetRef="id7d5b7fd70ad74ff888606ae600b6e051">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M' && DELVR_DOC_AGST == 'D/P'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id5741cacf28024ea79823081b60c64ffe"
+            sourceRef="idac8f2dd6e08d495798195fc610f1b619" targetRef="id9a6d4b2dcf624ce48725703e8fa19bf3">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id36821619967548f5b264d16245f39bbd"
+            sourceRef="idac8f2dd6e08d495798195fc610f1b619" targetRef="idac8f2dd6e08d495798195fc610f1b619">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000001"
+            funcflow:candidateUsers="CSBANKOP" id="id78d6bd7abc2847dd8e3cd38591289d60">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300223</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030701684</C_FUNC_ID>
+                    <C_BG_ID>BG00003294</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>4</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>Release Payment</C_STEP_NAME>
+                    <C_FUNC_DESC>Supervisor Release</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id2cdefdb050d74215aa51898be52c585b"
+            sourceRef="id7d5b7fd70ad74ff888606ae600b6e051" targetRef="id78d6bd7abc2847dd8e3cd38591289d60">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <userTask funcflow:candidateGroups="1000000001"
+            funcflow:candidateUsers="CSBANKOP" id="id3a248ba796d44974a6d6340e8beaa7d2">
+            <extensionElements>
+                <funcflow:taskListener
+                    class="com.cs.flow.task.listener.CSUserTaskListener" event="create"/>
+                <funcflow:CSExtension>
+                    <C_FUNCGRP_ID>G49082300223</C_FUNCGRP_ID>
+                    <C_FUNC_ID>F05030701685</C_FUNC_ID>
+                    <C_BG_ID>BG00003294</C_BG_ID>
+                    <C_BG_VERSION>1</C_BG_VERSION>
+                    <C_CP_UNIT_CODE>CSBANK</C_CP_UNIT_CODE>
+                    <I_STEP_SEQ_NO>4</I_STEP_SEQ_NO>
+                    <C_STEP_NAME>Release Payment</C_STEP_NAME>
+                    <C_FUNC_DESC>Fix Pending</C_FUNC_DESC>
+                </funcflow:CSExtension>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="id5c0043fadd1e4c3888e0d259fbdc6efa"
+            sourceRef="id7d5b7fd70ad74ff888606ae600b6e051" targetRef="id3a248ba796d44974a6d6340e8beaa7d2">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+        <endEvent id="ide4ab52e4b6994c09b1fcfe17db139221"/>
+        <sequenceFlow id="id2e53dc60b9e74f63a5ad3499d4ab71f1"
+            sourceRef="id78d6bd7abc2847dd8e3cd38591289d60" targetRef="ide4ab52e4b6994c09b1fcfe17db139221">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'M'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="iddb045a8776d94106962254aa28c73ec7"
+            sourceRef="id78d6bd7abc2847dd8e3cd38591289d60" targetRef="id3a248ba796d44974a6d6340e8beaa7d2">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="ide077e88fb3884b58a55bd8a1f25f3450"
+            sourceRef="id3a248ba796d44974a6d6340e8beaa7d2" targetRef="id78d6bd7abc2847dd8e3cd38591289d60">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'P'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="id73ab1dbd61ed4243b6c29cba785acef3"
+            sourceRef="id3a248ba796d44974a6d6340e8beaa7d2" targetRef="id3a248ba796d44974a6d6340e8beaa7d2">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${C_TRX_STATUS == 'S'}]]></conditionExpression>
+        </sequenceFlow>
+    </process>
+</definitions>

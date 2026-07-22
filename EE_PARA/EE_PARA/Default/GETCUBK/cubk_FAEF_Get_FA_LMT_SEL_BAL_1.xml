@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cubk AutoGen-Parameter-Version="1.0" type="byCondition">
+<is-Distinct>N</is-Distinct>
+    <tables>
+        <table-name ALIAS="T0" SCHEMA="%EXIMSYS%" TYPE="U">STDS_CSL</table-name>
+    </tables>
+      <key-mapping>
+        <module-name>FAEF</module-name>
+        <cubk-mapping-name>Get_FA_LMT_SEL_BAL_1</cubk-mapping-name>
+        <select-type>A</select-type>
+           <key-fields>
+        </key-fields>
+    </key-mapping>
+    <mandatory_field>
+        <GET_CUBK/>
+    </mandatory_field>
+    <field-mapping>
+        <LM_CRED_LMT ALIAS="T0" DBFUNC="" DESC="SYSFLD:LM_CRED_LMT" DT="3" HIDDEN="F" TYPE="F">LM_CRED_LMT</LM_CRED_LMT>
+        <LM_OVER_OUT ALIAS="T0" DBFUNC="" DESC="SYSFLD:LM_OVER_OUT" DT="3" HIDDEN="F" TYPE="F">LM_OVER_OUT</LM_OVER_OUT>
+        <LM_OUTD_APV ALIAS="T0" DBFUNC="" DESC="SYSFLD:LM_OUTD_APV" DT="3" HIDDEN="F" TYPE="F">LM_OUTD_APV</LM_OUTD_APV>
+        <LM_OUTD_APL ALIAS="T0" DBFUNC="" DESC="SYSFLD:LM_OUTD_APL" DT="3" HIDDEN="F" TYPE="F">LM_OUTD_APL</LM_OUTD_APL>
+        <LM_OUTC_APV ALIAS="T0" DBFUNC="" DESC="SYSFLD:LM_OUTC_APV" DT="3" HIDDEN="F" TYPE="F">LM_OUTC_APV</LM_OUTC_APV>
+    </field-mapping>
+    <multi-condition>
+        <condition seq="1">
+            <SQL DT="12" EEType="Varchar_1" TYPE="TBL_FLD">T0.LM_STATUS</SQL>
+            <SQL TYPE="SQL"> ='A' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.LM_CUST_ID</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">FA_SEL_ID</SQL>
+            <SQL TYPE="SQL">' AND </SQL>
+            <SQL DT="12" EEType="Varchar_20" TYPE="TBL_FLD">T0.LM_RCUST_ID</SQL>
+            <SQL TYPE="SQL"> ='</SQL>
+            <SQL TYPE="FLD">FA_BUYER_ID</SQL>
+            <SQL TYPE="SQL">' AND  </SQL>
+            <SQL DT="12" EEType="Varchar_80" TYPE="TBL_FLD">T0.LM_CSL_DESC</SQL>
+            <SQL TYPE="SQL"> = '</SQL>
+            <SQL TYPE="FLD">C_MAIN_REF</SQL>
+            <SQL TYPE="SQL">'</SQL>
+        </condition>
+    </multi-condition>
+</cubk>
